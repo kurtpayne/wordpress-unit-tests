@@ -1,0 +1,13 @@
+<phpunit
+        bootstrap="bootstrap.php"
+        backupGlobals="false"
+        colors="true"
+        >
+    <testsuites>
+        <!-- Default test suite to run all tests -->
+        <testsuite>
+            <directory suffix=".php">tests</directory>
+            <file phpVersion="5.3.0">tests/test_actions_closures.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>

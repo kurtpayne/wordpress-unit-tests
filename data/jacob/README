@@ -1,0 +1,25 @@
+The Python scripts are for generating test data, because Python's Unicode
+support is much, much, much, much better than PHP's.
+
+ * `generate_remove_accents_tests.py` generates all of the 
+    remove_accents_from_* files.
+    
+    Call it with `python generate_remove_accents_tests.py`
+
+ * `urlencode.py`, `u-urlencode.py` and `entitize.py` process UTF-8
+   into a few different formats (%-encoding, %u-encoding, &#decimal;)
+   and are used like normal UNIXy pipes.
+   
+   Try:
+   
+   `python urlencode.py < utf-8.txt > utf-8-urlencoded.txt`
+   `python u-urlencode.py < utf-8.txt > utf-8-u-urlencoded.txt`
+   `python entitize.py < utf-8.txt > utf-8-entitized.txt`
+   
+  * I think `windows-1252.py` converts Windows-only smart-quotes
+    and things into their unicode &#decimal reference; equivalents.
+
+
+
+
+ 
