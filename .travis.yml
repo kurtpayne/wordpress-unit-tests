@@ -2,11 +2,21 @@ language: php
 php:
   - 5.3
 before_script:
+
+ # Setup config file
  - cp wp-tests-config-sample.php wp-tests-config.php
  - sed -i 's/putyourdbnamehere/wordpress_tests/g' wp-tests-config.php
  - sed -i 's/usernamehere/root/g' wp-tests-config.php
  - sed -i 's/yourpasswordhere//g' wp-tests-config.php
  - mysql -e 'create database wordpress_tests;'
+
+ # Setup phpunit file
+ - cp phpunit.xml phpunit_travis.xml
+ - sed -i 's/colors="true"/colors="false"/' phpunit_travis.xml
+
+script:
+ - phpunit -c phpunit_travis.xml
+
 after_script:
  - rm wp-tests-config.php
 
