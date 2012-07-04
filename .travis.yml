@@ -10,13 +10,12 @@ before_script:
  - sed -i 's/yourpasswordhere//g' wp-tests-config.php
  - mysql -e 'create database wordpress_tests;'
 
- # Setup phpunit file
- - cp phpunit.xml phpunit_travis.xml
- - sed -i 's/colors="true"/colors="false"/' phpunit_travis.xml
+ # Disable set_time_limit
+ - sed -i 's/max_execution_time = [0-9]+/max_execution_time = 120/g' `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+ - echo "disable_functions = set_time_limit" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
 
 script:
- - phpunit -c phpunit_travis.xml
+ - phpunit -c phpunit.xml
 
 after_script:
  - rm wp-tests-config.php
-
