@@ -9,7 +9,7 @@ class WPTestActions extends WP_UnitTestCase {
 
 	function test_simple_action() {
 		$a = new MockAction();
-		$tag = rand_str();
+		$tag = 'test_action';
 
 		add_action($tag, array(&$a, 'action'));
 		do_action($tag);
@@ -217,8 +217,8 @@ class WPTestActions extends WP_UnitTestCase {
 		$this->assertFalse( empty($args[0][0]->foo) );
 	}
 
+	// See #11241
 	function test_action_keyed_array() {
-		$this->knownWPBug(11241);
 		$a = new MockAction();
 
 		$tag = rand_str();
