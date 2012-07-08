@@ -20,6 +20,9 @@ global $table_prefix, $wp_embed, $wp_locale, $_wp_deprecated_widgets_callbacks, 
 // These are still needed
 global $wpdb, $current_site, $current_blog, $wp_rewrite, $shortcode_tags, $wp;
 
+if ( !is_readable( $config_file_path ) ) {
+	die( "ERROR: wp-test-config.php is missing! Please use wp-test-config-sample.php to create a config file.\n" );
+}
 require_once $config_file_path;
 
 define( 'DIR_TESTDATA', dirname( __FILE__ ) . '/data' );
