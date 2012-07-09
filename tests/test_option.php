@@ -256,22 +256,12 @@ class TestSiteTransient extends WP_UnitTestCase {
 	}
 }
 
+if ( is_multisite() ) :
 /**
  * @group options
  */
 class TestBlogOption extends WP_UnitTestCase {
-	function setUp() {
-		parent::setUp();
-	}
-
-	function tearDown() {
-		parent::tearDown();
-	}
-
 	function test_from_same_site() {
-		if ( ! is_multisite() )
-			return false;
-
 		$key = rand_str();
 		$key2 = rand_str();
 		$value = rand_str();
@@ -308,3 +298,4 @@ class TestBlogOption extends WP_UnitTestCase {
 		$this->assertFalse( get_option( $key2 ) ); // check get_option()
 	}
 }
+endif;

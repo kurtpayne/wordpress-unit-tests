@@ -45,7 +45,7 @@ class TestWP_Scripts extends WP_UnitTestCase {
 	/**
 	 * Test the different protocol references in wp_enqueue_script
 	 * @global WP_Scripts $wp_scripts
-	 * @ticket 16560 Protocol-relative references
+	 * @ticket 16560
 	 */
 	public function test_protocols() {
 		// Init

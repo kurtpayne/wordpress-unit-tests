@@ -47,6 +47,8 @@ class Test_Seems_UTF8 extends WP_Formatting_UnitTestCase {
         }
     }
     function test_returns_false_for_non_utf8_strings() {
+    	$this->markTestIncomplete( 'This test does not have any assertions.' );
+
         $big5 = $this->get_testdata('test_big5.txt');
         $big5 = $big5[0];
         $strings = array(

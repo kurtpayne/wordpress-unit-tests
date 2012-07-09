@@ -335,7 +335,9 @@ class TestWPUser extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @ticket 19500 Usermeta cache is not cleared after user deletion
+	 * Test that usermeta cache is cleared after user deletion.
+	 *
+	 * @ticket 19500
 	 */
 	function test_get_blogs_of_user() {
 		// Logged out users don't have blogs.
@@ -354,7 +356,9 @@ class TestWPUser extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @ticket 19500 Usermeta cache is not cleared after user deletion
+	 * Test that usermeta cache is cleared after user deletion.
+	 *
+	 * @ticket 19500
 	 */
 	function test_is_user_member_of_blog() {
 		$old_current = get_current_user_id();

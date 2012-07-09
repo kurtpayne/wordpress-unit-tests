@@ -500,7 +500,9 @@ class TestLargeThemeDir extends WP_UnitTestCase {
 	}
 
 	/**
-	 * @ticket 11214 looked at how we can reduce the in-memory size even more
+	 * Reducing in-memory size further.
+	 *
+	 * @ticket 11214
 	 */
 	function test_smaller_storage() {
 		$themes = get_themes();

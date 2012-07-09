@@ -44,7 +44,7 @@ class TestWP_Styles extends WP_UnitTestCase {
 	/**
 	 * Test the different protocol references in wp_enqueue_style
 	 * @global WP_Styles $wp_styles
-	 * @ticket 16560 Protocol-relative references
+	 * @ticket 16560
 	 */
 	public function test_protocols() {
 		// Init

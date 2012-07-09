@@ -2,6 +2,7 @@
         bootstrap="bootstrap.php"
         backupGlobals="false"
         colors="true"
+        strict="true"
         >
     <testsuites>
         <!-- Default test suite to run all tests -->
