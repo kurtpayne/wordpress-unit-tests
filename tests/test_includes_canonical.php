@@ -102,7 +102,7 @@ class WP_Test_Canonical extends WP_UnitTestCase {
 	 */
 	function test($test_url, $expected, $ticket = 0) {
 		if ( $ticket )
-			$this->knownWPBug($ticket);
+			$this->knownWPBug( $ticket );
 
 		$ticket_ref = ($ticket > 0) ? 'Ticket #' . $ticket : null;
 		

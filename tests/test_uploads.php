@@ -11,7 +11,7 @@ class TestUploadFunctions extends WP_UnitTestCase {
 
 	function setUp() {
 		if ( is_multisite() )
-			$this->knownUTBug(35);
+			$this->knownUTBug( 35 );
 
 		parent::setUp();
 		return;
@@ -50,8 +50,10 @@ class TestUploadFunctions extends WP_UnitTestCase {
 		$this->assertEquals( '', $info['error'] );
 	}
 
+	/**
+	 * @ticket 5953
+	 */
 	function test_upload_dir_absolute() {
-		$this->knownWPBug(5953);
 		// wp_upload_dir() with an absolute upload path
 		update_option( 'upload_path', '/tmp' );
 		// doesn't make sense to use an absolute file path without setting the url path

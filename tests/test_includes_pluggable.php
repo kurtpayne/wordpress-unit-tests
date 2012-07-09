@@ -46,11 +46,11 @@ class TestAuthFunctions extends WP_UnitTestCase {
 /**
  * @group pluggable
  * @group mail
+ * @ticket UT47
  */
 class TestMailFunctions extends WP_UnitTestCase {
 	function setUp() {
 		parent::setUp();
-		$this->knownUTBug( 47 );
 	}
 
 	function test_wp_mail_custom_boundaries() {
@@ -112,8 +112,10 @@ class TestMailFunctions extends WP_UnitTestCase {
 		unset( $_SERVER['SERVER_NAME'] );
 	}
 
+	/**
+	 * @ticket 15448
+	 */
 	function test_wp_mail_plain_and_html() {
-		$this->knownWPBug(15448);
 
 		$to = 'user@example.com';
 		$subject = 'Test email with plain text and html versions';
@@ -148,8 +150,10 @@ Content-Transfer-Encoding: 8bit
 		unset( $_SERVER['SERVER_NAME'] );
 	}
 
+	/**
+	 * @ticket 17305
+	 */
 	function test_wp_mail_rfc2822_addresses() {
-		$this->knownWPBug(17305);
 
 		$to = "Name <address@tld.com>";
 		$from = "Another Name <another_address@different-tld.com>";
@@ -184,8 +188,10 @@ Content-Transfer-Encoding: 8bit
 		unset( $_SERVER['SERVER_NAME'] );
 	}
 
+	/**
+	 * @ticket 17305
+	 */
 	function test_wp_mail_multiple_rfc2822_to_addresses() {
-		$this->knownWPBug(17305);
 
 		$to = "Name <address@tld.com>, Another Name <another_address@different-tld.com>";
 		$subject = "RFC2822 Testing";
@@ -226,8 +232,10 @@ Content-Transfer-Encoding: 8bit
 		unset( $_SERVER['SERVER_NAME'] );
 	}
 
+	/**
+	 * @ticket 18463
+	 */
 	function test_wp_mail_to_address_no_name() {
-		$this->knownWPBug( 18463 );
 
 		$to = "<address@tld.com>";
 		$subject = "RFC2822 Testing";
@@ -267,7 +275,9 @@ class TestRedirectFunctions extends WP_UnitTestCase {
  * @group user
  */
 class TestUserFunction extends WP_UnitTestCase {
-	// #13317
+	/**
+	 * @ticket 13317
+	 */
 	function test_get_userdata() {
 		$id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$this->assertFalse( get_userdata( 0 ) );

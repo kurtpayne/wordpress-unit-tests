@@ -12,9 +12,11 @@ class TestTaxonomy extends WP_UnitTestCase {
 		$this->assertEquals(array('link_category'), get_object_taxonomies('link'));
 	}
 
+	/**
+	 * @ticket 5417
+	 */
 	function test_get_unknown_taxonomies() {
 		// taxonomies for an unknown object type
-		$this->knownWPBug(5417);
 		$this->assertEquals( array(), get_object_taxonomies(rand_str()) );
 		$this->assertEquals( array(), get_object_taxonomies('') );
 		$this->assertEquals( array(), get_object_taxonomies(0) );
@@ -155,9 +157,11 @@ class TestTermAPI extends WP_UnitTestCase {
 		$this->assertEquals( 0, term_exists(NULL) );
 	}
 
+	/**
+	 * @ticket 5381
+	 */
 	function test_is_term_type() {
 		// insert a term
-		$this->knownWPBug(5381);
 		$term = rand_str();
 		$t = wp_insert_term( $term, $this->taxonomy );
 

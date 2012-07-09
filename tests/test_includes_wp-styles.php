@@ -20,7 +20,10 @@ class TestWP_Styles extends WP_UnitTestCase {
 		parent::tearDown();
 	}
 
-	// Test versioning #11315
+	/**
+	 * Test versioning
+	 * @ticket 11315
+	 */
 	function test_wp_enqueue_style() {
 		wp_enqueue_style('no-deps-no-version', 'example.com' );
 		wp_enqueue_style('no-deps-version', 'example.com', array(), 1.2);
@@ -41,10 +44,9 @@ class TestWP_Styles extends WP_UnitTestCase {
 	/**
 	 * Test the different protocol references in wp_enqueue_style
 	 * @global WP_Styles $wp_styles
+	 * @ticket 16560 Protocol-relative references
 	 */
 	public function test_protocols() {
-		$this->knownWPBug( 16560 );
-
 		// Init
 		global $wp_styles;
 		$base_url_backup = $wp_styles->base_url;

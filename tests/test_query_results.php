@@ -258,9 +258,10 @@ class TestWPQueryPosts extends WP_UnitTestCase {
 		$this->assertEquals( $expected, wp_list_pluck( $posts, 'post_name' ) );
 	}
 
+	/**
+	 * @ticket 18897
+	 */
 	function test_query_offset_and_paged() {
-		$this->knownWPBug(18897);
-
 		$posts = $this->q->query('paged=2&offset=3');
 
 		$expected = array (

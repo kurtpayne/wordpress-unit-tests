@@ -29,11 +29,11 @@ class TestXMLRPCServer_wp_getOptions extends WP_XMLRPC_UnitTestCase {
 		$this->assertFalse( $result['default_comment_status']['readonly'] );
 	}
 
+	/**
+	 * @ticket 20201
+	 */
 	function test_option_values_subscriber() {
 		global $wp_version;
-
-		$this->knownWPBug( 20201 );
-
 		$this->make_user_by_role( 'subscriber' );
 
 		$result = $this->myxmlrpcserver->wp_getOptions( array( 1, 'subscriber', 'subscriber' ) );

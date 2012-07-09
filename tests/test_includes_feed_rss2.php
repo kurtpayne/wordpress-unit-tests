@@ -78,9 +78,10 @@ class TestFeedRss2 extends WP_UnitTestCase {
 		$this->assertEquals(strtotime(get_lastpostmodified()), strtotime($pubdate[0]['content']));
 	}
 
-
+	/**
+	 * @ticket UT32
+	 */
 	function test_items() {
-		$this->knownUTBug(32);
 		$this->go_to('/feed/');
 		$feed = $this->do_rss2();
 		$xml = xml_to_array($feed);

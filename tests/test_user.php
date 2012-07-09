@@ -162,11 +162,10 @@ class TestWPUser extends WP_UnitTestCase {
 	
 	/**
 	 * Test the magic __unset method
-	 * @return void
+	 *
+	 * @ticket 20043
 	 */
 	public function test_user_unset() {
-		$this->knownWPBug( 20043 );
-		
 		// New user
 		$user_id = $this->factory->user->create( array( 'role' => 'author' ) );
 		$user = new WP_User( $user_id );
@@ -335,10 +334,10 @@ class TestWPUser extends WP_UnitTestCase {
 			$this->assertEquals( $value, $user->get( $key ), $key );
 	}
 
+	/**
+	 * @ticket 19500 Usermeta cache is not cleared after user deletion
+	 */
 	function test_get_blogs_of_user() {
-		// Usermeta cache is not cleared after user deletion.
-		$this->knownWPBug(19500);
-
 		// Logged out users don't have blogs.
 		$this->assertEquals( array(), get_blogs_of_user( 0 ) );
 
@@ -354,10 +353,10 @@ class TestWPUser extends WP_UnitTestCase {
 		$this->assertEquals( array(), get_blogs_of_user( $user_id ) );
 	}
 
+	/**
+	 * @ticket 19500 Usermeta cache is not cleared after user deletion
+	 */
 	function test_is_user_member_of_blog() {
-		// Usermeta cache is not cleared after user deletion.
-		$this->knownWPBug(19500);
-
 		$old_current = get_current_user_id();
 
 		$user_id = $this->factory->user->create( array( 'role' => 'subscriber' ) );

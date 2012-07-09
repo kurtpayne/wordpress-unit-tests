@@ -37,9 +37,10 @@ class TestXMLRPCServer_mw_getPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( 401, $result->code );
 	}
 
+	/**
+	 * @ticket 20336
+	 */
 	function test_invalid_postid() {
-		$this->knownWPBug(20336);
-
 		$result = $this->myxmlrpcserver->mw_getPost( array( 9999, 'author', 'author' ) );
 		$this->assertInstanceOf( 'IXR_Error', $result );
 		$this->assertEquals( 404, $result->code );

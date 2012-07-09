@@ -217,8 +217,10 @@ class WPTestActions extends WP_UnitTestCase {
 		$this->assertFalse( empty($args[0][0]->foo) );
 	}
 
+	/**
+	 * @ticket 11241
+	 */
 	function test_action_keyed_array() {
-		$this->knownWPBug(11241);
 		$a = new MockAction();
 
 		$tag = rand_str();

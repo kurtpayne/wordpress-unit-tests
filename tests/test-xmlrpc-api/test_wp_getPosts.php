@@ -11,9 +11,10 @@ class TestXMLRPCServer_wp_getPosts extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( 403, $result->code );
 	}
 
+	/**
+	 * @ticket 20991
+	 */
 	function test_incapable_user() {
-		$this->knownWPBug( 20991 );
-
 		$this->make_user_by_role( 'subscriber' );
 
 		$result = $this->myxmlrpcserver->wp_getPosts( array( 1, 'subscriber', 'subscriber' ) );

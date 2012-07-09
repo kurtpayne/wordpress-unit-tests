@@ -27,10 +27,13 @@ class TestBalanceTags extends WP_UnitTestCase {
 			$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
 		}
 	}
-
-	// If a recognized valid single tag appears unclosed, it should get self-closed
+ 
+	/**
+	 * If a recognized valid single tag appears unclosed, it should get self-closed
+	 *
+	 * @ticket 1597
+	 */
 	function test_selfcloses_unclosed_known_single_tags() {
-		$this->knownWPBug( 1597 );
 
 		foreach ( $this->single_tags as $tag ) {
 			$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
@@ -46,18 +49,23 @@ class TestBalanceTags extends WP_UnitTestCase {
 		}
 	}
 
-	// If a recognized valid single tag is given a closing tag, the closing tag
-	//   should get removed and tag should be self-closed.
+	/**
+	 * If a recognized valid single tag is given a closing tag, the closing tag
+	 *   should get removed and tag should be self-closed.
+	 *
+	 * @ticket 1597
+	 */
 	function test_selfcloses_known_single_tags_having_closing_tag() {
-		$this->knownWPBug( 1597 );
 
 		foreach ( $this->single_tags as $tag ) {
 			$this->assertEquals( "<$tag />", balanceTags( "<$tag></$tag>", true ) );
 		}
 	}
 
+	/**
+	 * @ticket 1597
+	 */
 	function test_closes_unknown_single_tags_with_closing_tag() {
-		$this->knownWPBug( 1597 );
 
 		$inputs = array(
 			'<strong/>',
@@ -136,8 +144,10 @@ class TestBalanceTags extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 20401
+	 */
 	function test_allows_immediately_nested_object_tags() {
-		$this->knownWPBug( 20401 );
 
 		$object = '<object id="obj1"><param name="param1"/><object id="obj2"><param name="param2"/></object></object>';
 		$this->assertEquals( $object, balanceTags( $object, true ) );

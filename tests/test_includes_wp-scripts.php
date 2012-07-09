@@ -21,9 +21,11 @@ class TestWP_Scripts extends WP_UnitTestCase {
 		parent::tearDown();
 	}
 
-	// Test versioning
+	/**
+	 * Test versioning
+	 * @ticket 11315
+	 */
 	function test_wp_enqueue_script() {
-		$this->knownWPBug(11315);
 		wp_enqueue_script('no-deps-no-version', 'example.com', array());
 		wp_enqueue_script('empty-deps-no-version', 'example.com' );
 		wp_enqueue_script('empty-deps-version', 'example.com', array(), 1.2);
@@ -43,10 +45,9 @@ class TestWP_Scripts extends WP_UnitTestCase {
 	/**
 	 * Test the different protocol references in wp_enqueue_script
 	 * @global WP_Scripts $wp_scripts
+	 * @ticket 16560 Protocol-relative references
 	 */
 	public function test_protocols() {
-		$this->knownWPBug( 16560 );
-
 		// Init
 		global $wp_scripts;
 		$base_url_backup = $wp_scripts->base_url;

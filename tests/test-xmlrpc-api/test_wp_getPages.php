@@ -59,9 +59,10 @@ class TestXMLRPCServer_wp_getPages extends WP_XMLRPC_UnitTestCase {
         return $caps;
     }
 
-    function test_semi_capable_user() {
-        $this->knownWPBug( 20629 );
-
+	/**
+	 * @ticket 20629
+	 */
+	function test_semi_capable_user() {
         add_filter( 'map_meta_cap', array( $this, 'remove_editor_edit_page_cap') , 10, 4 );
 
         $results = $this->myxmlrpcserver->wp_getPages( array( 1, 'editor', 'editor' ) );

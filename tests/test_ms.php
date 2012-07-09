@@ -241,9 +241,10 @@ class WPTestMS extends WP_UnitTestCase {
 		$this->assertEquals( $user->user_email, $reg_blog[ count( $reg_blog )-1 ] );
 	}
 
+	/**
+	 * @ticket 18119
+	 */
 	function test_upload_is_user_over_quota() {
-		$this->knownWPBug( 18119 );
-
 		$default_space_allowed = 50;
 		$echo = false;
 

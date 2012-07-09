@@ -212,8 +212,10 @@ class TestFunctions extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 9930
+	 */
 	function test_is_serialized() {
-		$this->knownWPBug(9930);
 		$cases = array(
 			serialize(null),
 			serialize(true),

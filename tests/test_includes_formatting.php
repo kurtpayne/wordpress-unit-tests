@@ -288,8 +288,10 @@ class TestMakeClickable extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 16892
+	 */
 	function test_click_inside_html() {
-		$this->knownWPBug( 16892 );
 		$urls_before = array(
 			'<span>http://example.com</span>',
 			'<p>http://example.com/</p>',
@@ -326,8 +328,10 @@ class TestMakeClickable extends WP_UnitTestCase {
 			$this->assertEquals( $in, $out );
 	}
 
+	/**
+	 * @ticket 16859
+	 */
 	function test_square_brackets() {
-		$this->knownWPBug( 16859 );
 		$urls_before = array(
 			'http://example.com/?foo[bar]=baz',
 			'http://example.com/?baz=bar&foo[bar]=baz',
@@ -504,7 +508,10 @@ class TestWPTexturize extends WP_UnitTestCase {
 		$this->assertEquals(' &#8220;test&#8217;s quoted&#8221; ', wptexturize(' "test\'s quoted" '));
 	}
 
-	//WP Tickets #4539, #15241
+	/**
+	 * @ticket 4539
+	 * @ticket 15241
+	 */
 	function test_full_sentences_with_unmatched_single_quotes() {
 		$this->assertEquals(
 			'That means every moment you&#8217;re working on something without it being in the public it&#8217;s actually dying.',
@@ -512,9 +519,10 @@ class TestWPTexturize extends WP_UnitTestCase {
 		);
 	}
 
-	//WP Ticket #4539
+	/**
+	 * @ticket 4539
+	 */
 	function test_quotes() {
-		$this->knownWPBug(4539);
 		$this->assertEquals('&#8220;Quoted String&#8221;', wptexturize('"Quoted String"'));
 		$this->assertEquals('Here is &#8220;<a href="http://example.com">a test with a link</a>&#8221;', wptexturize('Here is "<a href="http://example.com">a test with a link</a>"'));
 		$this->assertEquals('Here is &#8220;<a href="http://example.com">a test with a link and a period</a>&#8221;.', wptexturize('Here is "<a href="http://example.com">a test with a link and a period</a>".'));
@@ -530,9 +538,10 @@ class TestWPTexturize extends WP_UnitTestCase {
 		$this->assertEquals('A test with a number, &#8220;like 62&#8221;, is nice to have.', wptexturize('A test with a number, "like 62", is nice to have.'));
 	}
 
-	//WP Ticket #4539
+	/**
+	 * @ticket 4539
+	 */
 	function test_quotes_before_s() {
-		$this->knownWPBug(4539);
 		$this->assertEquals('test&#8217;s', wptexturize("test's"));
 		$this->assertEquals('&#8216;test&#8217;s', wptexturize("'test's"));
 		$this->assertEquals('&#8216;test&#8217;s&#8217;', wptexturize("'test's'"));
@@ -540,9 +549,10 @@ class TestWPTexturize extends WP_UnitTestCase {
 		$this->assertEquals('&#8216;string&#8217;s&#8217;', wptexturize("'string's'"));
 	}
 
-	//WP Ticket #4539
+	/**
+	 * @ticket 4539
+	 */
 	function test_quotes_before_numbers() {
-		$this->knownWPBug(4539);
 		$this->assertEquals('Class of &#8217;99', wptexturize("Class of '99"));
 		$this->assertEquals('Class of &#8217;99&#8217;s', wptexturize("Class of '99's"));
 		$this->assertEquals('&#8216;Class of &#8217;99&#8217;', wptexturize("'Class of '99'"));
@@ -556,9 +566,11 @@ class TestWPTexturize extends WP_UnitTestCase {
 		$this->assertEquals('Class of &#8217;99', wptexturize("Class of '99"));
 	}
 
-	//WP Ticket #15241 and #4539
+	/**
+	 * @ticket 4539
+	 * @ticket 15241
+	 */
 	function test_other_html() {
-		$this->knownWPBug(4539);
 		$this->assertEquals('&#8216;<strong>', wptexturize("'<strong>"));
 		$this->assertEquals('&#8216;<strong>Quoted Text</strong>&#8217;,', wptexturize("'<strong>Quoted Text</strong>',"));
 		$this->assertEquals('&#8220;<strong>Quoted Text</strong>&#8221;,', wptexturize('"<strong>Quoted Text</strong>",'));
@@ -579,24 +591,30 @@ class TestWPTexturize extends WP_UnitTestCase {
 		$this->assertEquals('&#8216;a 9&#8243; b&#8217;', wptexturize("'a 9\" b'"));
 	}
 
+	/**
+	 * @ticket 8775
+	 */
 	function test_wptexturize_quotes_around_numbers() {
-		$this->knownWPBug(8775);
 		$this->assertEquals('&#8220;12345&#8221;', wptexturize('"12345"'));
 		$this->assertEquals('&#8216;12345&#8217;', wptexturize('\'12345\''));
 		$this->assertEquals('&#8220;a 9&#8242; plus a &#8216;9&#8217;, maybe a 9&#8242; &#8216;9&#8217; &#8221;', wptexturize('"a 9\' plus a \'9\', maybe a 9\' \'9\' "'));
 		$this->assertEquals('<p>&#8216;99<br />&#8216;123&#8217;<br />&#8217;tis<br />&#8216;s&#8217;</p>', wptexturize('<p>\'99<br />\'123\'<br />\'tis<br />\'s\'</p>'));
 	}
 
+	/**
+	 * @ticket 8912
+	 */
 	function test_wptexturize_html_comments() {
-		$this->knownWPBug(8912);
 		$this->assertEquals('<!--[if !IE]>--><!--<![endif]-->', wptexturize('<!--[if !IE]>--><!--<![endif]-->'));
 		$this->assertEquals('<!--[if !IE]>"a 9\' plus a \'9\', maybe a 9\' \'9\' "<![endif]-->', wptexturize('<!--[if !IE]>"a 9\' plus a \'9\', maybe a 9\' \'9\' "<![endif]-->'));
 		$this->assertEquals('<ul><li>Hello.</li><!--<li>Goodbye.</li>--></ul>', wptexturize('<ul><li>Hello.</li><!--<li>Goodbye.</li>--></ul>'));
 	}
 
-	//WP Ticket #15241 and #4539
+	/**
+	 * @ticket 4539
+	 * @ticket 15241
+	 */
 	function test_entity_quote_cuddling() {
-		$this->knownWPBug(4539);
 		$this->assertEquals('&nbsp;&#8220;Testing&#8221;', wptexturize('&nbsp;"Testing"'));
 		$this->assertEquals('&#38;&#8220;Testing&#8221;', wptexturize('&#38;"Testing"'));
 	}
@@ -656,8 +674,10 @@ class TestEscUrl extends WP_UnitTestCase {
 		$this->assertEquals( 'feed:http://wordpress.org/feed/', esc_url( 'feed:http://wordpress.org/feed/' ) );
 	}
 
+	/**
+	 * @ticket 16859
+	 */
 	function test_square_brackets() {
-		$this->knownWPBug( 16859 );
 		$this->assertEquals( 'http://example.com/?foo%5Bbar%5D=baz', esc_url( 'http://example.com/?foo[bar]=baz' ) );
 		$this->assertEquals( 'http://example.com/?baz=bar&#038;foo%5Bbar%5D=baz', esc_url( 'http://example.com/?baz=bar&foo[bar]=baz' ) );
 		//IPv6 addresses in urls - RFC2732
@@ -731,11 +751,10 @@ PS.  Not yet subscribed for update notifications?  <a href="%1$s" title="Subscri
 
 	/**
 	 * wpautop() Should not alter the contents of "<pre>" elements
-	 * @link http://core.trac.wordpress.org/ticket/19855
-	 * @return void
+	 *
+	 * @ticket 19855
 	 */	
 	public function test_skip_pre_elements() {
-		$this->knownWPBug( 19855 );
 		$code = file_get_contents( DIR_TESTDATA . '/formatting/sizzle.js' );
 		$code = str_replace( "\r", '', $code );
 		$code = htmlentities( $code );
@@ -759,11 +778,10 @@ PS.  Not yet subscribed for update notifications?  <a href="%1$s" title="Subscri
 	
 	/**
 	 * wpautop() Should not add <br/> to "<input>" elements
-	 * @link http://core.trac.wordpress.org/ticket/16456
-	 * @return void
+	 *
+	 * @ticket 16456
 	 */	
 	public function test_skip_input_elements() {
-		$this->knownWPBug( 16456 );
 		$str = 'Username: <input type="text" id="username" name="username" /><br />Password: <input type="password" id="password1" name="password1" />';
 		$this->assertEquals( "<p>$str</p>", trim( wpautop( $str ) ) );
 	}
@@ -773,8 +791,10 @@ PS.  Not yet subscribed for update notifications?  <a href="%1$s" title="Subscri
  * @group formatting
  */
 class TestLikeEscape extends WP_UnitTestCase {
+	/**
+	 * @ticket 10041
+	 */
 	function test_like_escape() {
-		$this->knownWPBug(10041);
 
 		$inputs = array(
 			'howdy%', //Single Percent
@@ -1031,8 +1051,10 @@ class TestSanitizeUser extends WP_UnitTestCase {
 		$expected = is_multisite() ? 'captain awesome' : 'Captain Awesome';
 		$this->assertEquals($expected, sanitize_user($input));
 	}
+	/**
+	 * @ticket 10823
+	 */
 	function test_strips_entities() {
-		$this->knownWPBug( 10823 );
 		$this->assertEquals("ATT", sanitize_user("AT&amp;T"));
 		$this->assertEquals("ATT Test;", sanitize_user("AT&amp;T Test;"));
 		$this->assertEquals("AT&T Test;", sanitize_user("AT&T Test;"));
@@ -1128,8 +1150,10 @@ class TestSanitizeTitleWithDashes extends WP_UnitTestCase {
 		$this->assertEquals("penn-teller-bull", sanitize_title_with_dashes("penn & teller bull"));
 	}
 
+	/**
+	 * @ticket 10823
+	 */
 	function test_strips_entities() {
-		$this->knownWPBug( 10823 );
 		$this->assertEquals("no-entities-here", sanitize_title_with_dashes("No &nbsp; Entities &ndash; Here &amp;"));
 		$this->assertEquals("one-two", sanitize_title_with_dashes("One &amp; Two", '', 'save'));
 		$this->assertEquals("one-two", sanitize_title_with_dashes("One &#123; Two;", '', 'save'));
@@ -1174,13 +1198,17 @@ class TestSanitizeTitleWithDashes extends WP_UnitTestCase {
 		$this->assertEquals("just-a-slug", sanitize_title_with_dashes("Just ™ a Slug", '', 'save'));
 	}
 
+	/**
+	 * @ticket 19820
+	 */
 	function test_replaces_multiply_sign() {
-		$this->knownWPBug(19820);
 		$this->assertEquals("6x7-is-42", sanitize_title_with_dashes("6×7 is 42", '', 'save'));
 	}
 
+	/**
+	 * @ticket 20772
+	 */
 	function test_replaces_standalone_diacritic() {
-		$this->knownWPBug(20772);
 		$this->assertEquals("aaaa", sanitize_title_with_dashes("āáǎà", '', 'save'));
 	}
 
@@ -1196,8 +1224,10 @@ class TestConvertChars extends WP_UnitTestCase {
 		$this->assertEquals($output, convert_chars($input));
 	}
 
+	/**
+	 * @ticket 20503
+	 */
 	function test_replaces_latin_letter_z_with_caron() {
-		$this->knownWPBug(20503);
 		$input = "&#142;&#158;";
 		$output = "&#381;&#382;";
 		$this->assertEquals( $output, convert_chars( $input ) );
@@ -1444,9 +1474,10 @@ class TestRemoveAccents extends WP_UnitTestCase {
 		$this->assertEquals( 'abcdefghijkl', remove_accents( 'abcdefghijkl' ) );
 	}
 
+	/**
+	 * @ticket 9591
+	 */
 	public function test_remove_accents_latin1_supplement() {
-		$this->knownWPBug(9591);
-
 		$input = 'ªºÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ';
 		$output = 'aoAAAAAAAECEEEEIIIIDNOOOOOOUUUUYTHsaaaaaaaeceeeeiiiidnoooooouuuuythy';
 
@@ -1479,9 +1510,10 @@ class TestRemoveAccents extends WP_UnitTestCase {
 		$this->assertEquals( $output, remove_accents( $input ), 'remove_accents from ISO-8859-1 text' );
 	}
 
+	/**
+	 * @ticket 17738
+	 */
 	public function test_remove_accents_vowels_diacritic() {
-		$this->knownWPBug(17738);
-
 		// Vowels with diacritic
 		// unmarked
 		$this->assertEquals( 'OoUu', remove_accents( 'ƠơƯư' ) );
@@ -1497,9 +1529,10 @@ class TestRemoveAccents extends WP_UnitTestCase {
 		$this->assertEquals( 'AaAaAaEeEeIiOoOoOoUuUuYy', remove_accents( 'ẠạẬậẶặẸẹỆệỊịỌọỘộỢợỤụỰựỴỵ' ) );
 	}
 
+	/**
+	 * @ticket 20772
+	 */
 	public function test_remove_accents_hanyu_pinyin() {
-		$this->knownWPBug(20772);
-
 		// Vowels with diacritic (Chinese, Hanyu Pinyin)
 		// macron
 		$this->assertEquals( 'aeiouuAEIOUU', remove_accents( 'āēīōūǖĀĒĪŌŪǕ' ) );
@@ -1518,8 +1551,10 @@ class TestRemoveAccents extends WP_UnitTestCase {
  * @group formatting
  */
 class TestStripSlashesDeep extends WP_UnitTestCase {
+	/**
+	 * @ticket 18026
+	 */
 	function test_preserves_original_datatype() {
-		$this->knownWPBug(18026);
 
 		$this->assertEquals( true, stripslashes_deep( true ) );
 		$this->assertEquals( false, stripslashes_deep( false ) );

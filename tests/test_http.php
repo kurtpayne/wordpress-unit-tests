@@ -58,16 +58,20 @@ abstract class WP_HTTP_UnitTestCase extends WP_UnitTestCase {
 		$this->assertEquals(200, (int)$res['response']['code'] );
 	}
 
+	/**
+	 * @ticket 16855
+	 */
 	function test_redirect_on_301_no_redirect() {
-		$this->knownWPBug(16855);
 		// 5 > 0 & 301
 		$res = wp_remote_request($this->redirection_script . '?code=301&rt=' . 5, array('redirection' => 0) );
 		$this->assertFalse( is_wp_error($res) );
 		$this->assertEquals(301, (int)$res['response']['code'] );
 	}
 
+	/**
+	 * @ticket 16855
+	 */
 	function test_redirect_on_302_no_redirect() {
-		$this->knownWPBug(16855);
 		// 5 > 0 & 302
 		$res = wp_remote_request($this->redirection_script . '?code=302&rt=' . 5, array('redirection' => 0) );
 		$this->assertFalse( is_wp_error($res) );
@@ -88,8 +92,10 @@ abstract class WP_HTTP_UnitTestCase extends WP_UnitTestCase {
 		$this->assertEquals( 302, (int)$res['response']['code'] );
 	}
 
+	/**
+	 * @ticket 16855
+	 */
 	function test_redirect_on_head() {
-		$this->knownWPBug(16855);
 		// Redirections on HEAD request when Requested
 		$res = wp_remote_request($this->redirection_script . '?rt=' . 5, array('redirection' => 5, 'method' => 'HEAD') );
 		$this->assertFalse( is_wp_error($res) );
@@ -114,25 +120,34 @@ abstract class WP_HTTP_UnitTestCase extends WP_UnitTestCase {
 		$this->assertFalse( is_wp_error($res) );
 	}
 
+	/**
+	 * @ticket 16855
+	 */
 	function test_redirections_zero_redirections_specified() {
-		$this->knownWPBug(16855);
 		// 0 redirections asked for, Should return the document?
 		$res = wp_remote_request($this->redirection_script . '?code=302&rt=' . 5, array('redirection' => 0) );
 		$this->assertFalse( is_wp_error($res) );
 		$this->assertEquals( 302, (int)$res['response']['code'] );
 	}
 
+	/**
+	 * Do not redirect on non 3xx status codes
+	 *
+	 * @ticket 16889
+	 *
+	 * Is this valid? Streams, cURL and therefore PHP Extension (ie. all PHP Internal) follow redirects
+	 * on all status codes, currently all of WP_HTTP follows this template.
+	 */
 	function test_location_header_on_200() {
-		//$this->knownWPBug(16889);
-		// Is this valid? Streams, cURL and therefor, PHP Extension (ie. all PHP Internal) follow redirects on all status codes, currently all of WP_HTTP follows this template.
-
-		// Do not redirect on non 3xx status codes
-		//$res = wp_remote_request( $this->redirection_script . '?200-location=true' ); // Prints PASS on initial load, FAIL if the client follows the specified redirection
-		//$this->assertEquals( 'PASS', $res['body']);
+		// Prints PASS on initial load, FAIL if the client follows the specified redirection
+		$res = wp_remote_request( $this->redirection_script . '?200-location=true' );
+		$this->assertEquals( 'PASS', $res['body']);
 	}
 
+	/**
+	 * @ticket 11888
+	 */
 	function test_send_headers() {
-		$this->knownWPBug(11888);
 		// Test that the headers sent are recieved by the server
 		$headers = array('test1' => 'test', 'test2' => 0, 'test3' => '');
 		$res = wp_remote_request( $this->redirection_script . '?header-check', array('headers' => $headers) );

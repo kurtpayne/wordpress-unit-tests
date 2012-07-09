@@ -150,8 +150,10 @@ class WPTestCronScheduling extends WP_UnitTestCase {
 		$this->assertFalse( wp_next_scheduled($hook, $args) );
 	}
 
+	/**
+	 * @ticket 10468
+	 */
 	function test_clear_schedule_new_args() {
-		$this->knownWPBug(10468);
 		$hook = rand_str();
 		$args = array(rand_str());
 		$multi_hook = rand_str();
@@ -187,8 +189,10 @@ class WPTestCronScheduling extends WP_UnitTestCase {
 
 	}
 
+	/**
+	 * @ticket 6966
+	 */
 	function test_duplicate_event() {
-		$this->knownWPBug(6966);
 		// duplicate events close together should be skipped
 		$hook = rand_str();
 		$args = array(rand_str());
@@ -204,8 +208,10 @@ class WPTestCronScheduling extends WP_UnitTestCase {
 		$this->assertEquals( $ts1, wp_next_scheduled($hook, $args) );
 	}
 
+	/**
+	 * @ticket 6966
+	 */
 	function test_not_duplicate_event() {
-		$this->knownWPBug(6966);
 		// duplicate events far apart should work normally
 		$hook = rand_str();
 		$args = array(rand_str());

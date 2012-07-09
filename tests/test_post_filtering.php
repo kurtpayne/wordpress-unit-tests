@@ -70,10 +70,11 @@ EOF;
 		$this->assertEquals( $expected, $post->post_content );
 	}
 
-	// test kses bug. xhtml does not require space before closing
-	// empty element
+	/**
+	 * test kses bug. xhtml does not require space before closing empty element
+	 * @ticket 12394
+	 */
 	function test_post_content_xhtml_empty_elem() {
-		$this->knownWPBug( 12394 );
 		$content = <<<EOF
 <img src='foo' width='500' height='300'/>
 EOF;
@@ -88,10 +89,11 @@ EOF;
 		$this->assertEquals( $expected, $post->post_content );
 	}
 
-	// make sure unbalanced tags are fixed when they span a --more-- tag
+	/**
+	 * make sure unbalanced tags are fixed when they span a --more-- tag
+	 * @ticket 6297
+	 */
 	function test_post_content_unbalanced_more() {
-		$this->knownWPBug(6297);
-
 		$content = <<<EOF
 <em>some text<!--more-->
 that's continued after the jump</em>
@@ -108,10 +110,11 @@ EOF;
 		$this->assertEquals( $expected, $post->post_content );
 	}
 
-	// make sure unbalanced tags are fixed when they span a --nextpage-- tag
+	/**
+	 * make sure unbalanced tags are fixed when they span a --nextpage-- tag
+	 * @ticket 6297
+	 */
 	function test_post_content_unbalanced_nextpage() {
-		$this->knownWPBug(6297);
-
 		$content = <<<EOF
 <em>some text<!--nextpage-->
 that's continued after the jump</em>
@@ -128,10 +131,11 @@ EOF;
 		$this->assertEquals( $expected, $post->post_content );
 	}
 
-	// make sure unbalanced tags are fixed when they span both --more-- and --nextpage-- tags (in that order)
+	/**
+	 * make sure unbalanced tags are fixed when they span both --more-- and --nextpage-- tags (in that order)
+	 * @ticket 6297
+	 */
 	function test_post_content_unbalanced_more_nextpage() {
-		$this->knownWPBug(6297);
-
 		$content = <<<EOF
 <em>some text<!--more-->
 that's continued after the jump</em>
@@ -156,10 +160,11 @@ EOF;
 		$this->assertEquals( $expected, $post->post_content );
 	}
 
-	// make sure unbalanced tags are fixed when they span both --nextpage-- and --more-- tags (in that order)
+	/**
+	 * make sure unbalanced tags are fixed when they span both --nextpage-- and --more-- tags (in that order)
+	 * @ticket 6297
+	 */
 	function test_post_content_unbalanced_nextpage_more() {
-		$this->knownWPBug(6297);
-
 		$content = <<<EOF
 <em>some text<!--nextpage-->
 that's continued after the jump</em>

@@ -70,8 +70,10 @@ class Test_WP_Theme extends WP_UnitTestCase {
 		$this->assertEquals( 'subdir/theme2', $theme->get_template() );
 	}
 
+	/**
+	 * @ticket 20313
+	 */
 	function test_new_WP_Theme_subdir_bad_root() {
-		$this->knownWPBug( 20313 );
 		// This is what get_theme_data() does when you pass it a style.css file for a theme in a subdir.
 		$theme = new WP_Theme( 'theme2', $this->theme_root . '/subdir' );
 

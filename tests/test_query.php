@@ -357,8 +357,10 @@ class TestWPQueryVars extends WP_UnitTestCase {
 		$this->assertQueryTrue('is_search');
 	}
 
+	/**
+	 * @ticket 13961
+	 */
 	function test_search_encoded_chars() {
-		$this->knownWPBug(13961);
 		$this->go_to('/search/F%C3%BCnf%2Bbar/');
 		$this->assertEquals( get_query_var( 's' ), 'Fünf+bar' );
 	}

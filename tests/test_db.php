@@ -43,11 +43,11 @@ class TestWPDB extends WP_UnitTestCase {
 	/**
 	 * Test that floats formatted as "0,700" get sanitized properly by wpdb
 	 * @global mixed $wpdb
+	 *
+	 * @ticket 19861
 	 */
 	public function test_locale_floats() {
 		global $wpdb;
-
-		$this->knownWPBug( 19861 );
 
 		// Save the current locale
 		$current_locale = setlocale( LC_ALL, NULL );

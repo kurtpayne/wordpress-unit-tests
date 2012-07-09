@@ -124,10 +124,14 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 			return;
 		$tickets = PHPUnit_Util_Test::getTickets( get_class( $this ), $this->getName() );
 		foreach ( $tickets as $ticket ) {
+			$annotation = explode( ' ', $ticket, 2 );
+			$ticket     = $annotation[0];
+			$message    = isset( $annotation[1] ) ? $annotation[1] : '';
+
 			if ( is_numeric( $ticket ) ) {
-				$this->knownWPBug( $ticket );
+				$this->knownWPBug( $ticket, $message );
 			} elseif ( 'UT' == substr( $ticket, 0, 2 ) ) {
-				$this->knownUTBug( substr( $ticket, 2 ) );
+				$this->knownUTBug( substr( $ticket, 2 ), $message );
 			}
 		}
 	}
@@ -135,27 +139,27 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 	/**
 	 * Skips the current test if there is an open WordPress ticket with id $ticket_id
 	 */
-	function knownWPBug( $ticket_id ) {
+	function knownWPBug( $ticket_id, $message = '' ) {
 		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://core.trac.wordpress.org', $ticket_id ) ) {
-			$this->markTestSkipped( sprintf( 'WordPress Ticket #%d is not fixed', $ticket_id ) );
+			$this->markTestSkipped( sprintf( 'WordPress Ticket #%d is not fixed', $ticket_id ) . "\n" . $message );
 		}
 	}
 
 	/**
 	 * Skips the current test if there is an open unit tests ticket with id $ticket_id
 	 */
-	function knownUTBug( $ticket_id ) {
+	function knownUTBug( $ticket_id, $message = '' ) {
 		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://unit-tests.trac.wordpress.org', $ticket_id ) ) {
-			$this->markTestSkipped( sprintf( 'Unit Tests Ticket #%d is not fixed', $ticket_id ) );
+			$this->markTestSkipped( sprintf( 'Unit Tests Ticket #%d is not fixed', $ticket_id ) . "\n" . $message );
 		}
 	}
 
 	/**
 	 * Skips the current test if there is an open plugin ticket with id $ticket_id
 	 */
-	function knownPluginBug( $ticket_id ) {
+	function knownPluginBug( $ticket_id, $message = '' ) {
 		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://plugins.trac.wordpress.org', $ticket_id ) ) {
-			$this->markTestSkipped( sprintf( 'WordPress Plugin Ticket #%d is not fixed', $ticket_id ) );
+			$this->markTestSkipped( sprintf( 'WordPress Plugin Ticket #%d is not fixed', $ticket_id ) . "\n" . $message );
 		}
 	}
 

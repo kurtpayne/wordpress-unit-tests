@@ -7,9 +7,10 @@
  */
 class WP_Test_Actions_Closures extends WP_UnitTestCase {
 
+	/**
+	 * @ticket 10493
+	 */
 	function test_action_closure() {
-		$this->knownWPBug(10493);
-
 		$tag = rand_str();
 		$closure = function($a, $b) { $GLOBALS[$a] = $b;};
 		add_action($tag, $closure, 10, 2);

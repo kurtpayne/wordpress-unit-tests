@@ -538,46 +538,4 @@ class WPTestUserCapabilities extends WP_UnitTestCase {
 		$this->assertFalse($author_2->has_cap('delete_page', $page));
 		$this->assertFalse($contributor->has_cap('delete_page', $page));
 	}
-
-	function test_usermeta_caps() {
-
-		$this->knownWPBug(5541);
-
-		// make sure an old style usermeta capabilities entry is still recognized by the new code
-
-		$id = $this->factory->user->create( array( 'role' => 'author' ) );
-		$user = new WP_User($id);
-		$this->assertTrue($user->exists(), "Problem getting user $id");
-
-		global $wpdb;
-		if (!empty($wpdb->user_role))
-			$wpdb->query("DELETE FROM {$wpdb->user_role} WHERE user_id = {$id}");
-
-		update_usermeta($id, $user->cap_key, array('editor' => true));
-
-		$user = new WP_User($id);
-		$this->assertTrue($user->exists(), "Problem getting user $id");
-
-		// check a few of the main capabilities
-		$this->assertEquals(array('editor'), $user->roles);
-		$this->assertTrue($user->has_cap('moderate_comments'));
-		$this->assertTrue($user->has_cap('manage_categories'));
-		$this->assertTrue($user->has_cap('upload_files'));
-		$this->assertTrue($user->has_cap('level_7'));
-
-		// and a few capabilities this user doesn't have
-		$this->assertFalse($user->has_cap('switch_themes'));
-		$this->assertFalse($user->has_cap('edit_users'));
-		$this->assertFalse($user->has_cap('level_8'));
-	}
-
-	function _test_generate_role_thingy() {
-		global $wp_roles;
-		foreach (array_keys($wp_roles->roles) as $role) {
-			$obj = $wp_roles->role_objects[$role];
-
-			echo "\nadd_role('{$role}', '{$obj->name}', ".var_export($obj->capabilities, true)."\n";
-			echo ")\n";
-		}
-	}
 }

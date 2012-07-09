@@ -82,8 +82,10 @@ class TestImageMetaFunctions extends WP_UnitTestCase {
 
 	}
 
+	/**
+	 * @ticket 6571
+	 */
 	function test_exif_error() {
-		$this->knownWPBug(6571);
 
 		// http://trac.wordpress.org/ticket/6571
 		// this triggers a warning mesage when reading the exif block
@@ -117,8 +119,10 @@ class TestImageMetaFunctions extends WP_UnitTestCase {
 		$this->assertEquals('', $out['title']);
 	}
 
+	/**
+	 * @ticket 9417
+	 */
 	function test_utf8_iptc_tags() {
-		$this->knownWPBug(9417);
 
 		// trilingual UTF-8 text in the ITPC caption-abstract field 
 		$out = wp_read_image_metadata(DIR_TESTDATA.'/images/test-image-iptc.jpg');

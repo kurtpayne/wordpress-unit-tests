@@ -35,9 +35,10 @@ class TestXMLRPCServer_wp_getPage extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( 403, $result->code );
 	}
 
+	/**
+	 * @ticket 20336
+	 */
 	function test_invalid_pageid() {
-		$this->knownWPBug(20336);
-
 		$this->make_user_by_role( 'editor' );
 
 		$result = $this->myxmlrpcserver->wp_getPage( array( 1, 9999, 'editor', 'editor' ) );

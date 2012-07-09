@@ -6,10 +6,12 @@
  * @group kses
  */
 class Test_wp_filter_post_kses extends WP_UnitTestCase {
+
+	/**
+	 * @ticket 20210
+	 */
 	function test_wp_filter_post_kses_address() {
 		global $allowedposttags;
-
-		$this->knownWPBug( 20210 );
 
 		$attributes = array(
 			'class' => 'classname',
@@ -24,10 +26,11 @@ class Test_wp_filter_post_kses extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 20210
+	 */
 	function test_wp_filter_post_kses_a() {
 		global $allowedposttags;
-
-		$this->knownWPBug( 20210 );
 
 		$attributes = array(
 			'class' => 'classname',
@@ -47,10 +50,11 @@ class Test_wp_filter_post_kses extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 20210
+	 */
 	function test_wp_filter_post_kses_abbr() {
 		global $allowedposttags;
-
-		$this->knownWPBug( 20210 );
 
 		$attributes = array(
 			'class' => 'classname',

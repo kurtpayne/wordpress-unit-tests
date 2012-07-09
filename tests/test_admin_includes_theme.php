@@ -35,9 +35,11 @@ class TestPageTemplates extends WP_UnitTestCase {
 		return $this->theme_root;
 	}
 
+	/**
+	 * @ticket 10959
+	 * @ticket 11216
+	 */
 	function test_page_templates() {
-		$this->knownWPBug(10959);
-		$this->knownWPBug(11216);
 		$theme = get_theme('Page Template Theme');
 		$this->assertFalse( empty($theme) );
 

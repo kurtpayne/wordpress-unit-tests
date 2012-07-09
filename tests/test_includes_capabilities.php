@@ -215,8 +215,10 @@ class TestMapMetaCap extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 20488
+	 */
 	function test_file_edit_caps_not_reliant_on_unfiltered_html_constant() {
-		$this->knownWPBug(20488);
 		if ( defined( 'DISALLOW_FILE_MODS' ) || defined( 'DISALLOW_FILE_EDIT' ) )
 			$this->markTestSkipped('DISALLOW_FILE_MODS or DISALLOW_FILE_EDIT is defined.');
 

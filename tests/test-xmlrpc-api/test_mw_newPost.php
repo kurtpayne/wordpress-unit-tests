@@ -85,8 +85,10 @@ class TestXMLRPCServer_mw_newPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( 401, $result->code );
 	}
 
+	/**
+	 * @ticket 20356
+	 */
 	function test_invalid_author() {
-		$this->knownWPBug( 20356 );
 		$this->make_user_by_role( 'editor' );
 
 		$post = array( 'title' => 'Test', 'wp_author_id' => 99999999 );

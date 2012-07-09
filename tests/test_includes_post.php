@@ -381,12 +381,11 @@ class WPTestIncludesPost extends WP_UnitTestCase {
 		$this->assertEquals(false, $this->_next_schedule_for_post('publish_future_post', $id));
 	}
 
+	/**
+	 * @ticket 5364
+	 */
 	function test_delete_future_post_cron() {
-		// http://trac.wordpress.org/ticket/5364
 		// "When I delete a future post using wp_delete_post($post->ID) it does not update the cron correctly."
-
-		#$this->knownWPBug(5364);
-
 		$future_date = strtotime('+1 day');
 
 		$post = array(
@@ -409,7 +408,7 @@ class WPTestIncludesPost extends WP_UnitTestCase {
 		$this->assertFalse($this->_next_schedule_for_post('publish_future_post', $id));
 	}
 
-	function test_permlink_without_title() {
+	function test_permalink_without_title() {
 		// bug: permalink doesn't work if post title is empty
 		// wpcom #663, also http://trac.wordpress.org/ticket/5305
 
@@ -435,12 +434,10 @@ class WPTestIncludesPost extends WP_UnitTestCase {
 		$wp_rewrite->set_permalink_structure('');
 	}
 
-	function test_attachment_url() {
-	}
-
+	/**
+	 * @ticket 21013
+	 */
 	function test_wp_unique_post_slug_with_non_latin_slugs() {
-		$this->knownWPBug(21013);
-
 		$inputs = array(
 			'Αρνάκι άσπρο και παχύ της μάνας του καμάρι, και άλλα τραγούδια',
 			'Предлагаем супер металлообрабатывающее оборудование',
@@ -895,9 +892,10 @@ class WPTestPostMeta extends WP_UnitTestCase {
 		$this->assertEquals( $data, $meta->meta_value );
 	}
 
+	/**
+	 * @ticket 12860
+	 */
 	function test_funky_post_meta() {
-		$this->knownWPBug(12860);
-
 		$classy = new StdClass();
 		$classy->ID = 1;
 		$classy->stringy = "I love slashes\\\\";
@@ -921,14 +919,6 @@ class WPTestPostMeta extends WP_UnitTestCase {
  * @group post
  */
 class WPTestPostTypes extends WP_UnitTestCase {
-	function setUp() {
-		parent::setUp();
-	}
-
-	function tearDown() {
-		parent::tearDown();
-	}
-
 	function test_register_post_type() {
 		$this->assertNull( get_post_type_object( 'foo' ) );
 		register_post_type( 'foo' );

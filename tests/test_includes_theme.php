@@ -132,8 +132,10 @@ class TestDefaultThemes extends WP_UnitTestCase {
 		}
 	}
 
+	/**
+	 * @ticket 20897
+	 */
 	function test_extra_theme_headers() {
-		$this->knownWPBug( 20897 );
 		$wp_theme = wp_get_theme( $this->theme_slug );
 		$this->assertNotEmpty( $wp_theme->get('License') );
 		$path_to_style_css = $wp_theme->get_theme_root() . '/' . $wp_theme->get_stylesheet() . '/style.css';
@@ -497,9 +499,10 @@ class TestLargeThemeDir extends WP_UnitTestCase {
 		$this->assertLessThanOrEqual(100000, $length );
 	}
 
-	// #11214 looked at how we can reduce the in-memory size even more
+	/**
+	 * @ticket 11214 looked at how we can reduce the in-memory size even more
+	 */
 	function test_smaller_storage() {
-		$this->knownWPBug(11214);
 		$themes = get_themes();
 		$this->_filter_out_themes_not_in_root( $themes );
 		$theme_names = array_keys($themes);

@@ -192,8 +192,10 @@ class WPTestFilters extends WP_UnitTestCase {
 		$this->assertEquals(array($tag), $a->get_tags());
 	}
 
+	/**
+	 * @ticket 9886
+	 */
 	function test_filter_ref_array() {
-		$this->knownWPBug(9886);
 		$obj = new stdClass();
 		$a = new MockAction();
 		$tag = rand_str();
@@ -209,8 +211,10 @@ class WPTestFilters extends WP_UnitTestCase {
 		$this->assertFalse( empty($args[0][0]->foo) );
 	}
 
+	/**
+	 * @ticket 12723
+	 */
 	function test_filter_ref_array_result() {
-		$this->knownWPBug(12723);
 		$obj = new stdClass();
 		$a = new MockAction();
 		$b = new MockAction();
