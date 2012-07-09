@@ -127,10 +127,10 @@ EOF;
 /**
  * @group media
  * @group gallery
+ * @ticket UT30
  */
 class WPTestGalleryPost extends WP_UnitTestCase { // _WPDataset1
 	function setUp() {
-		$this->knownUTBug(30);
 		parent::setUp();
 		global $wp_rewrite;
 		$wp_rewrite->set_permalink_structure('/%year%/%monthnum%/%day%/%postname%/');

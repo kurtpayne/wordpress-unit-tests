@@ -163,9 +163,10 @@ class TestShortcode extends WP_UnitTestCase {
 		$this->assertEquals($expected, $out);
 	}
 
+	/**
+	 * @ticket 6518
+	 */
 	function test_tag_escaped() {
-		$this->knownWPBug(6518);
-
 		$out = do_shortcode('[[footag]] [[bartag foo="bar"]]');
 		$this->assertEquals('[footag] [bartag foo="bar"]', $out);
 
@@ -235,19 +236,23 @@ EOF;
 		$this->assertEquals(strip_ws($expected), strip_ws($out));
 	}
 
-	//TODO Review this test as it may be incorrect
+	/**
+	 * @ticket 6562
+	 *
+	 * @TODO Review this test as it may be incorrect
+	 */
 	function test_utf8_whitespace_1() {
-		// see http://trac.wordpress.org/ticket/6562
-		$this->knownWPBug(6562);
 		do_shortcode("[test-shortcode-tag foo=\"bar\" \x00\xA0baz=\"123\"]");
 		$this->assertEquals( array('foo' => 'bar', 'baz' => '123'), $this->atts );
 		$this->assertEquals( '', $this->content );
 	}
 
-	//TODO Review this test as it may be incorrect
+	/**
+	 * @ticket 6562
+	 *
+	 * @TODO Review this test as it may be incorrect
+	 */
 	function test_utf8_whitespace_2() {
-		// see http://trac.wordpress.org/ticket/6562
-		$this->knownWPBug(6562);
 		do_shortcode("[test-shortcode-tag foo=\"bar\" \x20\x0babc=\"def\"]");
 		$this->assertEquals( array('foo' => 'bar', 'abc' => 'def'), $this->atts );
 		$this->assertEquals( '', $this->content );
@@ -263,9 +268,10 @@ EOF;
 		$this->assertEquals( $test_string, shortcode_unautop( wpautop( $test_string ) ) );
 	}
 
+	/**
+	 * @ticket 14050
+	 */
 	function test_multiple_shortcode_unautop() {
-		// see http://trac.wordpress.org/ticket/14050
-		$this->knownWPBug(14050);
 		// a blank line is added at the end, so test with it already there
 		$test_string = <<<EOF
 [footag]
@@ -277,8 +283,10 @@ EOF;
 		$this->assertEquals( $test_string, $actual );
 	}
 
+	/**
+	 * @ticket 10326
+	 */
 	function test_strip_shortcodes() {
-		$this->knownWPBug( 10326 );
 		$this->assertEquals('before', strip_shortcodes('before[gallery]'));
 		$this->assertEquals('after', strip_shortcodes('[gallery]after'));
 		$this->assertEquals('beforeafter', strip_shortcodes('before[gallery]after'));

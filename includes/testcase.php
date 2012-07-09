@@ -118,8 +118,22 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 		$GLOBALS['wp']->main($parts['query']);
 	}
 
+	protected function checkRequirements() {
+		parent::checkRequirements();
+		if ( WP_TESTS_FORCE_KNOWN_BUGS )
+			return;
+		$tickets = PHPUnit_Util_Test::getTickets( get_class( $this ), $this->getName() );
+		foreach ( $tickets as $ticket ) {
+			if ( is_numeric( $ticket ) ) {
+				$this->knownWPBug( $ticket );
+			} elseif ( 'UT' == substr( $ticket, 0, 2 ) ) {
+				$this->knownUTBug( substr( $ticket, 2 ) );
+			}
+		}
+	}
+
 	/**
-	 * Skips the current test if there is open WordPress ticket with id $ticket_id
+	 * Skips the current test if there is an open WordPress ticket with id $ticket_id
 	 */
 	function knownWPBug( $ticket_id ) {
 		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://core.trac.wordpress.org', $ticket_id ) ) {
@@ -128,7 +142,7 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * Skips the current test if there is open unit tests ticket with id $ticket_id
+	 * Skips the current test if there is an open unit tests ticket with id $ticket_id
 	 */
 	function knownUTBug( $ticket_id ) {
 		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://unit-tests.trac.wordpress.org', $ticket_id ) ) {
@@ -137,7 +151,7 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * Skips the current test if there is open plugin ticket with id $ticket_id
+	 * Skips the current test if there is an open plugin ticket with id $ticket_id
 	 */
 	function knownPluginBug( $ticket_id ) {
 		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://plugins.trac.wordpress.org', $ticket_id ) ) {
