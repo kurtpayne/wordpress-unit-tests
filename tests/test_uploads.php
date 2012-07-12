@@ -54,13 +54,14 @@ class TestUploadFunctions extends WP_UnitTestCase {
 	 * @ticket 5953
 	 */
 	function test_upload_dir_absolute() {
+		$path = '/tmp/wp-unit-test';
 		// wp_upload_dir() with an absolute upload path
-		update_option( 'upload_path', '/tmp' );
+		update_option( 'upload_path', $path );
 		// doesn't make sense to use an absolute file path without setting the url path
 		update_option( 'upload_url_path', '/baz' );
 		$info = wp_upload_dir();
 		$this->assertEquals( '/baz/' . gmstrftime('%Y/%m'), $info['url'] );
-		$this->assertEquals( '/tmp/' . gmstrftime('%Y/%m'), $info['path'] );
+		$this->assertEquals( "$path/" . gmstrftime('%Y/%m'), $info['path'] );
 		$this->assertEquals( gmstrftime('/%Y/%m'), $info['subdir'] );
 		$this->assertEquals( '', $info['error'] );
 	}
