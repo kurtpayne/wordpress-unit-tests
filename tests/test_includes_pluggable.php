@@ -281,6 +281,7 @@ class TestUserFunction extends WP_UnitTestCase {
 	function test_get_userdata() {
 		$id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$this->assertFalse( get_userdata( 0 ) );
+		$this->assertFalse( get_userdata( '0' ) );
 		$this->assertFalse( get_userdata( 'string' ) );
 		$this->assertFalse( get_userdata( array( 'array' ) ) );
 	}
