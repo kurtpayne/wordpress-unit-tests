@@ -41,7 +41,7 @@ class TestWP_Scripts extends WP_UnitTestCase {
 		// No scripts left to print
 		$this->assertEquals("", get_echo('wp_print_scripts'));
 	}
-	
+
 	/**
 	 * Test the different protocol references in wp_enqueue_script
 	 * @global WP_Scripts $wp_scripts
@@ -62,7 +62,7 @@ class TestWP_Scripts extends WP_UnitTestCase {
 		// Try with an HTTPS reference
 		wp_enqueue_script( 'jquery-https', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' );
 		$expected  .= "<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=$ver'></script>\n";
-		
+
 		// Try with an automatic protocol reference (//)
 		wp_enqueue_script( 'jquery-doubleslash', '//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' );
 		$expected  .= "<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=$ver'></script>\n";
@@ -75,7 +75,7 @@ class TestWP_Scripts extends WP_UnitTestCase {
 		// Try with a bad protocol
 		wp_enqueue_script( 'jquery-ftp', 'ftp://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' );
 		$expected  .= "<script type='text/javascript' src='{$wp_scripts->base_url}ftp://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=$ver'></script>\n";
-		
+
 		// Go!
 		$this->assertEquals( $expected, get_echo( 'wp_print_scripts' ) );
 

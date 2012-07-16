@@ -29,8 +29,8 @@ CAP;
   }
 
   function test_img_caption_shortcode_with_old_format() {
-    $result = img_caption_shortcode( 
-      array( 'width' => 20, 'caption' => $this->caption ) 
+    $result = img_caption_shortcode(
+      array( 'width' => 20, 'caption' => $this->caption )
     );
     $this->assertEquals( 2, preg_match_all( '/wp-caption/', $result, $_r ) );
     $this->assertEquals( 1, preg_match_all( '/alignnone/', $result, $_r ) );
@@ -39,8 +39,8 @@ CAP;
   }
 
   function test_img_caption_shortcode_with_old_format_id_and_align() {
-    $result = img_caption_shortcode( 
-      array( 
+    $result = img_caption_shortcode(
+      array(
         'width' => 20,
         'caption' => $this->caption,
         'id' => '"myId',
@@ -53,8 +53,8 @@ CAP;
   }
 
   function test_new_img_caption_shortcode_with_html_caption() {
-    $result = img_caption_shortcode( 
-      array( 'width' => 20, 'caption' => $this->html_content ) 
+    $result = img_caption_shortcode(
+      array( 'width' => 20, 'caption' => $this->html_content )
     );
     $our_preg = preg_quote( $this->html_content );
 
@@ -62,7 +62,7 @@ CAP;
   }
 
   function test_new_img_caption_shortcode_new_format() {
-    $result = img_caption_shortcode( 
+    $result = img_caption_shortcode(
       array( 'width' => 20 ),
       $this->img_content . $this->html_content
     );
@@ -75,7 +75,7 @@ CAP;
 
   function test_new_img_caption_shortcode_new_format_and_linked_image() {
     $linked_image = "<a href='#'>{$this->img_content}</a>";
-    $result = img_caption_shortcode( 
+    $result = img_caption_shortcode(
       array( 'width' => 20 ),
       $linked_image . $this->html_content
     );
@@ -88,7 +88,7 @@ CAP;
 
   function test_new_img_caption_shortcode_new_format_and_linked_image_with_newline() {
     $linked_image = "<a href='#'>{$this->img_content}</a>";
-    $result = img_caption_shortcode( 
+    $result = img_caption_shortcode(
       array( 'width' => 20 ),
       $linked_image . "\n\n" . $this->html_content
     );

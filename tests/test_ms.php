@@ -31,7 +31,7 @@ class WPTestMS extends WP_UnitTestCase {
 		}
 
 		// update the blog count cache to use get_blog_count()
-		wp_update_network_counts(); 
+		wp_update_network_counts();
 		$this->assertEquals( 4 + 1, (int) get_blog_count() );
 
 		$drop_tables = false;
@@ -52,7 +52,7 @@ class WPTestMS extends WP_UnitTestCase {
 		}
 
 		// update the blog count cache to use get_blog_count()
-		wp_update_network_counts(); 
+		wp_update_network_counts();
 		$this->assertEquals( 1, get_blog_count() );
 	}
 
@@ -152,7 +152,7 @@ class WPTestMS extends WP_UnitTestCase {
 		// activate the plugin sitewide
 		activate_plugin($path, '', $network_wide = true);
 		$active_plugins = wp_get_active_network_plugins();
-		$this->assertEquals( Array(WP_PLUGIN_DIR . '/hello.php'), $active_plugins ); 
+		$this->assertEquals( Array(WP_PLUGIN_DIR . '/hello.php'), $active_plugins );
 
 		//deactivate the plugin
 		deactivate_plugins($path);
@@ -188,12 +188,12 @@ class WPTestMS extends WP_UnitTestCase {
 	}
 
 	function test_wp_schedule_update_network_counts() {
-		$this->assertFalse(wp_next_scheduled('update_network_counts'));	
+		$this->assertFalse(wp_next_scheduled('update_network_counts'));
 
 		// We can't use wp_schedule_update_network_counts() because WP_INSTALLING is set
 		wp_schedule_event(time(), 'twicedaily', 'update_network_counts');
 
-		$this->assertInternalType('int', wp_next_scheduled('update_network_counts'));	
+		$this->assertInternalType('int', wp_next_scheduled('update_network_counts'));
 	}
 
 	function test_users_can_register_signup_filter() {
@@ -202,13 +202,13 @@ class WPTestMS extends WP_UnitTestCase {
 		$this->assertFalse( users_can_register_signup_filter() );
 
 		update_site_option('registration', 'all');
-		$this->assertTrue( users_can_register_signup_filter() );	
+		$this->assertTrue( users_can_register_signup_filter() );
 
 		update_site_option('registration', 'user');
 		$this->assertTrue( users_can_register_signup_filter() );
 
 		update_site_option('registration', 'none');
-		$this->assertFalse( users_can_register_signup_filter() );		
+		$this->assertFalse( users_can_register_signup_filter() );
 	}
 
 	function test_get_dashboard_blog() {
@@ -332,7 +332,7 @@ class WPTestMS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( 'example.com', $blog->domain );
 		$this->assertEquals( 'my_path/', $blog->path );
-		$this->assertEquals( '0', $blog->spam );	
+		$this->assertEquals( '0', $blog->spam );
 
 		$result = update_blog_details( $blog_id, array('domain' => 'example2.com','spam' => 1) );
 		$this->assertTrue( $result );

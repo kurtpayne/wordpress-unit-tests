@@ -35,7 +35,7 @@ class WP_Test_Canonical extends WP_UnitTestCase {
 
 		// Already created by install defaults:
 		// $this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'uncategorized' ) );
-		
+
 		$this->term_ids = array();
 
 		$this->factory->post->create( array( 'import_id' => 587, 'post_title' => 'post-format-test-audio', 'post_date' => '2008-06-02 00:00:00' ) );
@@ -52,11 +52,11 @@ class WP_Test_Canonical extends WP_UnitTestCase {
 		$this->factory->comment->create_post_comments( $post_id, 15 );
 
 		$this->factory->post->create( array( 'post_date' => '2008-09-05 00:00:00' ) );
-		
+
 		$this->factory->post->create( array( 'import_id' => 123 ) );
 		$this->factory->post->create( array( 'import_id' => 1 ) );
 		$this->factory->post->create( array( 'import_id' => 358 ) );
-		
+
 		$this->factory->post->create( array( 'post_type' => 'page', 'post_title' => 'sample-page' ) );
 		$this->factory->post->create( array( 'post_type' => 'page', 'post_title' => 'about' ) );
 		$post_id = $this->factory->post->create( array( 'post_type' => 'page', 'post_title' => 'parent-page' ) );
@@ -74,7 +74,7 @@ class WP_Test_Canonical extends WP_UnitTestCase {
 
 		$this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'cat-a' ) );
 		$this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'cat-b' ) );
-		
+
 		$this->factory->term->create( array( 'name' => 'post-formats' ) );
 	}
 
@@ -105,7 +105,7 @@ class WP_Test_Canonical extends WP_UnitTestCase {
 			$this->knownWPBug( $ticket );
 
 		$ticket_ref = ($ticket > 0) ? 'Ticket #' . $ticket : null;
-		
+
 		if ( is_string($expected) )
 			$expected = array('url' => $expected);
 		elseif ( is_array($expected) && !isset($expected['url']) && !isset($expected['qv']) )
@@ -359,7 +359,7 @@ class WP_Canonical_NoRewrite extends WP_Test_Canonical {
 		 *      array( expected query vars to be set, same as 'qv' above )
 		 *      (string) expected redirect location
 		 * [3]: (optional) The ticket the test refers to, Can be skipped if unknown.
-		 */		
+		 */
 		return array(
 			array( '/?p=123', '/?p=123' ),
 

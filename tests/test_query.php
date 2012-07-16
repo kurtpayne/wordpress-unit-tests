@@ -239,7 +239,7 @@ class TestWPQueryVars extends WP_UnitTestCase {
 		global $wp_query;
 		$this->assertEquals( $page_id, $wp_query->get_queried_object()->ID );
 	}
-	
+
 	// FIXME: what is this for?
 	// '(about)(/[0-9]+)?/?$' => 'index.php?pagename=$matches[1]&page=$matches[2]'
 	function test_pagination_of_posts_page() {

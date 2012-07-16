@@ -169,7 +169,7 @@ class TestMakeClickable extends WP_UnitTestCase {
 			'blah blah http://en.wikipedia.org/wiki/PC_Tools_(Central_Point_Software).)moreurl blah blah',
 			'In his famous speech “You and Your research” (here:
 			http://www.cs.virginia.edu/~robins/YouAndYourResearch.html)
-			Richard Hamming wrote about people getting more done with their doors closed, but', 
+			Richard Hamming wrote about people getting more done with their doors closed, but',
 		);
 		$urls_expected = array(
 			'<a href="http://en.wikipedia.org/wiki/PC_Tools_(Central_Point_Software)" rel="nofollow">http://en.wikipedia.org/wiki/PC_Tools_(Central_Point_Software)</a>',
@@ -183,7 +183,7 @@ class TestMakeClickable extends WP_UnitTestCase {
 			'blah blah <a href="http://en.wikipedia.org/wiki/PC_Tools_(Central_Point_Software)" rel="nofollow">http://en.wikipedia.org/wiki/PC_Tools_(Central_Point_Software)</a>.)moreurl blah blah',
 			'In his famous speech “You and Your research” (here:
 			<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html" rel="nofollow">http://www.cs.virginia.edu/~robins/YouAndYourResearch.html</a>)
-			Richard Hamming wrote about people getting more done with their doors closed, but', 
+			Richard Hamming wrote about people getting more done with their doors closed, but',
 		);
 		foreach ($urls_before as $key => $url) {
 			$this->assertEquals($urls_expected[$key], make_clickable($url));
@@ -753,19 +753,19 @@ PS.  Not yet subscribed for update notifications?  <a href="%1$s" title="Subscri
 	 * wpautop() Should not alter the contents of "<pre>" elements
 	 *
 	 * @ticket 19855
-	 */	
+	 */
 	public function test_skip_pre_elements() {
 		$code = file_get_contents( DIR_TESTDATA . '/formatting/sizzle.js' );
 		$code = str_replace( "\r", '', $code );
 		$code = htmlentities( $code );
-		
+
 		// Not wrapped in <p> tags
 		$str = "<pre>$code</pre>";
 		$this->assertEquals( $str, trim( wpautop( $str ) ) );
 
 		// Text before/after is wrapped in <p> tags
 		$str = "Look at this code\n\n<pre>$code</pre>\n\nIsn't that cool?";
-		
+
 		// Expected text after wpautop
 		$expected = '<p>Look at this code</p>' . "\n<pre>" . $code . "</pre>\n" . '<p>Isn\'t that cool?</p>';
 		$this->assertEquals( $expected, trim( wpautop( $str ) ) );
@@ -775,12 +775,12 @@ PS.  Not yet subscribed for update notifications?  <a href="%1$s" title="Subscri
 		$expected = "<p>Look at this code</p>\n<pre>Line1<br />Line2<br>Line3<br/>Line4\nActual Line 2\nActual Line 3</pre>\n<p>Cool, huh?</p>";
 		$this->assertEquals( $expected, trim( wpautop( $str ) ) );
 	}
-	
+
 	/**
 	 * wpautop() Should not add <br/> to "<input>" elements
 	 *
 	 * @ticket 16456
-	 */	
+	 */
 	public function test_skip_input_elements() {
 		$str = 'Username: <input type="text" id="username" name="username" /><br />Password: <input type="password" id="password1" name="password1" />';
 		$this->assertEquals( "<p>$str</p>", trim( wpautop( $str ) ) );
@@ -1457,7 +1457,7 @@ class TestWPTrimWords extends WP_UnitTestCase {
 		$this->assertEquals( $trimmed, wp_trim_words( $text ) );
 
 		$text = 'This text contains<style>#css { width:expression(alert("css")) }</style>. It should go.';
-		$this->assertEquals( $trimmed, wp_trim_words( $text ) );		
+		$this->assertEquals( $trimmed, wp_trim_words( $text ) );
 	}
 
 	function test_doesnt_trim_short_text() {
@@ -1525,7 +1525,7 @@ class TestRemoveAccents extends WP_UnitTestCase {
 		$this->assertEquals( 'AaAaEeEeOoOoUuYy', remove_accents( 'ẪẫẴẵẼẽỄễỖỗỠỡỮữỸỹ' ) );
 		// acute accent
 		$this->assertEquals( 'AaAaEeOoOoUu', remove_accents( 'ẤấẮắẾếỐốỚớỨứ' ) );
-		// dot below 
+		// dot below
 		$this->assertEquals( 'AaAaAaEeEeIiOoOoOoUuUuYy', remove_accents( 'ẠạẬậẶặẸẹỆệỊịỌọỘộỢợỤụỰựỴỵ' ) );
 	}
 

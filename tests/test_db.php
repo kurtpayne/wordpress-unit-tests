@@ -12,7 +12,7 @@ class TestWPDB extends WP_UnitTestCase {
 	 * @var array
 	 */
 	protected $_queries = array();
-	
+
 	/**
 	 * Set up the test fixture
 	 */
@@ -51,23 +51,23 @@ class TestWPDB extends WP_UnitTestCase {
 
 		// Save the current locale
 		$current_locale = setlocale( LC_ALL, NULL );
-		
+
 		// Switch to Russian
 		$flag = setlocale( LC_ALL, 'ru_RU.utf8', 'rus', 'fr_FR.utf8', 'fr_FR', 'de_DE.utf8', 'de_DE', 'es_ES.utf8', 'es_ES' );
 		if ( false === $flag )
 			$this->markTestSkipped( 'No European languages available for testing' );
-		
+
 		// Try an update query
 		$wpdb->suppress_errors( true );
-		$wpdb->update( 
-			'test_table', 
-			array( 'float_column' => 0.7 ), 
-			array( 'meta_id' => 5 ), 
-			array( '%f' ), 
-			array( '%d' ) 
+		$wpdb->update(
+			'test_table',
+			array( 'float_column' => 0.7 ),
+			array( 'meta_id' => 5 ),
+			array( '%f' ),
+			array( '%d' )
 		);
 		$wpdb->suppress_errors( false );
-		
+
 		// Ensure the float isn't 0,700
 		$this->assertContains( '0.700', array_pop( $this->_queries ) );
 

@@ -27,7 +27,7 @@ class TestBalanceTags extends WP_UnitTestCase {
 			$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
 		}
 	}
- 
+
 	/**
 	 * If a recognized valid single tag appears unclosed, it should get self-closed
 	 *

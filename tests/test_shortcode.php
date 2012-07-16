@@ -38,7 +38,7 @@ class TestShortcode extends WP_UnitTestCase {
 			'foo' => 'no foo',
 			'baz' => 'default baz',
 		), $atts));
-	
+
 		return "foo = {$foo}";
 	}
 

@@ -74,7 +74,7 @@ class WPTestUtils extends WP_UnitTestCase {
 		$expected .= "asdf\n";
 		$expected .= "foo bar\n";
 		$expected .= "foo";
-		
+
 		$this->assertEquals($expected, strip_ws($in));
 
 	}

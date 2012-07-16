@@ -159,7 +159,7 @@ class TestWPUser extends WP_UnitTestCase {
 			$this->assertEquals( $value, $user->$key );
 		}
 	}
-	
+
 	/**
 	 * Test the magic __unset method
 	 *
@@ -187,7 +187,7 @@ class TestWPUser extends WP_UnitTestCase {
 		// Test 'ID'
 		$this->assertNotEmpty( $user->ID );
 		unset( $user->ID );
-		$this->assertEmpty( $user->ID );		
+		$this->assertEmpty( $user->ID );
 	}
 
 	// Test meta property magic functions for property get/set/isset.

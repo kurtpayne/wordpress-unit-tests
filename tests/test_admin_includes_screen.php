@@ -132,7 +132,7 @@ class WPTestScreen extends WP_UnitTestCase {
 		// The post type wins here. convert_to_screen( $post_type ) is only relevant for meta boxes anyway.
 		$screen = convert_to_screen( 'comments' );
 		$this->assertEquals( $screen->base, 'post' );
-	
+
 		// Core wins.
 		$screen = convert_to_screen( 'edit-tags' );
 		$this->assertEquals( $screen->base, 'edit-tags' );

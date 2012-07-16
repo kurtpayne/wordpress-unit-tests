@@ -34,13 +34,13 @@ class TestWP_Styles extends WP_UnitTestCase {
 		$expected .= "<link rel='stylesheet' id='no-deps-version-css'  href='http://example.com?ver=1.2' type='text/css' media='all' />\n";
 		$expected .= "<link rel='stylesheet' id='no-deps-null-version-css'  href='http://example.com' type='text/css' media='all' />\n";
 		$expected .= "<link rel='stylesheet' id='no-deps-null-version-print-media-css'  href='http://example.com' type='text/css' media='print' />\n";
-		
+
 		$this->assertEquals($expected, get_echo('wp_print_styles'));
 
 		// No styles left to print
 		$this->assertEquals("", get_echo('wp_print_styles'));
 	}
-	
+
 	/**
 	 * Test the different protocol references in wp_enqueue_style
 	 * @global WP_Styles $wp_styles
@@ -61,7 +61,7 @@ class TestWP_Styles extends WP_UnitTestCase {
 		// Try with an HTTPS reference
 		wp_enqueue_style( 'reset-css-https', 'http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css' );
 		$expected  .= "<link rel='stylesheet' id='reset-css-https-css'  href='http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css?ver=$ver' type='text/css' media='all' />\n";
-		
+
 		// Try with an automatic protocol reference (//)
 		wp_enqueue_style( 'reset-css-doubleslash', '//yui.yahooapis.com/2.8.1/build/reset/reset-min.css' );
 		$expected  .= "<link rel='stylesheet' id='reset-css-doubleslash-css'  href='//yui.yahooapis.com/2.8.1/build/reset/reset-min.css?ver=$ver' type='text/css' media='all' />\n";

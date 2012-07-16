@@ -461,7 +461,7 @@ class Test_WP_File_Headers extends WP_UnitTestCase {
 		foreach ( $actual as $header => $value )
 			$this->assertEquals( $expected[ $header ], $value, $header );
 	}
-		
+
 	function test_get_file_data_cr_line_endings() {
 		$headers = array( 'SomeHeader' => 'Some Header', 'Description' => 'Description', 'Author' => 'Author' );
 		$actual = get_file_data( DIR_TESTDATA . '/formatting/cr-line-endings-file-header.php', $headers );

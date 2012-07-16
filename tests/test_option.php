@@ -13,7 +13,7 @@ class TestOption extends WP_UnitTestCase {
 	}
 
 	function __return_foo() {
-		return 'foo';	
+		return 'foo';
 	}
 
 	function test_the_basics() {
@@ -85,7 +85,7 @@ class TestOption extends WP_UnitTestCase {
  */
 class TestSiteOption extends WP_UnitTestCase {
 	function __return_foo() {
-		return 'foo';	
+		return 'foo';
 	}
 
 	function test_the_basics() {
@@ -168,7 +168,7 @@ class TestSiteOption extends WP_UnitTestCase {
 		$default = 'a default';
 
 		$this->assertEquals( get_site_option( $option, $default ), $default );
-		$this->assertFalse( get_site_option( $option ) );	
+		$this->assertFalse( get_site_option( $option ) );
 	}
 }
 

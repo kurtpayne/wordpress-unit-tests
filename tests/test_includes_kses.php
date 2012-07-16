@@ -19,7 +19,7 @@ class Test_wp_filter_post_kses extends WP_UnitTestCase {
 			'style' => 'color: red;',
 			'title' => 'title',
 		);
-		
+
 		foreach ( $attributes as $name => $value ) {
 			$string = "<address $name='$value'>1 WordPress Avenue, The Internet.</address>";
 			$this->assertEquals( $string, wp_kses( $string, $allowedposttags ) );
@@ -43,7 +43,7 @@ class Test_wp_filter_post_kses extends WP_UnitTestCase {
 			'name' => 'name',
 			'target' => '_blank',
 		);
-		
+
 		foreach ( $attributes as $name => $value ) {
 			$string = "<a $name='$value'>I link this</a>";
 			$this->assertEquals( $string, wp_kses( $string, $allowedposttags ) );

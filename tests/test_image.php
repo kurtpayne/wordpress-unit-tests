@@ -124,12 +124,12 @@ class TestImageMetaFunctions extends WP_UnitTestCase {
 	 */
 	function test_utf8_iptc_tags() {
 
-		// trilingual UTF-8 text in the ITPC caption-abstract field 
+		// trilingual UTF-8 text in the ITPC caption-abstract field
 		$out = wp_read_image_metadata(DIR_TESTDATA.'/images/test-image-iptc.jpg');
 
 		$this->assertEquals('This is a comment. / Это комментарий. / Βλέπετε ένα σχόλιο.', $out['caption']);
 	}
-	
+
 	/**
 	 * wp_read_image_metadata() should false if the image file doesn't exist
 	 * @return void

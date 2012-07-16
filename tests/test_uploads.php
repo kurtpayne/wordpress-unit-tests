@@ -25,9 +25,9 @@ class TestUploadFunctions extends WP_UnitTestCase {
 		parent::tearDown();
 
 		// Remove year/month folders created by wp_upload_dir().
-		$uploads = wp_upload_dir(); 
+		$uploads = wp_upload_dir();
 		foreach ( scandir( $uploads['basedir'] ) as $file )
-			_rmdir( $uploads['basedir'] . '/' . $file ); 
+			_rmdir( $uploads['basedir'] . '/' . $file );
 		_rmdir( ABSPATH . 'foo/' );
 	}
 

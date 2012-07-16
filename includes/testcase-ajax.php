@@ -15,16 +15,16 @@
  * @since      3.4.0
  */
 abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
-	
+
 	/**
 	 * Last AJAX response.  This is set via echo -or- wp_die.
-	 * @var type 
+	 * @var type
 	 */
 	protected $_last_response = '';
 
 	/**
 	 * List of ajax actions called via POST
-	 * @var type 
+	 * @var type
 	 */
 	protected $_core_actions_get = array( 'fetch-list', 'ajax-tag-search', 'wp-compression-test', 'imgedit-preview', 'oembed_cache' );
 
@@ -36,7 +36,7 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 
 	/**
 	 * List of ajax actions called via GET
-	 * @var type 
+	 * @var type
 	 */
 	protected $_core_actions_post = array(
 		'oembed_cache', 'image-editor', 'delete-comment', 'delete-tag', 'delete-link',
@@ -76,7 +76,7 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 		// Make some posts
 		$this->factory->post->create_many( 5 );
 	}
-	
+
 	/**
 	 * Tear down the test fixture.
 	 * Reset $_POST, remove the wp_die() override, restore error reporting
@@ -123,7 +123,7 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 	 * <code>
 	 * $this->setExpectedException( 'WPAjaxDieContinueException', 'something contained in $message' );
 	 * </code>
-	 * @param string $message 
+	 * @param string $message
 	 */
 	public function dieHandler( $message ) {
 		$this->_last_response .= ob_get_clean();
@@ -142,7 +142,7 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Switch between user roles
 	 * E.g. administrator, editor, author, contributor, subscriber
-	 * @param string $role 
+	 * @param string $role
 	 */
 	protected function _setRole( $role ) {
 		$post = $_POST;
@@ -155,10 +155,10 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 	 * Mimic the ajax handling of admin-ajax.php
 	 * Capture the output via output buffering, and if there is any, store
 	 * it in $this->_last_message.
-	 * @param string $action 
+	 * @param string $action
 	 */
 	protected function _handleAjax($action) {
-		
+
 		// Start output buffering
 		ini_set( 'implicit_flush', false );
 		ob_start();

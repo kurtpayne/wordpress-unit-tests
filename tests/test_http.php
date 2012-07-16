@@ -219,7 +219,7 @@ class WPHTTP extends WP_UnitTestCase {
 			$this->markTestSkipped( "This version of WP_HTTP doesn't support WP_HTTP::make_absolute_url()" );
 			return;
 		}
-	
+
 		$actual = WP_HTTP::make_absolute_url( $relative_url, $absolute_url );
 		$this->assertEquals( $expected, $actual );
 	}
@@ -229,18 +229,18 @@ class WPHTTP extends WP_UnitTestCase {
 		return array(
 			array( 'http://site.com/', 'http://example.com/', 'http://site.com/' ), // Absolute URL provided
 			array( '/location', '', '/location' ), // No current url provided
-			
+
 			array( '', 'http://example.com', 'http://example.com/' ), // No location provided
-			
+
 			// Location provided relative to site root
 			array( '/root-relative-link.ext', 'http://example.com/', 'http://example.com/root-relative-link.ext' ),
 			array( '/root-relative-link.ext?with=query', 'http://example.com/index.ext?query', 'http://example.com/root-relative-link.ext?with=query' ),
-			
+
 			// Location provided relative to current file/directory
 			array( 'relative-file.ext', 'http://example.com/', 'http://example.com/relative-file.ext' ),
 			array( 'relative-file.ext', 'http://example.com/filename', 'http://example.com/relative-file.ext' ),
 			array( 'relative-file.ext', 'http://example.com/directory/', 'http://example.com/directory/relative-file.ext' ),
-			
+
 			// Location provided relative to current file/directory but in a parent directory
 			array( '../file-in-parent.ext', 'http://example.com', 'http://example.com/file-in-parent.ext' ),
 			array( '../file-in-parent.ext', 'http://example.com/filename', 'http://example.com/file-in-parent.ext' ),
@@ -253,13 +253,13 @@ class WPHTTP extends WP_UnitTestCase {
 			array( '../../file-in-grand-parent.ext', 'http://example.com/directory/', 'http://example.com/file-in-grand-parent.ext' ),
 			array( '../../file-in-grand-parent.ext', 'http://example.com/directory/filename/', 'http://example.com/file-in-grand-parent.ext' ),
 			array( '../../file-in-grand-parent.ext', 'http://example.com/directory1/directory2/filename', 'http://example.com/file-in-grand-parent.ext' ),
-			
+
 			// Query strings should attach, or replace existing query string.
 			array( '?query=string', 'http://example.com', 'http://example.com/?query=string' ),
 			array( '?query=string', 'http://example.com/file.ext', 'http://example.com/file.ext?query=string' ),
 			array( '?query=string', 'http://example.com/file.ext?existing=query-string', 'http://example.com/file.ext?query=string' ),
 			array( 'otherfile.ext?query=string', 'http://example.com/file.ext?existing=query-string', 'http://example.com/otherfile.ext?query=string' ),
-			
+
 			// A file with a leading dot
 			array( '.ext', 'http://example.com/', 'http://example.com/.ext' )
 		);
