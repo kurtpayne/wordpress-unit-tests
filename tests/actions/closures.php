@@ -5,13 +5,13 @@
  *
  * @group hooks
  */
-class WP_Test_Actions_Closures extends WP_UnitTestCase {
+class Tests_Actions_Closures extends WP_UnitTestCase {
 
 	/**
 	 * @ticket 10493
 	 */
 	function test_action_closure() {
-		$tag = rand_str();
+		$tag = 'test_action_closure';
 		$closure = function($a, $b) { $GLOBALS[$a] = $b;};
 		add_action($tag, $closure, 10, 2);
 
@@ -22,7 +22,7 @@ class WP_Test_Actions_Closures extends WP_UnitTestCase {
 
 		$this->assertSame($GLOBALS[$context[0]], $context[1]);
 
-		$tag2 = rand_str();
+		$tag2 = 'test_action_closure_2';
 		$closure2 = function() { $GLOBALS['closure_no_args'] = true;};
 		add_action($tag2, $closure2);
 
@@ -31,5 +31,8 @@ class WP_Test_Actions_Closures extends WP_UnitTestCase {
 		do_action($tag2);
 
 		$this->assertTrue($GLOBALS['closure_no_args']);
+
+		remove_action( $tag, $closure );
+		remove_action( $tag2, $closure2 );
 	}
 }
