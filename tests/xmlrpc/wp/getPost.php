@@ -115,4 +115,31 @@ class Tests_XMLRPC_wp_getPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( $post_date_gmt, $result['post_date_gmt']->getTimestamp() );
 		$this->assertEquals( $post_modified_gmt, $result['post_modified_gmt']->getTimestamp() );
 	}
+
+	/**
+	 * @ticket 21308
+	 */
+	function test_valid_page() {
+		$this->make_user_by_role( 'editor' );
+
+		$parent_page_id = $this->factory->post->create( array( 'post_type' => 'page' ) );
+		$child_page_id = $this->factory->post->create( array(
+			'post_type' => 'page',
+			'post_parent' => $parent_page_id,
+			'menu_order' => 2
+		) );
+
+		$result = $this->myxmlrpcserver->wp_getPost( array( 1, 'editor', 'editor', $child_page_id ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
+
+		$this->assertInternalType( 'string', $result['post_id'] );
+		$this->assertInternalType( 'string', $result['post_parent'] );
+		$this->assertInternalType( 'int', $result['menu_order'] );
+		$this->assertInternalType( 'string', $result['guid'] );
+		$this->assertInternalType( 'string', $result['post_mime_type'] );
+
+		$this->assertEquals( 'page', $result['post_type'] );
+		$this->assertEquals( $parent_page_id, $result['post_parent'] );
+		$this->assertEquals( 2, $result['menu_order'] );
+	}
 }
