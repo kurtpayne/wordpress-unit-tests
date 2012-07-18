@@ -122,7 +122,7 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 		parent::checkRequirements();
 		if ( WP_TESTS_FORCE_KNOWN_BUGS )
 			return;
-		$tickets = PHPUnit_Util_Test::getTickets( get_class( $this ), $this->getName() );
+		$tickets = PHPUnit_Util_Test::getTickets( get_class( $this ), $this->getName( false ) );
 		foreach ( $tickets as $ticket ) {
 			if ( is_numeric( $ticket ) ) {
 				$this->knownWPBug( $ticket );
