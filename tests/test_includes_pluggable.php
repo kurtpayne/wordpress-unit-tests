@@ -269,20 +269,3 @@ class TestRedirectFunctions extends WP_UnitTestCase {
 		$this->assertEquals('http://example.com/watchthecarriagereturngo', wp_sanitize_redirect('http://example.com/watchthecarriagereturn%0%0DDgo'));
 	}
 }
-
-/**
- * @group pluggable
- * @group user
- */
-class TestUserFunction extends WP_UnitTestCase {
-	/**
-	 * @ticket 13317
-	 */
-	function test_get_userdata() {
-		$id = $this->factory->user->create( array( 'role' => 'administrator' ) );
-		$this->assertFalse( get_userdata( 0 ) );
-		$this->assertFalse( get_userdata( '0' ) );
-		$this->assertFalse( get_userdata( 'string' ) );
-		$this->assertFalse( get_userdata( array( 'array' ) ) );
-	}
-}
