@@ -148,4 +148,21 @@ class Tests_Cache extends WP_UnitTestCase {
 		$this->cache->decr( $key, 2 );
 		$this->assertEquals( 0, $this->cache->get( $key ) );
 	}
+
+	function test_delete() {
+		$key = rand_str();
+		$val = rand_str();
+
+		// Verify set
+		$this->assertTrue( $this->cache->set( $key, $val ) );
+		$this->assertEquals( $val, $this->cache->get( $key ) );
+
+		// Verify successful delete
+		$this->assertTrue( $this->cache->delete( $key ) );
+		$this->assertFalse( $this->cache->get( $key ) );
+
+		// Delete returns (bool) true when key is not set and $force is true
+		$this->assertTrue( $this->cache->delete( $key, 'default', true ) );
+		$this->assertFalse( $this->cache->delete( $key, 'default') );
+	}
 }
