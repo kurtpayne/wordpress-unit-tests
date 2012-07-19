@@ -36,7 +36,7 @@ class Tests_Formatting_RemoveAccents extends WP_UnitTestCase {
 
 	public function test_remove_accents_iso8859() {
 		// File is Latin1 encoded
-		$file = DIR_TESTDATA . DIRECTORY_SEPARATOR . 'formatting' . DIRECTORY_SEPARATOR . 'remove_accents.01.input.txt';
+		$file = DIR_TESTDATA . '/formatting/remove_accents.01.input.txt';
 		$input = file_get_contents( $file );
 		$input = trim( $input );
 		$output = "EfSZszYcYuAAAAAACEEEEIIIINOOOOOOUUUUYaaaaaaceeeeiiiinoooooouuuuyyOEoeAEDHTHssaedhth";

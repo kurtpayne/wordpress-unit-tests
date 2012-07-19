@@ -2,6 +2,7 @@
 
 /**
  * @group http
+ * @group external-http
  */
 class Tests_HTTP_Functions extends WP_UnitTestCase {
 	function test_head_request() {

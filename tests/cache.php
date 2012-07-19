@@ -77,11 +77,15 @@ class Tests_Cache extends WP_UnitTestCase {
 
 	function test_set() {
 		$key = rand_str();
-		$val = rand_str();
+		$val1 = rand_str();
+		$val2 = rand_str();
 
 		// memcached accepts set() if the key does not exist
-		$this->assertTrue($this->cache->set($key, $val));
-		$this->assertEquals($val, $this->cache->get($key));
+		$this->assertTrue($this->cache->set($key, $val1));
+		$this->assertEquals($val1, $this->cache->get($key));
+		// Second set() with same key should be allowed
+		$this->assertTrue($this->cache->set($key, $val2));
+		$this->assertEquals($val2, $this->cache->get($key));
 	}
 
 	function test_flush() {
