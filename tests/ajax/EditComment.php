@@ -14,7 +14,7 @@ require_once( ABSPATH . 'wp-admin/includes/ajax-actions.php' );
  * @group      ajax
  * @runTestsInSeparateProcesses
  */
-class Tests_Ajax_EditComments extends WP_Ajax_UnitTestCase {
+class Tests_Ajax_EditComment extends WP_Ajax_UnitTestCase {
 
 	/**
 	 * A post with at least one comment

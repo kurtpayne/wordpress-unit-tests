@@ -2,7 +2,7 @@
 /**
  * @group themes
  */
-class TestPageTemplates extends WP_UnitTestCase {
+class Tests_Admin_includesTheme extends WP_UnitTestCase {
 	function setUp() {
 		parent::setUp();
 		$this->theme_root = DIR_TESTDATA . '/themedir1';

@@ -4,7 +4,7 @@
 /**
  * @group user
  */
-class Tests_User_User extends WP_UnitTestCase {
+class Tests_User extends WP_UnitTestCase {
 
 	protected $_deprecated_errors = array();
 

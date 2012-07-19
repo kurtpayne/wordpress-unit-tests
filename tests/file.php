@@ -1,11 +1,60 @@
 <?php
 
+/**
+ * @group file
+ */
 class Tests_File extends WP_UnitTestCase {
 
 	function setUp() {
 		$this->dir = dirname(tempnam('/tmp', 'foo'));
 
 		$this->badchars = '"\'[]*&?$';
+	}
+
+	/**
+	 * @group plugins
+	 * @group themes
+	 */
+	function test_get_file_data() {
+		$theme_headers = array(
+			'Name' => 'Theme Name',
+			'ThemeURI' => 'Theme URI',
+			'Description' => 'Description',
+			'Version' => 'Version',
+			'Author' => 'Author',
+			'AuthorURI' => 'Author URI',
+		);
+
+		$actual = get_file_data( DIR_TESTDATA . '/themedir1/default/style.css', $theme_headers );
+
+		$expected = array(
+			'Name' => 'WordPress Default',
+			'ThemeURI' => 'http://wordpress.org/',
+			'Description' => 'The default WordPress theme based on the famous <a href="http://binarybonsai.com/kubrick/">Kubrick</a>.',
+			'Version' => '1.6',
+			'Author' => 'Michael Heilemann',
+			'AuthorURI' => 'http://binarybonsai.com/',
+		);
+
+		foreach ( $actual as $header => $value )
+			$this->assertEquals( $expected[ $header ], $value, $header );
+	}
+
+	/**
+	 * @group plugins
+	 * @group themes
+	 */
+	function test_get_file_data_cr_line_endings() {
+		$headers = array( 'SomeHeader' => 'Some Header', 'Description' => 'Description', 'Author' => 'Author' );
+		$actual = get_file_data( DIR_TESTDATA . '/formatting/cr-line-endings-file-header.php', $headers );
+		$expected = array(
+			'SomeHeader' => 'Some header value!',
+			'Description' => 'This file is using CR line endings for a testcase.',
+			'Author' => 'A Very Old Mac',
+		);
+
+		foreach ( $actual as $header => $value )
+			$this->assertEquals( $expected[ $header ], $value, $header );
 	}
 
 	function is_unique_writable_file($path, $filename) {

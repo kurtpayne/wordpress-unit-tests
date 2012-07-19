@@ -3,7 +3,7 @@
  * @group dependencies
  * @group scripts
  */
-class TestWP_Scripts extends WP_UnitTestCase {
+class Tests_Dependencies_Scripts extends WP_UnitTestCase {
 	var $old_wp_scripts;
 
 	function setUp() {
@@ -12,7 +12,6 @@ class TestWP_Scripts extends WP_UnitTestCase {
 		remove_action( 'wp_default_scripts', 'wp_default_scripts' );
 		$GLOBALS['wp_scripts'] = new WP_Scripts();
 		$GLOBALS['wp_scripts']->default_version = get_bloginfo( 'version' );
-
 	}
 
 	function tearDown() {

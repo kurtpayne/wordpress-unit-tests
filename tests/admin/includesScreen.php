@@ -3,7 +3,7 @@
 /**
  * @group admin
  */
-class WPTestScreen extends WP_UnitTestCase {
+class Tests_Admin_includesScreen extends WP_UnitTestCase {
 	var $core_screens = array(
 		'index.php' => array( 'base' => 'dashboard', 'id' => 'dashboard' ),
 		'edit.php' => array( 'base' => 'edit', 'id' => 'edit-post', 'post_type' => 'post' ),
