@@ -99,6 +99,10 @@ class WP_PHPUnit_TextUI_Command extends PHPUnit_TextUI_Command {
 			'd:c:hv',
 			array_keys( $this->longOptions )
 		);
+		if ( empty( $options[0] ) ) {
+			register_shutdown_function( array( __CLASS__, 'ajaxTestsWereNotRun' ) );
+			return;
+		}
 		foreach ( $options[0] as $option ) {
 			if ( $option[0] !== '--group' )
 				continue;
@@ -109,5 +113,9 @@ class WP_PHPUnit_TextUI_Command extends PHPUnit_TextUI_Command {
 			}
 		}
     }
+
+	static function ajaxTestsWereNotRun() {
+		echo PHP_EOL . 'By default, Ajax tests are not run. To execute these, use `phpunit --group ajax`' . PHP_EOL;
+	}
 }
 new WP_PHPUnit_TextUI_Command( $_SERVER['argv'] );

@@ -9,6 +9,11 @@
         <testsuite>
             <directory suffix=".php">tests</directory>
             <file phpVersion="5.3.0">tests/actions/closures.php</file>
+			<groups>
+				<exclude>
+					<group>ajax</group>
+				</exclude>
+			</groups>
         </testsuite>
     </testsuites>
 </phpunit>
