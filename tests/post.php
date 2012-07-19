@@ -408,9 +408,12 @@ class Tests_Post extends WP_UnitTestCase {
 		$this->assertFalse($this->_next_schedule_for_post('publish_future_post', $id));
 	}
 
+	/**
+	 * @ticket 5305
+	 */
 	function test_permalink_without_title() {
 		// bug: permalink doesn't work if post title is empty
-		// wpcom #663, also http://trac.wordpress.org/ticket/5305
+		// might only fail if the post ID is greater than four characters
 
 		global $wp_rewrite;
 		$wp_rewrite->set_permalink_structure('/%year%/%monthnum%/%day%/%postname%/');
