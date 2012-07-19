@@ -32,22 +32,28 @@ class Tests_XMLRPC_wp_uploadFile extends WP_XMLRPC_UnitTestCase {
 	 * @ticket 21292
 	 */
 	function test_network_limit() {
+		$this->make_user_by_role( 'editor' );
+
+		update_option( 'blog_upload_space', 0.1 );
+
+		// create attachment
+		$filename = ( DIR_TESTDATA.'/images/canola.jpg' );
+		$contents = file_get_contents( $filename );
+		$data = array(
+			'name' => 'a2-small.jpg',
+			'type' => 'image/jpeg',
+			'bits' => base64_encode( $contents )
+		);
+
+		$result = $this->myxmlrpcserver->mw_newMediaObject( array( 0, 'editor', 'editor', $data ) );
+
+		// Only multisite should have a limit
 		if ( is_multisite() ) {
-			$this->make_user_by_role( 'editor' );
-
-			update_option( 'blog_upload_space', 0.1 );
-
-			// create attachment
-			$filename = ( DIR_TESTDATA.'/images/canola.jpg' );
-			$contents = file_get_contents( $filename );
-			$data = array(
-				'name' => 'a2-small.jpg',
-				'type' => 'image/jpeg',
-				'bits' => base64_encode( $contents )
-			);
-
-			$result = $this->myxmlrpcserver->mw_newMediaObject( array( 0, 'editor', 'editor', $data ) );
 			$this->assertInstanceOf( 'IXR_Error', $result );
 		}
+		else {
+			$this->assertNotInstanceOf( 'IXR_Error', $result );
+		}
+
 	}
 }

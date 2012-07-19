@@ -7,6 +7,7 @@
 error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT );
 
 $config_file_path = $argv[1];
+$multisite = ! empty( $argv[2] );
 
 $config_dir = dirname( $config_file_path );
 
@@ -29,7 +30,7 @@ $wpdb->suppress_errors();
 $installed = $wpdb->get_var( "SELECT option_value FROM $wpdb->options WHERE option_name = 'siteurl'" );
 $wpdb->suppress_errors( false );
 
-$hash = get_option( 'db_version' ) . ' ' . sha1_file( $config_file_path );
+$hash = get_option( 'db_version' ) . ' ' . (int) $multisite . ' ' . sha1_file( $config_file_path );
 
 if ( $installed && file_exists( WP_TESTS_VERSION_FILE ) && file_get_contents( WP_TESTS_VERSION_FILE ) == $hash )
 	return;
@@ -42,7 +43,7 @@ $wpdb->select( DB_NAME, $wpdb->dbh );
 echo "Installing…" . PHP_EOL;
 wp_install( WP_TESTS_TITLE, 'admin', WP_TESTS_EMAIL, true, null, 'password' );
 
-if ( defined( 'WP_TESTS_MULTISITE' ) && WP_TESTS_MULTISITE ) {
+if ( $multisite ) {
 	echo "Installing network…" . PHP_EOL;
 
 	define( 'WP_INSTALLING_NETWORK', true );

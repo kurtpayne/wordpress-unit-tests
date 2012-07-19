@@ -4,6 +4,9 @@
         colors="true"
         strict="true"
         >
+    <php>
+        <const name="WP_TESTS_MULTISITE" value="1" />
+    </php>
     <testsuites>
         <!-- Default test suite to run all tests -->
         <testsuite>

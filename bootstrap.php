@@ -40,9 +40,11 @@ $_SERVER['SERVER_PROTOCOL'] = 'HTTP/1.1';
 $_SERVER['HTTP_HOST'] = WP_TESTS_DOMAIN;
 $PHP_SELF = $GLOBALS['PHP_SELF'] = $_SERVER['PHP_SELF'] = '/index.php';
 
-system( WP_PHP_BINARY . ' ' . escapeshellarg( dirname( __FILE__ ) . '/bin/install.php' ) . ' ' . escapeshellarg( $config_file_path ) );
+$multisite = (int) ( defined( 'WP_TESTS_MULTISITE') && WP_TESTS_MULTISITE );
 
-if ( defined( 'WP_TESTS_MULTISITE' ) && WP_TESTS_MULTISITE ) {
+system( WP_PHP_BINARY . ' ' . escapeshellarg( dirname( __FILE__ ) . '/bin/install.php' ) . ' ' . escapeshellarg( $config_file_path ) . ' ' . $multisite );
+
+if ( $multisite ) {
 	define( 'MULTISITE', true );
 	define( 'SUBDOMAIN_INSTALL', false );
 	define( 'DOMAIN_CURRENT_SITE', WP_TESTS_DOMAIN );
@@ -50,7 +52,10 @@ if ( defined( 'WP_TESTS_MULTISITE' ) && WP_TESTS_MULTISITE ) {
 	define( 'SITE_ID_CURRENT_SITE', 1 );
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
 	$GLOBALS['base'] = '/';
+} else {
+	register_shutdown_function( array( 'WP_PHPUnit_TextUI_Command', 'multisiteWasNotRun' ) );
 }
+unset( $multisite );
 
 require dirname( __FILE__ ) . '/includes/functions.php';
 
@@ -115,7 +120,15 @@ class WP_PHPUnit_TextUI_Command extends PHPUnit_TextUI_Command {
     }
 
 	static function ajaxTestsWereNotRun() {
-		echo PHP_EOL . 'By default, Ajax tests are not run. To execute these, use `phpunit --group ajax`' . PHP_EOL;
+		echo PHP_EOL . "\x1b[0m\x1b[30;43m\x1b[2K";
+		echo 'INFO: By default, Ajax tests are not run. To execute these, use `phpunit --group ajax`' . PHP_EOL;
+		echo "\x1b[0m\x1b[2K";
+	}
+
+	static function multisiteWasNotRun() {
+		echo PHP_EOL . "\x1b[0m\x1b[30;43m\x1b[2K";
+		echo 'INFO: To run the tests using multisite, use `phpunit -c multisite`' . PHP_EOL;
+		echo "\x1b[0m\x1b[2K";
 	}
 }
 new WP_PHPUnit_TextUI_Command( $_SERVER['argv'] );

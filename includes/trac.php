@@ -41,10 +41,14 @@ class TracTickets {
 	}
 
 	public static function usingLocalCache() {
-		echo PHP_EOL . "Trac was inaccessible, so a local ticket status cache was used." . PHP_EOL;
+		echo PHP_EOL . "\x1b[0m\x1b[30;43m\x1b[2K";
+		echo 'INFO: Trac was inaccessible, so a local ticket status cache was used.' . PHP_EOL;
+		echo "\x1b[0m\x1b[2K";
 	}
 
 	public static function forcingKnownBugs() {
-		echo PHP_EOL . "Trac was inaccessible, so known bugs weren't able to be skipped." . PHP_EOL;
+		echo PHP_EOL . "\x1b[0m\x1b[37;41m\x1b[2K";
+		echo "ERROR: Trac was inaccessible, so known bugs weren't able to be skipped." . PHP_EOL;
+		echo "\x1b[0m\x1b[2K";
 	}
 }
