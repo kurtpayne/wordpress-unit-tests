@@ -10,6 +10,7 @@ class Tests_XMLRPC_wp_getTerm extends WP_XMLRPC_UnitTestCase {
 		parent::setUp();
 
 		$this->term = wp_insert_term( 'term' . rand_str() , 'category' );
+		$this->assertInternalType( 'array', $this->term );
 	}
 
 	function test_invalid_username_password() {

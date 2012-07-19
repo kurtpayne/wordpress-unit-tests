@@ -244,8 +244,11 @@ class Tests_XMLRPC_wp_newPost extends WP_XMLRPC_UnitTestCase {
 		$this->make_user_by_role( 'editor' );
 
 		$tag1 = wp_create_tag ( rand_str( 30 ) );
+		$this->assertInternalType( 'array', $tag1 );
 		$tag2 = wp_create_tag ( rand_str( 30 ) );
+		$this->assertInternalType( 'array', $tag2 );
 		$tag3 = wp_create_tag ( rand_str( 30 ) );
+		$this->assertInternalType( 'array', $tag3 );
 
 		$post = array(
 			'post_title' => 'Test',

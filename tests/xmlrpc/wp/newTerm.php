@@ -10,6 +10,7 @@ class Tests_XMLRPC_wp_newTerm extends WP_XMLRPC_UnitTestCase {
 		parent::setUp();
 
 		$this->parent_term = wp_insert_term( 'parent' . rand_str(), 'category' );
+		$this->assertInternalType( 'array', $this->parent_term );
 		$this->parent_term = $this->parent_term['term_id'];
 	}
 

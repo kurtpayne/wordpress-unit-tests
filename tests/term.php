@@ -23,7 +23,7 @@ class Tests_Term extends WP_UnitTestCase {
 		$initial_count = wp_count_terms( $this->taxonomy );
 
 		$t = wp_insert_term( $term, $this->taxonomy );
-		$this->assertTrue( is_array($t) );
+		$this->assertInternalType( 'array', $t );
 		$this->assertFalse( is_wp_error($t) );
 		$this->assertTrue( $t['term_id'] > 0 );
 		$this->assertTrue( $t['term_taxonomy_id'] > 0 );
@@ -44,7 +44,7 @@ class Tests_Term extends WP_UnitTestCase {
 		// insert a term
 		$term = rand_str();
 		$t = wp_insert_term( $term, $this->taxonomy );
-
+		$this->assertInternalType( 'array', $t );
 		$this->assertEquals( $t['term_id'], term_exists($t['term_id']) );
 		$this->assertEquals( $t['term_id'], term_exists($term) );
 
@@ -66,7 +66,7 @@ class Tests_Term extends WP_UnitTestCase {
 		// insert a term
 		$term = rand_str();
 		$t = wp_insert_term( $term, $this->taxonomy );
-
+		$this->assertInternalType( 'array', $t );
 		$term_obj = get_term_by('name', $term, $this->taxonomy);
 		$this->assertEquals( $t['term_id'], term_exists($term_obj->slug) );
 
@@ -81,6 +81,7 @@ class Tests_Term extends WP_UnitTestCase {
 		for ($i=0; $i<3; $i++ ) {
 			$term = rand_str();
 			$result = wp_insert_term( $term, $this->taxonomy );
+			$this->assertInternalType( 'array', $result );
 			$term_id[$term] = $result['term_id'];
 		}
 
@@ -174,6 +175,7 @@ class Tests_Term extends WP_UnitTestCase {
 		for ($i=0; $i<3; $i++ ) {
 			$term = rand_str();
 			$result = wp_insert_term( $term, $this->taxonomy );
+			$this->assertInternalType( 'array', $result );
 			$terms_1[$i] = $result['term_id'];
 		}
 
@@ -235,7 +237,9 @@ class Tests_Term extends WP_UnitTestCase {
 		$term2 = rand_str();
 
 		$t = wp_insert_term( $term, 'category' );
+		$this->assertInternalType( 'array', $t );
 		$t2 = wp_insert_term( $term, 'category', array( 'parent' => $t['term_id'] ) );
+		$this->assertInternalType( 'array', $t2 );
 		if ( function_exists( 'term_is_ancestor_of' ) ) {
 			$this->assertTrue( term_is_ancestor_of( $t['term_id'], $t2['term_id'], 'category' ) );
 			$this->assertFalse( term_is_ancestor_of( $t2['term_id'], $t['term_id'], 'category' ) );
@@ -273,9 +277,13 @@ class Tests_Term extends WP_UnitTestCase {
 	function test_wp_unique_term_slug() {
 		// set up test data
 		$a = wp_insert_term( 'parent', $this->taxonomy );
+		$this->assertInternalType( 'array', $a );
 		$b = wp_insert_term( 'child',  $this->taxonomy, array( 'parent' => $a['term_id'] ) );
+		$this->assertInternalType( 'array', $b );
 		$c = wp_insert_term( 'neighbor', $this->taxonomy );
+		$this->assertInternalType( 'array', $c );
 		$d = wp_insert_term( 'pet',  $this->taxonomy, array( 'parent' => $c['term_id'] )  );
+		$this->assertInternalType( 'array', $c );
 
 		$a_term = get_term( $a['term_id'], $this->taxonomy );
 		$b_term = get_term( $b['term_id'], $this->taxonomy );

@@ -12,8 +12,11 @@ class Tests_XMLRPC_wp_editTerm extends WP_XMLRPC_UnitTestCase {
 		parent::setUp();
 
 		$this->parent_term = wp_insert_term( 'parent' . rand_str() , 'category' );
+		$this->assertInternalType( 'array', $this->parent_term );
 		$this->child_term = wp_insert_term( 'child' . rand_str() , 'category' );
+		$this->assertInternalType( 'array', $this->child_term );
 		$this->post_tag = wp_insert_term( 'test' . rand_str() , 'post_tag' );
+		$this->assertInternalType( 'array', $this->post_tag );
 	}
 
 	function test_invalid_username_password() {

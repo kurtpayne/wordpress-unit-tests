@@ -117,6 +117,8 @@ class WP_UnitTest_Factory_For_Term extends WP_UnitTest_Factory_For_Thing {
 
 	function create_object( $args ) {
 		$term_id_pair = wp_insert_term( $args['name'], $args['taxonomy'], $args );
+		if ( is_wp_error( $term_id_pair ) )
+			return $term_id_pair;
 		return $term_id_pair['term_id'];
 	}
 
