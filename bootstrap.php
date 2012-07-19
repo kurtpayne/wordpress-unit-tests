@@ -78,3 +78,36 @@ require dirname( __FILE__ ) . '/includes/testcase-xmlrpc.php';
 require dirname( __FILE__ ) . '/includes/testcase-ajax.php';
 require dirname( __FILE__ ) . '/includes/exceptions.php';
 require dirname( __FILE__ ) . '/includes/utils.php';
+
+/**
+ * A child class of the PHP test runner.
+ *
+ * Not actually used as a runner. Rather, used to access the protected
+ * longOptions property, to parse the arguments passed to the script.
+ *
+ * If it is determined that phpunit was called with a --group that corresponds
+ * to an @ticket annotation (such as `phpunit --group 12345` for bugs marked
+ * as #WP12345), then it is assumed that known bugs should not be skipped.
+ *
+ * If WP_TESTS_FORCE_KNOWN_BUGS is already set in wp-tests-config.php, then
+ * how you call phpunit has no effect.
+ */
+class WP_PHPUnit_TextUI_Command extends PHPUnit_TextUI_Command {
+	function __construct( $argv ) {
+		$options = PHPUnit_Util_Getopt::getopt(
+			$argv,
+			'd:c:hv',
+			array_keys( $this->longOptions )
+		);
+		foreach ( $options[0] as $option ) {
+			if ( $option[0] !== '--group' )
+				continue;
+			$groups = explode( ',', $option[1] );
+			foreach ( $groups as $group ) {
+				if ( is_numeric( $group ) || preg_match( '/^(UT|Plugin)\d+$/', $group ) )
+					WP_UnitTestCase::forceTicket( $group );
+			}
+		}
+    }
+}
+new WP_PHPUnit_TextUI_Command( $_SERVER['argv'] );

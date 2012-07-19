@@ -1,9 +1,11 @@
 <?php
 
-require_once 'factory.php';
-require_once 'trac.php';
+require_once dirname( __FILE__ ) . '/factory.php';
+require_once dirname( __FILE__ ) . '/trac.php';
 
 class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
+
+	protected static $forced_tickets = array();
 
 	function setUp() {
 		global $wpdb;
@@ -127,7 +129,13 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 			if ( is_numeric( $ticket ) ) {
 				$this->knownWPBug( $ticket );
 			} elseif ( 'UT' == substr( $ticket, 0, 2 ) ) {
-				$this->knownUTBug( substr( $ticket, 2 ) );
+				$ticket = substr( $ticket, 2 );
+				if ( $ticket && is_numeric( $ticket ) )
+					$this->knownUTBug( $ticket );
+			} elseif ( 'Plugin' == substr( $ticket, 0, 6 ) ) {
+				$ticket = substr( $ticket, 6 );
+				if ( $ticket && is_numeric( $ticket ) )
+					$this->knownPluginBug( $ticket );
 			}
 		}
 	}
@@ -136,27 +144,34 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 	 * Skips the current test if there is an open WordPress ticket with id $ticket_id
 	 */
 	function knownWPBug( $ticket_id ) {
-		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://core.trac.wordpress.org', $ticket_id ) ) {
+		if ( WP_TESTS_FORCE_KNOWN_BUGS || in_array( $ticket_id, self::$forced_tickets ) )
+			return;
+		if ( ! TracTickets::isTracTicketClosed( 'http://core.trac.wordpress.org', $ticket_id ) )
 			$this->markTestSkipped( sprintf( 'WordPress Ticket #%d is not fixed', $ticket_id ) );
-		}
 	}
 
 	/**
 	 * Skips the current test if there is an open unit tests ticket with id $ticket_id
 	 */
 	function knownUTBug( $ticket_id ) {
-		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://unit-tests.trac.wordpress.org', $ticket_id ) ) {
+		if ( WP_TESTS_FORCE_KNOWN_BUGS || in_array( 'UT' . $ticket_id, self::$forced_tickets ) )
+			return;
+		if ( ! TracTickets::isTracTicketClosed( 'http://unit-tests.trac.wordpress.org', $ticket_id ) )
 			$this->markTestSkipped( sprintf( 'Unit Tests Ticket #%d is not fixed', $ticket_id ) );
-		}
 	}
 
 	/**
 	 * Skips the current test if there is an open plugin ticket with id $ticket_id
 	 */
 	function knownPluginBug( $ticket_id ) {
-		if ( ! WP_TESTS_FORCE_KNOWN_BUGS && ! TracTickets::isTracTicketClosed( 'http://plugins.trac.wordpress.org', $ticket_id ) ) {
+		if ( WP_TESTS_FORCE_KNOWN_BUGS || in_array( 'Plugin' . $ticket_id, self::$forced_tickets ) )
+			return;
+		if ( ! TracTickets::isTracTicketClosed( 'http://plugins.trac.wordpress.org', $ticket_id ) )
 			$this->markTestSkipped( sprintf( 'WordPress Plugin Ticket #%d is not fixed', $ticket_id ) );
-		}
+	}
+
+	public static function forceTicket( $ticket ) {
+		self::$forced_tickets[] = $ticket;
 	}
 
 	/**
