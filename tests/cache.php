@@ -136,6 +136,19 @@ class Tests_Cache extends WP_UnitTestCase {
 		$this->assertEquals( 3, $this->cache->get( $key ) );
 	}
 
+	function test_wp_cache_incr() {
+		$key = rand_str();
+
+		$this->assertFalse( wp_cache_incr( $key ) );
+
+		wp_cache_set( $key, 0 );
+		wp_cache_incr( $key );
+		$this->assertEquals( 1, wp_cache_get( $key ) );
+
+		wp_cache_incr( $key, 2 );
+		$this->assertEquals( 3, wp_cache_get( $key ) );
+	}
+
 	function test_decr() {
 		$key = rand_str();
 
@@ -153,6 +166,26 @@ class Tests_Cache extends WP_UnitTestCase {
 		$this->assertEquals( 0, $this->cache->get( $key ) );
 	}
 
+	/**
+	 * @group 21327
+	 */
+	function test_wp_cache_decr() {
+		$key = rand_str();
+
+		$this->assertFalse( wp_cache_decr( $key ) );
+
+		wp_cache_set( $key, 0 );
+		wp_cache_decr( $key );
+		$this->assertEquals( 0, wp_cache_get( $key ) );
+
+		wp_cache_set( $key, 3 );
+		wp_cache_decr( $key );
+		$this->assertEquals( 2, wp_cache_get( $key ) );
+
+		wp_cache_decr( $key, 2 );
+		$this->assertEquals( 0, wp_cache_get( $key ) );
+	}
+
 	function test_delete() {
 		$key = rand_str();
 		$val = rand_str();
@@ -168,5 +201,24 @@ class Tests_Cache extends WP_UnitTestCase {
 		// Delete returns (bool) true when key is not set and $force is true
 		$this->assertTrue( $this->cache->delete( $key, 'default', true ) );
 		$this->assertFalse( $this->cache->delete( $key, 'default') );
+	}
+
+	function test_wp_cache_delete() {
+		$key = rand_str();
+		$val = rand_str();
+
+		// Verify set
+		$this->assertTrue( wp_cache_set( $key, $val ) );
+		$this->assertEquals( $val, wp_cache_get( $key ) );
+
+		// Verify successful delete
+		$this->assertTrue( wp_cache_delete( $key ) );
+		$this->assertFalse( wp_cache_get( $key ) );
+
+		// wp_cache_delete() does not have a $force method.
+		// Delete returns (bool) true when key is not set and $force is true
+		// $this->assertTrue( wp_cache_delete( $key, 'default', true ) );
+
+		$this->assertFalse( wp_cache_delete( $key, 'default') );
 	}
 }
