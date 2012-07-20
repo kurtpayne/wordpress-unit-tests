@@ -4,14 +4,13 @@
  */
 class Tests_Shortcode extends WP_UnitTestCase {
 
-	protected $shortcodes = array( 'footag', 'bartag', 'baztag', 'dumptag' );
+	protected $shortcodes = array( 'test-shortcode-tag', 'footag', 'bartag', 'baztag', 'dumptag', 'hyphen', 'hyphen-foo', 'hyphen-foo-bar' );
 
 	function setUp() {
 		parent::setUp();
-		add_shortcode('test-shortcode-tag', array(&$this, '_shortcode_tag'));
 
 		foreach ( $this->shortcodes as $shortcode )
-			add_shortcode( $shortcode, array( $this, '_shortcode_' . $shortcode ) );
+			add_shortcode( $shortcode, array( $this, '_shortcode_' . str_replace( '-', '_', $shortcode ) ) );
 
 		$this->atts = null;
 		$this->content = null;
@@ -24,7 +23,12 @@ class Tests_Shortcode extends WP_UnitTestCase {
 		parent::tearDown();
 		foreach ( $this->shortcodes as $shortcode )
 			unset( $shortcode_tags[ $shortcode ] );
-		unset( $shortcode_tags['test-shortcode-tag'] );
+	}
+
+	function _shortcode_test_shortcode_tag( $atts, $content = null, $tagname = null ) {
+		$this->atts = $atts;
+		$this->content = $content;
+		$this->tagname = $tagname;
 	}
 
 	// [footag foo="bar"]
@@ -54,10 +58,16 @@ class Tests_Shortcode extends WP_UnitTestCase {
 		return $out;
 	}
 
-	function _shortcode_tag($atts, $content=NULL, $tagname=NULL) {
-		$this->atts = $atts;
-		$this->content = $content;
-		$this->tagname = $tagname;
+	function _shortcode_hyphen() {
+		return __FUNCTION__;
+	}
+
+	function _shortcode_hyphen_foo() {
+		return __FUNCTION__;
+	}
+
+	function _shortcode_hyphen_foo_bar() {
+		return __FUNCTION__;
 	}
 
 	function test_noatts() {
@@ -75,6 +85,35 @@ class Tests_Shortcode extends WP_UnitTestCase {
 	function test_not_a_tag() {
 		$out = do_shortcode('[not-a-shortcode-tag]');
 		$this->assertEquals( '[not-a-shortcode-tag]', $out );
+	}
+
+	/**
+	 * @ticket 17657
+	 */
+	function test_tag_hyphen_not_tag() {
+		$out = do_shortcode( '[dumptag-notreal]' );
+		$this->assertEquals( '[dumptag-notreal]', $out );
+	}
+
+	function test_tag_underscore_not_tag() {
+		$out = do_shortcode( '[dumptag_notreal]' );
+		$this->assertEquals( '[dumptag_notreal]', $out );
+	}
+
+	function test_tag_not_tag() {
+		$out = do_shortcode( '[dumptagnotreal]' );
+		$this->assertEquals( '[dumptagnotreal]', $out );
+	}
+
+	/**
+	 * @ticket 17657
+	 */
+	function test_tag_hyphen() {
+ 		$this->assertEquals( '_shortcode_hyphen', do_shortcode( '[hyphen]' ) );
+ 		$this->assertEquals( '_shortcode_hyphen_foo', do_shortcode( '[hyphen-foo]' ) );
+ 		$this->assertEquals( '_shortcode_hyphen_foo_bar', do_shortcode( '[hyphen-foo-bar]' ) );
+		$this->assertEquals( '[hyphen-baz]', do_shortcode( '[hyphen-baz]' ) );
+		$this->assertEquals( '[hyphen-foo-bar-baz]', do_shortcode( '[hyphen-foo-bar-baz]' ) );
 	}
 
 	function test_two_atts() {
