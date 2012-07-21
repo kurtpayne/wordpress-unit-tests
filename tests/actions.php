@@ -241,4 +241,13 @@ class Tests_Actions extends WP_UnitTestCase {
 
 	}
 
+	function test_action_self_removal() {
+		add_action( 'test_action_self_removal', array( $this, 'action_self_removal' ) );
+		do_action( 'test_action_self_removal' );
+		$this->assertEquals( 1, did_action( 'test_action_self_removal' ) );
+	}
+
+	function action_self_removal() {
+		remove_action( 'test_action_self_removal', array( $this, 'action_self_removal' ) );
+	}
 }
