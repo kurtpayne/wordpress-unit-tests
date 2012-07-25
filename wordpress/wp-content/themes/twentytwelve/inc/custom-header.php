@@ -9,44 +9,14 @@
  */
 
 /**
- * Back compat support for get_custom_header().
- * New since WordPress version 3.4.
- *
- * To provide backward compatibility with previous versions, we
- * will define our own version of this function.
- *
- * @todo Should this go into core instead?
- *
- * @return stdClass All properties represent attributes of the current header image.
- *
- * @package Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-if ( ! function_exists( 'get_custom_header' ) ) {
-	function get_custom_header() {
-		return (object) array(
-			'url'           => get_header_image(),
-			'thumbnail_url' => get_header_image(),
-			'width'         => HEADER_IMAGE_WIDTH,
-			'height'        => HEADER_IMAGE_HEIGHT
-		);
-	}
-}
-
-/**
- * Setup the WordPress core custom header arguments and settings.
- *
- * Use add_theme_support() to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- *
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
+ * Set up the WordPress core custom header arguments and settings.
+ * Use add_theme_support() to register support for 3.4 and up.
  *
  * @uses twentytwelve_header_style()
  * @uses twentytwelve_admin_header_style()
  * @uses twentytwelve_admin_header_image()
  *
- * @package Twenty_Twelve
+ * @since Twenty Twelve 1.0
  */
 function twentytwelve_custom_header_setup() {
 	$args = array(
@@ -72,19 +42,7 @@ function twentytwelve_custom_header_setup() {
 		'admin-preview-callback' => 'twentytwelve_admin_header_image',
 	);
 
-	// Allow child themes to filter any of these arguments.
-	$args = apply_filters( 'twentytwelve_custom_header_args', $args );
-
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-header', $args );
-	} else {
-		// Back compat for < 3.4 versions.
-		define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
-		define( 'HEADER_IMAGE',        $args['default-image'] );
-		define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
-		define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
-		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
-	}
+	add_theme_support( 'custom-header', $args );
 }
 add_action( 'after_setup_theme', 'twentytwelve_custom_header_setup' );
 
