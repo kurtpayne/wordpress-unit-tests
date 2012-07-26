@@ -103,4 +103,9 @@ CAP;
     $this->assertEquals( 1, preg_match_all( "~wp-caption-text.*{$content_preg}~", $result, $_r ) );
   }
 
+	function test_add_remove_oembed_provider() {
+		wp_oembed_add_provider( 'http://foo.bar/*', 'http://foo.bar/oembed' );
+		$this->assertTrue( wp_oembed_remove_provider( 'http://foo.bar/*' ) );
+		$this->assertFalse( wp_oembed_remove_provider( 'http://foo.bar/*' ) );
+	}
 }
