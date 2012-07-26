@@ -386,10 +386,6 @@ function media_buttons($editor_id = 'content') {
 }
 add_action( 'media_buttons', 'media_buttons' );
 
-function _media_button($title, $icon, $type, $id) {
-	return "<a href='" . esc_url( get_upload_iframe_src($type) ) . "' id='{$id}-add_{$type}' class='thickbox add_$type' title='" . esc_attr( $title ) . "'><img src='" . esc_url( admin_url( $icon ) ) . "' alt='$title' onclick='return false;' /></a>";
-}
-
 function get_upload_iframe_src( $type = null, $post_id = null, $tab = null ) {
 	global $post_ID;
 
@@ -2024,30 +2020,6 @@ function wp_media_insert_url_form( $default_view = 'image' ) {
 	</tbody></table>
 ';
 
-}
-
-function _insert_into_post_button($type) {
-	if ( !post_type_supports(get_post_type($_GET['post_id']), 'editor') )
-		return '';
-
-	if ( 'image' == $type )
-	return '
-		<tr>
-			<td></td>
-			<td>
-				<input type="button" class="button" id="go_button" style="color:#bbb;" onclick="addExtImage.insert()" value="' . esc_attr__('Insert into Post') . '" />
-			</td>
-		</tr>
-	';
-
-	return '
-		<tr>
-			<td></td>
-			<td>
-				' . get_submit_button( __( 'Insert into Post' ), 'button', 'insertonlybutton', false ) . '
-			</td>
-		</tr>
-	';
 }
 
 /**

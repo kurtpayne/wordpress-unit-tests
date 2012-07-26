@@ -939,3 +939,21 @@ function current_theme_info() {
 
 	return wp_get_theme();
 }
+
+/**
+ * This was once used to display an 'Insert into Post' button. Now it is deprecated and stubbed.
+ * 
+ * @deprecated 3.5.0
+ */
+function _insert_into_post_button( $type ) {
+	_deprecated_function( __FUNCTION__, '3.5' );
+}
+
+/**
+ * This was once used to display a media button. Now it is deprecated and stubbed.
+ * 
+ * @deprecated 3.5.0
+ */
+function _media_button($title, $icon, $type, $id) {
+	_deprecated_function( __FUNCTION__, '3.5' );
+}

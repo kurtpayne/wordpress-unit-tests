@@ -45,6 +45,7 @@ $multisite = (int) ( defined( 'WP_TESTS_MULTISITE') && WP_TESTS_MULTISITE );
 system( WP_PHP_BINARY . ' ' . escapeshellarg( dirname( __FILE__ ) . '/bin/install.php' ) . ' ' . escapeshellarg( $config_file_path ) . ' ' . $multisite );
 
 if ( $multisite ) {
+	echo "Running as multisite…" . PHP_EOL;
 	define( 'MULTISITE', true );
 	define( 'SUBDOMAIN_INSTALL', false );
 	define( 'DOMAIN_CURRENT_SITE', WP_TESTS_DOMAIN );
@@ -53,7 +54,7 @@ if ( $multisite ) {
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
 	$GLOBALS['base'] = '/';
 } else {
-	register_shutdown_function( array( 'WP_PHPUnit_TextUI_Command', 'multisiteWasNotRun' ) );
+	echo "Running as single site… To run multisite, use -c multisite." . PHP_EOL;
 }
 unset( $multisite );
 
@@ -104,31 +105,24 @@ class WP_PHPUnit_TextUI_Command extends PHPUnit_TextUI_Command {
 			'd:c:hv',
 			array_keys( $this->longOptions )
 		);
-		if ( empty( $options[0] ) ) {
-			register_shutdown_function( array( __CLASS__, 'ajaxTestsWereNotRun' ) );
-			return;
-		}
+		$ajax_message = true;
 		foreach ( $options[0] as $option ) {
-			if ( $option[0] !== '--group' )
-				continue;
-			$groups = explode( ',', $option[1] );
-			foreach ( $groups as $group ) {
-				if ( is_numeric( $group ) || preg_match( '/^(UT|Plugin)\d+$/', $group ) )
-					WP_UnitTestCase::forceTicket( $group );
+			switch ( $option[0] ) {
+				case '--exclude-group' :
+					$ajax_message = false;
+					continue 2;
+				case '--group' :
+					$groups = explode( ',', $option[1] );
+					foreach ( $groups as $group ) {
+						if ( is_numeric( $group ) || preg_match( '/^(UT|Plugin)\d+$/', $group ) )
+							WP_UnitTestCase::forceTicket( $group );
+					}
+					$ajax_message = ! in_array( 'ajax', $groups );
+					continue 2;
 			}
 		}
+		if ( $ajax_message )
+			echo "Not running ajax tests… To execute these, use --group ajax." . PHP_EOL;
     }
-
-	static function ajaxTestsWereNotRun() {
-		echo PHP_EOL . "\x1b[0m\x1b[30;43m\x1b[2K";
-		echo 'INFO: By default, Ajax tests are not run. To execute these, use `phpunit --group ajax`' . PHP_EOL;
-		echo "\x1b[0m\x1b[2K";
-	}
-
-	static function multisiteWasNotRun() {
-		echo PHP_EOL . "\x1b[0m\x1b[30;43m\x1b[2K";
-		echo 'INFO: To run the tests using multisite, use `phpunit -c multisite`' . PHP_EOL;
-		echo "\x1b[0m\x1b[2K";
-	}
 }
 new WP_PHPUnit_TextUI_Command( $_SERVER['argv'] );
