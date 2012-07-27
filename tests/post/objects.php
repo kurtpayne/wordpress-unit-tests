@@ -11,6 +11,12 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$post = get_post( $id );
 
 		$this->assertEquals( $id, $post->ID );
+
+		$this->assertTrue( isset( $post->post_type ) );
+		$this->assertEquals( 'post', $post->post_type );
+
+		unset( $post->post_type );
+		$this->assertFalse( isset( $post->post_type ) );
 	}
 
 	function test_get_post_filter() {
