@@ -960,7 +960,6 @@ function map_meta_cap( $cap, $user_id ) {
 		break;
 	case 'delete_post':
 	case 'delete_page':
-		$author_data = get_userdata( $user_id );
 		$post = get_post( $args[0] );
 
 		if ( 'revision' == $post->post_type ) {
@@ -981,7 +980,7 @@ function map_meta_cap( $cap, $user_id ) {
 			$post_author_data = get_userdata( $post->post_author );
 		} else {
 			// No author set yet, so default to current user for cap checks.
-			$post_author_data = $author_data;
+			$post_author_data = get_userdata( $user_id );
 		}
 
 		// If the user is the author...
@@ -1010,7 +1009,6 @@ function map_meta_cap( $cap, $user_id ) {
 		// edit_others_posts
 	case 'edit_post':
 	case 'edit_page':
-		$author_data = get_userdata( $user_id );
 		$post = get_post( $args[0] );
 
 		if ( 'revision' == $post->post_type ) {
@@ -1031,7 +1029,7 @@ function map_meta_cap( $cap, $user_id ) {
 			$post_author_data = get_userdata( $post->post_author );
 		} else {
 			// No author set yet, so default to current user for cap checks.
-			$post_author_data = $author_data;
+			$post_author_data = get_userdata( $user_id );
 		}
 
 		//echo "current user id : $user_id, post author id: " . $post_author_data->ID . "<br />";
@@ -1059,7 +1057,6 @@ function map_meta_cap( $cap, $user_id ) {
 		break;
 	case 'read_post':
 	case 'read_page':
-		$author_data = get_userdata( $user_id );
 		$post = get_post( $args[0] );
 
 		if ( 'revision' == $post->post_type ) {
@@ -1086,7 +1083,7 @@ function map_meta_cap( $cap, $user_id ) {
 			$post_author_data = get_userdata( $post->post_author );
 		} else {
 			// No author set yet, so default to current user for cap checks.
-			$post_author_data = $author_data;
+			$post_author_data = get_userdata( $user_id );
 		}
 
 		if ( is_object( $post_author_data ) && $user_id == $post_author_data->ID )
@@ -1380,12 +1377,10 @@ function get_super_admins() {
  * @return bool True if the user is a site admin.
  */
 function is_super_admin( $user_id = false ) {
-	if ( $user_id )
-		$user = new WP_User( $user_id );
-	else
-		$user = wp_get_current_user();
+	if ( ! $user_id )
+		$user_id = get_current_user_id();
 
-	if ( ! $user->exists() )
+	if ( ! $user = get_userdata( $user_id ) )
 		return false;
 
 	if ( is_multisite() ) {
