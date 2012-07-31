@@ -242,4 +242,86 @@ class Tests_Functions extends WP_UnitTestCase {
 		foreach ( $not_serialized as $case )
 			$this->assertFalse( is_serialized($case), "Test data: $case" );
 	}
+
+	function test_add_query_arg() {
+		$old_req_uri = $_SERVER['REQUEST_URI'];
+
+		$urls = array(
+			'/',
+			'/2012/07/30/',
+			'edit.php',
+			admin_url( 'edit.php' ),
+			admin_url( 'edit.php', 'https' ),
+		);
+
+		$frag_urls = array(
+			'/#frag',
+			'/2012/07/30/#frag',
+			'edit.php#frag',
+			admin_url( 'edit.php#frag' ),
+			admin_url( 'edit.php#frag', 'https' ),
+		);
+
+		foreach ( $urls as $url ) {
+			$_SERVER['REQUEST_URI'] = 'nothing';
+
+			$this->assertEquals( "$url?foo=1", add_query_arg( 'foo', '1', $url ) );
+			$this->assertEquals( "$url?foo=1", add_query_arg( array( 'foo' => '1' ), $url ) );
+			$this->assertEquals( "$url?foo=2", add_query_arg( array( 'foo' => '1', 'foo' => '2' ), $url ) );
+			$this->assertEquals( "$url?foo=1&bar=2", add_query_arg( array( 'foo' => '1', 'bar' => '2' ), $url ) );
+
+			$_SERVER['REQUEST_URI'] = $url;
+
+			$this->assertEquals( "$url?foo=1", add_query_arg( 'foo', '1' ) );
+			$this->assertEquals( "$url?foo=1", add_query_arg( array( 'foo' => '1' ) ) );
+			$this->assertEquals( "$url?foo=2", add_query_arg( array( 'foo' => '1', 'foo' => '2' ) ) );
+			$this->assertEquals( "$url?foo=1&bar=2", add_query_arg( array( 'foo' => '1', 'bar' => '2' ) ) );
+		}
+
+		foreach ( $frag_urls as $frag_url ) {
+			$_SERVER['REQUEST_URI'] = 'nothing';
+			$url = str_replace( '#frag', '', $frag_url );
+
+			$this->assertEquals( "$url?foo=1#frag", add_query_arg( 'foo', '1', $frag_url ) );
+			$this->assertEquals( "$url?foo=1#frag", add_query_arg( array( 'foo' => '1' ), $frag_url ) );
+			$this->assertEquals( "$url?foo=2#frag", add_query_arg( array( 'foo' => '1', 'foo' => '2' ), $frag_url ) );
+			$this->assertEquals( "$url?foo=1&bar=2#frag", add_query_arg( array( 'foo' => '1', 'bar' => '2' ), $frag_url ) );
+
+			$_SERVER['REQUEST_URI'] = $frag_url;
+
+			$this->assertEquals( "$url?foo=1#frag", add_query_arg( 'foo', '1' ) );
+			$this->assertEquals( "$url?foo=1#frag", add_query_arg( array( 'foo' => '1' ) ) );
+			$this->assertEquals( "$url?foo=2#frag", add_query_arg( array( 'foo' => '1', 'foo' => '2' ) ) );
+			$this->assertEquals( "$url?foo=1&bar=2#frag", add_query_arg( array( 'foo' => '1', 'bar' => '2' ) ) );
+		}
+
+		$qs_urls = array(
+			'/?baz',
+			'/2012/07/30/?baz',
+			'edit.php?baz',
+			admin_url( 'edit.php?baz' ),
+			admin_url( 'edit.php?baz', 'https' ),
+			admin_url( 'edit.php?baz&za=1' ),
+			admin_url( 'edit.php?baz=1&za=1' ),
+			admin_url( 'edit.php?baz=0&za=0' ),
+		);
+
+		foreach ( $qs_urls as $url ) {
+			$_SERVER['REQUEST_URI'] = 'nothing';
+
+			$this->assertEquals( "$url&foo=1", add_query_arg( 'foo', '1', $url ) );
+			$this->assertEquals( "$url&foo=1", add_query_arg( array( 'foo' => '1' ), $url ) );
+			$this->assertEquals( "$url&foo=2", add_query_arg( array( 'foo' => '1', 'foo' => '2' ), $url ) );
+			$this->assertEquals( "$url&foo=1&bar=2", add_query_arg( array( 'foo' => '1', 'bar' => '2' ), $url ) );
+
+			$_SERVER['REQUEST_URI'] = $url;
+
+			$this->assertEquals( "$url&foo=1", add_query_arg( 'foo', '1' ) );
+			$this->assertEquals( "$url&foo=1", add_query_arg( array( 'foo' => '1' ) ) );
+			$this->assertEquals( "$url&foo=2", add_query_arg( array( 'foo' => '1', 'foo' => '2' ) ) );
+			$this->assertEquals( "$url&foo=1&bar=2", add_query_arg( array( 'foo' => '1', 'bar' => '2' ) ) );
+		}
+
+		$_SERVER['REQUEST_URI'] = $old_req_uri;
+	}
 }
