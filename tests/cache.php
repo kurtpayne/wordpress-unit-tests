@@ -69,10 +69,15 @@ class Tests_Cache extends WP_UnitTestCase {
 	function test_replace() {
 		$key = rand_str();
 		$val = rand_str();
+		$val2 = rand_str();
 
 		// memcached rejects replace() if the key does not exist
 		$this->assertFalse($this->cache->replace($key, $val));
 		$this->assertFalse($this->cache->get($key));
+		$this->assertTrue($this->cache->add($key, $val));
+		$this->assertEquals($val, $this->cache->get($key));
+		$this->assertTrue($this->cache->replace($key, $val2));
+		$this->assertEquals($val2, $this->cache->get($key));
 	}
 
 	function test_set() {
