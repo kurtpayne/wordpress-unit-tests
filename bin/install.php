@@ -35,22 +35,29 @@ $hash = get_option( 'db_version' ) . ' ' . (int) $multisite . ' ' . sha1_file( $
 if ( $installed && file_exists( WP_TESTS_VERSION_FILE ) && file_get_contents( WP_TESTS_VERSION_FILE ) == $hash )
 	return;
 
-$wpdb->query( 'SET storage_engine = INNODB;' );
-$wpdb->query( 'DROP DATABASE IF EXISTS '.DB_NAME.";" );
-$wpdb->query( 'CREATE DATABASE '.DB_NAME.";" );
+$wpdb->query( 'SET storage_engine = INNODB' );
 $wpdb->select( DB_NAME, $wpdb->dbh );
 
 echo "Installing…" . PHP_EOL;
+
+foreach ( $wpdb->tables() as $table => $prefixed_table ) {
+	$wpdb->query( "DROP TABLE IF EXISTS $prefixed_table" );
+}
+
+foreach ( $wpdb->tables( 'ms_global' ) as $table => $prefixed_table ) {
+	$wpdb->query( "DROP TABLE IF EXISTS $prefixed_table" );
+
+	// We need to create references to ms global tables.
+	if ( $multisite )
+		$wpdb->$table = $prefixed_table;
+}
+
 wp_install( WP_TESTS_TITLE, 'admin', WP_TESTS_EMAIL, true, null, 'password' );
 
 if ( $multisite ) {
 	echo "Installing network…" . PHP_EOL;
 
 	define( 'WP_INSTALLING_NETWORK', true );
-
-	// We need to create references to ms global tables.
-	foreach ( $wpdb->tables( 'ms_global' ) as $table => $prefixed_table )
-		$wpdb->$table = $prefixed_table;
 
 	$title = WP_TESTS_TITLE . ' Network';
 	$subdomain_install = false;
