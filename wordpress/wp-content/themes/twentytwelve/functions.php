@@ -57,8 +57,7 @@ function twentytwelve_setup() {
 	require( get_template_directory() . '/inc/theme-options.php' );
 	$twentytwelve_options = new Twenty_Twelve_Options();
 
-	// You can define support for an editor stylesheet here; Twenty Twelve doesn't have a default one.
-	// Then, create a CSS file called editor-style.css and place it in your theme directory.
+	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
 	// Add default posts and comments RSS feed links to <head>.
@@ -112,9 +111,11 @@ function twentytwelve_scripts_styles() {
 	 * Depends on Theme Options setting.
  	 */
 	$options = $twentytwelve_options->get_theme_options();
-	if ( $options['enable_fonts'] )
-		wp_enqueue_style( 'twentytwelve-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' );
-
+	if ( $options['enable_fonts'] ) {
+		$protocol = is_ssl() ? 'https' : 'http';
+		wp_enqueue_style( 'twentytwelve-fonts', "$protocol://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" );
+	}
+	
 	/**
 	 * Load our main CSS file.
 	 */
