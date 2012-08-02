@@ -62,10 +62,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
 blockquote:before,
@@ -121,6 +123,20 @@ video {
 }
 audio:not([controls]) {
 	display: none;
+}
+del {
+	color: #333;
+}
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin: 24px;
+	margin-bottom: 1.714285714rem;
 }
 sub,
 sup {
@@ -273,8 +289,9 @@ img.wp-post-image {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
-/* Media */
+/* Make sure videos and embeds fit their containers */
 embed,
+iframe,
 object,
 video {
 	max-width: 100%;
@@ -303,6 +320,7 @@ img.wp-post-image {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .wp-caption {
+	max-width: 100%; /* Keep wide captions from overflowing their container. */
 	padding: 4px;
 }
 .wp-caption .wp-caption-text,
@@ -838,7 +856,10 @@ img.aligncenter {
 	margin-bottom: 12px;
 	margin-bottom: 0.857142857rem;
 }
-.entry-content iframe {
+.entry-content embed,
+.entry-content iframe,
+.entry-content object,
+.entry-content video {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
