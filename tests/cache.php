@@ -20,6 +20,7 @@ class Tests_Cache extends WP_UnitTestCase {
 
 	function &init_cache() {
 		$cache = new WP_Object_Cache();
+		$cache->add_global_groups( array( 'global-cache-test', 'users', 'userlogins', 'usermeta', 'user_meta', 'site-transient', 'site-options', 'site-lookup', 'blog-lookup', 'blog-details', 'rss', 'global-posts' ) );
 		return $cache;
 	}
 
@@ -225,5 +226,50 @@ class Tests_Cache extends WP_UnitTestCase {
 		// $this->assertTrue( wp_cache_delete( $key, 'default', true ) );
 
 		$this->assertFalse( wp_cache_delete( $key, 'default') );
+	}
+
+	function test_switch_to_blog() {
+		if ( ! method_exists( $this->cache, 'switch_to_blog' ) )
+			return;
+
+		$key = rand_str();
+		$val = rand_str();
+		$val2 = rand_str();
+
+		if ( ! is_multisite() ) {
+			// Single site ingnores switch_to_blog().
+			$this->assertTrue( $this->cache->set( $key, $val ) );
+			$this->assertEquals( $val, $this->cache->get( $key ) );
+			$this->cache->switch_to_blog( 999 );
+			$this->assertEquals( $val, $this->cache->get( $key ) );
+			$this->assertTrue( $this->cache->set( $key, $val2 ) );
+			$this->assertEquals( $val2, $this->cache->get( $key ) );
+			$this->cache->switch_to_blog( get_current_blog_id() );
+			$this->assertEquals( $val2, $this->cache->get( $key ) );
+		} else {
+			// Multisite should have separate per-blog caches
+			$this->assertTrue( $this->cache->set( $key, $val ) );
+			$this->assertEquals( $val, $this->cache->get( $key ) );
+			$this->cache->switch_to_blog( 999 );
+			$this->assertFalse( $this->cache->get( $key ) );
+			$this->assertTrue( $this->cache->set( $key, $val2 ) );
+			$this->assertEquals( $val2, $this->cache->get( $key ) );
+			$this->cache->switch_to_blog( get_current_blog_id() );
+			$this->assertEquals( $val, $this->cache->get( $key ) );
+			$this->cache->switch_to_blog( 999 );
+			$this->assertEquals( $val2, $this->cache->get( $key ) );
+			$this->cache->switch_to_blog( get_current_blog_id() );
+			$this->assertEquals( $val, $this->cache->get( $key ) );
+		}
+
+		// Global group
+		$this->assertTrue( $this->cache->set( $key, $val, 'global-cache-test' ) );
+		$this->assertEquals( $val, $this->cache->get( $key, 'global-cache-test' ) );
+		$this->cache->switch_to_blog( 999 );
+		$this->assertEquals( $val, $this->cache->get( $key, 'global-cache-test' ) );
+		$this->assertTrue( $this->cache->set( $key, $val2, 'global-cache-test' ) );
+		$this->assertEquals( $val2, $this->cache->get( $key, 'global-cache-test' ) );
+		$this->cache->switch_to_blog( get_current_blog_id() );
+		$this->assertEquals( $val2, $this->cache->get( $key, 'global-cache-test' ) );
 	}
 }
