@@ -49,6 +49,7 @@ class Tests_XMLRPC_wp_getTaxonomy extends WP_XMLRPC_UnitTestCase {
 		$this->make_user_by_role( 'editor' );
 
 		$result = $this->myxmlrpcserver->wp_getTaxonomy( array( 1, 'editor', 'editor', 'category' ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$taxonomy = get_taxonomy( 'category' );
 		$this->assertEquals( 'category', $result['name'], 'name' );
 		$this->assertEquals( true, $result['_builtin'], '_builtin' );
