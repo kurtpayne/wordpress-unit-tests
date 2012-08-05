@@ -32,6 +32,10 @@ class WP_UnitTest_Factory_For_Post extends WP_UnitTest_Factory_For_Thing {
 		$fields['ID'] = $post_id;
 		return wp_update_post( $fields );
 	}
+
+	function get_object_by_id( $post_id ) {
+		return get_post( $post_id );
+	}
 }
 
 class WP_UnitTest_Factory_For_User extends WP_UnitTest_Factory_For_Thing {
@@ -52,6 +56,10 @@ class WP_UnitTest_Factory_For_User extends WP_UnitTest_Factory_For_Thing {
 	function update_object( $user_id, $fields ) {
 		$fields['ID'] = $user_id;
 		return wp_update_user( $fields );
+	}
+
+	function get_object_by_id( $user_id ) {
+		return get_user( $user_id );
 	}
 }
 
@@ -79,6 +87,10 @@ class WP_UnitTest_Factory_For_Comment extends WP_UnitTest_Factory_For_Thing {
 		$args['comment_post_ID'] = $post_id;
 		return $this->create_many( $count, $args, $generation_definitions );
 	}
+
+	function get_object_by_id( $comment_id ) {
+		return get_comment( $comment_id );
+	}
 }
 
 class WP_UnitTest_Factory_For_Blog extends WP_UnitTest_Factory_For_Thing {
@@ -101,6 +113,10 @@ class WP_UnitTest_Factory_For_Blog extends WP_UnitTest_Factory_For_Thing {
 	}
 
 	function update_object( $blog_id, $fields ) {}
+
+	function get_object_by_id( $blog_id ) {
+		return get_blog_details( $blog_id, false );
+	}
 }
 
 
@@ -135,6 +151,10 @@ class WP_UnitTest_Factory_For_Term extends WP_UnitTest_Factory_For_Thing {
 
 	function add_post_terms( $post_id, $terms, $taxonomy, $append = true ) {
 		return wp_set_post_terms( $post_id, $terms, $taxonomy, $append );
+	}
+
+	function get_object_by_id( $term_id ) {
+		return get_term( $term_id );
 	}
 }
 
@@ -176,6 +196,13 @@ abstract class WP_UnitTest_Factory_For_Thing {
 		}
 		return $created;
 	}
+
+	function create_and_get( $args = array(), $generation_definitions = null ) {
+		$object_id = $this->create( $args, $generation_definitions );
+		return $this->get_object_by_id( $object_id );
+	}
+
+	abstract function get_object_by_id( $object_id );
 
 	function create_many( $count, $args = array(), $generation_definitions = null ) {
 		$results = array();

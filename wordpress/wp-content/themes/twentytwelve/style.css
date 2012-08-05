@@ -198,11 +198,11 @@ article.format-link footer.entry-meta {
 input#searchsubmit,
 article.post-password-required input[type=submit],
 li.bypostauthor cite span {
-	padding: 1px 10px;
-	padding: 0.071428571rem 0.714285714rem;
+	padding: 6px 10px;
+	padding: 0.428571429rem 0.714285714rem;
 	font-size: 11px;
 	font-size: 0.785714286rem;
-	line-height: 2.181818182;
+	line-height: 1.428571429;
 	font-weight: normal;
 	color: #7c7c7c;
 	background-color: #e6e6e6;
@@ -332,7 +332,8 @@ img.wp-post-image {
 	line-height: 2;
 	color: #777;
 }
-img.wp-smiley {
+img.wp-smiley,
+.rsswidget img {
 	border: 0;
 	border-radius: 0;
 	box-shadow: none;
@@ -466,7 +467,7 @@ a:hover {
 .site-header h1 a,
 .site-header h2 a {
 	color: #515151;
-	display: block;
+	display: inline-block;
 	text-decoration: none;
 }
 .site-header h1 a:hover,
@@ -761,6 +762,7 @@ article.sticky .featured-post {
 	line-height: 1.846153846;
 }
 .entry-content p,
+.entry-summary p,
 .comment-content p {
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
@@ -1281,7 +1283,12 @@ label ~ span.required {
 	margin-left: 12px;
 	margin-left: 0.857142857rem;
 }
-.widget_recent_entries .post-date {
+.widget_rss li {
+	margin: 12px 0;
+	margin: 0.857142857rem 0;
+}
+.widget_recent_entries .post-date,
+.widget_rss .rss-date {
 	color: #aaa;
 	font-size: 11px;
 	font-size: 0.785714286rem;
@@ -1312,10 +1319,6 @@ label ~ span.required {
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
 }
-.widget_rss li {
-	margin: 12px 0;
-	margin: 0.857142857rem 0;
-}
 
 
 /* =Media queries
@@ -1323,7 +1326,8 @@ label ~ span.required {
 
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
-	.entry-content p {
+	.entry-content p,
+	.entry-summary p {
 		text-align: left;
 		text-justify: auto;
 	}
