@@ -4,11 +4,13 @@
 class Tests_URL extends WP_UnitTestCase {
 	var $_old_server;
 	function setUp() {
+		parent::setUp();
 		$this->_old_server = $_SERVER;
 	}
 
 	function tearDown() {
 		$_SERVER = $this->_old_server;
+		parent::tearDown();
 	}
 
 	function test_is_ssl_positive() {

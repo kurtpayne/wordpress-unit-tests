@@ -7,6 +7,7 @@
 class Tests_Media extends WP_UnitTestCase {
 
   function setUp() {
+    parent::setUp();
     $this->caption = 'A simple caption.';
     $this->html_content = <<<CAP
 A <strong class='classy'>bolded</strong> <em>caption</em> with a <a href="#">link</a>.

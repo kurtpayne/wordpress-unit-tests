@@ -835,7 +835,10 @@ article.sticky .featured-post {
 .entry-content abbr,
 .comment-content abbr,
 .entry-content dfn,
-.comment-content dfn {
+.comment-content dfn,
+.entry-content acronym,
+.comment-content acronym,
+{
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
@@ -1318,6 +1321,23 @@ label ~ span.required {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
+}
+.widget_twitter li {
+	list-style-type: none;
+}
+.widget_twitter .timesince {
+	display: block;
+	text-align: right;
+}
+
+
+/* =Plugins
+----------------------------------------------- */
+
+img#wpstats {
+	display: block;
+	margin: 0 auto 24px;
+	margin: 0 auto 1.714285714rem;	
 }
 
 

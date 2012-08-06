@@ -38,6 +38,7 @@ abstract class WP_HTTP_UnitTestCase extends WP_UnitTestCase {
 		foreach ( array( 'curl', 'streams', 'fsockopen' ) as $t ) {
 			remove_filter( "use_{$t}_transport", '__return_false' );
 		}
+		parent::tearDown();
 	}
 
 	function test_redirect_on_301() {

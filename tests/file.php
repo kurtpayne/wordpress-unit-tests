@@ -6,6 +6,7 @@
 class Tests_File extends WP_UnitTestCase {
 
 	function setUp() {
+		parent::setUp();
 		$this->dir = dirname(tempnam('/tmp', 'foo'));
 
 		$this->badchars = '"\'[]*&?$';
