@@ -21,28 +21,31 @@ class Tests_User extends WP_UnitTestCase {
 		);
 	}
 
+	public function disable_deprecated_errors( $value ) {
+		return false;
+	}
+
 	function test_get_users_of_blog() {
 		// add one of each user role
-		$user_role = array();
+		$nusers = array();
 		foreach ( array('administrator', 'editor', 'author', 'contributor', 'subscriber' ) as $role ) {
 			$id = $this->factory->user->create( array( 'role' => $role ) );
-			$user_role[ $id ] = $role;
+			$nusers[ $id ] = $id;
 		}
 
-		$user_list = get_users_of_blog();
+		$user_list = get_users();
 
 		// find the role of each user as returned by get_users_of_blog
 		$found = array();
 		foreach ( $user_list as $user ) {
 			// only include the users we just created - there might be some others that existed previously
-			if ( isset( $user_role[$user->user_id] ) ) {
-				$roles = array_keys( unserialize( $user->meta_value ) );
-				$found[ $user->user_id ] = $roles[0];
+			if ( isset( $nusers[$user->ID] ) ) {
+				$found[ $user->ID] = $user->ID;
 			}
 		}
 
 		// make sure every user we created was returned
-		$this->assertEquals($user_role, $found);
+		$this->assertEquals($nusers, $found);
 	}
 
 	// simple get/set tests for user_option functions
@@ -75,29 +78,29 @@ class Tests_User extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'author' ) );
 
 		// get a meta key that doesn't exist
-		$this->assertEquals( '', get_usermeta($user_id, $key) );
+		$this->assertEquals( '', get_user_meta($user_id, $key, true));
 
 		// set and get
-		update_usermeta( $user_id, $key, $val );
-		$this->assertEquals( $val, get_usermeta($user_id, $key) );
+		update_user_meta( $user_id, $key, $val );
+		$this->assertEquals( $val, get_user_meta($user_id, $key, true) );
 
 		// change and get again
 		$val2 = rand_str();
-		update_usermeta( $user_id, $key, $val2 );
-		$this->assertEquals( $val2, get_usermeta($user_id, $key) );
+		update_user_meta( $user_id, $key, $val2 );
+		$this->assertEquals( $val2, get_user_meta($user_id, $key, true) );
 
 		// delete and get
-		delete_usermeta( $user_id, $key );
-		$this->assertEquals( '', get_usermeta($user_id, $key) );
+		delete_user_meta( $user_id, $key );
+		$this->assertEquals( '', get_user_meta($user_id, $key, true) );
 
 		// delete by key AND value
-		update_usermeta( $user_id, $key, $val );
+		update_user_meta( $user_id, $key, $val );
 		// incorrect key: key still exists
-		delete_usermeta( $user_id, $key, rand_str() );
-		$this->assertEquals( $val, get_usermeta($user_id, $key) );
+		delete_user_meta( $user_id, $key, rand_str() );
+		$this->assertEquals( $val, get_user_meta($user_id, $key, true) );
 		// correct key: deleted
-		delete_usermeta( $user_id, $key, $val );
-		$this->assertEquals( '', get_usermeta($user_id, $key) );
+		delete_user_meta( $user_id, $key, $val );
+		$this->assertEquals( '', get_user_meta($user_id, $key, true) );
 
 	}
 
@@ -113,29 +116,29 @@ class Tests_User extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'author' ) );
 
 		// there is already some stuff in the array
-		$this->assertTrue(is_array(get_usermeta($user_id)));
+		$this->assertTrue(is_array(get_user_meta($user_id)));
 
 		foreach ($vals as $k=>$v)
-			update_usermeta( $user_id, $k, $v );
+			update_user_meta( $user_id, $k, $v );
 
 		// get the complete usermeta array
-		$out = get_usermeta($user_id);
+		$out = get_user_meta($user_id);
 
 		// for reasons unclear, the resulting array is indexed numerically; meta keys are not included anywhere.
 		// so we'll just check to make sure our values are included somewhere.
-		foreach ($vals as $v)
-			$this->assertTrue(in_array($v, $out));
+		foreach ($vals as $k=>$v)
+			$this->assertTrue(isset($out[$k]) && $out[$k][0] == $v);
 
 		// delete one key and check again
 		$key_to_delete = array_pop(array_keys($vals));
-		delete_usermeta($user_id, $key_to_delete);
-		$out = get_usermeta($user_id);
+		delete_user_meta($user_id, $key_to_delete);
+		$out = get_user_meta($user_id);
 		// make sure that key is excluded from the results
 		foreach ($vals as $k=>$v) {
 			if ($k == $key_to_delete)
-				$this->assertFalse(in_array($v, $out));
+				$this->assertFalse(isset($out[$k]));
 			else
-				$this->assertTrue(in_array($v, $out));
+			$this->assertTrue(isset($out[$k]) && $out[$k][0] == $v);
 		}
 	}
 
@@ -178,10 +181,12 @@ class Tests_User extends WP_UnitTestCase {
 
 		// Test 'id' (lowercase)
 		add_action( 'deprecated_argument_run', array( $this, 'deprecated_handler' ), 10, 3 );
+		add_filter( 'deprecated_argument_trigger_error', array( $this, 'disable_deprecated_errors' ) );
 		unset( $user->id );
 		$this->assertCount( 1, $this->_deprecated_errors );
 		$this->assertEquals( 'WP_User->id', $this->_deprecated_errors[0]['function'] );
 		$this->assertEquals( '2.1', $this->_deprecated_errors[0]['version'] );
+		remove_filter( 'deprecated_argument_trigger_error', array( $this, 'disable_deprecated_errors' ) );
 		remove_action( 'deprecated_argument_run', array( $this, 'deprecated_handler' ), 10, 3);
 
 		// Test 'ID'
@@ -208,10 +213,12 @@ class Tests_User extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'author' ) );
 		$user = new WP_User( $user_id );
 
+		add_filter( 'deprecated_argument_trigger_error', array( $this, 'disable_deprecated_errors' ) );
 		$this->assertTrue( isset( $user->id ) );
 		$this->assertEquals( $user->ID, $user->id );
 		$user->id = 1234;
 		$this->assertEquals( $user->ID, $user->id );
+		remove_filter( 'deprecated_argument_trigger_error', array( $this, 'disable_deprecated_errors' ) );
 	}
 
 	/**
@@ -241,7 +248,7 @@ class Tests_User extends WP_UnitTestCase {
 		$user = new WP_User( $user_id );
 		$this->assertInstanceOf( 'WP_User', $user );
 		$this->assertEquals( $user_id, $user->ID );
-
+		
 		$user2 = new WP_User( 0,  $user->user_login );
 		$this->assertInstanceOf( 'WP_User', $user2 );
 		$this->assertEquals( $user_id, $user2->ID );
@@ -449,7 +456,8 @@ class Tests_User extends WP_UnitTestCase {
 		$this->assertInstanceOf( 'WP_User', $authordata );
 		$this->assertEquals( $authordata->ID, $user_id );
 
-		setup_postdata( get_post( $old_post_id ) );
+		if ( $old_post_id )
+			setup_postdata( get_post( $old_post_id ) );
 	}
 
 	function test_delete_user() {
