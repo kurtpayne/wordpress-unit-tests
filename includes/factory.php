@@ -6,6 +6,7 @@ class WP_UnitTest_Factory {
 		$this->comment = new WP_UnitTest_Factory_For_Comment( $this );
 		$this->user = new WP_UnitTest_Factory_For_User( $this );
 		$this->term = new WP_UnitTest_Factory_For_Term( $this );
+		$this->category = new WP_UnitTest_Factory_For_Term( $this, 'category' );
 		if ( is_multisite() )
 			$this->blog = new WP_UnitTest_Factory_For_Blog( $this );
 	}
@@ -122,16 +123,21 @@ class WP_UnitTest_Factory_For_Blog extends WP_UnitTest_Factory_For_Thing {
 
 class WP_UnitTest_Factory_For_Term extends WP_UnitTest_Factory_For_Thing {
 
-	function __construct( $factory = null ) {
+	private $taxonomy;
+	const DEFAULT_TAXONOMY = 'post_tag';
+
+	function __construct( $factory = null, $taxonomy = null ) {
 		parent::__construct( $factory );
+		$this->taxonomy = $taxonomy?: self::DEFAULT_TAXONOMY;
 		$this->default_generation_definitions = array(
 			'name' => new WP_UnitTest_Generator_Sequence( 'Term %s' ),
-			'taxonomy' => 'post_tag',
+			'taxonomy' => $this->taxonomy,
 			'description' => new WP_UnitTest_Generator_Sequence( 'Term description %s' ),
 		);
 	}
 
 	function create_object( $args ) {
+		$args = array_merge( array( 'taxonomy' => $this->taxonomy ), $args );
 		$term_id_pair = wp_insert_term( $args['name'], $args['taxonomy'], $args );
 		if ( is_wp_error( $term_id_pair ) )
 			return $term_id_pair;
@@ -139,12 +145,9 @@ class WP_UnitTest_Factory_For_Term extends WP_UnitTest_Factory_For_Thing {
 	}
 
 	function update_object( $term, $fields ) {
+		$fields = array_merge( array( 'taxonomy' => $this->taxonomy ), $fields );
 		if ( is_object( $term ) )
 			$taxonomy = $term->taxonomy;
-		elseif ( isset( $fields['taxonomy'] ) )
-			$taxonomy = $fields['taxonomy'];
-		else
-			$taxonomy = 'post_tag';
 		$term_id_pair = wp_update_term( $term, $taxonomy, $fields );
 		return $term_id_pair['term_id'];
 	}
@@ -154,7 +157,7 @@ class WP_UnitTest_Factory_For_Term extends WP_UnitTest_Factory_For_Thing {
 	}
 
 	function get_object_by_id( $term_id ) {
-		return get_term( $term_id );
+		return get_term( $term_id, $this->taxonomy );
 	}
 }
 
