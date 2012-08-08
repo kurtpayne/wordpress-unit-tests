@@ -345,18 +345,21 @@ img.wp-smiley,
 .entry-content dl.gallery-item {
 	margin: 0;
 }
-.gallery-columns-4 .gallery-item img
-.gallery-columns-5 .gallery-item img {
-	width: 100%;
+.gallery-item a {
+	display: block;
+	width: 90%;
+}
+.gallery-columns-1 .gallery-item a {
+	max-width: 100%;
+	width: auto;
+}
+.gallery .gallery-icon img {
 	height: auto;
+	max-width: 90%;
+	padding: 5%;
 }
-.site-content .gallery-columns-4 .gallery-item {
-	width: 23%;
-	padding-right: 2%;
-}
-.site-content .gallery-columns-5 .gallery-item {
-	width: 18%;
-	padding-right: 2%;
+.gallery-columns-1 .gallery-icon img {
+	padding: 3%;
 }
 
 /* Navigation */
@@ -453,6 +456,12 @@ a:hover {
 /* Page structure */
 .wrapper {
 	overflow: hidden;
+	-moz-hyphens: auto;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	word-break: break-all;
+	word-break: break-word;
 }
 .site {
 	padding: 0 24px;
@@ -607,8 +616,6 @@ nav[role="navigation"].main-small-navigation a:hover {
 }
 .menu-toggle {
 	display: inline-block;
-	padding: 4px 10px;
-	padding: 0.285714286rem 0.714285714rem;
 }
 .main-small-navigation .menu {
 	display: none;
