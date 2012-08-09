@@ -349,6 +349,61 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( '1', $blog->spam );
 		$this->assertFalse( $result );
 	}
+
+	function test_switch_restore_blog() {
+		global $_wp_switched, $_wp_switched_stack, $wpdb;
+
+		$this->assertEquals( array(), $_wp_switched_stack );
+		$this->assertFalse( $_wp_switched );
+		$current_blog_id = get_current_blog_id();
+		$this->assertInternalType( 'integer', $current_blog_id );
+
+		wp_cache_set( 'switch-test', $current_blog_id, 'switch-test' );
+		$this->assertEquals( $current_blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
+
+		$domain = 'blogoptiontest';
+		if ( is_subdomain_install() ) {
+			$newdomain = $domain . '.' . preg_replace( '|^www\.|', '', $current_site->domain );
+			$path = $base;
+		} else {
+			$newdomain = $current_site->domain;
+			$path = $base . $domain . '/';
+		}
+		$email = 'foo@foo.foo';
+		$password = wp_generate_password( 12, false );
+		$user_id = wpmu_create_user( $domain, $password, $email );
+		$this->assertInternalType( 'integer', $user_id );
+		$blog_id = wpmu_create_blog( $newdomain, $path, $title, $user_id , array( 'public' => 1 ), $current_site->id );
+		$this->assertInternalType( 'integer', $blog_id );
+
+		switch_to_blog( $blog_id );
+		$this->assertEquals( array( $current_blog_id ), $_wp_switched_stack );
+		$this->assertTrue( $_wp_switched );
+		$this->assertEquals( $blog_id, $wpdb->blogid );
+		$this->assertFalse( wp_cache_get( 'switch-test', 'switch-test' ) );
+		wp_cache_set( 'switch-test', $blog_id, 'switch-test' );
+		$this->assertEquals( $blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
+
+		switch_to_blog( $blog_id );
+		$this->assertEquals( array( $current_blog_id, $blog_id ), $_wp_switched_stack );
+		$this->assertTrue( $_wp_switched );
+		$this->assertEquals( $blog_id, $wpdb->blogid );
+		$this->assertEquals( $blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
+
+		restore_current_blog();
+		$this->assertEquals( array( $current_blog_id ), $_wp_switched_stack );
+		$this->assertTrue( $_wp_switched );
+		$this->assertEquals( $blog_id, $wpdb->blogid );
+		$this->assertEquals( $blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
+
+		restore_current_blog();
+		$this->assertEquals( $current_blog_id, get_current_blog_id() );
+		$this->assertEquals( array(), $_wp_switched_stack );
+		$this->assertFalse( $_wp_switched );
+		$this->assertEquals( $current_blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
+
+		$this->assertFalse( restore_current_blog() );
+	}
 }
 
 endif;
