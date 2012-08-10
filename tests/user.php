@@ -329,6 +329,21 @@ class Tests_User extends WP_UnitTestCase {
 		// Make sure there is no collateral damage to fields not in $user_data
 		$this->assertEquals( 'about me', $user->get( 'description' ) );
 
+		// Pass as stdClass
+		$user_data = array( 'ID' => $user_id, 'display_name' => 'a test user' );
+		wp_update_user( (object) $user_data );
+
+		$user = new WP_User( $user_id );
+		$this->assertEquals( 'a test user', $user->get( 'display_name' ) );
+
+		// Pass as WP_User
+		$user = new WP_User( $user_id );
+		$user->display_name = 'some test user';
+		wp_update_user( $user );
+
+		$user = new WP_User( $user_id );
+		$this->assertEquals( 'some test user', $user->get( 'display_name' ) );
+
 		// Test update of fields in _get_additional_user_keys()
 		$user_data = array( 'ID' => $user_id, 'use_ssl' => 1, 'show_admin_bar_front' => 1,
 						   'rich_editing' => 1, 'first_name' => 'first', 'last_name' => 'last',
