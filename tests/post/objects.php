@@ -20,12 +20,16 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 	}
 
 	function test_get_post_filter() {
-		$post = get_post( $this->factory->post->create() );
+		$post = get_post( $this->factory->post->create( array(
+			'post_title' => "Mary's home"
+		) ) );
 
 		$this->assertEquals( 'raw', $post->filter );
+		$this->assertInternalType( 'int', $post->post_parent );
 
-		$display_post = get_post( $post, OBJECT, 'display' );
-		$this->assertEquals( 'display', $display_post->filter );
+		$display_post = get_post( $post, OBJECT, 'js' );
+		$this->assertEquals( 'js', $display_post->filter );
+		$this->assertEquals( esc_js( "Mary's home" ), $display_post->post_title );
 	}
 
 	function test_get_post_identity() {
