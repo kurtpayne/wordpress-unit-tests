@@ -299,11 +299,7 @@ EOF;
 
 	function test_shortcode_unautop() {
 		// a blank line is added at the end, so test with it already there
-		$test_string = <<<EOF
-[footag]
-
-EOF;
-
+		$test_string = "[footag]\n";
 		$this->assertEquals( $test_string, shortcode_unautop( wpautop( $test_string ) ) );
 	}
 
@@ -312,12 +308,7 @@ EOF;
 	 */
 	function test_multiple_shortcode_unautop() {
 		// a blank line is added at the end, so test with it already there
-		$test_string = <<<EOF
-[footag]
-[footag]
-
-EOF;
-
+		$test_string = "[footag]\n[footag]\n";
 		$actual = shortcode_unautop( wpautop( $test_string ) );
 		$this->assertEquals( $test_string, $actual );
 	}
