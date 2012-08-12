@@ -128,7 +128,7 @@ class WP_UnitTest_Factory_For_Term extends WP_UnitTest_Factory_For_Thing {
 
 	function __construct( $factory = null, $taxonomy = null ) {
 		parent::__construct( $factory );
-		$this->taxonomy = $taxonomy?: self::DEFAULT_TAXONOMY;
+		$this->taxonomy = $taxonomy ? $taxonomy : self::DEFAULT_TAXONOMY;
 		$this->default_generation_definitions = array(
 			'name' => new WP_UnitTest_Generator_Sequence( 'Term %s' ),
 			'taxonomy' => $this->taxonomy,
