@@ -248,7 +248,7 @@ class Tests_User extends WP_UnitTestCase {
 		$user = new WP_User( $user_id );
 		$this->assertInstanceOf( 'WP_User', $user );
 		$this->assertEquals( $user_id, $user->ID );
-		
+
 		$user2 = new WP_User( 0,  $user->user_login );
 		$this->assertInstanceOf( 'WP_User', $user2 );
 		$this->assertEquals( $user_id, $user2->ID );

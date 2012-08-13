@@ -21,7 +21,7 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 	 * @var mixed
 	 */
 	protected $_post = null;
-	
+
 	/**
 	 * Set up the test fixture
 	 */
@@ -36,16 +36,16 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function test_nopriv_autosave() {
-		
+
 		// Log out
 		wp_logout();
-		
+
 		// Set up a default request
 		$_POST = array(
 		    'post_ID'  => 1,
 		    'autosave' => 1
 		);
-		
+
 		// Make the request
 		try {
 			$this->_handleAjax( 'nopriv_autosave' );
@@ -66,20 +66,20 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function test_nopriv_no_postid() {
-		
+
 		// Log out
 		wp_logout();
-		
+
 		// Set up a request
 		$_POST = array(
 		    'autosave'      => 1
 		);
-		
+
 		// Make the request
 		$this->setExpectedException( 'WPAjaxDieStopException', '-1' );
 		$this->_handleAjax( 'nopriv_autosave' );
 	}
-	
+
 	/**
 	 * Test autosaving a post
 	 * @return void
@@ -88,7 +88,7 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 
 		// Become an admin
 		$this->_setRole( 'administrator' );
-			
+
 		// Set up the $_POST request
 		$md5 = md5( uniqid() );
 		$_POST = array(
@@ -104,14 +104,14 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
-		
+
 		// Get the response
 		$xml = simplexml_load_string( $this->_last_response, 'SimpleXMLElement', LIBXML_NOCDATA );
 
 		// Ensure everything is correct
 		$this->assertEquals( $this->_post->ID, (int) $xml->response[0]->autosave['id'] );
 		$this->assertEquals( 'autosave_' . $this->_post->ID, (string) $xml->response['action']);
-		
+
 		// Check that the edit happened
 		$post = get_post( $this->_post->ID) ;
 		$this->assertGreaterThanOrEqual( 0, strpos( $post->post_content, $md5 ) );
@@ -122,8 +122,8 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function test_with_invalid_nonce( ) {
-		
-		// Become an administrator		
+
+		// Become an administrator
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -137,14 +137,14 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 		$this->setExpectedException( 'WPAjaxDieStopException', '-1' );
 		$this->_handleAjax( 'autosave' );
 	}
-	
+
 	/**
 	 * Test with a bad post id
 	 * @return void
 	 */
 	public function test_with_invalid_post_id( ) {
-		
-		// Become an administrator	
+
+		// Become an administrator
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -158,22 +158,22 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 		$this->setExpectedException( 'WPAjaxDieStopException', 'You are not allowed to edit this post.' );
 		$this->_handleAjax( 'autosave' );
 	}
-	
+
 	/**
 	 * Test with a locked post
 	 * @return void
 	 */
 	public function test_locked_post() {
 
-		// Become an administrator		
+		// Become an administrator
 		$this->_setRole( 'administrator' );
-		
+
 		// Lock the post
 		wp_set_post_lock( $this->_post->ID );
-		
+
 		// Become a different administrator
 		$this->_setRole( 'administrator' );
-	
+
 		// Set up the $_POST request
 		$_POST = array(
 		    'post_ID'       => $this->_post->ID,
@@ -206,9 +206,9 @@ class Tests_Ajax_Autosave extends WP_Ajax_UnitTestCase {
 		global $login_grace_period;
 		$login_grace_period = 1;
 
-		// Become an admnistrator		
+		// Become an admnistrator
 		$this->_setRole( 'administrator' );
-			
+
 		// Set up the $_POST request
 		$_POST = array(
 		    'post_ID'       => $this->_post->ID,

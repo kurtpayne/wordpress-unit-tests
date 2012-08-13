@@ -52,7 +52,7 @@ class Tests_Ajax_TagSearch extends WP_Ajax_UnitTestCase {
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
-		
+
 		// Ensure we found the right match
 		$this->assertEquals( $this->_last_response, 'chattels' );
 	}
@@ -93,7 +93,7 @@ class Tests_Ajax_TagSearch extends WP_Ajax_UnitTestCase {
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
-		
+
 		// Ensure we found the right match
 		$this->assertEquals( $this->_last_response, 'chattels' );
 	}
@@ -105,14 +105,14 @@ class Tests_Ajax_TagSearch extends WP_Ajax_UnitTestCase {
 
 		// Log out
 		wp_logout();
-		
+
 		// Set up a default request
 		$_GET['tax'] = 'post_tag';
 		$_GET['q']   = 'chat';
 
 		// Make the request
 		$this->setExpectedException( 'WPAjaxDieStopException', '-1' );
-		$this->_handleAjax( 'ajax-tag-search' );		
+		$this->_handleAjax( 'ajax-tag-search' );
 	}
 
 	/**
@@ -129,9 +129,9 @@ class Tests_Ajax_TagSearch extends WP_Ajax_UnitTestCase {
 
 		// Make the request
 		$this->setExpectedException( 'WPAjaxDieStopException', '0' );
-		$this->_handleAjax( 'ajax-tag-search' );		
+		$this->_handleAjax( 'ajax-tag-search' );
 	}
-	
+
 	/**
 	 * Test as an unprivileged user
 	 */
@@ -146,7 +146,7 @@ class Tests_Ajax_TagSearch extends WP_Ajax_UnitTestCase {
 
 		// Make the request
 		$this->setExpectedException( 'WPAjaxDieStopException', '-1' );
-		$this->_handleAjax( 'ajax-tag-search' );		
+		$this->_handleAjax( 'ajax-tag-search' );
 	}
 
 }

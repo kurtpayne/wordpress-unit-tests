@@ -20,7 +20,7 @@ class Tests_Ajax_GetComments extends WP_Ajax_UnitTestCase {
 	 * @var mixed
 	 */
 	protected $_comment_post = null;
-	
+
 	/**
 	 * A post with no comments
 	 * @var mixed
@@ -54,7 +54,7 @@ class Tests_Ajax_GetComments extends WP_Ajax_UnitTestCase {
 		$_POST['_ajax_nonce'] = wp_create_nonce( 'get-comments' );
 		$_POST['action']      = 'get-comments';
 		$_POST['p']           = $this->_comment_post->ID;
-		
+
 		// Make the request
 		try {
 			$this->_handleAjax( 'get-comments' );
@@ -69,10 +69,10 @@ class Tests_Ajax_GetComments extends WP_Ajax_UnitTestCase {
 		$this->assertEquals( 1, (string) $xml->response[0]->comments['position'] );
 		$this->assertEquals( 0, (string) $xml->response[0]->comments['id'] );
 		$this->assertEquals( 'get-comments_0', (string) $xml->response['action'] );
-		
+
 		// Check the payload
 		$this->assertNotEmpty( (string) $xml->response[0]->comments[0]->response_data );
-		
+
 		// And supplemental is empty
 		$this->assertEmpty( (string) $xml->response[0]->comments[0]->supplemental );
 	}
@@ -84,7 +84,7 @@ class Tests_Ajax_GetComments extends WP_Ajax_UnitTestCase {
 	 */
 	public function test_as_subscriber() {
 
-		// Become a subscriber		
+		// Become a subscriber
 		$this->_setRole( 'subscriber' );
 
 		// Set up a default request

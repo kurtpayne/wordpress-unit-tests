@@ -8,6 +8,8 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 	protected static $forced_tickets = array();
 
 	function setUp() {
+		set_time_limit(0);
+
 		global $wpdb;
 		$wpdb->suppress_errors = false;
 		$wpdb->show_errors = true;

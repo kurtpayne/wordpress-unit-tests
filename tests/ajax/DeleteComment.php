@@ -42,7 +42,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		unset($_POST['delete']);
 		$this->_last_response = '';
 	}
-	
+
 	/***********************************************************/
 	/** Test prototype
     /***********************************************************/
@@ -58,7 +58,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 
 		// Reset request
 		$this->_clear_post_action();
-		
+
 		// Become an administrator
 		$this->_setRole( 'administrator' );
 
@@ -70,7 +70,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		$_POST['_per_page']   = 100;
 		$_POST['_page']       = 1;
 		$_POST['_url']        = admin_url( 'edit-comments.php' );
-		
+
 		// Make the request
 		try {
 			$this->_handleAjax( 'delete-comment' );
@@ -80,13 +80,13 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 
 		// Get the response
 		$xml = simplexml_load_string( $this->_last_response, 'SimpleXMLElement', LIBXML_NOCDATA );
-		
+
 		// Ensure everything is correct
 		$this->assertEquals( $comment->comment_ID, (string) $xml->response[0]->comment['id'] );
 		$this->assertEquals( 'delete-comment_' . $comment->comment_ID, (string) $xml->response['action'] );
 		$this->assertGreaterThanOrEqual( time() - 10, (int) $xml->response[0]->comment[0]->supplemental[0]->time[0] );
 		$this->assertLessThanOrEqual( time(), (int) $xml->response[0]->comment[0]->supplemental[0]->time[0] );
-		
+
 		// trash, spam, delete should make the total go down
 		if ( in_array( $action, array( 'trash', 'spam', 'delete' ) ) ) {
 			$total = $_POST['_total'] - 1;
@@ -95,7 +95,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		} elseif ( in_array( $action, array( 'untrash', 'unspam' ) ) ) {
 			$total = $_POST['_total'] + 1;
 		}
-		
+
 		// The total is calculated based on a page break -OR- a random number.  Let's look for both possible outcomes
 		$comment_count = wp_count_comments( 0 );
 		$recalc_total = $comment_count->total_comments;
@@ -103,7 +103,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		// Check for either possible total
 		$this->assertTrue( in_array( (int) $xml->response[0]->comment[0]->supplemental[0]->total[0] , array( $total, $recalc_total ) ) );
 	}
-	
+
 	/**
 	 * Test as a non-privileged user (subscriber)
 	 * Expects test to fail
@@ -112,11 +112,11 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function _test_as_subscriber( $comment, $action ) {
-		
+
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'subscriber' );
 
 		// Set up the $_POST request
@@ -133,7 +133,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		$this->_handleAjax( 'delete-comment' );
 	}
 
-	
+
 	/**
 	 * Test with a bad nonce
 	 * Expects test to fail
@@ -142,11 +142,11 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function _test_with_bad_nonce( $comment, $action ) {
-		
+
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -171,11 +171,11 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function _test_with_bad_id( $comment, $action ) {
-		
+
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -210,8 +210,8 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -238,7 +238,7 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 
 		// Make the request again, look for a timestamp in the exception
 		try {
-			$this->_handleAjax( 'delete-comment' );			
+			$this->_handleAjax( 'delete-comment' );
 			$this->fail( 'Expected exception: WPAjaxDieStopException' );
 		} catch ( WPAjaxDieStopException $e ) {
 			$this->assertEquals( 10, strlen( $e->getMessage() ) );
@@ -274,17 +274,17 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function test_ajax_comment_trash_actions_as_subscriber() {
-	
+
 		// Test trash/untrash
 		$comment = array_pop( $this->_comments );
 		$this->_test_as_subscriber( $comment, 'trash' );
 		$this->_test_as_subscriber( $comment, 'untrash' );
-		
+
 		// Test spam/unspam
 		$comment = array_pop( $this->_comments );
 		$this->_test_as_subscriber( $comment, 'spam' );
 		$this->_test_as_subscriber( $comment, 'unspam' );
-		
+
 		// Test delete
 		$comment = array_pop( $this->_comments );
 		$this->_test_as_subscriber( $comment, 'delete' );
@@ -295,17 +295,17 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function test_ajax_trash_comment_no_id() {
-	
+
 		// Test trash/untrash
 		$comment = array_pop( $this->_comments );
 		$this->_test_as_admin( $comment, 'trash' );
 		$this->_test_as_admin( $comment, 'untrash' );
-		
+
 		// Test spam/unspam
 		$comment = array_pop( $this->_comments );
 		$this->_test_as_admin( $comment, 'spam' );
 		$this->_test_as_admin( $comment, 'unspam' );
-		
+
 		// Test delete
 		$comment = array_pop( $this->_comments );
 		$this->_test_as_admin( $comment, 'delete' );
@@ -321,12 +321,12 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		$comment = array_pop( $this->_comments );
 		$this->_test_with_bad_nonce( $comment, 'trash' );
 		$this->_test_with_bad_nonce( $comment, 'untrash' );
-		
+
 		// Test spam/unspam
 		$comment = array_pop( $this->_comments );
 		$this->_test_with_bad_nonce( $comment, 'spam' );
 		$this->_test_with_bad_nonce( $comment, 'unspam' );
-		
+
 		// Test delete
 		$comment = array_pop( $this->_comments );
 		$this->_test_with_bad_nonce( $comment, 'delete' );
@@ -342,12 +342,12 @@ class Tests_Ajax_DeleteComment extends WP_Ajax_UnitTestCase {
 		$comment = array_pop( $this->_comments );
 		$this->_test_double_action( $comment, 'trash' );
 		$this->_test_double_action( $comment, 'untrash' );
-		
+
 		// Test spam/unspam
 		$comment = array_pop( $this->_comments );
 		$this->_test_double_action( $comment, 'spam' );
 		$this->_test_double_action( $comment, 'unspam' );
-		
+
 		// Test delete
 		$comment = array_pop( $this->_comments );
 		$this->_test_double_action( $comment, 'delete' );

@@ -157,7 +157,7 @@ class Tests_Ajax_ReplytoComment extends WP_Ajax_UnitTestCase {
 		$this->setExpectedException( 'WPAjaxDieStopException', '-1' );
 		$this->_handleAjax( 'replyto-comment' );
 	}
-	
+
 	/**
 	 * Reply to a draft post
 	 * Expects test to fail
@@ -177,7 +177,7 @@ class Tests_Ajax_ReplytoComment extends WP_Ajax_UnitTestCase {
 		$this->setExpectedException( 'WPAjaxDieStopException', 'ERROR: you are replying to a comment on a draft post.' );
 		$this->_handleAjax( 'replyto-comment' );
 	}
-	
+
 	/**
 	 * Reply to a post with a simulated database failure
 	 * Expects test to fail
@@ -209,7 +209,7 @@ class Tests_Ajax_ReplytoComment extends WP_Ajax_UnitTestCase {
 			$this->assertContains( '1', $e->getMessage() );
 		}
 	}
-	
+
 	/**
 	 * Block comments from being saved
 	 * @param string $sql

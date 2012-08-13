@@ -39,7 +39,7 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 		unset($_POST['new']);
 		$this->_last_response = '';
 	}
-	
+
 	/***********************************************************/
 	/** Test prototype
 	/***********************************************************/
@@ -54,7 +54,7 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 
 		// Reset request
 		$this->_clear_post_action();
-		
+
 		// Become an administrator
 		$this->_setRole( 'administrator' );
 
@@ -65,7 +65,7 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 		$_POST['_per_page']   = 100;
 		$_POST['_page']       = 1;
 		$_POST['_url']        = admin_url( 'edit-comments.php' );
-		
+
 		// Save the comment status
 		$prev_status          = wp_get_comment_status( $comment->comment_ID );
 
@@ -92,18 +92,18 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 		} else {
 			$this->assertEquals( 'unapproved', $current );
 		}
-		
+
 		// The total is calculated based on a page break -OR- a random number.  Let's look for both possible outcomes
 		$comment_count = wp_count_comments( 0 );
 		$recalc_total = $comment_count->total_comments;
-		
+
 		// Delta is not specified, it will always be 1 lower than the request
 		$total = $_POST['_total'] - 1;
 
 		// Check for either possible total
 		$this->assertTrue( in_array( (int) $xml->response[0]->comment[0]->supplemental[0]->total[0] , array( $total, $recalc_total ) ) );
 	}
-	
+
 	/**
 	 * Test as a non-privileged user (subscriber)
 	 * Expects test to fail
@@ -111,11 +111,11 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function _test_as_subscriber( $comment ) {
-		
+
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'subscriber' );
 
 		// Set up the $_POST request
@@ -130,7 +130,7 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 		$this->setExpectedException( 'WPAjaxDieStopException', '-1' );
 		$this->_handleAjax( 'dim-comment' );
 	}
-	
+
 	/**
 	 * Test with a bad nonce
 	 * Expects test to fail
@@ -138,11 +138,11 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function _test_with_bad_nonce( $comment ) {
-		
+
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -165,11 +165,11 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 	 * @return void
 	 */
 	public function test_with_bad_id( $comment ) {
-		
+
 		// Reset request
 		$this->_clear_post_action();
-		
-		// Become a subscriber		
+
+		// Become a subscriber
 		$this->_setRole( 'administrator' );
 
 		// Set up the $_POST request
@@ -233,6 +233,6 @@ class Tests_Ajax_DimComment extends WP_Ajax_UnitTestCase {
 	 */
 	public function test_ajax_dim_comment_bad_nonce() {
 		$comment = array_pop( $this->_comments );
-		$this->_test_with_bad_nonce( $comment );		
+		$this->_test_with_bad_nonce( $comment );
 	}
 }

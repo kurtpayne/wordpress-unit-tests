@@ -66,10 +66,10 @@ class Tests_Ajax_EditComment extends WP_Ajax_UnitTestCase {
 		$this->assertEquals( -1, (string) $xml->response[0]->edit_comment['position'] );
 		$this->assertEquals( $comment->comment_ID, (string) $xml->response[0]->edit_comment['id'] );
 		$this->assertEquals( 'edit-comment_' . $comment->comment_ID, (string) $xml->response['action'] );
-		
+
 		// Check the payload
 		$this->assertNotEmpty( (string) $xml->response[0]->edit_comment[0]->response_data );
-		
+
 		// And supplemental is empty
 		$this->assertEmpty( (string) $xml->response[0]->edit_comment[0]->supplemental );
 	}
@@ -115,7 +115,7 @@ class Tests_Ajax_EditComment extends WP_Ajax_UnitTestCase {
 			'post_id' => $this->_comment_post->ID
 		) );
 		$comment = array_pop( $comments );
-		
+
 		// Set up a default request
 		$_POST['_ajax_nonce-replyto-comment'] = wp_create_nonce( uniqid() );
 		$_POST['comment_ID']                  = $comment->comment_ID;
