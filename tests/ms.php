@@ -23,7 +23,7 @@ class Tests_MS extends WP_UnitTestCase {
 				$table_fields = $wpdb->get_results( "DESCRIBE $prefix$table;" );
 				$this->assertNotEmpty( $table_fields );
 				$result = $wpdb->get_results( "SELECT * FROM $prefix$table LIMIT 1" );
-				if ( 'commentmeta' == $table )
+				if ( 'commentmeta' == $table || 'links' == $table )
 					$this->assertEmpty( $result );
 				else
 					$this->assertNotEmpty( $result );
