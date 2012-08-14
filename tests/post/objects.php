@@ -30,6 +30,12 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$display_post = get_post( $post, OBJECT, 'js' );
 		$this->assertEquals( 'js', $display_post->filter );
 		$this->assertEquals( esc_js( "Mary's home" ), $display_post->post_title );
+
+		// Pass a js filtered WP_Post to get_post() with the filter set to raw.
+		// The post should be fetched from cache instead of using the passed object.
+		$raw_post = get_post( $display_post, OBJECT, 'raw' );
+		$this->assertEquals( 'raw', $raw_post->filter );
+		$this->assertNotEquals( esc_js( "Mary's home" ), $raw_post->post_title );
 	}
 
 	function test_get_post_identity() {
