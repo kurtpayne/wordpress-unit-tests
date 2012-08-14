@@ -132,6 +132,26 @@ class Tests_Theme extends WP_UnitTestCase {
 		}
 	}
 
+	function test_wp_get_theme_contents() {
+		$theme = wp_get_theme( $this->theme_slug );
+
+		$this->assertEquals( $this->theme_name, $theme->get( 'Name' ) );
+		$this->assertNotEmpty( $theme->get( 'Description' ) );
+		$this->assertNotEmpty( $theme->get( 'Author' ) );
+		$this->assertNotEmpty( $theme->get( 'Version' ) );
+		$this->assertNotEmpty( $theme->get( 'AuthorURI' ) );
+		$this->assertNotEmpty( $theme->get( 'ThemeURI' ) );
+		$this->assertEquals( $this->theme_slug, $theme->get_stylesheet() );
+		$this->assertEquals( $this->theme_slug, $theme->get_template() );
+
+		$this->assertEquals('publish', $theme->get( 'Status' ) );
+
+		$this->assertEquals( WP_CONTENT_DIR . '/themes/' . $this->theme_slug, $theme->get_stylesheet_directory(), 'get_stylesheet_directory' );
+		$this->assertEquals( WP_CONTENT_DIR . '/themes/' . $this->theme_slug, $theme->get_template_directory(), 'get_template_directory' );
+		$this->assertEquals( content_url( 'themes/' . $this->theme_slug ), $theme->get_stylesheet_directory_uri(), 'get_stylesheet_directory_uri' );
+		$this->assertEquals( content_url( 'themes/' . $this->theme_slug ), $theme->get_template_directory_uri(), 'get_template_directory_uri' );
+	}
+
 	/**
 	 * @ticket 20897
 	 */
