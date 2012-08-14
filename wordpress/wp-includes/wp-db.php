@@ -131,6 +131,15 @@ class wpdb {
 	var $last_result;
 
 	/**
+	 * MySQL result, which is either a resource or boolean.
+	 *
+	 * @since 0.71
+	 * @access protected
+	 * @var mixed
+	 */
+	protected $result;
+
+	/**
 	 * Saved info on the table column
 	 *
 	 * @since 1.2.0
@@ -556,14 +565,50 @@ class wpdb {
 	 *
 	 * @since 3.5.0
 	 *
-	 * @param string $var The private member to get, and optionally process
+	 * @param string $name The private member to get, and optionally process
 	 * @return mixed The private member
 	 */
-	function __get( $var ) {
-		if ( 'col_info' == $var )
+	function __get( $name ) {
+		if ( 'col_info' == $name )
 			$this->load_col_info();
 
-		return $this->$var;
+		return $this->$name;
+	}
+
+	/**
+	 * Magic function, for backwards compatibility
+	 *
+	 * @since 3.5.0
+	 *
+	 * @param string $name  The private member to set
+	 * @param mixed  $value The value to set
+	 */
+	function __set( $name, $value ) {
+		$this->$name = $value;
+	}
+
+	/**
+	 * Magic function, for backwards compatibility
+	 *
+	 * @since 3.5.0
+	 *
+	 * @param string $name  The private member to check
+	 *
+	 * @return bool If the member is set or not
+	 */
+	function __isset( $name ) {
+		return isset( $this->$name );
+	}
+
+	/**
+	 * Magic function, for backwards compatibility
+	 *
+	 * @since 3.5.0
+	 *
+	 * @param string $name  The private member to unset
+	 */
+	function __unset( $name ) {
+		unset( $this->$name );
 	}
 
 	/**
@@ -1076,7 +1121,9 @@ class wpdb {
 		$this->last_result = array();
 		$this->col_info    = null;
 		$this->last_query  = null;
-		@mysql_free_result( $this->result );
+
+		if ( is_resource( $this->result ) )
+			mysql_free_result( $this->result );
 	}
 
 	/**

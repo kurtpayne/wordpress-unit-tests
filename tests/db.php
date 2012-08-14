@@ -78,4 +78,20 @@ class Tests_DB extends WP_UnitTestCase {
 		// Restore locale
 		setlocale( LC_ALL, $current_locale );
 	}
+
+	/**
+	 * @ticket 18510
+	 */
+	function test_wpdb_supposedly_protected_properties() {
+		global $wpdb;
+
+		$this->assertNotEmpty( $wpdb->dbh );
+		$dbh = $wpdb->dbh;
+		$this->assertNotEmpty( $dbh );
+		$this->assertTrue( isset( $wpdb->dbh ) ); // Test __isset()
+		unset( $wpdb->dbh );
+		$this->assertNull( $wpdb->dbh );
+		$wpdb->dbh = $dbh;
+		$this->assertNotEmpty( $wpdb->dbh );
+	}
 }
