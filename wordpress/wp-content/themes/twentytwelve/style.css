@@ -286,7 +286,6 @@ img.size-large,
 img.header-image,
 img.wp-post-image {
 	max-width: 100%;
-	width: auto; /* Prevent stretching of full-size and large-size images with height and width attributes in IE8 */
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
@@ -456,12 +455,6 @@ a:hover {
 /* Page structure */
 .wrapper {
 	overflow: hidden;
-	-moz-hyphens: auto;
-	-ms-word-break: break-all;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-	word-break: break-all;
-	word-break: break-word;
 }
 .site {
 	padding: 0 24px;
@@ -514,7 +507,7 @@ a:hover {
 }
 
 /* Navigation Menu */
-.main-navigation {
+.main-navigation .menu {
 	display: inline-block;
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
@@ -629,6 +622,13 @@ section[role="banner"] {
 
 /* Sidebar */
 .widget-area .widget {
+	overflow: hidden;
+	-moz-hyphens: auto;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	word-break: break-all;
+	word-break: break-word;
 	margin-bottom: 48px;
 	margin-bottom: 3.428571429rem;
 }
@@ -986,6 +986,9 @@ footer .edit-link {
 	overflow: hidden;
 	text-align: center;
 }
+.image-attachment div.attachment p {
+	text-align: center;
+}
 .image-attachment div.attachment img {
 	display: block;
 	height: auto;
@@ -1283,7 +1286,6 @@ label ~ span.required {
 	margin: 0.571428571rem 0 0;
 	font-size: 13px;
 	font-size: 0.928571429rem;
-	line-height: 1.846153846;
 	line-height: 1.714285714;
 	list-style-type: square;
 	list-style-position: inside;
@@ -1608,4 +1610,10 @@ img#wpstats {
 .ie .widget-area {
 	float: right;
 	width: 26.041666667%;
+}
+.ie img.size-full,
+.ie img.size-large,
+.ie img.header-image,
+.ie img.wp-post-image {
+	width: auto; /* Prevent stretching of full-size and large-size images with height and width attributes in IE8 */
 }

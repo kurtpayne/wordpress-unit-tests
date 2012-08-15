@@ -10,11 +10,16 @@ jQuery( document ).ready( function( $ ) {
 		timeout = false;
 
 	$.fn.smallMenu = function() {
+		if ( ! masthead.find( '.menu' ).children().length ) {
+			$( '.menu-toggle' ).remove();
+			return;
+		}
+
 		masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
 		masthead.find( '.site-navigation h3' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
 
 		$( '.menu-toggle' ).off( 'click' ).click( function() {
-			masthead.find( '.menu' ).slideToggle();
+			masthead.find( '.menu' ).stop().slideToggle();
 			$( this ).toggleClass( 'toggled-on' );
 		} );
 	};
