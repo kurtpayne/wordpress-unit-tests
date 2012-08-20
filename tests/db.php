@@ -94,4 +94,18 @@ class Tests_DB extends WP_UnitTestCase {
 		$wpdb->dbh = $dbh;
 		$this->assertNotEmpty( $wpdb->dbh );
 	}
+
+	/**
+	 * @ticket 18510
+	 */
+	function test_wpdb_nonexistent_properties() {
+		global $wpdb;
+
+		$this->assertNull( $wpdb->nonexistent_property );
+		$wpdb->nonexistent_property = true;
+		$this->assertTrue( $wpdb->nonexistent_property );
+		$this->assertTrue( isset( $wpdb->nonexistent_property ) );
+		unset( $wpdb->nonexistent_property );
+		$this->assertNull( $wpdb->nonexistent_property );
+	}
 }
