@@ -7,7 +7,7 @@ Description: The 2012 theme for WordPress is a fully responsive theme that looks
 Version: 0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, flexible-header
+Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Text Domain: twentytwelve
 
 This theme, like WordPress, is licensed under the GPL.
@@ -512,6 +512,10 @@ a:hover {
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
 	text-align: center;
+}
+.main-navigation li ul ul {
+	margin-left: 40px;
+	margin-left: 2.857142857rem;
 }
 .main-navigation li {
 	margin-top: 24px;
@@ -1382,6 +1386,7 @@ img#wpstats {
 		z-index: 1;
 	}
 	.main-navigation li ul ul {
+		margin-left: 0;
 		top: 0;
 		left: 100%;
 	}
