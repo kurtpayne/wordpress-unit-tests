@@ -48,6 +48,17 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$post = get_post( $id, 'invalid-output-value' );
 		$this->assertInstanceOf( 'WP_Post', $post );
 		$this->assertEquals( $id, $post->ID );
+
+		// Make sure stdClass in $GLOBALS['post'] is handled
+		$post_std = $post->to_array();
+		$this->assertInternalType( 'array', $post_std );
+		$post_std = (object) $post_std;
+		$GLOBALS['post'] = $post_std;
+		$pid = null;
+		$post = get_post( $pid );
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( $id, $post->ID );
+		unset( $GLOBALS['post'] );
 	}
 
 	function test_get_post_ancestors() {
