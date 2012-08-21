@@ -325,54 +325,52 @@ class Tests_Functions extends WP_UnitTestCase {
 		$_SERVER['REQUEST_URI'] = $old_req_uri;
 	}
 
+	/**
+	 * @ticket 21594
+	 */
 	function test_get_allowed_mime_types() {
 		$mimes = get_allowed_mime_types();
 
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertNotEmpty( $mimes );
 
-		$callback = function( $mimes ) {
-			return array();
-		};
-
-		add_filter( 'upload_mimes',  $callback );
+		add_filter( 'upload_mimes', '__return_empty_array' );
 		$mimes = get_allowed_mime_types();
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertEmpty( $mimes );
 
-		remove_filter( 'upload_mimes', $callback );
+		remove_filter( 'upload_mimes', '__return_empty_array' );
 		$mimes = get_allowed_mime_types();
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertNotEmpty( $mimes );
 	}
 
+	/**
+	 * @ticket 21594
+	 */
 	function test_wp_get_mime_types() {
 		$mimes = wp_get_mime_types();
 
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertNotEmpty( $mimes );
 
-		$callback = function( $mimes ) {
-			return array();
-		};
-
-		add_filter( 'mime_types',  $callback );
+		add_filter( 'mime_types', '__return_empty_array' );
 		$mimes = wp_get_mime_types();
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertEmpty( $mimes );
 
-		remove_filter( 'mime_types', $callback );
+		remove_filter( 'mime_types', '__return_empty_array' );
 		$mimes = wp_get_mime_types();
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertNotEmpty( $mimes );
 
 		// upload_mimes shouldn't affect wp_get_mime_types()
-		add_filter( 'upload_mimes',  $callback );
+		add_filter( 'upload_mimes', '__return_empty_array' );
 		$mimes = wp_get_mime_types();
 		$this->assertInternalType( 'array', $mimes );
 		$this->assertNotEmpty( $mimes );
 
-		remove_filter( 'upload_mimes', $callback );
+		remove_filter( 'upload_mimes', '__return_empty_array' );
 		$mimes2 = wp_get_mime_types();
 		$this->assertInternalType( 'array', $mimes2 );
 		$this->assertNotEmpty( $mimes2 );
