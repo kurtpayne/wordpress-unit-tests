@@ -76,12 +76,12 @@ class WP_UnitTest_Factory_For_Comment extends WP_UnitTest_Factory_For_Thing {
 	}
 
 	function create_object( $args ) {
-		return wp_insert_comment( $args );
+		return wp_insert_comment( $this->addslashes_deep( $args ) );
 	}
 
 	function update_object( $comment_id, $fields ) {
 		$fields['comment_ID'] = $comment_id;
-		return wp_update_comment( $fields );
+		return wp_update_comment( $this->addslashes_deep( $fields ) );
 	}
 
 	function create_post_comments( $post_id, $count = 1, $args = array(), $generation_definitions = null ) {
@@ -247,6 +247,22 @@ abstract class WP_UnitTest_Factory_For_Thing {
 	function callback( $function ) {
 		return new WP_UnitTest_Factory_Callback_After_Create( $function );
 	}
+
+	function addslashes_deep($value) {
+		if ( is_array( $value ) ) {
+			$value = array_map( array( $this, 'addslashes_deep' ), $value );
+		} elseif ( is_object( $value ) ) {
+			$vars = get_object_vars( $value );
+			foreach ($vars as $key=>$data) {
+				$value->{$key} = $this->addslashes_deep( $data );
+			}
+		} elseif ( is_string( $value ) ) {
+			$value = addslashes( $value );
+		}
+
+		return $value;
+	}
+
 }
 
 class WP_UnitTest_Generator_Sequence {
