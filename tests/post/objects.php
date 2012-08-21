@@ -54,11 +54,16 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$this->assertInternalType( 'array', $post_std );
 		$post_std = (object) $post_std;
 		$GLOBALS['post'] = $post_std;
-		$pid = null;
-		$post = get_post( $pid );
+		$post = get_post( null );
 		$this->assertInstanceOf( 'WP_Post', $post );
 		$this->assertEquals( $id, $post->ID );
 		unset( $GLOBALS['post'] );
+
+		// If no global post and passing empty value, expect null.
+		$this->assertNull( get_post( null ) );
+		$this->assertNull( get_post( 0 ) );
+		$this->assertNull( get_post( '' ) );
+		$this->assertNull( get_post( false ) );
 	}
 
 	function test_get_post_ancestors() {

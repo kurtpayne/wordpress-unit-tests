@@ -351,10 +351,10 @@ class Tests_MS extends WP_UnitTestCase {
 	}
 
 	function test_switch_restore_blog() {
-		global $_wp_switched, $_wp_switched_stack, $wpdb;
+		global $_wp_switched_stack, $wpdb;
 
 		$this->assertEquals( array(), $_wp_switched_stack );
-		$this->assertFalse( $_wp_switched );
+		$this->assertFalse( ms_is_switched() );
 		$current_blog_id = get_current_blog_id();
 		$this->assertInternalType( 'integer', $current_blog_id );
 
@@ -378,7 +378,7 @@ class Tests_MS extends WP_UnitTestCase {
 
 		switch_to_blog( $blog_id );
 		$this->assertEquals( array( $current_blog_id ), $_wp_switched_stack );
-		$this->assertTrue( $_wp_switched );
+		$this->assertTrue( ms_is_switched() );
 		$this->assertEquals( $blog_id, $wpdb->blogid );
 		$this->assertFalse( wp_cache_get( 'switch-test', 'switch-test' ) );
 		wp_cache_set( 'switch-test', $blog_id, 'switch-test' );
@@ -386,20 +386,20 @@ class Tests_MS extends WP_UnitTestCase {
 
 		switch_to_blog( $blog_id );
 		$this->assertEquals( array( $current_blog_id, $blog_id ), $_wp_switched_stack );
-		$this->assertTrue( $_wp_switched );
+		$this->assertTrue( ms_is_switched() );
 		$this->assertEquals( $blog_id, $wpdb->blogid );
 		$this->assertEquals( $blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
 
 		restore_current_blog();
 		$this->assertEquals( array( $current_blog_id ), $_wp_switched_stack );
-		$this->assertTrue( $_wp_switched );
+		$this->assertTrue( ms_is_switched() );
 		$this->assertEquals( $blog_id, $wpdb->blogid );
 		$this->assertEquals( $blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
 
 		restore_current_blog();
 		$this->assertEquals( $current_blog_id, get_current_blog_id() );
 		$this->assertEquals( array(), $_wp_switched_stack );
-		$this->assertFalse( $_wp_switched );
+		$this->assertFalse( ms_is_switched() );
 		$this->assertEquals( $current_blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
 
 		$this->assertFalse( restore_current_blog() );
