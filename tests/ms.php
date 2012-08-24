@@ -361,20 +361,8 @@ class Tests_MS extends WP_UnitTestCase {
 		wp_cache_set( 'switch-test', $current_blog_id, 'switch-test' );
 		$this->assertEquals( $current_blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
 
-		$domain = 'blogoptiontest';
-		if ( is_subdomain_install() ) {
-			$newdomain = $domain . '.' . preg_replace( '|^www\.|', '', $current_site->domain );
-			$path = $base;
-		} else {
-			$newdomain = $current_site->domain;
-			$path = $base . $domain . '/';
-		}
-		$email = 'foo@foo.foo';
-		$password = wp_generate_password( 12, false );
-		$user_id = wpmu_create_user( $domain, $password, $email );
-		$this->assertInternalType( 'integer', $user_id );
-		$blog_id = wpmu_create_blog( $newdomain, $path, $title, $user_id , array( 'public' => 1 ), $current_site->id );
-		$this->assertInternalType( 'integer', $blog_id );
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/test_blogpath', 'title' => 'Test Title' ) );
 
 		switch_to_blog( $blog_id );
 		$this->assertEquals( array( $current_blog_id ), $_wp_switched_stack );
@@ -403,6 +391,33 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( $current_blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
 
 		$this->assertFalse( restore_current_blog() );
+	}
+
+	function test_get_blog_post() {
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/test_blogpath', 'title' => 'Test Title' ) );
+		$current_blog_id = get_current_blog_id();
+
+		$post_id = $this->factory->post->create();
+		//$this->assertInstanceOf( 'WP_Post', get_post( $post_id ) );
+		switch_to_blog( $blog_id );
+		$this->assertNull( get_post( $post_id ) );
+		$post = get_blog_post( $current_blog_id, $post_id );
+		//$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( $post_id, $post->ID );
+		restore_current_blog();
+
+		wp_update_post( array( 'ID' => $post_id, 'post_title' => 'A Different Title' ) );
+		switch_to_blog( $blog_id );
+		$post = get_blog_post( $current_blog_id, $post_id );
+		// Make sure cache is good
+		$this->assertEquals( 'A Different Title', $post->post_title );
+
+		$post_id2 = $this->factory->post->create();
+		// Test get_blog_post() with currently active blog ID.
+		$post = get_blog_post( $blog_id, $post_id2 );
+		//$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( $post_id2, $post->ID );
 	}
 }
 
