@@ -289,16 +289,16 @@ function twentytwelve_comment( $comment, $args, $depth ) {
 						sprintf( __( '%1$s at %2$s', 'twentytwelve' ), get_comment_date(), get_comment_time() )
 					);
 				?>
-			</header>
+			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentytwelve' ); ?></p>
 			<?php endif; ?>
 
-			<section class="comment comment-content">
+			<section class="comment-content comment">
 				<?php comment_text(); ?>
 				<?php edit_comment_link( __( 'Edit', 'twentytwelve' ), '<p class="edit-link">', '</p>' ); ?>
-			</section>
+			</section><!-- .comment-content -->
 
 			<div class="reply">
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentytwelve' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
@@ -372,7 +372,7 @@ endif;
 function twentytwelve_body_class( $classes ) {
 	$background_color = get_background_color();
 
-	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'full-width-page.php' ) )
+	if ( ! is_active_sidebar( 1 ) || is_page_template( 'full-width-page.php' ) )
 		$classes[] = 'full-width';
 
 	if ( is_page_template( 'homepage.php' ) && has_post_thumbnail() )
@@ -394,7 +394,7 @@ add_filter( 'body_class', 'twentytwelve_body_class' );
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_content_width() {
-	if ( is_page_template( 'full-width-page.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_page_template( 'full-width-page.php' ) || is_attachment() || ! is_active_sidebar( 1 ) ) {
 		global $content_width;
 		$content_width = 960;
 	}
