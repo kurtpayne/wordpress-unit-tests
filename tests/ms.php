@@ -399,11 +399,11 @@ class Tests_MS extends WP_UnitTestCase {
 		$current_blog_id = get_current_blog_id();
 
 		$post_id = $this->factory->post->create();
-		//$this->assertInstanceOf( 'WP_Post', get_post( $post_id ) );
+		$this->assertInstanceOf( 'WP_Post', get_post( $post_id ) );
 		switch_to_blog( $blog_id );
 		$this->assertNull( get_post( $post_id ) );
 		$post = get_blog_post( $current_blog_id, $post_id );
-		//$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertInstanceOf( 'WP_Post', $post );
 		$this->assertEquals( $post_id, $post->ID );
 		restore_current_blog();
 
@@ -416,8 +416,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$post_id2 = $this->factory->post->create();
 		// Test get_blog_post() with currently active blog ID.
 		$post = get_blog_post( $blog_id, $post_id2 );
-		//$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertInstanceOf( 'WP_Post', $post );
 		$this->assertEquals( $post_id2, $post->ID );
+		restore_current_blog();
 	}
 }
 
