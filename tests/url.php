@@ -156,4 +156,34 @@ class Tests_URL extends WP_UnitTestCase {
 		force_ssl_admin( $forced_admin );
 		force_ssl_login( $forced_login );
 	}
+
+	function test_get_adjacent_post() {
+		$post_id = $this->factory->post->create();
+		sleep( 1 ); // get_adjacent_post() doesn't handle posts created in the same second.
+		$post_id2 = $this->factory->post->create();
+
+		$orig_post = $GLOBALS['post'];
+		$GLOBALS['post'] = get_post( $post_id2 );
+
+		$p = get_adjacent_post();
+		$this->assertInstanceOf( 'WP_Post', $p );
+		$this->assertEquals( $post_id, $p->ID );
+
+		// The same again to make sure a cached query returns the same result
+		$p = get_adjacent_post();
+		$this->assertInstanceOf( 'WP_Post', $p );
+		$this->assertEquals( $post_id, $p->ID );
+
+		// Test next
+		$p = get_adjacent_post( false, '', false );
+		$this->assertEquals( '', $p );
+
+		unset( $GLOBALS['post'] );
+		$this->assertNull( get_adjacent_post() );
+
+		$GLOBALS['post'] = $orig_post;
+
+		// Tests requiring creating more posts can't be run since the query
+		// cache in get_adjacent_post() requires a fresh page load to invalidate.
+	}
 }
