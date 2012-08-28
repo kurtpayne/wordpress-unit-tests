@@ -88,6 +88,42 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$this->assertEquals( array(), get_post_ancestors( get_post( $parent_id ) ) );
 	}
 
+	function test_get_post_category_property() {
+		$post_id = $this->factory->post->create();
+		$post = get_post( $post_id );
+
+		$this->assertInternalType( 'array', $post->post_category );
+		$this->assertEquals( 1, count( $post->post_category ) );
+		$this->assertEquals( get_option( 'default_category' ), $post->post_category[0] );
+		$term1 = wp_insert_term( 'Foo', 'category' );
+		$term2 = wp_insert_term( 'Bar', 'category' );
+		$term3 = wp_insert_term( 'Baz', 'category' );
+		wp_set_post_categories( $post_id, array( $term1['term_id'], $term2['term_id'], $term3['term_id'] ) );
+		$this->assertEquals( 3, count( $post->post_category ) );
+		$this->assertEquals( array( $term2['term_id'], $term3['term_id'], $term1['term_id'] ) , $post->post_category );
+
+		$post = get_post( $post_id, ARRAY_A );
+		$this->assertEquals( 3, count( $post['post_category'] ) );
+		$this->assertEquals( array( $term2['term_id'], $term3['term_id'], $term1['term_id'] ) , $post['post_category'] );
+	}
+
+	function test_get_tags_input_property() {
+		$post_id = $this->factory->post->create();
+		$post = get_post( $post_id );
+
+		$this->assertInternalType( 'array', $post->tags_input );
+		$this->assertEmpty( $post->tags_input );
+		wp_set_post_tags( $post_id, 'Foo, Bar, Baz' );
+		$this->assertInternalType( 'array', $post->tags_input );
+		$this->assertEquals( 3, count( $post->tags_input ) );
+		$this->assertEquals( array( 'Bar', 'Baz', 'Foo' ), $post->tags_input );
+
+		$post = get_post( $post_id, ARRAY_A );
+		$this->assertInternalType( 'array', $post['tags_input'] );
+		$this->assertEquals( 3, count( $post['tags_input'] ) );
+		$this->assertEquals( array( 'Bar', 'Baz', 'Foo' ), $post['tags_input'] );
+	}
+
 	function test_get_post_filter() {
 		$post = get_post( $this->factory->post->create( array(
 			'post_title' => "Mary's home"
