@@ -60,7 +60,7 @@ class WP_UnitTest_Factory_For_User extends WP_UnitTest_Factory_For_Thing {
 	}
 
 	function get_object_by_id( $user_id ) {
-		return get_user( $user_id );
+		return new WP_User( $user_id );
 	}
 }
 
