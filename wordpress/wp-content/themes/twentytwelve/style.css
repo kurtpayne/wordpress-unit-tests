@@ -297,6 +297,9 @@ object,
 video {
 	max-width: 100%;
 }
+.entry-content .twitter-tweet-rendered { 
+	max-width: 100% !important; /* Override the Twitter embed fixed width */
+}
 
 /* Images */
 .alignleft {
@@ -333,7 +336,7 @@ img.wp-post-image {
 	line-height: 2;
 	color: #777;
 }
-.wp-smiley,
+img.wp-smiley,
 .rsswidget img {
 	border: 0;
 	border-radius: 0;
@@ -560,7 +563,8 @@ section[role="banner"] {
 	margin-bottom: 1.714285714rem;
 }
 .widget-area .widget p,
-.widget-area .widget li {
+.widget-area .widget li,
+.widget-area .widget .textwidget {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
