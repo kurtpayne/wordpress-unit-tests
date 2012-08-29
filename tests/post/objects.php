@@ -124,6 +124,26 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$this->assertEquals( array( 'Bar', 'Baz', 'Foo' ), $post['tags_input'] );
 	}
 
+	function test_get_page_template_property() {
+		$post_id = $this->factory->post->create();
+		$post = get_post( $post_id );
+
+		$this->assertInternalType( 'string', $post->page_template );
+		$this->assertEmpty( $post->tags_input );
+		$template = get_post_meta( $post->ID, '_wp_page_template', true );
+		$this->assertEquals( $template, $post->page_template );
+		update_post_meta( $post_id, '_wp_page_template', 'foo.php' );
+		$template = get_post_meta( $post->ID, '_wp_page_template', true );
+		$this->assertEquals( 'foo.php', $template );
+		// The post is not a page so the template is still empty
+		$this->assertEquals( '', $post->page_template );
+
+		// Now the post is a page and should retrieve the template
+		wp_update_post( array( 'ID' => $post->ID, 'post_type' => 'page' ) );
+		$post = get_post( $post_id );
+		$this->assertEquals( $template, $post->page_template );
+	}
+
 	function test_get_post_filter() {
 		$post = get_post( $this->factory->post->create( array(
 			'post_title' => "Mary's home"
