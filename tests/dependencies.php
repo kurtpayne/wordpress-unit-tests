@@ -5,7 +5,6 @@
  */
 class Tests_Dependencies extends WP_UnitTestCase {
 	function test_add() {
-		// Create a new object
 		$dep = new WP_Dependencies;
 
 		$this->assertTrue($dep->add( 'one', '' ));
@@ -19,7 +18,6 @@ class Tests_Dependencies extends WP_UnitTestCase {
 	}
 
 	function test_remove() {
-		// Create a new object
 		$dep = new WP_Dependencies;
 
 		$this->assertTrue($dep->add( 'one', '' ));
@@ -33,7 +31,6 @@ class Tests_Dependencies extends WP_UnitTestCase {
 	}
 
 	function test_enqueue() {
-		// Create a new object
 		$dep = new WP_Dependencies;
 
 		$this->assertTrue($dep->add( 'one', '' ));
@@ -50,7 +47,6 @@ class Tests_Dependencies extends WP_UnitTestCase {
 	}
 
 	function test_dequeue() {
-		// Create a new object
 		$dep = new WP_Dependencies;
 
 		$this->assertTrue($dep->add( 'one', '' ));
@@ -71,7 +67,6 @@ class Tests_Dependencies extends WP_UnitTestCase {
 	}
 
 	function test_enqueue_args() {
-		// Create a new object
 		$dep = new WP_Dependencies;
 
 		$this->assertTrue($dep->add( 'one', '' ));
@@ -90,7 +85,6 @@ class Tests_Dependencies extends WP_UnitTestCase {
 	}
 
 	function test_dequeue_args() {
-		// Create a new object
 		$dep = new WP_Dependencies;
 
 		$this->assertTrue($dep->add( 'one', '' ));
@@ -114,4 +108,32 @@ class Tests_Dependencies extends WP_UnitTestCase {
 		$this->assertFalse(isset($dep->args['two']));
 	}
 
+	/**
+	 * @ticket 21741
+	 */
+	function test_query_and_registered_enqueued() {
+		$dep = new WP_Dependencies;
+
+		$this->assertTrue( $dep->add( 'one', '' ) );
+		$this->assertInstanceOf( '_WP_Dependency', $dep->query( 'one' ) );
+		$this->assertInstanceOf( '_WP_Dependency', $dep->query( 'one', 'registered' ) );
+		$this->assertInstanceOf( '_WP_Dependency', $dep->query( 'one', 'scripts' ) );
+
+		$this->assertFalse( $dep->query( 'one', 'enqueued' ) );
+		$this->assertFalse( $dep->query( 'one', 'queue' ) );
+
+		$dep->enqueue( 'one' );
+
+		$this->assertTrue( $dep->query( 'one', 'enqueued' ) );
+		$this->assertTrue( $dep->query( 'one', 'queue' ) );
+
+		$dep->dequeue( 'one' );
+
+		$this->assertFalse( $dep->query( 'one', 'queue' ) );
+		$this->assertInstanceOf( '_WP_Dependency', $dep->query( 'one' ) );
+
+		$dep->remove( 'one' );
+		$this->assertFalse( $dep->query( 'one' ) );
+
+	}
 }
