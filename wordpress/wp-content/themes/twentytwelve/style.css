@@ -437,9 +437,12 @@ html {
 body {
 	font-size: 14px;
 	font-size: 1rem;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	text-rendering: optimizeLegibility;
 	color: #444;
+}
+body.custom-font-enabled {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 a {
 	outline: none;
@@ -523,7 +526,6 @@ a:hover {
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 1.42857143;
-	float: none;
 }
 .main-navigation a {
 	color: #5e5e5e;
@@ -580,6 +582,9 @@ section[role="banner"] {
 footer[role="contentinfo"] {
 	border-top: 1px solid #ededed;
 	clear: both;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
 	max-width: 960px;
 	max-width: 68.571428571rem;
 	margin-top: 24px;
@@ -591,9 +596,6 @@ footer[role="contentinfo"] {
 	overflow: hidden;
 }
 footer[role="contentinfo"] a {
-	font-size: 12px;
-	font-size: 0.857142857rem;
-	line-height: 2;
 	color: #686868;
 }
 footer[role="contentinfo"] a:hover {
@@ -1302,7 +1304,7 @@ img#wpstats {
 @media screen and (min-width: 600px) {
 	.entry-content p,
 	.entry-summary p {
-		text-align: left;
+		text-align: inherit;
 		text-justify: auto;
 	}
 	#author-avatar {

@@ -85,6 +85,52 @@ class Tests_URL extends WP_UnitTestCase {
 		}
 	}
 
+	function test_home_url_valid() {
+		$paths = array(
+			'' => "",
+			'foo' => "/foo",
+			'/foo' => "/foo",
+			'/foo/' => "/foo/",
+			'foo.php' => "/foo.php",
+			'/foo.php' => "/foo.php",
+			'/foo.php?bar=1' => "/foo.php?bar=1",
+		);
+		$https = array('on', 'off');
+
+		foreach ($https as $val) {
+			$_SERVER['HTTPS'] = $val;
+			$home = get_option('home');
+			if ( $val == 'on' )
+				$home = str_replace('http://', 'https://', $home);
+
+			foreach ($paths as $in => $out) {
+				$this->assertEquals( $home.$out, home_url($in), "home_url('{$in}') should equal '{$home}{$out}'");
+			}
+		}
+	}
+
+	function test_home_url_invalid() {
+		$paths = array(
+			null => "",
+			0 => "",
+			-1 => "",
+			'../foo/' => "",
+			'///' => "/",
+		);
+		$https = array('on', 'off');
+
+		foreach ($https as $val) {
+			$_SERVER['HTTPS'] = $val;
+			$home = get_option('home');
+			if ( $val == 'on' )
+				$home = str_replace('http://', 'https://', $home);
+
+			foreach ($paths as $in => $out) {
+				$this->assertEquals( $home.$out, home_url($in), "home_url('{$in}') should equal '{$home}{$out}'");
+			}
+		}
+	}
+
 	function test_set_url_scheme() {
 		if ( ! function_exists( 'set_url_scheme' ) )
 			return;
