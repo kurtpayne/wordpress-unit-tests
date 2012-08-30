@@ -538,4 +538,20 @@ class Tests_User extends WP_UnitTestCase {
 		$this->assertFalse( get_userdata( 'string' ) );
 		$this->assertFalse( get_userdata( array( 'array' ) ) );
 	}
+
+	/**
+	 * @ticket 20447
+	 */
+	function test_wp_delete_user_reassignment_clears_post_caches() {
+		$user_id   = $this->factory->user->create();
+		$reassign  = $this->factory->user->create();
+		$post_id   = $this->factory->post->create( array( 'post_author' => $user_id ) );
+
+		get_post( $post_id ); // Ensure this post is in the cache.
+
+		wp_delete_user( $user_id, $reassign );
+
+		$post = get_post( $post_id );
+		$this->assertEquals( $reassign, $post->post_author );
+	}
 }
