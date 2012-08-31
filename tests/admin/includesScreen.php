@@ -32,9 +32,14 @@ class Tests_Admin_includesScreen extends WP_UnitTestCase {
 		'options-writing.php' => array( 'base' => 'options-writing', 'id' => 'options-writing' ),
 	);
 
+	function setUp() {
+		set_current_screen( 'front' );
+	}
+
 	function tearDown() {
 		parent::tearDown();
 		unset( $GLOBALS['wp_taxonomies']['old-or-new'] );
+		set_current_screen( 'front' );
 	}
 
 	function test_set_current_screen_with_hook_suffix() {
