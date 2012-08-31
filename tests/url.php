@@ -131,6 +131,55 @@ class Tests_URL extends WP_UnitTestCase {
 		}
 	}
 
+	function test_home_url_from_admin() {
+		$screen = get_current_screen();
+
+		// Pretend to be in the site admin
+		set_current_screen( 'dashboard' );
+		$home = get_option('home');
+
+		// home_url() should return http when in the admin
+		$_SERVER['HTTPS'] = 'on';
+		$this->assertEquals( $home, home_url() );
+
+		$_SERVER['HTTPS'] = 'off';
+		$this->assertEquals( $home, home_url() );
+
+		// If not in the admin, is_ssl() should determine the scheme
+		set_current_screen( 'front' );
+		$this->assertEquals( $home, home_url() );
+		$_SERVER['HTTPS'] = 'on';
+		$home = str_replace('http://', 'https://', $home);
+		$this->assertEquals( $home, home_url() );
+
+		$GLOBALS['current_screen'] = $screen;
+	}
+
+	function test_network_home_url_from_admin() {
+		$screen = get_current_screen();
+
+		// Pretend to be in the site admin
+		set_current_screen( 'dashboard' );
+		$home = network_home_url();
+
+		// home_url() should return http when in the admin
+		$this->assertEquals( 0, strpos( $home, 'http://') );
+		$_SERVER['HTTPS'] = 'on';
+		$this->assertEquals( $home, network_home_url() );
+
+		$_SERVER['HTTPS'] = 'off';
+		$this->assertEquals( $home, network_home_url() );
+
+		// If not in the admin, is_ssl() should determine the scheme
+		set_current_screen( 'front' );
+		$this->assertEquals( $home, network_home_url() );
+		$_SERVER['HTTPS'] = 'on';
+		$home = str_replace('http://', 'https://', $home);
+		$this->assertEquals( $home, network_home_url() );
+
+		$GLOBALS['current_screen'] = $screen;
+	}
+
 	function test_set_url_scheme() {
 		if ( ! function_exists( 'set_url_scheme' ) )
 			return;

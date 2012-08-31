@@ -70,6 +70,12 @@ class Tests_Admin_includesScreen extends WP_UnitTestCase {
 			if ( isset( $screen->taxonomy ) )
 				$this->assertEquals( $screen->taxonomy, $current_screen->taxonomy, $hook_name );
 
+			$this->assertTrue( $current_screen->in_admin() );
+			$this->assertTrue( $current_screen->in_admin( 'site' ) );
+			$this->assertFalse( $current_screen->in_admin( 'network' ) );
+			$this->assertFalse( $current_screen->in_admin( 'user' ) );
+			$this->assertFalse( $current_screen->in_admin( 'garbage' ) );
+			
 			// With convert_to_screen(), the same ID should return the exact $current_screen.
 			$this->assertSame( $current_screen, convert_to_screen( $screen->id ), $hook_name );
 
@@ -162,5 +168,35 @@ class Tests_Admin_includesScreen extends WP_UnitTestCase {
 
 		$screen->remove_help_tabs();
 		$this->assertEquals( $screen->get_help_tabs(), array() );
+	}
+
+	function test_in_admin() {
+		$screen = get_current_screen();
+
+		set_current_screen( 'edit.php' );
+		$this->assertTrue( get_current_screen()->in_admin() );
+		$this->assertTrue( get_current_screen()->in_admin( 'site' ) );
+		$this->assertFalse( get_current_screen()->in_admin( 'network' ) );
+		$this->assertFalse( get_current_screen()->in_admin( 'user' ) );
+
+		set_current_screen( 'dashboard-network' );
+		$this->assertTrue( get_current_screen()->in_admin() );
+		$this->assertFalse( get_current_screen()->in_admin( 'site' ) );
+		$this->assertTrue( get_current_screen()->in_admin( 'network' ) );
+		$this->assertFalse( get_current_screen()->in_admin( 'user' ) );
+
+		set_current_screen( 'dashboard-user' );
+		$this->assertTrue( get_current_screen()->in_admin() );
+		$this->assertFalse( get_current_screen()->in_admin( 'site' ) );
+		$this->assertFalse( get_current_screen()->in_admin( 'network' ) );
+		$this->assertTrue( get_current_screen()->in_admin( 'user' ) );
+
+		set_current_screen( 'front' );
+		$this->assertFalse( get_current_screen()->in_admin() );
+		$this->assertFalse( get_current_screen()->in_admin( 'site' ) );
+		$this->assertFalse( get_current_screen()->in_admin( 'network' ) );
+		$this->assertFalse( get_current_screen()->in_admin( 'user' ) );
+
+		$GLOBALS['current_screen'] = $screen;
 	}
 }
