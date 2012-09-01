@@ -30,7 +30,7 @@ class Tests_XMLRPC_wp_uploadFile extends WP_XMLRPC_UnitTestCase {
 	}
 
 	/**
-	 * @tickets 21292
+	 * @ticket 21292
 	 */
 	function test_network_limit() {
 		$this->make_user_by_role( 'editor' );
