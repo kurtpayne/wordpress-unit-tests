@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying posts in the Link post format
+ * The template for displaying posts in the Status post format
  *
  * @package WordPress
  * @subpackage Twenty_Twelve
@@ -9,8 +9,8 @@
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header><?php _e( 'Link', 'twentytwelve' ); ?></header>
 		<div class="entry-content">
+			<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'twentytwelve_status_avatar', '48' ) ); ?></div>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
 		</div><!-- .entry-content -->
 
