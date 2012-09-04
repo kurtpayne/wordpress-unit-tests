@@ -420,6 +420,21 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( $post_id2, $post->ID );
 		restore_current_blog();
 	}
+
+	/**
+	 * @ticket 21570
+	 */
+	function test_is_email_address_unsafe() {
+		update_site_option( 'banned_email_domains', 'bar.com' );
+
+		foreach ( array( 'test@bar.com', 'test@foo.bar.com' ) as $email_address ) {
+			$this->assertTrue( is_email_address_unsafe( $email_address ), "$email_address should be UNSAFE" );
+		}
+
+		foreach ( array( 'test@foobar.com', 'test@foo-bar.com' ) as $email_address ) {
+			$this->assertFalse( is_email_address_unsafe( $email_address ), "$email_address should be SAFE" );
+		}
+	}
 }
 
 endif;
