@@ -93,4 +93,18 @@ class Tests_Theme_WPTheme extends WP_UnitTestCase {
 		$this->assertEquals( 'subdir/theme2', $theme->get_template() );
 	}
 
+	/**
+	 * @ticket 21749
+	 */
+	function test_wp_theme_uris_with_spaces() {
+		$theme = new WP_Theme( 'theme with spaces', $this->theme_root . '/subdir' );
+		// Make sure subdir/ is considered part of the stylesheet, as we must avoid encoding /'s.
+		$this->assertEquals( 'subdir/theme with spaces', $theme->get_stylesheet() );
+		// Check that in a URI path, we have raw url encoding (spaces become %20)
+		$this->assertEquals( $this->theme_root . '/subdir/theme%20with%20spaces', $theme->get_stylesheet_directory_uri() );
+		$this->assertEquals( $this->theme_root . '/subdir/theme%20with%20spaces', $theme->get_template_directory_uri() );
+		// Check that wp_customize_url() uses url encoding, as it is a query arg (spaces become +)
+		$this->assertEquals( admin_url( 'customize.php?theme=theme+with+spaces' ), wp_customize_url( 'theme with spaces' ) );
+	}
+
 }
