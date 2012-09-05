@@ -65,6 +65,7 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 		add_filter( 'wp_die_ajax_handler', array( $this, 'getDieHandler' ), 1, 1 );
 		if ( !defined( 'DOING_AJAX' ) )
 			define( 'DOING_AJAX', true );
+		set_current_screen( 'ajax' );
 
 		// Clear logout cookies
 		add_action( 'clear_auth_cookie', array( $this, 'logout' ) );
@@ -90,6 +91,7 @@ abstract class WP_Ajax_UnitTestCase extends WP_UnitTestCase {
 		remove_filter( 'wp_die_ajax_handler', array( $this, 'getDieHandler' ), 1, 1 );
 		remove_action( 'clear_auth_cookie', array( $this, 'logout' ) );
 		error_reporting( $this->_error_level );
+		set_current_screen( 'front' );
 	}
 
 	/**
