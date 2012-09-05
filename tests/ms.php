@@ -364,7 +364,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/test_blogpath', 'title' => 'Test Title' ) );
 
+		$cap_key = wp_get_current_user()->cap_key;
 		switch_to_blog( $blog_id );
+		$this->assertNotEquals( $cap_key, wp_get_current_user()->cap_key );
 		$this->assertEquals( array( $current_blog_id ), $_wp_switched_stack );
 		$this->assertTrue( ms_is_switched() );
 		$this->assertEquals( $blog_id, $wpdb->blogid );
@@ -385,6 +387,7 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( $blog_id, wp_cache_get( 'switch-test', 'switch-test' ) );
 
 		restore_current_blog();
+		$this->assertEquals( $cap_key, wp_get_current_user()->cap_key );
 		$this->assertEquals( $current_blog_id, get_current_blog_id() );
 		$this->assertEquals( array(), $_wp_switched_stack );
 		$this->assertFalse( ms_is_switched() );
