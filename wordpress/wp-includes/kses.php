@@ -34,6 +34,11 @@
 /**
  * You can override this in a plugin.
  *
+ * The wp_kses_allowed_html filter is more powerful and supplies context.
+ * CUSTOM_TAGS is not recommended and should be considered deprecated.
+ *
+ * @see wp_kses_allowed_html()
+ *
  * @since 1.2.0
  */
 if ( ! defined( 'CUSTOM_TAGS' ) )
@@ -384,30 +389,18 @@ if ( ! CUSTOM_TAGS ) {
 		'blockquote' => array(
 			'cite' => true,
 		),
-		//	'br' => array(),
 		'cite' => array(),
 		'code' => array(),
 		'del' => array(
 			'datetime' => true,
 		),
-		//	'dd' => array(),
-		//	'dl' => array(),
-		//	'dt' => array(),
 		'em' => array(),
 		'i' => array(),
-		//	'ins' => array('datetime' => array(), 'cite' => array()),
-		//	'li' => array(),
-		//	'ol' => array(),
-		//	'p' => array(),
 		'q' => array(
 			'cite' => true,
 		),
 		'strike' => array(),
 		'strong' => array(),
-		//	'sub' => array(),
-		//	'sup' => array(),
-		//	'u' => array(),
-		//	'ul' => array(),
 	);
 
 	$allowedentitynames = array(

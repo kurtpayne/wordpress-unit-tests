@@ -68,15 +68,27 @@ class Tests_MS extends WP_UnitTestCase {
 		foreach ( $blog_ids as $blog_id )
 			$this->assertInternalType( 'int', $blog_id );
 
-		$blogs_of_user = array_keys( get_blogs_of_user( $user1_id, $all = false ) );
+		$blogs_of_user = array_keys( get_blogs_of_user( $user1_id, false ) );
 		sort( $blogs_of_user );
 		$this->assertEquals ( array_merge( array( 1 ), $blog_ids), $blogs_of_user );
 
 		$this->assertTrue( remove_user_from_blog( $user1_id, 1 ) );
 
-		$blogs_of_user = array_keys( get_blogs_of_user( $user1_id, $all = false ) );
+		$blogs_of_user = array_keys( get_blogs_of_user( $user1_id, false ) );
 		sort( $blogs_of_user );
 		$this->assertEquals ( $blog_ids, $blogs_of_user );
+
+		foreach ( get_blogs_of_user( $user1_id, false ) as $blog ) {
+			$this->assertTrue( isset( $blog->userblog_id ) );
+			$this->assertTrue( isset( $blog->blogname ) );
+			$this->assertTrue( isset( $blog->domain ) );
+			$this->assertTrue( isset( $blog->path ) );
+			$this->assertTrue( isset( $blog->site_id ) );
+			$this->assertTrue( isset( $blog->siteurl ) );
+			$this->assertTrue( isset( $blog->archived ) );
+			$this->assertTrue( isset( $blog->spam ) );
+			$this->assertTrue( isset( $blog->deleted ) );
+		}
 
 		// Non-existent users don't have blogs.
 		wpmu_delete_user( $user1_id );
