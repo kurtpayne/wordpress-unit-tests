@@ -295,4 +295,59 @@ EOF;
 			}
 		}
 	}
+
+	public function test_wp_kses_allowed_html() {
+		global $allowedposttags, $allowedtags, $allowedentitynames;
+
+		$this->assertEquals( $allowedposttags, wp_kses_allowed_html( 'post' ) );
+
+		$tags = wp_kses_allowed_html( 'post' ) ;
+
+		foreach ( $tags as $tag ) {
+			$this->assertTrue( $tag['class'] );
+			$this->assertTrue( $tag['id'] );
+			$this->assertTrue( $tag['style'] );
+			$this->assertTrue( $tag['title'] );
+		}
+
+		$this->assertEquals( $allowedtags, wp_kses_allowed_html( 'data' ) );
+		$this->assertEquals( $allowedtags, wp_kses_allowed_html( '' ) );
+		$this->assertEquals( $allowedtags, wp_kses_allowed_html() );
+
+		$tags = wp_kses_allowed_html( 'user_description' );
+		$this->assertTrue( $tags['a']['rel'] );
+
+		$tags = wp_kses_allowed_html();
+		$this->assertFalse( isset( $tags['a']['rel'] ) );
+
+		$this->assertEquals( array(), wp_kses_allowed_html( 'strip' ) );
+
+		$custom_tags = array(
+			'a' => array(
+				'href' => true,
+				'rel' => true,
+				'rev' => true,
+				'name' => true,
+				'target' => true,
+			),
+		);
+
+		$this->assertEquals( $custom_tags, wp_kses_allowed_html( $custom_tags ) );
+
+		$cb = function ( $html, $context ) {
+			if ( 'post' == $context )
+				return array( 'a' => array( 'href' => true ) );
+			else
+				return array( 'a' => array( 'href' => false ) );
+		};
+
+		add_filter( 'wp_kses_allowed_html', $cb, 10, 2 );
+
+		$this->assertEquals( array( 'a' => array( 'href' => true ) ), wp_kses_allowed_html( 'post' ) );
+		$this->assertEquals( array( 'a' => array( 'href' => false ) ), wp_kses_allowed_html( 'data' ) );
+
+		remove_filter( 'wp_kses_allowed_html', $cb );
+		$this->assertEquals( $allowedposttags, wp_kses_allowed_html( 'post' ) );
+		$this->assertEquals( $allowedtags, wp_kses_allowed_html( 'data' ) );
+	}
 }
