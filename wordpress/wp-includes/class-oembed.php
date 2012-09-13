@@ -163,6 +163,8 @@ class WP_oEmbed {
 		$provider = add_query_arg( 'maxheight', (int) $args['height'], $provider );
 		$provider = add_query_arg( 'url', urlencode($url), $provider );
 
+		$provider = apply_filters( 'oembed_fetch_url', $provider, $url, $args );
+
 		foreach( array( 'json', 'xml' ) as $format ) {
 			$result = $this->_fetch_with_format( $provider, $format );
 			if ( is_wp_error( $result ) && 'not-implemented' == $result->get_error_code() )
