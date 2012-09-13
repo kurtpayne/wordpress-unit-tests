@@ -5,48 +5,58 @@
  */
 class Tests_Formatting_BalanceTags extends WP_UnitTestCase {
 
-	// These are single/self-closing tags that WP has traditionally recognized.
-	var $basic_single_tags = array( 'br', 'hr', 'img', 'input' );
+	function nestable_tags() {
+		return array(
+			array( 'blockquote', 'div', 'object', 'q', 'span' )
+		);
+	}
 
 	// This is a complete(?) listing of valid single/self-closing tags.
-	var $single_tags = array(
-		'area', 'base', 'basefont', 'br', 'col', 'command',
-		'embed', 'frame', 'hr', 'img', 'input', 'isindex',
-		'link', 'meta', 'param', 'source' );
+	function single_tags() {
+		return array(
+			array( 'area' ), array( 'base' ), array( 'basefont' ), array( 'br' ), array( 'col' ), array( 'command' ),
+			array( 'embed' ), array( 'frame' ), array( 'hr' ), array( 'img' ), array( 'input' ), array( 'isindex' ),
+			array( 'link' ), array( 'meta' ), array( 'param' ), array( 'source' ),
+		);
+	}
 
-	// Tags that can be directly nested within themselves, i.e. <div><div>Test</div></div>
-	var $nestable_tags = array( 'blockquote', 'div', 'q', 'span' );
-	// Use this instead if/when #20401 gets fixed
-	//var $nestable_tags = array( 'blockquote', 'div', 'object', 'q', 'span' );
+	// These are single/self-closing tags that WP has traditionally recognized.
+	function basic_single_tags() {
+		return array(
+			array( 'br' ), array( 'hr' ), array( 'img' ), array( 'input' )
+		);
+	}
 
-	// These are single tags WP has traditionally properly handled
-	// This test can be removed if #1597 is fixed and the next test passes, as
-	//   it supercedes this test.
-	function test_selfcloses_unclosed_basic_known_single_tags() {
-		foreach ( $this->basic_single_tags as $tag ) {
-			$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
-		}
+	/**
+	 * These are single tags WP has traditionally properly handled
+	 * This test can be removed if #1597 is fixed and the next test passes, as
+	 * it supercedes this test.
+	 *
+	 * @dataProvider basic_single_tags
+	 */
+	function test_selfcloses_unclosed_basic_known_single_tags( $tag ) {
+		$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
 	}
 
 	/**
 	 * If a recognized valid single tag appears unclosed, it should get self-closed
 	 *
 	 * @ticket 1597
+	 * @dataProvider single_tags
 	 */
-	function test_selfcloses_unclosed_known_single_tags() {
-
-		foreach ( $this->single_tags as $tag ) {
-			$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
-		}
+	function test_selfcloses_unclosed_known_single_tags( $tag ) {
+		$this->assertEquals( "<$tag />", balanceTags( "<$tag>", true ) );
 	}
 
-	// These are single tags WP has traditionally properly handled
-	// This test can be removed if #1597 is fixed and the next test passes, as
-	//   it supercedes this test.
-	function test_selfcloses_basic_known_single_tags_having_closing_tag() {
-		foreach ( $this->basic_single_tags as $tag ) {
-			$this->assertEquals( "<$tag />", balanceTags( "<$tag></$tag>", true ) );
-		}
+	/**
+	 * These are single tags WP has traditionally properly handled
+	 * This test can be removed if #1597 is fixed and the next test passes, as
+	 * it supercedes this test.
+	 *
+	 * @dataProvider basic_single_tags
+	 */
+	function test_selfcloses_basic_known_single_tags_having_closing_tag( $tag ) {
+		$this->assertEquals( "<$tag />", balanceTags( "<$tag></$tag>", true ) );
 	}
 
 	/**
@@ -54,12 +64,10 @@ class Tests_Formatting_BalanceTags extends WP_UnitTestCase {
 	 *   should get removed and tag should be self-closed.
 	 *
 	 * @ticket 1597
+	 * @dataProvider single_tags
 	 */
-	function test_selfcloses_known_single_tags_having_closing_tag() {
-
-		foreach ( $this->single_tags as $tag ) {
-			$this->assertEquals( "<$tag />", balanceTags( "<$tag></$tag>", true ) );
-		}
+	function test_selfcloses_known_single_tags_having_closing_tag( $tag ) {
+		$this->assertEquals( "<$tag />", balanceTags( "<$tag></$tag>", true ) );
 	}
 
 	/**

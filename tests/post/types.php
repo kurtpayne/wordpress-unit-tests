@@ -15,6 +15,8 @@ class Tests_Post_Types extends WP_UnitTestCase {
 		// Test some defaults
 		$this->assertFalse( is_post_type_hierarchical( 'foo' ) );
 		$this->assertEquals( array(), get_object_taxonomies( 'foo' ) );
+
+		_unregister_post_type( 'foo' );
 	}
 
 	function test_register_taxonomy_for_object_type() {
@@ -35,6 +37,8 @@ class Tests_Post_Types extends WP_UnitTestCase {
 
 		$this->assertFalse( is_object_in_taxonomy( 'bar', 'post_tag' ) );
 		$this->assertFalse( is_object_in_taxonomy( 'bar', 'post_tag' ) );
+
+		_unregister_post_type( 'bar' );
 	}
 
 	function test_post_type_exists() {
@@ -48,5 +52,20 @@ class Tests_Post_Types extends WP_UnitTestCase {
 		$this->assertFalse( post_type_supports( 'notaposttype', 'post-formats' ) );
 		$this->assertFalse( post_type_supports( 'post', 'notafeature' ) );
 		$this->assertFalse( post_type_supports( 'notaposttype', 'notafeature' ) );
+	}
+
+	/**
+	 * @ticket 21586
+	 */
+	function test_post_type_with_no_support() {
+		register_post_type( 'foo', array( 'supports' => array() ) );
+		$this->assertTrue( post_type_supports( 'foo', 'editor' ) );
+		$this->assertTrue( post_type_supports( 'foo', 'title' ) );
+		_unregister_post_type( 'foo' );
+
+		register_post_type( 'foo', array( 'supports' => false ) );
+		$this->assertFalse( post_type_supports( 'foo', 'editor' ) );
+		$this->assertFalse( post_type_supports( 'foo', 'title' ) );
+		_unregister_post_type( 'foo' );
 	}
 }
