@@ -806,11 +806,9 @@ function register_post_status($post_status, $args = array()) {
 		'internal' => null,
 		'protected' => null,
 		'private' => null,
-		'show_in_admin_all' => null,
 		'publicly_queryable' => null,
 		'show_in_admin_status_list' => null,
 		'show_in_admin_all_list' => null,
-		'single_view_cap' => null,
 	);
 	$args = wp_parse_args($args, $defaults);
 	$args = (object) $args;
@@ -844,9 +842,6 @@ function register_post_status($post_status, $args = array()) {
 
 	if ( null === $args->show_in_admin_status_list )
 		$args->show_in_admin_status_list = !$args->internal;
-
-	if ( null === $args->single_view_cap )
-		$args->single_view_cap = $args->public ? '' : 'edit';
 
 	if ( false === $args->label )
 		$args->label = $post_status;
@@ -3306,7 +3301,7 @@ function get_page_by_path($page_path, $output = OBJECT, $post_type = 'page') {
 	$in_string = "'". implode( "','", $parts ) . "'";
 	$post_type_sql = $post_type;
 	$wpdb->escape_by_ref( $post_type_sql );
-	$pages = $wpdb->get_results( "SELECT ID, post_name, post_parent FROM $wpdb->posts WHERE post_name IN ($in_string) AND (post_type = '$post_type_sql' OR post_type = 'attachment')", OBJECT_K );
+	$pages = $wpdb->get_results( "SELECT ID, post_name, post_parent, post_type FROM $wpdb->posts WHERE post_name IN ($in_string) AND (post_type = '$post_type_sql' OR post_type = 'attachment')", OBJECT_K );
 
 	$revparts = array_reverse( $parts );
 
@@ -3325,7 +3320,8 @@ function get_page_by_path($page_path, $output = OBJECT, $post_type = 'page') {
 
 			if ( $p->post_parent == 0 && $count+1 == count( $revparts ) && $p->post_name == $revparts[ $count ] ) {
 				$foundid = $page->ID;
-				break;
+				if ( $page->post_type == $post_type )
+					break;
 			}
 		}
 	}

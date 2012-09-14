@@ -467,4 +467,22 @@ class Tests_Post extends WP_UnitTestCase {
 			$this->assertEquals( $outputs[$k], urldecode( $post->post_name ) );
 		}
 	}
+
+	/**
+	 * @ticket 15665
+	 */
+	function test_get_page_by_path_priority() {
+		$attachment = $this->factory->post->create_and_get( array( 'post_title' => 'some-page', 'post_type' => 'attachment' ) );
+		$page       = $this->factory->post->create_and_get( array( 'post_title' => 'some-page', 'post_type' => 'page' ) );
+		$other_att  = $this->factory->post->create_and_get( array( 'post_title' => 'some-other-page', 'post_type' => 'attachment' ) );
+
+		$this->assertEquals( 'some-page', $attachment->post_name );
+		$this->assertEquals( 'some-page', $page->post_name );
+
+		// get_page_by_path() should return a post of the requested type before returning an attachment.
+		$this->assertEquals( $page, get_page_by_path( 'some-page' ) );
+
+		// Make sure get_page_by_path() will still select an attachment when a post of the requested type doesn't exist.
+		$this->assertEquals( $other_att, get_page_by_path( 'some-other-page' ) );
+	}
 }
