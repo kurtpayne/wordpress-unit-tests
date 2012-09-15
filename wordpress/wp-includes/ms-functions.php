@@ -589,7 +589,7 @@ function wpmu_validate_blog_signup($blogname, $blog_title, $user = '') {
 		$mydomain = "$domain";
 		$path = $base.$blogname.'/';
 	}
-	if ( domain_exists($mydomain, $path) )
+	if ( domain_exists($mydomain, $path, $current_site->id) )
 		$errors->add('blogname', __('Sorry, that site already exists!'));
 
 	if ( username_exists( $blogname ) ) {
@@ -608,7 +608,7 @@ function wpmu_validate_blog_signup($blogname, $blog_title, $user = '') {
 			$errors->add('blogname', __('That site is currently reserved but may be available in a couple days.'));
 	}
 
-	$result = array('domain' => $mydomain, 'path' => $path, 'blogname' => $blogname, 'blog_title' => $blog_title, 'errors' => $errors);
+	$result = array('domain' => $mydomain, 'path' => $path, 'blogname' => $blogname, 'blog_title' => $blog_title, 'user' => $user, 'errors' => $errors);
 	return apply_filters('wpmu_validate_blog_signup', $result);
 }
 
@@ -1874,7 +1874,7 @@ function force_ssl_content( $force = '' ) {
 
 /**
  * Formats a URL to use https.
- * 
+ *
  * Useful as a filter.
  *
  * @since 2.8.5
