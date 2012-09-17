@@ -5,6 +5,23 @@
  * @group user
  */
 class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
+	protected $administrator_id;
+
+	function setUp() {
+		parent::setUp();
+
+		// create a super-admin
+		$this->administrator_id = $this->make_user_by_role( 'administrator' );
+		if ( is_multisite() )
+			grant_super_admin( $this->administrator_id );
+	}
+
+	function tearDown() {
+		if ( is_multisite() )
+			revoke_super_admin( $this->administrator_id );
+
+		parent::tearDown();
+	}
 
 	function test_invalid_username_password() {
 		$result = $this->myxmlrpcserver->wp_getUser( array( 1, 'username', 'password', 1 ) );
@@ -13,8 +30,6 @@ class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
 	}
 
 	function test_invalid_user() {
-		$this->make_user_by_role( 'administrator' );
-
 		$result = $this->myxmlrpcserver->wp_getUser( array( 1, 'administrator', 'administrator', 34902348908234 ) );
 		$this->assertInstanceOf( 'IXR_Error', $result );
 		$this->assertEquals( 404, $result->code );
@@ -38,8 +53,6 @@ class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
 	}
 
 	function test_valid_user() {
-		$this->make_user_by_role( 'administrator' );
-
 		$registered_date = strtotime( '-1 day' );
 		$user_data = array(
 			'user_login' => 'getusertestuser',
@@ -96,7 +109,6 @@ class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
 
 	function test_no_fields() {
 		$editor_id = $this->make_user_by_role( 'editor' );
-		$this->make_user_by_role( 'administrator' );
 
 		$result = $this->myxmlrpcserver->wp_getUser( array( 1, 'administrator', 'administrator', $editor_id, array() ) );
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
@@ -108,7 +120,6 @@ class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
 
 	function test_basic_fields() {
 		$editor_id = $this->make_user_by_role( 'editor' );
-		$this->make_user_by_role( 'administrator' );
 
 		$result = $this->myxmlrpcserver->wp_getUser( array( 1, 'administrator', 'administrator', $editor_id, array( 'basic' ) ) );
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
@@ -120,7 +131,6 @@ class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
 
 	function test_arbitrary_fields() {
 		$editor_id = $this->make_user_by_role( 'editor' );
-		$this->make_user_by_role( 'administrator' );
 
 		$fields = array( 'email', 'bio', 'user_contacts' );
 

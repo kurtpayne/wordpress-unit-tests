@@ -54,7 +54,7 @@ if ( $multisite ) {
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
 	$GLOBALS['base'] = '/';
 } else {
-	echo "Running as single site… To run multisite, use -c multisite." . PHP_EOL;
+	echo "Running as single site… To run multisite, use -c multisite.xml" . PHP_EOL;
 }
 unset( $multisite );
 
