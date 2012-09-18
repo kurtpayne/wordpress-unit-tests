@@ -35,20 +35,20 @@
 		},
 
 
-		// Accepts an `id` and `options` for a view.
+		// Registers a view.
 		//
-		// `options` is either a `Backbone.View` constructor or an object that
-		// contains two keys: the `view` key is a `Backbone.View` constructor,
-		// and the `options` key are the options to be passed when the view is
-		// initialized.
+		// `id` is a unique ID for the view relative to the workflow instance.
+		// `constructor` is a `Backbone.View` constructor. `options` are the
+		// options to be passed when the view is initialized.
 		//
 		// Triggers the `add` and `add:VIEW_ID` events.
-		add: function( id, options ) {
+		add: function( id, constructor, options ) {
 			this.remove( id );
-			if ( _.isFunction( options ) )
-				options = { view: options };
-			this._pending[ id ] = options;
-			this.trigger( 'add add:' + id, options );
+			this._pending[ id ] = {
+				view:    constructor,
+				options: options
+			};
+			this.trigger( 'add add:' + id, constructor, options );
 			return this;
 		},
 
@@ -84,13 +84,13 @@
 		},
 
 		// Renders a view and places it within the modal window.
-		// Automatically adds a view if `options` are provided.
-		render: function( id, options ) {
+		// Automatically adds a view if `constructor` is provided.
+		render: function( id, constructor, options ) {
 			var view;
 			id = id || this.get('view');
 
-			if ( options )
-				this.add( id, options );
+			if ( constructor )
+				this.add( id, constructor, options );
 
 			view = this.view( id );
 
