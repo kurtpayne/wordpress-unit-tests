@@ -20,7 +20,9 @@ class Tests_MS extends WP_UnitTestCase {
 			$prefix = $wpdb->get_blog_prefix( $blog_id );
 
 			foreach ( $wpdb->tables( 'blog', false ) as $table ) {
+				$wpdb->suppress_errors();
 				$table_fields = $wpdb->get_results( "DESCRIBE $prefix$table;" );
+				$wpdb->suppress_errors( false );
 				$this->assertNotEmpty( $table_fields );
 				$result = $wpdb->get_results( "SELECT * FROM $prefix$table LIMIT 1" );
 				if ( 'commentmeta' == $table || 'links' == $table )
@@ -43,7 +45,9 @@ class Tests_MS extends WP_UnitTestCase {
 
 			$prefix = $wpdb->get_blog_prefix( $blog_id );
 			foreach ( $wpdb->tables( 'blog', false ) as $table ) {
+				$wpdb->suppress_errors();
 				$table_fields = $wpdb->get_results( "DESCRIBE $prefix$table;" );
+				$wpdb->suppress_errors( false );
 				if ( $drop_tables )
 					$this->assertEmpty( $table_fields );
 				else
