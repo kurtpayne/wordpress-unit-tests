@@ -343,6 +343,26 @@ class Tests_Post extends WP_UnitTestCase {
 		$this->assertEquals(false, $this->_next_schedule_for_post('publish_future_post', $id));
 	}
 
+	/**
+	 * @ticket 17180
+	 */
+	function test_vb_insert_invalid_date() {
+		// insert a post with an invalid date, make sure it fails
+
+		$post = array(
+			'post_author' => $this->author_id,
+			'post_status' => 'public',
+			'post_content' => rand_str(),
+			'post_title' => rand_str(),
+			'post_date'  => '2012-02-30 00:00:00',
+		);
+
+		$insert_post = wp_insert_post( $post );
+		$this->assertTrue( is_wp_error( $insert_post ), 'Did not get a WP_Error back from wp_insert_post' );
+		$this->assertEquals( 'invalid_date', $insert_post->get_error_code() );
+
+	}
+
 	function test_vb_insert_future_change_to_private() {
 		// insert a future post, then edit and change it to private, and make sure cron gets it right
 		$future_date_1 = strtotime('+1 day');
