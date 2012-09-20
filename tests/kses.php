@@ -296,6 +296,16 @@ EOF;
 		}
 	}
 
+	function _wp_kses_allowed_html_filter( $html, $context ) {
+		if ( 'post' == $context )
+			return array( 'a' => array( 'href' => true ) );
+		else
+			return array( 'a' => array( 'href' => false ) );
+	}
+
+	/**
+	 * @ticket 20210
+	 */
 	public function test_wp_kses_allowed_html() {
 		global $allowedposttags, $allowedtags, $allowedentitynames;
 
@@ -334,19 +344,12 @@ EOF;
 
 		$this->assertEquals( $custom_tags, wp_kses_allowed_html( $custom_tags ) );
 
-		$cb = function ( $html, $context ) {
-			if ( 'post' == $context )
-				return array( 'a' => array( 'href' => true ) );
-			else
-				return array( 'a' => array( 'href' => false ) );
-		};
-
-		add_filter( 'wp_kses_allowed_html', $cb, 10, 2 );
+		add_filter( 'wp_kses_allowed_html', array( $this, '_wp_kses_allowed_html_filter' ), 10, 2 );
 
 		$this->assertEquals( array( 'a' => array( 'href' => true ) ), wp_kses_allowed_html( 'post' ) );
 		$this->assertEquals( array( 'a' => array( 'href' => false ) ), wp_kses_allowed_html( 'data' ) );
 
-		remove_filter( 'wp_kses_allowed_html', $cb );
+		remove_filter( 'wp_kses_allowed_html', array( $this, '_wp_kses_allowed_html_filter' ) );
 		$this->assertEquals( $allowedposttags, wp_kses_allowed_html( 'post' ) );
 		$this->assertEquals( $allowedtags, wp_kses_allowed_html( 'data' ) );
 	}

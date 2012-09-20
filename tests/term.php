@@ -308,4 +308,21 @@ class Tests_Term extends WP_UnitTestCase {
 		foreach ( array( $a, $b, $c, $d, $e ) as $t )
 			$this->assertTrue( wp_delete_term( $t['term_id'], $this->taxonomy ) );
 	}
+
+	/**
+	 * @ticket 5809
+	 */
+	function test_update_shared_term() {
+		$term_1 = rand_str();
+
+		$t1 = wp_insert_term( $term_1, 'category' );
+		$t2 = wp_insert_term( $term_1, 'post_tag' );
+
+		$this->assertEquals( $t1['term_id'], $t2['term_id'] );
+
+		$term_2 = rand_str();
+		$new_term = wp_update_term( $t2['term_id'], 'post_tag', array( 'name' => $term_2 ) );
+
+		$this->assertNotEquals( $t1['term_id'], $new_term['term_id'] );
+	}
 }
