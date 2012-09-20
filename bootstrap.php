@@ -45,7 +45,7 @@ $multisite = (int) ( defined( 'WP_TESTS_MULTISITE') && WP_TESTS_MULTISITE );
 system( WP_PHP_BINARY . ' ' . escapeshellarg( dirname( __FILE__ ) . '/bin/install.php' ) . ' ' . escapeshellarg( $config_file_path ) . ' ' . $multisite );
 
 if ( $multisite ) {
-	echo "Running as multisite…" . PHP_EOL;
+	echo "Running as multisite..." . PHP_EOL;
 	define( 'MULTISITE', true );
 	define( 'SUBDOMAIN_INSTALL', false );
 	define( 'DOMAIN_CURRENT_SITE', WP_TESTS_DOMAIN );
@@ -54,7 +54,7 @@ if ( $multisite ) {
 	define( 'BLOG_ID_CURRENT_SITE', 1 );
 	$GLOBALS['base'] = '/';
 } else {
-	echo "Running as single site… To run multisite, use -c multisite.xml" . PHP_EOL;
+	echo "Running as single site... To run multisite, use -c multisite.xml" . PHP_EOL;
 }
 unset( $multisite );
 
@@ -122,7 +122,7 @@ class WP_PHPUnit_TextUI_Command extends PHPUnit_TextUI_Command {
 			}
 		}
 		if ( $ajax_message )
-			echo "Not running ajax tests… To execute these, use --group ajax." . PHP_EOL;
+			echo "Not running ajax tests... To execute these, use --group ajax." . PHP_EOL;
     }
 }
 new WP_PHPUnit_TextUI_Command( $_SERVER['argv'] );

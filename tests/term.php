@@ -321,8 +321,9 @@ class Tests_Term extends WP_UnitTestCase {
 		$this->assertEquals( $t1['term_id'], $t2['term_id'] );
 
 		$term_2 = rand_str();
-		$new_term = wp_update_term( $t2['term_id'], 'post_tag', array( 'name' => $term_2 ) );
+		$t2_updated = wp_update_term( $t2['term_id'], 'post_tag', array( 'name' => $term_2 ) );
 
-		$this->assertNotEquals( $t1['term_id'], $new_term['term_id'] );
+		$this->assertEquals( $term_1, get_term_field( 'name', $t1['term_id'], 'category' ) );
+		$this->assertEquals( $term_2, get_term_field( 'name', $t2_updated['term_id'], 'post_tag' ) );
 	}
 }
