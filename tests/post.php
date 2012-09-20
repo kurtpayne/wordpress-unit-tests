@@ -357,10 +357,13 @@ class Tests_Post extends WP_UnitTestCase {
 			'post_date'  => '2012-02-30 00:00:00',
 		);
 
-		$insert_post = wp_insert_post( $post );
+		// Test both return paths with or without WP_Error
+		$insert_post = wp_insert_post( $post, true );
 		$this->assertTrue( is_wp_error( $insert_post ), 'Did not get a WP_Error back from wp_insert_post' );
 		$this->assertEquals( 'invalid_date', $insert_post->get_error_code() );
 
+		$insert_post = wp_insert_post( $post );
+		$this->assertEquals( 0, $insert_post );
 	}
 
 	function test_vb_insert_future_change_to_private() {
