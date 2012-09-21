@@ -41,6 +41,7 @@ class Tests_Query_Results extends WP_UnitTestCase {
 		$this->factory->post->create( array( 'post_title' => 'tags-a-and-b', 'tags_input' => array( 'tag-a', 'tag-b' ), 'post_date' => '2010-08-01 00:00:00' ) );
 		$this->factory->post->create( array( 'post_title' => 'tags-b-and-c', 'tags_input' => array( 'tag-b', 'tag-c' ), 'post_date' => '2010-09-01 00:00:00' ) );
 		$this->factory->post->create( array( 'post_title' => 'tags-a-and-c', 'tags_input' => array( 'tag-a', 'tag-c' ), 'post_date' => '2010-10-01 00:00:00' ) );
+		$this->factory->post->create( array( 'post_title' => 'tag-נ', 'tags_input' => array( 'tag-נ' ), 'post_date' => '2010-11-01 00:00:00' ) );
 
 		unset( $this->q );
 		$this->q = new WP_Query();
@@ -86,6 +87,17 @@ class Tests_Query_Results extends WP_UnitTestCase {
 		$this->assertEquals( 'tags-a-and-b', $posts[1]->post_name );
 		$this->assertEquals( 'tag-b', $posts[2]->post_name );
 		$this->assertEquals( 'tags-a-b-c', $posts[3]->post_name );
+	}
+
+	/**
+	 * @ticket 21779
+	 */
+	function test_query_tag_nun() {
+		$posts = $this->q->query('tag=tag-נ');
+
+		// there is 1 post with Tag נ
+		$this->assertCount( 1, $posts );
+		$this->assertEquals( 'tag-%d7%a0', $posts[0]->post_name );
 	}
 
 	function test_query_tag_id() {
