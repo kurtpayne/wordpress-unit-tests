@@ -15,6 +15,15 @@ class Tests_Term extends WP_UnitTestCase {
 			wp_insert_term( $term, $tax );
 	}
 
+	function deleted_term_cb( $term, $tt_id, $taxonomy, $deleted_term ) {
+		$this->assertInternalType( 'object', $deleted_term );
+		$this->assertInternalType( 'int', $term );
+		// Pesky string $this->assertInternalType( 'int', $tt_id );
+		$this->assertEquals( $term, $deleted_term->term_id );
+		$this->assertEquals( $taxonomy, $deleted_term->taxonomy );
+		$this->assertEquals( $tt_id, $deleted_term->term_taxonomy_id );
+	}
+
 	function test_wp_insert_delete_term() {
 		// a new unused term
 		$term = rand_str();
@@ -34,7 +43,9 @@ class Tests_Term extends WP_UnitTestCase {
 		$this->assertTrue( term_exists($t['term_id']) > 0 );
 
 		// now delete it
+		add_filter( 'delete_term', array( $this, 'deleted_term_cb' ), 10, 4 );
 		$this->assertTrue( wp_delete_term($t['term_id'], $this->taxonomy) );
+		remove_filter( 'delete_term', array( $this, 'deleted_term_cb' ), 10, 4 );
 		$this->assertNull( term_exists($term) );
 		$this->assertNull( term_exists($t['term_id']) );
 		$this->assertEquals( $initial_count, wp_count_terms($this->taxonomy) );

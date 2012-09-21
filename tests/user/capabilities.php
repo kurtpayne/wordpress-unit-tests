@@ -538,4 +538,15 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		$this->assertFalse($author_2->has_cap('delete_page', $page));
 		$this->assertFalse($contributor->has_cap('delete_page', $page));
 	}
+
+	/*
+	 * @ticket 21786
+	 */
+	function test_negative_caps() {
+		$author = new WP_User( $this->factory->user->create( array( 'role' => 'author' ) ) );
+		$author->add_cap( 'foo', false );
+		$this->assertTrue ( isset( $author->caps['foo'] ) );
+		$author->remove_cap( 'foo' );
+		$this->assertFalse ( isset( $author->caps['foo'] ) );
+	}
 }
