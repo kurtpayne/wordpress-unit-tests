@@ -127,4 +127,27 @@ class Tests_XMLRPC_wp_getPosts extends WP_XMLRPC_UnitTestCase {
 			$this->assertContains( $field, $expected_fields );
 		}
 	}
+
+	/**
+	 * @ticket 21623
+	 */
+	function test_search() {
+		$this->make_user_by_role( 'editor' );
+
+		$post_ids[] = $this->factory->post->create( array( 'post_title' => 'First: ' . rand_str() ) );
+		$post_ids[] = $this->factory->post->create( array( 'post_title' => 'Second: ' . rand_str() ) );
+
+		// Search for none of them
+		$filter = array( 's' => rand_str() );
+		$results = $this->myxmlrpcserver->wp_getPosts( array( 1, 'editor', 'editor', $filter ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $results );
+		$this->assertEquals( 0, count( $results ) );
+
+		// Search for one of them
+		$filter = array( 's' => 'First:' );
+		$results = $this->myxmlrpcserver->wp_getPosts( array( 1, 'editor', 'editor', $filter ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $results );
+		$this->assertEquals( 1, count( $results ) );
+	}
+
 }
