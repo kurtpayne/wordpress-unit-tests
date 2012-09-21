@@ -539,7 +539,7 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		$this->assertFalse($contributor->has_cap('delete_page', $page));
 	}
 
-	/*
+	/**
 	 * @ticket 21786
 	 */
 	function test_negative_caps() {
