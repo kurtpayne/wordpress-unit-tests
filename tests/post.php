@@ -508,4 +508,16 @@ class Tests_Post extends WP_UnitTestCase {
 		// Make sure get_page_by_path() will still select an attachment when a post of the requested type doesn't exist.
 		$this->assertEquals( $other_att, get_page_by_path( 'some-other-page' ) );
 	}
+
+	function test_wp_publish_post() {
+		$draft_id = $this->factory->post->create( array( 'post_status' => 'draft' ) );
+
+		$post = get_post( $draft_id );
+		$this->assertEquals( 'draft', $post->post_status );
+
+		wp_publish_post( $draft_id );
+		$post = get_post( $draft_id );
+
+		$this->assertEquals( 'publish', $post->post_status );
+	}
 }
