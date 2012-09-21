@@ -152,6 +152,31 @@ class Tests_URL extends WP_UnitTestCase {
 		$home = str_replace('http://', 'https://', $home);
 		$this->assertEquals( $home, home_url() );
 
+
+		// Test with https in home
+		update_option( 'home', set_url_scheme( $home, 'https' ) );
+
+		// Pretend to be in the site admin
+		set_current_screen( 'dashboard' );
+		$home = get_option('home');
+
+		// home_url() should return whatever scheme is set in the home option when in the admin
+		$_SERVER['HTTPS'] = 'on';
+		$this->assertEquals( $home, home_url() );
+
+		$_SERVER['HTTPS'] = 'off';
+		$this->assertEquals( $home, home_url() );
+
+		// If not in the admin, is_ssl() should determine the scheme unless https hard-coded in home
+		set_current_screen( 'front' );
+		$this->assertEquals( $home, home_url() );
+		$_SERVER['HTTPS'] = 'on';
+		$this->assertEquals( $home, home_url() );
+		$_SERVER['HTTPS'] = 'off';
+		$this->assertEquals( $home, home_url() );
+
+		update_option( 'home', set_url_scheme( $home, 'http' ) );
+
 		$GLOBALS['current_screen'] = $screen;
 	}
 
