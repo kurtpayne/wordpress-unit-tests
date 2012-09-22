@@ -23,7 +23,7 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertTrue($result);
 
-		$out = wp_get_single_post( $post_id );
+		$out = get_post( $post_id );
 		$this->assertEquals( $new_title, $out->post_title );
 	}
 
@@ -40,7 +40,7 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertTrue($result);
 
-		$out = wp_get_single_post( $post_id );
+		$out = get_post( $post_id );
 		$this->assertEquals( $new_title, $out->post_title );
 	}
 
@@ -58,7 +58,7 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertInstanceOf( 'IXR_Error', $result );
 		$this->assertEquals( 401, $result->code );
 
-		$out = wp_get_single_post( $post_id );
+		$out = get_post( $post_id );
 		$this->assertEquals( $original_title, $out->post_title );
 	}
 
@@ -75,7 +75,7 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertTrue($result);
 
-		$out = wp_get_single_post( $post_id );
+		$out = get_post( $post_id );
 		$this->assertEquals( $author_id, $out->post_author );
 	}
 
@@ -91,7 +91,7 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertInstanceOf( 'IXR_Error', $result );
 		$this->assertEquals( 401, $result->code );
 
-		$out = wp_get_single_post( $post_id );
+		$out = get_post( $post_id );
 		$this->assertEquals( $contributor_id, $out->post_author );
 	}
 
@@ -186,7 +186,7 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertTrue($result);
 
-		$out = wp_get_single_post( $post_id );
+		$out = get_post( $post_id );
 		$this->assertEquals( $new_title, $out->post_title );
 
 		$edited_object = get_metadata_by_mid( 'post', $mid_edit );

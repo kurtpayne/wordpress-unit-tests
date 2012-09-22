@@ -47,7 +47,7 @@ class Tests_Post extends WP_UnitTestCase {
 			$this->assertTrue($id > 0);
 
 			// fetch the post and make sure it matches
-			$out = wp_get_single_post($id);
+			$out = get_post($id);
 
 			$this->assertEquals($post['post_content'], $out->post_content);
 			$this->assertEquals($post['post_title'], $out->post_title);
@@ -101,7 +101,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$this->assertTrue($id > 0);
 
 		// fetch the post and make sure it matches
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 
 		$this->assertEquals($post['post_content'], $out->post_content);
 		$this->assertEquals($post['post_title'], $out->post_title);
@@ -133,7 +133,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$id = $this->post_ids[] = wp_insert_post($post);
 
 		// fetch the post and make sure has the correct date and status
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('future', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -148,7 +148,7 @@ class Tests_Post extends WP_UnitTestCase {
 		wp_update_post($post);
 
 		// fetch the post again and make sure it has the new post_date
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('future', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -175,7 +175,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$id = $this->post_ids[] = wp_insert_post($post);
 
 		// fetch the post and make sure has the correct date and status
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('future', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -190,7 +190,7 @@ class Tests_Post extends WP_UnitTestCase {
 		wp_update_post($post);
 
 		// fetch the post again and make sure it has the new post_date
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('future', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -218,7 +218,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$this->assertTrue($id > 0);
 
 		// fetch the post and make sure it matches
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 
 		$this->assertEquals($post['post_content'], $out->post_content);
 		$this->assertEquals($post['post_title'], $out->post_title);
@@ -247,7 +247,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$id = $this->post_ids[] = wp_insert_post($post);
 
 		// fetch the post and make sure has the correct date and status
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('future', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -261,7 +261,7 @@ class Tests_Post extends WP_UnitTestCase {
 		wp_update_post($post);
 
 		// fetch the post again and make sure it has the new post_date
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('draft', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -288,7 +288,7 @@ class Tests_Post extends WP_UnitTestCase {
 			$id = $this->post_ids[] = wp_insert_post($post);
 
 			// fetch the post and make sure has the correct date and status
-			$out = wp_get_single_post($id);
+			$out = get_post($id);
 			$this->assertEquals('future', $out->post_status);
 			$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -302,7 +302,7 @@ class Tests_Post extends WP_UnitTestCase {
 			wp_update_post($post);
 
 			// fetch the post again and make sure it has the new post_date
-			$out = wp_get_single_post($id);
+			$out = get_post($id);
 			$this->assertEquals($status, $out->post_status);
 			$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -331,7 +331,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$this->assertTrue($id > 0);
 
 		// fetch the post and make sure it matches
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 
 		$this->assertEquals($post['post_content'], $out->post_content);
 		$this->assertEquals($post['post_title'], $out->post_title);
@@ -382,7 +382,7 @@ class Tests_Post extends WP_UnitTestCase {
 		$id = $this->post_ids[] = wp_insert_post($post);
 
 		// fetch the post and make sure has the correct date and status
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('future', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 
@@ -396,7 +396,7 @@ class Tests_Post extends WP_UnitTestCase {
 		wp_update_post($post);
 
 		// fetch the post again and make sure it has the new post_date
-		$out = wp_get_single_post($id);
+		$out = get_post($id);
 		$this->assertEquals('private', $out->post_status);
 		$this->assertEquals($post['post_date'], $out->post_date);
 

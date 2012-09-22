@@ -105,7 +105,7 @@ class Tests_XMLRPC_mw_newPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertStringMatchesFormat( '%d', $result );
 
-		$out = wp_get_single_post( $result );
+		$out = get_post( $result );
 		$this->assertEquals( $my_author_id, $out->post_author );
 		$this->assertEquals( 'Test', $out->post_title );
 	}
@@ -154,7 +154,7 @@ class Tests_XMLRPC_mw_newPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertStringMatchesFormat( '%d', $result );
 
-		$out = wp_get_single_post( $result );
+		$out = get_post( $result );
 		$this->assertEquals( 'Test', $out->post_title );
 		$this->assertEquals( 'page', $out->post_type );
 	}
