@@ -324,17 +324,37 @@ class Tests_Term extends WP_UnitTestCase {
 	 * @ticket 5809
 	 */
 	function test_update_shared_term() {
-		$term_1 = rand_str();
+		$post_id = $this->factory->post->create();
+
+		$term_1 = 'Initial';
 
 		$t1 = wp_insert_term( $term_1, 'category' );
 		$t2 = wp_insert_term( $term_1, 'post_tag' );
 
 		$this->assertEquals( $t1['term_id'], $t2['term_id'] );
 
-		$term_2 = rand_str();
-		$t2_updated = wp_update_term( $t2['term_id'], 'post_tag', array( 'name' => $term_2 ) );
+		wp_set_post_categories( $post_id, array( $t1['term_id'] ) );
+		wp_set_post_tags( $post_id, array( (int) $t2['term_id'] ) );
 
+		$term_2 = 'Updated';
+		$t2_updated = wp_update_term( $t2['term_id'], 'post_tag', array(
+			'name' => $term_2
+		) );
+
+		// make sure the terms have split
 		$this->assertEquals( $term_1, get_term_field( 'name', $t1['term_id'], 'category' ) );
 		$this->assertEquals( $term_2, get_term_field( 'name', $t2_updated['term_id'], 'post_tag' ) );
+
+		// and that they are assigned to the correct post
+		$this->assertPostHasTerms( $post_id, array( $t1['term_id'] ), 'category' );
+		$this->assertPostHasTerms( $post_id, array( $t2_updated['term_id'] ), 'post_tag' );
+	}
+
+	private function assertPostHasTerms( $post_id, $expected_term_ids, $taxonomy ) {
+		$assigned_term_ids = wp_get_object_terms( $post_id, $taxonomy, array(
+			'fields' => 'ids'
+		) );
+
+		$this->assertEquals( $expected_term_ids, $assigned_term_ids );
 	}
 }
