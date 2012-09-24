@@ -19,6 +19,24 @@ class Tests_MS extends WP_UnitTestCase {
 			$this->assertInternalType( 'int', $blog_id );
 			$prefix = $wpdb->get_blog_prefix( $blog_id );
 
+			// $get_all = false
+			$details = get_blog_details( $blog_id, false );
+			$this->assertEquals( $details, wp_cache_get( $blog_id . 'short', 'blog-details' ) );
+
+			// get_id_from_blogname(), see #20950
+			$this->assertEquals( $blog_id, get_id_from_blogname( $details->path ) );
+			$this->assertEquals( $blog_id, wp_cache_get( 'get_id_from_blogname_' . trim( $details->path, '/' ), 'blog-details' ) );
+
+			// These are empty until get_blog_details() is called with $get_all = true
+			$this->assertEquals( false, wp_cache_get( $blog_id, 'blog-details' ) );
+			$key = md5( $details->domain . $details->path );
+			$this->assertEquals( false, wp_cache_get( $key, 'blog-lookup' ) );
+
+			// $get_all = true should propulate the full blog-details cache and the blog slug lookup cache
+			$details = get_blog_details( $blog_id, true );
+			$this->assertEquals( $details, wp_cache_get( $blog_id, 'blog-details' ) );
+			$this->assertEquals( $details, wp_cache_get( $key, 'blog-lookup' ) );
+
 			foreach ( $wpdb->tables( 'blog', false ) as $table ) {
 				$wpdb->suppress_errors();
 				$table_fields = $wpdb->get_results( "DESCRIBE $prefix$table;" );
@@ -41,7 +59,15 @@ class Tests_MS extends WP_UnitTestCase {
 		foreach ( $blog_ids as $blog_id ) {
 			// drop tables for every second blog
 			$drop_tables = ! $drop_tables;
+			$details = get_blog_details( $blog_id, false );
+
 			wpmu_delete_blog( $blog_id, $drop_tables );
+
+			$this->assertEquals( false, wp_cache_get( 'get_id_from_blogname_' . trim( $details->path, '/' ), 'blog-details' ) );
+			$this->assertEquals( false, wp_cache_get( $blog_id, 'blog-details' ) );
+			$this->assertEquals( false, wp_cache_get( $blog_id . 'short', 'blog-details' ) );
+			$key = md5( $details->domain . $details->path );
+			$this->assertEquals( false, wp_cache_get( $key, 'blog-lookup' ) );
 
 			$prefix = $wpdb->get_blog_prefix( $blog_id );
 			foreach ( $wpdb->tables( 'blog', false ) as $table ) {

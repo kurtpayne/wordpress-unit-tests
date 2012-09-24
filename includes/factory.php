@@ -97,11 +97,11 @@ class WP_UnitTest_Factory_For_Comment extends WP_UnitTest_Factory_For_Thing {
 class WP_UnitTest_Factory_For_Blog extends WP_UnitTest_Factory_For_Thing {
 
 	function __construct( $factory = null ) {
-		global $current_site;
+		global $current_site, $base;
 		parent::__construct( $factory );
 		$this->default_generation_definitions = array(
 			'domain' => $current_site->domain,
-			'path' => new WP_UnitTest_Generator_Sequence( 'testpath%s' ),
+			'path' => new WP_UnitTest_Generator_Sequence( $base . 'testpath%s' ),
 			'title' => new WP_UnitTest_Generator_Sequence( 'Site %s' ),
 			'site_id' => $current_site->id,
 		);
