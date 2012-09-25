@@ -480,6 +480,24 @@ class Tests_MS extends WP_UnitTestCase {
 			$this->assertFalse( is_email_address_unsafe( $email_address ), "$email_address should be SAFE" );
 		}
 	}
+
+	/**
+	 * @ticket 21552
+	 */
+	function test_sanitize_ms_options() {
+		update_option( 'illegal_names', array( '', 'Woo', '' ) );
+		update_option( 'limited_email_domains', array(  'woo', '', 'boo.com', 'foo.net.biz..'  ) );
+		update_option( 'banned_email_domains', array(  'woo', '', 'boo.com', 'foo.net.biz..'  ) );
+
+		$this->assertEquals( array( 'Woo' ), get_option( 'illegal_names' ) );
+		$this->assertEquals( array( 'woo', 'boo.com' ), get_option( 'limited_email_domains' ) );
+		$this->assertEquals( array( 'woo', 'boo.com' ), get_option( 'banned_email_domains' ) );
+
+		foreach ( array( 'illegal_names', 'limited_email_domains', 'banned_email_domains' ) as $option ) {
+			update_option( $option, array() );
+			$this->assertSame( '', get_option( $option ) );
+		}
+	}
 }
 
 endif;
