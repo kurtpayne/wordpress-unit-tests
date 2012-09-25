@@ -572,6 +572,19 @@ section[role="banner"] {
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
 }
+.widget-area .widget p {
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+}
+.widget-area .textwidget ul {
+	list-style: disc outside;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+}
+.widget-area .textwidget li {
+	margin-left: 36px;
+	margin-left: 2.571428571rem;
+}
 .widget-area .widget a {
 	color: #777;
 }
@@ -1433,8 +1446,8 @@ img#wpstats {
 		line-height: 2.181818182;
 		padding: 8px 10px;
 		padding: 0.571428571rem 0.714285714rem;
-		width: 120px;
-		width: 8.571428571rem;
+		width: 180px;
+		width: 12.85714286rem;
 	}
 	.main-navigation li ul li a:hover {
 		background: #e3e3e3;
