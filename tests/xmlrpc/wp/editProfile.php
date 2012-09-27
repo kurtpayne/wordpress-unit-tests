@@ -18,7 +18,7 @@ class TestXMLRPCServer_wp_editProfile extends WP_XMLRPC_UnitTestCase {
         $new_data = array(
             'first_name' => rand_str(),
             'last_name' => rand_str(),
-            'website' => 'http://www.example.org/subscriber',
+            'url' => 'http://www.example.org/subscriber',
             'display_name' => rand_str(),
             'nickname' => rand_str(),
             'nicename' => rand_str(),
@@ -32,7 +32,7 @@ class TestXMLRPCServer_wp_editProfile extends WP_XMLRPC_UnitTestCase {
         $user_data = get_userdata( $subscriber_id );
         $this->assertEquals( $new_data['first_name'], $user_data->first_name );
         $this->assertEquals( $new_data['last_name'], $user_data->last_name );
-        $this->assertEquals( $new_data['website'], $user_data->user_url );
+        $this->assertEquals( $new_data['url'], $user_data->user_url );
         $this->assertEquals( $new_data['display_name'], $user_data->display_name );
         $this->assertEquals( $new_data['nickname'], $user_data->nickname );
         $this->assertEquals( $new_data['nicename'], $user_data->user_nicename );
