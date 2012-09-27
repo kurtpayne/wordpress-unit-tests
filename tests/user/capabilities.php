@@ -478,6 +478,14 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		$this->assertFalse($author_2->has_cap('delete_post', $post));
 		$this->assertFalse($contributor->has_cap('delete_post', $post));
 
+		// administrators, editors, and authors can publish it
+		$this->assertTrue($admin->has_cap('publish_post', $post));
+		$this->assertTrue($author->has_cap('publish_post', $post));
+		$this->assertTrue($editor->has_cap('publish_post', $post));
+		$this->assertTrue($author_2->has_cap('publish_post', $post));
+		// contributors can't
+		$this->assertFalse($contributor->has_cap('publish_post', $post));
+
 		// Test meta authorization callbacks
 		if ( function_exists( 'register_meta') ) {
 			$this->assertTrue( $admin->has_cap('edit_post_meta',  $post) );
