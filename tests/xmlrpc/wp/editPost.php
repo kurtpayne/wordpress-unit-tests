@@ -221,4 +221,34 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		$this->assertFalse( is_sticky( $post_id ) );
 	}
 
+	function test_if_not_modified_since() {
+		$editor_id = $this->make_user_by_role( 'editor' );
+
+		$yesterday = strtotime( '-1 day' );
+
+		$post_id = $this->factory->post->create( array(
+			'post_title'   => 'Post Revision Test',
+			'post_content' => 'Not edited',
+			'post_author'  => $editor_id,
+			'post_status'  => 'publish',
+			'post_date'    => date( 'Y-m-d H:i:s', $yesterday ),
+		) );
+
+		// Modify the day old post. In this case, we think it was last modified yesterday.
+		$struct = array( 'post_content' => 'First edit', 'if_not_modified_since' => new IXR_Date( $yesterday ) );
+		$result = $this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, $struct ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
+
+		// Make sure the edit went through.
+		$this->assertEquals( 'First edit', get_post( $post_id )->post_content );
+
+		// Modify it again. We think it was last modified yesterday, but we actually just modified it above.
+		$struct = array( 'post_content' => 'Second edit', 'if_not_modified_since' => new IXR_Date( $yesterday ) );
+		$result = $this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, $struct ) );
+		$this->assertInstanceOf( 'IXR_Error', $result );
+		$this->assertEquals( 409, $result->code );
+
+		// Make sure the edit did not go through.
+		$this->assertEquals( 'First edit', get_post( $post_id )->post_content );
+	}
 }
