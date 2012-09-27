@@ -486,6 +486,54 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		// contributors can't
 		$this->assertFalse($contributor->has_cap('publish_post', $post));
 
+		// administrators, editors, and authors can create posts
+		$this->assertTrue($admin->has_cap('create_posts', 'post'));
+		$this->assertTrue($author->has_cap('create_posts', 'post'));
+		$this->assertTrue($editor->has_cap('create_posts', 'post'));
+		$this->assertTrue($author_2->has_cap('create_posts', 'post'));
+		$this->assertTrue($contributor->has_cap('create_posts', 'post'));
+
+		// Defaults to post_type of post
+		$this->assertTrue($admin->has_cap('create_posts'));
+		$this->assertTrue($author->has_cap('create_posts'));
+		$this->assertTrue($editor->has_cap('create_posts'));
+		$this->assertTrue($author_2->has_cap('create_posts'));
+		$this->assertTrue($contributor->has_cap('create_posts'));
+
+		// Dummy post type
+		$this->assertFalse($admin->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($author->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($editor->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($author_2->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($contributor->has_cap('create_posts', 'foobar'));
+
+		// No longer a dummy type. Maps to primitive capability edit_posts.
+		register_post_type( 'foobar' );
+		$this->assertTrue($admin->has_cap('create_posts', 'foobar'));
+		$this->assertTrue($author->has_cap('create_posts', 'foobar'));
+		$this->assertTrue($editor->has_cap('create_posts', 'foobar'));
+		$this->assertTrue($author_2->has_cap('create_posts', 'foobar'));
+		$this->assertTrue($contributor->has_cap('create_posts', 'foobar'));
+
+		// Primitive capability edit_foobars is not assigned to any users.
+		register_post_type( 'foobar', array( 'capability_type' => array( 'foobar', 'foobars' ) ) );
+		$this->assertFalse($admin->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($author->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($editor->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($author_2->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($contributor->has_cap('create_posts', 'foobar'));
+
+		// Add edit_foobars primitive cap to a user.
+		$admin->add_cap( 'edit_foobars', true );
+		$admin = new WP_User( $admin->ID );
+		$this->assertTrue($admin->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($author->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($editor->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($author_2->has_cap('create_posts', 'foobar'));
+		$this->assertFalse($contributor->has_cap('create_posts', 'foobar'));
+
+		_unregister_post_type( 'foobar' );
+
 		// Test meta authorization callbacks
 		if ( function_exists( 'register_meta') ) {
 			$this->assertTrue( $admin->has_cap('edit_post_meta',  $post) );
