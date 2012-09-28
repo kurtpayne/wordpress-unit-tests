@@ -70,7 +70,7 @@ class Tests_Comment_Query extends WP_UnitTestCase {
 
 		$this->factory->comment->create_post_comments( $post_id3, 10, array( 'comment_approved' => '1' ) );
 		$comments = get_comments( array( 'post_id' => $post_id3 ) );
-		// $this->assertEquals( 20, count( $comments ) ); @todo Fix cache bug in WP_Comment_Query::query()
+		$this->assertEquals( 20, count( $comments ) );
 		foreach ( $comments as $comment ) {
 			$this->assertEquals( $post_id3, $comment->comment_post_ID );
 		}
