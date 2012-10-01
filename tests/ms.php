@@ -27,6 +27,11 @@ class Tests_MS extends WP_UnitTestCase {
 			$this->assertEquals( $blog_id, get_id_from_blogname( $details->path ) );
 			$this->assertEquals( $blog_id, wp_cache_get( 'get_id_from_blogname_' . trim( $details->path, '/' ), 'blog-details' ) );
 
+			// get_blog_id_from_url()
+			$this->assertEquals( $blog_id, get_blog_id_from_url( $details->domain, $details->path ) );
+			$key = md5( $details->domain . $details->path );
+			$this->assertEquals( $blog_id, wp_cache_get( $key, 'blog-id-cache' ) );
+
 			// These are empty until get_blog_details() is called with $get_all = true
 			$this->assertEquals( false, wp_cache_get( $blog_id, 'blog-details' ) );
 			$key = md5( $details->domain . $details->path );
@@ -68,6 +73,7 @@ class Tests_MS extends WP_UnitTestCase {
 			$this->assertEquals( false, wp_cache_get( $blog_id . 'short', 'blog-details' ) );
 			$key = md5( $details->domain . $details->path );
 			$this->assertEquals( false, wp_cache_get( $key, 'blog-lookup' ) );
+			$this->assertEquals( false, wp_cache_get( $key, 'blog-id-cache' ) );
 
 			$prefix = $wpdb->get_blog_prefix( $blog_id );
 			foreach ( $wpdb->tables( 'blog', false ) as $table ) {
@@ -529,6 +535,26 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( $blog_id, domain_exists( $details->domain, $details->path ) );
 		wpmu_delete_blog( $blog_id, true );
 		$this->assertEquals( null, domain_exists( $details->domain, $details->path ) );
+	}
+
+	function test_get_blog_id_from_url() {
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/testdomainexists', 'title' => 'Test Title' ) );
+	
+		$details = get_blog_details( $blog_id, false );
+
+		$this->assertEquals( $blog_id, get_blog_id_from_url( $details->domain, $details->path ) );
+		$key = md5( $details->domain . $details->path );
+		$this->assertEquals( $blog_id, wp_cache_get( $key, 'blog-id-cache' ) );
+
+		$this->assertEquals( 0, get_blog_id_from_url( $details->domain, 'foo' ) );
+
+		wpmu_delete_blog( $blog_id );
+		$this->assertEquals( $blog_id, get_blog_id_from_url( $details->domain, $details->path ) );
+		wpmu_delete_blog( $blog_id, true );
+
+		$this->assertEquals( false, wp_cache_get( $key, 'blog-id-cache' ) );
+		$this->assertEquals( 0, get_blog_id_from_url( $details->domain, $details->path ) );
 	}
 }
 
