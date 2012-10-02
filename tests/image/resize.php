@@ -133,7 +133,7 @@ class Tests_Image_Resize extends WP_UnitTestCase {
 			if ( !$class::test() ) {
 				continue;
 			}
-			$filter = create_function( '', "return $class;" );
+			$filter = create_function( '', "return '$class';" );
 			add_filter( 'image_editor_class', $filter );
 			$image = image_resize( DIR_TESTDATA.'/images/test-non-existent-image.jpg', 25, 25 );
 			$this->assertInstanceOf( 'WP_Error', $image );
@@ -151,7 +151,7 @@ class Tests_Image_Resize extends WP_UnitTestCase {
 			if ( !$class::test() ) {
 				continue;
 			}
-			$filter = create_function( '', "return $class;" );
+			$filter = create_function( '', "return '$class';" );
 			add_filter( 'image_editor_class', $filter );
 			$image = image_resize( DIR_TESTDATA.'/export/crazy-cdata.xml', 25, 25 );
 			$this->assertInstanceOf( 'WP_Error', $image );

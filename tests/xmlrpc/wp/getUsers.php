@@ -25,6 +25,21 @@ class TestXMLRPCServer_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 
 		$results = $this->myxmlrpcserver->wp_getUsers( array( 1, 'administrator', 'administrator' ) );
 		$this->assertNotInstanceOf( 'IXR_Error', $results );
+
+		// check data types
+		$this->assertInternalType( 'string', $result[0]['user_id'] );
+		$this->assertStringMatchesFormat( '%d', $result[0]['user_id'] );
+		$this->assertInternalType( 'string', $result[0]['username'] );
+		$this->assertInternalType( 'string', $result[0]['first_name'] );
+		$this->assertInternalType( 'string', $result[0]['last_name'] );
+		$this->assertInstanceOf( 'IXR_Date', $result[0]['registered'] );
+		$this->assertInternalType( 'string', $result[0]['bio'] );
+		$this->assertInternalType( 'string', $result[0]['email'] );
+		$this->assertInternalType( 'string', $result[0]['nickname'] );
+		$this->assertInternalType( 'string', $result[0]['nicename'] );
+		$this->assertInternalType( 'string', $result[0]['url'] );
+		$this->assertInternalType( 'string', $result[0]['display_name'] );
+		$this->assertInternalType( 'array', $result['roles'] );
 	}
 
 	function test_invalid_role() {
