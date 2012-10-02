@@ -143,4 +143,41 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$posts = $query->get_posts();
 	$this->assertEquals( 0 , count( $posts ) );
     }
+
+    function test_meta_between_not_between() {
+	$post_id = $this->factory->post->create();
+	add_post_meta( $post_id, 'time', 500 );
+	$post_id2 = $this->factory->post->create();
+	add_post_meta( $post_id2, 'time', 1001 );
+	$post_id3 = $this->factory->post->create();
+	add_post_meta( $post_id3, 'time', 0 );
+	$post_id4 = $this->factory->post->create();
+	add_post_meta( $post_id4, 'time', 1 );
+	$post_id5 = $this->factory->post->create();
+	add_post_meta( $post_id5, 'time', 1000 );
+    
+	$args = array(
+		'meta_key' => 'time',
+		'meta_value' => array( 1, 1000 ),
+		'meta_type' => 'numeric',
+		'meta_compare' => 'NOT BETWEEN'
+	    );
+
+	$query = new WP_Query( $args );
+	$this->assertEquals( 2, count ( $query->posts ) );
+	$posts = wp_list_pluck( $query->posts, 'ID' );
+	$this->assertEquals( array( $post_id2, $post_id3 ), $posts );
+	
+	$args = array(
+		'meta_key' => 'time',
+		'meta_value' => array( 1, 1000 ),
+		'meta_type' => 'numeric',
+		'meta_compare' => 'BETWEEN'
+	    );
+
+	$query = new WP_Query( $args );
+	$this->assertEquals( 3, count ( $query->posts ) );
+	$posts = wp_list_pluck( $query->posts, 'ID' );
+	$this->assertEquals( array( $post_id, $post_id4, $post_id5 ), $posts );
+    }
 }
