@@ -49,6 +49,72 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$this->assertEquals( array( $post_id, $post_id2, $post_id3, $post_id4 ), $post_ids );
     }
 
+    function test_meta_key_and_query() {
+	$post_id = $this->factory->post->create();
+	add_post_meta( $post_id, 'foo', rand_str() );
+	add_post_meta( $post_id, 'foo', rand_str() );
+	$post_id2 = $this->factory->post->create();
+	add_post_meta( $post_id2, 'bar', 'val2' );
+	add_post_meta( $post_id2, 'foo', rand_str() );
+	$post_id3 = $this->factory->post->create();
+	add_post_meta( $post_id3, 'baz', rand_str() );
+	$post_id4 = $this->factory->post->create();
+	add_post_meta( $post_id4, 'froo', rand_str() );
+	$post_id5 = $this->factory->post->create();
+	add_post_meta( $post_id5, 'tango', 'val2' );
+	$post_id6 = $this->factory->post->create();
+	add_post_meta( $post_id6, 'bar', 'val1' );
+	add_post_meta( $post_id6, 'foo', rand_str() );
+	$post_id7 = $this->factory->post->create();
+	add_post_meta( $post_id7, 'foo', rand_str() );
+	add_post_meta( $post_id7, 'froo', rand_str() );
+	add_post_meta( $post_id7, 'baz', rand_str() );
+	add_post_meta( $post_id7, 'bar', 'val2' );
+
+	$query = new WP_Query( array(
+	    'meta_query' => array(
+		    array(
+			    'key' => 'foo'
+		    ),
+		    array(
+			    'key' => 'bar',
+			    'value' => 'val2'
+		    ),
+		    array(
+			    'key' => 'baz'
+		    ),
+		    array(
+			    'key' => 'froo'
+		    ),
+		    'relation' => 'AND',
+	    ),
+	) );
+
+	$posts = $query->get_posts();
+	$this->assertEquals( 1, count( $posts ) );
+
+	$post_ids = wp_list_pluck( $posts, 'ID' );
+	$this->assertEquals( array( $post_id7 ), $post_ids );
+
+	$query = new WP_Query( array(
+	    'meta_query' => array(
+		    array(
+			    'key' => 'foo'
+		    ),
+		    array(
+			    'key' => 'bar',
+		    ),
+		    'relation' => 'AND',
+	    ),
+	) );
+
+	$posts = $query->get_posts();
+	$this->assertEquals( 3, count( $posts ) );
+
+	$post_ids = wp_list_pluck( $posts, 'ID' );
+	$this->assertEquals( array( $post_id2, $post_id6, $post_id7 ), $post_ids );
+    }
+
     /**
      * @ticket 18158
      */
