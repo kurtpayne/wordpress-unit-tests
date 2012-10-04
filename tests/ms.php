@@ -358,6 +358,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( $current_site->domain, $blog->domain );
 		$this->assertEquals( '/', $blog->path );
 
+		// Test defaulting to current blog
+		$this->assertEquals( $blog, get_blog_details() );
+
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/test_blogname', 'title' => 'Test Title' ) );
 		$this->assertInternalType( 'int', $blog_id );
@@ -555,6 +558,21 @@ class Tests_MS extends WP_UnitTestCase {
 
 		$this->assertEquals( false, wp_cache_get( $key, 'blog-id-cache' ) );
 		$this->assertEquals( 0, get_blog_id_from_url( $details->domain, $details->path ) );
+	}
+
+	function test_is_main_site() {
+		$this->assertTrue( is_main_site() );
+		$this->assertTrue( is_main_site( get_current_blog_id() ) );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id ) );
+
+		switch_to_blog( $blog_id  );
+		$this->assertFalse( is_main_site( $blog_id ) );
+		$this->assertFalse( is_main_site( get_current_blog_id() ) );
+		$this->assertFalse( is_main_site() );
+
+		restore_current_blog();
 	}
 }
 

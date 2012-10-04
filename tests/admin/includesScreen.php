@@ -16,7 +16,7 @@ class Tests_Admin_includesScreen extends WP_UnitTestCase {
 		'edit.php?post_type=page' => array( 'base' => 'edit', 'id' => 'edit-page', 'post_type' => 'page' ),
 		'link-manager.php' => array( 'base' => 'link-manager', 'id' => 'link-manager' ),
 		'link-add.php' => array( 'action' => 'add', 'base' => 'link', 'id' => 'link' ),
-		'edit-tags.php?taxonomy=link_category' => array( 'base' => 'edit-tags', 'id' => 'edit-link_category', 'taxonomy' => 'link_category' ),
+		'edit-tags.php?taxonomy=link_category' => array( 'base' => 'edit-tags', 'id' => 'edit-link_category', 'taxonomy' => 'link_category', 'post_type' => '' ),
 		'edit-comments.php' => array( 'base' => 'edit-comments', 'id' => 'edit-comments' ),
 		'themes.php' => array( 'base' => 'themes', 'id' => 'themes' ),
 		'widgets.php' => array( 'base' => 'widgets', 'id' => 'widgets' ),
