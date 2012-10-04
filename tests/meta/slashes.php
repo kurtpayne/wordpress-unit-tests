@@ -220,4 +220,56 @@ class Tests_Meta_Slashes extends WP_UnitTestCase {
 		$this->assertEquals( $this->slash_6, get_comment_meta( $id, 'slash_test_3', true ) );
 	}
 
+	/**
+	 * Tests the model function that expects un-slashed data
+	 *
+	 */
+	function test_add_user_meta() {
+		$id = $this->factory->user->create();
+
+		add_user_meta( $id, 'slash_test_1', $this->slash_1 );
+		add_user_meta( $id, 'slash_test_2', $this->slash_3 );
+		add_user_meta( $id, 'slash_test_3', $this->slash_5 );
+
+		$this->assertEquals( $this->slash_1, get_user_meta( $id, 'slash_test_1', true ) );
+		$this->assertEquals( $this->slash_3, get_user_meta( $id, 'slash_test_2', true ) );
+		$this->assertEquals( $this->slash_5, get_user_meta( $id, 'slash_test_3', true ) );
+
+		add_user_meta( $id, 'slash_test_4', $this->slash_2 );
+		add_user_meta( $id, 'slash_test_5', $this->slash_4 );
+		add_user_meta( $id, 'slash_test_6', $this->slash_6 );
+
+		$this->assertEquals( $this->slash_2, get_user_meta( $id, 'slash_test_4', true ) );
+		$this->assertEquals( $this->slash_4, get_user_meta( $id, 'slash_test_5', true ) );
+		$this->assertEquals( $this->slash_6, get_user_meta( $id, 'slash_test_6', true ) );
+	}
+
+	/**
+	 * Tests the model function that expects un-slashed data
+	 *
+	 */
+	function test_update_user_meta() {
+		$id = $this->factory->user->create();
+
+		add_user_meta( $id, 'slash_test_1', 'foo' );
+		add_user_meta( $id, 'slash_test_2', 'foo' );
+		add_user_meta( $id, 'slash_test_3', 'foo' );
+
+		update_user_meta( $id, 'slash_test_1', $this->slash_1 );
+		update_user_meta( $id, 'slash_test_2', $this->slash_3 );
+		update_user_meta( $id, 'slash_test_3', $this->slash_5 );
+
+		$this->assertEquals( $this->slash_1, get_user_meta( $id, 'slash_test_1', true ) );
+		$this->assertEquals( $this->slash_3, get_user_meta( $id, 'slash_test_2', true ) );
+		$this->assertEquals( $this->slash_5, get_user_meta( $id, 'slash_test_3', true ) );
+
+		update_user_meta( $id, 'slash_test_1', $this->slash_2 );
+		update_user_meta( $id, 'slash_test_2', $this->slash_4 );
+		update_user_meta( $id, 'slash_test_3', $this->slash_6 );
+
+		$this->assertEquals( $this->slash_2, get_user_meta( $id, 'slash_test_1', true ) );
+		$this->assertEquals( $this->slash_4, get_user_meta( $id, 'slash_test_2', true ) );
+		$this->assertEquals( $this->slash_6, get_user_meta( $id, 'slash_test_3', true ) );
+	}
+
 }
