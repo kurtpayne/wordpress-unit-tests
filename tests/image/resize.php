@@ -130,7 +130,7 @@ class Tests_Image_Resize extends WP_UnitTestCase {
 	public function test_resize_non_existent_image() {
 		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
 		foreach ( $classes as $class ) {
-			if ( !$class::test() ) {
+			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
@@ -148,7 +148,7 @@ class Tests_Image_Resize extends WP_UnitTestCase {
 	public function test_resize_bad_image() {
 		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
 		foreach ( $classes as $class ) {
-			if ( !$class::test() ) {
+			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );

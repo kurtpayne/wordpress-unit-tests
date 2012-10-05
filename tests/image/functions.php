@@ -113,7 +113,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		foreach ( $classes as $class ) {
 			
 			// If the image editor isn't available, skip it
-			if ( !$class::test() ) {
+			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
@@ -151,7 +151,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		foreach ( $classes as $class ) {
 
 			// If the image editor isn't available, skip it
-			if ( !$class::test() ) {
+			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
@@ -196,7 +196,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		foreach ( $classes as $class ) {
 
 			// If the image editor isn't available, skip it
-			if ( !$class::test() ) {
+			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
