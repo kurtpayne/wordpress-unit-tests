@@ -508,6 +508,13 @@ class Tests_MS extends WP_UnitTestCase {
 		}
 	}
 
+	function _domain_exists_cb( $exists, $domain, $path, $site_id ) {
+		if ( 'foo' == $domain && 'bar' == $path )
+			return 1234;
+		else
+			return null;
+	}
+
 	function test_domain_exists() {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/testdomainexists', 'title' => 'Test Title' ) );
@@ -519,19 +526,12 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( null, domain_exists( $details->domain, $details->path, 999 ) );
 		$this->assertEquals( null, domain_exists( 'foo', 'bar' ) );
 
-		$exists_cb = function ( $exists, $domain, $path, $site_id ) {
-			if ( 'foo' == $domain && 'bar' == $path )
-				return 1234;
-			else
-				return null;
-		};
-
-		add_filter( 'domain_exists', $exists_cb, 10, 4 );
+		add_filter( 'domain_exists', array( $this, '_domain_exists_cb' ), 10, 4 );
 		$this->assertEquals( 1234, domain_exists( 'foo', 'bar' ) );
 		$this->assertEquals( null, domain_exists( 'foo', 'baz' ) );
 		$this->assertEquals( null, domain_exists( 'bar', 'foo' ) );
 
-		remove_filter( 'domain_exists', $exists_cb, 10, 4 );
+		remove_filter( 'domain_exists', array( $this, '_domain_exists_cb' ), 10, 4 );
 		$this->assertEquals( null, domain_exists( 'foo', 'bar' ) );
 
 		wpmu_delete_blog( $blog_id );
