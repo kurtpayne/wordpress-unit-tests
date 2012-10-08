@@ -4,7 +4,7 @@
  * @group xmlrpc
  * @group user
  */
-class TestXMLRPCServer_wp_getProfile extends WP_XMLRPC_UnitTestCase {
+class Tests_XMLRPC_wp_getProfile extends WP_XMLRPC_UnitTestCase {
 
 	function test_invalid_username_password() {
 		$result = $this->myxmlrpcserver->wp_getProfile( array( 1, 'username', 'password' ) );

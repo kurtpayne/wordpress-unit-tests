@@ -4,7 +4,7 @@
  * @group xmlrpc
  * @group user
  */
-class TestXMLRPCServer_wp_getUser extends WP_XMLRPC_UnitTestCase {
+class Tests_XMLRPC_wp_getUser extends WP_XMLRPC_UnitTestCase {
 	protected $administrator_id;
 
 	function setUp() {

@@ -4,7 +4,7 @@
  * @group xmlrpc
  * @group user
  */
-class TestXMLRPCServer_wp_getUsers extends WP_XMLRPC_UnitTestCase {
+class Tests_XMLRPC_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 
 	function test_invalid_username_password() {
 		$results = $this->myxmlrpcserver->wp_getUsers( array( 1, 'username', 'password' ) );
@@ -23,8 +23,8 @@ class TestXMLRPCServer_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 	function test_capable_user() {
 		$this->make_user_by_role( 'administrator' );
 
-		$results = $this->myxmlrpcserver->wp_getUsers( array( 1, 'administrator', 'administrator' ) );
-		$this->assertNotInstanceOf( 'IXR_Error', $results );
+		$result = $this->myxmlrpcserver->wp_getUsers( array( 1, 'administrator', 'administrator' ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
 
 		// check data types
 		$this->assertInternalType( 'string', $result[0]['user_id'] );
@@ -39,11 +39,12 @@ class TestXMLRPCServer_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 		$this->assertInternalType( 'string', $result[0]['nicename'] );
 		$this->assertInternalType( 'string', $result[0]['url'] );
 		$this->assertInternalType( 'string', $result[0]['display_name'] );
-		$this->assertInternalType( 'array', $result['roles'] );
+		$this->assertInternalType( 'array', $result[0]['roles'] );
 	}
 
 	function test_invalid_role() {
-		$this->make_user_by_role( 'administrator' );
+		$administrator_id = $this->make_user_by_role( 'administrator' );
+		grant_super_admin( $administrator_id );
 
 		$filter = array( 'role' => rand_str() );
 		$results = $this->myxmlrpcserver->wp_getUsers( array( 1, 'administrator', 'administrator', $filter ) );
@@ -55,6 +56,7 @@ class TestXMLRPCServer_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 		$author_id = $this->make_user_by_role( 'author' );
 		$editor_id = $this->make_user_by_role( 'editor' );
 		$administrator_id = $this->make_user_by_role( 'administrator' );
+		grant_super_admin( $administrator_id );
 
 		// test a single role ('editor')
 		$filter = array( 'role' => 'editor' );
@@ -71,7 +73,9 @@ class TestXMLRPCServer_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 	}
 
 	function test_paging_filters() {
-		$this->make_user_by_role( 'administrator' );
+		$administrator_id = $this->make_user_by_role( 'administrator' );
+		grant_super_admin( $administrator_id );
+
 		$this->factory->user->create_many( 13 );
 
 		$user_ids = get_users( array( 'fields' => 'ID' ) );
