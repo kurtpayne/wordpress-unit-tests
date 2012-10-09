@@ -523,20 +523,7 @@
 	 * wp.media.view.Attachment.Library
 	 */
 	media.view.Attachment.Library = media.view.Attachment.extend({
-		className: 'attachment library',
-
-		buttons: {
-			insert: true
-		},
-
-		events: _.defaults({
-			'click .insert': 'insert'
-		}, media.view.Attachment.prototype.events ),
-
-		insert: function() {
-			this.controller.selection.reset([ this.model ]);
-			this.controller.update();
-		}
+		className: 'attachment library'
 	});
 
 	/**
