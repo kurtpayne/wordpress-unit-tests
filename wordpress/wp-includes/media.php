@@ -1296,10 +1296,8 @@ function wp_print_media_templates( $attachment ) {
 	?>
 	<script type="text/html" id="tmpl-media-modal">
 		<div class="media-modal">
-			<div class="media-modal-header">
-				<h3><%- title %></h3>
-				<a class="media-modal-close" href="" title="<?php esc_attr_e('Close'); ?>">&times;</a>
-			</div>
+			<h3 class="media-modal-title"><%- title %></h3>
+			<a class="media-modal-close" href="" title="<?php esc_attr_e('Close'); ?>">&times;</a>
 			<div class="media-modal-content"></div>
 		</div>
 		<div class="media-modal-backdrop"></div>
@@ -1335,13 +1333,14 @@ function wp_print_media_templates( $attachment ) {
 					<img src="<%- url %>" width="<%- width %>" height="<%- height %>" draggable="false"
 					style="top:<%- top %>px; left:<%- left %>px;" />
 				</div>
+			<% } else if ( uploading ) { %>
+				<div class="media-progress-bar"><div></div></div>
 			<% } else { %>
 				<img src="<%- icon %>" class="icon" draggable="false" />
+				<div class="filename"><%- filename %></div>
 			<% } %>
 
-			<% if ( uploading ) { %>
-				<div class="media-progress-bar"><div></div></div>
-			<% } %>
+
 
 			<% if ( buttons.close ) { %>
 				<a class="close" href="#">&times;</a>
@@ -1358,7 +1357,9 @@ function wp_print_media_templates( $attachment ) {
 
 			<span class="count"><%- count %></span>
 		</div>
-		<a class="clear-selection" href="#"><?php _e('Clear selection'); ?></a>
+		<% if ( clearable ) { %>
+			<a class="clear-selection" href="#"><?php _e('Clear selection'); ?></a>
+		<% } %>
 	</script>
 
 	<script type="text/html" id="tmpl-editor-attachment">
