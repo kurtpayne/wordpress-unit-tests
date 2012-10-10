@@ -409,7 +409,10 @@
 				options = _.defaults( this.model.toJSON(), {
 					orientation: 'landscape',
 					uploading:   false,
-					type:        ''
+					type:        '',
+					subtype:     '',
+					icon:        '',
+					filename:    ''
 				});
 
 			options.buttons = this.buttons;
