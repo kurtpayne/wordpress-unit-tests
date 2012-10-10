@@ -90,7 +90,7 @@ var tb_position;
 // WordPress, TinyMCE, and Media
 // -----------------------------
 (function($){
-	// Stores the editors' `wp.media.controller.Workflow` instaces.
+	// Stores the editors' `wp.media.controller.Workflow` instances.
 	var workflows = {};
 
 	wp.mce.media = {
@@ -122,6 +122,9 @@ var tb_position;
 
 				shortcode = view.gallery.shortcode( selection );
 				this.insert( shortcode.string() );
+
+				// Reset the workflow view to the library.
+				workflow.render('library');
 			}, this );
 
 			return workflow;
