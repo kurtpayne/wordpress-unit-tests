@@ -837,6 +837,35 @@ class Tests_MS extends WP_UnitTestCase {
 
 		restore_current_blog();
 	}
+
+	function test_switch_upload_dir() {
+		$this->assertTrue( is_main_site() );
+
+		$site = get_current_site();
+
+		$info = wp_upload_dir();
+		$this->assertEquals( 'http://' . $site->domain . '/wp-content/uploads/' . gmstrftime('%Y/%m'), $info['url'] );
+		$this->assertEquals( ABSPATH . 'wp-content/uploads/' . gmstrftime('%Y/%m'), $info['path'] );
+		$this->assertEquals( gmstrftime('/%Y/%m'), $info['subdir'] );
+		$this->assertEquals( '', $info['error'] );
+
+		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
+		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id ) );
+
+		switch_to_blog( $blog_id );
+		$info = wp_upload_dir();
+		$this->assertEquals( 'http://' . $site->domain . '/wp-content/uploads/sites/' . get_current_blog_id() . '/' . gmstrftime('%Y/%m'), $info['url'] );
+		$this->assertEquals( ABSPATH . 'wp-content/uploads/sites/' . get_current_blog_id() . '/' . gmstrftime('%Y/%m'), $info['path'] );
+		$this->assertEquals( gmstrftime('/%Y/%m'), $info['subdir'] );
+		$this->assertEquals( '', $info['error'] );
+		restore_current_blog();
+
+		$info = wp_upload_dir();
+		$this->assertEquals( 'http://' . $site->domain . '/wp-content/uploads/' . gmstrftime('%Y/%m'), $info['url'] );
+		$this->assertEquals( ABSPATH . 'wp-content/uploads/' . gmstrftime('%Y/%m'), $info['path'] );
+		$this->assertEquals( gmstrftime('/%Y/%m'), $info['subdir'] );
+		$this->assertEquals( '', $info['error'] );
+	}
 }
 
 endif;
