@@ -44,7 +44,8 @@ class Tests_XMLRPC_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 
 	function test_invalid_role() {
 		$administrator_id = $this->make_user_by_role( 'administrator' );
-		grant_super_admin( $administrator_id );
+		if ( is_multisite() )
+			grant_super_admin( $administrator_id );
 
 		$filter = array( 'role' => rand_str() );
 		$results = $this->myxmlrpcserver->wp_getUsers( array( 1, 'administrator', 'administrator', $filter ) );
@@ -56,7 +57,8 @@ class Tests_XMLRPC_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 		$author_id = $this->make_user_by_role( 'author' );
 		$editor_id = $this->make_user_by_role( 'editor' );
 		$administrator_id = $this->make_user_by_role( 'administrator' );
-		grant_super_admin( $administrator_id );
+		if ( is_multisite() )
+			grant_super_admin( $administrator_id );
 
 		// test a single role ('editor')
 		$filter = array( 'role' => 'editor' );
@@ -74,7 +76,8 @@ class Tests_XMLRPC_wp_getUsers extends WP_XMLRPC_UnitTestCase {
 
 	function test_paging_filters() {
 		$administrator_id = $this->make_user_by_role( 'administrator' );
-		grant_super_admin( $administrator_id );
+		if ( is_multisite() )
+			grant_super_admin( $administrator_id );
 
 		$this->factory->user->create_many( 13 );
 
