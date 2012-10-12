@@ -161,6 +161,23 @@ img.wp-oembed {
 	box-shadow: none;
 }
 
+.wp-view-wrap.alignnone {
+	display: block;
+}
+
+.wp-view-wrap.aligncenter {
+	display: block;
+	text-align: center;
+}
+
+.wp-view-wrap.alignleft {
+	float: left;
+}
+
+.wp-view-wrap.alignright {
+	float: right;
+}
+
 .wp-view-wrap .overlay {
 	opacity: 0;
 	display: block;
@@ -245,6 +262,7 @@ img.wp-oembed {
 }
 
 .editor-attachment {
+	display: inline-block;
 	position: relative;
 	margin-top: 10px;
 	margin-right: 10px;
@@ -266,7 +284,12 @@ img.wp-oembed {
 	position: relative;
 }
 
+.wp-view-type-gallery {
+	display: block;
+}
+
 .editor-gallery {
+	display: inline-block;
 	position: relative;
 	min-height: 150px;
 	min-width: 150px;
