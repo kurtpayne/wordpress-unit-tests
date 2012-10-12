@@ -46,7 +46,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$this->assertEquals( 4, count( $posts ) );
 
 	$post_ids = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id2, $post_id3, $post_id4 ), $post_ids );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id2, $post_id3, $post_id4 ), $post_ids ) );
     }
 
     function test_meta_key_and_query() {
@@ -112,7 +112,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$this->assertEquals( 3, count( $posts ) );
 
 	$post_ids = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id2, $post_id6, $post_id7 ), $post_ids );
+	$this->assertEquals( array(), array_diff( array( $post_id2, $post_id6, $post_id7 ), $post_ids ) );
     }
 
     /**
@@ -232,7 +232,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$query = new WP_Query( $args );
 	$this->assertEquals( 2, count ( $query->posts ) );
 	$posts = wp_list_pluck( $query->posts, 'ID' );
-	$this->assertEquals( array( $post_id2, $post_id3 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id2, $post_id3 ), $posts ) );
 	
 	$args = array(
 		'meta_key' => 'time',
@@ -244,7 +244,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$query = new WP_Query( $args );
 	$this->assertEquals( 3, count ( $query->posts ) );
 	$posts = wp_list_pluck( $query->posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id4, $post_id5 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id4, $post_id5 ), $posts ) );
     }
 
     /**
@@ -270,7 +270,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$this->assertEquals( 2, count( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id3 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3 ), $posts ) );
 
 	$posts = get_posts( array(
 	    'meta_key' => 'foo',
@@ -280,7 +280,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$this->assertEquals( 2, count( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id3 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3 ), $posts ) );
     }
 
     /**
@@ -307,7 +307,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$posts = get_posts( $args );
 	$this->assertEquals( 2, count( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id2 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id2 ), $posts ) );
     }
 
     /**
@@ -336,21 +336,21 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$posts = get_posts( array( 'meta_key' => 'bar', 'meta_value' => '0' ) );
 	$this->assertEquals( 2, count ( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id5 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id5 ), $posts ) );
 
     	$posts = get_posts( array( 'meta_key' => 'bar', 'meta_value' => 0 ) );
 	$this->assertEquals( 2, count ( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id5 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id5 ), $posts ) );
 
     	$posts = get_posts( array( 'meta_value' => 0 ) );
 	$this->assertEquals( 5, count ( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts ) );
 
     	$posts = get_posts( array( 'meta_value' => '0' ) );
 	$this->assertEquals( 5, count ( $posts ) );
 	$posts = wp_list_pluck( $posts, 'ID' );
-	$this->assertEquals( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts );
+	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts ) );
     }
 }
