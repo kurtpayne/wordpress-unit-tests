@@ -4,7 +4,7 @@
  *
  * @group user
  */
-class Tests_WP_User_Query extends WP_UnitTestCase {
+class Tests_User_Query extends WP_UnitTestCase {
 
 	protected $user_id;
 
@@ -55,5 +55,25 @@ class Tests_WP_User_Query extends WP_UnitTestCase {
 
 		$ids = $users->get_results();
 		$this->assertNotContains( $this->user_id, $ids );
+	}
+
+	function test_get_all() {
+		$this->factory->user->create_many( 10, array(
+			'role' => 'author'
+		) );
+
+		$users = new WP_User_Query( array( 'blog_id' => get_current_blog_id() ) );
+		$users = $users->get_results();
+		$this->assertEquals( 12, count( $users ) );
+		foreach ( $users as $user ) {
+			$this->assertInstanceOf( 'WP_User', $user );
+		}
+
+		$users = new WP_User_Query( array( 'blog_id' => get_current_blog_id(), 'fields' => 'all_with_meta' ) );
+		$users = $users->get_results();
+		$this->assertEquals( 12, count( $users ) );
+		foreach ( $users as $user ) {
+			$this->assertInstanceOf( 'WP_User', $user );
+		}
 	}
 }

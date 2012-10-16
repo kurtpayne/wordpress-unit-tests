@@ -271,6 +271,16 @@ class Tests_User extends WP_UnitTestCase {
 		$this->assertInstanceOf( 'WP_User', $user5 );
 		$this->assertEquals( $user_id, $user5->ID );
 		$this->assertEquals( $user->user_login, $user5->user_login );
+
+		$user6 = new WP_User( $user );
+		$this->assertInstanceOf( 'WP_User', $user6 );
+		$this->assertEquals( $user_id, $user6->ID );
+		$this->assertEquals( $user->user_login, $user6->user_login );
+
+		$user7 = new WP_User( $user->data );
+		$this->assertInstanceOf( 'WP_User', $user7 );
+		$this->assertEquals( $user_id, $user7->ID );
+		$this->assertEquals( $user->user_login, $user7->user_login );
 	}
 
 	function test_get() {
