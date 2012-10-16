@@ -44,6 +44,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = $query->get_posts();
 	$this->assertEquals( 4, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 
 	$post_ids = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id2, $post_id3, $post_id4 ), $post_ids ) );
@@ -92,6 +96,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = $query->get_posts();
 	$this->assertEquals( 1, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 
 	$post_ids = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array( $post_id7 ), $post_ids );
@@ -110,6 +118,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = $query->get_posts();
 	$this->assertEquals( 3, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 
 	$post_ids = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id2, $post_id6, $post_id7 ), $post_ids ) );
@@ -141,6 +153,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = $query->get_posts();
 	$this->assertEquals( 3, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 
 	$query = new WP_Query( array(
 	    'meta_query' => array(
@@ -157,6 +173,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = $query->get_posts();
 	$this->assertEquals( 1, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 
 	$query = new WP_Query( array(
 	    'meta_query' => array(
@@ -231,6 +251,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$query = new WP_Query( $args );
 	$this->assertEquals( 2, count ( $query->posts ) );
+	foreach ( $query->posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $query->posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id2, $post_id3 ), $posts ) );
 	
@@ -243,6 +267,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$query = new WP_Query( $args );
 	$this->assertEquals( 3, count ( $query->posts ) );
+	foreach ( $query->posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $query->posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id4, $post_id5 ), $posts ) );
     }
@@ -279,6 +307,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	) );
 
 	$this->assertEquals( 2, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3 ), $posts ) );
     }
@@ -306,6 +338,10 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = get_posts( $args );
 	$this->assertEquals( 2, count( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id2 ), $posts ) );
     }
@@ -331,25 +367,45 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 	$posts = get_posts( array( 'meta_key' => 'foo', 'meta_value' => '0' ) );
 	$this->assertEquals( 1, count ( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$this->assertEquals( $post_id, $posts[0]->ID );
 
 	$posts = get_posts( array( 'meta_key' => 'bar', 'meta_value' => '0' ) );
 	$this->assertEquals( 2, count ( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id5 ), $posts ) );
 
-    	$posts = get_posts( array( 'meta_key' => 'bar', 'meta_value' => 0 ) );
+    $posts = get_posts( array( 'meta_key' => 'bar', 'meta_value' => 0 ) );
 	$this->assertEquals( 2, count ( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id5 ), $posts ) );
 
-    	$posts = get_posts( array( 'meta_value' => 0 ) );
+    $posts = get_posts( array( 'meta_value' => 0 ) );
 	$this->assertEquals( 5, count ( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts ) );
 
-    	$posts = get_posts( array( 'meta_value' => '0' ) );
+    $posts = get_posts( array( 'meta_value' => '0' ) );
 	$this->assertEquals( 5, count ( $posts ) );
+	foreach ( $posts as $post ) {
+		$this->assertInstanceOf( 'WP_Post', $post );
+		$this->assertEquals( 'raw', $post->filter );
+	}
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts ) );
     }
