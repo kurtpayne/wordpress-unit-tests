@@ -409,4 +409,91 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	$posts = wp_list_pluck( $posts, 'ID' );
 	$this->assertEquals( array(), array_diff( array( $post_id, $post_id3, $post_id4, $post_id5, $post_id6 ), $posts ) );
     }
+
+	function test_taxonomy_include_children() {
+		$cat_a = $this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'Australia' ) );
+		$cat_b = $this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'Sydney', 'parent' => $cat_a ) );
+		$cat_c = $this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'East Syndney', 'parent' => $cat_b ) );
+		$cat_d = $this->factory->term->create( array( 'taxonomy' => 'category', 'name' => 'West Syndney', 'parent' => $cat_b ) );
+
+		$post_a = $this->factory->post->create( array( 'post_category' => array( $cat_a ) ) );
+		$post_b = $this->factory->post->create( array( 'post_category' => array( $cat_b ) ) );
+		$post_c = $this->factory->post->create( array( 'post_category' => array( $cat_c ) ) );
+		$post_d = $this->factory->post->create( array( 'post_category' => array( $cat_d ) ) );
+
+		$posts = get_posts( array(
+		    'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => array( $cat_a ),
+				)
+		    )	
+		) );
+
+		$this->assertEquals( 4 , count( $posts ) );
+
+		$posts = get_posts( array(
+		    'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => array( $cat_a ),
+					'include_children' => false
+				)
+		    )	
+		) );
+
+		$this->assertEquals( 1 , count( $posts ) );
+
+		$posts = get_posts( array(
+		    'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => array( $cat_b ),
+				)
+		    )	
+		) );
+
+		$this->assertEquals( 3 , count( $posts ) );
+
+		$posts = get_posts( array(
+		    'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => array( $cat_b ),
+					'include_children' => false
+				)
+		    )	
+		) );
+
+		$this->assertEquals( 1 , count( $posts ) );
+
+		$posts = get_posts( array(
+		    'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => array( $cat_c ),
+				)
+		    )	
+		) );
+
+		$this->assertEquals( 1 , count( $posts ) );
+
+		$posts = get_posts( array(
+		    'tax_query' => array(
+				array(
+					'taxonomy' => 'category',
+					'field' => 'id',
+					'terms' => array( $cat_c ),
+					'include_children' => false
+				)
+		    )	
+		) );
+
+		$this->assertEquals( 1 , count( $posts ) );
+	}
 }
