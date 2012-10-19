@@ -185,4 +185,27 @@ class Tests_Post_Objects extends WP_UnitTestCase {
 		$this->assertInternalType( 'array', $post['ancestors'] );
 		$this->assertEquals( 'raw', $post['filter'] );
 	}
+
+	/**
+	 * @ticket 22223
+	 */
+	function test_get_post_cache() {
+		global $wpdb;
+
+		$id = $this->factory->post->create();
+		wp_cache_delete( $id, 'posts' );
+
+		// get_post( stdClass ) should not prime the cache
+		$post = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE ID = %d LIMIT 1", $id ) );
+		$post = get_post( $post );
+		$this->assertEmpty( wp_cache_get( $id, 'posts' ) );
+
+		// get_post( WP_Post ) should not prime the cache
+		get_post( $post );
+		$this->assertEmpty( wp_cache_get( $id, 'posts' ) );
+
+		// get_post( ID ) should prime the cache
+		get_post( $post->ID );
+		$this->assertNotEmpty( wp_cache_get( $id, 'posts' ) );
+	}
 }
