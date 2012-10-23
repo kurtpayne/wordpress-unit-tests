@@ -826,10 +826,6 @@ p.install-help {
 	height: auto;
 }
 
-select option {
-	padding: 2px;
-}
-
 .submit {
 	padding: 1.5em 0;
 	margin: 5px 0;
@@ -890,10 +886,6 @@ input[type="number"].small-text {
 
 .ie8 .tablenav .actions select#cat {
 	width: 200px;
-}
-
-#wpcontent option {
-	padding: 2px;
 }
 
 #timezone_string option {
@@ -1080,10 +1072,6 @@ ul#add-to-blog-users {
 td.action-links,
 th.action-links {
 	text-align: right;
-}
-
-.describe .del-link {
-	padding-left: 5px;
 }
 
 
@@ -2910,7 +2898,7 @@ table .inline-edit-row fieldset ul.cat-hover {
 
 #titlediv {
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 18px;
 }
 
 #titlediv label {
@@ -2972,6 +2960,8 @@ input#link_url {
 }
 
 #edit-slug-box {
+	height: 1em;
+	line-height: 23px;
 	margin-top: 8px;
 	padding: 0 10px;
 }
