@@ -534,6 +534,18 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 
 		_unregister_post_type( 'foobar' );
 
+		register_post_type( 'something', array( 'capabilities' => array( 'edit_posts' => 'draw_somethings' ) ) );
+		$something = get_post_type_object( 'something' );
+		$this->assertEquals( 'draw_somethings', $something->cap->edit_posts );
+		$this->assertEquals( 'draw_somethings', $something->cap->create_posts );
+
+		register_post_type( 'something', array( 'capabilities' =>
+						array( 'edit_posts' => 'draw_somethings', 'create_posts' => 'create_somethings' ) ) );
+		$something = get_post_type_object( 'something' );
+		$this->assertEquals( 'draw_somethings', $something->cap->edit_posts );
+		$this->assertEquals( 'create_somethings', $something->cap->create_posts );
+		_unregister_post_type( 'something' );
+
 		// Test meta authorization callbacks
 		if ( function_exists( 'register_meta') ) {
 			$this->assertTrue( $admin->has_cap('edit_post_meta',  $post) );
