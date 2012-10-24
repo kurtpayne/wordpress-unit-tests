@@ -12,7 +12,7 @@ class Tests_MS extends WP_UnitTestCase {
 	protected $plugin_hook_count = 0;
 
 	function test_create_and_delete_blog() {
-		global $wpdb, $current_site;
+		global $wpdb;
 
 		$blog_ids = $this->factory->blog->create_many( 4 );
 		foreach ( $blog_ids as $blog_id ) {
@@ -93,8 +93,6 @@ class Tests_MS extends WP_UnitTestCase {
 	}
 
 	function test_get_blogs_of_user() {
-		global $current_site;
-
 		// Logged out users don't have blogs.
 		$this->assertEquals( array(), get_blogs_of_user( 0 ) );
 
@@ -134,7 +132,7 @@ class Tests_MS extends WP_UnitTestCase {
 	}
 
 	function test_is_blog_user() {
-		global $current_site, $wpdb;
+		global $wpdb;
 
 		$user1_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 
@@ -158,7 +156,7 @@ class Tests_MS extends WP_UnitTestCase {
 	}
 
 	function test_is_user_member_of_blog() {
-		global $current_site, $wpdb;
+		global $wpdb;
 
 		$user1_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 
@@ -260,8 +258,6 @@ class Tests_MS extends WP_UnitTestCase {
 	}
 
 	function test_get_dashboard_blog() {
-		global $current_site;
-
 		// if there is no dashboard blog set, current blog is used
 		$dashboard_blog = get_dashboard_blog();
 		$this->assertEquals( 1, $dashboard_blog->blog_id );
@@ -370,8 +366,13 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( $blog_id, get_id_from_blogname('test_blogname') );
 	}
 
+	function _action_counter_cb( $blog_id ) {
+		global $test_action_counter;
+		$test_action_counter++;
+	}
+
 	function test_update_blog_details() {
-		global $current_site;
+		global $test_action_counter;
 
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/test_blogpath', 'title' => 'Test Title' ) );
@@ -399,14 +400,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( 'my_path/', $blog->path );
 		$this->assertEquals( '1', $blog->spam );
 
-		global $test_action_counter;
 		$test_action_counter = 0;
-		$callback = function( $blog_id ) {
-			global $test_action_counter;
-			$test_action_counter++;
-		};
 
-		add_action( 'make_ham_blog', $callback, 10, 1 );
+		add_action( 'make_ham_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'spam' => 0 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -419,9 +415,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->spam );
 		$this->assertEquals( 1, $test_action_counter );
-		remove_action( 'make_ham_blog', $callback, 10, 1 );
+		remove_action( 'make_ham_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		
-		add_action( 'make_spam_blog', $callback, 10, 1 );
+		add_action( 'make_spam_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'spam' => 1 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -434,9 +430,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->spam );
 		$this->assertEquals( 2, $test_action_counter );
-		remove_action( 'make_spam_blog', $callback, 10, 1 );
+		remove_action( 'make_spam_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'archive_blog', $callback, 10, 1 );
+		add_action( 'archive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'archived' => 1 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -449,9 +445,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->archived );
 		$this->assertEquals( 3, $test_action_counter );
-		remove_action( 'archive_blog', $callback, 10, 1 );
+		remove_action( 'archive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'unarchive_blog', $callback, 10, 1 );
+		add_action( 'unarchive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'archived' => 0 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -464,9 +460,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->archived );
 		$this->assertEquals( 4, $test_action_counter );
-		remove_action( 'unarchive_blog', $callback, 10, 1 );
+		remove_action( 'unarchive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'make_delete_blog', $callback, 10, 1 );
+		add_action( 'make_delete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'deleted' => 1 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -479,9 +475,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->deleted );
 		$this->assertEquals( 5, $test_action_counter );
-		remove_action( 'make_delete_blog', $callback, 10, 1 );
+		remove_action( 'make_delete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'make_undelete_blog', $callback, 10, 1 );
+		add_action( 'make_undelete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'deleted' => 0 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -494,9 +490,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->deleted );
 		$this->assertEquals( 6, $test_action_counter );
-		remove_action( 'make_undelete_blog', $callback, 10, 1 );
+		remove_action( 'make_undelete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'mature_blog', $callback, 10, 1 );
+		add_action( 'mature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'mature' => 1 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -509,9 +505,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->mature );
 		$this->assertEquals( 7, $test_action_counter );
-		remove_action( 'mature_blog', $callback, 10, 1 );
+		remove_action( 'mature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'unmature_blog', $callback, 10, 1 );
+		add_action( 'unmature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'mature' => 0 ) );
 		$this->assertTrue( $result );
 		$blog = get_blog_details( $blog_id );
@@ -524,22 +520,19 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->mature );
 		$this->assertEquals( 8, $test_action_counter );
-		remove_action( 'unmature_blog', $callback, 10, 1 );
+		remove_action( 'unmature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 	}
 
 	function test_update_blog_status() {
+		global $test_action_counter;
+
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/test_blogpath', 'title' => 'Test Title' ) );
 		$this->assertInternalType( 'int', $blog_id );
 
-		global $test_action_counter;
 		$test_action_counter = 0;
-		$callback = function( $blog_id ) {
-			global $test_action_counter;
-			$test_action_counter++;
-		};
 
-		add_action( 'make_ham_blog', $callback, 10, 1 );
+		add_action( 'make_ham_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'spam', 0 );
 		$this->assertEquals( 0, $result );
 		$blog = get_blog_details( $blog_id );
@@ -552,9 +545,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->spam );
 		$this->assertEquals( 2, $test_action_counter );
-		remove_action( 'make_ham_blog', $callback, 10, 1 );
+		remove_action( 'make_ham_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		
-		add_action( 'make_spam_blog', $callback, 10, 1 );
+		add_action( 'make_spam_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'spam', 1 );
 		$this->assertEquals( 1, $result );
 		$blog = get_blog_details( $blog_id );
@@ -567,9 +560,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->spam );
 		$this->assertEquals( 4, $test_action_counter );
-		remove_action( 'make_spam_blog', $callback, 10, 1 );
+		remove_action( 'make_spam_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'archive_blog', $callback, 10, 1 );
+		add_action( 'archive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'archived', 1 );
 		$this->assertEquals( 1, $result );
 		$blog = get_blog_details( $blog_id );
@@ -582,9 +575,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->archived );
 		$this->assertEquals( 6, $test_action_counter );
-		remove_action( 'archive_blog', $callback, 10, 1 );
+		remove_action( 'archive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'unarchive_blog', $callback, 10, 1 );
+		add_action( 'unarchive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'archived', 0 );
 		$this->assertEquals( 0, $result );
 		$blog = get_blog_details( $blog_id );
@@ -597,9 +590,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->archived );
 		$this->assertEquals( 8, $test_action_counter );
-		remove_action( 'unarchive_blog', $callback, 10, 1 );
+		remove_action( 'unarchive_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'make_delete_blog', $callback, 10, 1 );
+		add_action( 'make_delete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'deleted', 1 );
 		$this->assertEquals( 1, $result );
 		$blog = get_blog_details( $blog_id );
@@ -612,9 +605,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->deleted );
 		$this->assertEquals( 10, $test_action_counter );
-		remove_action( 'make_delete_blog', $callback, 10, 1 );
+		remove_action( 'make_delete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'make_undelete_blog', $callback, 10, 1 );
+		add_action( 'make_undelete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'deleted', 0 );
 		$this->assertEquals( 0, $result );
 		$blog = get_blog_details( $blog_id );
@@ -627,9 +620,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->deleted );
 		$this->assertEquals( 12, $test_action_counter );
-		remove_action( 'make_undelete_blog', $callback, 10, 1 );
+		remove_action( 'make_undelete_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'mature_blog', $callback, 10, 1 );
+		add_action( 'mature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'mature', 1 );
 		$this->assertEquals( 1, $result );
 		$blog = get_blog_details( $blog_id );
@@ -642,9 +635,9 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '1', $blog->mature );
 		$this->assertEquals( 14, $test_action_counter );
-		remove_action( 'mature_blog', $callback, 10, 1 );
+		remove_action( 'mature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
-		add_action( 'unmature_blog', $callback, 10, 1 );
+		add_action( 'unmature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'mature', 0 );
 		$this->assertEquals( 0, $result );
 		$blog = get_blog_details( $blog_id );
@@ -657,7 +650,7 @@ class Tests_MS extends WP_UnitTestCase {
 		$blog = get_blog_details( $blog_id );
 		$this->assertEquals( '0', $blog->mature );
 		$this->assertEquals( 16, $test_action_counter );
-		remove_action( 'unmature_blog', $callback, 10, 1 );
+		remove_action( 'unmature_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 
 		// Updating a dummy field returns the value passed. Go fig.
 		$result = update_blog_status( $blog_id, 'doesnotexist', 1 );
