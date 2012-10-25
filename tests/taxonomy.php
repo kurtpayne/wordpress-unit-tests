@@ -96,4 +96,11 @@ class Tests_Taxonomy extends WP_UnitTestCase {
 		// clean up
 		unset($GLOBALS['wp_taxonomies'][$tax]);
 	}
+
+	/**
+	 * @ticket 21593
+	 */
+	function test_register_long_taxonomy() {
+		$this->assertInstanceOf( 'WP_Error', register_taxonomy( 'abcdefghijklmnopqrstuvwxyz0123456789', 'post', array() ) );
+	}
 }
