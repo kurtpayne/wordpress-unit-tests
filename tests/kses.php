@@ -17,12 +17,16 @@ class Tests_Kses extends WP_UnitTestCase {
 			'class' => 'classname',
 			'id' => 'id',
 			'style' => 'color: red;',
+			'style' => 'color: red',
+			'style' => 'color: red; text-align:center',
+			'style' => 'color: red; text-align:center;',
 			'title' => 'title',
 		);
 
 		foreach ( $attributes as $name => $value ) {
 			$string = "<address $name='$value'>1 WordPress Avenue, The Internet.</address>";
-			$this->assertEquals( $string, wp_kses( $string, $allowedposttags ) );
+			$expect_string = "<address $name='" . str_replace( '; ', ';', trim( $value, ';' ) ) . "'>1 WordPress Avenue, The Internet.</address>";
+			$this->assertEquals( $expect_string, wp_kses( $string, $allowedposttags ) );
 		}
 	}
 
@@ -46,7 +50,8 @@ class Tests_Kses extends WP_UnitTestCase {
 
 		foreach ( $attributes as $name => $value ) {
 			$string = "<a $name='$value'>I link this</a>";
-			$this->assertEquals( $string, wp_kses( $string, $allowedposttags ) );
+			$expect_string = "<a $name='" . trim( $value, ';' ) . "'>I link this</a>";
+			$this->assertEquals( $expect_string, wp_kses( $string, $allowedposttags ) );
 		}
 	}
 
@@ -65,7 +70,8 @@ class Tests_Kses extends WP_UnitTestCase {
 
 		foreach ( $attributes as $name => $value ) {
 			$string = "<abbr $name='$value'>WP</abbr>";
-			$this->assertEquals( $string, wp_kses( $string, $allowedposttags ) );
+			$expect_string = "<abbr $name='" . trim( $value, ';' ) . "'>WP</abbr>";
+			$this->assertEquals( $expect_string, wp_kses( $string, $allowedposttags ) );
 		}
 	}
 
