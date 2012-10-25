@@ -108,4 +108,14 @@ class Tests_DB extends WP_UnitTestCase {
 		unset( $wpdb->nonexistent_property );
 		$this->assertNull( $wpdb->nonexistent_property );
 	}
+
+	/**
+	 * Test that an escaped %%f is not altered
+	 * @ticket 19861
+	 */
+	public function test_double_escaped_placeholders() {
+		global $wpdb;
+		$sql = $wpdb->prepare( "UPDATE test_table SET string_column = '%%f is a float and %%d is an int and %%s is a string'" );
+		$this->assertEquals( "UPDATE test_table SET string_column = '%f is a float and %d is an int and %s is a string'", $sql );
+	}
 }
