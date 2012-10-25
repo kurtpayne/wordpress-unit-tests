@@ -416,7 +416,7 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( '0', $blog->spam );
 		$this->assertEquals( 1, $test_action_counter );
 		remove_action( 'make_ham_blog', array( $this, '_action_counter_cb' ), 10, 1 );
-		
+
 		add_action( 'make_spam_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_details( $blog_id, array( 'spam' => 1 ) );
 		$this->assertTrue( $result );
@@ -546,7 +546,7 @@ class Tests_MS extends WP_UnitTestCase {
 		$this->assertEquals( '0', $blog->spam );
 		$this->assertEquals( 2, $test_action_counter );
 		remove_action( 'make_ham_blog', array( $this, '_action_counter_cb' ), 10, 1 );
-		
+
 		add_action( 'make_spam_blog', array( $this, '_action_counter_cb' ), 10, 1 );
 		$result = update_blog_status( $blog_id, 'spam', 1 );
 		$this->assertEquals( 1, $result );
@@ -735,13 +735,13 @@ class Tests_MS extends WP_UnitTestCase {
 	 * @ticket 21570
 	 */
 	function test_is_email_address_unsafe() {
-		update_site_option( 'banned_email_domains', 'bar.com' );
+		update_site_option( 'banned_email_domains', array( 'bar.com', 'foo.co' ) );
 
-		foreach ( array( 'test@bar.com', 'test@foo.bar.com' ) as $email_address ) {
+		foreach ( array( 'test@bar.com', 'test@foo.bar.com', 'test@foo.co', 'test@subdomain.foo.co' ) as $email_address ) {
 			$this->assertTrue( is_email_address_unsafe( $email_address ), "$email_address should be UNSAFE" );
 		}
 
-		foreach ( array( 'test@foobar.com', 'test@foo-bar.com' ) as $email_address ) {
+		foreach ( array( 'test@foobar.com', 'test@foo-bar.com', 'test@foo.com', 'test@subdomain.foo.com' ) as $email_address ) {
 			$this->assertFalse( is_email_address_unsafe( $email_address ), "$email_address should be SAFE" );
 		}
 	}
@@ -774,9 +774,9 @@ class Tests_MS extends WP_UnitTestCase {
 	function test_domain_exists() {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/testdomainexists', 'title' => 'Test Title' ) );
-	
+
 		$details = get_blog_details( $blog_id, false );
-		
+
 		$this->assertEquals( $blog_id, domain_exists( $details->domain, $details->path ) );
 		$this->assertEquals( $blog_id, domain_exists( $details->domain, $details->path, $details->site_id ) );
 		$this->assertEquals( null, domain_exists( $details->domain, $details->path, 999 ) );
@@ -799,7 +799,7 @@ class Tests_MS extends WP_UnitTestCase {
 	function test_get_blog_id_from_url() {
 		$user_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$blog_id = $this->factory->blog->create( array( 'user_id' => $user_id, 'path' => '/testdomainexists', 'title' => 'Test Title' ) );
-	
+
 		$details = get_blog_details( $blog_id, false );
 
 		$this->assertEquals( $blog_id, get_blog_id_from_url( $details->domain, $details->path ) );
