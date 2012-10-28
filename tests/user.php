@@ -564,4 +564,33 @@ class Tests_User extends WP_UnitTestCase {
 		$post = get_post( $post_id );
 		$this->assertEquals( $reassign, $post->post_author );
 	}
+
+	/**
+	 * @ticket 21431
+	 */
+	function test_count_many_users_posts() {
+		$user_id_a = $this->factory->user->create( array( 'role' => 'author' ) );
+		$user_id_b = $this->factory->user->create( array( 'role' => 'author' ) );
+		$post_id_a = $this->factory->post->create( array( 'post_author' => $user_id_a ) );
+		$post_id_b = $this->factory->post->create( array( 'post_author' => $user_id_b ) );
+		$post_id_c = $this->factory->post->create( array( 'post_author' => $user_id_b, 'post_status' => 'private' ) );
+
+		wp_set_current_user( $user_id_a );
+		$counts = count_many_users_posts( array( $user_id_a, $user_id_b), 'post', false );
+		$this->assertEquals( 1, $counts[$user_id_a] );
+		$this->assertEquals( 1, $counts[$user_id_b] );
+
+		$counts = count_many_users_posts( array( $user_id_a, $user_id_b), 'post', true );
+		$this->assertEquals( 1, $counts[$user_id_a] );
+		$this->assertEquals( 1, $counts[$user_id_b] );
+
+		wp_set_current_user( $user_id_b );
+		$counts = count_many_users_posts( array( $user_id_a, $user_id_b), 'post', false );
+		$this->assertEquals( 1, $counts[$user_id_a] );
+		$this->assertEquals( 2, $counts[$user_id_b] );
+
+		$counts = count_many_users_posts( array( $user_id_a, $user_id_b), 'post', true );
+		$this->assertEquals( 1, $counts[$user_id_a] );
+		$this->assertEquals( 1, $counts[$user_id_b] );
+	}
 }
