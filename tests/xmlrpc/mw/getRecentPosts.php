@@ -29,6 +29,17 @@ class Tests_XMLRPC_mw_getRecentPosts extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( 403, $result->code );
 	}
 
+	/**
+	 * @ticket 22320
+	 */
+	function test_no_editing_privileges() {
+		$this->make_user_by_role( 'subscriber' );
+
+		$result = $this->myxmlrpcserver->mw_getRecentPosts( array( 1, 'subscriber', 'subscriber' ) );
+		$this->assertInstanceOf( 'IXR_Error', $result );
+		$this->assertEquals( 401, $result->code );
+	}
+	
 	function test_no_editable_posts() {
 		wp_delete_post( $this->post_id );
 
