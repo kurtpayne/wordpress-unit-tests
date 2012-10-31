@@ -12,7 +12,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	 * @var WP_Image_Editor
 	 */
 	protected $editor = null;
-	
+
 	/**
 	 * Setup test fixture
 	 */
@@ -30,11 +30,11 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 			'get_size',
 			'get_suffix'
 		), $className, false );
-		
+
 		// Override the filters to set our own image editor
-		add_filter( 'image_editor_class', array( $this, 'image_editor_class' ) );	
+		add_filter( 'image_editor_class', array( $this, 'image_editor_class' ) );
 		add_filter( 'wp_editors', array( $this, 'wp_editors' ) );
-		
+
 		// Un-cache the chosen image implementation
 		$this->_uncache_implementation();
 	}
@@ -56,12 +56,12 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		$var->setAccessible( true );
 		$var->setValue( $class, null );
 	}
-	
+
 	/**
 	 * Override the wp_editors filter
 	 * @return array
 	 */
-	public function wp_editors() {		
+	public function wp_editors() {
 		return array( preg_replace('/^WP_Image_Editor_/', '', get_class( $this->editor ) ) );
 	}
 
@@ -72,7 +72,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	public function image_editor_class() {
 		return get_class( $this->editor );
 	}
-	
+
 	/**
 	 * Test get_instance where load returns true
 	 * @ticket 6821
@@ -120,7 +120,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		// Remove our custom Mock
 		remove_filter( 'image_editor_class', $func );
 	}
-	
+
 	/**
 	 * Test the "test" method
 	 * @ticket 6821
@@ -136,9 +136,9 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Everything should work
-		$this->assertInstanceOf( get_class( $this->editor ), $editor );	
+		$this->assertInstanceOf( get_class( $this->editor ), $editor );
 	}
-	
+
 	/**
 	 * Test the "test" method returns false and the fallback editor is chosen
 	 * @ticket 6821
@@ -162,7 +162,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Everything should work
-		$this->assertInstanceOf( 'WP_Image_Editor_Mock', $editor );	
+		$this->assertInstanceOf( 'WP_Image_Editor_Mock', $editor );
 
 		// Unhook
 		remove_filter( 'image_editor_class', '__return_null' );
@@ -181,12 +181,12 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		// Make quality readable
 		$property = new ReflectionProperty( $editor, 'quality' );
 		$property->setAccessible( true );
-		
+
 		// Ensure set_quality works
 		$this->assertTrue( $editor->set_quality( 75 ) );
 		$this->assertEquals( 75, $property->getValue( $editor ) );
 
-		// Ensure the quality filter works	
+		// Ensure the quality filter works
 		$func = create_function( '', "return 100;");
 		add_filter( 'wp_editor_set_quality', $func );
 		$this->assertTrue( $editor->set_quality( 75 ) );
@@ -201,7 +201,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	 * @ticket 6821
 	 */
 	public function test_generate_filename() {
-		
+
 		// Get an editor
 		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
 		$property = new ReflectionProperty( $editor, 'size' );
@@ -222,7 +222,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 
 		// Test with a suffix only
 		$this->assertEquals( 'canola-100x50.png', basename( $editor->generate_filename( null, null, 'png' ) ) );
-	
+
 		// Combo!
 		$this->assertEquals( trailingslashit( realpath( get_temp_dir() ) ) . 'canola-new.png', $editor->generate_filename( 'new', realpath( get_temp_dir() ), 'png' ) );
 	}
@@ -234,10 +234,10 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	public function test_get_size() {
 
 		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
-		
+
 		// Size should be false by default
 		$this->assertNull( $editor->get_size() );
-		
+
 		// Set a size
 		$size = array(
 			'height' => 50,
@@ -249,7 +249,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 
 		$this->assertEquals( $size, $editor->get_size() );
 	}
-	
+
 	/**
 	 * Test get_suffix
 	 * @ticket 6821
@@ -257,7 +257,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	public function test_get_suffix() {
 
 		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
-		
+
 		// Size should be false by default
 		$this->assertFalse( $editor->get_suffix() );
 
