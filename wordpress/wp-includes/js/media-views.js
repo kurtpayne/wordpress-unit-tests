@@ -135,7 +135,6 @@
 
 			this.on( 'activate', this.activate, this );
 			this.on( 'deactivate', this.deactivate, this );
-			this.on( 'change:details', this.details, this );
 		},
 
 		activate: function() {
@@ -147,6 +146,9 @@
 			// automatically select any uploading attachments.
 			if ( this.get('multiple') )
 				wp.Uploader.queue.on( 'add', this.selectUpload, this );
+
+			this.get('selection').on( 'selection:single', this.buildDetails, this );
+			this.get('selection').on( 'selection:unsingle', this.clearDetails, this );
 		},
 
 		deactivate: function() {
@@ -155,6 +157,8 @@
 				this.get('selection').off( 'add remove', toolbar.visibility, toolbar );
 
 			wp.Uploader.queue.off( 'add', this.selectUpload, this );
+			this.get('selection').off( 'selection:single', this.buildDetails, this );
+			this.get('selection').off( 'selection:unsingle', this.clearDetails, this );
 		},
 
 		toolbar: function() {
@@ -179,7 +183,7 @@
 				controller: frame
 			}) );
 
-			this.details({ silent: true });
+			this.details();
 			frame.sidebar().add({
 				search: new media.view.Search({
 					controller: frame,
@@ -211,55 +215,43 @@
 			this.get('selection').add( attachment );
 		},
 
-		details: function( options ) {
-			var model = this.get('details'),
-				view;
+		details: function() {
+			var single = this.get('selection').single();
+			this[ single ? 'buildDetails' : 'clearDetails' ]( single );
+		},
 
-			if ( model ) {
-				view = new media.view.Attachment.Details({
-					controller: this.frame,
-					model:      model,
-					priority:   80
-				});
-			} else {
-				view = new Backbone.View();
-			}
+		buildDetails: function( model ) {
+			this.frame.sidebar().add( 'details', new media.view.Attachment.Details({
+				controller: this.frame,
+				model:      model,
+				priority:   80
+			}).render() );
+			return this;
+		},
 
-			if ( ! options || ! options.silent )
-				view.render();
+		clearDetails: function( model ) {
+			if ( this.get('selection').single() )
+				return this;
 
-			this.frame.sidebar().add( 'details', view, options );
+			this.frame.sidebar().add( 'details', new Backbone.View({
+				priority: 80
+			}).render() );
+			return this;
 		},
 
 		toggleSelection: function( model ) {
-			var details = this.get('details'),
-				selection = this.get('selection'),
-				selected = selection.has( model );
+			var selection = this.get('selection');
 
-			if ( ! selection )
-				return;
-
-			if ( ! selected )
-				selection.add( model );
-
-			// If the model is not the same as the details model,
-			// it now becomes the details model. If the model is
-			// in the selection, it is not removed.
-			if ( details !== model ) {
-				this.set( 'details', model );
-				return;
+			if ( selection.has( model ) ) {
+				// If the model is the single model, remove it.
+				// If it is not the same as the single model,
+				// it now becomes the single model.
+				selection[ selection.single() === model ? 'remove' : 'single' ]( model );
+			} else {
+				selection.add( model ).single();
 			}
 
-			// The model is the details model.
-			// Removed it from the selection.
-			selection.remove( model );
-
-			// Show the last selected item, or clear the details view.
-			if ( selection.length )
-				this.set( 'details', selection.last() );
-			else
-				this.unset('details');
-
+			return this;
 		}
 	});
 
@@ -1047,13 +1039,21 @@
 		initialize: function() {
 			this.controller = this.options.controller;
 
-			this.model.on( 'change:sizes change:uploading', this.render, this );
+			this.model.on( 'change:sizes change:uploading change:caption change:title', this.render, this );
 			this.model.on( 'change:percent', this.progress, this );
 			this.model.on( 'add', this.select, this );
 			this.model.on( 'remove', this.deselect, this );
 
+			// Update the model's details view.
+			this.model.on( 'selection:single selection:unsingle', this.details, this );
+			this.details( this.model, this.controller.state().get('selection') );
+
 			// Prevent default navigation on all links.
 			this.$el.on( 'click', 'a', this.preventDefault );
+		},
+
+		destroy: function() {
+			this.model.off( null, null, this );
 		},
 
 		render: function() {
@@ -1086,15 +1086,7 @@
 			if ( this.selected() )
 				this.select();
 
-			// Update the model's details view.
-			this.controller.state().on( 'change:details', this.details, this );
-			this.details();
-
 			return this;
-		},
-
-		destroy: function() {
-			this.controller.state().off( 'change:details', this.details, this );
 		},
 
 		progress: function() {
@@ -1136,8 +1128,14 @@
 			this.$el.removeClass('selected');
 		},
 
-		details: function() {
-			var details = this.controller.state().get('details');
+		details: function( model, collection ) {
+			var selection = this.controller.state().get('selection'),
+				details;
+
+			if ( selection !== collection )
+				return;
+
+			details = selection.single();
 			this.$el.toggleClass( 'details', details === this.model );
 		},
 
