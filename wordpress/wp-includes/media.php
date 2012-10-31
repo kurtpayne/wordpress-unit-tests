@@ -1327,7 +1327,9 @@ function wp_print_media_templates( $attachment ) {
 				<div class="media-progress-bar"><div></div></div>
 			<% } else if ( 'image' === type ) { %>
 				<div class="thumbnail">
-					<img src="<%- url %>" draggable="false" />
+					<div class="centered">
+						<img src="<%- url %>" draggable="false" />
+					</div>
 				</div>
 			<% } else { %>
 				<img src="<%- icon %>" class="icon" draggable="false" />
@@ -1436,7 +1438,7 @@ function wp_print_media_templates( $attachment ) {
 
 	<script type="text/html" id="tmpl-gallery-settings">
 		<h4><?php _e('Link To'); ?></h4>
-		<div class="link-to button-group button-large" data-setting="link">
+		<div class="link-to button-group" data-setting="link">
 			<button class="button" value="post">
 				<?php esc_attr_e('Attachment Page'); ?>
 			</button>

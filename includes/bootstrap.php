@@ -25,7 +25,7 @@ if ( !is_readable( $config_file_path ) ) {
 }
 require_once $config_file_path;
 
-define( 'DIR_TESTDATA', dirname( __FILE__ ) . '/data' );
+define( 'DIR_TESTDATA', dirname( __FILE__ ) . '/../data' );
 
 if ( ! defined( 'WP_TESTS_FORCE_KNOWN_BUGS' ) )
 	define( 'WP_TESTS_FORCE_KNOWN_BUGS', false );
