@@ -9,11 +9,9 @@ error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT );
 $config_file_path = $argv[1];
 $multisite = ! empty( $argv[2] );
 
-$config_dir = dirname( $config_file_path );
-
 define( 'WP_INSTALLING', true );
 require_once $config_file_path;
-require_once $config_dir . '/includes/functions.php';
+require_once dirname( __FILE__ ) . '/functions.php';
 
 $_SERVER['SERVER_PROTOCOL'] = 'HTTP/1.1';
 $_SERVER['HTTP_HOST'] = WP_TESTS_DOMAIN;
