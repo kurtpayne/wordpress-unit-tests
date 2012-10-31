@@ -37,6 +37,8 @@ class Tests_Canonical_NoRewrite extends Tests_Canonical {
 			array( '/?page_id=1', '/?p=1' ), // redirect page_id to p (should cover page_id|p|attachment_id to one another
 			array( '/?page_id=1&post_type=revision', '/?p=1' ),
 
+			array( '/?feed=rss2&p=1', '/?feed=rss2&p=1', 21841),
+
 		);
 	}
 }
