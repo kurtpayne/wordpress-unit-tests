@@ -184,4 +184,22 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 		$template->setVar( array( 'wp_constants' => PHPUnit_Util_GlobalState::getConstantsAsString() ) );
 		parent::prepareTemplate( $template );
 	}
+
+	/**
+	 * Returns the name of a temporary file
+	 */
+	function temp_filename() {
+		$tmp_dir = '';
+		$dirs = array( 'TMP', 'TMPDIR', 'TEMP' );
+		foreach( $dirs as $dir )
+			if ( isset( $_ENV[$dir] ) && !empty( $_ENV[$dir] ) ) {
+				$tmp_dir = $dir;
+				break;
+			}
+		if ( empty( $tmp_dir ) ) {
+			$tmp_dir = '/tmp';
+		}
+		$tmp_dir = realpath( $dir );
+		return tempnam( $tmp_dir, 'wpunit' );
+	}
 }
