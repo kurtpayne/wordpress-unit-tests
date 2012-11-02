@@ -115,7 +115,7 @@ class Tests_DB extends WP_UnitTestCase {
 	 */
 	public function test_double_escaped_placeholders() {
 		global $wpdb;
-		$sql = $wpdb->prepare( "UPDATE test_table SET string_column = '%%f is a float and %%d is an int and %%s is a string'" );
-		$this->assertEquals( "UPDATE test_table SET string_column = '%f is a float and %d is an int and %s is a string'", $sql );
+		$sql = $wpdb->prepare( "UPDATE test_table SET string_column = '%%f is a float, %%d is an int %d, %%s is a string', field = %s", 3, '4' );
+		$this->assertEquals( "UPDATE test_table SET string_column = '%f is a float, %d is an int 3, %s is a string', field = '4'", $sql );
 	}
 }
