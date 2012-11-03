@@ -251,4 +251,40 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		// Make sure the edit did not go through.
 		$this->assertEquals( 'First edit', get_post( $post_id )->post_content );
 	}
+
+	function test_edit_attachment() {
+		$editor_id = $this->make_user_by_role( 'editor' );
+
+		$post_id = $this->factory->post->create( array(
+			'post_title'   => 'Post Revision Test',
+			'post_content' => 'Not edited',
+			'post_status'  => 'inherit',
+			'post_type'    => 'attachment',
+			'post_author'  => $editor_id,
+		) );
+
+		$struct = array( 'post_content' => 'First edit' );
+		$result = $this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, $struct ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
+
+		// Make sure that the post status is still inherit
+		$this->assertEquals( 'inherit', get_post( $post_id )->post_status );
+	}
+
+	function test_use_invalid_post_status() {
+		$editor_id = $this->make_user_by_role( 'editor' );
+
+		$post_id = $this->factory->post->create( array(
+			'post_title'   => 'Post Revision Test',
+			'post_content' => 'Not edited',
+			'post_author'  => $editor_id,
+		) );
+
+		$struct = array( 'post_status' => 'doesnt_exists' );
+		$result = $this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, $struct ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
+
+		// Make sure that the post status is still inherit
+		$this->assertEquals( 'draft', get_post( $post_id )->post_status );
+	}
 }
