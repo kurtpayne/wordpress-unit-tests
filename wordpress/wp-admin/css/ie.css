@@ -343,6 +343,19 @@ form#template div {
 	font-size: 1.6em;
 }
 
+#poststuff .inside #parent_id,
+#poststuff .inside #page_template,
+.inline-edit-row #post_parent,
+.inline-edit-row select[name="page_template"] {
+	width: 250px;
+}
+
+#submitdiv input,
+#submitdiv select,
+#submitdiv a.button {
+	position: relative;
+}
+
 #bh {
 	margin: 7px 10px 0 0;
 	float: right;

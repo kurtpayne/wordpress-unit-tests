@@ -47,7 +47,7 @@ class Tests_XMLRPC_wp_newTerm extends WP_XMLRPC_UnitTestCase {
 		$this->assertEquals( __( 'You are not allowed to create terms in this taxonomy.' ), $result->message );
 	}
 
-	function test_empty_term() {
+	function test_empty_term_name() {
 		$this->make_user_by_role( 'editor' );
 
 		$result = $this->myxmlrpcserver->wp_newTerm( array( 1, 'editor', 'editor', array( 'taxonomy' => 'category', 'name' => '' ) ) );
@@ -63,6 +63,22 @@ class Tests_XMLRPC_wp_newTerm extends WP_XMLRPC_UnitTestCase {
 		$this->assertInstanceOf( 'IXR_Error', $result );
 		$this->assertEquals( 403, $result->code );
 		$this->assertEquals( __( 'This taxonomy is not hierarchical.' ), $result->message );
+	}
+
+	function test_parent_empty() {
+		$this->make_user_by_role( 'editor' );
+
+		$result = $this->myxmlrpcserver->wp_newTerm( array( 1, 'editor', 'editor', array( 'taxonomy' => 'category', 'parent' => '', 'name' => 'test' ) ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
+		$this->assertStringMatchesFormat( '%d', $result );
+	}
+
+	function test_parent_null() {
+		$this->make_user_by_role( 'editor' );
+
+		$result = $this->myxmlrpcserver->wp_newTerm( array( 1, 'editor', 'editor', array( 'taxonomy' => 'category', 'parent' => NULL, 'name' => 'test' ) ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
+		$this->assertStringMatchesFormat( '%d', $result );
 	}
 
 	function test_parent_invalid() {
