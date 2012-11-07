@@ -617,4 +617,16 @@ class Tests_User_Capabilities extends WP_UnitTestCase {
 		$author->remove_cap( 'foo' );
 		$this->assertFalse ( isset( $author->caps['foo'] ) );
 	}
+
+	/**
+	 * @ticket 18932
+	 */
+	function test_set_role_same_role() {
+		$user = new WP_User( $this->factory->user->create( array( 'role' => 'administrator' ) ) );
+		$caps = $user->caps;
+		$this->assertNotEmpty( $user->caps );
+		$user->set_role( 'administrator' );
+		$this->assertNotEmpty( $user->caps );
+		$this->assertEquals( $caps, $user->caps );
+	}
 }
