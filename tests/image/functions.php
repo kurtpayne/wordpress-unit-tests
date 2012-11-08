@@ -219,4 +219,27 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			unset( $img );
 		}
 	}
+
+	/**
+	 * Try loading a directory
+	 * @ticket 17814
+	 */
+	public function test_load_directory() {
+		// First, test with deprecated wp_load_image function
+		$editor = wp_load_image( DIR_TESTDATA );
+		$this->assertNotInternalType( 'resource', $editor );
+
+		// Then, test with editors.
+		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
+		foreach ( $classes as $class ) {
+			if ( !$class::test() ) {
+				continue;
+			}
+			$filter = create_function( '', "return '$class';" );
+			add_filter( 'image_editor_class', $filter );
+			$editor = WP_Image_Editor::get_instance( DIR_TESTDATA );
+			$this->assertInstanceOf( 'WP_Error', $editor );
+			$this->assertEquals( 'error_loading_image', $editor->get_error_code() );
+		}
+	}
 }
