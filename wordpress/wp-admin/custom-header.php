@@ -130,7 +130,7 @@ class Custom_Image_Header {
 			'title'   => __('Header Text'),
 			'content' =>
 				'<p>' . sprintf( __( 'For most themes, the header text is your Site Title and Tagline, as defined in the <a href="%1$s">General Settings</a> section.' ), admin_url( 'options-general.php' ) ) . '<p>' .
-				'<p>' . __( 'In the Header Text section of this page, you can choose whether to display this text or hide it. You can also choose a color for the text by typing in a legitimate HTML hex value (eg: &#8220;#ff0000&#8221; for red) or by clicking &#8220;Select a Color&#8221; and dialing in a color using the color picker.') . '</p>' .
+				'<p>' . __( 'In the Header Text section of this page, you can choose whether to display this text or hide it. You can also choose a color for the text by clicking the Select Color button and either typing in a legitimate HTML hex value, e.g. &#8220;#ff0000&#8221; for red, or by choosing a color using the color picker.' ) . '</p>' .
 				'<p>' . __( 'Don&#8217;t forget to Save Changes when you&#8217;re done!') . '</p>'
 		) );
 
@@ -746,7 +746,7 @@ wp_nonce_field( 'custom-header-options', '_wpnonce-custom-header-options' ); ?>
 	<p class="submit">
 	<?php submit_button( __( 'Crop and Publish' ), 'primary', 'submit', false ); ?>
 	<?php
-	if ( isset( $oitar ) && 1 == $oitar )
+	if ( isset( $oitar ) && 1 == $oitar && ( current_theme_supports( 'custom-header', 'flex-height' ) || current_theme_supports( 'custom-header', 'flex-width' ) ) ) 
 		submit_button( __( 'Skip Cropping, Publish Image as Is' ), 'secondary', 'skip-cropping', false );
 	?>
 	</p>
@@ -798,6 +798,9 @@ wp_nonce_field( 'custom-header-options', '_wpnonce-custom-header-options' ); ?>
 		if ( ! current_theme_supports( 'custom-header', 'uploads' ) )
 			wp_die( __( 'Cheatin&#8217; uh?' ) );
 
+		if ( ! empty( $_POST['skip-cropping'] ) && ! ( current_theme_supports( 'custom-header', 'flex-height' ) || current_theme_supports( 'custom-header', 'flex-width' ) ) )
+			wp_die( __( 'Cheatin&#8217; uh?' ) );
+			
 		if ( $_POST['oitar'] > 1 ) {
 			$_POST['x1'] = $_POST['x1'] * $_POST['oitar'];
 			$_POST['y1'] = $_POST['y1'] * $_POST['oitar'];
