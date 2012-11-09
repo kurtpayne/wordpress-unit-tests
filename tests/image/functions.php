@@ -232,7 +232,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		// Then, test with editors.
 		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
 		foreach ( $classes as $class ) {
-			if ( !$class::test() ) {
+			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
