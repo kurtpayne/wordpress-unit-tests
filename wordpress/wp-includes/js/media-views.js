@@ -291,6 +291,11 @@
 		activate: function() {
 			var selection = this.get('selection');
 
+			this._excludeStateLibrary();
+			this.buildComposite();
+			this.on( 'change:library change:exclude', this.buildComposite, this );
+			this.on( 'change:excludeState', this._excludeState, this );
+
 			// If we're in a workflow that supports multiple attachments,
 			// automatically select any uploading attachments.
 			if ( this.get('multiple') )
@@ -306,6 +311,10 @@
 		},
 
 		deactivate: function() {
+			this.off( 'change:library change:exclude', this.buildComposite, this );
+			this.off( 'change:excludeState', this._excludeState, this );
+			this.destroyComposite();
+
 			wp.Uploader.queue.off( 'add', this.selectUpload, this );
 
 			// Unbind all event handlers that use this state as the context
@@ -375,6 +384,72 @@
 			}
 
 			return this;
+		},
+
+		buildComposite: function() {
+			var original = this.get('_library'),
+				exclude = this.get('exclude'),
+				composite;
+
+			this.destroyComposite();
+			if ( ! this.get('exclude') )
+				return;
+
+			// Remember the state's original library.
+			if ( ! original )
+				this.set( '_library', original = this.get('library') );
+
+			// Create a composite library in its place.
+			composite = new media.model.Composite( null, {
+				props: _.pick( original.props.toJSON(), 'order', 'orderby' )
+			});
+
+			// Accepts attachments that exist in the original library and
+			// that do not exist in the excluded library.
+			composite.validator = function( attachment ) {
+				return !! original.getByCid( attachment.cid ) && ! exclude.getByCid( attachment.cid );
+			};
+
+			composite.observe( original ).observe( exclude );
+
+			// When `more()` is triggered on the composite collection,
+			// pass the command over to the `original`, which will
+			// populate the query.
+			composite.more = _.bind( original.more, original );
+
+			this.set( 'library', composite );
+		},
+
+		destroyComposite: function() {
+			var composite = this.get('library'),
+				original = this.get('_library');
+
+			if ( ! original )
+				return;
+
+			composite.unobserve();
+			this.set( 'library', original );
+			this.unset('_library');
+		},
+
+		_excludeState: function() {
+			var current = this.get('excludeState'),
+				previous = this.previous('excludeState');
+
+			if ( previous )
+				this.frame.get( previous ).off( 'change:library', this._excludeStateLibrary, this );
+
+			if ( current )
+				this.frame.get( current ).on( 'change:library', this._excludeStateLibrary, this );
+		},
+
+		_excludeStateLibrary: function() {
+			var current = this.get('excludeState');
+
+			if ( ! current )
+				return;
+
+			this.set( 'exclude', this.frame.get( current ).get('library') );
 		}
 	});
 
@@ -625,7 +700,7 @@
 
 		createStates: function() {
 			var options = this.options,
-				main, gallery;
+				main, gallery, batch;
 
 			main = {
 				multiple: this.options.multiple,
@@ -638,13 +713,22 @@
 			};
 
 			gallery = {
-				multiple: true,
-				menu:     'gallery',
-				toolbar:  'gallery-add'
+				multiple:     true,
+				menu:         'gallery',
+				toolbar:      'gallery-add',
+				excludeState: 'gallery-edit'
+			};
+
+			batch = {
+				multiple:     true,
+				menu:         'batch',
+				toolbar:      'batch-add',
+				excludeState: 'batch-edit'
 			};
 
 			// Add the default states.
 			this.states.add([
+				// Main states.
 				new media.controller.Library( _.defaults({
 					selection: options.selection,
 					library:   media.query( options.library )
@@ -652,6 +736,7 @@
 
 				new media.controller.Upload( main ),
 
+				// Gallery states.
 				new media.controller.Gallery({
 					editing: options.editing,
 					menu:    'gallery'
@@ -664,50 +749,32 @@
 
 				new media.controller.Upload( _.defaults({
 					id: 'gallery-upload'
-				}, gallery ) )
-			]);
+				}, gallery ) ),
 
-			this.get('gallery-edit').on( 'change:library', this.updateGalleryLibraries, this ).set({
-				library: options.selection
-			});
+				// Batch states.
+				new media.controller.Library({
+					id:       'batch-edit',
+					multiple: false,
+					describe: true,
+					edge:     199,
+					sortable: true,
+					menu:     'batch',
+					toolbar:  'batch-edit',
+					sidebar:  'attachment-settings'
+				}),
+
+				new media.controller.Library( _.defaults({
+					id:      'batch-library',
+					library: media.query({ type: 'image' })
+				}, batch ) ),
+
+				new media.controller.Upload( _.defaults({
+					id: 'batch-upload'
+				}, batch ) )
+			]);
 
 			// Set the default state.
 			this.state( options.state );
-		},
-
-		updateGalleryLibraries: function() {
-			var editLibrary = this.get('gallery-edit').get('library');
-
-			_.each(['gallery-library','gallery-upload'], function( id ) {
-				var state = this.get( id ),
-					original = state.get('_library'),
-					composite;
-
-				// Remember the state's original library.
-				if ( ! original )
-					state.set( '_library', original = state.get('library') );
-
-				// Create a composite library in its place.
-				composite = new media.model.Composite( null, {
-					props: _.pick( original.props.toJSON(), 'order', 'orderby' )
-				});
-
-				// Accepts attachments that exist in the original library and
-				// that do not exist in the state's library.
-				composite.validator = function( attachment ) {
-					return !! original.getByCid( attachment.cid ) && ! editLibrary.getByCid( attachment.cid );
-				};
-
-				composite.observe( original );
-				composite.observe( editLibrary );
-
-				// When `more()` is triggered on the composite collection,
-				// pass the command over to the `original`, which will
-				// populate the query.
-				composite.more = _.bind( original.more, original );
-
-				state.set( 'library', composite );
-			}, this );
 		},
 
 		// Menus
@@ -735,7 +802,42 @@
 			}) );
 		},
 
-		batchMenu: function() {},
+		batchMenu: function() {
+			var previous = this.previous(),
+				frame = this;
+
+			this.menu.view( new media.view.Menu({
+				controller: this,
+				views: {
+					cancel: {
+						text:     l10n.cancelBatchTitle,
+						priority: 20,
+						click:    function() {
+							if ( previous )
+								frame.state( previous );
+							else
+								frame.close();
+						}
+					},
+					separateCancel: new Backbone.View({
+						className: 'separator',
+						priority: 40
+					}),
+					'batch-edit': {
+						text: l10n.editBatchTitle,
+						priority: 60
+					},
+					'batch-upload': {
+						text: l10n.uploadFilesTitle,
+						priority: 80
+					},
+					'batch-library': {
+						text: l10n.mediaLibraryTitle,
+						priority: 100
+					}
+				}
+			}) );
+		},
 
 		galleryMenu: function() {
 			var previous = this.previous(),
@@ -772,7 +874,6 @@
 					}
 				}
 			}) );
-
 		},
 
 		// Content
@@ -862,8 +963,54 @@
 		},
 
 		mainEmbedToolbar: function() {},
-		batchEditToolbar: function() {},
-		batchAddToolbar: function() {},
+
+		batchEditToolbar: function() {
+			this.toolbar.view( new media.view.Toolbar({
+				controller: this,
+				items: {
+					insert: {
+						style:    'primary',
+						text:     l10n.insertIntoPost,
+						priority: 80,
+
+						click: function() {
+							var controller = this.controller,
+								state = controller.state();
+
+							controller.close();
+							state.trigger( 'insert', state.get('library') );
+
+							controller.reset();
+							// @todo: Make the state activated dynamic (instead of hardcoded).
+							controller.state('upload');
+						}
+					}
+				}
+			}) );
+		},
+
+		batchAddToolbar: function() {
+			this.toolbar.view( new media.view.Toolbar({
+				controller: this,
+				items: {
+					insert: {
+						style:    'primary',
+						text:     l10n.addToBatch,
+						priority: 80,
+
+						click: function() {
+							var controller = this.controller,
+								state = controller.state(),
+								edit = controller.get('batch-edit');
+
+							edit.get('library').add( state.get('selection').models );
+							state.trigger('reset');
+							controller.state('batch-edit');
+						}
+					}
+				}
+			}) );
+		},
 
 		galleryEditToolbar: function() {
 			var editing = this.state().get('editing');
@@ -1254,32 +1401,32 @@
 	// ---------------------------------
 	media.view.Toolbar.Insert.Post = media.view.Toolbar.Insert.extend({
 		initialize: function() {
-			this.options.items = _.defaults( this.options.items || {}, {
-				gallery: {
-					text:     l10n.createNewGallery,
-					priority: 40,
-
-					click: function() {
+			var selectionToLibrary = function( state ) {
+					return function() {
 						var controller = this.controller,
 							selection = controller.state().get('selection'),
-							edit = controller.get('gallery-edit');
+							edit = controller.get( state );
 
 						edit.set( 'library', new media.model.Selection( selection.models, {
 							props:    selection.props.toJSON(),
 							multiple: true
 						}) );
 
-						this.controller.state('gallery-edit');
-					}
+						this.controller.state( state );
+					};
+				};
+
+			this.options.items = _.defaults( this.options.items || {}, {
+				gallery: {
+					text:     l10n.createNewGallery,
+					priority: 40,
+					click:    selectionToLibrary('gallery-edit')
 				},
 
 				batch: {
 					text:     l10n.batchInsert,
 					priority: 60,
-
-					click: function() {
-						this.controller.state('batch-edit');
-					}
+					click:    selectionToLibrary('batch-edit')
 				}
 			});
 
@@ -1299,12 +1446,10 @@
 			}) );
 
 			// Batch insert shows for multiple selected attachments.
-			// Temporarily disabled with `false &&`.
-			this.get('batch').$el.toggle( false && count > 1 );
+			this.get('batch').$el.toggle( count > 1 );
 
 			// Insert only shows for single attachments.
-			// Temporarily disabled.
-			// this.get('insert').$el.toggle( count <= 1 );
+			this.get('insert').$el.toggle( count <= 1 );
 		}
 	});
 
