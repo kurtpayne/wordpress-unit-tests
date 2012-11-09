@@ -502,6 +502,10 @@
 		},
 
 		initialize: function() {
+			// If we haven't been provided a `library`, create a `Selection`.
+			if ( ! this.get('library') )
+				this.set( 'library', new media.model.Selection() );
+
 			// The single `Attachment` view to be used in the `Attachments` view.
 			if ( ! this.get('AttachmentView') )
 				this.set( 'AttachmentView', media.view.Attachment.Gallery );
@@ -846,6 +850,7 @@
 
 				// Gallery states.
 				new media.controller.Gallery({
+					library: options.selection,
 					editing: options.editing,
 					menu:    'gallery'
 				}),
@@ -1625,7 +1630,9 @@
 		},
 
 		click: function( event ) {
-			event.preventDefault();
+			if ( '#' === this.attributes.href )
+				event.preventDefault();
+
 			if ( this.options.click && ! this.model.get('disabled') )
 				this.options.click.apply( this, arguments );
 		}

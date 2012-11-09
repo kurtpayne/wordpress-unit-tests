@@ -106,7 +106,7 @@ class Custom_Background {
 		);
 
 		add_thickbox();
-		wp_enqueue_script('media-upload');
+		wp_enqueue_media();
 		wp_enqueue_script('custom-background');
 		wp_enqueue_style('wp-color-picker');
 	}
@@ -262,14 +262,11 @@ if ( get_background_image() ) {
 		<?php wp_nonce_field( 'custom-background-upload', '_wpnonce-custom-background-upload' ); ?>
 		<?php submit_button( __( 'Upload' ), 'button', 'submit', false ); ?>
 	</p>
-	<?php
-		$image_library_url = get_upload_iframe_src( 'image', null, 'library' );
-		$image_library_url = remove_query_arg( 'TB_iframe', $image_library_url );
-		$image_library_url = add_query_arg( array( 'context' => 'custom-background', 'TB_iframe' => 1 ), $image_library_url );
-	?>
 	<p>
 		<label for="choose-from-library-link"><?php _e( 'Or choose an image from your media library:' ); ?></label><br />
-		<a id="choose-from-library-link" class="button thickbox" href="<?php echo esc_url( $image_library_url ); ?>"><?php _e( 'Choose Image' ); ?></a>
+		<a id="choose-from-library-link" class="button"
+			data-choose="<?php esc_attr_e( 'Choose a Background Image' ); ?>"
+			data-update="<?php esc_attr_e( 'Set as background' ); ?>"><?php _e( 'Choose Image' ); ?></a>
 	</p>
 	</form>
 </td>
