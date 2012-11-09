@@ -600,7 +600,7 @@ window.wp = window.wp || {};
 				attachments: function( shortcode, parent ) {
 					var shortcodeString = shortcode.string(),
 						result = galleries[ shortcodeString ],
-						attrs, args, query;
+						attrs, args, query, others;
 
 					delete galleries[ shortcodeString ];
 
@@ -627,17 +627,32 @@ window.wp = window.wp || {};
 					if ( ! args.post__in )
 						args.parent = attrs.id || parent;
 
+					// Collect the attributes that were not included in `args`.
+					others = {};
+					_.filter( attrs, function( value, key ) {
+						if ( _.isUndefined( args[ key ] ) )
+							others[ key ] = value;
+					});
+
 					query = media.query( args );
-					query.props.set( _.pick( attrs, 'columns', 'link' ) );
+					query.gallery = new Backbone.Model( others );
 					return query;
 				},
 
 				shortcode: function( attachments ) {
 					var props = attachments.props.toJSON(),
-						attrs = _.pick( props, 'include', 'exclude', 'orderby', 'order', 'link', 'columns' ),
-						shortcode;
+						attrs = _.pick( props, 'include', 'exclude', 'orderby', 'order' ),
+						shortcode, clone;
+
+					if ( attachments.gallery )
+						_.extend( attrs, attachments.gallery.toJSON() );
 
 					attrs.ids = attachments.pluck('id');
+
+					// If the `ids` attribute is set and `orderby` attribute
+					// is the default value, clear it for cleaner output.
+					if ( attrs.ids && 'post__in' === attrs.orderby )
+						delete attrs.orderby;
 
 					shortcode = new wp.shortcode({
 						tag:    'gallery',
@@ -646,9 +661,11 @@ window.wp = window.wp || {};
 					});
 
 					// Use a cloned version of the gallery.
-					galleries[ shortcode.string() ] = new wp.media.model.Attachments( attachments.models, {
+					clone = new wp.media.model.Attachments( attachments.models, {
 						props: props
 					});
+					clone.gallery = attachments.gallery;
+					galleries[ shortcode.string() ] = clone;
 
 					return shortcode;
 				}
@@ -700,8 +717,16 @@ window.wp = window.wp || {};
 			},
 
 			edit: function() {
+				var selection;
+
 				if ( ! wp.media.view || this.frame )
 					return;
+
+				selection = new wp.media.model.Selection( this.attachments.models, {
+					props:    this.attachments.props.toJSON(),
+					multiple: true
+				});
+				selection.gallery = this.attachments.gallery;
 
 				this.frame = wp.media({
 					frame:     'post',
@@ -709,10 +734,7 @@ window.wp = window.wp || {};
 					title:     mceview.l10n.editGallery,
 					editing:   true,
 					multiple:  true,
-					selection: new wp.media.model.Selection( this.attachments.models, {
-						props:    this.attachments.props.toJSON(),
-						multiple: true
-					})
+					selection: selection
 				});
 
 				// Create a single-use frame. If the frame is closed,
