@@ -11,7 +11,7 @@ abstract class WP_Image_UnitTestCase extends WP_UnitTestCase {
 	public function setUp() {
 		$class = $this->editor_engine;
 		if ( ! call_user_func( array( $class, 'test' ) ) ) {
-			$this->markTestSkipped( sprintf('The image editor engine %s is not supported on this system', $this->eitor_engine) );
+			$this->markTestSkipped( sprintf('The image editor engine %s is not supported on this system', $this->editor_engine) );
 		}
 		add_filter( 'image_editor_class', array( $this, 'setEngine') );
 	}
