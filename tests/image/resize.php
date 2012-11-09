@@ -5,14 +5,8 @@
  * @group media
  * @group upload
  */
-class Tests_Image_Resize extends WP_UnitTestCase {
+abstract class WP_Tests_Image_Resize_UnitTestCase extends WP_Image_UnitTestCase {
 	// image_resize( $file, $max_w, $max_h, $crop=false, $suffix=null, $dest_path=null, $jpeg_quality=75)
-
-	function setUp() {
-		if ( ! extension_loaded( 'gd' ) )
-			$this->markTestSkipped( 'The gd PHP extension is not loaded.' );
-		parent::setUp();
-	}
 
 	function test_resize_jpg() {
 		$image = image_resize( DIR_TESTDATA.'/images/test-image.jpg', 25, 25 );
@@ -128,17 +122,9 @@ class Tests_Image_Resize extends WP_UnitTestCase {
 	 * @ticket 6821
 	 */
 	public function test_resize_non_existent_image() {
-		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
-		foreach ( $classes as $class ) {
-			if ( ! call_user_func( array( $class, 'test' ) ) ) {
-				continue;
-			}
-			$filter = create_function( '', "return '$class';" );
-			add_filter( 'image_editor_class', $filter );
-			$image = image_resize( DIR_TESTDATA.'/images/test-non-existent-image.jpg', 25, 25 );
-			$this->assertInstanceOf( 'WP_Error', $image );
-			$this->assertEquals( 'error_loading_image', $image->get_error_code() );
-		}
+		$image = image_resize( DIR_TESTDATA.'/images/test-non-existent-image.jpg', 25, 25 );
+		$this->assertInstanceOf( 'WP_Error', $image );
+		$this->assertEquals( 'error_loading_image', $image->get_error_code() );
 	}
 	
 	/**
@@ -146,16 +132,8 @@ class Tests_Image_Resize extends WP_UnitTestCase {
 	 * @ticket 6821
 	 */
 	public function test_resize_bad_image() {
-		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
-		foreach ( $classes as $class ) {
-			if ( ! call_user_func( array( $class, 'test' ) ) ) {
-				continue;
-			}
-			$filter = create_function( '', "return '$class';" );
-			add_filter( 'image_editor_class', $filter );
-			$image = image_resize( DIR_TESTDATA.'/export/crazy-cdata.xml', 25, 25 );
-			$this->assertInstanceOf( 'WP_Error', $image );
-			$this->assertEquals( 'invalid_image', $image->get_error_code() );
-		}
+		$image = image_resize( DIR_TESTDATA.'/export/crazy-cdata.xml', 25, 25 );
+		$this->assertInstanceOf( 'WP_Error', $image );
+		$this->assertEquals( 'invalid_image', $image->get_error_code() );
 	}
 }
