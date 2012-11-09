@@ -383,16 +383,13 @@ document.body.className = document.body.className.replace('no-js', 'js');
  * @param string $editor_id
  */
 function media_buttons($editor_id = 'content') {
-	wp_enqueue_script( 'media-upload' );
-	wp_enqueue_style( 'media-views' );
-	wp_plupload_default_settings();
-	add_action( 'admin_footer', 'wp_print_media_templates' );
+	wp_enqueue_media();
 
 	$context = apply_filters('media_buttons_context', __('Upload/Insert %s'));
 
-	$img = '<span class="wp-media-buttons-icon"></span>';
+	$img = '<span class="wp-media-buttons-icon"></span> ';
 
-	echo '<a href="#" class="button insert-media add_media" data-editor="' . esc_attr( $editor_id ) . '" title="' . esc_attr__( 'Add Media' ) . '">' . $img . ' Beta Media</a>';
+	echo '<a href="#" class="button insert-media add_media" data-editor="' . esc_attr( $editor_id ) . '" title="' . esc_attr__( 'Add Media' ) . '">' . $img . __( 'Add Media' ) . '</a>';
 
 	echo '<a href="' . esc_url( get_upload_iframe_src() ) . '" class="thickbox add_media" id="' . esc_attr( $editor_id ) . '-add_media" title="' . esc_attr__( 'Add Media' ) . '" onclick="return false;">' . sprintf( $context, $img ) . '</a>';
 }
