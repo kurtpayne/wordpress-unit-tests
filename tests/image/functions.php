@@ -242,4 +242,39 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			$this->assertEquals( 'error_loading_image', $editor->get_error_code() );
 		}
 	}
+
+	public function test_wp_crop_image_file() {
+		$file = wp_crop_image( DIR_TESTDATA . '/images/canola.jpg',
+							  0, 0, 100, 100, 100, 100 );
+		$this->assertNotInstanceOf( 'WP_Error', $file );
+		$this->assertFileExists( $file );
+		$image = WP_Image_Editor::get_instance( $file );
+		$size = $image->get_size();
+		$this->assertEquals( 100, $size['height'] );
+		$this->assertEquals( 100, $size['width'] );
+	}
+
+	public function test_wp_crop_image_url() {
+		$file = wp_crop_image( 'http://asdftestblog1.files.wordpress.com/2008/04/canola.jpg',
+							  0, 0, 100, 100, 100, 100, false,
+							  DIR_TESTDATA . '/images/' . rand_str() . '.jpg' );
+		$this->assertNotInstanceOf( 'WP_Error', $file );
+		$this->assertFileExists( $file );
+		$image = WP_Image_Editor::get_instance( $file );
+		$size = $image->get_size();
+		$this->assertEquals( 100, $size['height'] );
+		$this->assertEquals( 100, $size['width'] );
+	}
+
+	public function test_wp_crop_image_file_not_exist() {
+		$file = wp_crop_image( DIR_TESTDATA . '/images/canoladoesnotexist.jpg',
+							  0, 0, 100, 100, 100, 100 );
+		$this->assertInstanceOf( 'WP_Error', $file );
+	}
+
+	public function test_wp_crop_image_url_not_exist() {
+		$file = wp_crop_image( 'http://asdftestblog1.files.wordpress.com/2008/04/canoladoesnotexist.jpg',
+							  0, 0, 100, 100, 100, 100 );
+		$this->assertInstanceOf( 'WP_Error', $file );
+	}
 }

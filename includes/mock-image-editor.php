@@ -10,10 +10,10 @@ if (class_exists( 'WP_Image_Editor' ) ) :
 		protected function load() {
 			return self::$load_return;
 		}
-		public function test() {
+		public static function test() {
 			return self::$test_return;
 		}
-		public function supports_mime_type( $mime_type ) {
+		public static function supports_mime_type( $mime_type ) {
 			return true;
 		}
 		public function resize( $max_w, $max_h, $crop = false ) {
