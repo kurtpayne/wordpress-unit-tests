@@ -1398,9 +1398,20 @@ function wp_print_media_templates( $attachment ) {
 
 	<script type="text/html" id="tmpl-uploader-inline">
 		<div class="uploader-inline-content">
-			<h3><?php _e( 'Drop files anywhere to upload' ); ?></h3>
-			<a href="#" class="browser button button-hero"><?php _e( 'Select Files' ); ?></a>
-			<div class="media-progress-bar"><div></div></div>
+			<div class="pre-upload-ui">
+				<?php do_action( 'pre-upload-ui' ); ?>
+				<?php do_action( 'pre-plupload-upload-ui' ); ?>
+			</div>
+
+			<div class="upload-ui">
+				<h3><?php _e( 'Drop files anywhere to upload' ); ?></h3>
+				<a href="#" class="browser button button-hero"><?php _e( 'Select Files' ); ?></a>
+			</div>
+
+			<div class="post-upload-ui">
+				<?php do_action( 'post-plupload-upload-ui' ); ?>
+				<?php do_action( 'post-upload-ui' ); ?>
+			</div>
 		</div>
 	</script>
 
@@ -1587,19 +1598,25 @@ function wp_print_media_templates( $attachment ) {
 						'thumbnail' => __('Thumbnail'),
 						'medium'    => __('Medium'),
 						'large'     => __('Large'),
+						'full'      => __('Full Size'),
 					) );
 
-					foreach ( $sizes as $value => $name ) : ?>
+					foreach ( $sizes as $value => $name ) :
+						if ( 'full' === $name )
+							continue;
+						?>
 						<# if ( sizes['<?php echo esc_js( $value ); ?>'] ) { #>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, 'medium' ); ?>>
 								<?php echo esc_html( $name ); ?>
 							</option>
 						<# } #>>
-					<?php endforeach; ?>
+					<?php endforeach;
 
-					<option value="full">
-						<?php echo esc_html_e( 'Full Size' ); ?>
-					</option>
+					if ( ! empty( $sizes['full'] ) ) : ?>
+						<option value="full">
+							<?php echo esc_html( $sizes['full'] ); ?>
+						</option>
+					<?php endif; ?>
 				</select>
 			</label>
 		<# } #>
