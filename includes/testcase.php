@@ -79,6 +79,11 @@ class WP_UnitTestCase extends PHPUnit_Framework_TestCase {
 		$this->assertEquals( preg_replace( '/\s*/', '', $expected ), preg_replace( '/\s*/', '', $actual ) );
 	}
 
+	function assertEqualSets( $expected, $actual ) {
+		$this->assertEquals( array(), array_diff( $expected, $actual ) );
+		$this->assertEquals( array(), array_diff( $actual, $expected ) );
+	}
+
 	function go_to( $url ) {
 		// note: the WP and WP_Query classes like to silently fetch parameters
 		// from all over the place (globals, GET, etc), which makes it tricky

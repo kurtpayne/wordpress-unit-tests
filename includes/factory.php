@@ -7,6 +7,7 @@ class WP_UnitTest_Factory {
 		$this->user = new WP_UnitTest_Factory_For_User( $this );
 		$this->term = new WP_UnitTest_Factory_For_Term( $this );
 		$this->category = new WP_UnitTest_Factory_For_Term( $this, 'category' );
+		$this->tag = new WP_UnitTest_Factory_For_Term( $this, 'post_tag' );
 		if ( is_multisite() )
 			$this->blog = new WP_UnitTest_Factory_For_Blog( $this );
 	}
