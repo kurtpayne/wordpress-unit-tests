@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Test WP_WXR_*_Writer classes
+ * Test WP_Export_*_Writer classes
  *
  * @group export
  * @ticket 22435
  */
-class Test_WP_WXR_Writers extends WP_UnitTestCase {
-	function test_xml_returner_returns_all_the_return_values() {
-		$returner = new WP_WXR_Returner( $this->get_x_generator() );
+class Test_WP_Export_Writers extends WP_UnitTestCase {
+	function test_export_returner_returns_all_the_return_values() {
+		$returner = new WP_Export_Returner( $this->get_x_generator() );
 		$this->assertEquals( 'xxx' , $returner->export() );
 	}
 

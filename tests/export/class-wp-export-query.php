@@ -140,17 +140,6 @@ class Test_WP_Export_Query extends WP_UnitTestCase {
 		_unregister_post_type( 'baba' );
 	}
 
-	function test_export_xml_using_writer_class_returns_wp_error_if_the_writer_throws_wxr_exception() {
-		$export = new WP_Export_Query();
-		$this->assertTrue( is_wp_error( $export->export_xml_using_writer_class( 'Test_WP_WXR_Stub_Writer_Throws_WXR_Exception' ) ) );
-	}
-
-	function test_export_xml_using_writer_class_passes_the_exception_if_the_writer_throws_other_exception() {
-		$this->setExpectedException( 'Exception' );
-		$export = new WP_Export_Query();
-		$export->export_xml_using_writer_class( 'Test_WP_WXR_Stub_Writer_Throws_Other_Exception' );
-	}
-
 	function test_authors_should_return_list_of_users_for_each_post_author() {
 		$user_id = $this->factory->user->create();
 		$this->factory->post->create( array( 'post_author' => $user_id ) );
@@ -254,18 +243,3 @@ class Test_WP_Export_Query extends WP_UnitTestCase {
 	}
 }
 
-class Test_WP_WXR_Stub_Writer_Throws_WXR_Exception {
-	function __construct( $xml_generator ) {
-	}
-	function export() {
-		throw new WP_WXR_Exception( 'baba' );
-	}
-}
-
-class Test_WP_WXR_Stub_Writer_Throws_Other_Exception {
-	function __construct( $xml_generator ) {
-	}
-	function export() {
-		throw new Exception( 'baba' );
-	}
-}
