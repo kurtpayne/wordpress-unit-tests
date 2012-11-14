@@ -294,13 +294,14 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 	function test_loss_of_categories_on_edit() {
 		$editor_id = $this->make_user_by_role( 'editor' );
 
-		$post_id = $this->factory->post->create();
+		$post_id = $this->factory->post->create( array( 'post_author'  => $editor_id ) );
 		$term_id = $this->factory->category->create();
 		$this->factory->term->add_post_terms( $post_id, $term_id, 'category', true );
 		$term_ids = wp_list_pluck( get_the_category( $post_id ), 'term_id' );
 		$this->assertContains( $term_id, $term_ids );
 
-		$this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, array( 'ID' => $post_id, 'post_title' => 'Updated' ) ) );
+		$result = $this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, array( 'ID' => $post_id, 'post_title' => 'Updated' ) ) );
+		$this->assertNotInstanceOf( 'IXR_Error', $result );
 		$this->assertEquals( 'Updated', get_post( $post_id )->post_title );
 
 		$term_ids = wp_list_pluck( get_the_category( $post_id ), 'term_id' );
