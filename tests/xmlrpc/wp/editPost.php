@@ -287,4 +287,23 @@ class Tests_XMLRPC_wp_editPost extends WP_XMLRPC_UnitTestCase {
 		// Make sure that the post status is still inherit
 		$this->assertEquals( 'draft', get_post( $post_id )->post_status );
 	}
+
+	/**
+	 * @ticket 22220
+	 */
+	function test_loss_of_categories_on_edit() {
+		$editor_id = $this->make_user_by_role( 'editor' );
+
+		$post_id = $this->factory->post->create();
+		$term_id = $this->factory->category->create();
+		$this->factory->term->add_post_terms( $post_id, $term_id, 'category', true );
+		$term_ids = wp_list_pluck( get_the_category( $post_id ), 'term_id' );
+		$this->assertContains( $term_id, $term_ids );
+
+		$this->myxmlrpcserver->wp_editPost( array( 1, 'editor', 'editor', $post_id, array( 'ID' => $post_id, 'post_title' => 'Updated' ) ) );
+		$this->assertEquals( 'Updated', get_post( $post_id )->post_title );
+
+		$term_ids = wp_list_pluck( get_the_category( $post_id ), 'term_id' );
+		$this->assertContains( $term_id, $term_ids );
+	}
 }
