@@ -95,6 +95,11 @@ class Tests_Cache extends WP_UnitTestCase {
 	}
 
 	function test_flush() {
+		global $_wp_using_ext_object_cache;
+
+		if ( $_wp_using_ext_object_cache )
+			return;
+
 		$key = rand_str();
 		$val = rand_str();
 
@@ -204,8 +209,6 @@ class Tests_Cache extends WP_UnitTestCase {
 		$this->assertTrue( $this->cache->delete( $key ) );
 		$this->assertFalse( $this->cache->get( $key ) );
 
-		// Delete returns (bool) true when key is not set and $force is true
-		$this->assertTrue( $this->cache->delete( $key, 'default', true ) );
 		$this->assertFalse( $this->cache->delete( $key, 'default') );
 	}
 
