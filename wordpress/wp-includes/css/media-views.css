@@ -301,7 +301,8 @@
 	margin: 0;
 	padding: 16px 0;
 	z-index: 200;
-	box-shadow: inset -6px 0 6px -6px rgba( 0, 0, 0, 0.4 );
+	border-right: 1px solid #d9d9d9;
+	box-shadow: inset -6px 0 6px -6px rgba( 0, 0, 0, 0.2 );
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -742,9 +743,14 @@
 }
 
 .uploader-inline h3 {
+	display: none;
 	font-size: 20px;
 	font-weight: 200;
 	margin-bottom: 1.6em;
+}
+
+.supports-drag-drop .uploader-inline h3 {
+	display: block;
 }
 
 .uploader-inline .media-progress-bar {
