@@ -496,4 +496,52 @@ class Tests_Post_Query extends WP_UnitTestCase {
 
 		$this->assertEquals( 1 , count( $posts ) );
 	}
+
+	/**
+	 * @ticket 22448
+	 */
+	function test_the_posts_filter() {
+		// Create posts and clear their caches.
+		$post_ids = $this->factory->post->create_many( 10 );
+		foreach ( $post_ids as $post_id )
+			clean_post_cache( $post_id );
+
+		add_filter( 'the_posts', array( $this, 'the_posts_filter' ) );
+
+		$query = new WP_Query( array(
+			'post_type' => 'post',
+			'posts_per_page' => 5,
+		) );
+
+		// Sixth post added in filter
+		$this->assertEquals( 6, count( $query->posts ) );
+		$this->assertEquals( 6, $query->post_count );
+
+		foreach ( $query->posts as $post ) {
+
+			// posts are WP_Post objects
+			$this->assertTrue( is_a( $post, 'WP_Post' ) );
+
+			// filters are raw
+			$this->assertEquals( 'raw', $post->filter );
+
+			// custom data added in the_posts filter is preserved
+			$this->assertEquals( array( $post->ID, 'custom data' ), $post->custom_data );
+		}
+
+		remove_filter( 'the_posts', array( $this, 'the_posts_filter' ) );
+	}
+
+	/**
+	 * Use with the_posts filter, appends a post and adds some custom data.
+	 */
+	function the_posts_filter( $posts ) {
+		$posts[] = clone $posts[0];
+
+		// Add some custom data to each post.
+		foreach ( $posts as $key => $post )
+			$posts[ $key ]->custom_data = array( $post->ID, 'custom data' );
+
+		return $posts;
+	}
 }
