@@ -49,8 +49,7 @@ if ( post_password_required() )
 		/* If there are no comments and comments are closed, let's leave a note.
 		 * But we only want the note on posts and pages that had comments in the first place.
 		 */
-		if ( ! comments_open() && ! empty( $comments_by_type['comment'] ) ) : ?>
-		<!-- If comments are closed. -->
+		if ( ! comments_open() && get_comments_number() ) : ?>
 		<p class="nocomments"><?php _e( 'Comments are closed.' , 'twentytwelve' ); ?></p>
 		<?php endif; ?>
 
