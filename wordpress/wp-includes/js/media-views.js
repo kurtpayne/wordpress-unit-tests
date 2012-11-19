@@ -387,7 +387,7 @@
 				this.set( '_library', original = this.get('library') );
 
 			// Create a composite library in its place.
-			composite = new media.model.Composite( null, {
+			composite = new media.model.Attachments( null, {
 				props: _.pick( original.props.toJSON(), 'order', 'orderby' )
 			});
 
