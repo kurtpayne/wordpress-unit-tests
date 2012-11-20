@@ -199,6 +199,11 @@ TABLE OF CONTENTS:
 	overflow: hidden;
 }
 
+.screen-reader-shortcut {
+	position: absolute;
+	top: -1000em;
+}
+
 .screen-reader-shortcut:focus {
 	left: 6px;
 	top: -21px;
@@ -5526,6 +5531,12 @@ body.full-overlay-active {
 	line-height: 45px;
 	z-index: 10;
 	margin: 0;
+}
+
+.wp-full-overlay-sidebar .wp-full-overlay-header { 
+	border-top: 0;  
+	border-bottom: 1px solid #fff;  
+	box-shadow: inset 0 -1px 0 0px #dfdfdf;  
 }
 
 .wp-full-overlay-sidebar .wp-full-overlay-footer {
