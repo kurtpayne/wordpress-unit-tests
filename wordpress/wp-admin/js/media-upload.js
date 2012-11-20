@@ -214,7 +214,6 @@ var tb_position;
 		return {
 			defaults: {
 				order:      'ASC',
-				orderby:    'post__in',
 				id:         wp.media.view.settings.postId,
 				itemtag:    'dl',
 				icontag:    'dt',
@@ -280,6 +279,12 @@ var tb_position;
 				if ( attrs.ids && 'post__in' === attrs.orderby )
 					delete attrs.orderby;
 
+				// Remove default attributes from the shortcode.
+				_.each( wp.media.gallery.defaults, function( value, key ) {
+					if ( value === attrs[ key ] )
+						delete attrs[ key ];
+				});
+
 				shortcode = new wp.shortcode({
 					tag:    'gallery',
 					attrs:  attrs,
@@ -298,7 +303,7 @@ var tb_position;
 
 			edit: function( content ) {
 				var shortcode = wp.shortcode.next( 'gallery', content ),
-					defaultPostId = wp.media.gallery.defaults.postId,
+					defaultPostId = wp.media.gallery.defaults.id,
 					attachments, selection;
 
 				// Bail if we didn't match the shortcode or all of the content.
