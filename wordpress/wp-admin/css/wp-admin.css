@@ -627,6 +627,11 @@ select,
 	padding: 10px 0 0;
 }
 
+.no-js .widefat thead .check-column input,
+.no-js .widefat tfoot .check-column input {
+	display: none;
+}
+
 .widefat .num,
 .column-comments,
 .column-links,
@@ -2308,7 +2313,7 @@ html.wp-toolbar {
 	float: left;
 }
 
-.ie8 .welcome-panel .welcome-panel-column { 
+.ie8 .welcome-panel .welcome-panel-column {
 	min-width: 230px;
 }
 
@@ -3392,6 +3397,9 @@ td.plugin-title p {
 	text-decoration: none;
 }
 
+.no-js #postcustomstuff #enternew {
+	display: none;
+}
 
 /*------------------------------------------------------------------------------
   11.2 - Post Revisions
@@ -3444,8 +3452,12 @@ table.diff .diff-deletedline del, table.diff .diff-addedline ins {
 	margin-top: 10px;
 }
 
-#select-featured-image.has-featured-image .remove {
+.js #select-featured-image.has-featured-image .remove {
 	display: inline-block;
+}
+
+.no-js #select-featured-image .choose {
+	display: none;
 }
 
 /*------------------------------------------------------------------------------
@@ -3951,10 +3963,10 @@ abbr.required {
 ------------------------------------------------------------------------------*/
 
 .find-box {
-	width: 500px;
+	width: 600px;
 	height: 300px;
 	overflow: hidden;
-	padding: 33px 5px 40px;
+	padding: 33px 0 51px;
 	position: absolute;
 	z-index: 1000;
 }
@@ -3972,19 +3984,37 @@ abbr.required {
 
 .find-box-inside {
 	overflow: auto;
-	width: 100%;
+	padding: 6px;
 	height: 100%;
 }
 
 .find-box-search {
-	padding: 12px;
-	border-width: 1px;
-	border-style: none none solid;
+	overflow: hidden;
+	padding: 9px;
+	position: relative;
+}
+
+.find-box-search .spinner {
+	float: none;
+	left: 125px;
+	position: absolute;
+	top: 9px;
+}
+
+#find-posts-input {
+	float: left;
+	width: 140px;
+	height: 24px;
+}
+
+#find-posts-search {
+	float: left;
+	margin: 1px 4px 0 3px;
 }
 
 #find-posts-response {
 	margin: 8px 0;
-	padding: 0 1px;
+	padding: 0 1px 6px;
 }
 
 #find-posts-response table {
@@ -3992,23 +4022,28 @@ abbr.required {
 }
 
 #find-posts-response .found-radio {
-	padding: 5px 0 0 8px;
+	padding: 3px 0 0 8px;
 	width: 15px;
 }
 
 .find-box-buttons {
-	width: 480px;
-	margin: 8px;
-}
-
-.find-box-search label {
-	padding-right: 6px;
+	padding: 8px;
+	overflow: hidden;
 }
 
 .find-box #resize-se {
 	position: absolute;
 	right: 1px;
 	bottom: 1px;
+}
+
+.ui-find-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
 }
 
 ul#dismissed-updates {
@@ -4157,6 +4192,10 @@ td.imgedit-settings input {
 .wp_attachment_image .button,
 .A1B1 .button {
 	float: left;
+}
+
+.no-js .wp_attachment_image .button {
+	display: none;
 }
 
 .wp_attachment_image .spinner,
@@ -6052,9 +6091,13 @@ h3:hover .edit-box {
 
 #dashboard-widgets h3 .postbox-title-action {
 	position: absolute;
-	right: 30px;
+	right: 10px;
 	padding: 0;
 	top: 5px;
+}
+
+.js #dashboard-widgets h3 .postbox-title-action {
+	right: 30px;
 }
 
 #dashboard-widgets h4 {
@@ -6240,6 +6283,10 @@ h3:hover .edit-box {
 }
 
 /* QuickPress */
+.no-js #dashboard_quick_press {
+	display: none;
+}
+
 #dashboard_quick_press .easy-blogging {
 	padding: 0 8px;
 	text-align: left;
