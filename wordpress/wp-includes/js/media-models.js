@@ -425,7 +425,7 @@ window.wp = window.wp || {};
 
 		mirror: function( attachments ) {
 			if ( this.mirroring && this.mirroring === attachments )
-				return;
+				return this;
 
 			this.unmirror();
 			this.mirroring = attachments;
@@ -434,6 +434,8 @@ window.wp = window.wp || {};
 			// when `observe()` calls `validateAll()`.
 			this.reset( [], { silent: true } );
 			this.observe( attachments );
+
+			return this;
 		},
 
 		unmirror: function() {
