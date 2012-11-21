@@ -46,6 +46,7 @@ class Tests_Admin_includesPost extends WP_UnitTestCase {
 
 		// Edit Draft Post for another user
 		$_post_data = array();
+		$_post_data['post_ID'] = $this->factory->post->create( array( 'post_author' => $editor_id ) );
 		$_post_data['post_author'] = $editor_id;
 		$_post_data['post_type'] = 'post';
 		$_post_data['post_status'] = 'draft';
@@ -100,6 +101,7 @@ class Tests_Admin_includesPost extends WP_UnitTestCase {
 
 		// Edit Draft Post for another user
 		$_post_data = array();
+		$_post_data['post_ID'] = $this->factory->post->create( array( 'post_author' => $contributor_id ) );
 		$_post_data['post_author'] = $contributor_id;
 		$_post_data['post_type'] = 'post';
 		$_post_data['post_status'] = 'draft';

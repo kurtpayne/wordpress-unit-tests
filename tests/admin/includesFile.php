@@ -30,5 +30,9 @@ class Tests_Admin_includesFile extends WP_UnitTestCase {
 
 		$_SERVER['SCRIPT_FILENAME'] = 'S:/home/wordpress/trunk/wp/wp-admin/options-permalink.php';
 		$this->assertEquals( 'S:/home/wordpress/trunk/', get_home_path() );
+
+		update_option( 'home', $home );
+		update_option( 'siteurl', $siteurl );
+		$_SERVER['SCRIPT_FILENAME'] = $sfn;
 	}
 }
