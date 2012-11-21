@@ -236,10 +236,12 @@ class Test_WP_Export_Query extends WP_UnitTestCase {
 		}
 	}
 
+	function _get_term_ids_cb( $c ) {
+		return intval( $c->term_id );
+	}
+
 	private static function get_term_ids( $terms ) {
-		return array_values( array_map( function( $c ) {
-			return intval( $c->term_id );
-		}, $terms ) );
+		return array_values( array_map( array( $this, '_get_term_ids_cb' ), $terms ) );
 	}
 }
 

@@ -8,7 +8,9 @@
         <testsuite>
             <directory suffix=".php">tests</directory>
             <exclude>tests/actions/closures.php</exclude>
+            <exclude>tests/image/editor.php</exclude>
             <file phpVersion="5.3.0">tests/actions/closures.php</file>
+            <file phpVersion="5.3.0">tests/image/editor.php</file>
         </testsuite>
     </testsuites>
     <groups>
