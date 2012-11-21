@@ -1055,17 +1055,10 @@ function get_media_items( $post_id, $errors ) {
 function get_media_item( $attachment_id, $args = null ) {
 	global $redir_tab;
 
-	echo "<a class='toggle describe-toggle-on' href='#'>$toggle_on</a>";
-
 	if ( ( $attachment_id = intval( $attachment_id ) ) && $thumb_url = wp_get_attachment_image_src( $attachment_id, 'thumbnail', true ) )
 		$thumb_url = $thumb_url[0];
 	else
 		$thumb_url = false;
-
-	$display_title = ( !empty( $title ) ) ? $title : $filename; // $title shouldn't ever be empty, but just in case
-	$display_title = $show_title ? "<div class='filename new'><span class='title'>" . wp_html_excerpt( $display_title, 60 ) . "</span></div>" : '';
-
-	echo "<p><a href='$attachment_url' target='_blank'><img class='thumbnail' src='$thumb_url' alt='' /></a></p>";
 
 	$post = get_post( $attachment_id );
 	$current_post_id = !empty( $_GET['post_id'] ) ? (int) $_GET['post_id'] : 0;
@@ -2287,14 +2280,16 @@ function edit_form_image_editor() {
 			<label for="attachment_caption"><strong><?php _e( 'Caption' ); ?></strong></label><br />
 			<textarea class="widefat" name="excerpt" id="attachment_caption"><?php echo $post->post_excerpt; ?></textarea>
 		</p>
+
 	<?php if ( 'image' === substr( $post->post_mime_type, 0, 5 ) ) : ?>
 		<p>
 			<label for="attachment_alt"><strong><?php _e( 'Alternative Text' ); ?></strong></label><br />
 			<input type="text" class="widefat" name="_wp_attachment_image_alt" id="attachment_alt" value="<?php echo esc_attr( $alt_text ); ?>" />
 		</p>
+	<?php endif; ?>
+
 	</div>
 	<?php
-	endif;
 }
 
 /**
