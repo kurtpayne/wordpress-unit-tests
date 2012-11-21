@@ -80,7 +80,7 @@ class Tests_Admin_includesScreen extends WP_UnitTestCase {
 			$this->assertFalse( $current_screen->in_admin( 'network' ) );
 			$this->assertFalse( $current_screen->in_admin( 'user' ) );
 			$this->assertFalse( $current_screen->in_admin( 'garbage' ) );
-			
+
 			// With convert_to_screen(), the same ID should return the exact $current_screen.
 			$this->assertSame( $current_screen, convert_to_screen( $screen->id ), $hook_name );
 

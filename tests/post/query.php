@@ -223,7 +223,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 			'terms' => false,
 			'operator' => 'IN'
 		)
-	    )	
+	    )
 	) );
 
 	$posts = $query->get_posts();
@@ -241,7 +241,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	add_post_meta( $post_id4, 'time', 1 );
 	$post_id5 = $this->factory->post->create();
 	add_post_meta( $post_id5, 'time', 1000 );
-    
+
 	$args = array(
 		'meta_key' => 'time',
 		'meta_value' => array( 1, 1000 ),
@@ -257,7 +257,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 	}
 	$posts = wp_list_pluck( $query->posts, 'ID' );
 	$this->assertEqualSets( array( $post_id2, $post_id3 ), $posts );
-	
+
 	$args = array(
 		'meta_key' => 'time',
 		'meta_value' => array( 1, 1000 ),
@@ -428,7 +428,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 					'field' => 'id',
 					'terms' => array( $cat_a ),
 				)
-		    )	
+		    )
 		) );
 
 		$this->assertEquals( 4 , count( $posts ) );
@@ -441,7 +441,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 					'terms' => array( $cat_a ),
 					'include_children' => false
 				)
-		    )	
+		    )
 		) );
 
 		$this->assertEquals( 1 , count( $posts ) );
@@ -453,7 +453,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 					'field' => 'id',
 					'terms' => array( $cat_b ),
 				)
-		    )	
+		    )
 		) );
 
 		$this->assertEquals( 3 , count( $posts ) );
@@ -466,7 +466,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 					'terms' => array( $cat_b ),
 					'include_children' => false
 				)
-		    )	
+		    )
 		) );
 
 		$this->assertEquals( 1 , count( $posts ) );
@@ -478,7 +478,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 					'field' => 'id',
 					'terms' => array( $cat_c ),
 				)
-		    )	
+		    )
 		) );
 
 		$this->assertEquals( 1 , count( $posts ) );
@@ -491,7 +491,7 @@ class Tests_Post_Query extends WP_UnitTestCase {
 					'terms' => array( $cat_c ),
 					'include_children' => false
 				)
-		    )	
+		    )
 		) );
 
 		$this->assertEquals( 1 , count( $posts ) );

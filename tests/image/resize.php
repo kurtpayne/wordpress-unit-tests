@@ -126,7 +126,7 @@ abstract class WP_Tests_Image_Resize_UnitTestCase extends WP_Image_UnitTestCase 
 		$this->assertInstanceOf( 'WP_Error', $image );
 		$this->assertEquals( 'error_loading_image', $image->get_error_code() );
 	}
-	
+
 	/**
 	 * Try resizing a php file (bad image)
 	 * @ticket 6821

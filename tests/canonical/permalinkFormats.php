@@ -61,10 +61,10 @@ class Tests_Canonical_PermalinkFormat extends WP_UnitTestCase {
 		// Test permalinks
 		foreach ( $tests as $permalink_format => $expected ) {
 			update_option( 'permalink_structure', $permalink_format );
-			
+
 			// Get the rewrite rules
 			$rules = $wp_rewrite->generate_rewrite_rules( get_option( 'permalink_structure' ), EP_PERMALINK, false, false, false, false );
-			
+
 			// Filter out only the post rewrite rule
 			foreach ( $rules as $regex => $url ) {
 				if ( false === strpos( $url, 'attachment=$' ) && false === strpos( $url, 'tb=' ) && false === strpos( $url, 'cpage=$' ) ) {

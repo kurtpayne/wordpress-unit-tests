@@ -21,7 +21,7 @@ class Tests_Link_Functions extends WP_UnitTestCase {
 		add_filter( 'home_url', array( $this, '_get_pagenum_link_cb' ) );
 		$_SERVER['REQUEST_URI'] = '/woohoo';
 		$paged = get_pagenum_link( 2 );
-		
+
 		remove_filter( 'home_url', array( $this, '_get_pagenum_link_cb' ) );
 		$this->assertEquals( $paged, home_url( '/WooHoo/page/2/' ) );
 

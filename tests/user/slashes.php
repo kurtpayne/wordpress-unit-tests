@@ -11,7 +11,7 @@ class Tests_User_Slashes extends WP_UnitTestCase {
 		$this->author_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$this->old_current_user = get_current_user_id();
 		wp_set_current_user( $this->author_id );
-		
+
 		// it is important to test with both even and odd numbered slashes as
 		// kses does a strip-then-add slashes in some of it's function calls
 		$this->slash_1 = 'String with 1 slash \\';

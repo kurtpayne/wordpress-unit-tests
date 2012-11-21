@@ -12,7 +12,7 @@ class Tests_Comment_Slashes extends WP_UnitTestCase {
 		$this->author_id = $this->factory->user->create( array( 'role' => 'administrator' ) );
 		$this->old_current_user = get_current_user_id();
 		wp_set_current_user( $this->author_id );
-		
+
 		// it is important to test with both even and odd numbered slashes as
 		// kses does a strip-then-add slashes in some of it's function calls
 		$this->slash_1 = 'String with 1 slash \\';
@@ -36,7 +36,7 @@ class Tests_Comment_Slashes extends WP_UnitTestCase {
 	function test_wp_new_comment() {
 		$post_id = $this->factory->post->create();
 
-		// not testing comment_author_email or comment_author_url 
+		// not testing comment_author_email or comment_author_url
 		// as slashes are not permitted in that data
 		$data = array(
 			'comment_post_ID' => $post_id,
@@ -73,14 +73,14 @@ class Tests_Comment_Slashes extends WP_UnitTestCase {
 			'comment_post_ID' => $post_id
 		));
 
-		// not testing comment_author_email or comment_author_url 
+		// not testing comment_author_email or comment_author_url
 		// as slashes are not permitted in that data
 		$_POST = array();
 		$_POST['comment_ID'] = $comment_id;
 		$_POST['newcomment_author'] = $this->slash_1;
 		$_POST['content'] = $this->slash_7;
 		$_POST = add_magic_quotes( $_POST );
-		
+
 		edit_comment();
 		$comment = get_comment( $comment_id );
 
@@ -92,7 +92,7 @@ class Tests_Comment_Slashes extends WP_UnitTestCase {
 		$_POST['newcomment_author'] = $this->slash_2;
 		$_POST['content'] = $this->slash_4;
 		$_POST = add_magic_quotes( $_POST );
-		
+
 		edit_comment();
 		$comment = get_comment( $comment_id );
 
@@ -106,7 +106,7 @@ class Tests_Comment_Slashes extends WP_UnitTestCase {
 	 */
 	function test_wp_insert_comment() {
 		$post_id = $this->factory->post->create();
-		
+
 		$comment_id = wp_insert_comment(array(
 			'comment_post_ID' => $post_id,
 			'comment_author' => $this->slash_1,
@@ -137,7 +137,7 @@ class Tests_Comment_Slashes extends WP_UnitTestCase {
 		$comment_id = $this->factory->comment->create(array(
 			'comment_post_ID' => $post_id
 		));
-		
+
 		wp_update_comment(array(
 			'comment_ID' => $comment_id,
 			'comment_author' => $this->slash_1,

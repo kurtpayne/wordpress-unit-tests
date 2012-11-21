@@ -15,7 +15,7 @@ abstract class WP_Image_UnitTestCase extends WP_UnitTestCase {
 		}
 		add_filter( 'image_editor_class', array( $this, 'setEngine') );
 	}
-	
+
 	/**
 	 * Undo the image editor override
 	 */
@@ -29,5 +29,5 @@ abstract class WP_Image_UnitTestCase extends WP_UnitTestCase {
 	 */
 	public function setEngine() {
 		return $this->editor_engine;
-	}	
+	}
 }

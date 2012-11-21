@@ -54,7 +54,7 @@ class Tests_Post_Formats extends WP_UnitTestCase {
 		// The previous set can now be retrieved.
 		$format = get_post_format( $post_id );
 		$this->assertEquals( 'aside', $format );
-		
+
 		$result = set_post_format( $post_id, 'standard' );
 		$this->assertNotInstanceOf( 'WP_Error', $result );
 		$this->assertInternalType( 'array', $result );

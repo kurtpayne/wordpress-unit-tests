@@ -38,14 +38,14 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			'newcategory' => $this->slash_1
 		);
 		$_POST = add_magic_quotes( $_POST );
-		
+
 		// Make the request
 		try {
 			$this->_handleAjax( 'add-category' );
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
-		
+
 		$term = get_term_by( 'slug', 'string-with-1-slash', 'category' );
 		$this->assertEquals( $this->slash_1, $term->name );
 
@@ -56,14 +56,14 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			'newcategory' => $this->slash_3
 		);
 		$_POST = add_magic_quotes( $_POST );
-		
+
 		// Make the request
 		try {
 			$this->_handleAjax( 'add-category' );
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
-		
+
 		$term = get_term_by( 'slug', 'string-with-3-slashes', 'category' );
 		$this->assertEquals( $this->slash_3, $term->name );
 
@@ -74,19 +74,19 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			'newcategory' => $this->slash_2
 		);
 		$_POST = add_magic_quotes( $_POST );
-		
+
 		// Make the request
 		try {
 			$this->_handleAjax( 'add-category' );
 		} catch ( WPAjaxDieContinueException $e ) {
 			unset( $e );
 		}
-		
+
 		$term = get_term_by( 'slug', 'string-with-2-slashes', 'category' );
 		$this->assertEquals( $this->slash_2, $term->name );
 
 	}
-	
+
 	/**
 	 * Tests the controller function that expects slashed data
 	 *
@@ -98,7 +98,7 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 		);
 		foreach ( $taxonomies as $taxonomy ) {
 			$_POST = $_GET = $_REQUEST = array();
-			
+
 			$_POST = array(
 				'_wpnonce_add-tag' => wp_create_nonce( 'add-tag' ),
 				'taxonomy' => $taxonomy,
@@ -107,14 +107,14 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 				'description' => $this->slash_3
 			);
 			$_POST = add_magic_quotes( $_POST );
-			
+
 			// Make the request
 			try {
 				$this->_handleAjax( 'add-tag' );
 			} catch ( WPAjaxDieContinueException $e ) {
 				unset( $e );
 			}
-			
+
 			$term = get_term_by( 'slug', 'controller_slash_test_1_'.$taxonomy, $taxonomy );
 			$this->assertEquals( $this->slash_1, $term->name );
 			$this->assertEquals( $this->slash_3, $term->description );
@@ -127,14 +127,14 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 				'description' => $this->slash_5
 			);
 			$_POST = add_magic_quotes( $_POST );
-			
+
 			// Make the request
 			try {
 				$this->_handleAjax( 'add-tag' );
 			} catch ( WPAjaxDieContinueException $e ) {
 				unset( $e );
 			}
-			
+
 			$term = get_term_by( 'slug', 'controller_slash_test_2_'.$taxonomy, $taxonomy );
 			$this->assertEquals( $this->slash_3, $term->name );
 			$this->assertEquals( $this->slash_5, $term->description );
@@ -147,20 +147,20 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 				'description' => $this->slash_4
 			);
 			$_POST = add_magic_quotes( $_POST );
-			
+
 			// Make the request
 			try {
 				$this->_handleAjax( 'add-tag' );
 			} catch ( WPAjaxDieContinueException $e ) {
 				unset( $e );
 			}
-			
+
 			$term = get_term_by( 'slug', 'controller_slash_test_3_'.$taxonomy, $taxonomy );
 			$this->assertEquals( $this->slash_2, $term->name );
 			$this->assertEquals( $this->slash_4, $term->description );
 		}
 	}
-	
+
 	/**
 	 * Tests the model function that expects un-slashed data
 	 *
@@ -182,7 +182,7 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			$term = get_term( $insert['term_id'], $taxonomy );
 			$this->assertEquals( $this->slash_1, $term->name );
 			$this->assertEquals( $this->slash_3, $term->description );
-	
+
 			$insert = wp_insert_term(
 				$this->slash_3,
 				$taxonomy,
@@ -194,7 +194,7 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			$term = get_term( $insert['term_id'], $taxonomy );
 			$this->assertEquals( $this->slash_3, $term->name );
 			$this->assertEquals( $this->slash_5, $term->description );
-	
+
 			$insert = wp_insert_term(
 				$this->slash_2,
 				$taxonomy,
@@ -222,7 +222,7 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			$id = $this->factory->term->create(array(
 				'taxonomy' => $taxonomy
 			));
-	
+
 			$update = wp_update_term(
 				$id,
 				$taxonomy,
@@ -235,7 +235,7 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			$term = get_term( $id, $taxonomy );
 			$this->assertEquals( $this->slash_1, $term->name );
 			$this->assertEquals( $this->slash_3, $term->description );
-	
+
 			$update = wp_update_term(
 				$id,
 				$taxonomy,
@@ -247,7 +247,7 @@ class Tests_Term_Slashes extends WP_Ajax_UnitTestCase {
 			$term = get_term( $id, $taxonomy );
 			$this->assertEquals( $this->slash_3, $term->name );
 			$this->assertEquals( $this->slash_5, $term->description );
-	
+
 			$update = wp_update_term(
 				$id,
 				$taxonomy,

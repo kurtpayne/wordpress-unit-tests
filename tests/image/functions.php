@@ -13,11 +13,11 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 	 * @return string
 	 */
 	protected function get_mime_type( $filename ) {
-		$mime_type = ''; 
-		if ( extension_loaded( 'fileinfo' ) ) { 
+		$mime_type = '';
+		if ( extension_loaded( 'fileinfo' ) ) {
 			$finfo = new finfo();
 			$mime_type = $finfo->file( $filename, FILEINFO_MIME );
-		} elseif ( function_exists('mime_content_type') ) { 
+		} elseif ( function_exists('mime_content_type') ) {
 			$mime_type = mime_content_type( $filename );
 		}
 		if ( false !== strpos( $mime_type, ';' ) ) {
@@ -25,7 +25,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		}
 		return $mime_type;
 	}
-	
+
 	function test_is_image_positive() {
 		// these are all image files recognized by php
 		$files = array(
@@ -92,8 +92,8 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		foreach ($files as $file) {
 			$this->assertFalse( file_is_displayable_image( DIR_TESTDATA.'/images/'.$file ), "file_is_valid_image($file) should return false" );
 		}
-	}	
-	
+	}
+
 	/**
 	 * Test save image file and mime_types
 	 * @ticket 6821
@@ -107,11 +107,11 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			'image/gif',
 			'image/png'
 		);
-		
+
 		// Test each image editor engine
 		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
 		foreach ( $classes as $class ) {
-			
+
 			// If the image editor isn't available, skip it
 			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
@@ -121,15 +121,15 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 
 			// Call wp_save_image_file
 			$img = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
-			
+
 			// Save a file as each mime type, assert it works
 			foreach ( $mime_types as $mime_type ) {
-				$file = wp_tempnam();				
+				$file = wp_tempnam();
 				$ret = wp_save_image_file( $file, $img, $mime_type, 1 );
 				$this->assertNotEmpty( $ret );
 				$this->assertNotInstanceOf( 'WP_Error', $ret );
 				$this->assertEquals( $mime_type, $this->get_mime_type( $ret['path'] ) );
-				
+
 				// Clean up
 				@unlink( $file );
 				@unlink( $ret['path'] );
@@ -139,7 +139,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			unset( $img );
 		}
 	}
-	
+
 	/**
 	 * Test that a passed mime type overrides the extension in the filename
 	 * @ticket 6821
@@ -162,12 +162,12 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			$mime_type = 'image/gif';
 			$file = wp_tempnam( 'tmp.jpg' );
 			$ret = $img->save( $file, $mime_type );
-			
+
 			// Make assertions
 			$this->assertNotEmpty( $ret );
 			$this->assertNotInstanceOf( 'WP_Error', $ret );
 			$this->assertEquals( $mime_type, $this->get_mime_type( $ret['path'] ) );
-			
+
 			// Clean up
 			@unlink( $file );
 			@unlink( $ret['path'] );
@@ -201,7 +201,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			}
 			$filter = create_function( '', "return '$class';" );
 			add_filter( 'image_editor_class', $filter );
-			
+
 			// Save the image as each file extension, check the mime type
 			$img = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
 			$temp = get_temp_dir();

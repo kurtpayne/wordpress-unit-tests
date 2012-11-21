@@ -34,14 +34,14 @@ class Tests_Option_Slashes extends WP_UnitTestCase {
 		$this->assertEquals( $this->slash_3, get_option( 'slash_test_3' ) );
 		$this->assertEquals( $this->slash_4, get_option( 'slash_test_4' ) );
 	}
-	
+
 	/**
 	 * Tests the model function that expects un-slashed data
 	 *
 	 */
 	function test_update_option() {
 		add_option( 'slash_test_5', 'foo' );
-		
+
 		update_option( 'slash_test_5', $this->slash_1 );
 		$this->assertEquals( $this->slash_1, get_option( 'slash_test_5' ) );
 

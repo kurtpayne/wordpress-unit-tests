@@ -27,7 +27,7 @@ class Test_Functions_Deprecated extends WP_UnitTestCase {
 	 * @var string[]
 	 */
 	protected $_deprecated_files = array();
-	
+
 	/**
 	 * Set up the test fixture
 	 * @return void
@@ -104,7 +104,7 @@ class Test_Functions_Deprecated extends WP_UnitTestCase {
 			'message'     => $message
 		);
 	}
-	
+
 	/**
 	 * Check if something was deprecated
 	 * @param string $type argument|function|file
@@ -132,7 +132,7 @@ class Test_Functions_Deprecated extends WP_UnitTestCase {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Test that wp_save_image_file has a deprecated argument when passed a GD resource
 	 * @ticket 6821
@@ -149,9 +149,9 @@ class Test_Functions_Deprecated extends WP_UnitTestCase {
 
 		// Check if the arg was deprecated
 		$check = $this->was_deprecated( 'argument', 'wp_save_image_file' );
-		$this->assertNotEmpty( $check );		
+		$this->assertNotEmpty( $check );
 	}
-	
+
 	/**
 	 * Test that wp_save_image_file doesn't have a deprecated argument when passed a WP_Image_Editor
 	 * @ticket 6821
