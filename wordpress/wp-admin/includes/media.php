@@ -106,7 +106,7 @@ function the_media_upload_tabs() {
  */
 function get_image_send_to_editor($id, $caption, $title, $align, $url='', $rel = false, $size='medium', $alt = '') {
 
-	$html = get_image_tag($id, $alt, $title, $align, $size);
+	$html = get_image_tag($id, $alt, '', $align, $size);
 
 	$rel = $rel ? ' rel="attachment wp-att-' . esc_attr($id).'"' : '';
 
@@ -2269,7 +2269,7 @@ function edit_form_image_editor() {
 		<div class="imgedit-response" id="imgedit-response-<?php echo $attachment_id; ?>"></div>
 
 		<div class="wp_attachment_image" id="media-head-<?php echo $attachment_id; ?>">
-			<p><img class="thumbnail" src="<?php echo set_url_scheme( $thumb_url[0] ); ?>" style="max-width:100%" width="<?php echo $thumb_url[1]; ?>" alt="" /></p>
+			<p id="thumbnail-head-<?php echo $attachment_id; ?>"><img class="thumbnail" src="<?php echo set_url_scheme( $thumb_url[0] ); ?>" style="max-width:100%" alt="" /></p>
 			<p><?php echo $image_edit_button; ?></p>
 		</div>
 		<div style="display:none" class="image-editor" id="image-editor-<?php echo $attachment_id; ?>"></div>
@@ -2280,13 +2280,14 @@ function edit_form_image_editor() {
 			<label for="attachment_caption"><strong><?php _e( 'Caption' ); ?></strong></label><br />
 			<textarea class="widefat" name="excerpt" id="attachment_caption"><?php echo $post->post_excerpt; ?></textarea>
 		</p>
+	<?php if ( 'image' === substr( $post->post_mime_type, 0, 5 ) ) : ?>
 		<p>
 			<label for="attachment_alt"><strong><?php _e( 'Alternative Text' ); ?></strong></label><br />
 			<input type="text" class="widefat" name="_wp_attachment_image_alt" id="attachment_alt" value="<?php echo esc_attr( $alt_text ); ?>" />
 		</p>
 	</div>
 	<?php
-	// need a filter on this content
+	endif;
 }
 
 /**
