@@ -937,6 +937,10 @@
 			if ( this.collection && this.collection.off )
 				this.collection.off( null, null, this );
 
+			// Unbind controller events.
+			if ( this.controller && this.controller.off )
+				this.controller.off( null, null, this );
+
 			// Recursively dispose child views.
 			if ( this.views )
 				this.views.dispose();
@@ -1044,11 +1048,13 @@
 			// Initialize window-wide uploader.
 			if ( this.options.uploader ) {
 				this.uploader = new media.view.UploaderWindow({
+					controller: this,
 					uploader: {
 						dropzone:  this.modal ? this.modal.$el : this.$el,
 						container: this.$el
 					}
 				});
+				this.views.set( '.media-frame-uploader', this.uploader );
 			}
 
 			this.on( 'attach', _.bind( this.views.ready, this.views ), this );
@@ -1059,11 +1065,6 @@
 				this.modal.render();
 
 			media.view.Frame.prototype.render.apply( this, arguments );
-
-			// Render the window uploader if it exists.
-			if ( this.uploader )
-				this.uploader.render().$el.appendTo( this.$el );
-
 			return this;
 		},
 
@@ -1115,7 +1116,7 @@
 				};
 			}, this );
 
-			this.menu.view().add( views );
+			this.menu.view().set( views );
 		},
 
 		hijackThickbox: function() {
@@ -1438,7 +1439,7 @@
 		mainMenu: function() {
 			media.view.MediaFrame.Select.prototype.mainMenu.call( this, { silent: true });
 
-			this.menu.view().add({
+			this.menu.view().set({
 				separateLibrary: new media.View({
 					className: 'separator',
 					priority: 60
@@ -1537,7 +1538,7 @@
 
 			library.gallery = library.gallery || new Backbone.Model();
 
-			this.sidebar.view().add({
+			this.sidebar.view().set({
 				gallery: new media.view.Settings.Gallery({
 					controller: this,
 					model:      library.gallery,
@@ -1559,7 +1560,7 @@
 				link:  getUserSetting( 'urlbutton', 'post' )
 			});
 
-			this.sidebar.view().add({
+			this.sidebar.view().set({
 				display: new media.view.Settings.AttachmentDisplay({
 					controller:   this,
 					model:        display[ single.cid ],
@@ -1733,20 +1734,11 @@
 				params:    {}
 			});
 
-			if ( uploader.dropzone ) {
-				// Ensure the dropzone is a jQuery collection.
-				if ( ! (uploader.dropzone instanceof $) )
-					uploader.dropzone = $( uploader.dropzone );
+			// Ensure the dropzone is a jQuery collection.
+			if ( uploader.dropzone && ! (uploader.dropzone instanceof $) )
+				uploader.dropzone = $( uploader.dropzone );
 
-				// Attempt to initialize the uploader whenever the dropzone is hovered.
-				uploader.dropzone.one( 'mouseenter dragenter', _.bind( this.maybeInitUploader, this ) );
-			}
-		},
-
-		render: function() {
-			this.maybeInitUploader();
-			this.$el.html( this.template( this.options ) );
-			return this;
+			this.controller.on( 'activate', this.refresh, this );
 		},
 
 		refresh: function() {
@@ -1754,16 +1746,16 @@
 				this.uploader.refresh();
 		},
 
-		maybeInitUploader: function() {
-			var $id, dropzone;
+		ready: function() {
+			var postId = media.view.settings.postId,
+				dropzone;
 
-			// If the uploader already exists or the body isn't in the DOM, bail.
-			if ( this.uploader || ! this.$el.closest('body').length )
+			// If the uploader already exists, bail.
+			if ( this.uploader )
 				return;
 
-			$id = $('#post_ID');
-			if ( $id.length )
-				this.options.uploader.params.post_id = $id.val();
+			if ( postId )
+				this.options.uploader.params.post_id = postId;
 
 			this.uploader = new wp.Uploader( this.options.uploader );
 
@@ -2189,7 +2181,7 @@
 			this.controller = this.options.controller;
 			this._views     = {};
 
-			this.add( _.extend( {}, this._views, this.options.views ), { silent: true });
+			this.set( _.extend( {}, this._views, this.options.views ), { silent: true });
 			delete this.options.views;
 
 			if ( ! this.options.silent )
@@ -2217,13 +2209,13 @@
 			return this;
 		},
 
-		add: function( id, view, options ) {
+		set: function( id, view, options ) {
 			options = options || {};
 
 			// Accept an object with an `id` : `view` mapping.
 			if ( _.isObject( id ) ) {
 				_.each( id, function( view, id ) {
-					this.add( id, view, { silent: true });
+					this.set( id, view, { silent: true });
 				}, this );
 
 				if ( ! options.silent )
@@ -2246,7 +2238,7 @@
 			return this._views[ id ];
 		},
 
-		remove: function( id, options ) {
+		unset: function( id, options ) {
 			delete this._views[ id ];
 			if ( ! options || ! options.silent )
 				this.render();
