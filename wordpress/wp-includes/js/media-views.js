@@ -1368,7 +1368,7 @@
 					selection:  options.selection,
 					library:    media.query( options.library ),
 					editable:   true,
-					filterable: true
+					filterable: 'all'
 				}, main ) ),
 
 				new media.controller.Upload( main ),
@@ -1384,8 +1384,9 @@
 				}),
 
 				new media.controller.Library( _.defaults({
-					id:      'gallery-library',
-					library: media.query({ type: 'image' })
+					id:         'gallery-library',
+					library:    media.query({ type: 'image' }),
+					filterable: 'uploaded'
 				}, gallery ) ),
 
 				new media.controller.Upload( _.defaults({
@@ -2766,57 +2767,101 @@
 			change: 'change'
 		},
 
+		filters: {},
+		keys: [],
+
 		initialize: function() {
-			var els;
-
-			els = _.map({
-				all:      'allMediaItems',
-				uploaded: 'uploadedToThisPost',
-				image:    'images',
-				audio:    'audio',
-				video:    'videos'
-			}, function( text, value ) {
-				return this.make( 'option', { value: value }, l10n[ text ] );
-			}, this );
-
-			this.$el.html( els );
+			// Build `<option>` elements.
+			this.$el.html( _.chain( this.filters ).map( function( filter, value ) {
+				return {
+					el: this.make( 'option', { value: value }, filter.text ),
+					priority: filter.priority || 50
+				};
+			}, this ).sortBy('priority').pluck('el').value() );
 
 			this.model.on( 'change', this.select, this );
 			this.select();
 		},
 
 		change: function( event ) {
-			var model = this.model,
-				value = this.el.value,
-				type;
+			var filter = this.filters[ this.el.value ];
 
-			if ( 'all' === value || 'uploaded' === value )
-				model.unset('type');
-			else if ( 'image' === value || 'audio' === value || 'video' === value )
-				model.set( 'type', value );
-
-			if ( 'uploaded' === value )
-				model.set( 'parent', media.view.settings.postId );
-			else
-				model.unset('parent');
+			if ( filter )
+				this.model.set( filter.props );
 		},
 
 		select: function() {
 			var model = this.model,
-				type = model.get('type'),
-				value = 'all';
+				value = 'all',
+				props = model.toJSON();
 
-			if ( model.get('parent') === media.view.settings.postId )
-				value = 'uploaded';
-			else if ( 'image' === type )
-				value = 'image';
-			else if ( 'audio' === type )
-				value = 'audio';
-			else if ( 'video' === type )
-				value = 'video';
+			_.find( this.filters, function( filter, id ) {
+				var equal = _.all( filter.props, function( prop, key ) {
+					return prop === ( _.isUndefined( props[ key ] ) ? null : props[ key ] );
+				});
+
+				if ( equal )
+					return value = id;
+			});
 
 			this.$el.val( value );
 		}
+	});
+
+	media.view.AttachmentFilters.Uploaded = media.view.AttachmentFilters.extend({
+		filters: {
+			all: {
+				text:  l10n.allMediaItems,
+				props: {
+					parent: null
+				},
+				priority: 10
+			},
+
+			uploaded: {
+				text:  l10n.uploadedToThisPost,
+				props: {
+					parent: media.view.settings.postId
+				},
+				priority: 20
+			}
+		}
+	});
+
+	media.view.AttachmentFilters.All = media.view.AttachmentFilters.extend({
+		filters: (function() {
+			var filters = {};
+
+			_.each( media.view.settings.mimeTypes || {}, function( text, key ) {
+				filters[ key ] = {
+					text: text,
+					props: {
+						type:   key,
+						parent: null
+					}
+				};
+			});
+
+			filters.all = {
+				text:  l10n.allMediaItems,
+				props: {
+					type:   null,
+					parent: null
+				},
+				priority: 10
+			};
+
+			filters.uploaded = {
+				text:  l10n.uploadedToThisPost,
+				props: {
+					type:   null,
+					parent: media.view.settings.postId
+				},
+				priority: 20
+			};
+
+			return filters;
+		}())
 	});
 
 
@@ -2829,6 +2874,8 @@
 		className: 'attachments-browser',
 
 		initialize: function() {
+			var filters, FiltersConstructor;
+
 			this.controller = this.options.controller;
 
 			_.defaults( this.options, {
@@ -2843,8 +2890,14 @@
 				controller: this.controller
 			});
 
-			if ( this.options.filters ) {
-				this.toolbar.set( 'filters', new media.view.AttachmentFilters({
+			filters = this.options.filters;
+			if ( 'uploaded' === filters )
+				FiltersConstructor = media.view.AttachmentFilters.Uploaded;
+			else if ( 'all' === filters )
+				FiltersConstructor = media.view.AttachmentFilters.All;
+
+			if ( FiltersConstructor ) {
+				this.toolbar.set( 'filters', new FiltersConstructor({
 					controller: this.controller,
 					model:      this.collection.props,
 					priority:   -80
