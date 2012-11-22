@@ -17,10 +17,8 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	 * Setup test fixture
 	 */
 	public function setup() {
-		if ( !class_exists( 'WP_Image_Editor' ) )
-			$this->markTestSkipped();
+		require_once( ABSPATH . WPINC . '/class-wp-image-editor.php' );
 
-		// Include our custom mock
 		include_once( DIR_TESTDATA . '/../includes/mock-image-editor.php' );
 
 		// Mock up an abstract image editor based on WP_Image_Editor
@@ -61,10 +59,10 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test get_instance where load returns true
+	 * Test wp_get_image_editor() where load returns true
 	 * @ticket 6821
 	 */
-	public function test_get_instance_load_returns_true() {
+	public function test_get_editor_load_returns_true() {
 
 		// Swap out the PHPUnit mock with our custom mock
 		$func = create_function( '', 'return "WP_Image_Editor_Mock";');
@@ -75,7 +73,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		WP_Image_Editor_Mock::$load_return = true;
 
 		// Load an image
-		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$editor = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Everything should work
 		$this->assertInstanceOf( 'WP_Image_Editor_Mock', $editor );
@@ -85,10 +83,10 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test get_instance where load returns false
+	 * Test wp_get_image_editor() where load returns false
 	 * @ticket 6821
 	 */
-	public function test_get_instance_load_returns_false() {
+	public function test_get_editor_load_returns_false() {
 
 		// Swap out the PHPUnit mock with our custom mock
 		$func = create_function( '', 'return "WP_Image_Editor_Mock";');
@@ -99,7 +97,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 		WP_Image_Editor_Mock::$load_return = new WP_Error();
 
 		// Load an image
-		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$editor = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Everything should work
 		$this->assertInstanceOf( 'WP_Error', $editor );
@@ -115,7 +113,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	public function test_set_quality() {
 
 		// Get an editor
-		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$editor = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Make quality readable
 		$property = new ReflectionProperty( $editor, 'quality' );
@@ -142,7 +140,8 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	public function test_generate_filename() {
 
 		// Get an editor
-		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$editor = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
+
 		$property = new ReflectionProperty( $editor, 'size' );
 		$property->setAccessible( true );
 		$property->setValue( $editor, array(
@@ -172,7 +171,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	 */
 	public function test_get_size() {
 
-		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$editor = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Size should be false by default
 		$this->assertNull( $editor->get_size() );
@@ -194,7 +193,7 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	 * @ticket 6821
 	 */
 	public function test_get_suffix() {
-		$editor = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$editor = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 
 		// Size should be false by default
 		$this->assertFalse( $editor->get_suffix() );

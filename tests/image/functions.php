@@ -8,6 +8,15 @@
 class Tests_Image_Functions extends WP_UnitTestCase {
 
 	/**
+	 * Setup test fixture
+	 */
+	public function setup() {
+		require_once ABSPATH . WPINC . '/class-wp-image-editor.php';
+		require_once ABSPATH . WPINC . '/class-wp-image-editor-gd.php';
+		require_once ABSPATH . WPINC . '/class-wp-image-editor-imagick.php';
+	}
+
+	/**
 	 * Get the MIME type of a file
 	 * @param string $filename
 	 * @return string
@@ -120,7 +129,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			add_filter( 'image_editor_class', $filter );
 
 			// Call wp_save_image_file
-			$img = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 
 			// Save a file as each mime type, assert it works
 			foreach ( $mime_types as $mime_type ) {
@@ -158,7 +167,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			add_filter( 'image_editor_class', $filter );
 
 			// Save the file
-			$img = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 			$mime_type = 'image/gif';
 			$file = wp_tempnam( 'tmp.jpg' );
 			$ret = $img->save( $file, $mime_type );
@@ -203,7 +212,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			add_filter( 'image_editor_class', $filter );
 
 			// Save the image as each file extension, check the mime type
-			$img = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 			$temp = get_temp_dir();
 			foreach ( $mime_types as $ext => $mime_type ) {
 				$file = wp_unique_filename( $temp, uniqid() . ".$ext" );
@@ -225,6 +234,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 	 * @ticket 17814
 	 */
 	public function test_load_directory() {
+
 		// First, test with deprecated wp_load_image function
 		$editor = wp_load_image( DIR_TESTDATA );
 		$this->assertNotInternalType( 'resource', $editor );
@@ -237,7 +247,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			}
 			$filter = create_function( '', "return '$class';" );
 			add_filter( 'image_editor_class', $filter );
-			$editor = WP_Image_Editor::get_instance( DIR_TESTDATA );
+			$editor = wp_get_image_editor( DIR_TESTDATA );
 			$this->assertInstanceOf( 'WP_Error', $editor );
 			$this->assertEquals( 'error_loading_image', $editor->get_error_code() );
 		}
@@ -248,7 +258,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 							  0, 0, 100, 100, 100, 100 );
 		$this->assertNotInstanceOf( 'WP_Error', $file );
 		$this->assertFileExists( $file );
-		$image = WP_Image_Editor::get_instance( $file );
+		$image = wp_get_image_editor( $file );
 		$size = $image->get_size();
 		$this->assertEquals( 100, $size['height'] );
 		$this->assertEquals( 100, $size['width'] );
@@ -260,7 +270,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 							  DIR_TESTDATA . '/images/' . rand_str() . '.jpg' );
 		$this->assertNotInstanceOf( 'WP_Error', $file );
 		$this->assertFileExists( $file );
-		$image = WP_Image_Editor::get_instance( $file );
+		$image = wp_get_image_editor( $file );
 		$size = $image->get_size();
 		$this->assertEquals( 100, $size['height'] );
 		$this->assertEquals( 100, $size['width'] );

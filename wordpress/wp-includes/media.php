@@ -1484,17 +1484,14 @@ function wp_print_media_templates( $attachment ) {
 
 	<script type="text/html" id="tmpl-uploader-inline">
 		<div class="uploader-inline-content">
-			<div class="pre-upload-ui">
-				<?php do_action( 'pre-upload-ui' ); ?>
-				<?php do_action( 'pre-plupload-upload-ui' ); ?>
-			</div>
-
 			<div class="upload-ui">
 				<h3><?php _e( 'Drop files anywhere to upload' ); ?></h3>
 				<a href="#" class="browser button button-hero"><?php _e( 'Select Files' ); ?></a>
 			</div>
 
 			<div class="post-upload-ui">
+				<?php do_action( 'pre-upload-ui' ); ?>
+				<?php do_action( 'pre-plupload-upload-ui' ); ?>
 				<?php do_action( 'post-plupload-upload-ui' ); ?>
 				<?php do_action( 'post-upload-ui' ); ?>
 			</div>
@@ -1503,6 +1500,8 @@ function wp_print_media_templates( $attachment ) {
 
 	<script type="text/html" id="tmpl-uploader-status">
 		<h3><?php _e( 'Uploading' ); ?></h3>
+		<a class="upload-dismiss-errors" href="#"><?php _e('Dismiss Errors'); ?></a>
+
 		<div class="media-progress-bar"><div></div></div>
 		<div class="upload-details">
 			<span class="upload-count">
@@ -1513,6 +1512,12 @@ function wp_print_media_templates( $attachment ) {
 		</div>
 		<div class="upload-errors">
 		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-uploader-status-error">
+		<span class="upload-error-label"><?php _e('Error'); ?></span>
+		<span class="upload-error-filename">{{{ data.filename }}}</span>
+		<span class="upload-error-message">{{ data.message }}</span>
 	</script>
 
 	<script type="text/html" id="tmpl-attachment">

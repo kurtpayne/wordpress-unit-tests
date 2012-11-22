@@ -7,7 +7,7 @@ if (class_exists( 'WP_Image_Editor' ) ) :
 		public static $load_return = true;
 		public static $test_return = true;
 
-		protected function load() {
+		public function load() {
 			return self::$load_return;
 		}
 		public static function test() {
