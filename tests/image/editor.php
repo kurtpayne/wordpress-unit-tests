@@ -31,7 +31,6 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 
 		// Override the filters to set our own image editor
 		add_filter( 'wp_image_editor_class', array( $this, 'image_editor_class' ) );
-		add_filter( 'wp_image_editors', array( $this, 'wp_editors' ) );
 	}
 
 	/**
@@ -39,15 +38,6 @@ class Tests_Image_Editor extends WP_UnitTestCase {
 	 */
 	public function tearDown() {
 		remove_filter( 'wp_image_editor_class', array( $this, 'image_editor_class' ) );
-		remove_filter( 'wp_image_editors', array( $this, 'wp_editors' ) );
-	}
-
-	/**
-	 * Override the wp_editors filter
-	 * @return array
-	 */
-	public function wp_editors() {
-		return array( get_class( $this->editor ) );
 	}
 
 	/**

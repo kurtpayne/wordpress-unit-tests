@@ -126,7 +126,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
-			add_filter( 'image_editor_class', $filter );
+			add_filter( 'wp_image_editor_class', $filter );
 
 			// Call wp_save_image_file
 			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
@@ -164,7 +164,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
-			add_filter( 'image_editor_class', $filter );
+			add_filter( 'wp_image_editor_class', $filter );
 
 			// Save the file
 			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
@@ -209,7 +209,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
-			add_filter( 'image_editor_class', $filter );
+			add_filter( 'wp_image_editor_class', $filter );
 
 			// Save the image as each file extension, check the mime type
 			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
@@ -246,7 +246,7 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 				continue;
 			}
 			$filter = create_function( '', "return '$class';" );
-			add_filter( 'image_editor_class', $filter );
+			add_filter( 'wp_image_editor_class', $filter );
 			$editor = wp_get_image_editor( DIR_TESTDATA );
 			$this->assertInstanceOf( 'WP_Error', $editor );
 			$this->assertEquals( 'error_loading_image', $editor->get_error_code() );

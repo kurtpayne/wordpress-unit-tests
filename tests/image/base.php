@@ -13,14 +13,14 @@ abstract class WP_Image_UnitTestCase extends WP_UnitTestCase {
 		if ( ! call_user_func( array( $class, 'test' ) ) ) {
 			$this->markTestSkipped( sprintf('The image editor engine %s is not supported on this system', $this->editor_engine) );
 		}
-		add_filter( 'image_editor_class', array( $this, 'setEngine') );
+		add_filter( 'wp_image_editor_class', array( $this, 'setEngine') );
 	}
 
 	/**
 	 * Undo the image editor override
 	 */
 	public function tearDown() {
-		remove_filter( 'image_editor_class', array( $this, 'setEngine' ) );
+		remove_filter( 'wp_image_editor_class', array( $this, 'setEngine' ) );
 	}
 
 	/**
