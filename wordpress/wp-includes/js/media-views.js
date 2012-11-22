@@ -1792,6 +1792,10 @@
 
 			if ( ! this.options.$browser && this.controller.uploader )
 				this.options.$browser = this.controller.uploader.$browser;
+
+			this.views.set( '.upload-inline-status', new media.view.UploaderStatus({
+				controller: this.controller
+			}) );
 		},
 
 		ready: function() {
@@ -1829,6 +1833,7 @@
 			this.queue.on( 'add remove reset change:uploading', this.info, this );
 
 			this.errors = wp.Uploader.errors;
+			this.errors.reset();
 			this.errors.on( 'add remove reset', this.visibility, this );
 			this.errors.on( 'add', this.error, this );
 		},
