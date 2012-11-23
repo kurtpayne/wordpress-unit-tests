@@ -109,4 +109,38 @@ CAP;
 		$this->assertTrue( wp_oembed_remove_provider( 'http://foo.bar/*' ) );
 		$this->assertFalse( wp_oembed_remove_provider( 'http://foo.bar/*' ) );
 	}
+
+	function test_wp_prepare_attachment_for_js() {
+		// Attachment without media
+		$id = wp_insert_attachment(array(
+			'post_status' => 'publish',
+			'post_title' => 'Prepare',
+			'post_content_filtered' => 'Prepare',
+			'post_type' => 'post'
+		));
+		$post = get_post( $id );
+
+		$prepped = wp_prepare_attachment_for_js( $post );
+		$this->assertInternalType( 'array', $prepped );
+		$this->assertEquals( 0, $prepped['uploadedTo'] );
+		$this->assertEquals( '', $prepped['mime'] );
+		$this->assertEquals( '', $prepped['type'] );
+		$this->assertEquals( '', $prepped['subtype'] );
+		$this->assertEquals( '', $prepped['url'] );
+		$this->assertEquals( site_url( 'wp-includes/images/crystal/default.png' ), $prepped['icon'] );
+
+		// Fake a mime
+		$post->post_mime_type = 'image/jpeg';
+		$prepped = wp_prepare_attachment_for_js( $post );
+		$this->assertEquals( 'image/jpeg', $prepped['mime'] );
+		$this->assertEquals( 'image', $prepped['type'] );
+		$this->assertEquals( 'jpeg', $prepped['subtype'] );
+
+		// Fake a mime without a slash. See #WP22532
+		$post->post_mime_type = 'image';
+		$prepped = wp_prepare_attachment_for_js( $post );
+		$this->assertEquals( 'image', $prepped['mime'] );
+		$this->assertEquals( 'image', $prepped['type'] );
+		$this->assertEquals( '', $prepped['subtype'] );
+	}
 }
