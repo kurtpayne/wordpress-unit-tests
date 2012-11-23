@@ -161,7 +161,7 @@ class Test_Functions_Deprecated extends WP_UnitTestCase {
 		// Call wp_save_image_file
 		include_once( ABSPATH . 'wp-admin/includes/image-edit.php' );
 		$file = wp_tempnam();
-		$img = WP_Image_Editor::get_instance( DIR_TESTDATA . '/images/canola.jpg' );
+		$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 		wp_save_image_file( $file, $img, 'image/jpeg', 1 );
 		unset( $img );
 		@unlink($file);
