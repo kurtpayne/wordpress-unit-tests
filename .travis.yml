@@ -7,7 +7,7 @@ before_script:
  - cp wp-tests-config-sample.php wp-tests-config.php
  - sed -i 's/putyourdbnamehere/wordpress_tests/g' wp-tests-config.php
  - sed -i 's/usernamehere/root/g' wp-tests-config.php
- - sed -i 's/yourpasswordhere//g' wp-tests-config.php
+ - sed -i 's/yourpasswordhere/g' wp-tests-config.php
  - mysql -e 'create database wordpress_tests;'
 
  # Disable set_time_limit
