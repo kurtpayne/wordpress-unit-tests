@@ -1469,7 +1469,7 @@
 					priority: 60
 				}),
 				embed: {
-					text: l10n.embedFromUrlTitle,
+					text: l10n.fromUrlTitle,
 					priority: 80
 				}
 			});
@@ -2079,7 +2079,7 @@
 			var controller = this.options.controller;
 
 			_.defaults( this.options, {
-				text: l10n.insertEmbed
+				text: l10n.insertIntoPost
 			});
 
 			media.view.Toolbar.Select.prototype.initialize.apply( this, arguments );
@@ -3406,7 +3406,15 @@
 			'change [data-setting]':          'updateSetting',
 			'change [data-setting] input':    'updateSetting',
 			'change [data-setting] select':   'updateSetting',
-			'change [data-setting] textarea': 'updateSetting'
+			'change [data-setting] textarea': 'updateSetting',
+			'click .delete-attachment':       'deleteAttachment'
+		},
+
+		deleteAttachment: function(event) {
+			event.preventDefault();
+
+			if ( confirm( l10n.warnDelete ) )
+				this.model.destroy();
 		}
 	});
 
