@@ -1,0 +1,419 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Joseph Scott, Matt Thomas, Noel Jackson, and Automattic
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: P2 1.0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/p2\n"
+"POT-Creation-Date: 2009-06-17 13:58+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: attachment.php:19 page.php:16
+msgid "Read the rest of this page &rarr;"
+msgstr ""
+
+#: attachment.php:27 page.php:20
+msgid "Pages:"
+msgstr ""
+
+#: comment-form.php:1 comment-form.php:43 entry.php:26 functions.php:531
+#: functions.php:948 functions.php:1369
+msgid "Reply"
+msgstr ""
+
+#: comment-form.php:6
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: comment-form.php:6
+msgid "Log out of this account"
+msgstr ""
+
+#: comment-form.php:6
+msgid "Log out &rarr;"
+msgstr ""
+
+#: comment-form.php:12
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comment-form.php:28
+msgid "Name <em>(required)</em>"
+msgstr ""
+
+#: comment-form.php:32
+msgid "Email <em>(required)</em>"
+msgstr ""
+
+#: comment-form.php:36
+msgid "Web Site"
+msgstr ""
+
+#: comment-form.php:46 functions.php:70 post-form.php:24
+msgid "Loading..."
+msgstr ""
+
+#: entry.php:6 entry.php:15
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: entry.php:23 functions.php:403 functions.php:539 functions.php:946
+msgid "Permalink"
+msgstr ""
+
+#: entry.php:29 functions.php:403 functions.php:535 functions.php:950
+msgid "Edit"
+msgstr ""
+
+#: entry.php:33 functions.php:954
+msgid "Tags:"
+msgstr ""
+
+#: entry.php:37 functions.php:957
+msgid "(More ...)"
+msgstr ""
+
+#: footer.php:7
+#, php-format
+msgid "P2 theme by %s."
+msgstr ""
+
+#: footer.php:13
+msgid "compose new post"
+msgstr ""
+
+#: footer.php:14
+msgid "next post/next comment"
+msgstr ""
+
+#: footer.php:15
+msgid "previous post/previous comment"
+msgstr ""
+
+#: footer.php:16
+msgid "reply"
+msgstr ""
+
+#: footer.php:17
+msgid "edit"
+msgstr ""
+
+#: footer.php:18
+msgid "show/hide comments"
+msgstr ""
+
+#: footer.php:19
+msgid "go to top"
+msgstr ""
+
+#: footer.php:20
+msgid "cancel"
+msgstr ""
+
+#: functions.php:62 functions.php:756 post-form.php:18 post-form.php:19
+#: post-form.php:20
+msgid "Tag it"
+msgstr ""
+
+#: functions.php:63
+msgid "Go to homepage"
+msgstr ""
+
+#: functions.php:65
+#, php-format
+msgid "%d new update(s)"
+msgstr ""
+
+#: functions.php:66
+#, php-format
+msgid "%d new comment(s)"
+msgstr ""
+
+#: functions.php:67
+msgid "Jump to top"
+msgstr ""
+
+#: functions.php:68
+msgid "An error has occured, your post was not posted"
+msgstr ""
+
+#: functions.php:69
+msgid "You update has been posted"
+msgstr ""
+
+#: functions.php:71
+msgid "Cancel"
+msgstr ""
+
+#: functions.php:72
+msgid "Save"
+msgstr ""
+
+#: functions.php:73 index.php:24
+msgid "Hide threads"
+msgstr ""
+
+#: functions.php:74
+msgid "Show threads"
+msgstr ""
+
+#: functions.php:75
+msgid "Your comments or posts will be lost if you continue."
+msgstr ""
+
+#: functions.php:76 functions.php:921
+#, php-format
+msgid "%1$s <em>on</em> %2$s"
+msgstr ""
+
+#: functions.php:189
+msgid "Options saved."
+msgstr ""
+
+#: functions.php:200
+msgid "Prologue Options"
+msgstr ""
+
+#: functions.php:211
+msgid "Display titles"
+msgstr ""
+
+#: functions.php:215
+msgid "Greeting text:"
+msgstr ""
+
+#: functions.php:219
+msgid "Update Options"
+msgstr ""
+
+#: functions.php:280 functions.php:383 functions.php:384 sidebar.php:7
+msgid "Recent Tags"
+msgstr ""
+
+#: functions.php:343
+msgid "All Updates RSS"
+msgstr ""
+
+#: functions.php:373 functions.php:1040
+msgid "Title:"
+msgstr ""
+
+#: functions.php:377
+msgid "Num of tags to show:"
+msgstr ""
+
+#: functions.php:403
+msgid "on"
+msgstr ""
+
+#: functions.php:408 functions.php:537
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:415
+msgid "Whatcha up to?"
+msgstr ""
+
+#: functions.php:463
+msgid "Anonymous"
+msgstr ""
+
+#: functions.php:511
+#, php-format
+msgid "%s on <a href='%s' class='tooltip' title='%s'>%s</a>"
+msgstr ""
+
+#: functions.php:535
+msgid "Edit comment"
+msgstr ""
+
+#: functions.php:625
+msgid "Video Post"
+msgstr ""
+
+#: functions.php:627
+msgid "Image Post"
+msgstr ""
+
+#: functions.php:649 functions.php:690 functions.php:717 functions.php:732
+#: functions.php:747
+msgid "Error: not logged in."
+msgstr ""
+
+#: functions.php:656 functions.php:722
+msgid "Error: not allowed to edit post."
+msgstr ""
+
+#: functions.php:698
+msgid "Error: not allowed to edit this comment."
+msgstr ""
+
+#: functions.php:750
+msgid "Error: not allowed to post."
+msgstr ""
+
+#: functions.php:827
+msgid "Error: you must be logged in to post a comment."
+msgstr ""
+
+#: functions.php:834
+msgid "Error: please fill the required fields (name, email)."
+msgstr ""
+
+#: functions.php:836
+msgid "Error: please enter a valid email address."
+msgstr ""
+
+#: functions.php:840
+msgid "Error: Please type a comment."
+msgstr ""
+
+#: functions.php:856
+msgid "Error: Unknown error occured. Comment not posted."
+msgstr ""
+
+#: functions.php:981 functions.php:1084 functions.php:1085
+msgid "Recent Comments"
+msgstr ""
+
+#: functions.php:1041
+msgid "Number of comments to show:"
+msgstr ""
+
+#: functions.php:1041
+msgid "(at most 15)"
+msgstr ""
+
+#: functions.php:1042
+msgid "Avatar Size (px):"
+msgstr ""
+
+#: functions.php:1043
+msgid "No Avatars"
+msgstr ""
+
+#: functions.php:1050
+msgid "Avatar background color:"
+msgstr ""
+
+#: functions.php:1051
+msgid "Text background color:"
+msgstr ""
+
+#: functions.php:1370
+msgid "Log in to Reply"
+msgstr ""
+
+#: functions.php:1414
+msgid "&larr;&nbsp;Newer&nbsp;Posts"
+msgstr ""
+
+#: functions.php:1414
+msgid "Older&nbsp;Posts&nbsp;&rarr;"
+msgstr ""
+
+#: functions.php:1416
+msgid "&larr;&nbsp;Older&nbsp;Posts"
+msgstr ""
+
+#: functions.php:1416
+msgid "Newer&nbsp;Posts&nbsp;&rarr;"
+msgstr ""
+
+#: functions.php:1423
+#, php-format
+msgid "<strong>%1$s</strong> is proudly powered by %2$s."
+msgstr ""
+
+#: functions.php:1428
+msgid "Blog at WordPress.com"
+msgstr ""
+
+#: index.php:12
+#, php-format
+msgid "Updates from %s|name"
+msgstr ""
+
+#: index.php:15
+msgid "Recent Updates"
+msgstr ""
+
+#: index.php:15
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: index.php:20
+#, php-format
+msgid "Updates from %s|month"
+msgstr ""
+
+#: index.php:25
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: index.php:37
+msgid "No posts yet!"
+msgstr ""
+
+#: post-form.php:12
+#, php-format
+msgid "Hi, %s. Whatcha up to?"
+msgstr ""
+
+#: post-form.php:21
+msgid "Post it"
+msgstr ""
+
+#: search.php:6
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:20 tag.php:25
+msgid "No posts found!"
+msgstr ""
+
+#: tag.php:11
+#, php-format
+msgid "Latest Updates: %s"
+msgstr ""
+
+#. Theme Name of an extension
+msgid "P2"
+msgstr ""
+
+#. Description of an extension
+msgid ""
+"A group blog theme for short update messages, inspired by Twitter. "
+"Featuring: Hassle-free posting from the front page. Perfect for group "
+"blogging, or as a liveblog theme. Dynamic page updates. Threaded comment "
+"display on the front page. In-line editing for posts and comments. Live tag "
+"suggestion based on previously used tags. A show/hide feature for comments, "
+"to keep things tidy. Real-time notifications when a new comment or update is "
+"posted. Super-handy keyboard shortcuts. Helvetica Neue for you modern font "
+"lovers. And more to come..."
+msgstr ""
+
+#. Author of an extension
+msgid "Joseph Scott, Matt Thomas, Noel Jackson, and Automattic"
+msgstr ""
+
+#. Author URI of an extension
+msgid "http://automattic.com/"
+msgstr ""
+
+#. Tags of an extension
+msgid "blue, two columns, fixed width, threaded comments, microblog, rtl"
+msgstr ""
