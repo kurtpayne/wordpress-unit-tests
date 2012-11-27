@@ -13,6 +13,6 @@ class Tests_XMLRPC_Disabled extends WP_UnitTestCase {
 		$result = $myxmlrpcserver->wp_getOptions( array( 1, 'username', 'password' ) );
 
 		$this->assertInstanceOf( 'IXR_Error', $result );
-		$this->assertEquals( 405, $result->code );
+		$this->assertEquals( 403, $result->code );
 	}
 }
