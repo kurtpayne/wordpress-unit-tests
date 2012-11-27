@@ -125,11 +125,9 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
-			$filter = create_function( '', "return '$class';" );
-			add_filter( 'wp_image_editor_class', $filter );
 
-			// Call wp_save_image_file
-			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
+			$img = new $class( DIR_TESTDATA . '/images/canola.jpg' );
+			$loaded = $img->load();
 
 			// Save a file as each mime type, assert it works
 			foreach ( $mime_types as $mime_type ) {
@@ -163,11 +161,11 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
-			$filter = create_function( '', "return '$class';" );
-			add_filter( 'wp_image_editor_class', $filter );
+
+			$img = new $class( DIR_TESTDATA . '/images/canola.jpg' );
+			$loaded = $img->load();
 
 			// Save the file
-			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
 			$mime_type = 'image/gif';
 			$file = wp_tempnam( 'tmp.jpg' );
 			$ret = $img->save( $file, $mime_type );
@@ -208,8 +206,9 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
-			$filter = create_function( '', "return '$class';" );
-			add_filter( 'wp_image_editor_class', $filter );
+
+			$img = new $class( DIR_TESTDATA . '/images/canola.jpg' );
+			$loaded = $img->load();
 
 			// Save the image as each file extension, check the mime type
 			$img = wp_get_image_editor( DIR_TESTDATA . '/images/canola.jpg' );
@@ -242,14 +241,16 @@ class Tests_Image_Functions extends WP_UnitTestCase {
 		// Then, test with editors.
 		$classes = array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
 		foreach ( $classes as $class ) {
+			// If the image editor isn't available, skip it
 			if ( ! call_user_func( array( $class, 'test' ) ) ) {
 				continue;
 			}
-			$filter = create_function( '', "return '$class';" );
-			add_filter( 'wp_image_editor_class', $filter );
-			$editor = wp_get_image_editor( DIR_TESTDATA );
-			$this->assertInstanceOf( 'WP_Error', $editor );
-			$this->assertEquals( 'error_loading_image', $editor->get_error_code() );
+
+			$editor = new $class( DIR_TESTDATA );
+			$loaded = $editor->load();
+
+			$this->assertInstanceOf( 'WP_Error', $loaded );
+			$this->assertEquals( 'error_loading_image', $loaded->get_error_code() );
 		}
 	}
 
