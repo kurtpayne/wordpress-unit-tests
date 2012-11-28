@@ -1,0 +1,53 @@
+/* LiveSearch */
+
+.LSRow small, #searchcontrols small {
+color: #515151;
+}
+#LSHighlight small {
+color: #515151;
+}
+#LSResult {
+position: absolute;
+background-color: #fff;
+width: 200px;
+margin: 0 0 0 4px;
+font: 8.5pt 'Lucida Grande', Arial, Sans-Serif;
+padding: 0 0 6px 0;
+border: 1px solid #999;
+z-index: 100;
+}
+#LSResult:hover #LSHighlight {
+background-color: white;
+border-color: white;
+}
+.LSRow {
+text-align: left;
+padding: 3px 10px 3px;
+border-top: 2px solid white;
+border-bottom: 2px solid white;
+}
+#LSHighlight, .LSRow:hover {
+background-color: #e8dfba;
+border-top: 2px solid #e3d7a2;
+border-bottom: 2px solid #e3d7a2;
+}
+.LSRow a {
+color: #7a6616;
+font-weight: normal;
+}
+.LSRow a:hover {
+color: #53460d;
+font-weight: normal;
+}
+#LSHighlight small {
+color: #515151;
+}
+#searchcontrols {
+padding: 3px;
+}
+.oddresult {
+background-color: #e8dfba;
+border-color: #e8dfba;
+}
+
+/* End LiveSearch */
