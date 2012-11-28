@@ -1,0 +1,501 @@
+/* 
+Template: fleur
+Theme Name: Fleur De Lys
+Description: A very classic looking two-column theme with typographic flourishes.
+Theme URI: http://www.vanillamist.com
+Author: Patricia M&#252;ller
+Author URI: http://www.vanillamist.com
+Tags: two-columns, fixed-width, left-sidebar, widgets, sticky-post, white, brown, light, rtl-language-support
+*/
+/* General Styles */
+
+body {
+	color: #333;
+	font-family: Trebuchet MS, Georgia, 'Times New Roman', serif;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 90%;
+	background:#F2F2E9 url(img/shadow_background.jpg) repeat-y center;
+}
+hr, .description 
+{
+	display:none;
+}
+a:link {
+  color:#AA7D39;
+  text-decoration:none;
+  }
+a:visited {
+  color:#B3A99A; /*B8A280;*/
+  text-decoration:none;
+  }
+a:hover {
+  color:#9C803A;
+  text-decoration:underline;
+  }
+a img {
+  border-width:0;
+  }
+a img {	border:none;}
+
+
+#rap {
+  width: 760px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+	background: #fff;
+	padding: 0;	
+	background:#fff url(img/rap.jpg) repeat-y left;
+}
+acronym, abbr {
+	border-bottom: 1px dotted #9C803A;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+	letter-spacing: .07em;
+}
+
+code {
+  font-size: 1em;
+  font-style:italic;
+}
+
+blockquote {
+	border-left: 5px solid #DADACE;
+	margin-left: 1.5em;
+	padding-left: 5px;
+}
+
+cite {
+	font-size: 0.9em;
+	font-style: normal;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.3em;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+}
+
+p {
+	margin: 0 0 1em 0;
+	padding: 0;
+	line-height: 1.2em;
+	font-size: 1.1em;
+}
+
+/* Header Styles */
+
+#header 
+{
+	margin: 0;
+	padding: 5px 15px;	
+	height: 160px;
+	text-align: center;
+	text-transform: uppercase;	
+	background:url(img/fdl_top.jpg) repeat top;
+}
+
+#header h1 {
+  margin: 30px auto 5px auto;
+	padding: 50px 0 0 0;
+	font-size: 1.5em;
+	font-weight: normal;
+	letter-spacing: 0.1em;
+	text-align:right;
+	font-family:Georgia, Verdana, Arial, Sans-Serif;
+}
+
+
+#header h1 a {
+	text-decoration: none;
+	border:none;
+	color:#ddd;
+	}
+#header h1 a:hover,#header h1 a:active {
+	text-decoration: none;
+	color:#fff;
+	}
+
+/* Content Styles */
+
+#content 
+{
+	float: right;
+	margin:20px 0;
+	padding:0 5px;
+	background: #fff;
+	width: 510px;
+	font-size: 0.9em;
+	display:inline;
+	overflow: hidden;
+}
+
+.post {
+  margin: 0 0 2em 0;	
+}
+
+.sticky {
+padding: 10px;
+background: #F2F2E9;
+}
+#content ol 
+{
+	font-size:1.1em;
+	margin:5px 0 5px 20px;
+	padding:0 0 0 20px;
+}
+#content ol li
+{
+	margin:0;
+	padding:2px;
+	margin:5px 0 5px 18px;
+}
+#content ul 
+{
+	font-size:1.1em;
+	list-style:none;
+	margin:5px 0 5px 20px;
+	padding:0 0 0 20px;
+}
+#content ul li 
+{
+	list-style:none;
+	background:url(img/fdl_icon.gif) no-repeat left center;
+	padding:2px 0 2px 18px;
+}
+#content .commentlist ul li
+{
+	background: none;
+}
+/* classes used by the_meta() */
+ul.post-meta {
+	list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+	font-weight: bold;
+}
+
+.post-info {
+	font-size: 0.85em;
+	color: #808080;
+	margin: 0 0 1em 0;
+	padding: 0 0 0.3em 0;
+	font-family: verdana, helvetica, sans-serif;	
+	clear:both;
+}
+
+.post-info span {
+  margin: 0.6em 0 0 0;
+}
+
+.post-info li {
+	display: inline;
+}
+
+.post-info ul {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.post-info-co 
+{
+	text-align:right;
+	padding-right:15px;
+	clear: both;
+}
+.post-title{
+	margin: 0;	
+	border-bottom: 1px solid #c96666;		
+	text-align:right;
+	font-size:0.96em;	
+	padding:0;
+	color:#C4C5B7;
+	padding:0 0 0.1em 0;
+}
+.attachment .post-title{
+	text-align: left;
+}
+.post-title em
+{
+	text-decoration:none;
+	background:url(img/permalien.png) left no-repeat;
+	padding-left:12px;
+	font-size:1.3em;
+	float:left;
+	font-style:normal;
+	font-family:Georgia, Arial, Sans-Serif;
+}
+.attachment .post-title em{
+	padding-right: 5px;
+}
+#content .post-title em a
+{
+	text-decoration:none;
+	color:#AA7D39;
+}
+
+.post-content 
+{
+	margin: 0 0 1em 0;
+	padding: 0;		
+	font-size:0.89em;
+}
+
+.post-content .caption, .post-content .image-description, .post-content .attachment {
+	text-align: left;
+}
+
+.post-footer 
+{
+	background:url(img/fdl_icon.gif) no-repeat center bottom;
+	clear: both;
+}
+
+/* sidebar Styles */
+
+#sidebar {
+	margin: 20px 0 0 40px;
+	width: 190px;
+	padding: 0 0 10px 2px;
+	font-family: Trebuchet MS, Arial,Verdana, helvetica, sans-serif;		
+	float:left;
+	display:inline;
+	color:#666;
+}
+html>body #sidebar {
+  width: 190px;
+}
+
+#sidebar h2 {
+	font-family: Georgia,Verdana, Arial, Helvetica, sans-serif;	
+font-size:1em;
+color:#666;
+margin:0.3em 0;
+padding:3px 0 3px 28px;
+background:transparent url(img/fdl_menu_1.jpg) no-repeat left center;
+}
+
+#sidebar h2.special {
+	font-family: Georgia,Verdana, Arial, Helvetica, sans-serif;	
+font-size:1em;
+color:#666;
+margin:0.3em 0;
+padding:3px 0 3px 2em;
+background:transparent url(img/fdl_menu_1.jpg) no-repeat left center;
+}
+
+#sidebar form {
+	margin: 0 0 1.5em 0;
+}
+
+#sidebar input#s {
+	width: 99%;
+	background: #F5F5F5;
+	border: 1px solid #669BB4;
+	color: #000;
+	margin: 0.5em 0;
+}
+
+#sidebar ul ul {
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	list-style: none;
+	margin: 0;
+	padding: 5px 0.5em 5px 1em;	
+}
+#sidebar ul ul ul {
+	padding-left: 0.5em;
+}
+#sidebar li, #sidebar ul li {
+  	margin: 0;
+	list-style: none;
+	padding: 2px 0;
+	font-size: 0.92em;	
+}
+
+#sidebar ul#dysb {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar ul li p {
+  margin: 0;
+padding: 0;
+font-size: 1.0em; 
+}
+/*  Footer Styles */
+
+#footer 
+{
+	clear:both;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 0.9em;
+	background:url(img/footer2.jpg) repeat-x top;
+	color:#cacaca;
+	text-transform:lowercase;
+	height:25px;
+}
+
+#footer cite {
+  color: #808080;
+}
+
+#footer a {
+	color: #f0f0f0;
+	text-decoration:none;
+}
+#footer a:hover {
+	color: #fcfcfc;
+}
+
+/*  Comment Styles */
+#content .commentlist 
+{
+	font: bold 1em georgia, 'Times New Roman', serif;
+	color: #ccc;
+	padding: 0;
+	margin:0;
+}
+
+.commentlist .avatar {
+	float: right;
+}
+
+#content .commentlist li {
+	color: #666;
+	font: normal 0.85em georgia, 'Times New Roman', serif;
+	margin-bottom: 10px;
+	border:#DADACE 1px solid;
+	padding:5px;
+}
+
+#content .commentlist cite {
+	color: #808080;
+	margin: 0 0 1em 0;
+	padding: 0 0 0.5em 0;
+}
+#content .commentlist p 
+{
+	line-height:1.2em;
+	padding:2px 0;
+	margin:5px 0;
+}
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #F5F5F5;
+	border: 1px solid #669BB4;
+	padding: 0.2em;
+}
+#commentform textarea {
+	width: 80%;
+}
+#commentform p {
+  margin: 0 0 1em 0;
+}
+#content .commentlist li ul {
+	border-left: 1px solid #ddd;
+	font-size: 110%;
+	list-style-type: none;
+}
+#comments,#respond {
+	margin: 3em 0 1em 0;
+	color: #AA7D39;
+	font: 0.9em verdana, helvetica, sans-serif;
+}
+textarea 
+{
+	width:80%;
+}
+/*other*/
+.feedback 
+{
+	background:url(img/ico-talk-act.gif) no-repeat left;
+	padding-left:18px; 
+	clear: both;
+}
+ 
+.pauthor, .ptime, .pcat
+{
+	font-size:0.8em;
+	padding-right:10px;
+}
+
+.pauthor
+{
+	background:url(img/user.png) no-repeat left;
+	padding-left:12px;
+}
+.ptime
+{
+	background:url(img/heure.png) no-repeat left;
+	padding-left:12px;
+}
+.pcat
+{
+	background:url(img/puce.png) no-repeat left;
+	padding-left:12px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
