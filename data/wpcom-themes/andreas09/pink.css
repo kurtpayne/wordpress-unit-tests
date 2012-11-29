@@ -1,0 +1,28 @@
+
+#container {
+	background:#f0f0f0 url(images/bodybg-pink.jpg) repeat-x;
+}
+
+a {
+	color:#D964BF;
+}
+
+#leftside ul.box li a {
+	color:#D964BF;
+}
+
+#mainmenu a {
+	color: #D964BF;
+}
+
+#mainmenu a:hover {
+	background: url(images/menuhover-pink.jpg) center left repeat-x;
+}
+
+#mainmenu li.current a, #mainmenu li.current_page_item a {
+	background: url(images/menuhover-pink.jpg) center left repeat-x;
+}
+
+#mainmenu li.currentparent a {
+	background: url(images/menuhover-pink.jpg) center left repeat-x;
+}
