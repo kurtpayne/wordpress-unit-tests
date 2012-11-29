@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-10 21:29+0800\n"
+"PO-Revision-Date: 2009-05-10 21:29+0800\n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - Todos os artigos"
+
+#: 404.php:9
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - Todos os coment&aacute;rios"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "Informador"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "Bem-vindo &agrave; p&aacute;gina de erro 404!"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "Bem-vindo &agrave; nossa p&aacute;gina de erro personalizada. Voc&ecirc; est&aacute; nesta p&aacute;gina porque clicou num link que j&aacute; n&atilde;o existe. Provavelmente isso &eacute; uma falha nossa... mas em vez de apresentarmos a p&aacute;gina b&aacute;sica do 'Erro 404' que &eacute; confusa e n&atilde;o explica nada, n&oacute;s criamos esta para lhe explicar mais correctamente o que se passou."
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "Voc&ecirc; pode: (a) Clicar no botão 'Voltar' no seu browser e tentar navegar no nosso site para outras p&aacute;ginas, ou (b) Clicar no no link a seguir para voltar &agrave; p&aacute;gina inicial."
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "Voltar &agrave; p&aacute;gina inicial  &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "Resultados da procura"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "Palavra Chave: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "Arquivo"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "Arquivo da Categoria &#8216;%1$s&#8217;"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "Artigos com Etiquetas &#8216;%1$s&#8217;"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "Arquivo de %1$s"
+
+#: archive.php:25
+#: archive.php:48
+#: archives.php:14
+#: comments.php:91
+#: functions.php:503
+#: index.php:23
+#: links.php:22
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "j, F, Y"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "F, Y"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "Arquivo do Autor"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "Arquivo do Blog"
+
+#: archive.php:50
+#: archives.php:15
+#: comments.php:95
+#: functions.php:511
+#: index.php:25
+#: links.php:23
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "Editar"
+
+#: archive.php:51
+#: index.php:26
+msgid "No comments"
+msgstr "Nenhum coment&aacute;rio"
+
+#: archive.php:51
+#: index.php:26
+msgid "1 comment"
+msgstr "1 coment&aacute;rio"
+
+#: archive.php:51
+#: index.php:26
+#, php-format
+msgid "% comments"
+msgstr "% coment&aacute;rios"
+
+#: archive.php:51
+#: index.php:26
+msgid "Comments off"
+msgstr ""
+
+#: archive.php:55
+#: index.php:30
+msgid "Read more..."
+msgstr "Ler mais..."
+
+#: archive.php:59
+#: index.php:34
+#: single.php:29
+msgid "Categories: "
+msgstr ""
+
+#: archive.php:60
+#: index.php:35
+#: single.php:30
+msgid "Tags: "
+msgstr ""
+
+#: archive.php:67
+#: archives.php:39
+#: index.php:42
+#: links.php:46
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "Lamentamos, mas nenhum artigo responde aos seus crit&eacute;rios de procura."
+
+#: archive.php:75
+#: index.php:50
+msgid "Newer Entries"
+msgstr "Artigos Mais Recentes"
+
+#: archive.php:76
+#: index.php:51
+msgid "Older Entries"
+msgstr "Artigos Mais Antigos"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:25
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "Escrever um coment&aacute;rio"
+
+#: archives.php:18
+#: links.php:26
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "Ver coment&aacute;rios"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "Insira a sua Palavra Chave para ver os coment&aacute;rios."
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:347
+msgid "Comments"
+msgstr "Coment&aacute;rios"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "Trackbacks"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "Trackback"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "Ainda sem nenhum coment&aacute;rio."
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "P&aacute;gina de coment&aacute;rios"
+
+#: comments.php:91
+#: functions.php:503
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s a %2$s"
+
+#: comments.php:91
+#: functions.php:503
+msgid "H:i"
+msgstr "H:i"
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "Ainda sem nenhum <i>trackback</i>."
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "Coment&aacute;rios encerrados."
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Por favor <a href=\"%s\">autentique-se</a> para enviar um coment&acute;rio."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "Autenticado como"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "Sair desta conta"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "Sair &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "Bem-vindo novamente <strong>%s</strong>."
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "Alterar &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "Fechar &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(obrigat&oacute;rio)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "E-Mail (n&atilde;o ser&aacute; publicado)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "Website"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "Subscrever o feed de coment&aacute;rios"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "Enviar coment&aacute;rio"
+
+#: functions.php:160
+#: functions.php:169
+msgid "Current Theme Options"
+msgstr "Op&ccedil;&otilde;es do Tema Atual"
+
+#: functions.php:174
+msgid "Search"
+msgstr "Procurar"
+
+#: functions.php:178
+msgid "Using google custom search engine."
+msgstr "Usar o <i>Google Custom Search Engine</i>."
+
+#: functions.php:181
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:184
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "Localize o <code>name=\"cx\"</code> no <strong>C&oacute;digo da caixa de busca</strong> do <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, e digite o <code>valor</code> aqui.<br/>Por exemplo: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:193
+msgid "Menubar"
+msgstr "Menu"
+
+#: functions.php:197
+msgid "Show pages as menu."
+msgstr "Exibir as p&aacute;ginas como menu."
+
+#: functions.php:201
+msgid "Show categories as menu."
+msgstr "Exibir as categorias como menu."
+
+#: functions.php:211
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:215
+msgid "Remove sidebar from all pages."
+msgstr ""
+
+#: functions.php:226
+msgid "Notice"
+msgstr "Informa&ccedil;&atilde;o"
+
+#: functions.php:228
+#: functions.php:252
+#: functions.php:287
+msgid "HTML enabled"
+msgstr "HTML ativado"
+
+#: functions.php:234
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "Esta barra de informa&ccedil;&atilde;o ser&aacute; apresentada por cima dos textos na p&aacute;gina inicial. "
+
+#: functions.php:250
+msgid "Banner"
+msgstr ""
+
+#: functions.php:256
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr ""
+
+#: functions.php:258
+#: functions.php:293
+msgid "Who can see?"
+msgstr "Quem pode ver?"
+
+#: functions.php:261
+#: functions.php:296
+msgid "Registered Users"
+msgstr "Utilizadores registrados"
+
+#: functions.php:265
+#: functions.php:300
+msgid "Commentator"
+msgstr "Comentador"
+
+#: functions.php:269
+#: functions.php:304
+msgid "Visitors"
+msgstr "Visitantes"
+
+#: functions.php:285
+#: sidebar.php:54
+msgid "Showcase"
+msgstr "Caixa de texto"
+
+#: functions.php:291
+msgid "This showcase will display at the top of sidebar."
+msgstr "Esta caixa de texto ser&aacute; apresentada no topo da barra lateral."
+
+#: functions.php:309
+msgid "Title:"
+msgstr "T&iacute;tulo:"
+
+#: functions.php:325
+msgid "Posts"
+msgstr "Artigos"
+
+#: functions.php:329
+msgid "Show author on posts."
+msgstr "Exibir os autores dos artigos."
+
+#: functions.php:333
+msgid "Show categories on posts."
+msgstr "Exibir as categorias nos artigos."
+
+#: functions.php:337
+msgid "Show tags on posts."
+msgstr "Exibir as etiquetas nos artigos."
+
+#: functions.php:351
+msgid "Submit comments with Ctrl+Enter."
+msgstr ""
+
+#: functions.php:361
+msgid "Feed"
+msgstr "Feed"
+
+#: functions.php:365
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr ""
+
+#: functions.php:370
+msgid "Custom feed."
+msgstr "Feed personalizado."
+
+#: functions.php:372
+#: functions.php:378
+msgid "URL:"
+msgstr "URL:"
+
+#: functions.php:376
+msgid "Email feed."
+msgstr "Feed por Email."
+
+#: functions.php:385
+msgid "Save Changes"
+msgstr "Gravar altera&ccedil;&otilde;es"
+
+#: functions.php:507
+msgid "Reply"
+msgstr "Resposta"
+
+#: functions.php:508
+msgid "Quote"
+msgstr "Cita&ccedil;&atilde;o"
+
+#: functions.php:513
+msgid "Advanced edit"
+msgstr "Editar"
+
+#: functions.php:519
+msgid "Your comment is awaiting moderation."
+msgstr "O seu coment&aacute;rio aguarda aprova&ccedil;&atilde;o."
+
+#: links.php:15
+msgid "Add link"
+msgstr ""
+
+#: links.php:16
+msgid "Edit links"
+msgstr "Editar links"
+
+#: links.php:31
+msgid "Blogroll"
+msgstr ""
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "Subscrever este blog..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed"
+msgstr "feed <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "Subscrever com "
+
+#: sidebar.php:28
+msgid "Google"
+msgstr "Google"
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr "Youdao"
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr "Xian Guo"
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr "Zhua Xia"
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr "My Yahoo!"
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr "newsgator"
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr "Bloglines"
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr "iNezha"
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "Subscrever este blog por email..."
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "Feed por Email"
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "Ir para a p&aacute;gina inicial"
+
+#: single.php:7
+msgid "Home"
+msgstr "P&aacute;gina Inicial"
+
+#: templates/end.php:3
+msgid "Top"
+msgstr "Topo"
+
+#: templates/end.php:13
+msgid "Copyright &copy; "
+msgstr "Copyright &copy; "
+
+#: templates/end.php:25
+msgid "Theme by <a href=\"http://www.neoease.com/\">NeoEase</a>. Valid <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> and <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+msgstr "Tema criado por <a href=\"http://www.neoease.com/\">NeoEase</a>. Validar <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> e <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr ""
+

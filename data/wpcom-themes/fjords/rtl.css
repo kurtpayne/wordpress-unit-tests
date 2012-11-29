@@ -1,0 +1,152 @@
+/*
+Theme Name: Fjords04
+Persian Editors: Bahman & Sorush
+Persian Editors URI: http://bahman.wordpress.com/ & http://sshrdp.wordpress.com/
+Version: 0.3
+*/
+
+
+
+
+/**********************************************************************/
+body {
+	direction: rtl;
+	font: 11px "Tahoma", Lucida Sans Unicode, Lucida Sans, verdana, arial, helvetica;
+	color: #000;
+}
+
+/**********************************************************************/
+#wrapper { 
+	padding-left: 0; 
+	width: 1070px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#mini-nav{
+	float: right;
+}
+#hode {
+	text-align: right;
+	padding-right: 10px;
+}
+#content, #sidebar-1, #sidebar-2, #sidebar-3 { 
+	background: #ffffff url(imagenes_qwilm/beach.jpg) no-repeat top right;
+}
+#content {
+	width: 420px;
+	text-align: justify;
+	float: right;
+	font-size: 1.2em;
+}
+#sidebar-1 {
+	width: 160px;
+	background-position: -400px 0;
+}
+#sidebar-2 {
+	width: 160px;
+	background-position: -230px 0;
+}
+#sidebar-3 {
+	width: 140px;
+	background-position: -60px 0;
+}
+
+/**********************************************************************/
+.sidebar {
+	text-align: right;
+	float: right;
+	font-size: 1em;
+	color: #999;
+}
+.postmeta {
+	font-size: 0.8em;
+}
+.comentarios-link{
+	padding: 0 17px 0 0;
+	background: url(imagenes_qwilm/commentslink-rtl.gif) no-repeat center right;
+}
+
+/**********************************************************************/
+/*Tipografia*/
+h1,
+h2,
+h3,
+h4 {	font-family: "Arial" Lucida Grande, Tahoma, sans-serif; }
+
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+h4 { font-size: 32px; }
+
+ol, ul {
+	margin: 1.2em 2em 1.2em 0;
+}
+em{
+	font-style: italic;
+	font-weight: normal;
+	color: #000;
+}
+blockquote {
+	margin: 0 20px 0 0;
+	padding: 0 20px 0 0;
+	border-right: 4px solid #E8E7D0;
+	border-left: 0px solid #E8E7D0;
+}
+pre{
+	margin: 1.0em 0 1.0em 1.5em;
+}
+
+code{ font-family: "Tahoma", monospace; }
+
+/************comentarios************/
+.comentarios{
+	font-size: 0.9em;
+	color: #999;
+}
+
+/************sidebars************/
+.sidebar h2 {
+	padding: 0 0 0 0;
+	font-family: Tahoma;
+	background: url() no-repeat center right;
+}
+.sidebar ul ul li {
+	padding: 0 5px 0 0;
+}
+.sidebar ul ul li a {
+	margin: 0 -5px 0 0;
+} 
+
+/************************************/
+.linkpermanente{
+	padding: 0 17px 0 0;
+	background: url(imagenes_qwilm/permalink.gif) no-repeat center right;
+}
+
+/************formularios************/
+input, textarea, select {
+	font-family: "Tahoma", Lucida Sans Unicode, Arial, sans-serif;
+}
+
+/************gravatar************/
+.gravatar{
+	float:right;
+}
+.comentarios-autor li:hover{ background-color: #fff; }
+
+/************************************/
+#searchform{
+	text-align: right;
+}
+#sidebar-1 #searchform #s {
+	width: 150px;
+}
+#sidebar-2 #searchform #s {
+	width: 150px;
+}
+#sidebar-3 #searchform #s {
+	width: 130px;
+}
+.comment-author .avatar {
+	float: left;
+}
+.wp-smiley { border: none; padding: 0; }
