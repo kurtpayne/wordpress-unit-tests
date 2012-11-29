@@ -1,0 +1,28 @@
+
+#container {
+	background:#f0f0f0 url(images/bodybg-red.jpg) repeat-x;
+}
+
+a {
+	color:#C0090E;
+}
+
+#leftside ul.box li a {
+	color:#C0090E;
+}
+
+#mainmenu a {
+	color: #C0090E;
+}
+
+#mainmenu a:hover {
+	background: url(images/menuhover-red.jpg) center left repeat-x;
+}
+
+#mainmenu li.current a, #mainmenu li.current_page_item a {
+	background: url(images/menuhover-red.jpg) center left repeat-x;
+}
+
+#mainmenu li.currentparent a {
+	background: url(images/menuhover-red.jpg) center left repeat-x;
+}
