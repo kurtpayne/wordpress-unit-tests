@@ -1,0 +1,523 @@
+/*
+Theme Name: Banana Smoothie
+Theme URI: http://wordpress.com/
+Description: A smooth two-column theme adorned with a banana. Very personal.
+Version: 1.0-wpcom
+Author: t0mmy
+Template: classic
+Tags: two-columns, fixed-width, yellow, right-sidebar, light, widgets, sticky-post, rtl-language-support
+*/
+
+	/* main document style */
+	body {
+		margin: 0;
+		padding: 0;
+		background-image: url("images/body-background.png");
+	}
+
+	/* some common and default styles */
+	p, abbr, acronym, blockquote {
+		color: #7e5822;
+		font-family: "Trebuchet MS", serif;
+		font-size: 9pt;
+		text-align: justify;
+		line-height: 150%;
+	}
+	blockquote {
+		margin: 5px 25px 5px 5px;
+		padding-left: 20px;
+		font-style: italic;
+		background-image: url("images/blockquote.gif");
+		background-position: top left;
+		background-repeat: no-repeat;
+	}
+	pre {
+		overflow: auto;
+		border: 1px dotted black;
+		background: white;
+	}
+	abbr, acronym {
+		cursor: help;
+		font-weight: bold;
+		letter-spacing: 1px;
+		border-bottom: 1px dotted #7e5822;
+	}
+	img {
+		background: white;
+		padding: 2px;
+		border: 1px solid #cecece;
+	}
+	img.smilie {
+		background: none;
+		padding: 0;
+		border: 0;
+	}
+	a:link {
+		color: #b28e35;
+		text-decoration: none;
+	}
+	a:visited {
+		color: #b2a68a;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #f2c04e;
+		text-decoration: none;
+	}
+	label {
+		cursor: pointer;
+	}
+	input[type=submit], input[type=button] {
+		font-weight: normal;
+		font-size: 8pt;
+		padding: 2px;
+		margin: 3px;
+		border: 1px solid #b28e35;
+		color: #b28e35;
+		background: #fcfef0;
+	}
+	input[type=text], textarea {
+		font-family: "Trebuchet MS", serif;
+		font-weight: normal;
+		font-size: 8pt;
+		padding: 2px;
+		margin: 3px;
+		border: 1px solid #b28e35;
+		color: black;
+		background: #fcfef0;
+	}
+
+	/* header style */
+	h1#header {
+		position: relative;
+		width: 730px;
+		height: 100px;
+		left: 135px;
+		top: 0px;
+		padding: 0;
+		margin: 0;
+		background-image: url("images/header-background.png");
+	}
+	h1#header a {
+		font-family: Arial, sans-serif;
+		font-size: 9pt;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		right: 15px;
+		color: #bf7c32;
+		text-decoration: none;
+	}
+
+	/* content style */
+	#content {
+		position: relative;
+		left: 150px;
+		top: 0px;
+		width: 440px;
+		min-height: 276px;
+		padding: 5px 205px 0 55px;
+		background-image: url("images/content-background.png");
+		background-position: top left;
+		background-repeat: no-repeat;
+		overflow: hidden;
+	}
+	/* date header style */
+	#content h2 {
+		font-weight: bold;
+		color: #f2d19c; /*#b28e35;*/
+		font-family: "Trebuchet MS", serif; /*Arial, sans-serif;*/
+		font-size: 9pt;
+		letter-spacing: 1px;
+		text-align: right;
+		padding: 3px 0 3px 0;
+		margin: 0;
+		margin-top: 5px;
+		margin-bottom: -5px;
+		background-position: right center;
+		background-repeat: no-repeat;
+	}
+
+	/* menu formatting */
+	#menu {
+		position: absolute;
+		left: 670px;
+		top: 335px;
+		font-family: Arial, sans-serif;
+		font-size: 8pt;
+		color: #b28e35;
+		width: 150px;
+		padding: 0;
+		margin: 0;
+	}
+	#menu:after {
+		content: url("images/menu-end.png");
+	}
+	#menu a:link {
+		color: #b28e35;
+		text-decoration: none;
+	}
+	#menu a:visited {
+		color: #b28e35;
+		text-decoration: line-through;
+	}
+	#menu a:hover {
+		color: #f2c04e;
+		text-decoration: none;
+		border: 0;
+	}
+	#menu ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 5px 0 0 0;
+		background-image: url("images/menu-background.png");
+	}
+	#menu ul li {
+		margin: 0;
+		padding: 0 5px;
+		font-weight: bold;
+	}
+	#menu ul li ul li {
+		font-weight: normal;
+		padding: 4px 0 0 5px;
+	}
+	#menu ul li[id]:after {
+		margin: 0 0 0 -5px;
+		padding: 0;
+		content: url("images/menugroup-end.png");
+	}
+	#menu ul ul {
+		border: 0;
+		margin-left: 11px;
+		background-image: none;
+	}
+	#menu ul ul.children {
+		padding: 0;
+		margin: 0;
+		margin-left: 5px;
+	}
+	#menu form {
+		text-align: center;
+		padding: 10px;
+		margin: 0;
+	}
+	#menu form input {
+		font-family: Arial, sans-serif;
+		font-weight: normal;
+		font-size: 8pt;
+		padding: 2px;
+		margin: 3px;
+		border: 1px solid #b28e35;
+		color: #b28e35;
+		background: #fcfef0;
+	}
+	#menu form input#s {
+		color: black;
+	}
+
+	/* calendar style */
+	#wp-calendar {
+		font-size: 8pt;
+		background: #fcfef0;
+		border: 1px solid #b28e35;
+		border-collapse: collapse;
+		empty-cells: show;
+		margin: 0;
+		width: 100%;
+	}
+	#wp-calendar #next a {
+		color: #b28e35;
+		padding-right: 10px;
+		text-align: right;
+	}
+	#wp-calendar #prev a {
+		color: #b28e35;
+		padding-left: 10px;
+		text-align: left;
+	}
+	#wp-calendar a {
+		display: block;
+		color: #b28e35;
+		text-decoration: none;
+	}
+	#wp-calendar a:hover {
+		text-decoration: none;
+		background: #fcfef0;
+		color: #f2c04e;
+		border: 0;
+	}
+	#wp-calendar a:visited:after {
+		content: "";
+	}
+	#wp-calendar caption {
+		text-align: center;
+		padding-bottom: 5px;
+		font-size: 8pt;
+		font-weight: bold;
+	}
+	#wp-calendar td {
+		color: #cecece;
+		padding: 2px;
+		text-align: center;
+	}
+	#wp-calendar td:hover {
+		background: #fcecbc;
+	}
+	#wp-calendar td.pad:hover {
+		background: none;
+	}
+	#wp-calendar #today {
+		background: #fcecbc;
+	}
+	#wp-calendar #today a {
+		color: #b28e35;
+	}
+	#wp-calendar th {
+		color: #b28e35;
+		background: #fcecbc;
+		font-style: normal;
+		text-transform: capitalize;
+		border-bottom: 1px solid #b28e35;
+	}
+
+	/* next/previous post link */
+	div#prevpost, div#nextpost {
+		width: 50%;
+		float: left;
+		font-size: 7pt;
+		margin-bottom: 5px;
+	}
+	div#nextpost {
+		text-align: right;
+	}
+	div#prevpost a:before {
+		content: "\00AB";
+	}
+	div#nextpost a:after {
+		content: "\00BB";
+	}
+
+	/* post style */
+	div.post {
+		background-image: url("images/post-background.png");
+		padding: 5px;
+		margin-top: 5px;
+	}
+	
+	div.sticky {
+	border: 2px solid #f08a3e ;
+	}
+
+	/* story title style */
+	h3.storytitle {
+		color: #f08a3e;
+		font-family: "Trebuchet MS", Arial, sans-serif;
+		font-size: 10pt;
+		font-weight: bold;
+		padding: 0px 0 3px 0;
+		margin: 0;
+	}
+	h3.storytitle a {
+		color: #f08a3e;
+		text-decoration: none;
+	}
+
+	/* story content style */
+	div.storycontent {
+		color: #7e5822;
+		font-family: "Trebuchet MS", serif;
+		font-size: 9pt;
+		text-align: justify;
+	}
+	div.storycontent a:link:after {
+		content: url("images/storycontent-link.gif");
+	}
+	div.storycontent a:visited:after {
+		content: url("images/storycontent-link.gif");
+	}
+	div.storycontent a:hover {
+		border: 0;
+	}
+	div.storycontent a:hover:after {
+		content: url("images/storycontent-link-hover.gif");
+	}
+	div.storycontent ul, div.storycontent ol {
+		padding-left: 15px;
+	}
+	div.storycontent ul li, div.storycontent ol li {
+		text-align: justify;
+	}
+
+	/* meta information; "filed under"... */
+	div.meta {
+		color: #e1ba6c;
+		background: #fceecd;
+		background-image: url("images/meta-background.gif");
+		background-position: left center;
+		background-repeat: no-repeat;
+		padding: 2px 0 1px 12px;
+		margin-bottom: 5px;
+		border-top: 1px solid #e5a332;
+		border-bottom: 1px solid #e5a332;
+		font-family: Arial, sans-serif;
+		font-size: 7pt;
+	}
+	div.meta li, ul.post-meta li {
+		padding: 0;
+		display: inline;
+	}
+	div.meta ul {
+		display: inline;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	div.meta a:hover {
+		border: 0;
+	}
+
+	/* feedback information style */
+	div.feedback {
+		/*
+		background: #fceecd;
+		*/
+		clear: both;
+		padding: 1px 0;
+		margin-top: 5px;
+		color: #7e5822;
+		/*
+		border-top: 1px dotted #e5a332;
+		border-bottom: 1px dotted #e5a332;
+		*/
+		font-family: Arial, sans-serif;
+		font-size: 7pt;
+		font-weight: bold;
+		text-align: right;
+	}
+	div.feedback p {
+		position: relative;
+		font-size: 8pt;
+		padding: 0 2px;
+		margin: 0;
+		width: 50%;
+	}
+
+	/* styles for comments */
+	h2#comments, h2#postcomment {
+		color: #b28e35;
+		background-image: url("images/commentheader-background.gif");
+		background-position: left center;
+		background-repeat: no-repeat;
+		font-family: "Trebuchet MS", serif;
+		font-size: 9pt;
+		font-weight: bold;
+		text-align: left;
+		border-bottom: 1px solid #e5a332;
+		padding: 3px 0 3px 22px;
+		margin: 0;
+	}
+
+	h2#comments {
+		clear:both;
+	}
+
+	#commentform {
+		padding: 5px;
+		margin: 0;
+	}
+	#commentform p {
+		margin: 0;
+		padding: 0;
+	}
+	#commentform input, #commentform textarea {
+		width: 290px;
+	}
+	#commentlist {
+		font-size: 8pt;
+		padding-left: 30px;
+	}
+	#commentlist li {
+		margin: 10px 0 10px 0;
+		padding: 0;
+	}
+	#commentlist li p {
+		font-size: 8pt;
+		margin: 0;
+		padding: 2px;
+	}
+	#commentlist li cite {
+		font-style: normal;
+		padding: 0;
+		font-size: 7pt;
+		border-top: 1px solid #e5a332;
+	}
+.post img {
+	margin: 0 5px;
+}
+	/* credit style */
+	.credit {
+		position: relative;
+		left: 150px;
+		bottom: 5px;
+		width: 645px;
+		padding: 0 0 0 55px;
+		margin: 50px 0 5px 0;
+	}
+
+/* images */
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
