@@ -1,0 +1,82 @@
+/*
+	Theme Name: Toni (gray)
+	Theme URI: http://aphotolog.com/themes
+	Description: Updated "Toni" theme for WordPress 1.5
+	Author: Chris M
+	Toni by Chris M - http://aphotolog.com
+	This is just a basic layout, with only the bare minimum defined.
+	Please tweak this and make it your own. 
+	------------------------------------------------------
+	If you'd like to have the "search, calendar and other" show up 
+	in the sidebar. Remove: 
+	#search, #calendar, #other {
+	display: none;
+}
+
+	------------------------------------------------------
+	Licensed under GPL :)
+*/
+
+a:link, a:visited {
+	color: #767676;
+}
+
+a:hover {
+	color: #ffffff;
+	background: #949494;
+}
+
+body {
+	color: #666666;
+	background: url("bg_gray.gif") #efefef repeat-x;
+}
+
+h1 {
+	color: #333333;
+}
+
+
+h1.storytitle a {
+	border-left: 5px solid #cccccc;
+	color: inherit;
+}
+
+h1.storytitle a:hover {
+	border-left-color: #333333;
+	background: #f9f9f9;
+	color: #000000;
+}
+
+input, textarea {
+	border: #949494 1px solid;
+	background: #efefef;
+}
+
+.credit {
+	background: #ffffff;
+}
+
+.feedback {
+	color: #999999;
+}
+
+.meta, cite {
+	color: #999999;
+}
+
+#content {
+	background: #ffffff;
+}
+
+#header {
+	background: #949494;
+}
+
+#header a {
+	color: #ffffff;
+}
+
+#menu {
+	background: #efefef;
+	color: #333333;
+}
