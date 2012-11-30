@@ -1,0 +1,344 @@
+/*
+Theme: P2
+RTL: yoav@automattic.com
+*/
+
+/* The RTL Basics ---------------------------------- */
+body {direction:rtl; unicode-bidi:embed;}
+/* -------------------------------------------- */
+
+/* The Reset ---------------------------------- */
+caption,th { text-align: right; }
+/* -------------------------------------------- */
+
+dd {
+	margin-right: 2em;
+	margin-left:0;
+}
+blockquote {
+	padding-right: 8px;
+	padding-left: 0;
+}
+#main button {
+	margin: 10px 0 0px 10px;
+}
+#postbox {
+	padding: 16px 14px 16px 15px;
+	margin-left: 1px;
+	margin-right: 0;
+}
+#postbox .avatar {
+	float: right;
+}
+#postbox .inputarea {
+	padding-right: 60px;
+	padding-left: 0;
+}
+
+#postbox input#tags {
+	float: right;
+}
+#postbox input#submit {
+	margin-right: 6px;
+	margin-left: 0;
+	float: left;
+}
+#media-buttons {
+	float: left;
+}
+#main ul#postlist {
+	margin-right: 0;
+	margin-left: auto;
+}
+#main .controls {
+	left: 0;
+	right: auto;
+}
+#main img.avatar {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+}
+#main .actions {
+	left: 2px;
+	right: auto;
+}
+h2 img {
+	margin-left: 12px;
+	margin-right: 0;
+}
+#main ul, #main ol {
+	margin-right: 18px;
+	margin-left: 0;
+}
+#main ul.commentlist {
+	margin-right: 58px;
+	margin-left: 0;
+}
+#main ul.commentlist img.avatar {
+	margin-left: 12px;
+	margin-right: 0;
+}
+	.postcontent ul, .postcontent ol, .commentcontent ul, .commentcontent ol {
+		margin: 10px 50px 10px 0 !important;
+	}
+#postpage #respond {
+	margin-right: 72px;
+	margin-left: 0;
+}
+#main #respond, .textedit {
+	margin-right: 64px;
+	margin-left: 0;
+}
+.textedit {
+	margin-right: 0;
+	margin-left:auto;
+}
+#main .commentlist #respond.replying {
+	margin-right: 44px;
+	margin-left: 0;
+}
+#main .commentlist li #respond.replying {
+	margin-right: 93px;
+	margin-left: 0;
+}
+#postpage #respond p {
+	margin-left: 0;
+	margin-right: auto;
+}
+#respond p, li ul #respond p {
+	float: left;
+	margin-left: 10%;
+	margin-right: 0;
+	padding-left: 5px;
+	padding-right: 0;
+}
+#postpage li ul #respond p {
+	margin-left: 5%;
+	margin-right: 0;
+}
+.commentlist .children li {
+	margin-right: 47px;
+	margin-left: 0;
+}
+.rss {
+	float: left;
+	background-position: bottom right;
+	padding-right: 14px;
+	padding-left: 0;
+}
+.allrss {
+	background-position: center right;
+	padding-right: 14px;
+	padding-left: 0;
+}
+h2 .rss {
+	background-position: bottom right;
+	padding-right: 16px;
+	padding-left: 0;
+}
+.sleeve_main {
+	margin-left: 242px;
+	margin-right: 0;
+}
+#sidebar {
+	margin-right: -1px;
+	margin-left:0;
+	float: left;
+}
+#sidebar ul li ul li {
+	padding-left: 6px;
+	padding-right: 0;
+}
+#sidebar ul li ul li ul {
+	margin-right: 10px;
+	margin-left: 0;
+}
+#sidebar ul li#authors ul li {
+	padding-right: 0;
+	padding-left: 10px;
+	float: right;
+}
+#sidebar ul li#authors h2 {
+	padding-right: 0;
+	padding-left: auto;
+}
+#sidebar ul li#authors, #sidebar ul li#authors ul li {
+	margin-left: -5px;
+	margin-right: 0;
+}
+#searchform input {
+	float: right;
+}
+#main ol, #main .post ol {
+	margin-right: 18px;
+	margin-left: 0;
+}
+
+img.wp-smiley {
+	padding: 0 3px 0 0 !important;
+}
+.alignright {
+	float: left;
+}
+.alignleft {
+	float: right;
+}
+a.hidemessage {
+	float: right;
+}
+.ac_results li {
+	text-align: right;
+}
+.progress {
+	padding-right: 20px;
+	padding-left: 0;
+	right: 37px;
+	left:auto;
+}
+#newCommentsIndicator {
+	right: 0;
+	left:auto;
+}
+#settings {
+	float: right;
+}
+#help {
+	right: 50%;
+	left:auto;
+	margin: -10% -25% 0 0;
+}
+#notify {
+	right: 50%;
+	left:0;
+	margin: -10% -10% 0 0;
+}
+#help dd, #help dt {
+	float: right;
+}
+#help dt {
+	padding-left: 5%;
+	padding-right: 0;
+	clear: right;
+}
+#userpage  ul {
+	clear: right;
+}
+.postcontent {
+	padding-right: 60px;
+	padding-left: 0;
+}
+.page .postcontent {
+padding-right: 0;
+padding-left: auto;
+}
+div.entry {
+	margin-left: 248px; /* compensate for sidebar */
+	margin-right: 0;
+}
+.discussion p img {
+	margin-left: 0px !important;
+	margin-right: auto;
+}
+.p2-recent-comments .avatar {
+	margin-left: 8px;
+	margin-right: 0;
+}
+#post-types {
+	margin-right: 60px;
+	margin-left: 0;
+}
+#post-types li a {
+	border-right-width: 1px;
+	border-left-width: 2px;
+	border-right-color: #f5f5f5;
+	border-left-color: #eee;
+}
+#post-types li a:active {
+	border-right-width: 2px;
+	border-left-width: 1px;
+}
+#post-types #status {
+	padding-right: 24px;
+	padding-left: 6px;
+	background-position: 97% center;
+}
+#post-types #quote {
+	padding-right: 24px;
+	padding-left: 6px;
+	background-position: 97% center;
+}
+#post-types #link {
+	padding-right: 24px;
+	padding-left: 6px;
+	background-position: 97% center;
+}
+#post-types #post {
+	padding-right: 24px;
+	padding-left: 6px;
+	background-position: 97% center;
+}
+
+.discussion p a img {
+	margin-left: 0px !important;
+	margin-right: auto;
+}
+
+/*
+#
+# COLORS
+#
+*/
+
+#postbox label {
+	float: right;
+}
+#wrapper {
+	background-position: right top;
+}
+#postbox {
+	margin-left: -1px;
+	margin-right: 0;
+}
+
+/*
+#
+# FONTS
+#
+*/
+body, form *, #respond #cancel-comment-reply-link {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, #postbox label, #help dd {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+code, pre {
+	font-family: Monaco, Consolas, "Courier New", monospace;
+}
+.category-quote blockquote cite {
+	text-align: left;
+}
+.category-quote blockquote cite:before {
+	content: "— ";
+}
+#notify {
+	right: 50%;
+	left: auto;
+	margin: -10% -10% 0 0;
+}
+#help dt {
+	text-align: left;
+}
+
+/* to reorganize */
+.invisible {
+	right: 0;
+	left: auto;
+}
+
+.postcontent table {
+	border-width: 0 0 1px 1px;
+}
+.postcontent table td {
+	border-width: 1px 1px 0 0px;
+}
