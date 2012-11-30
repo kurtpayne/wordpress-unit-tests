@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<title>The Sandbox &middot; An explanation</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-language" content="en-us" />
+	<meta name="description" content="Sandbox: a highly semantic theme with powerful, dynamic class selectors" />
+	<meta name="keywords" content="sandbox,xhtml,hatom,hcard,microformats,semantics,css,wordpress" />
+	<style type="text/css" media="all">
+	/*<![CDATA[*/
+	body{background:#fcfcfc;color:#444;font:normal 70%/150% verdana,geneva,sans-serif;margin:0;padding:0;}
+	body blockquote{border-left:5px solid #f6f6f6;padding-left:0.5em;}
+	body code,body pre{font:1em/150% consolas,"courier new",courier,monospace;}
+	body div#readme{background:#fff;border-left:3px solid #f9f9f9;border-right:3px solid #f9f9f9;color:#444;margin:0 auto;padding:1em 2em;width:50em;}
+	body div#readme div#footer{margin:3em auto 1em;text-align:center;}
+	body div#readme div#footer p{background:#ffd;color:#666;display:inline;padding:0.2em 0.5em;}
+	body div#readme div#header{margin:0 auto;text-align:center;}
+	body div#readme div#header div.readme-version{font-size:0.9em;margin:0 0 0.5em;text-transform:uppercase;letter-spacing:0.1em;}
+	body h1{font-size:3.2em;}
+	body h1,body h2,body h3{font-family:garamond,georgia,times,serif;font-weight:400;}
+	body h2{font-size:2em;margin-top:3em;}
+	body h3{font-size:1.6em;margin-top:2em;}
+	body ol li ol li,body ol li#features ol li ol li{list-style:decimal;}
+	body ol li#functions h3{font-size:1.5em;}
+	body ol li#functions ol{list-style:lower-alpha;margin:0 0 0 2em;padding:0;}
+	body ol li#license blockquote a{color:#222;text-decoration:none;}
+	body ol li#license blockquote strong{font-size:0.9em;font-weight:400;text-transform:uppercase;}
+	body ol li,body ol#menu li ol li{list-style:upper-roman;}
+	body ol ul li{list-style:square;}
+	body ol#menu li{list-style:none;}
+	body ol#menu li ol li ol li,body ol li#functions ol li,body ol li#features ol li{list-style:lower-roman;}
+	body pre span,body span.bold{font-weight:700;}
+	body span.vcard span.family-name,body span.vcard span.additional-name{display:none;}
+	table{border-collapse:separate;border-color:#aaa;border-spacing:0;border-style:solid;border-width:1px;padding:0 0.5em;}
+	table tbody td{border-collapse:separate;border-color:#aaa;border-style:solid;border-width:0.5px 0;padding:0.2em 0.5em;}
+	table tbody th{border-bottom:1px solid #aaa;font-size:0.8em;text-align:left;text-transform:uppercase;}
+	table tbody tr.alt{background:#f5f5f5;}
+	table tfoot th{font-size:0.8em;padding-top:1em;text-align:left;text-transform:uppercase;}
+	table thead th{padding:0.5em;}
+	/*]]>*/
+	</style>
+</head>
+<body>
+	<div id="readme">
+
+		<div id="header">
+			<h1 id="title">The Sandbox</h1>
+			<div class="readme-version">Version 0.9.7</div>
+			<div class="readme-subtitle">A theme rich with powerful and dynamic semantic class selectors</div>
+		</div><!-- #header -->
+
+		<ol id="menu" class="xoxo">
+			<li>
+				<h2>Table of contents</h2>
+				<ol>
+					<li><a href="#introduction" title="Skip to Introduction">Introduction</a></li>
+					<li><a href="#installing" title="Skip to Installing">Installing</a></li>
+					<li><a href="#functions" title="Skip to Class functions">Class functions</a>
+						<ol>
+							<li><a href="#body-class" title="Skip to Class functions: sandbox_body_class()"><code>sandbox_body_class()</code></a></li>
+							<li><a href="#post-class" title="Skip to Class functions: sandbox_post_class()"><code>sandbox_post_class()</code></a></li>
+							<li><a href="#comment-class" title="Skip to Class functions: sandbox_comment_class()"><code>sandbox_comment_class()</code></a></li>
+						</ol>
+					</li>
+					<li><a href="#standards" title="Skip to Web standards">Web standards</a></li>
+					<li><a href="#microformats" title="Skip to Microformats">Microformats</a></li>
+					<li><a href="#features" title="Skip to Other features">Other features</a>
+						<ol>
+							<li><a href="#comments" title="Skip to Other features: Comments on pages">Comments on pages</a></li>
+							<li><a href="#templates" title="Skip to Other features: Page templates">Page templates</a></li>
+						</ol>
+					</li>
+					<li><a href="#license" title="Skip to License">License</a></li>
+				</ol>
+			</li>
+		</ol><!-- #menu .xoxo -->
+
+		<ol id="content" class="xoxo">
+			<li id="introduction">
+				<h2>Introduction</h2>
+				<p>The Sandbox is a lot of things:</p>
+				<ul>
+					<li>Beautiful on the inside</li>
+					<li>For WordPress 2.0.2 through 2.2.x</li>
+					<li>Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr> 1.0 Transitional</li>
+					<li>Widgets plugin-friendly</li>
+					<li>The basis for your new, <abbr title="GNU Public Licence">GPL</abbr>-licensed theme</li>
+				</ul>
+				<p>More importantly, the Sandbox <em>can be</em> a lot of things.</p>
+				<p>What began as <span class="vcard"><a class="url fn n" href="http://www.plaintxt.org/" title="Scott, plaintxt.org" rel="me"><span class="given-name">Scott</span><span class="additional-name"> Allan</span><span class="family-name"> Wallick</span></a></span>'s leftovers has become an advanced, semantics-based theme. <span class="vcard"><a class="url fn n" href="http://andy.wordpress.com/" title="Andy, WordPress.com"><span class="given-name">Andy</span><span class="family-name"> Skelton</span></a></span> added his innovative semantic class-generating functions and Scott edited it to oblivion.</p>
+				<p>So what can you do with the Sandbox?</p>
+				<ul>
+					<li>You can just use it as-is and have a super-cool, truly minimalist theme.</li>
+					<li>You can totally cusotmize it with <abbr title="Cascading Style Sheets">CSS</abbr> alone&mdash;no need to bother with other files.</li>
+					<li>You can use the functions, theme files, et al, as pleases you&mdash;even for your own theme.</li>
+					<li>You can use it as a good place to learn a few things about CSS, XHTML, and <abbr title="Hypertext Preprocessor">PHP</abbr>, perhaps.</li>
+				</ul>
+				<p>The real feature of the Sandbox is its markup. The use of class-generating functions in the <code>body</code>, post <code>div</code>, and comment/trackback <code>li</code> elements create an exceptionally extensible foundation. As Andy said, <q cite="http://andy.wordpress.com/2006/07/20/generated-semantic-classes-2/" title="Generated Semantic Classes 2">Given straightforward markup with plenty of selectors, there isn't much that can't be accomplished with CSS and a decent browser.</q></p>
+				<p>And the implementation of the hAtom and hCard microformats means we're looking forward (and pleasing the barons at Technorati). You might be able to improve on our markup, but, well, who wants to work that hard?</p>
+			</li><!-- #introduction -->
+
+			<li id="installing">
+				<h2>Installing</h2>
+				<p>The Sandbox theme is installed just like any other WordPress theme. To install this theme:</p>
+				<ol>
+					<li>Download the <a href="http://www.plaintxt.org/themes/sandbox/" title="The Sandbox for WordPress" rel="me">Sandbox</a></li>
+					<li>Extract the <code>/sandbox/</code> folder from the archive</li>
+					<li>Upload this folder to the <code>/wp-contents/themes/</code> directory</li>
+					<li>Activate the theme in the <i>Dashboard &rsaquo; Presentation</i> menu</li>
+					<li>Enjoy</li>
+				</ol>
+				<p>You can read more detailed installation instructions on the <a href="http://codex.wordpress.org/Using_Themes#Adding_New_Themes" title="Adding new themes - WordPress Codex" rel="external">WordPress Codex</a>.</p>
+				<p>Developers interested in <a href="http://en.wikipedia.org/wiki/Subversion_(software)" title="Subersion - Wikipedia" rel="external">Subversion</a> access to the Sandbox repository may visit <a href="http://code.google.com/p/sandbox-theme" title="Sandbox theme on Google Code" rel="external">code.google.com/p/sandbox-theme</a>. Please ignore this if you are not familiar with Subversion.</p>
+			</li><!-- #installing -->
+
+			<li id="functions">
+				<h2>Class functions</h2>
+				<p>The three semantic class-generating functions used in the Sandbox are charted below, outlining what semantic classes are generated (&#8220;Class&#8221;), any related WordPress function (&#8220;WP Tag&#8221;), and the usage of these classes (&#8220;Usage&#8221;). For more on the WP Tag aspect, read the <a href="http://codex.wordpress.org/Template_Tags" title="Template tags &laquo; WordPress Codex" rel="external">Template Tags</a> and <a href="http://codex.wordpress.org/Conditional_Tags" title="Conditional Tags &laquo; WordPress Codex" rel="external">Conditional Tags</a> articles on the WordPress Codex.</p>
+
+				<ol>
+					<li id="body-class">
+						<h3><code>sandbox_body_class()</code></h3>
+						<p>The <code>sandbox_body_class()</code> function is definied in the <code>functions.php</code> file. It has no parameters. It adds semantic classes to the <code>body</code> element relative to the content of the page that is being displayed.</p>
+						<pre>&lt;body class="<span>&lt;?php sandbox_body_class() ?&gt;</span>"&gt;</pre>
+						<p>The chart below lists the semantic classes added to the <code>body</code> tag by this function.</p>
+						<table id="body-class-table" summary="Classes given to the body element sandbody_body_class()">
+							<thead>
+								<tr>
+									<th colspan="3" scope="colgroup"><code>sandbox_body_class()</code></th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th colspan="3" scope="colgroup">CSS example</th>
+								</tr>
+								<tr>
+									<td colspan="3" scope="row" abbr="CSS example"><code>body.single div.sidebar { display: none; }</code></td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="col" abbr="class">Class</th>
+									<th scope="col" abbr="tag">WP Tag</th>
+									<th scope="col" abbr="use">Usage</th>
+								</tr>
+								<tr class="alt">
+									<td scope="row">archive</td>
+									<td><code>is_archive()</code></td>
+									<td>When <em>any</em> archive page is displayed, i.e., applies to category-, date-, and author-based archive pages</td>
+								</tr>
+								<tr>
+									<td scope="row">attachment</td>
+									<td><code>is_attachment()</code></td>
+									<td>When the post subpage containing an attachment is displayed, as set with "Linked to Page" in the post editor</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">author</td>
+									<td><code>is_author()</code></td>
+									<td>When a author archive page is displayed</td>
+								</tr>
+								<tr>
+									<td scope="row">author-[name]</td>
+									<td><code>is_author()</code></td>
+									<td>When a specific author archive page is displayed, where <i>[name]</i> is the author's login name, e.g., author-admin</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">author-paged-[n]</td>
+									<td><code>is_author()</code> &amp; <code>is_paged()</code></td>
+									<td>Displays the "paged" number of author archive, where <i>[n]</i> is the paginated number</td>
+								</tr>
+								<tr>
+									<td scope="row">category</td>
+									<td><code>is_category()</code></td>
+									<td>When a category archive page is displayed</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">category-[name]</td>
+									<td><code>is_category()</code></td>
+									<td>For a specific category, where <i>[name]</i> is the category slug, e.g., category-useful-links</td>
+								</tr>
+								<tr>
+									<td scope="row">category-paged-[n]</td>
+									<td><code>is_category()</code> &amp; <code>is_paged()</code></td>
+									<td>Displays the "paged" number of category archive, where <i>[n]</i> is the paginated number</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">d01&ndash;31</td>
+									<td><code>gmdate('d')</code></td>
+									<td>The current day of when the page is displayed (Offset to GMT)</td>
+								</tr>
+								<tr>
+									<td scope="row">date</td>
+									<td><code>is_date()</code></td>
+									<td>When a date archive page is displayed, e.g., by month, by year</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">date-paged-[n]</td>
+									<td><code>is_date()</code> &amp; <code>is_paged()</code></td>
+									<td>Displays the "paged" number of date-based archive, where <i>[n]</i> is the paginated number</td>
+								</tr>
+								<tr>
+									<td scope="row">h00&ndash;24</td>
+									<td><code>gmdate('h')</code></td>
+									<td>The current hour of when the page is displayed (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">four04</td>
+									<td><code>is_404()</code></td>
+									<td>When a request results in zero posts, i.e., a 404 error page</td>
+								</tr>
+								<tr>
+									<td scope="row">home</td>
+									<td><code>is_home()</code></td>
+									<td>When the home page is displayed</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">m00&ndash;12</td>
+									<td><code>gmdate('m')</code></td>
+									<td>The current month of when the page is displayed (Offset to GMT)</td>
+								</tr>
+								<tr>
+									<td scope="row">loggedin</td>
+									<td>n/a</td>
+									<td>When the page is displayed by a logged-in user</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">page</td>
+									<td><code>is_page()</code></td>
+									<td>When a page is displayed</td>
+								</tr>
+								<tr>
+									<td scope="row">page-author-[name]</td>
+									<td><code>is_page()</code></td>
+									<td>For a page by a specific author, where <i>[name]</i> is the user's login name, e.g., page-author-admin</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">page-paged-[n]</td>
+									<td><code>is_page()</code> &amp; <code>is_paged()</code></td>
+									<td>Displays the "paged" number of pages, where <i>[n]</i> is the paginated number</td>
+								</tr>
+								<tr>
+									<td scope="row">paged</td>
+									<td><code>is_paged()</code></td>
+									<td>When whatever is displayed is "paged," e.g., page 2 of the index</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">paged-[n]</td>
+									<td><code>is_paged()</code></td>
+									<td>Displays the "paged" number, where <i>[n]</i> is the paginated number, e.g., paged-3 for third page of index</td>
+								</tr>
+								<tr>
+									<td scope="row">pageid-[n]</td>
+									<td><code>is_page()</code></td>
+									<td>Displays the page ID number of queried page, where <i>[n]</i> is the page ID, e.g., pageid-20</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">postid-[n]</td>
+									<td><code>is_single()</code></td>
+									<td>Displays the post ID number of queried post, where <i>[n]</i> is the post ID, e.g., postid-20</td>
+								</tr>
+								<tr>
+									<td scope="row">search</td>
+									<td><code>is_search()</code></td>
+									<td>When the results of a search are displayed</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">single</td>
+									<td><code>is_single()</code></td>
+									<td>When a single post is displayed</td>
+								</tr>
+								<tr>
+									<td scope="row">s-author-[name]</td>
+									<td><code>is_single()</code> &amp; <code>is_author()</code></td>
+									<td>For a single post published by a specific author, where <i>[name]</i> is the user's login name, e.g., s-author-admin</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">s-category-[name]</td>
+									<td><code>is_single()</code> &amp; <code>is_category()</code></td>
+									<td>For a single post published in a specific category, where <i>[name]</i> is the category slug, e.g., s-category-news</td>
+								</tr>
+								<tr>
+									<td scope="row">s-d01&ndash;31</td>
+									<td><code>gmdate('d')</code></td>
+									<td>For a single post published on a specific day (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">s-h00&ndash;24</td>
+									<td><code>gmdate('h')</code></td>
+									<td>For a single post published at a specific hour (Offset to GMT)</td>
+								</tr>
+								<tr>
+									<td scope="row">s-m00&ndash;12</td>
+									<td><code>gmdate('m')</code></td>
+									<td>For a single post published in a specific month (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">s-y2007</td>
+									<td><code>gmdate('Y')</code></td>
+									<td>For a single post published in a specific year (Offset to GMT)</td>
+								</tr>
+								<tr>
+									<td scope="row">wordpress</td>
+									<td>n/a</td>
+									<td>When anything is displayed; a class that is always applied</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">y2007</td>
+									<td><code>gmdate('Y')</code></td>
+									<td>The current year of when the page is display (Offset to GMT)</td>
+								</tr>
+							</tbody>
+						</table><!-- #body-class-table -->
+					</li><!-- #body-class -->
+
+					<li id="post-class">
+						<h3><code>sandbox_post_class()</code></h3>
+						<p>The <code>sandbox_post_class()</code> function is definied in the <code>functions.php</code> file. It has no parameters. It adds semantic classes to each post <code>div</code> element, relative to the actual post it contains.</p>
+						<pre>&lt;div id="post-&lt;?php the_ID(); ?&gt;" class="<span>&lt;?php sandbox_post_class() ?&gt;</span>"&gt;</pre>
+						<p>The chart below lists the semantic classes added to each post <code>div</code> element by this function.</p>
+						<table id="post-class-table" summary="Classes given to individual posts by sandbody_post_class()">
+							<thead>
+								<tr>
+									<th colspan="3" scope="colgroup"><code>sandbox_post_class()</code></th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th colspan="3" scope="colgroup">CSS example</th>
+								</tr>
+								<tr>
+									<td colspan="3" scope="row" abbr="CSS example"><code>div.category-news .entry-title { background: url('images/news.png'); }</code></td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="col" abbr="class">Class</th>
+									<th scope="col" abbr="tag">WP Tag</th>
+									<th scope="col" abbr="use">Usage</th>
+								</tr>
+								<tr class="alt">
+									<td scope="row">alt</td>
+									<td>n/a</td>
+									<td>For odd-numbered posts, e.g., 1<sup>st</sup>, 3<sup>rd</sup>, 5<sup>th</sup></td>
+								</tr>
+								<tr>
+									<td scope="row">author-[name]</td>
+									<td><code>is_author()</code></td>
+									<td>For any specific author, where <i>[name]</i> is the user's login name, e.g., author-admin</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">category-[name]</td>
+									<td><code>is_category()</code></td>
+									<td>For any specific category, where <i>[name]</i> is the category slug, e.g., category-news</td>
+								</tr>
+								<tr>
+									<td scope="row">draft</td>
+									<td>n/a</td>
+									<td>For a post saved as a draft, as contrasted with an published post</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">hentry</td>
+									<td>n/a</td>
+									<td>For the hAtom 0.1 specification, applied every post</td>
+								</tr>
+								<tr>
+									<td scope="row">p[n]</td>
+									<td>n/a</td>
+									<td>For counting posts relative to the top of the page, where <i>[n]</i> is the number, e.g., p1 for the first post, p2 for the second, p3 for the third</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">page</td>
+									<td>n/a</td>
+									<td>A general class, applied to every page</td>
+								</tr>
+								<tr>
+									<td scope="row">post</td>
+									<td>n/a</td>
+									<td>A general class, applied to every post</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">private</td>
+									<td>n/a</td>
+									<td>For a post that has been saved as "private"</td>
+								</tr>
+								<tr>
+									<td scope="row">protected</td>
+									<td>n/a</td>
+									<td>For a post that has been password-protected</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">publish</td>
+									<td>n/a</td>
+									<td>For any published post, as contrasted with an unpublished draft</td>
+								</tr>
+								<tr>
+									<td scope="row">h00&ndash;24</td>
+									<td><code>gmdate('h')</code></td>
+									<td>For a post published at a specific hour (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">d01&ndash;31</td>
+									<td><code>gmdate('d')</code></td>
+									<td>For a post published on a specific day (Offset to GMT)</td>
+								</tr>
+								<tr>
+									<td scope="row">m00&ndash;12</td>
+									<td><code>gmdate('m')</code></td>
+									<td>For a post published in a specific month (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">y2007</td>
+									<td><code>gmdate('Y')</code></td>
+									<td>For a post published in a certain year (Offset to GMT)</td>
+								</tr>
+							</tbody>
+						</table><!-- #post-class-table -->
+					</li><!-- #post-class -->
+
+					<li id="comment-class">
+						<h3><code>sandbox_comment_class()</code></h3>
+						<p>The <code>sandbox_comment_class()</code> function is definied in the <code>functions.php</code> file. It has no parameters. It adds semantic classes to the each comment <code>li</code> element (&#8220;comment&#8221; here meaning comments, trackbacks, and pingbacks).</p>
+						<pre>&lt;li id="comment-&lt;?php comment_ID(); ?&gt;" class="<span>&lt;?php sandbox_comment_class() ?&gt;</span>"&gt;</pre>
+						<p>The chart below lists the semantic classes added to each comment <code>li</code> element by this function.</p>
+						<table id="comment-class-table" summary="Classes given to individual comments by sandbody_comment_class()">
+							<thead>
+								<tr>
+									<th colspan="3" scope="colgroup"><code>sandbox_comment_class()</code></th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th colspan="3" scope="colgroup">CSS example</th>
+								</tr>
+								<tr>
+									<td colspan="3" scope="row" abbr="CSS example"><code>div.comments li.bypostauthor { border: 1px solid red; }</code></td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="col" abbr="class">Class</th>
+									<th scope="col" abbr="tag">WP Tag</th>
+									<th scope="col" abbr="use">Usage</th>
+								</tr>
+								<tr class="alt">
+									<td scope="row">alt</td>
+									<td>n/a</td>
+									<td>For odd-numbered comments, e.g., 1<sup>st</sup>, 3<sup>rd</sup>, 5<sup>th</sup></td>
+								</tr>
+								<tr>
+									<td scope="row">bypostauthor</td>
+									<td>n/a</td>
+									<td>When the comment author is also the post author</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">byuser</td>
+									<td>n/a</td>
+									<td>For <em>any</em> comment by a registered user</td>
+								</tr>
+								<tr>
+									<td scope="row">c-h00&ndash;24</td>
+									<td><code>gmdate('h')</code></td>
+									<td>For a comment posted at a specific hour (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">c[n]</td>
+									<td>n/a</td>
+									<td>For counting comments relative to the first, where <i>[n]</i> is the number, e.g., c1 for the first comment, c2 for the second, c3 for the third</td>
+								</tr>
+								<tr>
+									<td scope="row">c-d01&ndash;31</td>
+									<td><code>gmdate('d')</code></td>
+									<td>For a comment posted on a specific date (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">c-m00&ndash;12</td>
+									<td><code>gmdate('m')</code></td>
+									<td>For a comment posted in a specific month (Offset to GMT)</td>
+								</tr>
+								<tr>
+									<td scope="row">c-y2007</td>
+									<td><code>gmdate('Y')</code></td>
+									<td>For a comment posted in a specific year (Offset to GMT)</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">comment</td>
+									<td>n/a</td>
+									<td>A general class, applied to every comment</td>
+								</tr>
+								<tr>
+									<td scope="row">comment-author-[name]</td>
+									<td>n/a</td>
+									<td>For a comment by a specific registered user, where <i>[name]</i> is the user's login name, e.g., comment-author-john</td>
+								</tr>
+								<tr class="alt">
+									<td scope="row">t[n]</td>
+									<td>n/a</td>
+									<td>For counting trackbacks relative to the first, where <i>[n]</i> is the number, e.g., t1 for the first trackback, t2 for the second, t3 for the third</td>
+								</tr>
+								<tr>
+									<td scope="row">trackback</td>
+									<td>is_trackback()</td>
+									<td>When a comment is a trackback/pingback</td>
+								</tr>
+							</tbody>
+						</table><!-- #comment-class-table -->
+					</li><!-- #comment-class -->
+				</ol>
+			</li><!-- #functions -->
+
+			<li id="standards">
+				<h2>Web standards</h2>
+				<p>The Sandbox is compliant with both XHTML and CSS standards. What does this mean? An explanation of web standards from <a href="http://webstandards.org" title="Web Standards Project" rel="external">The Web Standards Project</a>:</p>
+				<blockquote cite="http://webstandards.org/learn/faq/" title="What are web standards and why should I use them?">
+					<p>Complying with web standards can give your web pages greater visibility in web searches. The structural information present in compliant documents makes it easy for search engines to access and evaluate the information in those documents, and they get indexed more accurately.</p>
+					<p>Accessibility is an important idea behind many web standards. Not only does this mean allowing the web to be used by people with disabilities, but also allowing web pages to be understood by people using browsers other than the usual ones&mdash;including voice browsers that read web pages aloud to people with sight impairments, Braille browsers, hand-held browsers, teletext displays, and other unusual output devices.</p>
+				</blockquote>
+				<p>You can read more about developing with web standards at <a href="http://www.456bereastreet.com/lab/developing_with_web_standards/webstandards/" title="Developing with web standards" rel="external">456 Berea Street</a>.</p>
+			</li><!-- #standards-->
+
+			<li id="microformats">
+				<h2>Microformats</h2>
+				<p><a href="http://microformats.org/" title="Microformats.org" rel="external">Microformats</a> are markup that express semantic information in your blog. People and machines can extract information from webpages marked up in a microformat much like feed readers extract information from Atom or <abbr title="Rich Site Summary">RSS</abbr> syndicated feeds. Essentially it's about making content more accessible.</p>
+				<p>Microformats that have been implemented in the Sandbox theme include (less <a href="http://gmpg.org/xfn/" title="XHTML Friends Network" rel="external"><abbr title="XHTML Friends Network">XFN</abbr></a>, which is built into WordPress):</p>
+				<ul>
+					<li><a href="http://microformats.org/wiki/hatom" title="hAtom - Microformats" rel="external">hAtom</a>: For all blog posts and pages</li>
+					<li><a href="http://microformats.org/wiki/hcard" title="hCard - Microformats" rel="external">hCard</a>: For all post and comment authors</li>
+					<li><a href="http://microformats.org/wiki/rel-home" title="rel-home - Microformats" rel="external">rel="home"</a>: For marking links pointing to the blog home page</li>
+					<li><a href="http://microformats.org/wiki/xoxo" title="XOXO - Microformats" rel="external">XOXO</a>: For menu, blogroll, archive, and sidebar lists</li>
+				</ul>
+				<p>Microformats help the Sandbox be an especially <abbr title="Plain old semantic HTML">POSH</abbr> WordPress theme. POSH stands for "plain old semantic HTML." It is a term used to refer to best practices of semantic HTML development. The Microformats Wiki <a href="http://microformats.org/wiki/posh" title="POSH - Microformats" rel="external">POSH article</a> has a working copy of these best practices:</p>
+				<ol>
+					<li>Validate your markup, meaning it should <em>be</em> valid, not just validated</li>
+					<li>No use of tables for presentational purposes&mdash;only for tabular data</li>
+					<li>Correct any "<span class="bold">B</span>ed and <span class="bold">BR</span>eakfast" markup, i.e., no presentational elements like <code>b</code>, and no <code>&lt;br /&gt;</code></li>
+					<li>Correct any "<span class="bold">A</span>norexic anchors," e.g., an <code>a</code> element with only a <code>name</code> attribute</li>
+					<li>Use well-formed, semantic class names (Sandbox does this for you)</li>
+				</ol>
+				<p>So the Sandbox can be highly POSH, but the semantic use of HTML elements is completely up to you, the end user. To learn more about writing semantic HTML, visit <a href="http://www.mezzoblue.com/downloads/markupguide/" title="mezzoblue &sect; Markup Guide">Mezzoblue</a>.</p>
+			</li><!-- #microformats -->
+
+			<li id="features">
+				<h2>Other features</h2>
+				<p>In addition to the more advanced, code-related features of the Sandbox, there are at least two other features that make the Sandbox a highly viable choice as a base theme.</p>
+				<ol>
+					<li id="comments">
+						<h3>Comments on pages</h3>
+						<p>Comments are not displayed on pages by default, but are displayed on posts, per the current convention. You can enable comments on a per page basis by adding a custom key/value with only the text <code>comments</code>.</p>
+						<p>To enable comments on a page:</p>
+						<ol>
+							<li>In the <i>Write &rsaquo; Page</i> menu, expand the <a href="http://codex.wordpress.org/Using_Custom_Fields" title="Custom Fields - WordPress Codex" rel="external">Custom Fields</a> box</li>
+							<li>In the <i>Custom Fields</i> box, add a new key with the exact text: <code>comments</code></li>
+							<li>Add any text for a value (some text must be included for the key to save)</li>
+							<li>Click <i>Add Custom Field</i> to save the key/value</li>
+							<li>Comments should now be enabled on that page</li>
+						</ol>
+						<p>Enabling comments simply includes the <code>comments.php</code> file with the page. You can turn off comments on a page by deleting the <code>comments</code> key/value. This does not delete any exisiting comments, but simply disables <code>comments.php</code> from loading with the page.</p>
+					</li><!-- #comments -->
+
+					<li id="templates">
+						<h3>Page templates</h3>
+						<p>There are two <a href="http://codex.wordpress.org/Pages#Page_Templates" title="Page templates - WordPress Codex" rel="external">page templates</a> included: Links Page (<code>links.php</code>) and Archives Page (<code>archives.php</code>). You can add a title, text, and enable comments (see above) with both of these page templates.</p>
+						<p>To use the page templates:</p>
+						<ol>
+							<li>In the <i>Write &rsaquo; Page</i> menu, expand the <i>Page Templates</i> box</li>
+							<li>From the drop-down, select the page template to use</li>
+							<li>Add a title and text (optional) for the page</li>
+							<li>Click <i>Create New Page / Save</i> to publish the page</li>
+						</ol>
+						<p>The Archive Page template displays archives by month and by category. The Links Page displays links by link category.</p>
+					</li><!-- #templates -->
+				</ol>
+			</li><!-- #features -->
+
+			<li id="license">
+				<h2>License</h2>
+				<p>The Sandbox &copy; 2006&ndash;2007 is licensed under the <a href="http://www.gnu.org/licenses/gpl.html" title="GNU General Public License" rel="license"><abbr title="GNU is Not Unix">GNU</abbr> General Public License</a>:</p>
+				<blockquote title="How to use the GPL or LPGL" cite="http://www.gnu.org/licenses/gpl-howto.html">
+					<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+					<p>This program is distributed in the hope that it will be useful, but <strong>without any warranty</strong>; without even the implied warranty of <strong>merchantability</strong> or <strong>fitness for a particular purpose</strong>. See the GNU General Public License for more details.</p>
+					<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the <span class="vcard"><a class="url fn org" href="http://www.fsf.org/" rel="external">Free Software Foundation, Inc</a>, <span class="adr"><span class="street-address">51 Franklin Street, Fifth Floor</span>, <span class="locality">Boston</span>, <span class="region">MA</span> <span class="postal-code">02110-1301</span>, <span class="country-name">USA</span></span></span>.</p>
+				</blockquote>
+			</li><!-- #license -->
+
+		</ol><!-- #readme .xoxo -->
+
+		<div id="footer">
+			<p>Last updated 10 August 2007</p>
+		</div><!-- #footer -->
+		
+
+	</div><!-- #readme -->
+
+</body>
+</html>
