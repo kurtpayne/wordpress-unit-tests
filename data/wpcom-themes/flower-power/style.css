@@ -1,0 +1,299 @@
+/*-------------------------
+Theme Name: Flower Power
+Theme URI: http://www.talkxhtml.com/
+Description: A narrow two-column design with red and blues that just screams personality.
+Version: 1.0-wpcom
+Author: TalkXHTML.com
+Author URI: http://www.talkxhtml.com/
+Tags: two-columns, fixed-width, right-sidebar, widgets, sticky-post, red, white, blue, rtl-language-support
+-------------------------*/
+
+/* ----- BASICS ELEMENTS ------------------------------------------------------------------------------------------------- */
+
+body {
+	background-color:#05151d;
+	background-image:url(images/bgstrip.gif);
+	background-repeat:repeat-y;
+	 
+	margin:0px;	
+	padding:0px;
+	text-align:left;
+}
+
+h2 {
+	color:#103D55;
+	font-family:Tahoma, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	line-height:20px;
+}
+
+		a:link, a:visited, a:active{		
+			color:#1D698F;
+		}
+		
+		a:hover{		
+			color:#d00d0d;
+			text-decoration:underline;
+		}
+		
+		h2 a:link, h2 a:visited, h2 a:active{		
+			color:#103D55;
+			text-decoration:none;
+		}
+		
+		h2 a:hover{		
+			color:#1B5F81;
+			text-decoration:none;
+		}
+
+/* ----- LAYOUT ------------------------------------------------------------------------------------------------- */
+
+#container {
+	background-image:url(images/mainbg.gif);
+	background-repeat:repeat-y;
+	width:721px;
+	height:auto;
+	margin-left:0px;
+	margin-right:0px;
+	text-align:left;
+}
+
+#header{
+	background-image:url(images/header.gif);
+	background-repeat:no-repeat;
+	width:535px;
+	height:140px;
+	text-align:left;
+}
+
+		#title {
+			width:150px;
+			height:80px;
+			padding:15px 0px 0px 190px;
+			
+			color:#ffffff;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:16px;
+			font-weight:bold;
+		}
+
+				#title a:link, #title a:visited, #title a:active{		
+					color:#ffffff;
+					text-decoration:none;
+				}
+				
+				#title a:hover{		
+					color:#1D698F;
+					text-decoration:none;
+				}
+
+		#subtitle{			
+			margin:0px 0px 0px 0px;
+			padding:2px 10px 2px 10px;
+			border:1px dotted #d8d8d8;
+			width:322px;
+			visibility:hidden;
+			
+			color:#cf0d0d;
+			font-family: Tahoma, Arial, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+		}
+
+
+#main {
+	float:left;
+	width:340px;
+	text-align:left;
+	
+	padding:10px 10px 10px 10px;
+	display:block;
+	
+	color:#380c0c;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	overflow: hidden;
+}
+
+		#main p {
+			text-align:justify;
+		}
+
+		.sticky h2 {
+			padding: 10px;
+			background: #ccc;
+		
+		}
+
+.divider {
+	background-image:url(images/divider.gif);
+	background-repeat:no-repeat;
+	width:350px;
+	height:47px;
+	margin:20px 0px 20px 0px;
+	padding:0px 0px 0px 0px;
+	clear:both;
+}
+
+#side {
+	float:right;
+	width:140px;
+	top:0px;
+	margin:0px 0px 0px 0px;
+	text-align:left;
+	
+	padding:10px 190px 10px 0px;
+	display:block;
+	
+	color:#27364b;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;	
+}
+
+#side p {
+	text-align:justify;
+}
+
+#side h3 {
+	color:#0b3244;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	line-height:0px;
+	margin-bottom:10px;
+	margin-left:15px;
+}
+
+#side ul{
+	list-style-image:url(images/list.gif);
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 20px;
+	color:#27364b;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;	
+}
+
+#comment {
+	width: 97%;
+}
+
+ul.commentlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.commentlist li {
+	padding: 10px 0;
+	list-style: none;
+}
+
+.commentlist p.header {
+	padding: 0;
+	margin: 0;
+}
+
+#contactform {
+	border: none;
+	width: 360px;
+	background: white;
+}
+
+#contactform fieldset {
+	border: none;
+}
+
+#contactform label {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	width: 60px;
+	text-align: right;
+}
+
+#bx_message {
+	width: 260px;
+}
+/* ----- COPYRIGHT ------------------------------------------------------------------------------------------------- */
+/* 		Please be fair and respect our Copyright. 
+
+		Thank You,
+		
+		TalkXHTML.com, PhoenixRealm.com, and LaZe, Inc. 																									 */
+/* ----- COPYRIGHT ------------------------------------------------------------------------------------------------- */
+
+#copyright {
+	float:left;
+	width:350px;
+	bottom:25px;
+	text-align:center;
+	
+	padding:10px 10px 10px 10px;
+	display:block;
+	
+	color:#27364b;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:9px;	
+	font-weight:bold;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+div.avatar {
+	float: right;
+	margin: 0;
+	padding: 0 0 5px 10px;
+}
