@@ -1,0 +1,71 @@
+/*
+LAYOUT: Print style sheet
+DESCRIPTION: A basic print style sheet that does include CSS 2.1 (i.e., not IE 6 & 7 friendly) descriptors
+*/
+body {
+font-size: 10pt;
+line-height: 15pt;
+margin:12pt 6pt;
+padding:3pt;
+}
+
+body a,body a:link,body:visited,body a:hover,body a:active {
+background:#FFF;
+color:#000;
+text-decoration:none;
+}
+
+body h2,body h3,body h4,body h5,body h6 {
+line-height:125%;
+}
+
+body h1 {
+font:bold 10pt/150% helvetica, arial, sans-serif;
+letter-spacing:0.3pt;
+margin:6pt 0;
+text-transform:uppercase;
+}
+
+body h2 {
+border-bottom:1px dotted #AAA;
+font:14pt/150% georgia, times, serif;
+margin:18pt 0 6pt;
+padding:0 2pt 0 0;
+}
+
+body h3 {
+font-size:9pt;
+margin:18pt 0 6pt;
+text-transform:uppercase;
+}
+
+body p {
+margin:0 0 12pt;
+}
+
+body div.entry-date {
+border:1px solid #999;
+float:right;
+font-size:7pt;
+margin:0 3pt;
+padding:1pt 3pt;
+text-transform:uppercase;
+}
+
+body abbr.published {
+border:none;
+}
+
+body div.entry-content a:link:after,body div.entry-content a:visited:after {
+content:" (link:" attr(href) ") ";
+font-size:90%;
+}
+
+body div.entry-content abbr:after {
+content:" (ie, " attr(title) ") ";
+font-size:90%;
+}
+
+body div#blog-description,body div.sidebar,body div#access,body div#globalnav,body span.archive-meta,body div.entry-meta,body div#footer,body div.navigation,div#respond,div#trackbacks-list,body div.formcontainer,body form {
+display:none;
+}
