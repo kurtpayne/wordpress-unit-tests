@@ -1,0 +1,26 @@
+.comment-status {
+height: 14px;
+}
+.type-photo {
+border: 0;
+}
+#sidebar {
+padding-bottom: 0;
+}
+.endbuttski {
+font-size: 1px;
+}
+#content {
+overflow: hidden;
+}
+
+#content ul.widget_flickr_depo * {
+margin: 0;
+padding: 0;
+}
+#content ul.widget_flickr_depo li {
+float: left;
+margin: 0 9px 9px 0 !important;
+}
+#content ul.widget_flickr_depo li a { 
+}
