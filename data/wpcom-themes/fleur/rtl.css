@@ -1,0 +1,156 @@
+/* 
+Theme: Fleur De Lys
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+/* General Styles */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+
+}
+
+#rap {
+	text-align: right;
+	background:#fff url(img/rap-rtl.jpg) repeat-y right;
+}
+
+blockquote {
+	border-right: 5px solid #DADACE;
+	border-left: 0;
+	margin-right: 1.5em;
+	margin-left: 0;
+	padding-right: 5px;
+	padding-left: 0;
+}
+
+/* Header Styles */
+
+#header 
+{
+	background-image:url(img/fdl_top-rtl.jpg) !important;
+}
+
+#header h1 {
+	text-align:left;
+}
+
+/* Content Styles */
+
+#content 
+{
+	float: left;
+}
+
+#content ol 
+{
+	margin:5px 20px 5px 0;
+	padding:0 20px 0 0;
+}
+#content ol li
+{
+	margin:5px 18px 5px 0;
+}
+#content ul 
+{
+	margin:5px 20px 5px 0;
+	padding:0 20px 0 0;
+}
+#content ul li 
+{
+	background-position: left center;
+	padding:2px 18px 2px 0;
+}
+.post-info-co 
+{
+	text-align:left;
+	padding-left:15px;
+	padding-right:0;
+}
+.post-title{
+	text-align:left;
+}
+.post-title em
+{
+	padding-right:12px;
+	padding-left:0;
+	float:right;
+	background-position:right;
+	
+}
+
+
+/* sidebar Styles */
+
+#sidebar {
+	margin: 20px 40px 0 0;
+	padding: 0 2px 10px 0;
+	float:right;
+}
+#sidebar h2 {
+padding:3px 28px 3px 0;
+background:transparent url(img/fdl_menu_1-rtl.jpg) no-repeat right center;
+}
+
+#sidebar h2.special {
+padding:3px 2em 3px 0;
+background:transparent url(img/fdl_menu_1-rtl.jpg) no-repeat right center;
+}
+#sidebar ul ul {
+	padding: 5px 1em 5px 0.5em;	
+}
+#sidebar ul ul ul {
+	padding-right: 0.5em;
+	padding-left: 0;
+}
+
+/*  Comment Styles */
+
+.commentlist .avatar {
+	float: left;
+}
+
+#content .commentlist li ul {
+	border-right: 1px solid #ddd;
+	border-left: 0;
+}
+/*other*/
+.feedback 
+{
+	padding-right:18px; 
+	padding-left:0; 
+	background-position: right center;
+}
+ 
+.pauthor, .ptime, .pcat
+{
+	padding-left:10px;
+	padding-right:0;
+}
+
+.pauthor
+{
+	background-position: right;
+	padding-right:12px;
+	padding-left:0;
+}
+.ptime
+{
+	background-position: right;
+	padding-right:12px;
+	padding-left:0;
+}
+.pcat
+{
+	background-position: right;
+	padding-right:12px;
+	padding-left:0;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
