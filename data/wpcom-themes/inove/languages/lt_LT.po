@@ -1,0 +1,542 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-10 21:23+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mantas Malcius <kaipgis@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: D:\\workspace\\php\\blog\\wp-content\\themes\\inove\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - visi įrašai"
+
+#: 404.php:9
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - visi komentarai"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "Kalbėtojas"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "Sveiki užsukę į 404 klaidos puslapį!"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "Sveiki užsukę į šį individualizuotą klaidos puslapį. Jūs čia atsidūrėte, nes paspaudėte ant nuorodos, kuri jau nebeegzistuoja. Tai tikriausiai mūsų kaltė... bet vietoje to, kad rodytume jums standartinę '404 klaidą', kuri nieko nepaaiškina, mes sukūrėme šį puslapį, kad praneštume, kas atsitiko."
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "Norėdami grįžti į pradinį šio tinklaraščio puslapį, paspauskite žemiau esantį mygtuką."
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "Grįžti į pradinį puslapį &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "Paieškos rezultatai"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "Raktažodis: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "Archyvas"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "Kategorijos &#8216;%1$s&#8217; archyvas"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "Įrašai, pažymėti &#8216;%1$s&#8217;"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "%1$s archyvas"
+
+#: archive.php:25
+#: archive.php:48
+#: archives.php:14
+#: comments.php:91
+#: functions.php:503
+#: index.php:23
+#: links.php:22
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "Y.m.d"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "Y.m"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "Autoriaus archyvas"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "Tinklaraščio archyvai"
+
+#: archive.php:50
+#: archives.php:15
+#: comments.php:95
+#: functions.php:511
+#: index.php:25
+#: links.php:23
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "Redaguoti"
+
+#: archive.php:51
+#: index.php:26
+msgid "No comments"
+msgstr "Komentarų: 0"
+
+#: archive.php:51
+#: index.php:26
+msgid "1 comment"
+msgstr "Komentarų: 1"
+
+#: archive.php:51
+#: index.php:26
+#, php-format
+msgid "% comments"
+msgstr "Komentarų: %"
+
+#: archive.php:51
+#: index.php:26
+msgid "Comments off"
+msgstr "Komentavimas išjungtas"
+
+#: archive.php:55
+#: index.php:30
+msgid "Read more..."
+msgstr "Skaityti toliau"
+
+#: archive.php:59
+#: index.php:34
+#: single.php:29
+msgid "Categories: "
+msgstr "Kategorijos: "
+
+#: archive.php:60
+#: index.php:35
+#: single.php:30
+msgid "Tags: "
+msgstr "Žymos: "
+
+#: archive.php:67
+#: archives.php:39
+#: index.php:42
+#: links.php:46
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "Deja, įrašų pagal nurodytą kriterijų rasti nepavyko."
+
+#: archive.php:75
+#: index.php:50
+msgid "Newer Entries"
+msgstr "Naujesni įrašai"
+
+#: archive.php:76
+#: index.php:51
+msgid "Older Entries"
+msgstr "Senesni įrašai"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:25
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "Komentuoti"
+
+#: archives.php:18
+#: links.php:26
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "Rodyti komentarus"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "Įveskite savo slaptažodį, kad pamatytumėte komentarus."
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:347
+msgid "Comments"
+msgstr "Komentarai"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "Atsektys"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "Atsektis"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "Komentarų dar nėra."
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "Komentarų puslapiai"
+
+#: comments.php:91
+#: functions.php:503
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s  %2$s"
+
+#: comments.php:91
+#: functions.php:503
+msgid "H:i"
+msgstr "G:i"
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "Atsekčių dar nėra."
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "Komentavimo galimybė šiame įraše yra išjungta."
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Jūs turite būti <a href=\"%s\">prisijungę</a>, jei norite parašyti komentarą."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "Prisijungęs kaip"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "Atsijungti nuo šios paskyros"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "Atsijungti &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "Sveiki sugrįžę <strong>%s</strong>."
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "Keisti &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "Uždaryti &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "Vardas"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(būtinas)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "E. paštas (neskelbiamas)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "Internetinis adresas (nebūtinas)"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "Užsisakyti visų komentarų RSS"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "Įrašyti komentarą"
+
+#: functions.php:160
+#: functions.php:169
+msgid "Current Theme Options"
+msgstr "Temos parinktys"
+
+#: functions.php:174
+msgid "Search"
+msgstr "Paieška"
+
+#: functions.php:178
+msgid "Using google custom search engine."
+msgstr "Naudoti Google tinkintą paiešką."
+
+#: functions.php:181
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:184
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "Raskite <code>name=\"cx\"</code> <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a> <strong>paieškos laukelio kode</strong> bei įrašykite <code>jo reišmę</code> čia.<br/>Pavyzdžiui: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:193
+msgid "Menubar"
+msgstr "Meniu juosta"
+
+#: functions.php:197
+msgid "Show pages as menu."
+msgstr "Rodyti puslapius kaip meniu."
+
+#: functions.php:201
+msgid "Show categories as menu."
+msgstr "Rodyti kategorijas kaip meniu."
+
+#: functions.php:211
+msgid "Sidebar"
+msgstr "Šoninė juosta"
+
+#: functions.php:215
+msgid "Remove sidebar from all pages."
+msgstr "Panaikinti šoninę juostą."
+
+#: functions.php:226
+msgid "Notice"
+msgstr "Pranešimas"
+
+#: functions.php:228
+#: functions.php:252
+#: functions.php:287
+msgid "HTML enabled"
+msgstr "HTML įgalintas"
+
+#: functions.php:234
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "Ši pranešimo juosta bus rodoma pradinio puslapio viršuje."
+
+#: functions.php:250
+msgid "Banner"
+msgstr "Reklamjuostė"
+
+#: functions.php:256
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr "Ši reklamjuostė bus rodoma dešinėje antraštės pusėje (aukštis: 60 px)."
+
+#: functions.php:258
+#: functions.php:293
+msgid "Who can see?"
+msgstr "Kas gali matyti?"
+
+#: functions.php:261
+#: functions.php:296
+msgid "Registered Users"
+msgstr "Registruoti vartotojai"
+
+#: functions.php:265
+#: functions.php:300
+msgid "Commentator"
+msgstr "Komentatoriai"
+
+#: functions.php:269
+#: functions.php:304
+msgid "Visitors"
+msgstr "Lankytojai"
+
+#: functions.php:285
+#: sidebar.php:54
+msgid "Showcase"
+msgstr "Skydelis"
+
+#: functions.php:291
+msgid "This showcase will display at the top of sidebar."
+msgstr "Šis skydelis bus rodomas šoninės juostos viršuje."
+
+#: functions.php:309
+msgid "Title:"
+msgstr "Antraštė:"
+
+#: functions.php:325
+msgid "Posts"
+msgstr "Įrašai"
+
+#: functions.php:329
+msgid "Show author on posts."
+msgstr "Prie įrašų rodyti autoriaus vardą."
+
+#: functions.php:333
+msgid "Show categories on posts."
+msgstr "Prie įrašų rodyti kategorijas."
+
+#: functions.php:337
+msgid "Show tags on posts."
+msgstr "Prie įrašų rodyti žymas."
+
+#: functions.php:351
+msgid "Submit comments with Ctrl+Enter."
+msgstr "Įrašyti komentarus su Ctrl+Enter."
+
+#: functions.php:361
+msgid "Feed"
+msgstr "Naujienų srautas"
+
+#: functions.php:365
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr "Rodyti skaityklių sąrašą, kai pelė užvedama ant RSS srauto mygtuko."
+
+#: functions.php:370
+msgid "Custom feed."
+msgstr "Pasirinktinis RSS srauto"
+
+#: functions.php:372
+#: functions.php:378
+msgid "URL:"
+msgstr "URL:"
+
+#: functions.php:376
+msgid "Email feed."
+msgstr "Naujienoms siųsti e. paštu skirtas"
+
+#: functions.php:385
+msgid "Save Changes"
+msgstr "Įrašyti pakeitimus"
+
+#: functions.php:507
+msgid "Reply"
+msgstr "Atsakyti"
+
+#: functions.php:508
+msgid "Quote"
+msgstr "Cituoti"
+
+#: functions.php:513
+msgid "Advanced edit"
+msgstr "Redaguoti"
+
+#: functions.php:519
+msgid "Your comment is awaiting moderation."
+msgstr "Komentaras laukia patvirtinimo."
+
+#: links.php:15
+msgid "Add link"
+msgstr "Pridėti nuorodą"
+
+#: links.php:16
+msgid "Edit links"
+msgstr "Redaguoti nuorodas"
+
+#: links.php:31
+msgid "Blogroll"
+msgstr "Blogjuostė"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "Prenumeruoti šio tinklaraščio RSS srautą..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed"
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr> srautas"
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "Prenumeruoti su "
+
+#: sidebar.php:28
+msgid "Google"
+msgstr "Google"
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr "Youdao"
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr "Xian Guo"
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr "Zhua Xia"
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr "My Yahoo!"
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr "newsgator"
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr "Bloglines"
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr "iNezha"
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "Gauti naujus tinklaraščio įrašus elektroniniu paštu..."
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "Įrašai e. paštu"
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "Eiti į pradinį puslapį"
+
+#: single.php:7
+msgid "Home"
+msgstr "Į pradžią"
+
+#: templates/end.php:3
+msgid "Top"
+msgstr "Į viršų"
+
+#: templates/end.php:13
+msgid "Copyright &copy; "
+msgstr "Autoriaus teisės &copy; "
+
+#: templates/end.php:25
+msgid "Theme by <a href=\"http://www.neoease.com/\">NeoEase</a>. Valid <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> and <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+msgstr "Temos autorius: <a href=\"http://www.neoease.com/\">NeoEase</a>&nbsp;&nbsp; Validūs: <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> ir <a href=\"http://jigsaw.w3.org/css-validator/\">CSS 3</a>"
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr "Įveskite, ko ieškote..."
+
+#~ msgid "Author: "
+#~ msgstr "Autorius: "
+
