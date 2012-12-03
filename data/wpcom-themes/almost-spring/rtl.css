@@ -1,0 +1,58 @@
+/*
+RTL for Theme: : Almost Spring 
+Editors: Navid Kashani , Mahyar Abbaspour
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:tahoma, arial;
+}
+ol, ul {
+	margin:1.2em 2em 1.2em 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family:arial, tahoma;
+}
+input, textarea, select {
+	font-family:tahoma, arial;
+}
+code {
+	display:block;
+	text-align:left;
+	direction:ltr;
+}
+blockquote {
+	border-left:0 none;
+	border-right:4px solid #E8E7D0;
+}
+#wrapper {
+	direction:rtl;
+	text-align:right;
+}
+#sidebar h2 {
+	padding:0;
+	background:none;
+}
+.posttitle a {
+	float:right;
+}
+.permalink {
+	display:block;
+	margin:0;
+	padding:0 14px 0 0;
+	background-position:right center;
+}
+.commentslink {
+	display:block;
+	padding:0 17px 0 0;
+	background-position:right center;
+}
+#commentlist li .avatar {
+	float:right;
+	margin:14px 0 0 10px;
+}
+.postentry img {
+	margin:0 4px;
+}
+#email, #url {
+	direction:ltr;
+}
