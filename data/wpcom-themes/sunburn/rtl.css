@@ -1,0 +1,113 @@
+/*  
+Theme: Sunburn
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		BODY, WRAPPINGS, ANCHORS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	body {
+		direction:rtl;
+		unicode-bidi:embed;
+		}
+	
+			#wrapper {
+				text-align: right; /* IE */
+				}
+			
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		HEADER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+		
+		#header_text { 
+			text-align: right;
+			padding: 0 30px 0 15px;
+			}
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		CONTENT
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#content {
+		float: right;
+		margin: 0 75px 0 0;
+		padding: 40px 30px 40px 0;
+		}
+
+		.alignleft { margin: 10px 0 0 0; float: right; }
+		.alignright { margin: 10px 0 0 40px; float: left; text-align: left; display: inline; }
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		POST
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+		.post .date {
+			background-position:right top;
+			float: right;
+			margin: 6px 0 0 10px;
+			}
+		
+		.post div.title_box {
+			float: right;
+			}
+		
+			.post h2 {
+				float: right;
+				}
+			
+				.post div.comment_link { 
+					clear: right;
+					}
+		
+					.post .entry blockquote, .post .entrytext blockquote  {
+						border-right: 6px solid #000;
+						border-left: 0;
+						padding-right: 8px;
+						padding-left: 0;
+						}
+					
+						.post blockquote, .post ul, .post ol { margin-right: 20px; padding-right: 20px;margin-left: 0; padding-left: 0; }
+		
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		SIDEBAR
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#sidebar {
+		padding: 40px 15px 40px 0;
+		float: right;
+		}
+	
+			#sidebar li>h2 { margin-right: 15px;margin-left: 0; } /* Non IE */
+		
+		
+			#sidebar li ul {
+				margin: 0 25px 20px 0;
+				}
+			
+				#searchform input {
+					margin: 0 25px 0 0;
+					}
+				
+				
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		COMMENTS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#commentform { margin: 0 20px 20px 0; } 	
+
+	ol.commentlist {
+		margin: 0 30px 0 0;
+		}
+	
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		FOOTER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.comment .avatar {
+	float: left;
+	margin-right: .5em;
+	margin-left: 0;
+}
