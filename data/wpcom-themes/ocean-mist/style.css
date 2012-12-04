@@ -1,0 +1,275 @@
+/*  
+Theme Name: Ocean Mist
+Theme URI: http://www.edmerritt.com/
+Description: A blueish two-column theme with a large customizable header, visible post author, and category navigation at the bottom.
+Version: 1.2-wpcom
+Author: Ed Merritt
+Author URI: http://www.edmerritt.com/
+Tags: custom-header, two-columns, blue, fixed-width, rtl-language-support, right-sidebar, widgets, sticky-post
+*/
+
+
+/* layout */
+* {font-size: 100%; margin: 0; padding: 0; line-height: 1.4em;}
+body {position: relative; background: url(images/bg_body.gif) top left repeat-x #9BC3D5; font: 70% Verdana, Arial, Helvetica, sans-serif; color: #4B5D67; text-align: center;}
+#page {display: block; width: 750px; background: url(images/bg_main.gif) top repeat-y; text-align: left; margin: 0 auto;}
+#header {position: relative; float: left; display: block; width: 750px; background: url(images/bg_header.gif) top no-repeat; min-height: 355px; padding: 0;}
+* html #header {height: 355px;}
+#content {float: left; display: block; width: 543px; margin: 0 0 0 7px; overflow: hidden;}
+#sidebar {float: left; display: block; width: 193px; margin: 0; overflow: hidden;}
+* html #content, * html #sidebar {position: relative; left: -7px;}
+.post {float: left; display: block; width: 525px; padding: 18px 0 0 18px;}
+.page {float: left; display: block; width: 507px; padding: 18px 0 0 18px;}
+.archive {float: left; display: block; width: 507px; padding: 0 0 18px 18px; border-bottom: 1px solid #ccc;}
+#sidebar .post {display: block; width: 157px; padding: 18px 0 18px 18px;}
+.title {float: left; display: block; width: 543px; background: url(images/bg_h2.gif) bottom repeat-x #E2EBF8; margin: 0 0 0 0;}
+.sticky { background: #EAF9FF; border-top: 2px solid #9BC3D5;}
+#sidebar .title {float: none; display: block; width: 193px; background: url(images/bg_h3.gif) bottom left repeat-x #CADFED; }
+.entry {float: right; display: block; width: 350px; margin: 0;}
+#page .entry { float: none; width: auto; }
+
+.postinfo {float: left; display: block; width: 157px; margin: 0 0 18px 0;}
+.wideposts .entry {float: left; display: block; width: 525px; margin: 0 0 18px 5px;}
+.wideposts .postinfo {float: left; display: block; width: 525px; margin: 0 0 18px 0;}
+.archive .postinfo {margin-left: 0;}
+.archive .entry {margin-right: -24px;}
+* html .post, * html #sidebar .post, * html .archive  {margin-left: 0; position: relative; left: 18px;}
+.widget {padding-bottom:9px;}
+.widget p img {padding: 2px 8px;}
+
+/* typography */
+h1 {font: 2.2em Tahoma, Verdana, Arial, sans-serif; color: #fff; letter-spacing: -1px; padding: 45px 37px 0 37px; margin: 0 0 -5px 0;}
+h1 a, h1 a:visited {color: #fff; text-decoration: none;}
+.description {color: #CADFED; margin: 0 37px 25px 37px;}
+.title h2 {font: 1.05em Arial, Helvetica, sans-serif; text-transform: uppercase; padding: 9px 24px 12px 24px;}
+
+#content .postwrapper .title h2 {font: 1.4em Arial, Helvetica, sans-serif; text-transform: none; background: url(images/icon_entry.gif) 24px 50% no-repeat; padding: 9px 100px 12px 42px;}
+#sidebar .title h2 {font: 1.05em Arial, Helvetica, sans-serif; text-transform: uppercase; padding: 9px 0 12px 24px; background: none; color: #32474B;}
+.title small {float: right; padding: 14px 24px 0 0; color: #67939B;}
+h2 a, h2 a:visited {}
+.entry h2, .entry h3, .entry h4, .entry h5, .entry h6 { font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; margin: 0 0 0.5em 0;}
+.entry h2 { font-size: 1.6em; }
+.entry h3 {font-size: 1.4em; }
+.entry h4 {font-size: 1.2em; }
+.entry h5 {font-size: 1.1em; }
+.entry h6 {font-size: 1.0em; }
+p {margin: 0 0 18px 0; padding: 0;}
+.entry p {padding-right: 24px;}
+.postinfo p {padding: 0 6px;}
+.req {padding-left: 3px; color: #CC0000;}
+blockquote {padding: 0 0 0 12px; border-left: 3px solid #ccc;}
+
+/* lists */
+ul {margin: 0 0 24px 9px;}
+ul ul {margin: 0 0 0 9px;}
+ol {margin: 0 0 24px 9px;}
+ol ol {margin: 0 0 0 9px;}
+ul li {margin: 0 24px 0 14px;}
+ol li {margin: 0 24px 0 24px;}
+.buttons {float: left; display: block; width: 100%; list-style: none; margin-left: 0; margin-bottom: 21px;}
+*:first-child+html .buttons {float: none;}
+.buttons li {float: left; margin: 0 18px 3px 0; padding: 0;}
+.buttons ul {margin: 3px 0 0 0; list-style: none; padding-bottom: -5px;}
+.buttons ul a, .buttons ul a:visited {padding: 3px 6px 4px 6px; font-weight: normal;}
+* html .buttons li {margin: 0;}
+.buttons a, .buttons a:visited {display: block; width: 145px; padding: 6px; text-align: center; background: url(images/menu.gif) bottom left no-repeat; border-top: 1px solid #D1E0F0; font-weight: bold;}
+#sidebar .buttons a {text-align: left;}
+.buttons a:hover {background-position: bottom right;}
+p.pages {flont-weight: bold;}
+p.pages a {display: block; padding: 3px; width: auto; background: url(images/menu.gif) bottom left no-repeat; border-top: 1px solid #D1E0F0; border-right: 1px solid #D1E0F0;}
+.catlist {float: left; list-style: none; margin: 0 0 18px 0;}
+*:first-child+html .catlist {border-bottom: 18px solid #fff;}
+.catlist li {float: left; margin: 0 18px 0 0; border-bottom: 1px solid #CAD6E1;}
+* html .onecol li {margin: 0;}
+.catlist ul {display: none;}
+/* .catlist li:first-child, .catlist li:first-child+li, .catlist li:first-child+li+li {border-top: 1px solid #CAD6E1;}
+.onecol li:first-child+li, .onecol li:first-child+li+li {border-top: none;} */
+*:first-child+html .onecol {border-bottom: 0;}
+.catlist a, .catlist a:visited {display: block; width: 145px; padding: 1px 6px 2px 6px; margin: 1px 0;}
+.catlist a:hover {background: #F2F2F2;}
+#themeswitcher {list-style: none; margin: 0 0 18px 0;}
+#themeswitcher li {margin: 0;}
+#sidelist {list-style: none;}
+#sidelist li {margin: 0;}
+#sidelist li li {margin: 0 24px 0 8px;}
+#sidelist ul {list-style-type: disc; }
+#sidebar ul {margin: 0 0 0 9px;}
+#sidebar ul li {margin: 0 5px 0 14px;}
+#sidebar ul ul li {margin: 0 0 0 9px;}
+
+/* links */
+a, a:visited {color: #7f1d1d; text-decoration: none;}
+p a:hover, ul a:hover {background-color: #BFD3E0;}
+#content p a:hover, #content ul a:hover {background-color: #E2EBF8;}
+
+
+/* main image */
+#mainpic {position: absolute; bottom: 0; float: left; background: url(images/mainpic01.jpg) no-repeat; display: block; width: 736px; height: 229px; margin: 0 7px; border-top: 3px solid #67939B; border-bottom: 3px solid #67939B;}
+
+
+/* forms */
+form {margin: 0 0 18px 0;}
+#searchsubmit {position: absolute;}
+#s {width: 130px; padding: 2px; border: 1px solid #B9C3D1; background: #CAD6E1; color: #32474B; margin-right: 2px;}
+select, .field {width: 157px; margin: 0 0 4px 0; color: #32474B;}
+.field {padding: 2px; width: 153px;}
+textarea {padding: 2px; width: 308px; font: 1em Verdana, Arial, Helvetica, sans-serif;}
+select option {padding: 1px;}
+#submit {padding: 3px;}
+
+
+/* calendar */
+#wp-calendar caption {width: 157px; text-align: center; background: #4b5d67; color: #fff; border-bottom: 2px solid #e6eef7;}
+#wp-calendar { border-collapse:collapse; width: 156px; text-align: center;}
+#wp-calendar thead tr {background: url(images/cal_bkg.gif) bottom right no-repeat;}
+#wp-calendar thead th {background: url(images/cal_single.gif) top left no-repeat;}
+#wp-calendar tbody td {background: url(images/cal_single2.gif) top left no-repeat; padding: 2px 0;}
+#wp-calendar #today {background: url(images/cal_single_today.gif) top left no-repeat; color: #000;}
+#wp-calendar tbody .pad { background: url(images/cal_pad.gif) top left no-repeat;}
+#wp-calendar a {padding: 2px 0; font-weight: bold;}
+#wp-calendar tfoot td {padding: 3px 0; background: url(images/cal_pad.gif) top left no-repeat;}
+#wp-calendar #next {text-align: right; padding-right: 10px;}
+#calendar_wrap {display: block; width: 157px; background: url(images/cal_bkg.gif) bottom right no-repeat; padding: 0 1px 1px 0; margin: 0 0 18px 18px;}
+
+/* page tabs */
+#pagetabs {position: absolute; bottom: 3px; left: 1px; display: block; float: left; padding: 0; margin: 0 0 0 25px; list-style: none;}
+#pagetabs ul {display: none;}
+#pagetabs li {float: left; border-bottom: 1px solid #414e53; margin: 0 5px 0 0; padding: 0;}
+#pagetabs li:hover {border-bottom: 1px solid #486065;}
+#pagetabs a {float: left; display: block; padding: 5px 5px 3px 5px; background: #526a74; color: #fff; font-weight: bold; border-bottom: 2px solid #4a5e65;}
+#pagetabs a:hover {background: #5c7d86; border-bottom: 2px solid #527077; color: #fff;}
+.pagetabstitle {border-bottom: none !important; color: #fff; font-weight: bold; position: relative; top: 4px;}
+
+/* footer */
+#footer {clear: both; display: block; width: 750px; background: url(images/bg_footer.gif) bottom no-repeat; border-bottom: 20px solid #9BC3D5; text-align: center;}
+* html #footer {margin-top: 18px;}
+#footer-top {display: block; width: 750px; height: 15px; background: url(images/bg_footer-top.gif) top no-repeat;}
+#footer p {color: #798892; padding: 0 37px 7px 37px;}
+#footer a, #footer a:visited {color: #B05255;}
+
+.comment .avatar {
+	border: 1px dotted #ccc;
+	float: right;
+	margin-right: 25px;
+	padding: 2px;
+}
+
+.com { text-align: right; margin-right: 1em; }
+
+.navigation {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 60px;
+	margin: 5px 24px;
+}
+
+#akismetstats, #sidebar select {
+	margin-bottom: 1em;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+.commentlist {
+width: 500px;
+}
+.commentlist li {
+padding: 0;
+margin: 0;
+list-style: none;
+}
+.commentlist .children {
+margin-left: 30px;
+width: auto;
+}
+.commentlist .children li {
+list-style: none;
+}
+.commentlist li.archive {
+width: 100%;
+border-bottom: 0;
+}
+.commentlist li.archive {
+border-bottom: 1px solid #CCCCCC;
+}
+.commentlist .children .archive {
+border-left: 1px solid #CCCCCC;
+}
+#page .commentlist .entry,
+.commentlist .entry {
+width: 70%;
+float: left;
+}
+.commentlist .postinfo {
+width: 30%;
+}
+.commentlist #respond .post {
+padding: 0;
+}
+.commentlist #respond .post, .commentlist #respond .title {
+width: auto;
+}
+.commentlist #respond .title {
+display: block;
+clear: both;
+float: none;
+}
+.commentlist #respond .entry {
+width: 100%;
+}
+.commentlist #respond textarea{
+width: 100%;
+}
