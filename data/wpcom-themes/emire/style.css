@@ -1,0 +1,374 @@
+/*  
+Theme Name: Emire
+Theme URI: http://ifelse.co.uk/emire/
+Description: A professional green and gray two-column theme complete with shape burst.
+Version: 1.0-wpcom
+Author: Phu Ly
+Author URI: http://ifelse.co.uk/
+Tags: green, two-columns, rtl-language-support, dark, right-sidebar, widgets, sticky-post, fixed-width
+*/
+
+/*************************************
+ +Containers
+ *************************************/
+body{
+	background:#2f2f2f url("./images/stripes.gif");
+	color:#dedede;
+	font-family: 'Trebuchet MS', Tahoma, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;
+	font-size:62.5%;
+	letter-spacing: 1px;
+	line-height:1.5;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+#wrap{
+	background:#3a3a3a;
+	border-left:2px solid #444;
+	border-right:2px solid #444;
+	border-bottom:1px solid #444;
+	margin:0 auto;
+	padding-top:20px;
+	text-align:left;
+	width:700px;
+}
+
+#content{
+	border-bottom:none;
+	border-top:none;
+	float:left;
+	padding:10px;
+	width:450px;
+}
+#footer{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	background:#434343;
+	border-top:1px solid #4F5158;
+	border-bottom:none;
+	color:#888;
+	clear:both;
+	padding:3px 0;
+	-moz-border-radius:3px;
+}
+
+/*************************************
+ +Header
+ *************************************/
+#header{
+	
+	background:#879675 url("./images/header.png") 0 no-repeat;
+	border-bottom:1px solid #c4cC91;
+	height:99px;
+	margin:0;
+	text-align:center;
+	width:100%;
+}
+#header h1{
+	font-size:2.2em;
+	font-weight:normal;
+	margin:0 auto;
+	padding-top:40px;
+	padding-left:30px;
+	text-align:left;
+	width:700px;
+}
+#header h1 a{
+color:#ecefed;
+}
+#header p{
+	font-size:1em;
+	padding-left:30px;
+	margin:0 auto;
+	text-align:left;
+	width:700px;	
+}
+/*************************************
+ +Hn
+ *************************************/
+ h1, h2, h3{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: -1px;
+}
+h2{
+	font-size:1.5em;
+	padding-right:5px;
+}
+h3{
+	font-size:1.2em;
+}
+/*************************************
+ +Navigation
+ *************************************/
+#nav{
+	background:#3A3A3A;
+	border-bottom:1px solid #555;
+	font-size:1.2em;
+	margin-top:-0.9em;
+}
+#navwrap{
+	display:block;
+	margin:0 auto;
+	width:700px;
+}
+#nav ul{
+	list-style-type:none;
+	margin-left:-27px;
+}
+#nav ul li{
+	float:left;
+	font-weight:bold;
+	margin-top:2px;
+	padding:9px 10px;
+}
+#nav ul li a{
+	color:#fff;
+}
+#nav ul li a:hover{
+	color:#BDE271;
+} 
+ /*************************************
+ +Entry
+ *************************************/
+ .entry{
+	font-size:1.1em;
+	margin:5px;
+	padding:10px;
+	clear:left;
+}
+.entrytitle{
+	border-bottom:1px dotted #4F5158;
+	color:#888;
+}
+.entrytitle h2, .entrytitle h3{
+	display:inline;
+	font-weight:normal;
+}
+.entrytitle h2{
+	color:#fafafa;
+}
+.entrytitle h3{
+	font-weight:normal;
+}
+.sticky, .entry-1{
+	background:#444444 url("./images/main.png") repeat-x;
+	border:1px solid #434343;
+	color:#ffffff;
+	font-size:1.3em;
+}
+
+.sicky .entrytitle, .entry-1 .entrytitle{
+	border-bottom:1px solid #5F666A;
+	color:#897;
+}
+.sticky .entrytitle h2, .entry-1 .entrytitle h2 {
+	color:#CDB;
+}
+body#home .sticky .entrytitle,
+body#home .entry-1 .entrytitle
+{
+	border-bottom:none;
+/*	height:45px;*/
+}
+body#home .entry-1 .entrytitle
+{
+	padding-left:45px;
+	background:url("./images/latest.png") no-repeat;
+}
+
+body#home .sticky .entrytitle h2,
+body#home .entry-1 .entrytitle h2{
+	display:block;
+	margin:0;
+}
+
+body#home .sticky .entrytitle h3,
+body#home .entry-1 .entrytitle h3{
+	display:block;
+	margin:0;
+	font-size:0.9em;
+}
+.entrymeta{
+	background:#434343;
+	font-size:0.8em;
+	padding:5px;
+	clear:both;
+}
+.entry-1 .entrymeta{
+	display:block;
+}
+.postedby{
+}
+.filedto{
+	background:url("./images/file.gif") no-repeat 0 2px;
+	padding-left:15px;
+}
+.commentslink{
+	background:url("./images/comments.gif") no-repeat 0 3px;
+	padding-left:15px;
+}
+.navigation{
+padding:5px;
+background:#3e3e3e;
+text-align:center;
+}
+.attachment .navigation {
+background:none;
+padding:0;
+}
+  /*************************************
+ +Sidebar
+ *************************************/
+#sidebar{
+	background:url("./images/sidebar.png") repeat-x;
+	border-top:1px solid #3e3e3e;
+	color:#ddd;
+	font-size:1.1em;
+	float:left;
+	margin-top:15px;
+	padding-left:10px;
+	width:200px;
+}
+#sidebar h3{
+	color:#CDB;
+	font-size:1.8em;
+	font-weight:normal;
+	margin-bottom:10px;
+}
+#sidebar ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#sidebar ul li{
+	border-bottom:1px dotted #444444;
+	padding:3px;
+}
+/*************************************
+ +Comments
+ *************************************/
+.commentsblock{
+	margin:0.5em;
+	padding:1em;
+	font-size:1.1em;
+}
+.commentsblock textarea{
+	width:100%;
+}
+.commentsblock input, .commentsblock textarea{
+	border:1px solid #d1d1d1;
+}
+.commentsblock textarea:focus{
+	background:#eee;
+	border:1px solid #a1a1a1;
+}
+.commentsblock textarea:focus, .commentsblock input:focus{
+	background:#eee;
+	border:1px solid #a1a1a1;
+}
+.commentauthor{
+	display:block;
+	font-size:1.5em;
+}
+ol.commentlist{
+	color:#777;
+	font-size:0.9em;
+	list-style-type:none;
+	margin:0;
+	margin-top:1.5em;
+	padding:0;
+}
+.commentlist li{
+	margin-bottom:0.5em;
+	padding:0.5em 1em;
+	list-style-type:none;
+}
+.commentlist li .avatar { 
+	border: 1px solid #383838;
+	padding: 2px;
+	float: right; 
+}
+.thread-alt{
+	background:#434343;
+	border:1px solid #383838;
+	padding:0.5em;
+}
+h3#comments{
+font-size:1.6em;
+}
+ /*************************************
+ +Misc
+ *************************************/
+a{
+	text-decoration:none;
+	color:#bbb;
+}
+a:hover{
+color:#efe;
+}
+#nav:after, #wrap:after{ 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility:hidden; 
+}
+* html #nav, * html #wrap {height: 1%;}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	color: #000;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
