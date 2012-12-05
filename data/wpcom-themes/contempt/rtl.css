@@ -1,0 +1,144 @@
+/*  
+Theme: Contempt
+RTL by Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+/* Begin Typography & Colors */
+body {
+	unicode-bidi:embed;
+	direction:rtl;
+	}
+
+#topbar a, #topbar {
+	text-align: left;
+	padding-right: 0;
+	padding-left: 5px;
+}	
+
+#pagebar a {
+	float: right;
+	border-right: 0;
+	border-left: 1px #CECECE solid;
+}
+
+#page {
+	text-align: right;
+	}
+
+#content {
+	float: right;
+	padding: 0 45px 20px ;
+	}
+	
+.commentlist .avatar {
+	float: left;
+}
+/* End Typography & Colors */
+
+
+
+/* Begin Lists */
+
+html>body .entry ul {
+	margin-left: auto;
+	margin-right: 0px;
+	padding: 0 30px 0 0;
+	padding-left: 0;
+	padding-right: 10px;
+	} 
+
+html>body .entry li {
+	margin: 7px 10px 8px 0;
+	}
+
+*:first-child+html>body .entry ul {   
+	margin-right: 0;   
+	margin-left: auto;   
+ 	padding: 0 30px 0 0 ;   
+	list-style: disc;   
+	padding-right: 10px;   
+}   
+
+*:first-child+html>body .entry ul li {   
+	margin: 7px  10px 8px 0;
+}  
+
+.entry ol {
+	padding: 0 35px 0 0;
+	}
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 10px 0 0;
+	}
+
+/* End Entry Lists */
+
+
+
+/* Begin Form Elements */
+
+#commentform input {
+	margin: 5px 0 1px 5px;
+	}
+
+
+#commentform #submit {
+	float: left;
+	}
+/* End Form Elements */
+
+
+
+/* Begin Comments*/
+.commentlist p {
+	margin: 10px 10px 5px;
+	}
+/* End Comments */
+
+.alignright {
+	float: left;
+	}
+	
+.alignleft {
+	float: right;
+	}
+
+/* Begin Sidebar */
+#sidebar
+{
+	margin: -60px 530px 0 0;
+	}
+/* End Sidebar */
+
+
+
+/* Begin Calendar */
+
+#wp-calendar #next a {
+	padding-right: 0;
+	padding-left: 10px;
+	text-align: left;
+	}
+
+#wp-calendar #prev a {
+	padding-right: 10px;
+	padding-left: 0;
+	text-align: right;	
+}
+/* End Calendar */
+
+
+
+/* Begin Various Tags & Classes */
+
+blockquote {
+	margin: 15px 10px 0 30px;
+	padding-left: 0;
+	padding-right: 20px;
+	border-left: 0;
+	border-right: 5px solid #ddd;
+	}
+
+/* End Various Tags & Classes*/
