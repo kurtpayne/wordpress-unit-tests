@@ -1,0 +1,73 @@
+/* @group hicks */
+
+div, li {
+	zoom: 1;
+}
+
+/* @end */
+
+/* @group layout */
+
+/* @group content */
+
+/* @group table */
+
+/*#content .contentblock table {
+	width: 470px;
+	margin: 20px;
+}*/
+
+/* @end */
+
+/* @group blockquote */
+
+#content .contentblock blockquote {
+	padding: 0 0 1px 0;
+	background: none;
+	margin: 20px 0 0;
+	width: 500px;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group specific */
+
+/* @group comments */
+
+/* @group newcommentform */
+
+#newcommentform label small {
+	display: none;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group default */
+
+/* @group body */
+
+body {
+	padding-bottom: 20px;
+}
+
+/* @end */
+
+
+
+/* @end */
