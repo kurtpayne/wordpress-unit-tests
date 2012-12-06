@@ -1,0 +1,139 @@
+/*
+Theme Name: Silver is the New Black
+Theme URI: http://wordpress.com/
+Description: A clean two-column fluid-width greyscale theme with rounded corners.
+Version: 1.0-wpcom
+Tags: two-columns, flexible-width, silver, white, light, right-sidebar, widgets, sticky-post, rtl-language-support
+Author: Gregory Auld
+Template: classic
+*/
+
+
+a { color: #A0522D; }
+a img { border: none; }
+a:hover { color: #D2691E; }
+acronym, abbr { border: none; color: #666666; }
+acronym, abbr, span.caps { cursor: help; font-size: 90%; letter-spacing: .07em; }
+blockquote { border-left: 3px solid #E8E8E8; font: italic 11px Verdana, Arial, sans-serif; line-height: 19px; margin: 15px 1.5em; padding: 0 5px; }
+body, #content, #menu, #rap { background-color: #FFF; }
+body, .meta ul, #content, #menu { margin: 0; padding: 0; }
+cite { font-size: 90%; font-style: normal; }
+h2 { background: #D8D8D8; border-bottom: 1px solid #C0C0C0; font: bold 80% Verdana, sans-serif, "Times New Roman", Times, serif; margin: 15px 0 -2px 0; padding: 5px; width: 98%; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px;}
+h3 { font: Verdana, sans-serif, "Times New Roman", Times, serif; margin-top: 0; }
+h3, .meta { padding: 0 15px; }
+input { font: normal normal 12px "Courier New", Arial, monospace !important; }
+#comments { clear: both; }
+ol#comments li p { font: 100%; }
+p, .post p { line-height: 19px; margin: 15px 15px 2px 15px; }
+p, li, .feedback { font: 11px "Lucida Sans Unicode", "Trebuchet MS", Verdana, monospace; }
+/*#calendar, #search, .credit { display: none; }*/
+.feedback { border-bottom: 1px solid #C0C0C0; color: #CCC; margin: 13px 0; padding-bottom: 13px; text-align: right; clear: both; }
+.meta li, .meta ul { display: inline; }
+.meta ul { list-style: none; }
+.meta, .meta a { color: #808080; font: normal 10px "Verdana", "Courier New", sans-serif; letter-spacing: 0; }
+.post { margin: 20px 5px 10px 0px; }
+.storycontent { padding: 0 10px; }
+.storycontent li { margin-top: 7px; margin-bottom: 7px; }
+.storycontent ol li ol { list-style: lower-alpha; }
+.storytitle { font: bold 22px "Trebuchet MS", Verdana, "Courier New", sans-serif; }
+.storytitle a, #header a, #menu ul ul li a { text-decoration: none; }
+.storytitle, #header, #menu form, #menu ul { margin: 0; }
+.sticky .storytitle {
+margin-bottom: 10px;
+}
+.sticky .storytitle a {
+background: #a0522d;
+color: white;
+padding: 5px;
+}
+.sticky .storytitle a:hover {
+text-decoration: underline;
+}
+
+#commentform textarea { width: 300px; }
+#content { margin: 0 220px 0 14px; }
+#content, #header, #menu ul, #menu ul ul { text-align: left; }
+#header a { display: block; color: #FFF; background-color: #B0B0B0; border-bottom: 1px solid #000000; font-family: 'Trebuchet MS', sans-serif, serif; padding: 30px 10px 12px 50px; }
+#header a:hover { color: #808080; background-color: Silver; }
+#menu { padding-left: 7px; border-bottom: 30px solid #FFF; margin-bottom: 30px; position: absolute; right: 14px; top: 83px; width: 200px; }
+#menu form { padding: 0 0 0 10px; }
+#menu input { width: 80%; }
+#menu ul { color: #CCC; font-weight: bold; margin-left: 5px; padding: 5px 0; }
+#menu ul li { background-color: #D3D3D3; border-bottom: 3px solid #B0B0B0; border-left: 3px solid #B0B0B0; border-right: 3px solid #B0B0B0; border-top: 3px solid #B0B0B0; color: #404040; font: 12px "Trebuchet MS", sans-serif, "Times New Roman", serif !important; letter-spacing: 1px; margin-top: 10px; padding: 4px 0 0 5px; text-transform: uppercase; -moz-border-radius: 10px;}
+#menu ul ul { background-color: #E0E0E0; border-top: 1px solid #B0B0B0; font-size: 14px; line-height: 100%; margin-left: -5px; padding: 6px 0; -moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px;}
+#menu ul ul li, #menu ul ul ul li { background-color: #E0E0E0; border: 0; font: normal normal 70%/115% 'Lucida Sans Unicode', Verdana, sans-serif !important; letter-spacing: 0; text-transform: capitalize !important; margin: 0; padding: 0;}
+#menu ul li.widget_twitter ul li { text-transform: none !important; }
+#menu ul ul li acronym, #menu ul ul li abbr { color: #828282; }
+#menu ul ul li { color: #505050; width: 169px; display: block; margin-top: 3px; margin-bottom: 3px; padding: 2.5px 10px;}
+#menu ul ul ul { border: 0 !important; padding: 0 !important; margin-left: 0px !important; }
+#menu ul ul ul li a, #menu ul ul ul li span { border: 0 !important; width: 149px !important; margin-left: 20px !important; }
+#menu ul ul ul ul { border: 0 !important; padding: 0 !important; margin-left: 0px !important; }
+#menu ul ul ul ul li a, #menu ul ul ul ul li span { border: 0 !important; width: 129px !important; margin-left: 40px !important; }
+#menu ul ul ul ul ul{ border: 0 !important; padding: 0 !important; margin-left: 0px !important; }
+#menu ul ul ul ul ul li a, #menu ul ul ul ul ul li span { border: 0 !important; width: 109px !important; margin-left: 60px !important; }
+#menu ul ul li a:hover { background-color: White; }
+#menu ul ul li a:active { background-color: #646464; color: White; }
+#menu ul, #menu ul ul { list-style-type: none; }
+#menu h2 { margin: 0; padding: 0; font: 12px "Trebuchet MS", sans-serif, "Times New Roman", serif !important; letter-spacing: 1px; text-transform: uppercase; }
+#rap { width: 100%; }
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.wp_widget_tag_cloud { 
+	overflow: hidden;
+	width: 184px;
+}
