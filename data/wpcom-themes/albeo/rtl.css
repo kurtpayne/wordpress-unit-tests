@@ -1,0 +1,134 @@
+/*  
+Theme: Albeo
+RTL: Yoav Farhi yoav@automattic.com
+*/
+
+
+body { direction:rtl; unicode-bidi:embed; }
+
+/* Header 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.header { float: right;}
+.header h1 { float: right; }
+.header h1 a, .header h1 a:visited, .header .LogoText h1 a:hover {background-position:right center; padding-left: 0px; padding-right: 45px; }
+
+
+.header .rss { right:auto; left: 0px; }
+.header .rss li { background-position: right 2px;  padding-left:0; padding-right: 20px; margin-left: 5px; margin-right:0; }
+
+.menu { float: right; }
+.menu li { float: right; }
+
+
+
+/* Side Left 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.sl-a { float: right; }
+.sl-t { float: right; }
+.sl-b { float: right; }
+.sl { float: right; }
+
+
+/* Post Single
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.p-con ol { padding: 10px 25px 10px 0;}
+
+.p-con ul li { padding: 2px 15px 2px 0; background-position: right top !important; }
+.p-con blockquote li { padding: 2px 13px 2px 0; }
+
+
+.p-det li { margin-left: 5px; margin-right: 0; }
+.p-det .p-cat { background-position: right 2px !important; padding-right: 20px; padding-left: 0; }
+.p-det .p-com {  background-position: right 2px !important; padding-right: 14px; padding-left: 0;}
+
+.p-tag { background-position: right 1px !important; padding-right: 18px; padding-left: 0;}
+
+.sticky { background: #D7ECF3; padding: 15px; }
+
+/* Post Pages
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.
+.post-page ol { padding: 10px 25px 10px 0; }
+.post-page ul li { padding: 2px 13px 2px 0; background-position: right top; }
+.post-page blockquote li { padding: 2px 13px 2px 0;}
+
+/* Images
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  */
+img.aligncenter, .aligncenter, .aligncenter img, img.centered { display: block; margin-left: auto; margin-right: auto; }
+img.alignright { padding: 1px; margin: 0 0 5px 15px; display: inline; border: solid 5px #f2f0ea; }
+img.alignleft { padding: 1px; margin: 0 15px 5px 0; display: inline; border: solid 5px #f2f0ea; }
+.alignright { float: right; }
+.alignleft { float: left }
+img.wp-smiley { margin:0; border:0; }
+
+/* Navigation
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  */
+.nav { text-align: left;}
+.nav .left a { float: right; background: url(images/nav-right.png) no-repeat right 1px; padding-right: 15px; padding-left:0; }
+.nav .right a { float: left; background: url(images/nav-left.png) no-repeat left 1px; padding-left: 15px; padding-right:0; }
+.nav a { cursor: hand;}
+
+
+
+/* Side Right 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.sr-a { float: left;}
+.sr-t { float: right;}
+.sr-b { float: right;}
+
+.sr { float: right; }
+.sr h3 { background-position: right 4px !important; padding-left: 0; padding-right: 18px;}
+.search h3 { padding-right: 0px;}
+.search input { padding: 5px 30px 10px 12px; }
+
+.categ li { padding: 2px 17px 3px 0; background: url(images/categ-arrow-rtl.png) no-repeat right 7px !important;}
+
+.widget li {  padding: 2px 17px 3px 0; background: url(images/categ-arrow-rtl.png) no-repeat right 7px;}
+
+.widget_flickrRSS li {  margin: 0px 0 0px 8px; }
+
+/* Recent
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.recent .tabs { float: right; }
+.recent .tabs li { float: right; }
+
+#r-com li a { background-position: right 4px !important; padding-right: 13px; padding-left: 0;}
+
+
+/* Comment List
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */	
+.com-list blockquote { margin-left: 0;  margin-right: 1em;}
+.com-con { padding: 10px 20px 10px 10px; }
+.com-con .avatar { float:left; }
+
+/* Comment Form
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */		
+
+
+.com-form label { left: auto; right:250px; }
+.com-form input { margin-right: 0;  margin-left: 10px; }
+.com-form textarea { margin-right: 0;  margin-left: 10px; }
+.com-form button {  background: #faf9f6 url(images/post-comment-i18n.png) no-repeat; border: none; text-indent: 0; color:#fff; font-weight:bold;}
+.com-form label#subscribe-label { left:auto; right:0; top: 0px;}
+
+
+/* Footer 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.footer { float: right;}
+.footer p { padding-right:20px; padding-left: 0; }
+
+
+.previous a {
+background: transparent url(images/nav-left.png) no-repeat scroll left .25em;
+padding-left: 15px;
+padding-right:0;
+}
+
+.next a {
+background: transparent url(images/nav-right.png) no-repeat scroll right .25em;
+padding-right: 15px;
+padding-left:0;
+}
