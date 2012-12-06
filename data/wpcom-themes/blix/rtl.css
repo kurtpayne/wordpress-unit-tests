@@ -1,0 +1,93 @@
+/*
+RTL for Theme:  : Blix
+Editors: Navid Kashani,Mahyar Abbaspor
+Persian WordPress Project : wp-persian.com
+*/
+body {
+    font-family: Tahoma, Arial, Sans-Serif;
+}
+#container {
+	text-align:justify;
+	direction:rtl;
+}
+abbr, acronym {
+  letter-spacing:0px;
+}
+#content h2 {
+    font-family: Arial, Tahoam, Sans-Serif;
+}
+#subcontent h2 {
+    font-family: Arial, Tahoam, Sans-Serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#subcontent ul.posts li {
+    margin-left: 1%;
+}
+#subcontent ul li {
+    margin: 2px 0pt;
+}
+.entry .info {
+    height: 20px;
+}
+.entry .info .date {
+    position: absolute;
+}
+a.commentlink {
+    position: absolute;
+    right: 22.5%;
+}
+ul {
+	margin:0pt 1.4em 0pt 0pt;
+}
+#comments h2 {
+    direction: ltr;
+    text-align: right;
+}
+form .button {
+    text-align: center;
+}
+form input, form textarea {
+    font-family: Tahoma,Arial,sans-serif;
+}
+#header h1 a, #desc {
+    font-family: Arial,Tahoma,sans-serif;
+    margin-right: 5%;
+}
+#navigation li a {
+  letter-spacing:0px;
+}
+#navigation #s {
+    font-family: Tahoma,Arial,sans-serif;
+}
+#navigation #searchbutton {
+  letter-spacing:0px;
+}
+#subcontent table caption {
+  letter-spacing:0px;
+}
+#comments .header .avatar {
+	left:1px;
+}
+.editlink {
+	left:2px;
+}
+form label {
+	float:right;
+}
+#commentform .button {
+	margin-left:0;
+	margin-right:90px;
+}
+.entry .info .date, a.commentlink {
+	background-position:right center;
+	padding-left:0;
+	padding-right:15px;
+}
+.entry .info a {
+	padding-left:9px;
+	padding-right:15px;
+}
+#email, #url {
+	direction:ltr;
+}
