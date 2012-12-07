@@ -1,0 +1,87 @@
+/*
+RTL for Theme: : Ocean Mist 
+Editor: Navid Kashani , Mahyar Abbaspour
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:tahoma,arial;
+}
+#page {
+	text-align:right;
+	direction:rtl;
+}
+h1 {
+	font-family:arial;
+	letter-spacing:0;
+}
+.title small {
+	float:left;
+	padding:14px 0 0 24px;
+}
+#content .postwrapper .title h2 {
+	background-position: 515px 50%;
+	padding:9px 42px 12px 100px;
+}
+blockquote {
+	border-left:0 none;
+	border-right: 3px solid #CCCCCC;
+	padding:0 5px 0 0;
+	margin-right:25px;
+}
+ul {
+	margin: 0 30px 0 0;
+}
+ol {
+	margin: 0 9px 24px 0;
+}
+ul li, ol li {
+	margin: 0;
+}
+.post, .page {
+	padding:0 18px 0 0;
+}
+.archive, #sidebar .post {
+	margin: 0 18px 18px 0;
+}
+.wideposts .entry {
+	margin: 0 5px 18px 0;
+}
+#sidebar .title h2 {
+	padding:9px 24px 12px 0;
+}
+.entry p {
+	line-height:150%;
+	padding:0 24px 0 10px;
+}
+.entry img {
+	margin:0 4px;
+}
+code {
+	display:block;
+	direction:ltr;
+	text-align:left;
+	background-color:#CFCFCF;
+}
+#sidelist li li {
+	margin:0 8px 0 24px;
+}
+#s {
+	margin-left:2px;
+}
+textarea {
+	font-family:tahoma, arial;
+}
+.comment .avatar {
+	float:left;
+	margin-left:25px;
+}
+#calendar_wrap {
+	margin:0pt 18px 18px 0pt;
+}
+#pagetabs {
+	left:10px;
+	margin:0pt 0pt 0pt 15px;
+}
+#email, #url {
+	direction:ltr;
+}
