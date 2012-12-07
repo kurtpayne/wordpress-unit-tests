@@ -1,0 +1,328 @@
+/* @group categoriesgrid */
+
+#sidebar #categories.sidebarblock {
+	padding-right: 0;
+}
+
+#categoriesgrid {
+	padding: 0 0 3px 0;
+	float: left;
+	width: 360px;
+}
+
+#categoriesgrid li {
+	width: 110px;
+	float: left;
+	height: 25px;
+	overflow: hidden;
+	margin: 0 10px 0 0;
+}
+
+#categoriesgrid li a {
+	width: 110px;
+	float: left;
+	text-decoration: none;
+	height: 20px;
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+
+#categoriesgrid li a:hover,
+#categoriesgrid li a:focus,
+#categoriesgrid li a:active {
+	text-decoration: underline;
+}
+
+/* @end */
+
+/* @group postdetails */
+
+.postdetails {
+	padding: 16px 20px 15px;
+	background: url(../img/line-dotted.gif) repeat-x 0 0;
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+}
+
+.postdetails li.comments {
+	float: right;
+}
+
+.postdetails li.comments a {
+	display: block;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+.postdetails a {
+	color: #333;
+	text-decoration: none;
+}
+
+.postdetails a:hover,
+.postdetails a:focus,
+.postdetails a:active {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* @end */
+
+/* @group more */
+
+p.more {
+	margin-bottom: 0;
+}
+
+p.more a {
+	display: block;
+	padding-bottom: 15px;
+	text-decoration: none;
+}
+
+p.more a:hover,
+p.more a:focus,
+p.more a:active {
+	text-decoration: underline;
+}
+
+/* @end */
+
+/* @group olderposts */
+
+#olderposts {
+	margin: 0;
+	padding: 16px 20px;
+	border-top: 1px solid #ccc;
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #666;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group indexlist */
+
+.indexlist {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	font-weight: bold;
+	text-align: right;
+}
+
+.indexlist li {
+	background: url(../img/line-dotted.gif) repeat-x 0 13px;
+	margin-bottom: 5px;
+}
+
+.indexlist li a {
+	text-decoration: none;
+	display: block;
+}
+
+.indexlist li span.didwhat {
+	display: none;
+}
+
+.indexlist li a span.name {
+	float: left;
+	padding: 0 5px 0 0;
+	background-color: #fff;
+	color: #333;
+}
+
+.indexlist li a:hover span.name,
+.indexlist li a:focus span.name,
+.indexlist li a:active span.name {
+	color: #000;
+	text-decoration: underline;
+}
+
+.indexlist li a span.title {
+	padding-left: 5px;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+.indexlist li span.title a:hover,
+.indexlist li span.title a:focus,
+.indexlist li span.title a:active {
+	color: #000;
+	text-decoration: underline;
+}
+
+/* @group recentpostslist */
+
+#recentpostslist.indexlist {
+	text-align: left;
+}
+
+#recentpostslist.indexlist a {
+	text-decoration: none;
+	display: block;
+}
+
+#recentpostslist.indexlist li a span.title {
+	background-color: #fff;
+	padding-right: 5px;
+	padding-left: 0;
+}
+
+#recentpostslist.indexlist li a:hover span.title,
+#recentpostslist.indexlist li a:focus span.title,
+#recentpostslist.indexlist li a:active span.title {
+	text-decoration: underline;
+}
+
+#recentpostslist.indexlist li a span.date {
+	float: right;
+	color: #999;
+	padding-left: 5px;
+	background-color: #fff;
+}
+
+#recentpostslist.indexlist li a:hover span.date,
+#recentpostslist.indexlist li a:focus span.date,
+#recentpostslist.indexlist li a:active span.date {
+	color: #666;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group intro */
+
+#intro {
+	font-size: 18px;
+	line-height: 26px;
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	padding-bottom: 4px;
+	background: url(../img/line-dotted.gif) repeat-x 0 bottom;
+	margin-bottom: 20px;
+}
+
+/* @end */
+
+/* @group image */
+
+#content .contentblock .image {
+	text-align: center;
+	margin: 20px 0;
+	padding: 21px 0 0 0;
+	background: url(../img/line-dotted.gif) repeat-x 0 0;
+}
+
+#content .contentblock .image p {
+	margin: 0;
+	padding: 0 20px 11px;
+	background: url(../img/line-dotted.gif) repeat-x 0 bottom;
+	line-height: 100%;
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	letter-spacing: 1px;
+	width: 470px;
+	overflow: hidden;
+}
+
+#content .contentblock .image p img {
+	padding-bottom: 10px;
+	max-width: 470px;
+}
+
+/* @end */
+
+/* @group comments */
+
+/* @group newcommentform */
+
+#newcommentform {
+	padding: 10px 0;
+}
+
+#newcommentform p {
+	position: relative;
+	margin: 10px 0;
+	line-height: 100%;
+}
+
+#newcommentform p.buttons {
+	padding-left: 80px;
+}
+
+#newcommentform p.buttons input.submit {
+	width: 230px;
+	background-image: url(../img/comment-submit.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+#newcommentform input.text,
+#newcommentform textarea {
+	font-family: "Lucida Grande", Verdana, sans-serif;
+	text-transform: none;
+	font-size: 13px;
+	padding: 5px 4px;
+	line-height: normal;
+	width: 220px;
+}
+
+#newcommentform textarea {
+	height: 100px;
+}
+
+#newcommentform label {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+	width: 70px;
+	margin-right: 10px;
+	text-align: right;
+	float: left;
+	margin-top: 8px;
+	color: #666;
+}
+
+#newcommentform label:hover {
+	color: #333;
+}
+
+#newcommentform label small {
+	font-size: 13px;
+	font-weight: normal;
+	letter-spacing: 0;
+	position: absolute;
+	right: 0;
+	width: 70px;
+	text-align: left;
+}
+
+/* @end */
+
+.comment {
+	padding: 21px 20px 5px;
+	background: url(../img/line-dotted.gif) repeat-x 0 top;
+	position: relative;
+}
+
+.comment h4,
+.comment p {
+	padding-left: 60px;
+}
+
+.comment h4 img {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	width: 50px;
+	height: 50px;
+}
+
+/* @end */
