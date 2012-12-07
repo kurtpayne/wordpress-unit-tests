@@ -1,0 +1,260 @@
+html {
+	direction:rtl;
+	unicode-bidi:embed;
+	text-align:right;
+}
+
+#postbox .avatar {
+	float: right;
+}
+
+#postbox .inputarea {
+	padding-left: 0;
+	padding-right: 66px;
+}
+
+#postbox input#tags {
+	float: right;
+}
+#postbox input#submit {
+	margin-left: 0px;
+	margin-right: 6px;
+	float: left;
+}
+
+.postbox-container {
+	float: right;
+	padding-left: 0.5%;
+	padding-right:0;
+}
+
+#wrapper button, #wrapper input[type="submit"] {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+#wrapper button {
+margin: 10px 0px 0px 10px;
+}
+#wrapper button:active, #wrapper input[type="submit"]:active {
+	background-position:right top;
+}
+
+#main ul#postlist {
+	margin-right: 0;
+}
+
+
+#main img.avatar {
+	float: right;
+	margin-right: 2px;
+	margin-left: 15px;
+}
+
+#main .controls {
+text-align: left;
+right: auto;
+left: 0;
+}
+#main .actions {
+	right: auto;
+	left: 2px;
+}
+
+h2 img {
+	margin-left: 12px;
+	margin-right: 0px;
+}
+#main p img {
+	margin-left: 8px;
+	margin-right: 0px;
+}
+
+#main ul, #main ol {
+	margin-right: 18px;
+	margin-left: 0px;
+}
+
+#main ul.commentlist {
+	margin-right: 64px;
+	margin-left: 0;
+}
+
+#main ul.commentlist img.avatar {
+	margin-right: 0px;
+	margin-left: 12px;
+}
+
+#main #respond.replying, .textedit {
+	margin-left: 0px;
+	margin-right: 64px;
+}
+.textedit {
+margin-right: 0;
+}
+#main .commentlist #respond.replying {
+	margin-right: 44px;
+	margin-left: 0px;
+}
+#main .commentlist li #respond.replying {
+	margin-right: 93px;
+	margin-left: 0px;
+}
+
+#postpage #respond p {
+	margin-left: 0;
+}
+#respond p, li ul #respond p {
+	float: left;
+	margin-left: 10%;
+	margin-right:0;
+	padding-left: 5px;
+	padding-right: 0;
+}
+#postpage li ul #respond p {
+	margin-left: 5%;
+	margin-right: 0;
+}
+
+.commentlist .children li {
+	margin-right: 47px;
+	margin-left: 0;
+}
+
+.rss {
+	float: left;
+	background-position: right bottom;
+	padding-right: 14px;
+	padding-left: 0px;
+
+}
+.allrss {
+	background-position: right center;
+	padding-right: 14px;
+	padding-left: 0px;
+}
+h2 .rss {
+	background-position: right bottom;
+}
+
+.sleeve_main {
+	margin-right: 0;
+	margin-left: 253px;
+}
+#sidebar {
+	margin-right: -1px;
+	margin-left: 0;
+	float: left;
+}
+
+#sidebar ul li ul li {
+	padding-left: 6px;
+	padding-right: 0px;
+}
+#sidebar ul li ul li ul {
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+#sidebar ul li#authors ul li {
+	padding-left: 10px;
+	padding-right: 0px;
+	float: right;
+}
+#sidebar ul li#authors h2 {
+	padding-right: 0;
+	padding-left: auto;
+}
+
+#sidebar ul li#authors, #sidebar ul li#authors ul li {
+	margin-right: 0px;
+	margin-left: -5px;
+}
+
+#searchform input {
+	float: right;
+}
+
+#main ol, #main .post ol {
+	margin-right: 18px;
+	margin-left: 0px;
+}
+
+a.hidemessage {
+	float: right;
+}
+
+.ac_results li {
+	text-align: right;
+}
+
+.progress {
+	padding-left: 0px;
+	padding-right: 20px;
+	position: absolute;
+	right: 37px;
+	left: auto;
+}
+
+#newCommentsIndicator {
+	left: auto;
+	right: 0;
+}
+#settings {
+	float: right;
+}
+
+#help {
+	left: auto;
+	right: 50%;
+	margin: -10% -25% 0 0;
+}
+#notify {
+	left: auto;
+	right: 50%;
+	margin: -10% -10% 0 0;
+}
+
+#help dd, dt {
+	float: right;
+}
+#help dt {
+	padding-right: 0;
+	padding-left: 5%;
+	text-align: left;
+}
+
+#userpage  ul {
+	clear: right;
+}
+
+#postpage .postcontent {
+	margin-right: 62px;
+	margin-left: 0px;
+}
+
+div.entry {
+	margin-left: 250px; /* compensate for sidebar */
+	margin-right: 0px; /* compensate for sidebar */
+}
+
+
+
+#recentcommentstable td.recentcommentstexttop {
+	padding:0px 10px 0px 0px !important;
+}
+#recentcommentstable td.recentcommentstextend {
+	padding:0px 10px 2px 0px !important;
+}
+
+table.p2-recent-comments td.text {
+	padding:0 10px 0 0;
+}
+
+#media-buttons {
+	right:auto;
+	left:16px;
+}
+
+.category-quote blockquote cite {
+	text-align:left;
+}
