@@ -1,0 +1,461 @@
+body {
+background:#fff;
+color:#111;
+font-size:125%;
+line-height:140%;
+margin:1em 1em 1em 2em;
+padding:0;
+}
+
+div#container {
+float:left;
+margin:0 0 0 -200px;
+width:100%;
+}
+
+div#content {
+margin:0 0 0 200px;
+}
+
+div.sidebar {
+float:right;
+overflow:hidden;
+width:150px;
+}
+
+div#secondary {
+clear:right;
+}
+
+div#footer {
+clear:both;
+font:bold 0.5em/normal verdana, geneva, sans-serif;
+margin:0 -2em 0 0;
+text-align:right;
+width:100%;
+}
+
+div#header {
+margin:0 0 3em;
+}
+
+div#header a,div#header a:link,div#header a:visited {
+background:#fff;
+color:#000;
+text-decoration:none;
+}
+
+div#header a:hover {
+background:#fff;
+color:#505555;
+}
+
+h1#blog-title {
+font:3em/140% arial, helvetica, sans-serif;
+margin:0;
+}
+
+div#blog-description {
+font-family:verdana, geneva, sans-serif;
+font-size:0.8em;
+}
+
+div#content a,div#content a:link,div#content a:visited {
+border-bottom:2px solid #b8c4ce;
+color:#000;
+text-decoration:none;
+}
+
+div#content a:hover {
+border-bottom:2px solid #d9e6f2;
+color:#505555;
+}
+
+h2.entry-title {
+font-size:1.5em;
+margin:0;
+}
+
+body.single h2.entry-title,body.page h2.entry-title {
+clear:both;
+font-size:1.6em;
+margin:0 0 -0.4em;
+}
+
+abbr.published {
+border:none;
+cursor:default;
+display:block;
+font:0.6em/normal verdana, geneva, sans-serif;
+margin:0.5em 0 0;
+}
+
+div.entry-content p {
+margin:1em 0;
+}
+
+div.entry-meta {
+font:0.7em/150% verdana, geneva, sans-serif;
+margin:0 0 5em;
+}
+
+span.meta-sep {
+color:#ddd;
+margin:0 0.2em;
+padding:0 0.2em;
+}
+
+body.single div.entry-meta {
+background:#fff;
+border:1px solid #b8c4ce;
+color:#505555;
+padding:0.5em;
+}
+
+body.single div#content div.entry-meta a,body.single div#content div.entry-meta a:link,body.single div#content div.entry-meta a:visited {
+background:#fff;
+border:none;
+color:#000;
+}
+
+body.single div#content div.entry-meta a:hover {
+background:#fff;
+border-bottom:1px solid #b8c4ce;
+color:#000;
+}
+
+body.single div.entry-meta abbr.published {
+display:inline;
+font-size:1em;
+}
+
+div.archive-meta {
+background:#fff;
+color:#505555;
+font:0.7em/150% verdana, geneva, sans-serif;
+margin-bottom:3em;
+}
+
+div#content div.content-column {
+float:left;
+width:45%;
+}
+
+div.entry-content ol {
+margin:0 0 0 1.2em;
+padding:0;
+}
+
+div.entry-content ul {
+margin:0 0 0 1em;
+padding:0;
+}
+
+div.entry-content a.more-link {
+font:bold 0.7em/130% verdana, geneva, sans-serif;
+}
+
+div.entry-content div.page-link {
+font:bold 0.7em/130% verdana, geneva, sans-serif;
+margin:-0.5em 0 1em;
+}
+
+div#content div.page-link a,div#content div.page-link a:link,div#content div.page-link a:visited {
+background:#fff;
+border:2px solid #d9e6f2;
+color:#505555;
+margin:-0.5em 0 1em;
+padding:0.2em;
+}
+
+div#content div.page-link a:hover {
+background:#fff;
+border:2px solid #b8c4ce;
+color:#000;
+}
+
+code,pre {
+font-family:"courier new", courier, monospace;
+font-size:0.9em;
+}
+
+blockquote {
+background:#eeefef;
+color:#000;
+margin:0;
+padding:0.1em 1em;
+}
+
+blockquote blockquote p {
+border-left:2px dotted #505555;
+padding:0 0 0 0.5em;
+}
+
+abbr,acronym {
+border-bottom:1px dotted #88807c;
+cursor:help;
+}
+
+strong {
+font-weight:700;
+}
+
+em {
+font-style:italic;
+}
+
+.caps {
+text-transform:uppercase;
+}
+
+div.entry-content .center {
+display:block;
+margin:0.5em auto;
+}
+
+div.entry-content .alignright {
+margin:0.5em 0 0.5em 1.2em;
+}
+
+div.entry-content .alignleft {
+margin:0.5em 1.2em 0.5em 0;
+}
+
+div#content div.entry-content a img.center,div#content div.entry-content a:link img.center,div#content div.entry-content a:visited img.center,div#content div.entry-content a img.alignleft,div#content div.entry-content a:link img.alignleft,div#content div.entry-content a:visited img.alignleft,div#content div.entry-content a img.alignright,div#content div.entry-content a:link img.alignright,div#content div.entry-content a:visited img.alignright {
+border:1px solid #505555;
+}
+
+div#content div.entry-content a:hover img.center,div#content div.entry-content a:hover img.alignleft,div#content div.entry-content a:hover img.alignright {
+border:1px solid #b8c4ce;
+}
+
+h2,h3,h4,h5,h6 {
+font-family:arial, helvetica, sans-serif;
+font-weight:400;
+line-height:130%;
+}
+
+body.home h2.entry-title {
+font-size:1.6em;
+margin:0;
+}
+
+body h2.page-title {
+font-size:1.6em;
+}
+
+body.date h2.page-title {
+margin:0 0 1em;
+}
+
+body.archive h3.entry-title,body.single h3.entry-title {
+font-size:1.3em;
+margin:0;
+}
+
+body.single div.comments h3,body.page div.comments h3 {
+font-size:1.4em;
+margin:3em 0 1em;
+}
+
+body div.comments h3 span {
+font-size:2em;
+}
+
+body.single h3#respond {
+font-size:1.2em;
+margin:3em 0 0.5em;
+}
+
+div.entry-content h2 {
+font-size:1.2em;
+margin:1.5em 0 -0.7em;
+}
+
+div.entry-content h3 {
+font-size:1.1em;
+margin:1.5em 0 -0.9em;
+}
+
+div.entry-content h4,div.entry-content h5,div.entry-content h6 {
+font-size:1em;
+margin:1.5em 0 -1.1em;
+}
+
+div.comments ol li {
+font-size:1.2em;
+margin:0 0 2em;
+}
+
+div.comments ol li div,div.comments ol li p {
+font-size:0.8em;
+}
+
+div.comments ol li div.comment-author {
+font:0.8em/130% arial, helvetica, sans-serif;
+margin:0 0 0.2em;
+}
+
+div.comments ol li div.comment-meta {
+font:0.5em/130% verdana, geneva, sans-serif;
+}
+
+div.comments ol li p {
+margin:0.5em 0;
+}
+
+div.comments ol li.bypostauthor {
+border-left:10px solid #eeefef;
+padding:0 0 0 0.5em;
+}
+
+form#commentform,form#commentform p {
+padding:0;
+}
+
+form#commentform span.req-field {
+background:#fff;
+color:#c30;
+}
+
+input#author,input#email,input#url,textarea#comment {
+font-family:verdana, geneva, sans-serif;
+font-size:0.7em;
+padding:0.2em;
+}
+
+input#author,input#email,input#url {
+width:50%;
+}
+
+textarea#comment {
+height:15em;
+margin:0 0 0.5em;
+overflow:auto;
+width:66%;
+}
+
+div.sidebar div,div.sidebar h3,div.sidebar ul,div.sidebar li {
+margin:0;
+padding:0;
+text-align:right;
+}
+
+div.sidebar li {
+list-style:none;
+margin:0 0 1em;
+}
+
+div.sidebar li form {
+margin:0.2em 0 0;
+padding:0;
+}
+
+div.sidebar h3 {
+font-size:1em;
+}
+
+div.sidebar input#s {
+width:5em;
+}
+
+div#footer span#generator-link {
+border-right:5px solid #ddd;
+padding-right:0.7em;
+}
+
+div#footer span#theme-link {
+padding-left:0.3em;
+}
+
+.alignleft {
+float:left;
+}
+
+.alignright {
+float:right;
+}
+
+.clearer {
+clear:both;
+}
+
+div.navigation {
+font:0.7em/normal verdana, geneva, sans-serif;
+width:100%;
+}
+
+body div#content div.nav-next a,body div#content div.nav-next a:link,body div#content div.nav-next a:visited,body div#content div.nav-previous a,body div#content div.nav-previous a:link,body div#content div.nav-previous a:visited {
+border:2px solid #d9e6f2;
+padding:0.5em;
+}
+
+body div#content div.nav-next a:hover,body div#content div.nav-previous a:hover {
+border:2px solid #b8c4ce;
+}
+
+body.single div#content div.nav-next a,body.single div#content div.nav-next a:link,body.single div#content div.nav-next a:visited,body.single div#content div.nav-previous a,body.single div#content div.nav-previous a:link,body.single div#content div.nav-previous a:visited {
+background:#fff;
+border-bottom:2px solid #d9e6f2;
+border-left:none;
+border-right:none;
+border-top:none;
+color:#505555;
+margin:0;
+padding:0;
+text-decoration:none;
+}
+
+body.single div.navigation {
+padding:0 0 3em;
+}
+
+div.nav-next,div.nav-previous {
+display:inline;
+}
+
+body.single div.nav-next {
+margin:0 0 0 1em;
+}
+
+body.single div.nav-previous {
+margin:0 1em 0 0;
+}
+
+div#access,body.single div#secondary ul li,body.page div#secondary ul li,div#footer span.meta-sep,div#nav-above,body.single div#nav-below {
+display:none;
+}
+
+div.entry-content img,div.sidebar li img,div.sidebar li a img {
+border:none;
+}
+
+body.category h2.page-title,body.author h2.page-title,div.entry-content div.content-column h3,div.sidebar ul ul li {
+margin:0;
+}
+
+div.entry-content ul#links-page li h3,div.entry-content ul#archives-page li h3,form#commentform .form-label {
+margin:1em 0 0;
+}
+
+div.sidebar a,div.sidebar a:link,div.sidebar a:visited,div#footer a,div#footer a:link,div#footer a:visited {
+background:#fff;
+border-bottom:2px solid #d9e6f2;
+color:#505555;
+text-decoration:none;
+}
+
+div.sidebar a:hover,div#footer a:hover,body.single div#content div.nav-next a:hover,body.single div#content div.nav-previous a:hover {
+background:#fff;
+border-bottom:2px solid #b8c4ce;
+color:#000;
+}
+
+body.single div#secondary ul li.blog-search,body.single div#nav-above {
+display:block;
+}
+
+/*
+SPARTAN v1.1 for SANDBOX
+by SCOTT ALLAN WALLICK, http://www.plaintxt.org/
+*/
