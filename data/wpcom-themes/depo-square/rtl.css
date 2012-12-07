@@ -1,0 +1,143 @@
+/*
+Theme: DePo Square
+RTL: Yoav Farhi, yoav@automattic.com
+*
+/* Defaults */
+caption,th {text-align:right;}
+/* -------------------------- */
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+/* Utility */
+.highlite, blockquote em, { background-color:#FFFCCE; }
+.none { text-indent: -1000em; }
+
+/* Alignment */
+.alignleft,.alignright,.align-left,.align-right { }
+.alignright,.align-right, .inset { float:left; }
+.alignleft, .align-left, .alternate { float:right; }
+.text-left{text-align:right;}
+.text-right{text-align:left;}
+
+/* Structure */
+
+#header {
+float: right;
+}
+#content {
+float: right;
+margin-right: 25px;
+margin-left: 0;
+}
+#sidebar .widget {
+float: right;
+}
+#sidebar .widget p {
+padding-right:0;
+padding-left: 10px;
+}
+.comment-status {
+left: 0;
+right:auto;
+}
+.comment-status a {
+padding-right: 10px;
+padding-left: 0;
+}
+
+.category {
+margin-right: -42px;
+margin-left: 0;
+}
+
+.more-link {
+padding-left: .5em;
+padding-right:0;
+right: 0;
+left: auto;
+}
+.type-photo .entry {
+margin-right: -10px;
+margin-left: 0;
+right: -10px;
+left: 0;
+}
+
+.type-photo .category {
+margin-right: -62px;
+margin-left: 0;
+}
+
+.type-photo {
+padding-left: 10px;
+padding-right: 10px;
+margin-left: -20px;
+border-left: 10px solid #e5e5e5;
+border-right: 0;
+margin-right: 10px;
+}
+.type-photo .comment-status {
+text-align: left;
+}
+#content .type-photo h2 {
+float: right;
+}
+#content .type-photo .meta {
+float: left;
+clear: left;
+}
+
+#content ul {
+margin-right: 2em;
+margin-left: 0;
+}
+
+#content .type-quote h2 {
+text-indent: -1000em;
+}
+
+#content .type-quote .entry p, #content .type-quote .entry cite {
+background: url(./i/quote-bottom-rtl.png) 0 0 no-repeat;
+}
+
+#search {
+background: url(./i/search-bg-rtl.png) 100% 2px no-repeat;
+padding-right: 17px;
+padding-left: 5px;
+}
+
+#footer_box {
+margin-right: -225px;
+margin-left: 0;
+}
+
+.rss img {
+margin-left: 5px;
+margin-right: o;
+}
+.archives li {
+float: right;
+}
+
+li.comment .avatar {
+float: right;
+margin-left: 10px;
+margin-right: 0;
+}
+li.comment .commentmetadata {
+float: right;
+}
+li.comment .comment-text{
+margin-right: 42px;
+margin-left: 0;
+}
+.commentlist #respond {
+margin-right: 42px;
+margin-left: 0;
+}
+#flickr_badge_uber_wrapper a {
+margin: 0 0 11px 11px;
+float: right;
+}
