@@ -1,0 +1,400 @@
+/*  
+Theme Name: Fjords04
+Theme URI:
+Description: A 4 column theme with split custom header.
+Version: 1.0-wpcom
+Author: Peterandrej
+Author URI: http://www.peterandrej.com/wordpress/
+Tags: four-columns, custom-header, rtl-language-support, right-sidebar, sticky-post, widgets, fixed-width
+
+
+	This theme was originally designed by Lokesh and redesigned and built by oriol, 
+	before redesigned and rebuild by Peterandrej.
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+	
+
+	
+*/
+
+
+
+
+/**********************************************************************************/
+body {
+	background-color: #DDE5D9;
+	font: 11px "Lucida Sans Unicode", "Lucida Sans", verdana, arial, helvetica;
+	color: #888;
+}
+a, a:hover { color: #8ab459; text-decoration: none; }
+/********************************************************************************/
+#wrapper { 
+		padding-left: 0; 
+		width: 970px;
+		margin-left: auto;
+		margin-right: auto;
+}
+#mini-nav{
+	width: 20px;
+	float: left;
+	margin: 5px;
+	padding-top: 30px;
+	position:fixed;
+}
+
+#mini-nav img{
+	margin:1px;
+}
+
+#hode {
+	width: 250px;
+	color: #ffffff;
+	height: 170px;
+	text-align: left;
+	clear: both;
+	margin: 5px;
+	padding-top: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	background: transparent;
+}
+
+#content, #sidebar-1, #sidebar-2, #sidebar-3 { 
+	background: #ffffff url(imagenes_qwilm/beach.jpg) no-repeat top left;
+	overflow: hidden;
+}
+
+#content {
+	width: 270px;
+	text-align: left;
+	border-top:solid 1px #CED4CA;
+	border-bottom:solid 3px #CED4CA;
+	border-left:solid 1px #CED4CA;
+	border-right:solid 3px #CED4CA;
+	float: left;
+	margin: 5px;
+	padding-top: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+}
+#sidebar-1 {
+	width: 170px;
+	background-position: -300px 0;
+}
+#sidebar-2 {
+	width: 170px;
+	background-position: -500px 0;
+}
+#sidebar-3 {
+	width: 170px;
+	background-position: -700px 0;
+}
+#logo {
+	width: 140px;
+	padding:10px;
+}
+/********************************************************************************/
+.sidebar {
+	text-align: left;
+	padding-top: 220px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+	border-top:solid 1px #CED4CA;
+	border-bottom:solid 3px #CED4CA;
+	border-left:solid 1px #CED4CA;
+	border-right:solid 3px #CED4CA;
+	float: left;
+	margin: 5px;
+	background: #ffffff;
+	font-size: 0.9em;
+}
+
+.post {
+	border-bottom:solid 1px #DEE4DA;
+	padding-top:30px;
+	padding-bottom:0px;
+}
+
+.post-titulo {
+	color:#ACB200;
+	margin:0px;
+	margin-bottom:2px;
+}
+
+.sticky h2 a {
+	background-color: #63B4CD;
+	color: white;
+	padding: 10px;
+	display: block;
+}
+.sticky h2 a:hover{
+background-color: transparent;
+color: #63B4CD;
+}
+.postmeta {
+	margin-top: 0;
+	padding-top: 1px;
+	font-size: 0.9em;
+	color: #999;
+	}
+.comentarios-link{
+	padding: 0 0 0 17px;
+	background: url(imagenes_qwilm/commentslink.gif) no-repeat center left;
+	}	
+/**********************************************************************************/
+/*Tipografia*/
+h1,
+h2,
+h3,
+h4 {	font-family: "Lucida Grande", Tahoma, Arial, sans-serif; }
+
+h1 { text-indent: -9000px; margin: 0; display: none;}
+h2 { margin-top: 25px; margin-bottom: 0; font-size: 16px; }
+h2 a { color: #63b4cd; }
+h3 { font-size: 14px; color: #666; }
+h4 { margin: 0px; padding: 0px; font-size: 17px; color: #ffffff; }
+h4 a { color: #ffffff; }
+
+p {	line-height: 1.5em;	margin: 1.2em 0; }
+
+ol, ul {
+	line-height: 1.5em;
+	margin: 1.2em 0 1.2em 2em;
+	}
+ul li,
+ol li{ margin-bottom: 0.2em; }
+
+img, a img{ border:0px;}
+
+a, a:hover { color: #8ab459; text-decoration: none; }
+a:hover { color: #777; }
+
+em{
+	font-style: normal;
+	font-weight: bold;
+	color: #ef6c6c;
+	}
+
+blockquote {
+	margin: 0 20px;
+	padding: 0 20px;
+	border-left: 4px solid #E8E7D0;
+	font-size: 0.9em;
+	}
+
+pre{
+	display: block;
+	margin: 1.0em 1.5em 1.0em 0;
+	padding-left: 0.8em;
+	border-left: 1px solid #ccc;
+	background-color: #eee;
+	overflow: auto;
+	}
+
+code{font-family: monospace;  font-size: 11px; background-color: #eee;}
+pre code{ line-height: 1.3em;}
+
+kbd{
+	background-color: #ddd;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: inherit;
+	font-family: inherit;
+	padding: 0 3px 2px 4px;
+	}
+
+del, del * { text-decoration: line-through; }
+
+.small {
+	font-size: 0.9em;
+	color: #999;
+	}
+/***********comentarios***************/
+
+#comment{
+	width: 100%
+}
+.comentarios{
+	border:1px solid #DEE4DA;
+	background-color: #F3F3F3;
+	padding:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.commentarios li {
+	border:1px solid #DEE4DA;
+	background-color: #F3F3F3;
+	padding:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+	}
+.commentarios li:hover{ background-color: #fff; }
+
+.comentariosmeta {
+	margin-top: 0;
+	padding-top: 1px;
+	font-size: 0.9em;
+	color: #999;
+	}
+.comentariostitulo {
+	margin:0px;
+	margin-bottom:2px;
+}
+div.comment {
+	margin-left:1.5em;
+}
+
+/*********sidebars***************/
+.sidebar h2 {
+	display: inline;
+	margin: 1.2em 0 0.6em 0;
+	padding: 0 10px 0 0;
+	color: #63b4cd;
+	background: url(imagenes_qwilm/arrow.gif) no-repeat center right;
+	font-size: 1.1em;
+	}
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+.sidebar ul ul {
+	margin: 1.0em 0 1.5em 0;
+	border-top: 1px solid #dee4da;
+	}
+.sidebar ul ul li {
+	padding: 0 0 0 10px;
+	border-bottom: 1px solid #dee4da;
+	}
+.sidebar ul ul li a {
+	display: block;
+	margin: 0 0 0 -10px;
+	padding: 2px 10px 0 10px;
+	} 
+.sidebar ul li.widget_twitter ul li a {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	} 
+.sidebar ul ul li a:hover {
+	background-color: #f3f3f3;
+	}
+/****************************/
+.linkpermanente{
+	padding: 0 0 0 17px;
+	background: url(imagenes_qwilm/permalink.gif) no-repeat center left;
+	clear: both;
+}
+/**********formularios*********/
+input, textarea, select {
+	border: 1px solid #C1C0B5;
+	background-color: #FAFAF0;
+	color: #555;
+	font-size: 1em;
+	font-family: "Lucida Sans Unicode", Tahoma, Arial, sans-serif;
+	}
+/*******pagina estática*********/
+#pagina {
+	border-bottom:solid 1px #DEE4DA;
+	padding-top:30px;
+	padding-bottom:0px;
+}
+
+.pagina-titulo{
+	color: #63B4CD;
+	margin:0px;
+	margin-bottom:2px;
+
+}
+/**********gravatar***************/
+.gravatar{
+	float:right;
+
+}
+/*********Privado-comentarios***************/
+.comentarios-autor{
+	border:1px solid #B2FF66;
+	background-color: #95FFCE;
+	padding:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.comentarios-autor li {
+	border:1px solid #B2FF66;
+	background-color: #95FFCE;
+	padding:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+	}
+.comentarios-autor li:hover{ background-color: #fff; }
+/**********************************************/
+#searchform{
+width:100%;
+
+}
+
+.comment-author .avatar {
+	float: right;
+}
+
+.wp-smiley { border: none; padding: 0; }
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
