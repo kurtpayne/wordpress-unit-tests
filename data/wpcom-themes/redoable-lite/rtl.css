@@ -1,0 +1,781 @@
+/*
+Theme: Redoable Lite
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+/* @group General */
+body {
+	margin: 0px 20px 0px 0px;
+	direction:rtl;
+	unicode-bidi:embed;
+}
+/* @end */
+
+/* @group H1,H2,H3,H4 */
+
+
+h2 { /* H2 is what kind of page you are on. Eg. 'Monthly Archive'. */
+	text-align: right;
+}
+
+#primary .entry-content h2, #primaryFirst .entry-content h2 {
+	text-align: right;
+}
+
+/* @end */
+
+/* @group Header */
+	
+#header_middle {
+	margin: 0px 10px 0px 0px;
+}
+
+/* @end */
+
+/* @group TITLE */
+#title { float: right; }
+
+/* @end */
+
+/* @group MENU */
+ul.menu {
+	right: 20px;
+	left:auto;
+}
+
+.admintab {
+	left: 0px;
+	right: auto;
+}
+
+#menu {
+	left: 0px;
+	right: auto;
+}
+
+#menu a {
+	border-right: 10px solid #600;
+	border-left: 10px solid #191919;
+	padding: 0px 15px 0px 0px;
+	text-align: right;
+}
+	
+#menu a:hover {
+	border-right: 10px solid #700;
+	border-left: 10px solid #292929;
+	padding: 0px 15px 0px 0px;
+}
+
+#menu .current_page_item a {
+	border-right: 10px solid #600;
+	border-left: 10px solid #222;
+	padding: 0px 15px 0px 0px;
+}
+
+#menu .current_page_item a:hover {
+	border-right: 10px solid #800;
+	border-left: 10px solid #333;
+	padding: 0px 15px 0px 0px;
+}
+
+#alt_menu {
+	padding: 0px 10px 0px 0px;
+}
+
+#alt_menu a {
+	margin: 0px 10px 0px 10px;
+	text-align: right;
+}
+/* @end */
+
+/* @group Right Column - Sidebar */
+#rightcolumn {
+	border-left: 10px solid #191919;
+	border-right:0;
+	left: -250px;
+	right:auto;
+}
+
+.rightmargin { margin-left: 200px !important; margin-right:0;}
+
+#rightcolumnheader {
+	border-left: 10px solid #191919;
+	border-right: 0;
+	left: -260px;
+	right:auto;
+}
+
+#rightcolumnfooter {
+	border-left: 10px solid #191919;
+	border-right: 0;
+	left: -260px;
+	right: auto;
+}
+/* @end */
+
+/* @group Left Column - Sidenotes/Sidebar 2 */
+#leftcolumn {
+	border-right: 1px solid #2C2C2C;
+	border-left: 10px solid #222;
+	left: 0px;
+	right:auto;
+}
+/* @end */
+
+/* @group Get Firefox - http://wwww.getfirefox.com */
+#firefox_check img {
+	margin-left: 30px;
+	margin-right: 0;
+}
+/* @end */
+
+/* @group Primary, Page */
+#primaryFirst {
+	margin: 0px 150px 0px 210px;
+}
+
+#primary {
+	margin: 0px 150px 0px 210px;
+}
+
+#page {
+	text-align: right;
+}	
+
+/* @end */
+
+/* @group Secondary/Tertiary */
+.secondary { /* in the right-sidebar */
+	float: right;
+}
+
+.tertiary {
+	margin-right: auto;
+}
+
+.secondary h2, .tertiary h2 { /* Secondary H2 is sidebar headlines */
+	text-align: right;
+}
+
+.secondary .redo-asides .metalink { padding-right: 0px; padding-right:auto; }
+
+.secondary span a, .tertiary span a { margin-right: 0px; margin-left:auto; }
+
+/* @end */
+
+/* @group Sidebar Subpages Menu */
+.sb-pagemenu ul { margin-right: 10px; margin-left:0;}
+.sb-pagemenu ul ul .page_item {
+	margin-right: 10px;
+	margin-left:0;
+}
+/* @end */
+
+/* @group Entry */
+
+.entry-content {
+	margin-right: 45px;
+	margin-left: 0;
+}
+.page-content { margin-right: 0px !important; margin-left:auto;}
+
+/* @end */
+
+/* @group Link Log - wp-recent-links plugin */
+
+.link-title {
+	padding-right: 45px;
+	padding-left: 0;
+}
+
+
+.link-header {
+	float: left;
+	left: 7px;
+	right: auto;
+}
+/* @end */
+
+/* @group Meta Links */
+/* The Metalink class takes care of the comments, edit, rss and trackback links next to the titles */
+
+#primary .hentry .entry-head .metalink, #primaryFirst .hentry .entry-head .metalink {
+	margin-right: 15px;
+	margin-left: o;
+}
+
+body.page .entry-edit {
+	left: 180px;
+	right: auto;
+}
+
+.entry-edit {
+	background: url('images/pencil-rtl.png') right center no-repeat;
+	padding: 2px 20px 2px 0px ;
+}
+
+.comment-edit a {
+	background: url('images/comment_edit-rtl.png') right center no-repeat;
+	margin-right: 1em;
+	margin-left: 0;
+	padding: 2px 23px 2px 2px;
+}
+	
+.entry-category {
+	background-position: right center;
+	margin-left: 1em;
+	padding: 2px 20px 2px 0px;
+}
+
+.meta-column {
+	left: 15px;
+	right: auto;
+}
+
+.entry-meta { /* Time and category for blog entries */
+	margin-right: 45px;
+	margin-left: 0;
+}
+
+.chronodata {
+	background-position: right center;
+	padding: 2px 20px 2px 0px ;
+}
+
+.authordata {
+	background-position: right center;
+	padding: 2px 20px 2px 0px ;
+}
+
+.commentslink {
+	background: url('images/comment-rtl.png') right center no-repeat;
+	padding: 2px 20px 2px 0px;
+}
+
+.quoter_comment {
+	background: url('images/comment-rtl.png') right center no-repeat;
+	margin-right: 5px;
+	margin-left: 0;
+	padding: 2px 20px 2px 0px;
+}
+
+.entry-tags {
+	background: url('images/tag_blue-rtl.png') right center no-repeat;
+	padding: 2px 20px 2px 0px;
+}
+
+.word-count {
+	background-position: right center;
+	margin-left: 1em;
+	margin-right: 0;
+	padding: 2px 20px 2px 0px;
+}
+
+.page-views {
+	background-position: right center;
+	margin-left: 1em;
+	margin-right: 0;
+	padding: 2px 20px 2px 0px;
+}
+
+.sidenote-date { margin-left: 10px;margin-right:0; }
+
+.editLink {
+	background: url('images/pencil-rtl.png') right center no-repeat;
+	margin-right: 5px;
+	margin-left: 0;
+	padding: 10px 20px 2px 0px ;
+}
+
+.page-meta .authordata { margin-left: 5px; margin-right:0; }
+
+}
+
+/* @end */
+
+/* @group Feed Icon */
+
+.feedlink img { /* On the sidebar */
+	float: left;
+}
+/* @end */
+
+/* @group Sidenotes */
+.sidenote {
+	float: right;
+}
+
+.sidenote h2 { /* Secondary H2 is sidebar headlines */
+	text-align: right;
+}
+
+.sidenote h2 a {
+	background-position: left bottom;
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+/* @end */
+
+/* @group Pinglist */ 
+
+#pinglist li {
+	margin-right: 40px;
+	margin-left: 0;
+}
+
+
+#pinglist li span.favatar img {
+	float: right;
+	margin-right: -25px;
+	margin-left: 0;
+}
+
+/* @end */
+
+/* @group Comments */
+.comments {
+	text-align: right;
+}
+
+.comment-meta {
+	margin: 0px 0px 0px 15px;
+}
+
+.comments #commentload {
+	float: left;
+}
+
+
+.comments form input[type=text] {
+	margin: 5px 0px 1px 5px;
+}
+
+.comments form #submit {
+	float: left;
+}
+	
+.commentsrsslink {
+	background-position: right top;
+	margin-left: 10px;
+	margin-right: 0;
+	padding: 2px 20px 2px 0px;
+}
+
+.trackbacklink {
+	background-position: right top;
+	margin-left: 10px;
+	margin-right: 0;
+	padding: 2px 20px 2px 0px;
+}
+
+.technoratireaction {
+	background-position: right top ;
+	padding: 2px 20px 2px 0px;
+}
+
+#commentlist li {
+	padding: 10px 10px 5px 0px;
+}
+
+#commentlist .children {
+	padding-right:20px;
+	padding-left:0;
+}
+
+#commentlist li .comment-meta {
+	background-position: right center;
+	margin-right: 37px;
+	margin-left: 0;
+	padding: 2px 20px 2px 0px;
+}
+
+
+#commentlist img.avatar {
+	float: right;
+}
+
+
+#commentlist li .counter {
+	float: left;
+	text-align: left;
+}
+
+li.bypostauthor blockquote {
+	background: #eee url('images/quote_end.png') no-repeat 95% 0;              
+}
+/* @end */
+
+/* @group Footer */
+#footer {
+    text-align: right;
+}
+
+#footer small {
+	margin-right: 12px;
+	margin-left:0;
+}
+
+#copyright p {
+	margin: 0px 10px 5px 0px;
+	text-align: right;
+}
+
+#cclicense a {
+	background-position: 100% 50%;
+	padding: 8px 25px 8px 8px;
+}
+
+#footer_images {
+	float: left;
+	margin: 10px 0px 0px 10px;
+}
+
+#footer_images img {
+	margin: 0px 5px 0px 0px;
+}
+
+.footer_content {
+	background-position: left !important;
+}
+	
+/* @end */
+
+/* @group Various Tags and Classes */
+.clear {
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
+
+#primary .entry-content img, #primaryFirst .entry-content img {
+	background: #444;
+	border: 1px solid #555;
+	padding: 5px;
+}
+
+.alignright { float: left; }
+	
+.alignleft { float: right; }
+
+	
+div.alignright, img.alignright {
+	margin: 0px 7px 2px 0px;
+}
+
+div.alignleft, img.alignleft {
+	margin: 0px 0px 2px 7px;
+}
+	
+img.wp-smiley {
+	padding: 0px 5px 0px 0px !important;
+}
+
+/* @end */
+
+/* @group Quotes/Blockquote */
+blockquote {
+	background: #333 url('images/quote_end.gif') no-repeat right top;
+	padding: 10px 30px 0px 0px;
+}
+
+blockquote p:last-child {
+	background: url('images/quote.gif') no-repeat left bottom;
+}
+blockquote p {
+	padding-left: 30px;
+	padding-right: 0;
+}
+
+.quotes {
+	background: #700 url('images/quote_end_sm.gif') no-repeat 10px 2px;
+	right: -10px;
+	left: auto;
+}
+
+#wp_quotes {
+	background: url('images/quote_sm.gif') no-repeat 695px bottom;
+}
+/* @end */
+
+/* @group Navigation */
+
+.navigation .left {
+	float: right;
+	text-align: right;
+}
+
+.navigation .right {
+	float: left;
+	text-align: left;
+}
+
+/* @end */
+
+/* @group Page Navigation */
+.page-nav {
+	text-align: right;
+}
+/* @end */
+
+/* @group List Styles */
+.entry-content ol, .entry-content ul {
+	padding: 0px 35px 0px 0px;
+}
+
+.secondary ul, .secondary ol, .secondary div div, .tertiary ul, .tertiary ol, .tertiary div div {
+	padding-right: 0px;
+}
+
+.secondary ol, .tertiary ol { margin-right: 15px; margin-left:0; }
+
+/* @end */
+
+/* @group Links SBM */
+
+.sb-links a {
+	float: right;
+}
+
+.sb-links ul ul li {
+	float: right;
+}
+/* @end */
+
+/* @group Search Form and Livesearch */
+
+#searchreset {
+	left: 5px;
+	right: auto;
+}
+
+#searchload {
+	left: 6px;
+	right: auto;
+}
+
+
+#searchform input[type=text] {
+	background-position: 97% center;
+	margin-left: 5px;
+	margin-right: 0;
+	padding-right: 25px;
+	padding-left: 10px;
+}
+
+/* @end */
+
+/* @group Brian's Latest Comments SBM */
+/* http://meidell.dk/archives/2004/09/12/brians-latest-comments/ */
+
+.sb-comments-blc li > a[title="Go to the comments of this entry"] {
+	float: left;
+}
+
+.activityentry { font-size: 1.1em; }
+
+/* @end */
+
+.contactleft {
+	float: right; 
+	text-align: left;
+}
+
+.contactright {
+	float: left; 
+	text-align: right;
+}
+	
+/* @end */
+
+/* @group Noteworthy */
+.category-noteworthy h3.entry-title {
+	background-position: left center;
+	padding-left: 25px;
+	padding-right: 0;
+}
+
+.noteworthyLink { margin-right: 5px; margin-left:0; }
+/* @end */
+
+/* @group Share This */
+.share-link { margin-left: 5px; margin-right:0; }
+
+/* @end */
+
+/* @group Gregarious/Digg */
+.entry-content .diggButton {
+	float: left;
+	margin-right: 15px !important;
+	margin-left: 0;
+}
+
+/* @end */
+
+/* @group iMP Download Style override */
+.imp-download, .imp-download-error {
+	padding: 10px 50px 10px 10px !important;
+	text-align: right !important;
+}
+/* @end */
+
+/* @group Special Styles */
+/* This is based on styles from the Sawchuk scheme for K2 */
+.download, .note,
+.alert, .new, .construction,
+.information {
+	background-position: 15px 10px;
+	padding: 10px 50px 10px 10px;
+	text-align: right;
+}
+
+ul.download, ul.note,
+ul.alert, ul.new, ul.construction,
+ul.information {
+	padding: 10px 50px 10px 10px;
+}
+
+ol.download, ol.note,
+ol.alert, ol.new, ol.construction,
+ol.information {
+	padding: 10px 65px 10px 10px;
+}
+
+dl.download, dl.note,
+dl.alert, dl.new, dl.construction,
+dl.information {
+	padding: 10px 50px 10px 10px;
+}
+
+/* @end */
+
+/* @group comment-block */
+
+#comment-block { /* This is the main bottomblock container */
+	text-align: right;
+}
+
+#comment-block h2 {
+	text-align: right;
+}
+/* @end */
+
+
+/* @group Listen SBM */
+
+.sb-listen li{
+    margin-right: 0px;
+	margin-left: auto;
+}
+
+/* @end */
+
+/* @group Watch SBM */        
+.sb-watch li{
+    margin-right: 0px;
+	margin-left: auto;
+}
+
+/* @end */
+
+/* @group Latest Posts SBM */
+.sb-latest li {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+/* @end */
+
+/* @group Latest Comments SBM */
+.sb-comments li {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+/* @end */
+        
+/* @group Meta SBM */
+.sb-meta li {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+/* @end */
+
+/* @group Months SBM */
+.sb-months li {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+/* @end */
+
+/* @group Published/Posted Date */
+.published {
+	float:right;
+	margin: 0px 0px 0px 15px;
+}
+
+.published_sm {
+	float:right;
+	margin: 0px 0px 0px 15px;
+}
+
+.published_tiny {
+	margin: 0px 0px 0px 5px;
+}
+
+.published_link {
+	float: right;
+	margin: 0px 0px 0px 5px;
+}
+/* @end */
+
+
+/* @group Calendar SBM */
+
+#wp-calendar #next a {
+	padding-left: 5px;
+	padding-right: 0;
+	text-align: left;
+}
+
+#wp-calendar #prev a {
+	padding-right: 5px;
+	padding-left: 0;
+	text-align: right;
+}
+
+
+#wp-calendar h2 {
+	text-align: right;
+}
+
+#wp-calendar caption {	
+	text-align: right;
+}
+
+/* @end */
+
+/* @group Related Posts */
+
+.first-alt .relatedPosts h2 {
+	text-align: right;
+}
+/* @end */
+
+/* @group Post Ratings - overrides plugin settings */
+.post-ratings {
+	margin-right: 0px !important;
+	margin-left: auto !important;
+}
+
+.post-ratings-loading {
+	text-align: right !important;
+}
+
+/* @end */
+
+/* Peace and forgiveness */
