@@ -1,0 +1,340 @@
+/*  
+Theme: Rounded
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+/*  IE PC and MAC hacks (pages top right horizontal nav) */
+* html #pagetab{
+	margin: -75px 0 0 22px;
+}
+
+* html #pagetab .ltab{
+	float: right;
+}
+
+* html #pagetab .rtab{
+	float: right;
+}
+
+blockquote {
+	border-right: 5px solid #ccc;
+	margin-right: 1.5em;
+	padding-right: 5px;
+	border-left: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+body {
+	background: url(img/bg-rtl.jpg) #4f402a no-repeat top right;
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+cite {
+	background-position:right top;
+	padding-right: 25px;
+	padding-left: 0;
+}
+
+h1 {
+	margin: 25px 0px 20px 10px;
+	text-align: right;
+}
+
+h2 {
+	margin: 15px 25px 0 20px;
+}
+
+h2#flickr{
+	background-position: right top;
+	padding-right: 116px;
+	padding-left: 0;
+}
+
+h3 a {
+	margin-right: 20px;
+	margin-left: 0;
+}
+
+h3#comments{
+	background: url(img/cornerarrow-rtl.gif) right top no-repeat;
+	padding: 34px 153px 0 0;
+}
+
+div#respond h3{
+	background: url(img/bobble-rtl.gif) right top no-repeat;
+	padding: 15px 12px 0 0;
+}
+
+h3.fix{
+	margin-right: 19px;
+	margin-left: 0;
+}
+
+/*  widgets */
+
+.sideitem img.avatar {
+	padding-right: 18px;
+	padding-left: 0;
+}
+
+.comment-author .avatar {
+	float: left;
+	margin-left: 1em;
+	margin-right: 0;
+}
+
+.credit {
+	float: right;
+	text-align: right;
+}
+
+.feedback {
+	background-position: right top;
+	float: left;
+	margin-left: 20px;
+	padding-right: 15px;
+	margin-right: 0;
+	padding-left: 0;
+	text-align: right;
+}
+
+.footermeta{
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+.footermeta a{
+	margin-right: 5px;
+	margin-left: 0;
+}
+
+.meta {
+	margin-right: 20px;
+	margin-left: 0;
+}
+
+.page_item {
+	float: right;
+}
+
+.post p {
+	margin: 5px 20px 0 10px;
+}
+
+/*  side bar */
+.sideitembottom, .sideitemtop {
+	direction:ltr;
+}
+.sideitem .tweets li {
+	margin: 0 0 5px 5px;
+}
+
+/* ------ // a  -------- */
+.textwidget{
+	margin-right: 20px;
+	margin-left: 0;
+}
+
+#akismetwrap {
+	margin-right: 1em;
+	margin-left: 0;
+}
+
+#commentform-container{
+	margin-right: 40px;
+	margin-left: 0;
+}
+
+#commentlist a, #postnav a{
+	margin-right: 10px; /* background: #F2EBE1; */
+	margin-left: 0;
+}
+
+#commentlist li {
+	padding-right: 5px;
+	padding-left: 0;
+}
+
+#commentlist li ul {
+	border-right: 3px solid #eee;
+	border-left: 0;
+}
+
+#comments-post .nocomments{
+	background-position: right top;
+	margin-right: 0px;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+#comments-post p{
+	margin-right: 10px;
+	margin-left: 0;
+}
+
+/* end comments  */
+#content {
+	float: right;
+}
+
+#content .post{
+	margin: 14px 10px 0 0;
+}
+
+/*  end IE hacks */
+/*  flickr integration */
+#flickr_badge_uber_wrapper{
+	margin-right: 17px;
+	margin-left: 0;
+}
+
+#flickr_badge_wrapper img{
+	float: right;
+	margin-right: 5px;
+	margin-left: 0;
+}
+
+#footer {
+	margin: 0 40px 20px 0;
+}
+
+#footer .rss{
+	background-position: right top;
+	padding-right: 15px;
+	padding-left: 0;
+}
+
+#footertop, #footerbottom {
+	direction:ltr;
+}
+
+#getit{
+	float: left; /*margin-left: 15px;*/
+	margin: 0 0 0 10px;
+}
+
+#main {
+	margin-right: 30px;
+	margin-left: 0;
+}
+#masthead h1{
+	padding: 20px 45px 0 0;
+}
+
+
+#masthead h2{
+	background: url(img/descr-rtl.png) right top no-repeat;
+	margin-right: 50px;
+	padding-right: 40px;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+#menu {
+	float: left;
+}
+
+#menu #nav ul li ul li {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+#nav form {
+	margin: 0 13px 0 0;
+}
+
+/* this is a fix for the way WP handles styling for link and theme switcher */
+#nav h2 {
+	padding-right: 18px;
+	padding-left: 0;
+}
+
+#nav input#s {
+	border-right: 1px solid #828177;
+	border-left: 0;
+}
+
+#nav li.recentcomments{
+	background: url(img/recentcomments-rtl.jpg) no-repeat bottom right;
+	padding-right: 15px;
+	padding-left: 0;
+}
+
+#nav ul {
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+#nav ul li {
+	padding-left: 0;
+	padding-right: 10px;
+}
+
+#nav ul ul {
+	text-align: right;
+}
+
+#nav ul ul li, #nav ul li ul li {
+	border: 0;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+#nav ul ul ul.children {
+	font-size: 11px;
+	padding-right: 4px;
+}
+
+/* tabbed navigation code */
+#pagetab {
+	float: left;
+	margin: 0 0 0 42px;
+}
+
+#pagetab a {
+	float: right; 
+}
+
+#pagetab ul {
+	float: right;
+}
+
+#pagetab .ltab {
+	background: url(img/rpt.gif) right top no-repeat;
+	float: right;
+}
+
+#pagetab .rtab {
+	background: url(img/lpt.gif) right top no-repeat;
+	float: right;
+}
+
+#rap {
+	text-align: right; /* IE 5.5 hack part II */
+}
+
+#wp-calendar #next a {
+	padding-left: 10px;
+	padding-right: 0;
+	text-align: left;
+}
+
+#wp-calendar #prev a {
+	padding-right: 10px;
+	padding-left: 0;
+	text-align: right;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
