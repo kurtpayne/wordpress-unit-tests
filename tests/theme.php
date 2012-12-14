@@ -102,7 +102,7 @@ class Tests_Theme extends WP_UnitTestCase {
 			// important attributes should all not be empty as well
 			$this->assertTrue(!empty($theme['Description']));
 			$this->assertTrue(!empty($theme['Author']));
-			$this->assertTrue(is_numeric($theme['Version']));
+			$this->assertTrue(version_compare($theme['Version'], 0) > 0);
 			$this->assertTrue(!empty($theme['Template']));
 			$this->assertTrue(!empty($theme['Stylesheet']));
 
