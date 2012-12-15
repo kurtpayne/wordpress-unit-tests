@@ -1,0 +1,7 @@
+
+	t0mmy's Banana Smoothie Theme for WordPress 1.2
+	this theme is only for css 2.0 capable browsers
+	like mozilla firefox - design (c) 2004 by t0mmy
+	(c) pictures by their respective owners. thanks!
+
+	http://www.van-tomas.de
