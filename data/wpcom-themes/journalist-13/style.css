@@ -1,0 +1,574 @@
+/*
+Theme Name: The Journalist v1.3
+Theme URI: http://lucianmarin.com/
+Description: The Journalist is a smart, minimal theme designed for professional journalists.
+Version: 1.3
+Author: <a href="http://lucianmarin.com/">Lucian Marin</a>
+Tags: white, two-columns, fixed-width, light, rtl-language-support, widgets, right-sidebar, sticky-post
+For the WordPress community (GPL), enjoy it guys.
+by Lucian Marin - lucianmarin.com
+*/
+
+body {
+background:#fff;
+font-family:Georgia, "Times New Roman", Times, serif;
+font-size:14px;
+color:#222;
+padding:0;
+margin:0;
+border-top:#333 2px solid;
+}
+
+* {
+padding:0;
+margin:0;
+}
+
+#container {
+width:950px;
+margin:0 auto;
+}
+
+#container h1 {
+font-size:28px;
+font-weight:normal;
+padding:20px 10px;
+}
+
+#container h1 a {
+color:#222;
+text-decoration:none;
+}
+
+#container h1 a:hover {
+color:#222;
+text-decoration:none;
+border-bottom:#777 1px solid;
+}
+
+#content {
+float:left;
+width:720px;
+padding:0 0 0 10px;
+}
+
+#content h2 {
+font-size:22px;
+font-weight:normal;
+margin:0 0 15px 0;
+}
+
+#content h2 a {
+color:#222;
+text-decoration:none;
+}
+
+#content h2 a:hover {
+color:#222;
+text-decoration:none;
+border-bottom:#777 1px solid;
+}
+
+#content h3, #content h4 { 
+margin-bottom: 0.5em;	
+}
+
+#postnav {
+margin:0 0 10px 0;
+}
+
+#postnav a {
+color:#004276;
+text-decoration:underline;
+}
+
+#postnav a:hover {
+color:#2b9cce;
+text-decoration:underline;
+}
+
+.main a,
+.tags a {
+color:#004276;
+text-decoration:underline;
+}
+
+.main a:hover,
+.tags a:hover {
+color:#2b9cce;
+text-decoration:underline;
+}
+
+.main a img {
+padding:2px;
+border:#fff 2px solid;
+}
+
+.main a:hover img {
+padding:2px;
+border:#2b9cce 2px solid;
+}
+
+.main p {
+line-height:25px;
+margin:0 0 10px 0;
+}
+
+.main ol {
+margin:0 0 0 30px;
+}
+
+.main ul {
+margin:0 0 0 30px;
+}
+
+.main li {
+margin:0 0 10px 0;
+}
+
+.meta {
+background-color:#333;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#eee;
+padding:4px 6px;
+margin:0 0 10px 0;
+}
+
+.meta a {
+color:#eee;
+font-weight:bold;
+text-decoration:none;
+}
+
+.meta a:hover {
+color:#fff;
+text-decoration:none;
+}
+
+.tags {
+margin:0 0 20px 0;
+clear:both;
+}
+
+.comments {
+font-size:12px;
+margin:0 0 40px 0;
+clear:both;
+}
+
+.comments a {
+padding:1px 6px 3px 4px;
+color:#222;
+text-decoration:none;
+border-top:#ccc 1px solid;
+line-height:22px;
+}
+
+.comments a:hover {
+padding:1px 6px 3px 4px;
+color:#222;
+text-decoration:none;
+border-top:#777 1px solid;
+}
+
+#sidebar {
+float:left;
+width:180px;
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+font-size:12px;
+border-left:#999 1px solid;
+margin:0 0 0 20px;
+padding:0 0 10px 10px;
+}
+
+#sidebar h3 {
+font-size:14px;
+margin:20px 0 5px 0;
+}
+
+#sidebar a {
+color:#222;
+text-decoration:none;
+border-bottom:#ccc 1px solid;
+}
+
+#sidebar a:hover {
+color:#222;
+text-decoration:none;
+border-bottom:#777 1px solid;
+}
+
+#sidebar ul {
+list-style:none;
+}
+
+#sidebar ul ul {
+margin:5px 0 0 10px;
+}
+
+#sidebar ul ul ul {
+margin:5px 0 0 10px;
+}
+
+#sidebar ul li {
+padding:0 0 5px 0;
+}
+
+#author h3 {
+margin:5px 0 5px 0;
+}
+
+.searchinfo {
+padding:0 0 0 0;
+}
+
+#searchform {
+margin:15px 0 0 0;
+}
+
+#searchform input {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+background-color:#222;
+margin:2px 0;
+padding:1px 4px 2px 4px;
+border:#888 1px solid;
+color:#eee;
+}
+
+#searchform input:hover {
+cursor:pointer;
+background-color:#333;
+border:#999 1px solid;
+color:#fff;
+}
+
+#searchform #s {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+margin:2px 0;
+background-color:#f6f6f6;
+padding:2px 4px;
+border:#aaa 1px solid;
+color:#222;
+}
+
+#searchform #s:hover {
+background-color:#fff;
+color:#222;
+}
+
+input.searchfield {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+display:block;
+background-color:#f6f6f6;
+margin:5px 0 8px 0;
+padding:2px 4px;
+border:#aaa 1px solid;
+color:#222;
+}
+
+input.searchfield:hover {
+background-color:#fff;
+color:#222;
+}
+
+input.submit {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+display:block;
+background-color:#222;
+margin:0 0 10px 0;
+padding:1px 4px 2px 4px;
+border:#888 1px solid;
+color:#eee;
+}
+
+input.submit:hover {
+cursor:pointer;
+background-color:#333;
+border:#999 1px solid;
+color:#fff;
+}
+
+input.subcom {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+background-color:#eee;
+margin:0 0 10px 0;
+padding:1px 4px 2px 4px;
+border:#888 1px solid;
+color:#222;
+}
+
+input.subcom:hover {
+cursor:pointer;
+background-color:#222;
+border:#888 1px solid;
+color:#eee;
+}
+
+input.comment {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+background-color:#f6f6f6;
+padding:2px 4px;
+border:#aaa 1px solid;
+color:#222;
+}
+
+input.comment:hover {
+background-color:#fff;
+color:#222;
+}
+
+textarea {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:12px;
+width:500px;
+padding:2px 4px;
+background-color:#f6f6f6;
+border:#aaa 1px solid;
+color:#222;
+}
+
+textarea:hover {
+background-color:#fff;
+color:#222;
+}
+
+.postinput small {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:11px;
+margin:0 0 0 5px;
+}
+
+p.logged {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+
+p.logged a {
+color:#222;
+text-decoration:none;
+border-bottom:#ccc 1px solid;
+}
+
+p.logged a:hover {
+color:#222;
+text-decoration:none;
+border-bottom:#777 1px solid;
+}
+
+h3.reply {
+font-size:15px;
+margin:0 0 10px 0;
+}
+
+.nocomments {
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+margin:0 0 30px 0;
+}
+
+ol.commentlist {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:12px;
+list-style:none;
+padding:0 0 10px 0;
+margin:0 0 30px 0;
+border-bottom:#ccc 1px solid;
+}
+
+.commentlist li {
+border-top:#ccc 1px solid;
+margin:20px 0 0 0;
+list-style:none;
+}
+
+.commentlist li:hover {
+border-top:#ccc 5px solid;
+margin:16px 0 0 0;
+}
+
+.commentlist p {
+line-height:20px;
+margin:0 0 10px 0;
+}
+
+.commentlist .children {
+margin-left:2em;
+}
+
+.comment_author {
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+font-size:14px;
+margin:20px 0 10px 0;
+}
+
+.comment_meta {
+font-family:Tahoma, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+
+#commentform p {
+line-height:25px;
+margin:0 0 10px 0;
+}
+
+.comment_author a, .commentlist a, .comment_meta a {
+color:#222;
+text-decoration:none;
+border-bottom:#ccc 1px solid;
+}
+
+.comment_author a:hover, .commentlist a:hover, .comment_meta a:hover {
+color:#222;
+text-decoration:none;
+border-bottom:#777 1px solid;
+}
+
+blockquote {
+background:url(images/quote.gif) no-repeat top left;
+font-style:italic;
+padding:0 0 0 60px;
+min-height: 50px;
+}
+
+#footer {
+background-color:#333;
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#eee;
+border-top:#999 1px solid;
+margin:20px auto 0 auto;
+padding:10px 0 10px 0;
+text-align:center;
+}
+
+#footer a {
+color:#eee;
+font-weight:bold;
+text-decoration:none;
+}
+
+#footer a:hover {
+color:#fff;
+text-decoration:none;
+}
+
+#skip {
+display: none;
+}
+
+.clearleft {
+clear:left;
+}
+
+.warning p {
+background:url(images/warning.gif) no-repeat left;
+height:160px;
+padding:20px 0 0 90px;
+font-size:20px;
+margin:0 0 0 10px;
+}
+
+#wp-calendar {
+padding:10px 0 0 0;
+}
+
+#wp-calendar caption {
+font-size:1.1em;
+text-align:left;
+padding:5px 0 0 3px;
+}
+
+#wp-calendar tr th,
+#wp-calendar tr td {
+padding:0 4px;
+text-align:right;
+}
+
+#wp-calendar td a {
+font-weight:bold;
+text-decoration:none;
+}
+
+#wp-calendar td a:hover {
+font-weight:bold;
+text-decoration:none;
+}
+
+/* wpcom */
+.commentlist li.bypostauthor {
+background-color:#f6f6f6;
+padding: 0 0.5em 0.5em 0.5em;
+}
+
+.reply {
+clear: both;
+padding-top: 15px;
+}
+
+.previous { float: left; }
+	
+.next { float: right; }
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+#content .sticky h2 { background: #ddd; margin: 0; padding: 10px;}
