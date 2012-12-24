@@ -1,0 +1,110 @@
+/*
+Theme Name: Simpla
+Persian Editors: Bahman & Sorush
+Persian Editors URI: http://bahman.wordpress.com/ & http://sshrdp.wordpress.com/
+Version: 0.1
+*/
+
+
+
+body{
+	direction:rtl;
+	font-family: "Tahoma", "Sans-serif", Georgia, Times New Roman, Times;
+	font-size:66.5%;
+	color:black;
+}
+#wrap{
+	text-align:justify;
+}
+#content{
+	font-size:1.2em;
+	float:right;
+	padding:1em;
+}
+#sidebar{
+	font-size:1em;
+	float:left;
+	padding-top:5em;
+}
+#header{
+	padding:3em 1em 2em 1em;
+}
+h1, h2, h3{
+	font-family: "Arial", "Sans-serif", Tahoma, Verdana, Helvetica;
+	letter-spacing:0px;
+}
+#header h1{
+	font-family: "Arial", "Sans-serif", Georgia, Times New Roman, Times;
+	font-size:5em;
+}
+#header p{
+	color:#999;
+	font-size:1.1em;
+	margin-top:-1em;
+	margin-right:7em;
+}
+.entrytitle h2{
+	font-size:1.8em;
+	font-weight:bold;
+}
+.entrytitle h3{
+	font-size:0.9em;
+	font-weight:bold;
+}
+#sidebar h3{
+	font-size:1.2em;
+}
+#sidebar h2{
+	color:#666;
+	font-size:1.4em;
+	font-weight:bold;
+	margin:1em 0 -0.2em;
+}
+.entry{
+	margin-bottom:1em;
+}
+
+.entrymeta{
+	font-size:0.9em;
+	color:#666;
+}
+.postedby{
+	background:#fff url(./images/user.gif) no-repeat right;
+	padding:3px;
+	padding-left:20px;
+}
+.filedto{
+	background:#fff url(./images/post.gif) no-repeat right;
+	padding:3px;
+	padding-left:20px;
+}
+.commentslink{
+	background:#fff url(./images/packaged.gif) no-repeat right;
+	padding:3px;
+	padding-left:20px;
+}
+#sidebar ul li{
+	border-bottom:0px dotted #ddd;
+	margin-bottom:0em;
+	padding:0 1em;
+}
+.title{
+	font-family: "Arial", "Sans-serif", Tahoma, Verdana, Helvetica;
+	font-weight:bold;
+	font-size:1.2em;
+	padding:20px 0 5px 0;
+	color:#555;
+}
+#searchform {
+	text-align: right;
+}
+
+#sidebar #searchform #s {
+	width: 150px;
+}
+
+#sidebar input {
+	padding: 1px 5px 4px 6px;
+	font-family: "Tahoma", "Sans-serif";
+	font-size: 1.1em;
+}
