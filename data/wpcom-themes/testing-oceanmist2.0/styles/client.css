@@ -1,0 +1,57 @@
+/* 
+   Client CSS
+	 -----------------------------------------------------------------------
+   Customise your copy of Ocean Mist 2.0... 
+	 
+	 This stylesheet contains all the styles which you can safely change without risking breaking your site's layout.
+	 I've tried to comment on every line so that you can easily tell what you need to edit...
+*/
+
+/* Main background colour */
+body, .leftCorner, .rightCorner {background-color: #9bc3d5;}
+
+/* Header colour */
+#header, #header .dot {background-color: #4b5559;}
+
+/* Side column & Footer background colour */
+#container, #footer, #footer .dot, .or span {background-color: #e6eef8;}
+
+/* Main column colour */
+#mainCol {background-color: #fff;}
+
+/* Default Text colour */
+body, .author span {color: #34444c;}
+
+/* Links */
+a, a:visited {color: #7f1d1d;}
+a:hover {color: #c40000;} /* Rollovers */
+
+/* Stripes above & below the main image */
+#header, #photo, #nav ul li a {border-color: #67939B;}
+
+/* Main Page Navigation */
+#nav li a {background-color: #526a74; color: #fff;} /* Tabs & dropdowns */
+#nav li a:hover {background-color: #5c7d86;} /* Tabs & dropdowns rolover colour */
+
+/* Side column headings */
+#subCol h2 {background-color: #cadfed; color: #32474B;}
+
+/* Main column titles eg. Latest Posts or Comments */
+.title {background-color: #E2EBF8; color: #4B5D67;}
+
+/* single pixel line between posts */
+.post + .post {border-top: 1px solid #cad6e1;}
+
+/* "or" between browse & search fields */ 
+.or {border-color: #cad6e1; color: #a9b8c0;}
+
+/* Date boxes */
+.date {color: #75868f;} /* Day */
+.d2 {background-color: #E2EBF8;} /* Month */
+.d3 {background-color: #cadfed;} /* Year */
+
+/* Footer */
+#footer p {color: #687983;} /* footer text */
+#footer a, #footer a:visited {color: #34444c;} /* footer links */
+#footer a:hover {color: #c40000;} /* footer links rollovers */
+
