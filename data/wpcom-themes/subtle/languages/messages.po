@@ -1,0 +1,423 @@
+# Glued Ideas Subtle POT.
+# Copyright (C) 2006
+# This file is distributed under the same license as the Glued Ideas Subtle package.
+# FIRST AUTHOR <cfrazier@gluedideas.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Glued Ideas Subtle\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-15 12:57-0700\n"
+"PO-Revision-Date: 2006-09-23 07:58-0800\n"
+"Last-Translator: Christopher Frazier <cfrazier@gluedideas.com>\n"
+"Language-Team: Glued Ideas / Subtle Community <cfrazier@gluedideas.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:20
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:35
+msgid "Write a Comment"
+msgstr ""
+
+#: ../comments.php:36
+msgid "Take a moment to comment and tell us what you think.  Some basic HTML is allowed for formatting."
+msgstr ""
+
+#: ../comments.php:39
+msgid "You must be logged in to post a comment."
+msgstr ""
+
+#: ../comments.php:39
+msgid "Click here to login."
+msgstr ""
+
+#: ../comments.php:44
+msgid "Logged in as"
+msgstr ""
+
+#: ../comments.php:44
+msgid "Click to log out"
+msgstr ""
+
+#: ../comments.php:48
+msgid "Name"
+msgstr ""
+
+#: ../comments.php:49
+msgid "E-mail"
+msgstr ""
+
+#: ../comments.php:50
+msgid "Website"
+msgstr ""
+
+#: ../comments.php:54
+msgid "Allow comment box to float next to comments."
+msgstr ""
+
+#: ../comments.php:56
+msgid "Type your comment here."
+msgstr ""
+
+#: ../comments.php:72
+msgid "Reader Comments"
+msgstr ""
+
+#: ../comments.php:82
+msgid "What is this?"
+msgstr ""
+
+#: ../comments.php:84
+msgid "Comment Number:"
+msgstr ""
+
+#: ../comments.php:86
+msgid "Written by:"
+msgstr ""
+
+#: ../comments.php:87
+msgid "Posted on:"
+msgstr ""
+
+#: ../comments.php:100
+msgid "Be the first to leave a comment!"
+msgstr ""
+
+#: ../comments.php:103
+msgid "Sorry, comments are closed."
+msgstr ""
+
+#: ../footer.php:32
+msgid "E-mail Subscription"
+msgstr ""
+
+#: ../footer.php:42
+msgid "Powered by WordPress"
+msgstr ""
+
+#: ../footer.php:43
+msgid "Design by Glued Ideas"
+msgstr ""
+
+#: ../footer.php:44
+msgid "Icons by Fam Fam Fam"
+msgstr ""
+
+#: ../footer.php:47
+msgid "Unless otherwise specified, all content is made available under the <a href=\"http://creativecommons.org/licenses/by/2.5/\">Creative Commons License</a>."
+msgstr ""
+
+#: ../functions.php:75
+msgid "This theme style does not support uploadable headers"
+msgstr ""
+
+#: ../functions.php:121
+msgid "Based on a joke my brother-in-law made, Subtle is the first public theme released by Glued Ideas.  Designed for sites that have multiple authors, Subtle also makes use of WordPress Widgets, making customization a snap.  For more information about this and other themes from Glued Ideas, <a href=\"http://blog.gluedideas.com\">visit us at our blog</a>."
+msgstr ""
+
+#: ../functions.php:124
+msgid "The following errors occured when saving your options:"
+msgstr ""
+
+#: ../functions.php:135
+msgid "Theme Specific Options"
+msgstr ""
+
+#: ../functions.php:138
+msgid "Theme Style"
+msgstr ""
+
+#: ../functions.php:151
+msgid "Please install a valid style in the /styles/ folder."
+msgstr ""
+
+#: ../functions.php:155
+msgid "Select a style for this theme.  Find more styles at our <a href=\"http://blog.gluedideas.com/\">development blog</a>."
+msgstr ""
+
+#: ../functions.php:158
+msgid "Upload Header"
+msgstr ""
+
+#: ../functions.php:160
+msgid "Select an image from your computer to use as your header image.<br />Note: File dimensions should be 820 x 145 pixels."
+msgstr ""
+
+#: ../functions.php:163
+msgid "Reset Header"
+msgstr ""
+
+#: ../functions.php:164
+msgid "Reset the Default style's header."
+msgstr ""
+
+#: ../functions.php:167
+msgid "Show Metalinks"
+msgstr ""
+
+#: ../functions.php:168
+msgid "Show Comment Number and Technorati / Digg / Delicious links with posts."
+msgstr ""
+
+#: ../functions.php:172
+msgid "Show Sub-Pages"
+msgstr ""
+
+#: ../functions.php:173
+msgid "Show sub-pages when viewing a page."
+msgstr ""
+
+#: ../functions.php:176
+msgid "Site Description"
+msgstr ""
+
+#: ../functions.php:177
+msgid "If a description for the site is given here, it will be displayed as a prominent information box on the home page."
+msgstr ""
+
+#: ../functions.php:180
+msgid "Number of Leads"
+msgstr ""
+
+#: ../functions.php:182
+msgid "The number of posts on the home page to be shown as \"lead stories\" - these will display with their full-text (up to the \"more\" tag)."
+msgstr ""
+
+#: ../functions.php:185
+msgid "Categories to Display"
+msgstr ""
+
+#: ../functions.php:187
+msgid "Display only the categories you want to display in your front-page loop.  Just provide a comma-separated list of category slugs you'd like to use."
+msgstr ""
+
+#: ../functions.php:195
+msgid "Gravatar Options"
+msgstr ""
+
+#: ../functions.php:196
+msgid "Allow your readers to show off their personalities in comments through <a href=\"http://gravatar.com\">Gravatars</a>."
+msgstr ""
+
+#: ../functions.php:199
+msgid "Show Gravatars"
+msgstr ""
+
+#: ../functions.php:200
+msgid "Show gravatars on comments (replaces comment number)."
+msgstr ""
+
+#: ../functions.php:203
+msgid "Default Gravatar URL"
+msgstr ""
+
+#: ../functions.php:204
+msgid "Provide a URL to the default image used when a user doesn't have a gravatar."
+msgstr ""
+
+#: ../functions.php:207
+msgid "Gravatar Rating"
+msgstr ""
+
+#: ../functions.php:208
+msgid "Is your site PG rated?  Check out the Gravatar site for more information."
+msgstr ""
+
+#: ../functions.php:216
+msgid "Feedburner Options"
+msgstr ""
+
+#: ../functions.php:217
+msgid "Make reading your RSS feeds easier for your audience by signing up with <a href=\"http://www.feedburner.com\">FeedBurner</a>."
+msgstr ""
+
+#: ../functions.php:220
+msgid "E-mail Subscription (Feed ID)"
+msgstr ""
+
+#: ../functions.php:221
+msgid "If you have enabled e-mail subscriptions, type the numeric ID for your feed.  You can find this by going to \"My Feeds\" and then clicking on the feed for this blog.  The URL will end with \"?id=XXXXXXX\" - that number is the Feed ID."
+msgstr ""
+
+#: ../functions.php:224
+msgid "Feedburner Link"
+msgstr ""
+
+#: ../functions.php:225
+msgid "The URL that people go to for this feed."
+msgstr ""
+
+#: ../functions.php:228
+msgid "Show Feedflare"
+msgstr ""
+
+#: ../functions.php:229
+msgid "Show FeedFlare on my posts."
+msgstr ""
+
+#: ../header.php:87
+#: ../search.php:95
+msgid "Find this"
+msgstr ""
+
+#: ../header.php:94
+msgid "Home"
+msgstr ""
+
+#: ../home.php:44
+msgid "Previous Articles"
+msgstr ""
+
+#: ../home.php:52
+#: ../search.php:50
+#: ../single.php:27
+msgid "Posted by"
+msgstr ""
+
+#: ../home.php:57
+#: ../single.php:47
+msgid "No Responses"
+msgstr ""
+
+#: ../home.php:57
+#: ../single.php:47
+msgid "One Response"
+msgstr ""
+
+#: ../home.php:57
+#: ../single.php:47
+msgid "Responses"
+msgstr ""
+
+#: ../home.php:68
+msgid "Leave a comment..."
+msgstr ""
+
+#: ../home.php:68
+msgid " or "
+msgstr ""
+
+#: ../home.php:68
+msgid "Read comments..."
+msgstr ""
+
+#: ../home.php:85
+msgid "Oops - There's Nothing Here"
+msgstr ""
+
+#: ../home.php:86
+msgid "It looks like the blog owner hasn't written anything yet!"
+msgstr ""
+
+#: ../search.php:28
+msgid "Author Archives for"
+msgstr ""
+
+#: ../search.php:30
+msgid "Search Results for"
+msgstr ""
+
+#: ../search.php:32
+msgid "Site Archives"
+msgstr ""
+
+#: ../search.php:39
+#: ../search.php:67
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: ../search.php:40
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: ../search.php:68
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../search.php:75
+msgid "No posts were found.  Try searching again."
+msgstr ""
+
+#: ../search.php:86
+msgid "Visit Author's Website"
+msgstr ""
+
+#: ../search.php:87
+msgid "Author's Feed"
+msgstr ""
+
+#: ../search.php:92
+msgid "Find It Quickly"
+msgstr ""
+
+#: ../search.php:93
+msgid "Find what you're looking for quickly by using our keyword search.  Can't find it?  Try our links below."
+msgstr ""
+
+#: ../search.php:105
+msgid "Authors"
+msgstr ""
+
+#: ../search.php:106
+msgid "Select an author for posts and author information."
+msgstr ""
+
+#: ../search.php:113
+msgid "Monthly Archives"
+msgstr ""
+
+#: ../search.php:114
+msgid "Find posts by the month they were written"
+msgstr ""
+
+#: ../search.php:125
+#: ../single.php:60
+msgid "Categories"
+msgstr ""
+
+#: ../search.php:126
+msgid "Find posts using the \"tags\" provided below."
+msgstr ""
+
+#: ../single.php:41
+msgid "Information and Links"
+msgstr ""
+
+#: ../single.php:42
+msgid "Join the fray by commenting, tracking what others have to say, or linking to it from your blog."
+msgstr ""
+
+#: ../single.php:45
+msgid "Information"
+msgstr ""
+
+#: ../single.php:51
+msgid "Feeds and Links"
+msgstr ""
+
+#: ../single.php:52
+msgid "Comment Feed"
+msgstr ""
+
+#: ../single.php:53
+msgid "From This Author"
+msgstr ""
+
+#: ../single.php:67
+msgid "Other Posts"
+msgstr ""
+
+#: ../single.php:92
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
