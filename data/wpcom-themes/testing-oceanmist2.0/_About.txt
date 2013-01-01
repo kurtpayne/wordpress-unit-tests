@@ -1,0 +1,29 @@
+
+
+Theme: Ocean mist 2.0
+Author: Ed Merritt
+URL: www.edmerritt.com
+
+
+This document contains instructions on how to get the most from the Ocean Mist Theme.
+
+
+Customisable Colour Schemes
+----------------------------------------------------------------------------------------
+
+Colour schemes can be completely customised in Ocean Mist 2.0. Simply edit 'client.css', save it and 
+upload it to your server. There's no layout information in this stylesheet so you can freely edit it 
+without the risk of breaking the layout of your site.
+If you're not comfortable editing CSS, there some preset colour schemes available through the 
+Wordpress Admin Menu - just click the thumbnail of the colour scheme you want to use.
+
+
+
+Changing The Header Image
+----------------------------------------------------------------------------------------
+
+To change the header image in Ocean Mist, simplay create a new image and save it into the 'images' 
+folder. Edit line 31 of 'header.php' to point at your new image.
+
+Eg.
+<img src="<?php bloginfo('stylesheet_directory'); ?>/images/mainpic.jpg" alt="Ocean Mist" />
