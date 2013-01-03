@@ -1,0 +1,136 @@
+/*
+RTL for Theme: : Digg 3 Column
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+
+body{
+	direction:rtl;
+	unicode-bidi:embed;
+	font-family: Tahoma, Arial;
+}
+
+input, textarea { 
+font-family: Tahoma, Arial;        
+}
+
+blockquote{
+	background-position: 98% 7px;
+}
+
+blockquote p{
+	padding: 10px 20px 10px 10px;
+}
+
+dd{
+	padding: 0 15px 5px 0;
+}
+
+hr{
+	text-align: right;
+}
+
+input#author, input#email, input#url{
+	margin: 0 0 0 5px;
+}
+
+#container, #header, #menu, #menu ul li, #menu ul li a, #pagetitle, h1, #syndication, .pagewrapper, #page, .wrapper, .narrowcolumnwrapper, .narrowcolumn, .content, .post, .entry, .browse, .sidebar{
+	text-align: right;
+}
+
+#header-box{
+	right: 0;
+	left:auto;
+}
+
+#menu ul{
+	padding: 0 10px 0 0;
+}
+
+#menu ul li{
+	float: right;
+	margin: 0 0 0 5px;
+	font-family: Arial, tahoma; 
+}
+
+#syndication{
+	float: right;
+}
+
+#syndication a.feed{
+	padding: 0 19px 0 0;
+	background-position: 100% 1px;
+}
+
+#searchbox{
+	float: left;
+}
+
+.pagewrapper{
+	float: right;
+	background-position: right bottom;
+}
+
+#page{
+	float: none;
+}
+
+.wrapper{ /* This wrapper class appears only on Page and Single Post pages. */
+	float: right;
+}
+
+.narrowcolumnwrapper{
+	float: right;
+}
+
+.narrowcolumn{
+	float: right;
+	background-position: right bottom;
+}
+
+.content{
+	float: right;
+	background-position: right top;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.sidebar, .obar{
+	margin: 0 5px 0 0;
+	float: left;
+}
+
+.obar{
+	margin: 0 0 0 5px;
+	float: right;
+}
+
+.sidebar ul li, .obar ul li{
+	background: url(images/bg_ul_li-rtl.gif) no-repeat right top;
+}
+
+.sidebar ul ul ul li, .obar ul ul ul li{
+	padding: 6px 15px 3px 0px;
+	background-position: 100% 8px;
+}
+
+.sidebar ul ul ul ul li, .obar ul ul ul li{
+	background-position: 100% 8px;
+}
+
+/* COMMENTS TEMPLATE */
+
+ol.commentlist li>div {
+	padding: 13px 0;
+	background-position: right bottom;
+}
+
+div.avatar { 
+	float: left;
+}
