@@ -1,0 +1,35 @@
+
+
+
+
+Ocean Mist - a Wordpress theme by Ed Merritt
+================================================================================
+
+
+
+
+Installing the Ocean Mist theme for Wordpress
+--------------------------------------------------------------------------------
+
+1. Extract this .zip file into wp-content/themes/  
+
+2. upload The 'Ocean Mist' folder
+
+3. Login to your Wordpress Admin area
+
+4. Select 'Presentation' from the main menu
+
+5. Click the Ocean Mist screenshot to activate the theme
+
+
+
+
+Copyright 2006-2009 Ed Merritt.
+--------------------------------------------------------------------------------
+
+This package cannot be redistributed without permission from 
+http://www.edmerritt.com/
+
+The theme is available for non-commercial purposes only.
+
+
