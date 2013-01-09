@@ -1,0 +1,146 @@
+/*  
+Theme: Prologue
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+/* The Reset ---------------------------------- */
+caption,th { text-align: right; }
+/* -------------------------------------------- */
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+blockquote {
+	border-right: 1px solid #ddd;
+	padding-right: 8px;
+	border-left: 0;
+	padding-left:0;
+}
+#main {
+	float: right;
+}
+#sidebar {
+	float: right;
+}
+h1 {
+	margin-right: 22px;
+	margin-left: 0;
+}
+#postbox {
+	background-position: right top;
+}
+
+#postbox form {
+	background-position: right bottom;
+	padding: 22px 22px 22px 0;
+}
+#postbox label {
+	margin-right: 70px;
+	margin-left: 0;
+}
+#postbox input#tags {
+	margin-right: 70px;
+	margin-left: 0;
+}
+#postbox input#submit {
+	margin-right: 20px;
+	margin-left: 0;
+}
+#userpage #main ul,
+#postpage #main ul {
+	margin-right: 0;
+	margin-left: auto;
+}
+#userpage #sidebar,
+#postpage #sidebar {
+	margin-top:8px;
+}
+#main ul {
+	margin-right: 70px;
+	margin-left: 0;
+}
+#postbox img.avatar {
+	margin-top: 19px;
+	margin-left: 13px;
+	margin-right: 0px;
+}
+#sidebar ul li#authors ul li img.avatar {
+	margin: 0 0 0 5px;
+}
+#main img.avatar, .comment img.avatar {
+	float: right;
+	margin-left: 12px;
+	margin-right: -70px;
+}
+h2 img {
+	margin-left: 12px;
+	margin-right: o;
+}
+#main p img {
+	margin-left: 8px;
+	margin-right: 0;
+}
+#main ul#comments {
+	margin-right: 52px;
+	margin-left: 0;
+}
+#main ul#comments img.avatar {
+	margin-right: -52px;
+	margin-left: 12px;
+}
+
+#main ul li li {
+    margin-right: 2em;
+    margin-left: 0;
+}
+
+#comments .children li {
+	border-right: 1px solid #ddd;
+	border-left: 0;
+	padding: 5px 60px 5px 0;
+	right: -40px;
+	left: auto;
+}
+#comments .children li li {
+	right: -45px;
+	left: auto;
+}
+
+h2 .rss {
+	background-position: right center;
+	padding-right: 16px;
+	padding-left: 0;
+}
+.rss {
+	float: left;
+	background-position: right bottom;
+	padding-right: 14px;
+	padding-left: 0;
+}
+.allrss {
+	background: url(i/feed.png)  right center;
+	padding-right: 14px;
+	padding-left: 0;
+}
+#main ul,
+#main .post ul {
+	margin-right: 70px;
+	margin-left: 0;
+}
+#main ul ul,
+#main .post ul {
+	margin-right: 18px;
+	margin-left: 0;
+}
+#main ol,
+#main .post ol {
+	margin-right: 18px;
+	margin-left: 0;
+}
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
