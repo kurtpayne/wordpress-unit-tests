@@ -1,0 +1,228 @@
+/*  
+Theme: Hemingway
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+/*-----------------------------------------------------------------------------------------------
+  Global Styles
+-----------------------------------------------------------------------------------------------*/
+
+li, dd { margin-left:5%; margin-right:0;}
+.left{ float:right; }
+.right{ float:left; }
+
+
+/*-----------------------------------------------------------------------------------------------
+  Layout / Base Page Styling
+-----------------------------------------------------------------------------------------------*/
+
+body{
+	direction:rtl;
+	unicode-bidi:embed;
+	font-family: Arial, Tahoma, Sans-serif;
+	font-size:12px;
+}
+
+#primary ul li{
+	margin:0.5em 2em 0.5em 0;
+}
+
+blockquote{
+	margin-right:1em;
+	padding-right:1em;
+	border-right:2px solid #CCC;
+	margin-left:0;
+	padding-left:0;
+	border-left:0;
+}
+
+table th{
+	text-align:right;
+}
+table caption{
+	text-align:right;
+}
+
+/*-----------------------------------------------------------------------------------------------
+  Header
+-----------------------------------------------------------------------------------------------*/
+#header h2{
+	margin:0 0 0 0.5em;
+	padding:0 0 0.25em 0.5em;
+	border-left:1px solid #808080;
+	border-right:0;
+	float:right;
+}
+
+/*-----------------------------------------------------------------------------------------------
+  Primary Items
+-----------------------------------------------------------------------------------------------*/
+
+#primary.onecol-stories .primary{
+	float:right;
+}
+#primary.onecol-stories .secondary{
+	float:left;
+	margin:0 10% 0 0;
+}
+
+#primary.twocol-stories .story{
+	float:right;
+	margin:0 4% 0 0;
+}
+* html #primary.twocol-stories .story{
+	margin-right:2%;
+	margin-left:0;
+}
+#primary.twocol-stories .first, * html #primary.twocol-stories .first{
+	margin:0 0 0 0;
+}
+.story .details{
+	text-align:left;
+}
+.story .details .read-on{
+	background:url(images/readon_black-rtl.gif) 0% 60% no-repeat;
+	padding-left:20px;
+	padding-right:0;
+}
+/* Single Post Styles */
+
+#primary .primary{
+	float:left;
+}
+#primary .secondary{
+	float:left;
+	margin-left:5%;
+	margin-right:0;
+}
+* html #primary .secondary{ margin-left:4%; margin-right:0;}
+
+/*-----------------------------------------------------------------------------------------------
+	Secondary Items
+-----------------------------------------------------------------------------------------------*/
+
+ol#comments{
+	margin:2em -2em 0 0;
+}
+ol#comments li{
+	margin:2em 2em 0 0;
+}
+
+#comments cite{
+	float:right;
+	text-align:left;
+}
+#comments cite span.avatarspan{ float: right; }
+
+#comments cite .admin-tools a{
+	float:left;
+}
+#comments .pingback cite .author{
+	background:url(images/trackback_pingback-rtl.gif) 0% 0 no-repeat;
+}
+
+#comments .content{
+	float:right;
+	margin-right:1.9%;
+	border-right:1px solid #868686;
+	margin-left:0;
+	border-left:0;
+	padding: 0 2% 0 0;
+}
+#comment-form{
+	margin:5em 35.4% 5em 0;
+}
+/* Override a few comment form styles on attachment pages */
+div#content.attachment div#respond div#comment-form form#commentform input.submit {float:right;}
+
+label.text{
+	right:0.5em;
+	left:auto;
+}
+.formactions input.submit{ 
+	float:left; 
+}
+.formactions .spinner{
+	float:left;
+	margin:-8px 0 0 -20px;
+}
+
+/*-----------------------------------------------------------------------------------------------
+  Ancillary Items
+-----------------------------------------------------------------------------------------------*/
+
+#ancillary .block{
+	float:right;
+	margin:0 5% 0 0;
+}
+#ancillary .first, * html #ancillary .first{
+	clear:both;
+	margin:0;
+}
+* html #ancillary .block{
+	margin:0 4% 0 0 !important;
+	margin:0 3% 0 0;
+	width:30% !important;
+	width:28%;
+}
+
+ul.dates .date{
+	padding:0 0 0 1.5em;
+}
+
+ul.counts .count{
+	float:left;
+}
+
+ul.pages ul li{
+	margin-right:2em;
+	margin-left:0;
+}
+/*-----------------------------------------------------------------------------------------------
+  Foooter
+-----------------------------------------------------------------------------------------------*/
+
+#footer p.copyright{ float:right; }
+#footer p.attributes{ float:left; }
+#footer p.attributes a{
+	padding:0 1em 0 0;
+}
+
+/*-----------------------------------------------------------------------------------------------
+  Search
+-----------------------------------------------------------------------------------------------*/
+
+#search{
+	float:left;
+	text-align:left;
+}
+#search .searchimg{
+	float:right;
+	background-position: 0 0 !important;
+}
+/* Legacy Typo CSS */
+
+#search-results{
+	float:left;
+}
+#search-results h3{
+	text-align:right;
+	
+}
+#search-results small{
+	text-align:right;
+}
+
+#search img.archives-icon{
+	margin:0 0 0 7px;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
