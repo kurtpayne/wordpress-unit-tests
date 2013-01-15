@@ -1,0 +1,436 @@
+/*  
+Theme Name: Garland
+Theme URI: http://wordpress.com/
+Description: A flexible, three-column theme with customizable colors. Design based on Themetastic for Drupal by Stefan Nagtegaal and Steven Wittens.
+Version: 1.0-wpcom
+Author: Stefan Nagtegaal and Steven Wittens
+Tags: three-columns, custom-colors, flexible-width, rtl-language-support, left-sidebar, right-sidebar, widgets, sticky-post
+*/
+
+/**
+ * Generic elements
+ */
+
+a:link, a:visited {
+	color: #027ac6;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #0062a0;
+	text-decoration: underline;
+}
+
+a:active, a.active {
+	color: #5895be;
+}
+
+.sticky h2 a {
+background: #027AC6;
+padding: 10px;
+display: block;
+color: white;
+}
+
+.sticky h2 a:hover {
+background: transparent;
+padding: 10px;
+display: block;
+color: #027ac6;
+}
+
+
+body {
+	background: #edf5fa;
+	color: #494949;
+	font: 12px/170% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body.sidebar-left  #footer {
+	margin-left: -210px;
+}
+
+/* So we move the #center container over the sidebars to compensate */
+body.sidebar-left #center {
+	margin-left: -210px;
+}
+
+/* And add blanks left and right for the sidebars to fill */
+body.sidebar-left #squeeze {
+	margin-left: 210px;
+}
+
+body.sidebar-right #center {
+	margin-right: -210px;
+}
+
+body.sidebar-right #footer {
+	margin-right: -210px;
+}
+
+body.sidebar-right #squeeze {
+	margin-right: 210px;
+}
+
+body.sidebars #center {
+	margin: 0 -210px;
+}
+
+body.sidebars #footer {
+	margin: 0 -210px;
+}
+
+body.sidebars #squeeze {
+	margin: 0 210px;
+}
+
+dl {
+	margin: 0.5em 0 1em 1.5em;
+}
+
+dl.gallery-item {
+	margin: 0;
+}
+
+dl dd {
+	margin: 0 0 .5em 1.5em;
+}
+
+dl dt {
+}
+
+h1 {
+	font-size: 170%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-size: 160%;
+	line-height: 130%;
+}
+
+h3 {
+	font-size: 140%;
+}
+
+h4 {
+	font-size: 130%;
+}
+
+h5 {
+	font-size: 120%;
+}
+
+h6 {
+	font-size: 110%;
+}
+
+hr {
+	background: #5294c1;
+	border: none;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+img, a img {
+	border: none;
+}
+
+input {
+	color: #494949;
+	font: 12px/100% Verdana, Arial, Helvetica, sans-serif;
+}
+
+p {
+	margin: 0.6em 0 1.2em;
+	padding: 0;
+}
+
+textarea, select {
+	color: #494949;
+	font: 12px/160% Verdana, Arial, Helvetica, sans-serif;
+}
+
+.content ul {
+	margin: 0.5em 0 1em;
+	padding: 0;
+}
+
+.content ul li {
+	margin: 0.4em 0 0.4em 1.5em;
+}
+
+ul, quote, code, fieldset {
+	margin: .5em 0;
+}
+
+/**
+ * Primary navigation
+ */
+ul.primary-links {
+	float: right;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 4;
+}
+
+ul.primary-links li {
+	background: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+ul.primary-links li a, ul.primary-links li a:link, ul.primary-links li a:visited {
+	background: transparent url("images/bg-navigation-item.png") no-repeat 50% 0;
+	color: #fff;
+	display: block;
+	margin: 0 1em;
+	padding: .75em 0 0;
+}
+
+ul.primary-links li a:hover, ul.primary-links li a.active {
+	background: transparent url("images/bg-navigation-item-hover.png") no-repeat 50% 0;
+	color: #fff;
+}
+
+.nextprev {
+	margin-bottom: 60px;
+	margin-top: 10px;
+	display:block !important;
+	display: inline-block; /*bloody ie6! */
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+	clear: both;
+}
+.image-navigation .alignright {
+	float: right;
+	clear: none;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 1em 0 3em;
+	padding: 0;
+}
+
+.commentlist .thread-alt {
+	background: #edf5fa;
+}
+
+.commentlist .avatar {
+	border: 1px dotted #ccc;
+	float: right;
+	margin-right: 25px;
+	padding: 2px;
+}
+
+.commentlist cite {
+	font-weight: bold;
+}
+
+.commentlist li {
+	list-style: none;
+	padding: 1em 2em;
+}
+
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li li, .item-list ul li, li.leaf, .links li {
+	background: transparent url("images/menu-leaf.gif") no-repeat 0 .35em;
+	list-style-image: none;
+	list-style-type: none;
+	padding: 0 0 .3em 13px;
+}
+
+.post {
+	margin-bottom: 2em;
+	overflow: hidden;
+}
+
+#header h1, #header h1 a {
+	color: #fff;
+	font-size: 1.5em;
+	font-weight: normal;
+	text-decoration: none;
+	text-shadow: #1659ac 0px 1px 3px;
+}
+
+#navigation {
+	background: url("images/bg-navigation.png") repeat-x 50% 100%;
+	height: 1em;
+}
+
+#s {
+	margin-bottom: 5px;
+}
+
+/* Layout and images */
+#wrapper {
+	background: url("images/body.png") #edf5fa repeat-x 50% 0;
+	height: 600px;
+}
+
+#wrapper #container {
+	margin: 0 auto;
+	max-width: 1270px;
+	padding: 0 20px;
+}
+
+/* We must define 100% width to avoid the body being too narrow for near-empty pages */
+#wrapper #container #center {
+	float: left;
+	width: 100%;
+}
+
+/* Now we add the backgrounds for the main content shading */
+#wrapper #container #center #squeeze {
+	background: url("images/bg-content.png") #fff repeat-x 50% 0;
+}
+
+#wrapper #container #center .right-corner {
+	background: transparent url("images/bg-content-right.png") no-repeat 100% 0;
+	left: 10px;
+	position: relative;
+}
+
+#wrapper #container #center .right-corner .left-corner {
+	background: transparent url("images/bg-content-left.png") no-repeat 0 0;
+	left: -10px;
+	margin-left: -10px;
+	min-height: 400px;
+	padding: 60px 25px 5em 35px;
+	position: relative;
+}
+
+#wrapper #container #footer {
+	clear: both;
+	color: #898989;
+	float: none;
+	margin: 4em 0 -3em;
+	text-align: center;
+}
+
+#wrapper #container #header {
+	height: 80px;
+}
+
+#wrapper #container #header #logo-floater {
+	position: absolute;
+}
+
+#wrapper #container #header h1, #wrapper #container #header h1 a:link, #wrapper #container #header h1 a:visited {
+	font-weight: bold;
+	line-height: 120px;
+	position: relative;
+	white-space: nowrap;
+	z-index: 2;
+}
+
+/* We ensure the sidebars are still clickable using z-index */
+#wrapper #container .sidebar {
+	float: left;
+	margin: 60px 0 5em;
+	width: 208px;
+	z-index: 2;
+}
+
+body > #wrapper #container .sidebar {
+	position: relative;
+}
+
+#sidebar-left li {
+	margin-right: 10px;
+}
+
+#sidebar-right ul {
+	margin-left: 20px;
+}
+
+#sidebar-right li ul {
+	margin-left: 0;
+}
+
+.sidebar ul {
+	margin-left: 0;
+	padding: 0;
+}
+
+.content img {
+	margin-left: 10px;
+}
+
+#comment {
+	width: 400px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+.meta {
+	clear: both;
+}
