@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-10 21:27+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "RSS 2.0 - all posts"
+msgstr "רסס 2.0 - כל הרשומות"
+
+#: 404.php:9
+msgid "RSS 2.0 - all comments"
+msgstr "רסס 2.0 - כל התגובות"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "פטפטן"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "ברוך הבא לדף שגיאה 404!"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "ברוך הבא לדף השגיאה המותאם אישית שלי. הגעת לדף הזה מכיוון שהקלקת על קישור שלא קיים. זאת כנראה אשמתנו... אבל במקום לחפש אשמים ולהראות לך את דף ה404 הרגיל, שלא באמת מסביר מה קרה או אומר מה לעשות, יצרנו את הדף הזה בשביל להסביר לך מה השתבש."
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "באפשרותך (א) ללחוץ על הכפתור ה'חזרה' בדפדפן שלך או (ב) לנסות להגיע לאן שרצית דרך דף הבית בלינק הזה."
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "&raquo; חזרה לדף הבית"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "תוצאות חיפוש"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "מילת מפתח:  &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "ארכיון"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "ארכיון לקטגוריה &#8216;%1$s&#8217; "
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "רשומות עם התג &#8216;%1$s&#8217;"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "ארכיון של %1$s"
+
+#: archive.php:25
+#: archive.php:48
+#: archives.php:14
+#: comments.php:91
+#: functions.php:503
+#: index.php:23
+#: links.php:22
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "j F, Y"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "F, Y"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "ארכיון הכותב"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "ארכיון הבלוג"
+
+#: archive.php:50
+#: archives.php:15
+#: comments.php:95
+#: functions.php:511
+#: index.php:25
+#: links.php:23
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "עריכה"
+
+#: archive.php:51
+#: index.php:26
+msgid "No comments"
+msgstr "אין תגובות"
+
+#: archive.php:51
+#: index.php:26
+msgid "1 comment"
+msgstr "תגובה אחת"
+
+#: archive.php:51
+#: index.php:26
+#, php-format
+msgid "% comments"
+msgstr "% תגובות"
+
+#: archive.php:51
+#: index.php:26
+msgid "Comments off"
+msgstr "אפשרות התגובות מנוטרלת"
+
+#: archive.php:55
+#: index.php:30
+msgid "Read more..."
+msgstr "קרא עוד..."
+
+#: archive.php:59
+#: index.php:34
+#: single.php:29
+msgid "Categories: "
+msgstr "קטגוריות:"
+
+#: archive.php:60
+#: index.php:35
+#: single.php:30
+msgid "Tags: "
+msgstr "תגיות:"
+
+#: archive.php:67
+#: archives.php:39
+#: index.php:42
+#: links.php:46
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "צטערת, לא נמצאו רשומות שתאמו את חיפושך"
+
+#: archive.php:75
+#: index.php:50
+msgid "Newer Entries"
+msgstr "רשומות חדשות יותר"
+
+#: archive.php:76
+#: index.php:51
+msgid "Older Entries"
+msgstr "רשומות ישנות יותר"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:25
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "השאר תגובה"
+
+#: archives.php:18
+#: links.php:26
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "הלאה לתגובות"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "הכנס את סיסמתך בשביל לצפות בתגובות."
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:347
+msgid "Comments"
+msgstr "תגובות"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "הפניות"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "הפניה"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "אין תגובות עדיין."
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "דפי תגובות"
+
+#: comments.php:91
+#: functions.php:503
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s מתוך %2$s"
+
+#: comments.php:91
+#: functions.php:503
+msgid "H:i"
+msgstr "H:i"
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "אין הפניות עדיין."
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "אין אפשרות להוסיף תגובות."
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "עליך להיות <a href=\"%s\">מחובר</a> בשביל לפרסם תגובה."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "מחובר למערכת בתור"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "התנתק מחשבון זה"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "&raquo; התנתק"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "ברוך השב ל<strong>%s</strong>."
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "&raquo; שנה"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr " &raquo; סגור"
+
+#: comments.php:166
+msgid "Name"
+msgstr "שם"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(נדרש)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "דואר אלקטרוני (לא יפורסם עם התגובה)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "אתר אינטרנט"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "הרשם להזנת תגובות"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "שלח תגובה"
+
+#: functions.php:160
+#: functions.php:169
+msgid "Current Theme Options"
+msgstr "אפשרויות ערכת עיצוב"
+
+#: functions.php:174
+msgid "Search"
+msgstr "חפש"
+
+#: functions.php:178
+msgid "Using google custom search engine."
+msgstr "שימוש בחיפוש מותאם אישית של גוגל."
+
+#: functions.php:181
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:184
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "חפש את <code>name=\"cx\"</code> בקוד של <a href=\"http://www.google.com/coop/cse/\">מנוע החיפוש המותאם אישית של גוגל</a>, ורשום את ה<code>ערך</code> כאן. <br/> לדוגמא: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:193
+msgid "Menubar"
+msgstr "שורת תפריט עילית"
+
+#: functions.php:197
+msgid "Show pages as menu."
+msgstr "הראה דפים בתור תפריט"
+
+#: functions.php:201
+msgid "Show categories as menu."
+msgstr "הראה קטגוריות בתור תפריט"
+
+#: functions.php:211
+msgid "Sidebar"
+msgstr "סרגל צדדי"
+
+#: functions.php:215
+msgid "Remove sidebar from all pages."
+msgstr "מחק את הסרגל הצדדי מכל הדפים."
+
+#: functions.php:226
+msgid "Notice"
+msgstr "שורת הודעה"
+
+#: functions.php:228
+#: functions.php:252
+#: functions.php:287
+msgid "HTML enabled"
+msgstr "HTML מאופשר"
+
+#: functions.php:234
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "שורת ההודעה הזאת תופיע בראש הרשימות בדף הראשי שלך."
+
+#: functions.php:250
+msgid "Banner"
+msgstr "באנר"
+
+#: functions.php:256
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr "הבאנר יוצג מימין לHeader.(גובה: 60 פיקסלים)"
+
+#: functions.php:258
+#: functions.php:293
+msgid "Who can see?"
+msgstr "מי יכול לראות?"
+
+#: functions.php:261
+#: functions.php:296
+msgid "Registered Users"
+msgstr "משתמשים רשומים"
+
+#: functions.php:265
+#: functions.php:300
+msgid "Commentator"
+msgstr "מגיב"
+
+#: functions.php:269
+#: functions.php:304
+msgid "Visitors"
+msgstr "מבקרים"
+
+#: functions.php:285
+#: sidebar.php:54
+msgid "Showcase"
+msgstr "ארונית תצוגה"
+
+#: functions.php:291
+msgid "This showcase will display at the top of sidebar."
+msgstr "ארונית התצוגה הזאת תופיע בראש הסרגל הצדדי."
+
+#: functions.php:309
+msgid "Title:"
+msgstr "כותרת:"
+
+#: functions.php:325
+msgid "Posts"
+msgstr "פוסטים"
+
+#: functions.php:329
+msgid "Show author on posts."
+msgstr "הצג את המחבר בפוסטים."
+
+#: functions.php:333
+msgid "Show categories on posts."
+msgstr "הצג קטגוריות ברשומות."
+
+#: functions.php:337
+msgid "Show tags on posts."
+msgstr "הצג תגים ברשומות."
+
+#: functions.php:351
+msgid "Submit comments with Ctrl+Enter."
+msgstr "שלח תגובה על ידי לחיצה על הכפתורים Ctrl+Enter"
+
+#: functions.php:361
+msgid "Feed"
+msgstr "רסס"
+
+#: functions.php:365
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr "הצג את רשימת קוראי הפידים כאשר מעבירים את העבר על כפתור הפידים."
+
+#: functions.php:370
+msgid "Custom feed."
+msgstr "רסס מואם אישית."
+
+#: functions.php:372
+#: functions.php:378
+msgid "URL:"
+msgstr "כתובת:"
+
+#: functions.php:376
+msgid "Email feed."
+msgstr "רסס דואר אלקטרוני."
+
+#: functions.php:385
+msgid "Save Changes"
+msgstr "שמור שינויים"
+
+#: functions.php:507
+msgid "Reply"
+msgstr "הגב"
+
+#: functions.php:508
+msgid "Quote"
+msgstr "ציטוט"
+
+#: functions.php:513
+msgid "Advanced edit"
+msgstr "עריכה מתקדמת"
+
+#: functions.php:519
+msgid "Your comment is awaiting moderation."
+msgstr "תגובתך ממתינה לאישור המנהל."
+
+#: links.php:15
+msgid "Add link"
+msgstr "הוסף קישור"
+
+#: links.php:16
+msgid "Edit links"
+msgstr "ערוך קישורים"
+
+#: links.php:31
+msgid "Blogroll"
+msgstr "בלוגרול"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "הרשם לבלוג הזה..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed"
+msgstr "פיד <abbr title=\"Really Simple Syndication\">רסס</abbr>"
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "הרשם דרך"
+
+#: sidebar.php:28
+msgid "Google"
+msgstr "גוגל"
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr "Youdao"
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr "Xian Guo"
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr "Zhua Xia"
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr "יאהו!"
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr "ניוז גאטור"
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr "שורות הבלוג"
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr "iNezha"
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "הרשם לבלוג דרך הדוא\"ל"
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "רסס דואר אלקטרוני"
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "חזור לדף הבית"
+
+#: single.php:7
+msgid "Home"
+msgstr "דף הבית"
+
+#: templates/end.php:3
+msgid "Top"
+msgstr "חזרה למעלה"
+
+#: templates/end.php:13
+msgid "Copyright &copy; "
+msgstr "כל הזכויות שמורות  &copy; "
+
+#: templates/end.php:25
+msgid "Theme by <a href=\"http://www.neoease.com/\">NeoEase</a>. Valid <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> and <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+msgstr "ערכת עיצוב על ידי <a href=\"http://www.neoease.com/\">NeoEase</a>. מאושרת בתקן <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> ו<a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr "הקלד כאן טקסט על מנת לבצע חיפוש..."
+
