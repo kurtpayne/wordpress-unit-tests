@@ -1,0 +1,585 @@
+/*  
+Theme Name: Day Dream
+Theme URI: http://fightingfriends.com/daydream/
+Description: A narrow one column theme with four color schemes and custom header support.
+Version: 1.4-wpcom
+Author: Jim Whimpey
+Author URI: http://fightingfriends.com
+Tags: custom-colors, custom-header, blue, fixed-width, one-column, rtl-language-support, white, light, theme-options, sticky-post, widgets
+*/
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		BODY, WRAPPINGS, ANCHORS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+body {
+margin: 0;
+padding: 0;
+text-align: center;
+font-family: Georgia, "Book Antiqua", "Souvenir Lt BT", "Times New Roman", serif;
+}
+
+#wrapper {
+width: 641px;
+margin: 0 auto;
+background: #fff url("./images/wrap_bg.png") repeat-y;
+}
+
+a {	color: #006699;	text-decoration: none; }			
+a:hover { color: #003366; }
+
+.entry a img { border: none; }
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+HEADER, HEADINGS, what not
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#header {
+width: 527px;
+height: 113px;
+margin: 1px 57px 0 57px;
+background: #0099FF url("./images/header_blue.jpg");
+text-align: left;
+padding: 160px 0 0 0;
+}
+
+h1 {
+margin: 0 20px 0 20px;
+font-size: 2.8em;
+font-weight: normal;
+}
+
+h1 a, h1 a:visited { color: #fff; text-decoration: none; }
+
+.description {
+margin: 0 35px 0 35px;
+color: #fff;
+font-size: 1.1em;
+}
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TOP BAR
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#topbar {
+width: 527px;
+height: 25px;
+background: #006699;
+margin: 1px auto 0 auto;
+border-bottom: 2px solid #4796E9;
+}
+
+#topbar ul {
+list-style: none;
+margin: 0 15px 0 25px;
+padding: 0;
+}
+
+#topbar ul li {
+display: block;
+list-style: none;			
+float: left;
+font-size: 0.9em;
+}
+
+#topbar ul li a, #topbar ul li a:visited {
+float: left;
+display: block;
+padding: 3px 8px 0 8px;
+height: 22px;
+color: #fff;
+text-decoration: none;
+}
+
+#topbar ul li a:hover { background: #4796E9; }
+
+#topbar ul li ul, #topbar ul li ul li {
+margin: 0;
+padding: 0;
+}
+
+#topbar ul li ul li a, #topbar ul li ul li a:visited {
+float: left;
+display: block;
+padding: 6px 8px 0 8px;
+height: 19px;
+color: #fff;
+text-decoration: none;
+}
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CONTENT
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#content {
+width: 527px;
+margin: 0 auto;
+text-align: left;
+padding: 20px 0 0 0;
+}
+
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+POSTS
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.sticky {
+	background: #f7f7f7;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.sticky h2 {
+	font-weight: bold !important;
+}
+.post {
+padding: 28px 0 20px 0;
+}
+
+.post h2 {
+font-size: 1.9em;
+font-weight: normal;
+color: #006699;
+margin: -10px 20px 0 30px;
+}
+
+.post h2.single { margin: -10px 20px 12px 30px; }
+
+.post .data {
+font-size: 1em;
+font-weight: normal;
+color: #006699;
+margin: 0 20px 15px 50px;
+}
+
+.post h3 {
+font-size: 1.3em;
+font-weight: normal;
+color: #003399;
+margin: 25px 20px -10px 0;
+}
+
+#content>.post h3 { margin-bottom: 8px; } /* FF Specific */
+
+.entry {
+width: 426px;
+margin: 0 auto;
+font-size: 0.8em;
+overflow: hidden;
+}
+
+.post .postmetadata, #content .postmetadata {
+width: 406px;
+margin: 25px auto 15px auto;
+border-top: 1px solid #E5E5E5;
+border-bottom: 1px solid #E5E5E5;
+background: #F5F5F5;
+text-align: center;
+font-size: 0.9em;
+padding: 8px 10px;
+}
+
+.postmetadata#single { margin: 0 auto 30px auto; }
+
+.postmetadata small { font-size: 0.8em; }			
+
+code { font-size: 1.0em; } 
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+POST PARAPHENALIA
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+blockquote {
+margin: 10px 0 10px 30px;
+padding: 0 0 0 5px;
+border-left: 3px solid #4C8EDA;
+color: #666;
+}
+
+.post ul {
+margin: 10px 0 ;
+padding: 0 0 0 37px;
+}
+
+.post a:hover { color: #0099CC; }
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TAGS
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.tags_page h2 {
+font-weight: normal;
+color: #006699;
+font-size: 1.9em;
+margin: 0 0 15px 20px;
+}
+
+.tags_page p {
+width: 450px;
+margin: 10px auto;
+font-size: 0.9em;
+}
+
+#tagcloud {
+width: 450px;
+margin: 20px auto 45px auto;
+text-align: center;
+}
+
+
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASIDES
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.aside {
+width: 421px;
+margin: 30px auto 25px auto;
+background: #FAFAFA;
+border-top: 1px solid #E5E5E5;
+border-bottom: 1px solid #E5E5E5;
+padding: 15px;
+}
+
+#content>.aside { margin-top: 10px; } /* FF Specific */
+
+.aside .entry {
+color: #4796E9;
+font-size: 0.7em;
+}
+
+.aside .entry p { margin: 0 0 10px 0; }
+
+#content .aside p.postmetadata {
+font-size: 0.7em;
+margin: 0;
+text-align: center;
+width: auto;
+border-top: none;
+border-bottom: none;
+background: none;
+padding: 0;
+}
+
+.aside a { color: #006699; }
+.aside a:hover { text-decoration: none; color: #000033; }
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+NAVIGATION
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.navigation {
+background: #F5F5F5;
+width: 447px;
+height: 18px;
+margin: 0 auto;
+font-size: 0.8em;
+padding: 8px 40px;
+border-top: 1px solid #E5E5E5;
+border-bottom: 1px solid #E5E5E5;
+}
+
+.alignleft {
+float: left;
+text-align: left;
+}
+
+.alignright {
+float: right;
+text-align: right;
+}
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COMMENTS and COMMENT FORM
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#commentformarea {
+border-top: 1px solid #E5E5E5;
+border-bottom: 1px solid #E5E5E5;
+background: #F5F5F5;
+margin: 0 auto 8px auto;
+padding: 8px 10px;
+}
+
+#commentform {
+margin: 15px 0 10px 40px;
+}
+
+#commentformarea h3 {
+font-size: 1.3em;
+font-weight: normal;
+color: #006699;
+margin: 10px 0 15px 20px;
+}
+
+#commentform p { margin: 0 0 3px 0;	}
+
+#commentform input, #commentform textarea {
+border: 1px solid #A7A6AA;
+background: #fff;
+padding: 3px;
+font-family: Verdana, Geneva, Helvetica, Arial, sans-serif;
+font-size: 0.8em;
+}
+
+#commentform textarea { width: 90%; }
+
+#commentform input#submit {
+font-family: Georgia, "Book Antiqua", "Souvenir Lt BT", "Times New Roman", serif;
+width: 130px;
+color: #006699;
+}
+
+p.mustbe {
+font-size: 0.8em;
+margin: 0 0 20px 30px;
+}
+
+h4 {
+margin: 25px 0 20px 0;
+text-align: center;
+font-weight: normal;
+color: #006699;
+}
+
+ol.commentlist {
+width: 426px;
+list-style: none;
+margin: 0 auto 60px auto;
+padding: 0;
+font-size: 0.9em;
+}
+
+ol.commentlist li {
+margin: 0 0 20px 0;
+padding: 0;
+border-top: 1px solid #ABCAD9;
+clear: right;
+padding-top: 20px;
+list-style: none;
+}
+
+ol.commentlist>li { padding-top: 20px; } /* FF Specific */
+
+ol.commentlist p.await_mod {
+color: #f00;
+margin: 0 0 8px 0;
+}
+
+ol.commentlist p { margin: 0 0 10px 0; }
+
+ol.commentlist div.cmntmeta { color: #006699; }
+
+.commentmetadata .avatar {
+float: right;
+padding: 3px;
+border: 1px solid #666;
+margin: 20px 0 20px 8px;
+display: inline; /* For IE */
+}
+
+ol.commentlist>li img.avatar { margin-top: 0; } /* FF specific */
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SEARCH AND ARCHIVES
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.sanda h2 {
+font-size: 1.9em;
+font-weight: normal;
+color: #006699;
+margin: 35px 0 0 0;
+text-align: center;
+}
+
+.sanda>h2 { margin: 15px 0 0 0; } /* FF Specific */
+
+.sanda h3 { margin: 0 40px 15px 40px; }
+
+.archives h2 {
+font-size: 1.7em;
+font-weight: normal;
+color: #006699;
+margin: 20px 0 15px 60px;
+}
+
+.archives ul {
+list-style: none;
+padding: 0;
+margin: 0 0 20px 80px;
+}
+
+
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SIDEBAR (aka the area where sidebar things go that is actually on the bottom)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+ul#sidebar {
+width: 527px;
+margin: 8px auto 0 auto;
+background: #F5F5F5;
+border-top: 1px solid #E5E5E5;
+border-bottom: 1px solid #E5E5E5;
+padding: 0 0 25px 0;
+}
+
+#wrapper>#sidebar { padding: 15px 0 25px 0; } /* FF Specific */
+
+#sidebar_wrapper {
+width: 467px;
+margin: 15px 15px 0 45px;
+padding: 0 0 -20px 0;
+}
+
+#sidebar>#sidebar_wrapper { margin-top: 0; } /* FF Specific */
+
+ul#sidebar li, ul#sidebar li ul, ul#sidebar li ul li {
+margin: 0;
+padding: 0;
+list-style: none;
+text-align: left;
+}
+
+#sidebar li h2 { 
+margin: 0;
+color: #4796E9;
+font-weight: normal;
+font-size: 1.6em;
+width: 140px;
+}
+
+ul#sidebar li {
+width: 150px;
+float: left;
+margin: 0 0 15px 0;
+padding: 0;
+}
+
+ul#sidebar li ul {
+width: 135px;
+padding: 5px 0 15px 10px;
+}
+
+ul#sidebar li ul li { width: 130px;	}
+
+input#s {
+width: 440px;
+margin: 0 13px -20px 0;
+border: 1px solid #A7A6AA;
+background: #fff;
+padding: 4px 0;
+color: #ccc;
+text-align: center;
+}
+
+div>input#s { margin-bottom: 0; margin-top: 15px; } /* FF Specific */
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FEED ICONS
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.feedicon {
+width: 20px;
+height: 20px;
+}
+
+
+#topbar .feedicon {
+background: url("./images/feedicon_blue_bg.png") no-repeat;
+display: block;
+display: inline; /* IE */
+float: right;
+margin: 2px 10px 0 0;
+}
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FOOTER
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#footer {
+width: 527px;
+margin: 8px auto 0 auto;
+background: #E5E5E5;
+padding: 0;
+text-align: center;	
+border-top: 1px solid #B7B7B7;
+border-bottom: 1px solid #B7B7B7;
+}
+
+#footer p {
+margin: 0 0 15px 0;
+padding: 15px 0 0 0;
+font-size: 0.7em;
+color: #000;
+}
+
+#wrapper>#footer p { margin: 0; padding: 15px 0 15px 0; } /* FF Specific */
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
