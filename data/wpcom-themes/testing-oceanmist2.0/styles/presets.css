@@ -1,0 +1,115 @@
+/* 
+   Preset CSS
+	 -----------------------------------------------------------------------
+   Contains style descriptions for the preset colour schemes. These can be selected from the 'Appearance' menu in WordPress. 
+*/
+
+/* 
+   Forest
+	 -----------------------------------------------------------------------
+*/
+body.cs2, .cs2 .leftCorner, .cs2 .rightCorner {background-color: #d7e69d;}
+.cs2 #header, .cs2 #header .dot {background-color: #424c36;}
+.cs2 #strapline {color: #eeeedd;}
+.cs2 #container, .cs2 #footer, .cs2 #footer .dot, .cs2 .or span {background-color: #e9efd3;}
+.cs2 #mainCol {background-color: #fbfcf6;}
+.cs2 #header, .cs2 #photo {border-color: #738260;}
+.cs2 #nav ul {border-color: #738260;}
+.cs2 #subCol h2 {background-color: #dae2b7; color: #50503a;}
+.cs2 .title {background-color: #e1e8c3; color: #50503a;}
+.cs2 .post + .post {border-top: 1px solid #cccc99;} 
+.cs2 .or {border-color: #d4d4b5; color: #8d8d70;}
+body.cs2, .cs2 .author span {color: #4e4e36;}
+.cs2 .date {color: #8d8d75;}
+.cs2 .d2 {background-color: #eef2dd;}
+.cs2 .d3 {background-color: #e1e8c3;}
+.cs2 #nav li a {background-color: #5d6b4d; color: #fff;}
+.cs2 #nav li a:hover {background-color: #3e4a31;}
+.cs2 #nav ul li a {border-color: #3e4a31;}
+.cs2 a, .cs2 a:visited {color: #4b6729;}
+.cs2 a:hover {color: #000;}
+.cs2 #footer p, .cs2 .author {color: #79795d;}
+.cs2 #footer a, .cs2 #footer a:visited {color: #50503a;}
+.cs2 #footer a:hover {color: #000;}
+.cs2 #wp-calendar caption, .cs2 #calendar caption {background: #737361;}
+
+
+
+/* 
+   Neutral
+	 -----------------------------------------------------------------------
+*/
+body.cs3, .cs3 .leftCorner, .cs3 .rightCorner {background-color: #ddddbb;}
+.cs3 #header, .cs3 #header .dot {background-color: #737361;}
+.cs3 #strapline {color: #eeeedd;}
+.cs3 #container, .cs3 #footer, .cs3 #footer .dot, .cs3 .or span {background-color: #eeeedd;}
+.cs3 #mainCol {background-color: #fff;}
+.cs3 #header, .cs3 #photo {border-color: #50503a;}
+.cs3 #nav ul {border-color: #50503a;}
+.cs3 #subCol h2 {background-color: #e1e1c0; color: #50503a;}
+.cs3 .title {background-color: #e8e8c9; color: #50503a;}
+.cs3 .post + .post {border-top: 1px solid #cccc99;} 
+.cs3 .or {border-color: #d4d4b5; color: #8d8d70;}
+body.cs3, .cs3 .author span {color: #555522;}
+.cs3 .date {color: #8d8d75;}
+.cs3 .d2 {background-color: #f0f0de;}
+.cs3 .d3 {background-color: #e8e8c9;}
+.cs3 #nav li a {background-color: #7b7b5d; color: #fff;}
+.cs3 #nav li a:hover {background-color: #939372;}
+.cs3 #nav ul li a {border-color: #b1b193;}
+.cs3 a, .cs3 a:visited {color: #b34706;}
+.cs3 a:hover {color: #000;}
+.cs3 #footer p, .cs3 .author {color: #79795d;}
+.cs3 #footer a, .cs3 #footer a:visited {color: #50503a;}
+.cs3 #footer a:hover {color: #000;}
+.cs3 #wp-calendar caption, .cs3 #calendar caption {background: #737361;}
+
+
+
+/* 
+   Warm
+	 -----------------------------------------------------------------------
+*/
+body.cs4, .cs4 .leftCorner, .cs4 .rightCorner {background-color: #fff599;}
+.cs4 #header, .cs4 #header .dot {background-color: #852b24;}
+.cs4 #strapline {color: #d4908b;}
+.cs4 #logo a {color: #f4ec85;}
+.cs4 #container, .cs4 #footer, .cs4 #footer .dot, .cs4 .or span {background-color: #f6ecd9;}
+.cs4 #mainCol {background-color: #fff;}
+.cs4 #header, .cs4 #photo {border-color: #c65640;}
+.cs4 #nav ul {border-color: #c65640;}
+.cs4 #subCol h2 {background-color: #f0dfc2; color: #683d3a;}
+.cs4 .title {background-color: #f3e5cc; color: #683d3a;}
+.cs4 .post + .post {border-top: 1px solid #d9c197;} 
+.cs4 .or {border-color: #d4d4b5; color: #8d8d70;}
+body.cs4, .cs4 .author span {color: #555522;}
+.cs4 .date {color: #8d8d75;}
+.cs4 .d2 {background-color: #f0f0de;}
+.cs4 .d3 {background-color: #e8e8c9;}
+.cs4 #nav li a {background-color: #9e342c; color: #fff;}
+.cs4 #nav li a:hover {background-color: #852b24;}
+.cs4 #nav ul li a {border-color: #852b24;}
+.cs4 a, .cs4 a:visited {color: #852b24;}
+.cs4 a:hover {color: #000;}
+.cs4 #footer p, .cs5 .author {color: #79795d;}
+.cs4 #footer a, .cs5 #footer a:visited {color: #50503a;}
+.cs4 #footer a:hover {color: #000;}
+.cs4 #wp-calendar caption, .cs4 #calendar caption {background: #737361;}
+
+
+
+/* 
+   Night
+	 -----------------------------------------------------------------------
+*/
+body.cs5, .cs5 .leftCorner, .cs5 .rightCorner {background-color: #2d4955;}
+.cs5 #header, .cs5 #header .dot {background-color: #2d383d;}
+.cs5 #strapline {color: #80a2b0;}
+.cs5 #logo a {color: #fff;}
+.cs5 #mainCol {background-color: #fff;}
+.cs5 #header, .cs5 #photo {border-color: #3d6373;}
+.cs5 #nav ul {border-color: #3d6373;}
+.cs5 #nav li a {background-color: #5b8292; color: #fff;}
+.cs5 #nav li a:hover {background-color: #39515b;}
+.cs5 #nav ul li a {border-color: #6d8f9d;}
+
