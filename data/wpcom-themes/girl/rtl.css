@@ -1,0 +1,83 @@
+/*  
+Theme: Girl in Green
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {direction:rtl; unicode-bidi:embed;}
+.main {margin-left: 251px; margin-right:0;}
+.rightimage {left: 0px; right:auto; background-image:url(images/girl-rtl.gif) !important;}
+.right {left: 0px; right:auto; margin-right:0; margin-left: 26px;}
+
+
+.blogname {
+ left: 0px;
+ right: auto;
+ margin-left: 181px; 
+ margin-right: 0; 
+}
+
+.sideheading{
+ text-align:right;
+}
+
+.heading {
+ margin-right: 126px;
+ margin-left: 0;
+}
+.entry {
+ margin-right: 26px;
+ margin-left: 0;
+}
+
+.footer {
+ margin-right: 26px;
+ margin-left: 100px;
+}
+
+.comments {
+ margin-right: 26px;
+ margin-left: 0;
+}
+
+.comment {
+ margin-right:26px;
+ margin-left:0;
+}
+
+.commentlist {
+ margin-right:-26px;
+ margin-left:0;
+}
+
+.right ul
+{
+	list-style-type:none;
+	margin-right: 10px; padding-right: 0;
+	margin-left: 0; padding-left: auto;
+}
+
+ul ul
+{
+	margin-right: 20px; padding-right: 0;
+	margin-left: 0; padding-left: auto;
+}
+
+blockquote
+{
+padding-right: 20px;
+padding-left: 20px;
+}
+
+.comment-author .avatar {float: right; margin-left:0; margin-right: 83px; }
+
+.right ul li h2.widgettitle {
+ text-align:right;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
