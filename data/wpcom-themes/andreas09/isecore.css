@@ -1,0 +1,28 @@
+
+#container {
+	background:#f0f0f0 url(images/bodybg-isecore.jpg) repeat-x;
+}
+
+a {
+	color:#536D88;
+}
+
+#leftside ul.box li a {
+	color:#5C5C5C;
+}
+
+#mainmenu a {
+	color: #536D88;
+}
+
+#mainmenu a:hover {
+	background: url(images/menuhover-isecore.jpg) center left repeat-x;
+}
+
+#mainmenu li.current a, #mainmenu li.current_page_item a {
+	background: url(images/menuhover-isecore.jpg) center left repeat-x;
+}
+
+#mainmenu li.currentparent a {
+	background: url(images/menuhover-isecore.jpg) center left repeat-x;
+}
