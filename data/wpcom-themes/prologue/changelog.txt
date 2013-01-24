@@ -1,0 +1,24 @@
+Prologue Theme - Change Log
+---------------------------
+
+1.4.2 - 17 Sept 2008
+- Change Next/Prev links to read "Older/Newer Posts"
+- Adjusted font size in sidebar for better formatting
+- Updated link colors to use newest WordPress color palette
+
+1.4.1 - 24 Jul 2008
+- Fix CSS for lists (Matt Thomas)
+- Show login message when comments are disabled instead of comment form (Sam Bauers)
+- Don't float the avatar out for the authors widget
+- Rename get_avatar( ) to prologue_get_avatar( )
+- Use make_clickable( ) in posts, makes URLs mentioned clickable. (Michael Adams, Barry Abrahamson)
+- Provide edit link for comments (Mark Riley)
+- Add theme tag: microblog (Lloyd Budd)
+- Respect time settings instead of hard coding them (Lloyd Budd)
+- iPhone style sheet (Matt Mullenweg)
+
+1.3 - 3 Feb 2008
+- Spacing and HTML cleanup
+- New caching for sidebar tag list
+- Show tags for posts on the front page
+- Zip file download now available
