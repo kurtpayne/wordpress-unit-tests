@@ -1,0 +1,286 @@
+/*  
+Theme Name: Jentri
+Theme URI: http://ifelse.co.uk/jentri/
+Description: A vintage red and white two-column theme complete with matching pattern.
+Version: 1.0-wpcom
+Author: Phu Ly
+Author URI: http://ifelse.co.uk/
+Tags: two-columns, fixed-width, red, right-sidebar, widgets, sticky-post, rtl-language-support
+*/
+
+/*************************************
+ +Containers
+ *************************************/
+
+#content img {
+	margin: 5px;
+}
+
+body{
+	background:#4C0A0A url(./images/bg.gif);
+	color:#77756B;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:62.5%;
+	line-height:1.7;
+	margin:0;
+}
+
+#content{
+	padding:20px;
+	width:450px;
+	overflow: hidden;
+}
+#footer{
+	color:#888;
+	font-size:0.8em;
+	margin-top:20px;
+	padding:3px;
+}
+#header{
+	margin-top:40px;
+	margin-left:40px;
+	font-size:1em;
+}
+
+#sidebar{
+	margin-top:40px;
+	color:#eee;
+	float:left;
+	margin-left:-40px;
+	width:170px;
+}
+#wrap{
+	float:left;
+	width:612px;	
+	margin-top:-20px;
+	background:#FEFCFA url(./images/bodybg.png) repeat-y ;
+}
+* html body #wrap{
+	background:#FEFCFA url(./images/bodybg.gif) repeat-y 0px;
+}
+
+/*************************************
+ +Hn
+ *************************************/
+#sidebar h2{
+	color:#EADED3;
+	font-size:1.4em;
+	margin-bottom:10px;
+	font-weight:normal;
+}
+#header h1{
+	display:inline;
+	font-size:2.8em;
+	line-height:1;
+	margin:0;
+	font-weight:normal;
+	letter-spacing: -2px;
+}
+#header h1 a{
+	color:#5F1010;
+}
+#header h1 a:hover{
+	color:#86827A;
+}
+h2{
+	font-size:1.5em;
+	padding-right:5px;
+}
+h3{
+	font-size:1.2em;
+}
+.entrytitle h2, .entrytitle h3{
+	display:inline;
+	font-weight:normal;
+}
+.entrytitle h2{
+	color:#C04422;
+	font-family: Sylfaen, Georgia, "Times New Roman", Times, serif;
+	font-size:1.5em;
+}
+.entrytitle h3{
+	font-family: "Century Gothic", Helvetica, arial;
+	font-weight:normal;
+}
+.entrymeta{
+	background:url(./images/swirl.png) no-repeat  50%;
+	padding:3px;
+	padding-bottom:70px;
+	clear: both;
+}
+
+.sticky .entrytitle {
+background: #5F1010;
+padding-left: 5px;
+}
+.sticky .entrytitle a {
+color: #FEFCFA;
+}
+/*************************************
+ +Lists
+ *************************************/
+#sidebar ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+
+}
+#sidebar ul li a{
+	color:#fff;
+}
+#sidebar ul li a:hover{
+	color:#fffab8;
+}
+/*************************************
+ +Misc
+ *************************************/
+a{
+	text-decoration:none;
+	color:#8E7D6C;
+}
+.entry a{
+font-weight:bold;
+}
+a:hover{
+color:#9e9e9e;
+
+}
+#footer a{
+	color:#9A8F95;
+	font-weight:bold;
+}
+.navigation{
+	padding:3px;
+	text-align:center;
+}
+.navigation a{
+	color:#8E7D6C;
+}
+#header {
+	margin-bottom:5px;
+}
+#header p{
+	color:#86827A;
+	font-size:1em;
+	margin:0;
+}
+
+/*************************************
+ +Entry
+ *************************************/
+.entry{
+	font-size:1.1em;
+	margin:5px;
+	padding:0 10px;
+}
+
+.entrytitle{
+}
+.entrytitle a {
+	color:#8C4A4A;
+	text-decoration:none;	
+}
+.entrytitle a:hover {
+	color:#aC4A4A;
+}
+.entrymeta{
+	color:#666;
+	font-size:0.8em;
+}
+.entrymeta a{
+	color:#666;
+}
+
+code {
+	font-size: 1.1em;
+}
+
+/*************************************
+ +Comments
+ *************************************/
+.commentsblock{
+	margin:5px;
+	padding:10px;
+}
+.commentsblock textarea{
+	width:100%;
+}
+.commentauthor{
+	display:block;
+	font-size:1.5em;
+}
+.even{
+	background:#fefcfa;
+	border:1px solid #fefcfa;
+}
+.alt{
+	background:#FCFAF4;
+	border:1px solid #FCFAF4;
+	padding:5px;
+}
+
+.commentlist li .avatar { 
+	border: 1px solid #ccc;
+	padding: 2px;
+	float: right; 
+}
+
+.commentlist li .children { 
+	list-style-type:none;
+}
+
+img.centered, img.aligncenter, #content img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
