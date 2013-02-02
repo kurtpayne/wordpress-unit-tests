@@ -1,0 +1,83 @@
+/*-------------------------
+Theme: Flower Power
+RTL: Yoav Farhi, yoav@automattic.com
+-------------------------*/
+
+/* ----- BASICS ELEMENTS ------------------------------------------------------------------------------------------------- */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+	text-align:right;
+}
+
+/* ----- LAYOUT ------------------------------------------------------------------------------------------------- */
+
+#container {
+	background-image:url(images/mainbg-rtl.gif);
+	text-align:right;
+}
+
+#header{
+	background-image:url(images/header-rtl.gif);
+	text-align:right;
+}
+
+		#title {
+			padding:15px 190px 0px 0px;
+		}
+
+#main {
+	float:right;
+	text-align:right;
+}
+
+#side {
+	float:left;
+	text-align:right;
+	padding:10px 0px 10px 190px;
+}
+
+#side p {
+	text-align:justify;
+}
+
+#side h3 {
+	margin-right:15px;
+	margin-left:0;
+}
+
+#side ul{
+	list-style-image:url(images/list.gif);
+	margin: 0px 20px 0px 0px;
+}
+#contactform label {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+	text-align: left;
+}
+/* ----- COPYRIGHT ------------------------------------------------------------------------------------------------- */
+/* 		Please be fair and respect our Copyright. 
+
+		Thank You,
+		
+		TalkXHTML.com, PhoenixRealm.com, and LaZe, Inc. 																									 */
+/* ----- COPYRIGHT ------------------------------------------------------------------------------------------------- */
+
+#copyright {
+	float:right;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
+
+div.avatar {
+	float: left;
+	padding: 0 10px 5px 0;
+}
