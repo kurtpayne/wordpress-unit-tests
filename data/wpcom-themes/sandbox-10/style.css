@@ -1,0 +1,108 @@
+/*
+THEME NAME: Sandbox 1.1
+THEME URI: http://www.plaintxt.org/themes/sandbox/
+DESCRIPTION: A theme rich with powerful and dynamic semantic class selectors; a canvas for CSS artists.
+VERSION: 1.1
+AUTHOR: <a href="http://andy.wordpress.com/">Andy Skelton</a> &amp; <a href="http://www.plaintxt.org/">Scott Allan Wallick</a>
+AUTHOR URI:
+TAGS: two-columns, white, light, widgets, left-sidebar, light, flexible-width, microformats, rtl-language-support
+*/
+
+/* Two-column with sidebar on left from the /sandbox-layouts/ folder  */
+@import url('sandbox-layouts/2c-l.css');
+
+/* Just some example content */
+div#header{text-align:center;margin-bottom:2em;}
+div#access div.skip-link{position:absolute;top:1em;right:1em;}
+div#menu{font-size:0.9em;height:1.5em;padding-top:0.3em;background:#eee;width:100%;}
+div#menu ul a{font-weight:700;text-decoration:none;}
+div#menu ul,div#menu ul ul,div#menu ul li{list-style:none;margin:0;padding:0;}
+div#menu ul li{float:left;}
+div#menu ul li a{background:#eee;padding:0.3em 0.5em;}
+div#menu ul ul{display:none;}
+div#menu ul ul li{float:none;}
+div#menu ul ul li a{margin:0;padding:0;}
+div#menu ul li:hover ul{display:block;font-size:0.9em;padding-top:0.5em;position:absolute;}
+div#menu ul li:hover ul li a{background:#f5f5f5;border:none;display:block;padding:0.1em;width:10em;}
+
+.entry-title{clear:both;}
+div#container,div.sidebar{margin-top:2em;}
+div#nav-above,div#nav-below{width:100%;height:1em;}
+div#nav-above{margin-bottom:1em;}
+div#nav-below{margin-top:1em;}
+.alignleft,div.nav-previous{float: left;}
+.alignright,div.nav-next{float: right;}
+form#commentform .form-label{margin:1em 0 0;}
+form#commentform span.required{background:#fff;color:red;}
+form#commentform,form#commentform p{padding:0;}
+input#author,input#email,input#url{width:50%;}
+input#author,input#email,input#url,textarea#comment{padding:0.2em;}
+div.comments ol li{margin:0 0 3.5em;}
+textarea#comment{height:13em;margin:0 0 0.5em;overflow:auto;width:66%;}
+
+div.sidebar div,div.sidebar h3,div.sidebar ul,div.sidebar li{margin:0;padding:0;}
+div.sidebar h3{font-size:1.2em;}
+div.sidebar input#s{width:7em;}
+div.sidebar li{list-style:none;margin:0 0 1em;}
+div.sidebar li form{margin:0.2em 0 0;padding:0;}
+div.sidebar ul ul{margin:0 0 0 1em;}
+div.sidebar ul ul li{list-style:disc;margin:0;}
+div.sidebar ul ul ul{margin:0 0 0 0.5em;}
+div.sidebar ul ul ul li{list-style:circle;}
+
+div#footer{text-align:center;}
+
+.vcard .avatar { float: right; border: 1px solid #eee; padding: 2px; background #fff; }
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.entry-meta {
+	clear: both;
+}
