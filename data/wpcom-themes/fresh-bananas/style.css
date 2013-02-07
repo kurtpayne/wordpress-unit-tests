@@ -1,0 +1,375 @@
+/*
+Theme Name: Fresh Bananas
+Theme URI: http://www.nokrev.com/themes/fresh-bananas/
+Description: Light blues and reds compliment the lack of yellow in this two-column theme.
+Author: Jeff Wheeler
+Author URI: http://www.nokrev.com
+Tags: blue, two-columns, fixed-width, white, light, right-sidebar, widgets, sticky-post, rtl-language-support
+*/
+
+body {
+	background: #B9DDDE;
+	font-size: 76%;
+	margin: 0 0 20px; 
+	padding: 0;
+	text-align: center; /* Used to center in IE */
+}
+
+/*
+ * Know knock.
+ * Who's there?
+ * Ie
+ * Ie who?
+ * Ie like to brake your sites!
+ * (Ie is pronounced like I...)
+ */
+
+/* ------------------------- */
+/* -- Header --------------- */
+/* ------------------------- */
+.sticky h1 {
+padding: 15px;
+background: #f7f7f7;
+}
+#header {
+	background: url(images/box-repeat.jpg) center;
+	margin: 0 auto 20px;
+	text-align: left;
+	width: 720px;
+}
+
+#header a {
+	background: url(images/box-bottom.jpg) left bottom no-repeat;
+	color: #E5A1A1;
+	display: block;
+	font-size: 3.5em;
+	padding: 60px 20px 10px;
+	text-decoration: none;
+}
+
+#header a:hover { color: #CD8686; }
+
+/* ------------------------- */
+/* -- Text ----------------- */
+/* ------------------------- */
+
+/* Q: Why was the font tag an orphan?
+ * A: Because it didn't have a font-family. */
+
+#text {
+	background: url(images/text-repeat.jpg);
+	margin: 0 auto;
+	text-align: left;
+	width: 720px;
+}
+
+/*
+ * Main!
+ */
+
+#text #main {
+	background: url(images/text-top.jpg) top left no-repeat;
+	color: #333;
+	float: left;
+	padding: 10px 10px 0 30px;
+	width: 495px;
+	overflow: hidden;
+}
+
+/* Arg! A pirate is here with IE, beware when editing your CSS. Check in all versions of IE before publishing! */
+
+/* Headers */
+
+#text #main h1 {
+	color: #323C3C;
+}
+
+/* Paragraph */
+
+#text #main p.meta {
+	color: #999;
+	clear: both;
+}
+
+/* Lists */
+
+ul {
+	list-style-type: circle;
+}
+
+/* Q: Why did the XHTML actress turn down an Oscar?
+ * A: Because she refused to be involved in the presentation. */
+
+/* Preformatted and Code */
+
+pre {
+	background: #EFF29F; /* a nice yellow, but change as you like */
+	font-size: 1.2em; /* make it a bit larger for ease of reading */
+	padding: 5px;
+}
+
+code {
+	background: #EFF29F;
+	color: #000;
+	font-size: 1.2em;
+}
+
+pre code {
+	font-size: 1em; /* When people would place a code element in a pre, it would get very large */
+}
+
+/* Comments */
+
+#commentlist {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#commentlist li {
+	list-style-type: none;
+	padding: .1em .8em;
+	margin-right: 20px;
+}
+#commentlist li .avatar { 
+	border: 1px solid #B9DDDE;
+	padding: 2px;
+	margin-top: 15px;
+	float: right; 
+}
+.alt {
+	background: #ebf5f6;
+}
+.navigation {
+	padding-bottom: 3em;
+}
+/* Comment Form */
+
+#reply label {
+	display: block;
+}
+
+#comment { width: 95%; height: 10em; }
+
+/* Search Highlight */
+
+.hilite {
+	background-color: #F17196 !important;
+	color: #fff;
+}
+
+/* Q: Why was the XHTML bird an invalid?
+ * A: Because it wasn't nested properly. */
+
+/*
+ * Sidebar!
+ */
+
+#text #sidebar {
+	background: url(images/text-top.jpg) top right no-repeat;
+	position: absolute;
+	left: 50%;
+	margin-left: 175px;
+	padding: 10px 20px 0 10px;
+	width: 155px;
+}
+
+/* Headers */
+
+#text #sidebar h1 {
+	font-size: 1px;
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+}
+
+#text #sidebar h2 {
+	color: #323C3C;
+	font-weight: normal;
+	margin: 33px 0 0;
+}
+
+/* Lists */
+
+#text #sidebar ul, #text #sidebar ul ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 1em;
+}
+
+#text #sidebar li {
+	list-style-type: none;
+}
+
+.widget_search { 
+	margin-top: 33px;
+}
+
+
+/*
+ * Footer!
+ */
+
+#text #footer {
+	background: url(images/text-bottom.jpg) bottom no-repeat;
+	clear: both;
+	color: #666;
+	padding: 0 20px 10px;
+}
+
+#text #footer p {
+	margin: .5em;
+}
+
+/* ------------------------- */
+/* -- Fonts ---------------- */
+/* ------------------------- */
+
+#header {
+	font-family: "Stone Sans ITC TT", "Arial Rounded MT BOLD", Verdana, sans-serif;
+}
+
+#text h1 {
+	font-size: 2.4em;
+	font-weight: normal;
+}
+
+#text h2 {
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+#text h3 {
+	font-size: 1.4em;
+	font-weight: normal;
+}
+
+#text p, #text #main ul, #text #main ol {
+	font-family: Verdana, Arial, sans-serif;
+	line-height: 200%;
+}
+
+#text #sidebar ul {
+	font-family: Verdana, Arial, sans-serif;
+	line-height: 170%;
+}
+
+/* Why was the decapitated web page invalid?
+ * Because it didn't have a head. */
+
+/*
+ * Links and their colors (is there a better place for this?)
+ */
+
+a {
+	color: #637677;
+}
+
+a:visited {
+	color: #859FA0;
+}
+
+a:hover {
+	color: #90ACAD;
+}
+
+/*
+ * Header links
+ */
+
+h1 a, h1 a:visited {
+	border-bottom: 1px solid #ccc;
+	color: #333;
+	text-decoration: none;
+}
+
+h1 a:hover {
+	color: #637677;
+}
+
+/* W00T! A Hack for IE. Let's see if we can get our CSS at least mostly clean. Would be nice if they got the Box Model right at least... watch out when changing. */
+
+/* Q: Why was IE5's 3-metre wide cell in the insane asylum smaller than IE6's 3-metre wide cell?
+ * A: Because the width of the cell included the padding. */
+
+/* ------------------------- */
+/* -- Hacks ---------------- */
+/* ------------------------- */
+
+/*
+ * 
+ * We should all forget about CSS. Let's go back to the unusable web!
+ */
+
+/* #text #main */
+
+* html #text #main
+{
+	padding-top: 20px;
+	width: 505px;   /* content width (for other browsers) */
+}
+
+/* #text #sidebar */
+
+* html #text #sidebar   /* this selector recognized by IE only */
+{
+	width: 155px;
+}
+
+/* Q. What did the silly web developer order at the restaraunt?
+ * A. Tag Soup! */
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
