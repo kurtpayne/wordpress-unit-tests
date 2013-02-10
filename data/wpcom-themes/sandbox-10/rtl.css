@@ -1,0 +1,20 @@
+﻿/*
+RTL for Theme: : Sandbox
+THEME URI: http://www.plaintxt.org/themes/sandbox/
+DESCRIPTION: RTL Style for RTL language (  e.g. Farsi,Arabic,Hebrew, ... )
+VERSION: 1.2
+AUTHOR: Navid Kashani
+AUTHOR URI:http://www.asroone.net/
+Persian WordPress Project :  wp-persian.com
+*/
+h2,h3 {font-family:arial;}
+.entry-title {margin:15px 0 0;}
+div#header{direction:rtl;}
+div#access{direction:rtl;}
+div#access div.skip-link{left:1em;}
+div#menu ul li{float:right;}
+div#container,div.sidebar{direction:rtl;font-family:tahoma,arial;line-height:150%;color:#3F3F3F;text-align:justify;font-size:14px;}
+div.sidebar ul ul{margin:0 1em 0 0;}
+div.sidebar ul ul ul{margin:0 0.5em 0 0;}
+div.form-input #email,div.form-input #url {direction:ltr;}
+div.entry-content img { margin:0 4px;}
