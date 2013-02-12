@@ -1,0 +1,27 @@
+/*
+Skin Name: Three-Column Minimalist L
+Skin URI: http://www.plaintxt.org/
+Description: Minimalist style with two sidebars on the left.
+Author: Scott Allan Wallick
+Author URI: http://www.plaintxt.org/
+Version: 1.0
+Global Navigation: N
+*/
+@import url('../style.css');
+div#container {
+	float: right;
+	margin: 0 0 0 -400px;
+	width: 100%;
+}
+div#content {
+	margin: 0 0 0 400px;
+}
+div.sidebar {
+	float: right;
+	overflow: hidden;
+	width: 180px;
+}
+div#footer {
+	clear: both;
+	width: 100%
+}
