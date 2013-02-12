@@ -1,0 +1,139 @@
+/* Background Graphics --------------------------------------------- */
+
+body {
+	background-color: #f3f3eb;
+}
+
+#container {
+	background-image: url(../../assets/images/back_content.gif);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+
+#header {
+	background-image: url(../../assets/images/back_header.gif);
+	background-repeat: repeat-x;
+}
+
+#menu .page_item a {
+	background-image: url(../../assets/images/back_menu.gif);
+	background-position: center top;
+	background-repeat: repeat-x;
+}
+
+#menu .current_page_item a {
+	background-image: url(../../assets/images/back_menu_selected.gif);
+	background-position: center top;
+	background-repeat: repeat-x;
+}
+
+.prominent {
+	background-image: url(back_prominent.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-color: #f4f4ec;
+}
+
+.prominent .inner {
+	background-image: url(back_prominent_inner.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin: 0px;
+	padding: 15px 15px 10px;
+}
+
+#footer {
+	background-image: url(../../assets/images/back_footer.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+}
+
+#footer .style_content {
+	background-image: url(footer.jpg);
+	background-repeat: no-repeat;
+	background-position: top;
+}
+
+#comment_area .metadata {
+	background-image: url(back_comment_meta.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin: 0px 0px 15px;
+	padding: 10px;
+	background-color: #f4f4ec;
+}
+
+#information {
+	background-image: url(back_info.jpg);
+}
+
+#post_meta {
+	background-image: url(back_prominent.jpg);
+}
+
+#search {
+	background-image: url(back_search.jpg);
+}
+
+#author {
+	background-image: url(back_author.jpg);
+}
+
+
+/* Color ----------------------------------------------------------- */
+
+#div {
+	border: 1px solid #FF0000;
+}
+
+a, a:link {
+	color: #bb6f02;
+}
+
+a:hover, a:active {
+	color: #e58802;
+}
+
+#header, #footer {
+	color: #FFFFFF;
+}
+
+#header a, #header a:link, #footer a, #footer a:link {
+	color: #FFFFFF;
+}
+
+#header a:hover, #header a:active, #footer a:hover, #footer a:active {
+	color: #DDDDDD;
+}
+
+
+
+/* Typography ------------------------------------------------------ */
+
+body {
+	font-family: "Lucida Grande", Arial, Sans-serif;
+	font-size: 9pt;
+	line-height: 180%;
+	color: #382e1f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	letter-spacing: -0.06em;
+}
+
+
+/* Forms ----------------------------------------------------------- */
+
+.input {
+	background-color: #FFFFFF;
+	background-image: url(../../assets/images/back_input.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	border: 1px solid #a79d8f;
+	margin: 0px;
+	padding: 2px 1px;
+	line-height: inherit;
+	font-size: inherit;
+	display: inline;
+}
