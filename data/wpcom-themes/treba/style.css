@@ -1,0 +1,285 @@
+/*  
+Theme Name: Treba
+Theme URI: http://ifelse.co.uk/treba/
+Description: A simple brown two-column theme that's easy on the eyes.
+Version: 1.0-wpcom
+Author: Phu Ly
+Author URI: http://ifelse.co.uk/
+Tags: two-columns, fixed-width, tan, light, right-sidebar, widgets, sticky-post, rtl-language-support
+*/
+
+a img { border: none; }
+
+/*************************************
+ +Containers
+ *************************************/
+body{
+	background:#C0BBA5 url(./images/background.gif) repeat-x;
+	color:#666;
+	font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+	font-size:67.5%;
+	line-height:1.7;
+	text-align:center;
+	margin:0;
+	border-top:5px solid #504B35;
+}
+#content{
+	background:#f5f6f4;
+	background:#FFFFFA url(./images/main.gif) repeat-x;
+	border:3px solid #d0cbb5;
+	border-bottom:none;
+	float:left;
+	padding:10px;
+	width:450px;
+	font-size:0.9em;
+	overflow: hidden;
+}
+
+#content img {
+	margin: 5px;
+}
+
+img.attachment-auto, img.attachment-thumbnail  { 
+	margin:0 !important;
+}
+
+#footer{
+	
+	color:#888;
+	font-size:0.8em;
+	margin:15px;
+	padding:3px;
+}
+#header{
+	margin-top:20px;
+	margin-left:20px;
+}
+#sidebar{
+	color:#ddd;
+	float:left;
+	margin-left:10px;
+	width:200px;
+}
+#wrap{
+	margin:0 auto;
+	text-align:left;
+	width:750px;
+}
+
+
+/*************************************
+ +Hn
+ *************************************/
+#sidebar h2{
+	color:#333231;
+	font-size:1.4em;
+	margin-bottom:10px;
+	font-weight:normal;
+}
+#header h1{
+	display:inline;
+	font-size:2.2em;
+	line-height:1;
+	margin:0;
+}
+#header h1 a{
+	color:#fff;
+}
+#header h1 a:hover{
+	color:#fffab8;
+}
+h1, h2, h3{
+font-family: Sylfaen, Georgia, "Times New Roman", Times, serif;
+letter-spacing: -1px;
+}
+h2{
+font-size:1.5em;
+padding-right:5px;
+}
+h3{
+font-size:1.2em;
+}
+#header h1{
+font-weight:normal;
+}
+.entrytitle h2, .entrytitle h3{
+display:inline;
+font-weight:normal;
+}
+.entrytitle h2{
+color:#C04422;
+}
+.entrytitle h3{
+font-weight:normal;
+}
+/*************************************
+ +Lists
+ *************************************/
+#sidebar ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#sidebar ul li a{
+	color:#fff;
+}
+#sidebar ul li a:hover{
+	color:#fffab8;
+}
+/*************************************
+ +Misc
+ *************************************/
+a{
+text-decoration:none;
+color:#9e9e9e;
+}
+a:hover{
+color:#ab9;
+}
+#footer a{
+color:#ab8;
+}
+#header {
+	margin-bottom:5px;
+}
+#header p{
+	color:#eee;
+	margin:0;
+}
+.navigation{
+padding:3px;
+text-align:center;
+}
+.attachment .navigation  { 
+	padding:0;
+}
+/*************************************
+ +Entry
+ *************************************/
+.entry{
+	font-size:1em;
+	margin:5px;
+	padding:10px;
+}
+.entrytitle{
+}
+.entrytitle a {color:#888; text-decoration:none;}
+.entrymeta{
+	color:#666;
+	font-size:0.8em;
+	padding:3px 8px;
+	clear: both;
+}
+.attachment .entrymeta { padding: 3px 0; }
+.entrymeta a{
+	color:#666;
+}
+.sticky, .entry-1{
+	background:#FCFAF4;
+	border:1px solid #fff;
+	color:#77756B;
+	font-size:1.1em;
+	-moz-border-radius:3px;
+}
+.sticky .entrymeta, .entry-1 .entrymeta{
+	color:#888;
+}
+.sticky .entrymeta a, .entry-1 .entrymeta a{
+	color:#777;
+}
+.sticky .entrytitle, .entry-1 .entrytitle{
+	border-bottom:none;
+}
+.sticky .entrytitle a, .entry-1 .entrytitle a{
+	color:#697557;;
+	font-size:1.2em;
+}
+.sticky .entrytitle a:hover, .entry-1 .entrytitle a:hover{
+	color:#57634B;
+}
+/*************************************
+ +Comments
+ *************************************/
+.commentsblock{
+	margin:5px;
+	padding:10px;
+}
+.commentsblock textarea{
+	width:100%;
+}
+.commentauthor{
+	display:block;
+	font-size:1.5em;
+}
+.commentsblock .children{
+	list-style-type:none;}
+.thread-alt{
+	background:#FCFAF4;
+	border:1px solid #FCFAF4;
+	padding:5px;
+}
+.comment .avatar {
+	float: right;
+	padding: 2px;
+	border: 1px solid #efefef;
+}
+code {
+	font-size: 1.1em;
+}
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
