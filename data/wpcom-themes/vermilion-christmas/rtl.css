@@ -1,0 +1,319 @@
+/*  
+Theme: Vermilion Christmas
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+#page {
+	background-image: url(images/page-background-rtl.gif);
+}
+
+#wide-page {
+	background-image: url(images/page-background-alt-rtl.gif);
+}
+
+
+/* ---- BEGIN HEADER STYLES ----*/
+
+#header {
+	background-image: url(images/header-rtl.jpg);
+}
+
+#header-title {
+	padding-right: 100px;
+	padding-left: 150px;
+}
+
+/* ---- END HEADER STYLES ----*/
+
+
+/* ---- BEGIN CONTENT STYLES ---- */
+
+#content {
+	width: 543px;
+	background-image: url(images/content-background-rtl.gif);
+	background-position: left top;
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#wide-content {
+	background-image: url(images/content-background-rtl.gif);
+	background-position: left top;
+}
+
+h2.post-title {
+	padding-left: 50px;
+	padding-right: 0;
+}
+
+h3.post-title {
+	padding-left: 50px;
+	padding-right: 0;
+}
+
+h2.archive-title {
+	padding-left: 50px;
+	padding-right: 0;
+}
+
+h2.search-title {
+	padding-left: 50px;
+	padding-right: 0;
+}
+
+.post {
+	background-image: url(images/post-background-rtl.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	padding-bottom: 35px;
+	margin-bottom: 40px;
+	clear: both;
+}
+
+.post-single {
+	background-image: url(images/post-background-rtl.gif);
+}
+
+.commentlink {
+	background-position: right center;
+}
+
+.trackback {
+	background-position: right center;
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+.next-single {
+	background-image: url(images/arrow-previous.gif);
+	background-position: right center;
+	padding-right: 12px;
+	padding-left: 0;
+}
+
+.previous-single {
+	background-image: url(images/arrow-next.gif);
+	background-position: right center;
+	padding-right: 12px;
+	padding-left: 0;
+}
+
+#content ul {
+	margin-right: 0px;
+	padding-right: 40px;
+	margin-left: auto;
+	padding-left: 0;
+}
+
+.navigation {
+	padding-left: 25px;
+	padding-right: 0;
+}
+
+.next {
+	background-image: url(images/arrow-previous.gif);
+	background-position: left center;
+	padding-left: 12px;
+	padding-right: 0;
+}
+
+.previous {
+	background-image: url(images/arrow-next.gif);
+	background-position: right center;
+	padding-right: 12px;
+	padding-left: 0;
+}
+
+.alignright {
+	text-align: left;
+}
+
+.alignleft {
+	text-align: right;
+	padding-left: 20px;
+	padding-right: 0px;
+}
+
+#intro {
+	background-image: url(images/post-background-rtl.gif);
+}
+
+#intro h2 {
+	padding-left: 30px;
+	padding-right: 0;
+}
+
+/* ---- END CONTENT STYLES ----*/
+
+
+/* ---- BEGIN SIDEBAR STYLES ----*/
+
+#sidebar {
+	background-image: url(images/main-menu-rtl.gif);
+	background-position: left top;
+	float: right;
+	clear: right;
+}
+
+#sidebar ul {
+	margin-right: 0px;
+	margin-left: auto;
+	padding-right:11px;
+	padding-left: auto;
+}
+
+#sidebar li li {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+#sidebar li li li {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+#sidebar li li li li {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+#feeds ul li {
+	margin-right: 0px;
+	margin-left: auto;
+}
+
+#feeds ul li a {
+	background-position: right top;
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+
+#feeds ul li a:hover {
+	background-position: right center;
+}
+
+.space {
+	margin-bottom: 16px;
+	background-image: url(images/sidebar-underline-rtl.gif);
+	background-position: right top;
+}
+
+#wp-calendar caption {
+	text-align: right;
+	background-image: url(images/sidebar-underline-rtl.gif);
+	background-position: right bottom;
+}
+
+td#prev a {
+	text-align: right;
+	padding-right: 2px;
+	padding-left: 0;
+}
+
+td#next a {
+	text-align: left;
+	padding-left: 2px;
+	padding-right: 0;
+}
+/* ---- END SIDEBAR STYLES ----*/
+
+
+/* ---- BEGIN FOOTER STYLES ---- */
+
+#footer {
+	background-image: url(images/footer-background-rtl.jpg);
+}
+
+#footer-right {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-image: url(images/footer-divider-rtl.gif);
+	margin-right: auto;
+	margin-left:0;
+}
+
+#footer-right li {
+	padding-left: 12px;
+	padding-right: 0;
+}
+
+#footer-left {
+	float: right;
+}
+
+#footer-meta li {
+	padding-left: 5px;
+	padding-right: 0;
+	text-align: left;
+}
+
+/* ---- END FOOTER STYLES ----*/
+
+
+/* ---- BEGIN SEARCH FORM STYLES ---- */
+
+#searchform {
+	text-align: right;
+}
+
+/* ---- END SEARCH FORM STYLES ----*/
+
+/* ---- BEGIN COMMMENT FORM STYLES ---- */
+
+#author, #email, #url  {
+	border-left-color: #CCCCCC;
+	border-right-color: #666666;
+}
+
+#comment {
+	border-left-color: #CCCCCC;
+	border-right-color: #666666;
+}
+
+#submit {
+	border-left: 3px double #758346;
+	border-right: 3px double #B7C781;
+}
+
+/* ---- END COMMENT FORM STYLES ----*/
+
+
+/* ---- BEGIN COMMENTS STYLES ---- */
+
+.commentfeed {
+	background-position: right center;
+	padding-right: 16px;
+	padding-left: 0;
+	float: left;
+}
+
+ol.commentlist {
+	margin-right: 0px;
+	padding-right: 0px;	
+	margin-left: auto;
+	padding-left: auto;
+}
+
+.comment-count {
+	float: left;
+	text-align: left;
+	left: 0px;
+	right: auto;
+}
+
+/* ---- END COMMENTS STYLES ----*/
+
+.comment .avatar { 
+	float: right; 
+	margin-left: 8px;
+	margin-right: 0;
+}
+
+
