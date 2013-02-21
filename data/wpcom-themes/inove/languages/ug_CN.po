@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-10 21:30+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - ھەممە ماقالە"
+
+#: 404.php:9
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - ھەممە ئىنكاس"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "پاراڭلاچى"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "خاتالىق بېتى! 404"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "زىيارەت قىلغىنىڭىزدىن بەكمۇ خۇرسەن بولدۇم، تولىمۇ ئەپسۇس ، سىز چەككەن بۇ ئۇلىنىش ئەمەلدىن قالغان ئۇلىنىش ئوخشايدۇ، ئەلۋەتتە بۇنى بەلكىم مەن كەلتۇرۇپ چىققان بولۇشۇممۇ مۇمكىن ،ئامال قىلىپ بۇ ئىشنى  توغرا چارە بىلەن چۈشەندۈرۈشكە تېرىشىمەن"
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "سىز (a)  تور كۆرگۈچتىكى 'قايتىش' كۇنۇپكىسىنى بېسىپ، بىكەتنىڭ باشقا مەشخۇلاتلىرىنى ئېلىپ بارسىڭىز بولىدۇ، ياكى (b) بۇ ئۇلىنىشنى چېكىپ  باش بەتكە قايتسىڭىزمۇ بولىدۇ. "
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "باش بەتكە قايتىش &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "ئىزدەش نەتىجىسى"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "ئاچقۇچلۇق سۆز: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "ئارخىپ"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "تۈر &#8216;%1$s&#8217; نىڭ ئاخىپى"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "يازما خەتكۈچلىرى &#8216;%1$s&#8217;"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "%1$s نىڭ ئاخىپى"
+
+#: archive.php:25
+#: archive.php:48
+#: archives.php:14
+#: comments.php:91
+#: functions.php:503
+#: index.php:23
+#: links.php:22
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "Y-يىلى n- ئاينىڭ j- كۈنى"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "Y يىل n ئاي"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y يىل"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "ئاپتور ئارخىپى"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "بلوە ئارخىپى"
+
+#: archive.php:50
+#: archives.php:15
+#: comments.php:95
+#: functions.php:511
+#: index.php:25
+#: links.php:23
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "تەھرىر"
+
+#: archive.php:51
+#: index.php:26
+msgid "No comments"
+msgstr "ئىنكاس يوق"
+
+#: archive.php:51
+#: index.php:26
+msgid "1 comment"
+msgstr "1 ئىنكاس بار"
+
+#: archive.php:51
+#: index.php:26
+#, php-format
+msgid "% comments"
+msgstr "% ئىنكاس بار"
+
+#: archive.php:51
+#: index.php:26
+msgid "Comments off"
+msgstr ""
+
+#: archive.php:55
+#: index.php:30
+msgid "Read more..."
+msgstr "داۋامىنى ئوقۇش..."
+
+#: archive.php:59
+#: index.php:34
+#: single.php:29
+msgid "Categories: "
+msgstr ""
+
+#: archive.php:60
+#: index.php:35
+#: single.php:30
+msgid "Tags: "
+msgstr ""
+
+#: archive.php:67
+#: archives.php:39
+#: index.php:42
+#: links.php:46
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "ئەپسۇس، ماس كېلىدىغان ماقالە تېپىلمىدى"
+
+#: archive.php:75
+#: index.php:50
+msgid "Newer Entries"
+msgstr "يېڭى يازمىلار"
+
+#: archive.php:76
+#: index.php:51
+msgid "Older Entries"
+msgstr "كونا يازمىلار"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:25
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "ئىنكاس يېزىش"
+
+#: archives.php:18
+#: links.php:26
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "ئىنكاسلارنى ئوقۇش"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "پارولىنىڭزنى يېزىپ ،ماقالىنى ئوقۇڭ"
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:347
+msgid "Comments"
+msgstr "ئىنكاسلار"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr ""
+
+#: comments.php:34
+msgid "Trackback"
+msgstr ""
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "ھىچقانداق ئىنكاس يوق"
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "ئىنكاس لار بېتى"
+
+#: comments.php:91
+#: functions.php:503
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%2$s نىڭ ئارىسىدكى %1$s"
+
+#: comments.php:91
+#: functions.php:503
+msgid "H:i"
+msgstr ""
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "trackbacks يوق."
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "ئىنكاس يېزىش تاقالغان."
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "سىز چوقۇم <a href=\"%s\">كىرگەندە</a> ئاندىن ئىنكاس يازالايسىز."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "نام شەرىپ:"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "چىكىنىش"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "چىكىنىش &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "ئەسسەلامۇ ئەلەيكۇم , <strong>%s</strong>"
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "ئۆزگەرتىش &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "يوشۇرۇش &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "نام شەرىپ"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(لازىم!)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "ئېلخەت ئادرىسى (بۇنى ھىچكىمگە دېمەيمەن)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "تور ئادرىس"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "ئىنكاسقا مۇشتەرى بول"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "تاپشۇرۇش"
+
+#: functions.php:160
+#: functions.php:169
+msgid "Current Theme Options"
+msgstr "ھازىرقى قېلىپ تەڭىشىلىشى"
+
+#: functions.php:174
+msgid "Search"
+msgstr "ئىزدەش"
+
+#: functions.php:178
+msgid "Using google custom search engine."
+msgstr "Google بىلەن ئىزدەش"
+
+#: functions.php:181
+msgid "CX:"
+msgstr ""
+
+#: functions.php:184
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:193
+msgid "Menubar"
+msgstr "سەھىپە لىمى"
+
+#: functions.php:197
+msgid "Show pages as menu."
+msgstr "بەتنى سەھىپە قىلىپ كۆرسىتىش"
+
+#: functions.php:201
+msgid "Show categories as menu."
+msgstr "تۈرلەرنى سەھىپە قىلىو كۆرسىتىش"
+
+#: functions.php:211
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:215
+msgid "Remove sidebar from all pages."
+msgstr ""
+
+#: functions.php:226
+msgid "Notice"
+msgstr "ئۇچۇر"
+
+#: functions.php:228
+#: functions.php:252
+#: functions.php:287
+msgid "HTML enabled"
+msgstr "HTML ئاكتىپ"
+
+#: functions.php:234
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "بۇ ئۇچۇر باش بەتتىكى يازمىلارنىڭ ئۈستىدە كۆرۈنىدۇ."
+
+#: functions.php:250
+msgid "Banner"
+msgstr ""
+
+#: functions.php:256
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr ""
+
+#: functions.php:258
+#: functions.php:293
+msgid "Who can see?"
+msgstr "كىملەر كۆرەلىسۇن ؟"
+
+#: functions.php:261
+#: functions.php:296
+msgid "Registered Users"
+msgstr "تىزىملاتقانلار"
+
+#: functions.php:265
+#: functions.php:300
+msgid "Commentator"
+msgstr "ئىنكاسچى"
+
+#: functions.php:269
+#: functions.php:304
+msgid "Visitors"
+msgstr "مۇساپىر"
+
+#: functions.php:285
+#: sidebar.php:54
+msgid "Showcase"
+msgstr "روجەك"
+
+#: functions.php:291
+msgid "This showcase will display at the top of sidebar."
+msgstr "بۇ وجەك يان لىم ئۈستىگە چىقىدۇ"
+
+#: functions.php:309
+msgid "Title:"
+msgstr "تېمىسى:"
+
+#: functions.php:325
+msgid "Posts"
+msgstr "ماقالە"
+
+#: functions.php:329
+msgid "Show author on posts."
+msgstr "ئاپتورنى كۆرسىتىش"
+
+#: functions.php:333
+msgid "Show categories on posts."
+msgstr "تۇرىنى كرسىتىش"
+
+#: functions.php:337
+msgid "Show tags on posts."
+msgstr "خەتكىۈچلەرنى كۆرسىتىش"
+
+#: functions.php:351
+msgid "Submit comments with Ctrl+Enter."
+msgstr ""
+
+#: functions.php:361
+msgid "Feed"
+msgstr "مۇشتەرى"
+
+#: functions.php:365
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr ""
+
+#: functions.php:370
+msgid "Custom feed."
+msgstr "باشقىدىن Feed"
+
+#: functions.php:372
+#: functions.php:378
+msgid "URL:"
+msgstr ""
+
+#: functions.php:376
+msgid "Email feed."
+msgstr "ئېلخەت Feed"
+
+#: functions.php:385
+msgid "Save Changes"
+msgstr "ئۆزگەرتمىنى ساقلاش"
+
+#: functions.php:507
+msgid "Reply"
+msgstr "قايتۇرۇش"
+
+#: functions.php:508
+msgid "Quote"
+msgstr "نەقىل"
+
+#: functions.php:513
+msgid "Advanced edit"
+msgstr "ئالاھىدە تەھرىرلەش"
+
+#: functions.php:519
+msgid "Your comment is awaiting moderation."
+msgstr "ئىنكاسىڭىز ،تەستىقلاشنى كۈتمەكتە."
+
+#: links.php:15
+msgid "Add link"
+msgstr ""
+
+#: links.php:16
+msgid "Edit links"
+msgstr "ئۇلىنىشنى تەىرىرلەش"
+
+#: links.php:31
+msgid "Blogroll"
+msgstr ""
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "بۇ بلوگ نىڭ ماقالىلىرىغا مۇشتەرى بولۇش"
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed"
+msgstr "<abbr title=\"Really Simple Syndication\">RSS</abbr> مۇشتەرى "
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "بىلەن مۇشتەرى"
+
+#: sidebar.php:28
+msgid "Google"
+msgstr " Google"
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr "يوۋداۋ"
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr "شىيەن گو"
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr "جۇۋا شىيا"
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr " My Yahoo!"
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr " newsgator"
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr " Bloglines"
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr "iNezha"
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "ئېلخەت بىلەن مۇشتەرى بولۇش"
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "ئېلخەت مىشتەرى"
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "باش بەتكە قايتىش"
+
+#: single.php:7
+msgid "Home"
+msgstr "باش بەت"
+
+#: templates/end.php:3
+msgid "Top"
+msgstr "باش"
+
+#: templates/end.php:13
+msgid "Copyright &copy; "
+msgstr "نەشىر ھوقوقىي &copy; "
+
+#: templates/end.php:25
+msgid "Theme by <a href=\"http://www.neoease.com/\">NeoEase</a>. Valid <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> and <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+msgstr "قلىپنى <a href=\"http://www.neoease.com/\">NeoEase</a> تەمىنلىگەن, <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> ۋە <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a> ئۆلچەملىرىگە مۇتلەق ئۇيغۇن."
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr ""
+
