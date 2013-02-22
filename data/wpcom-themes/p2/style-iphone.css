@@ -1,0 +1,209 @@
+#header_img img, #sidebar, #postbox .avatar {
+	display: none;
+}
+#header {
+	margin: 0;
+	padding: 0;
+	background-position: center center !important;
+}
+#header .sleeve {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+#header {
+font-size: 50%;
+}
+#main h2 .controls {
+	display: none;
+}
+.actions {
+	clear: both;
+	display: block;
+	position: static !important;
+	text-align: right;
+	height: 1.1em;
+	top: 0px !important;
+	margin-top: 6px;
+	margin-bottom: -1.8em;
+}
+.actions a { font-size: 1.2em; padding: 6px; }
+.meta {
+	margin-top: 6px;
+	line-height: auto;
+	width: 100%;
+}
+#media-buttons { display: none; }
+div.postcontent, div.commentcontent {
+margin-left: 0;
+padding-left: 30px;
+}
+#main h4 {
+	line-height: 1.1em;
+	clear: both;
+	margin-bottom: .5em;
+}
+.avatar {
+position: relative;
+left: 0px;
+top: 5px;
+margin-bottom: -20px;
+}
+#main #respond.replying, #main .commentlist li #respond.replying  {
+position: absolute;
+width: 100%;
+height: 100%;	
+	margin-left: 0 !important;
+	z-index: 1000;
+	left: 0px !important;
+}
+.single #main .postcontent {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+li #respond textarea {
+	width: 80%;
+	height: 80%;
+}
+#main h4 {
+	position: relative;
+	margin-left: 30px;
+}
+h1 a {
+	display: block;
+	width: 295px;
+	font-family: Helvetica;
+}
+#footer {
+	width: 100%;
+	font-size: 8px;
+	min-width: 0;
+}
+#main ul.commentlist, #main ul.commentlist ul {
+	margin-left: 20px !important;
+}
+
+#wrapper {
+width: 100%;
+	margin: 0 auto;
+	min-width: 0;
+	padding: 0;
+	overflow: visible;
+	position: static;
+}
+.avatar {
+	width: 20px;
+	height: 20px;
+}
+.sleeve_main {
+width: auto;
+	margin: 0;
+}
+#header {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+#main {
+margin: 0;
+padding: 10px;
+	float: none;
+}
+#post-types {
+	margin-left: 0;
+	font-size: 10px;
+	padding-top: 4px;
+}
+#main ul#postlist ul li {
+	margin-left: 0;
+}
+.post h1 {
+	font-size: 2em;
+	font-family: Georgia, "Times New Roman", serif;
+	margin-left: 0;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 0;
+}
+
+h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #555;
+}
+
+#postbox form {
+	padding: 5px;
+}
+
+#postbox textarea#posttext {
+	height: 50px;
+	border: 1px solid #c6d9e9;
+	margin-bottom: 10px;
+	padding: 2px;
+	font: 1.4em/1.2em "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
+}
+#postbox input#tags,  #commentform #comment {
+	font-size: 1.2em;
+	padding: 2px;
+	border: 1px solid #c6d9e9;
+	width: 300px;
+	margin-bottom: 4px;
+	margin-left: 0;
+}
+#postbox {
+	margin: 0;
+	padding: 0;
+}
+#postbox label {
+	color: #333;
+	display: block;
+	font-size: 1.2em;
+	margin-bottom: 4px;
+	margin-left: 0;
+	font-weight: bold;
+}
+#postbox .inputarea {
+	padding-left: 0;
+	height: auto;
+}
+
+#notify {
+	width: 70%;
+left: 15%;
+top: 30%;
+}
+#postbox {
+position: relative;
+padding-bottom: 30px;
+}
+#postbox input#submit {
+	font-size: 1.2em;
+clear: both;
+display: block;
+	margin-top: 10px;
+	margin-left: 0;
+	float: none;
+}
+form#new_post {
+margin-top: 0;
+}
+#main ul {
+	list-style: none;
+	margin-top: 16px;
+	margin-left: 0;
+}
+
+#wpcombar {
+	display: none;
+}
+body {
+	padding-top: 0 !important;
+}
+.tags {
+padding-top: 4px;
+clear: both;
+display: block;
+}
