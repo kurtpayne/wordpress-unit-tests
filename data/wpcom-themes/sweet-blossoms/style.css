@@ -1,0 +1,283 @@
+/*-------------------------
+Theme Name: Sweet Blossoms
+Theme URI: http://www.talkxhtml.com/
+Description: A narrow two-column design that satisfies the pink lover in all of us.
+Version: 1.01-wpcom
+Author: TalkXHTML.com
+Author URI: http://www.talkxhtml.com/
+Tags: two-columns, fixed-width, pink, right-sidebar, sticky-post, widgets, rtl-language-support
+-------------------------*/
+
+/* ----- BASICS ELEMENTS ------------------------------------------------------------------------------------------------- */
+
+body {
+	background-image:url(images/bgstrip.gif);
+	background-repeat:repeat-x;
+	background-color:#da4a74;
+	 
+	margin:0px;	
+	padding:0px;
+	text-align:center;
+}
+
+h2 {
+	color:#da4a74;
+	font-family:Tahoma, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:1.2;
+	margin:10px 0px 0px 0px;
+	font-weight:bold;
+}
+
+a:link, a:visited{		
+	color:#dc2b8f;
+}
+		
+a:hover, a:active{		
+	color:#ca32b7;
+}
+
+/* ----- LAYOUT ------------------------------------------------------------------------------------------------- */
+
+#container {
+	background-image:url(images/mainbg.gif);
+	background-repeat:repeat-y;
+	width:760px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+}
+
+#header{
+	background-image:url(images/header.gif);
+	background-repeat:no-repeat;
+	width:760px;
+	height:230px;
+	text-align:left;
+}
+
+		#title{
+			width:300px;
+			height:20px;
+			padding:185px 0px 0px 160px;
+			margin:0px 0px 0px 0px;
+			
+			color:#c23095;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:16px;
+			font-weight:bold;
+		}
+		
+		#subtitle{			
+			margin:0px 0px 0px 0px;
+			padding:0px 10px 2px 190px;
+			width:300px;
+			visibility:visible;
+			
+			color:#c953a5;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size:9px;
+			font-weight:bold;
+		}
+
+.info, #filedunder { clear: both; }
+
+#main {
+	float:left;
+	width:305px;
+	text-align:left;
+	overflow: hidden;
+	
+	padding:0px 0px 0px 140px;
+	display:block;
+	
+	color:#a93255;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+
+		#main p {
+			text-align:justify;
+		}
+
+#divider {
+	background-image:url(images/divider.gif);
+	background-repeat:no-repeat;
+	width:350px;
+	height:15px;
+}
+
+#side {
+	float:right;
+	width:125px;
+	text-align:left;
+	
+	padding:0px 150px 0px 0px;
+	display:block;
+	
+	color:#a93255;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;	
+}
+
+		#side p {
+			text-align:justify;
+		}
+		
+		#side h3 {
+			color:#9a2375;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:13px;
+			line-height:0px;
+			margin-bottom:10px;
+			margin-top: 20px;
+		}
+
+		#side ul{
+			list-style-image:url(images/list.gif);
+			padding: 0px 0px 0px 15px;
+			margin: 0px;
+			color:#a93255;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:11px;	
+		}
+		
+				#side a:link, a:visited{		
+					color:#dc2b8f;
+					text-decoration:none;
+				}
+						
+				#side a:hover, a:active{		
+					color:#ca32b7;
+					text-decoration:underline;
+				}
+				
+.search {
+		background-color:#f8dbe3;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:11px;
+		width:115px;		
+
+}				
+				
+.headeralt {
+	background-color:#f8dbe3;
+}
+
+#commentform textarea {
+	width:95%;
+}
+
+ul.commentlist {
+	padding-left: 10px;
+}
+
+ul.children {
+	padding-left: 20px;
+}
+
+/* ----- COPYRIGHT ------------------------------------------------------------------------------------------------- */
+/* 		Please be fair and respect our Copyright. 
+
+		Thank You,
+		
+		TalkXHTML.com, PhoenixRealm.com, and LaZe, Inc. 																									 */
+/* ----- COPYRIGHT ------------------------------------------------------------------------------------------------- */
+
+#copyright {
+	float:left;
+	width:300px;
+	bottom:25px;
+	text-align:center;
+	
+	padding:10px 10px 10px 140px;
+	display:block;
+	
+	color:#27364b;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:9px;	
+	font-weight:bold;
+}
+
+		#copyright a:link, a:visited, a:active{		
+			color:#dc2b8f;
+		}
+		
+		#copyright a:hover{		
+			color:#ca32b7;
+			text-decoration:underline;
+		}
+
+
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.sticky h2 a {
+background: #DC2B8F;
+color: white;
+padding: 5px;
+margin-bottom: 5px;
+display: block;
+height: 1.5em;
+line-height: 1.5em;
+}
+
+.sticky h2 a:hover {
+text-decoration: underline;
+}
+}
