@@ -1,0 +1,54 @@
+/*
+Theme: Toni
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body { 
+	text-align: right;
+	direction:rtl;
+	unicode-bidi:embed;
+	}
+
+#content h2 { 
+	float: right;
+	margin: 0 0 10px 10px;
+	border-left: solid 1px rgb(192,211,226);
+	border-right: 0;
+	}
+	
+#content {
+	float: right;
+	}
+	
+.feedback { 
+	text-align: left;
+	}
+
+#menu {
+	margin: 0 540px 0 auto;
+	text-align: right;
+	}
+	
+
+#commentlist li .avatar {
+	float: left;
+	margin-left: 25px;
+	margin-right: 0;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.sticky h2 {
+border-left: 0;
+}
