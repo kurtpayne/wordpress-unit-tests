@@ -1,0 +1,98 @@
+/* BLUE */
+
+.blue #footer, .blue .widgets, .blue #header {
+	border-color:#bbf;
+}
+
+.blue ul#nav li.current_page_item a,
+.blue ul#nav li.current_page_item a:hover {
+	background:#bbf;
+	border-color:#ddf #99d #99d #ddf;
+}
+
+.blue #sidebar #search, .blue #wp-calendar caption, .blue #comments dt.highlighted,
+.blue #sidebar #subpages h2, .blue #wp-calendar #today {
+	background:#bbf;
+}
+
+.blue #pageNav a { background:#bbf; }
+
+/* GREEN */
+
+.green #footer, .green .widgets, .green #header {
+	border-color:#5f7;
+}
+
+.green ul#nav li.current_page_item a,
+.green ul#nav li.current_page_item a:hover {
+	background:#5f7;
+	border-color:#8fa #3d5 #3d5 #8fa;
+}
+
+.green #sidebar #search, .green #wp-calendar caption, .green #comments dt.highlighted,
+.green #sidebar #subpages h2, .green #wp-calendar #today {
+	background:#5f7;
+}
+
+.green #pageNav a { background:#5f7; }
+
+/* PINK */
+
+.pink #footer, .pink .widgets, .pink #header {
+	border-color:#f9c;
+}
+
+.pink ul#nav li.current_page_item a,
+.pink ul#nav li.current_page_item a:hover {
+	background:#f9c;
+	border-color:#fcf #d7a #d7a #fcf;
+}
+
+.pink #sidebar #search, .pink #wp-calendar caption, .pink #comments dt.highlighted,
+.pink #sidebar #subpages h2, .pink #wp-calendar #today {
+	background:#f9c;
+}
+
+.pink #pageNav a { background:#f9c; }
+
+/* WHITE */
+
+.white #footer, .white #header {
+	border-color:#fff;
+}
+
+.white .widgets {
+	border-color:#eef;
+}
+
+.white ul#nav li.current_page_item a,
+.white ul#nav li.current_page_item a:hover {
+	background:#fff;
+	border-color:#fff;
+}
+
+.white #sidebar #search, .white #wp-calendar caption, .white #comments dt.highlighted,
+.white #sidebar #subpages h2, .white #wp-calendar #today {
+	background:#fff;
+}
+
+.white #pageNav a { background:#fff; }
+
+/* BLACK */
+
+.blend #footer, .blend #header, .blend .widgets {
+	border-color:#eef;
+}
+
+.blend ul#nav li.current_page_item a,
+.blend ul#nav li.current_page_item a:hover {
+	background:#eef;
+	border-color:#eef;
+}
+
+.blend #sidebar #search, .blend #wp-calendar caption, .blend #comments dt.highlighted,
+.blend #sidebar #subpages h2, .blend #wp-calendar #today {
+	background:#eef;
+}
+
+.blend #pageNav a { background:#eef; }
