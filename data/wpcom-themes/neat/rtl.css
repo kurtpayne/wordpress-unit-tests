@@ -1,0 +1,100 @@
+/*
+RTL for Neat!: Yoav Farhi
+*/
+
+/* ************** STRUCTURE ************** */
+
+body { unicode-bidi:embed; direction:rtl;}
+#header { background-image: url(images/header-rtl.jpg) !important; }
+#sidebar { background-position: right top;}
+
+body {
+	text-align: right;
+}
+
+#content {
+	float: right;
+	padding: 20px 25px 0 0;
+}
+
+#sidebar {
+	margin: 0 492px 0 0;
+	padding: 10px 25px 20px 0;
+}
+
+#footer {
+	text-align: left;
+	padding: 20px 0 0 15px;
+}
+
+/* *************** HEADERS *************** */
+
+
+h2.pagetitle {
+	text-align: left;
+}
+
+/* Next's that image before the post title */
+
+img.lefth2img {
+	padding: 0 0 0 5px;
+}
+
+
+#sidebar h2 {	
+	background: url(images/h2-rtl.gif) bottom right no-repeat;
+}
+
+/* ****************** POST ****************** */
+
+
+
+.postmetadata {
+	text-align: left;
+}
+
+blockquote {
+	margin: 15px 0 0 30px;
+	padding-right: 15px;
+	padding-left: 0;
+	border-left: 0;
+	border-right: 4px solid #454C67;
+}
+
+/* ************* SIDEBAR LISTS ************** */
+
+/* That next line puts '  ' front of the list-items
+   in the sidebar, with moder browsers only :| */
+
+#sidebar ul ul, #sidebar ul ol { margin: 5px 10px 0 0; }
+
+#sidebar ul ul ul, #sidebar ul ol { margin: 0 10px 0 0; }
+
+/* *************** SEARCHFORM *************** */
+
+#searchform {
+	text-align: right;
+}
+
+
+/* **************** COMMENTS **************** */
+
+/* Form */
+
+#commentform input {
+	margin: 5px 0 1px 5px;
+}
+
+
+#commentform #submit {
+	float: left;
+}
+
+/* Comments */
+
+.commentlist li .avatar {
+	float: left;
+	margin-left: 0;
+	margin-right: 8px;
+}
+
