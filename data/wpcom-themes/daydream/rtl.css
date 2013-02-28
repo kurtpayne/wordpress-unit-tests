@@ -1,0 +1,100 @@
+/*
+RTL for Theme: : Day Dream
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:tahoma, arial;
+}
+#wrapper {
+	direction:rtl;
+}
+#header {
+	text-align:right;
+	font-family:arial;
+}
+#topbar ul {
+	margin:0pt 25px 0pt 15px;
+}
+#topbar ul li {
+	float:right;
+}
+#topbar ul li ul li a, #topbar ul li ul li a:visited {
+	float:right;
+}
+#content {
+	text-align:justify;
+}
+.post h2 {
+	font-family:arial;
+	font-size:1.5em;
+}
+.post .data {
+	font-size:0.7em;
+}
+.entry {
+	line-height:150%;
+}
+blockquote {
+	border-left:0 none;
+	border-right:3px solid #4C8EDA;
+	margin:10px 30px 10px 0px;
+	padding:0pt 5px 0pt 0;
+}
+.post ul {
+	padding:0 37px 0 0;
+}
+.tags_page h2 {
+	margin:0 20px 15px 0;
+}
+#commentform {
+	margin:15px 40px 10px 0;
+}
+#commentformarea h3 {
+	margin:10px 20px 15px 0;
+}
+#commentform input, #commentform textarea, #commentform input#submit {
+	font-family:tahoma,arial;
+}
+p.mustbe {
+	margin:0 30px 20px 0;
+}
+.commentmetadata .avatar {
+	float:left;
+	margin:20px 8px 20px 0;
+}
+.archives h2 {
+	margin:20px 60px 15px 0;
+}
+.archives ul {
+	margin:0 80px 20px 0;
+}
+ul#sidebar {
+	font-size:13px;
+	line-height:150%;
+}
+#sidebar_wrapper {
+	margin:15px 45px 0 15px;
+}
+ul#sidebar li, ul#sidebar li ul, ul#sidebar li ul li {
+	text-align:right;
+}
+ul#sidebar li ul {
+	padding:5px 10px 15px 0;
+}
+#sidebar li h2 {
+	font-family:arial;
+}
+input#s {
+	margin:0 0 -20px 13px;
+}
+#topbar .feedicon {
+	float:left;
+	margin:2px 0 0 10px;
+}
+.entry img {
+	margin:0 4px;
+}
+#email, #url {
+	direction:ltr;
+}
