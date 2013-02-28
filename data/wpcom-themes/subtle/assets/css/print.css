@@ -1,0 +1,119 @@
+#search_box, #newsletter_signup, #logos, #form_comments, #menu {
+	display: none;
+}
+
+img {
+	margin: 0px 10px 10px;
+}
+
+p, center, blockquote, quote, pre {
+	margin: 0px 0px 20px;
+}
+
+.reduced p, .reduced center, .reduced blockquote, .reduced quote, .reduced pre, .reduced ol, .reduced ul, .reduced table, .reduced dl, .reduced dd, .reduced dt {
+	font-size: 95%;
+	line-height: 170%;
+}
+
+blockquote, quote {
+	margin: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px 0px 5px;
+}
+
+h1 {
+	font-size: 250%;
+	line-height: 100%;
+}
+
+h2 {
+	font-size: 170%;
+	line-height: 100%;
+	margin: 0px 0px 5px;
+}
+
+.lead h3.title, #loop_single h3.title, #loop_page h3.title {
+	font-size: 200%;
+	line-height: 100%;
+}
+
+h3 {
+	font-size: 150%;
+	line-height: 100%;
+}
+
+h4 {
+	font-size: 130%;
+	line-height: 100%;
+}
+
+h5 {
+	font-size: 110%;
+	line-height: 100%;
+}
+
+h6 {
+	font-size: 100%;
+	line-height: 100%;
+}
+
+ul, ol, dl {
+	margin: 0px 0px 15px 0px;
+	padding: 5px 0px;
+}
+
+li, dd {
+	margin: 0px 0px 5px 20px;
+	padding: 0px 0px 0px 5px;;
+}
+
+ul li {
+	list-style-type: square;
+}
+
+dt {
+	margin: 0px 0px 5px 0px;
+	padding: 0px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-decoration: none;
+}
+
+.post {
+	margin: 0px 0px 20px 0px;
+}
+
+#comment_area .metadata {
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+
+#comment_area .metadata dt {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+#comment_area .metadata dd {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+#comment_area .metadata dt.comment_number {
+	display: none;
+}
+
+#comment_area .metadata dd.comment_number {
+	display: block;
+	float: left;
+	width: 50px;
+	height: 40px;
+	font-size: 200%;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+}
