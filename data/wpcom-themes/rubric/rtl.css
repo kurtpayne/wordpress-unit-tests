@@ -1,0 +1,80 @@
+/*
+RTL: Yoav Farhi
+*/
+
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+	 
+#content {
+	margin-left: 20em;
+	margin-right: 40px;
+}
+
+#header {
+	left: auto;
+	right:0px;
+	background-image: url("images/rubric/pen-sm-rtl.jpg") !important;
+	background-position: top left !important;
+	padding-left: 0;
+	padding-right:45px;
+}
+
+/* Content & menu
+   -------------------------------------------- */
+
+#menu {
+
+	float: left;
+	top: 200px;
+	right: auto;
+	left: 5em;
+}
+* html #menu { /* make IE put it in the right place */
+	right: auto;
+	left: 5em;
+}
+
+
+#menu ul {
+	padding-right: 0;
+	padding-left: auto;
+}
+
+
+#menu ul ul {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+ 
+/* Post
+   -------------------------------------------- */
+
+
+.post-categories li {
+	margin-left: auto;
+	margin-right: 3px;
+}
+
+
+/* Credit
+   -------------------------------------------- */
+	 
+p.credit {	
+	margin-right: 40px;
+	margin-left: 20em;
+}
+
+
+/* Basic typography
+   -------------------------------------------- */
+
+
+#commentlist li .avatar { 
+	float: left;
+	margin-left: 15px;
+	margin-right: 0;
+}
