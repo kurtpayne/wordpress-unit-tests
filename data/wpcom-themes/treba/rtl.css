@@ -1,0 +1,45 @@
+/*  
+Theme: Treba
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body{
+	unicode-bidi:embed;
+	direction:rtl;
+}
+#content{
+	float:right;
+}
+#header{
+	margin-left:0;
+	margin-right:20px;
+}
+#sidebar{
+	float:right;
+	margin-left:0;
+	margin-right:10px;
+}
+#wrap{
+	text-align:right;
+}
+
+
+/*************************************
+ +Hn
+ *************************************/
+h2{
+padding-right:0;
+padding-left:5px;
+}
+
+/*************************************
+ +Comments
+ *************************************/
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
