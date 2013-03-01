@@ -1,0 +1,337 @@
+/* @group body */
+
+body {
+	font: 13px/20px "Lucida Grande", Verdana, sans-serif;
+}
+
+/* @end */
+
+/* @group anchor */
+
+a {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: underline;
+	color: #69c;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #c96;
+}
+
+/* @end */
+
+/* @group strong */
+
+strong {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group em */
+
+em {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	letter-spacing: 1px;
+	font-style: italic;
+}
+
+/* @end */
+
+/* @group paragraph */
+
+p {
+	margin-bottom: 15px;
+}
+
+/* @end */
+
+/* @group header */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+}
+
+/* @group h4 */
+
+h4 {
+	font-size: 16px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+h4 a.permlink {
+	float: right;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	text-decoration: none;
+	color: #ccc;
+	font-weight: normal;
+}
+
+h4 a.permlink:hover,
+h4 a.permlink:focus,
+h4 a.permlink:active {
+	color: #999;
+}
+
+h4 span.name {
+	color: #666;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group h3 */
+
+h3 {
+	font-size: 18px;
+}
+
+#sidebar h3#comments {
+	padding-bottom: 10px;
+	background: none;
+}
+
+/* @end */
+
+/* @group h2 */
+
+h2,
+#sidebar h3 {
+	font-size: 24px;
+	line-height: 37px;
+	border-top: 1px solid #ccc;
+	padding: 10px 20px 11px;
+	background: url(../img/line-dotted.gif) repeat-x 0 bottom;
+	font-weight: normal;
+}
+
+h2 strong {
+	color: #333;
+	font-weight: bold;
+}
+
+h2 a {
+	color: #333;
+	text-decoration: none;
+}
+
+h2 a:hover,
+h2 a:focus,
+h2 a:active {
+	color: #000;
+}
+
+/* @group haslink */
+
+h2.haslink {
+	padding: 0 0 1px 0;
+}
+
+h2.haslink a {
+	padding: 10px 20px;
+	display: block;
+}
+
+h2.haslink a span.new {
+	font-weight: normal;
+	color: #fff;
+	line-height: 21px;
+	float: left;
+	margin: 7px 10px 0 0;
+	font-size: 13px;
+	padding: 1px 0 0;
+	width: 50px;
+	text-align: center;
+	background-color: #69c;
+	letter-spacing: 1px;
+}
+
+h2.haslink a:hover span.new,
+h2.haslink a:focus span.new,
+h2.haslink a:active span.new {
+	background-color: #c96;
+}
+
+h2.haslink a span.posted {
+	font-weight: normal;
+	color: #999;
+	float: right;
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+h2.haslink a:hover span.posted,
+h2.haslink a:focus span.posted,
+h2.haslink a:active span.posted {
+	color: #666;
+}
+
+h2.haslink a span.more,
+#sidebar h3 span.more a {
+	float: right;
+	color: #69c;
+	font-size: 13px;
+	padding-left: 20px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+h2.haslink a:hover span.title,
+h2.haslink a:focus span.title,
+h2.haslink a:active span.title,
+#sidebar h3 span.more a:hover,
+#sidebar h3 span.more a:focus,
+#sidebar h3 span.more a:active {
+	text-decoration: underline;
+}
+
+#sidebar h3 span.more a:hover,
+#sidebar h3 span.more a:focus,
+#sidebar h3 span.more a:active {
+	color: #c96;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group h1 */
+
+h1 {
+	font-size: 48px;
+	line-height: 54px;
+}
+
+h1 a {
+	display: block;
+	width: 469px;
+	padding: 10px 20px;
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+}
+
+h1 a:hover,
+h1 a:focus,
+h1 a:active {
+	color: #000;
+}
+
+h1 a:focus {
+	text-decoration: underline;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group blockquote */
+
+blockquote p {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	letter-spacing: 1px;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 27px;
+}
+
+/* @end */
+
+/* @group quote */
+
+span.quote {
+	font-weight: normal;
+	font-family: Georgia, serif;
+	padding: 0 1px;
+}
+
+/* @end */
+
+/* @group form */
+
+/* @group submit */
+
+input.submit {
+	background-color: #ccc;
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 18px;
+	line-height: 21px;
+	padding: 5px 0;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	height: 33px;
+	letter-spacing: 1px;
+}
+
+input.submit:hover,
+input.submit:focus {
+	border-color: #aaa;
+}
+
+input.submit:active {
+	background-color: #aaa;
+}
+
+/* @end */
+
+/* @group text */
+
+input.text,
+textarea {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	font-size: 18px;
+	line-height: 21px;
+	padding: 5px 9px;
+	border: 1px solid #ccc;
+}
+
+input.text:focus,
+input.text:hover,
+textarea:focus,
+textarea:hover {
+	color: #333;
+	border-color: #aaa;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+/* @group small */
+
+small {
+	font-family: "Arial Narrow", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	color: #999;
+	letter-spacing: 1px;
+}
+
+/* @end */
