@@ -1,0 +1,172 @@
+/*  
+Theme: Grid Focus
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+} 
+
+/* =----------------------------------- main structure */
+#wrapper {
+	text-align: right;
+}
+
+#mainColumn {
+	float: right;
+}
+.secondaryColumn {
+	float: right;
+	margin: 28px 30px 0 0;
+}
+
+/* =----------------------------------- header elements */
+#masthead h1 {
+	float: right;
+	margin: 15px 7px 0 0;
+}
+#blogLead img {
+	float: left;
+}
+#authorIntro {
+	float: left;
+}
+
+/* =----------------------------------- top + bottom navigation */
+.nav li {
+	border-left: 1px solid #ccc;
+	border-right: 0;
+	float: right;
+}
+.nav li a {
+	padding: 7px 7px 0 4px;
+}
+.nav li#searchBar {
+	float: left;
+}
+.nav #searchBar div {
+	margin: 9px 0 0 8px;
+}
+.nav #searchBar span {
+	border-right-color: #bbb;
+	border-left-color: #ccc;
+}
+.toggleCategories ul li {
+	float: right;
+}
+.toggleCategories li a {
+	margin: 3px 5px 4px 0;
+}
+
+/* =----------------------------------- meta lead for each post */
+.postMeta {
+	text-align: left;
+}
+.postMeta .container {
+	left: 0;
+	right: auto;
+}
+
+.postMeta span.comments {
+	background-position: 99% -1px;
+	padding-right: 18px;
+	padding-left: 0;
+}
+
+/* =----------------------------------- entry body */
+.entry ul li,
+.entry ol li {
+	margin: 0 18px 7px 0;
+}
+.entry blockquote {
+	border-right: 1px solid #ccc;
+	margin-right: 21px;
+	padding-right: 10px;
+	border-left: 0;
+	margin-left: 0;
+	padding-left: 0;
+}
+/* =----------------------------------- main index pagination */
+}
+.widgetContainer ul li {
+	margin: 0 21px 7px 3px;
+}
+#wp-calendar thead {}
+#wp-calendar thead th {
+	padding: 4px 3px 4px 0;
+}
+#wp-calendar td {
+	padding: 3px 3px 4px 0;
+}
+
+/* =----------------------------------- style some comments */
+.cancel-comment-reply {
+	left: 4px;
+	right: auto;
+}
+.commentlist .comment-author img.avatar {
+	float: right;
+	margin: 0 0 0 4px;
+}
+.commentlist .comment-meta {
+	margin: 0 20px 0 0;
+}
+.commentlist li .reply {
+	text-align: left;
+}
+.commentlist .children {
+	margin: 0 40px 0 0;
+}
+#commentform #author,
+#commentform #email,
+#commentform #url,
+#commentform textarea {
+	border-right-color: #bbb;
+	border-left-color: #ccc;
+	margin-left: 4px;
+	margin-right: 0;
+}
+
+
+.alignleft {
+float:right;
+}
+
+.alignright {
+float:left;
+}
+
+
+img.alignleft {
+float:left;
+}
+
+img.alignright {
+float:right;
+}
+
+.widget_authors ul li {
+margin-right: 0;
+margin-left: auto;
+}
+.widget_authors ul li img {
+float: right;
+margin: 0 0 10px 10px;
+}
+
+/* =----------------------------------- floats + clearing rule */
+.floatleft {
+	float: right;
+	margin: 3px 0 0 7px;
+}
+.floatright {
+	float: left;
+	margin: 3px 7px 0 0;
+}
+.right {
+	float:left;
+}
+.left {
+	float: right;
+}
