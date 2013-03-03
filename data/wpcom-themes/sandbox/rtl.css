@@ -1,0 +1,40 @@
+/*
+Theme: Sandbox
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+blockquote {
+	border-right: 1em solid #e6e6fe;
+	border-left: 0;
+}
+/* SIDEBAR STUFF */
+div.sidebar ul ul {
+	margin: 0 1.0em 0 0;
+}
+div.sidebar ul ul ul {
+	margin: 0 0.5em 0 0;
+}
+div.sidebar ul#bookmarks {
+	margin: 0 0.5em 0.5em 0;
+}
+div.sidebar ul#bookmarks ul {
+	margin: 0 1.0em .5em 0;
+}
+/*  COMMON MULTI-PURPOSE ELEMENTS */
+.alignleft, div.nav-previous, #archives-by-category {
+	float: right;
+}
+.alignright, div.nav-next, #archives-by-month {
+	float: left;
+}
+body.home div.nav-next, body.archive div.nav-next {
+	text-align: right;
+}
+body.home div.nav-previous, body.archive div.nav-previous {
+	text-align: left;
+}
