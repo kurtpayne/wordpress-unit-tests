@@ -1,0 +1,456 @@
+/*
+Theme Name: Connections
+Theme URI: http://www.patriciamuller.com/
+Version: 1.0-wpcom
+Description: A super classy two-column theme with widgets and a customizable header.
+Author: Patricia M&#252;ller
+Author URI: http://www.vanillamist.com/blog/
+Tags: custom-header, green, two-columns, fixed-width, right-sidebar, widgets, sticky-post, light, rtl-language-support
+*/
+body {
+	margin:0;
+	padding:0;
+	font-family: 'Trebuchet MS',Georgia, Times, Times New Roman, sans-serif;
+	font-size: 0.9em;
+	text-align:center;
+	color:#29303B;
+	line-height:1.3em;
+	background: #F3F6ED;
+}
+
+p img {
+	margin: 0 5px;
+}
+
+.wp-smiley {
+	width: 15px;
+	height: 15px;
+}
+
+a {
+	color: #909D73;
+	text-decoration:none;
+}
+a:visited {
+	color: #8a3207;
+}
+a:hover {
+	text-decoration:underline;
+}
+input, textarea
+{
+	background: #F3F6ED;
+	border: #E1D6C6 1px solid;
+}
+#rap
+{
+	background:#fff url(img/rap.jpg) center repeat-y;
+	width:760px;
+	margin:0 auto;
+	padding:0px 8px;
+	text-align:left;
+	font-family: Trebuchet MS,Georgia, Arial, serif;
+	font-size: 0.9em;
+}
+#header {
+	background:#fff url(img/better-header.gif) no-repeat bottom;
+ 	height: 183px;
+	margin: 0 auto;
+	width:760px;
+	padding:0;
+	border:#fc9 0px solid;
+}
+
+#headimg {
+	background:#7d8b5a url(img/just-train.jpg) center repeat-y;
+	height: 142px;
+	width: 741px;
+	margin: 2px 0 0 10px;
+}
+
+* html #headimg {
+	margin: 2px 0 0 9px;
+}
+
+#main
+{
+	margin:0 auto;
+	padding:0;
+	background:url(img/content_bg.gif) repeat;
+	width:740px;
+}
+#content {
+	width:510px;
+	float:left;
+	padding:5px;
+	margin:0;
+	overflow:hidden;
+	display:inline;
+}
+#sidebar {
+	width:186px;
+	float:right;
+	padding:0px 8px 10px 8px;
+	margin:0;u
+	font-size:1em;
+	color:#333;
+	display:inline;
+}
+a img {
+	border: none;
+}
+acronym, abbr {
+	border-bottom: 1px dotted #0c6bf0;
+}
+acronym, abbr, span.caps {
+	cursor: help;
+	letter-spacing: .07em;
+}
+code {
+	font-size: 1em;
+	font-style: italic;
+}
+blockquote {
+	margin: 15px 30px 0 45px;
+	padding: 0 0 0 45px;
+	background: url(img/blockquote.gif) no-repeat left top;
+	font-style:italic;
+}
+
+cite {
+	font-size: 0.9em;
+	font-style: normal;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+	font-size:1.3em;
+}
+p {
+	margin: 0 0 1em;
+	padding: 0;
+	line-height: 1.5em;
+}
+h1, h2, h3, h4 {
+	font-family: Georgia, "Lucida Sans Unicode", lucida, Verdana, sans-serif;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+#header h1
+{
+	margin: 0;
+	font-size: 1.6em;
+	padding:10px 20px 0 0;
+	text-align:right;
+}
+#header h1 a
+{
+	color:#B5C09D;
+	text-decoration:none;
+}
+#header h1 a:hover
+{
+	/* color:#F7F3ED; */
+	text-decoration: underline;
+}
+#header #desc
+{
+	font-weight:normal;
+	font-style:italic;
+	font-size:1em;
+	color:#B5C09D;
+	text-align:right;
+	margin:0;
+	padding:0 20px 0 0;
+}
+#sidebar h2 {
+	margin: 10px 0 0 0;
+	padding:4px 2px;
+	font-size: 1em;
+	color: #676E04;
+	text-align:center;
+	background:url(img/sidenav_top.png) no-repeat top center;
+	border:#ccc 0px solid;
+	min-height:16px;
+	font-weight:bold;
+}
+#sidebar ul {
+	list-style-type: none;
+	padding: 5px;
+	margin: 0;
+	font-size: 0.9em;
+	padding-bottom:3em;
+	background:#F3F6ED url(img/sidenav_bottom.jpg) no-repeat bottom;
+	border:#E1D6c6 1px solid;
+	border-top:#f3f6ed 1px solid;
+}
+#pagenav
+{
+	list-style:none;
+}
+#sidebar ul li {
+	margin: 0.1em 0 0 0;
+	padding: 0;
+}
+#sidebar ul li a {
+	text-decoration: none;
+	border:none;
+}
+#sidebar ul li a:link {
+	color: #909D73;
+}
+#sidebar ul li a:visited {
+	color: #999999;
+}
+#sidebar ul li a:hover, #sidebar ul li a:active {
+	color: #990000;
+}
+#sidebar ul ul {
+	list-style-type: none;
+	padding: 5px;
+	margin: 0;
+	font-size: 1em;
+	background:none;
+	border:none;
+}
+#sidebar ul ul li
+{
+	margin:0;
+	padding:0;
+	padding-left:10px;
+	margin-left:10px;
+	background:url(img/subcat_bullet.gif) no-repeat 0 6px;
+}
+#content ul {
+	margin-left: 0;
+	padding-left: 45px;
+	list-style-type: none;
+}
+#content ul li {
+	background: url(img/bullet.gif) no-repeat 0 7px;
+	padding-left: 1.5em;
+}
+.post , .page
+{
+	margin:0 0 30px 0;
+}
+/*.page
+{
+	margin:25px -5px 0 27px;
+}*/
+.post-info, .page-info
+{
+	font-size:0.85em;
+	font-family: Verdana, Arial, Sans-Serif;
+	margin:0;
+	padding:0;
+	color:#333;
+}
+.page-info
+{
+	text-align:center;
+}
+.post-info a
+{
+	color:#990000;
+}
+.post-info a:hover
+{
+	color:#000;
+}
+.post-content, .page-content {
+	padding:10px 0;
+	margin:3px 0;
+	border-top:#BBC4A3 1px solid;
+	font-family: Georgia, Verdana, Arial, serif;
+	font-size:12px;
+}
+.page-content {
+
+}
+.post-title, .page-title {
+	font-family:Georgia, Arial, Serif;
+	font-size:1.3em;
+	margin:0;
+	font-weight:bold;
+}
+.page-title
+{
+	font-size:1.6em;
+	font-weight:normal;
+}
+#content .page-title a, .post-title a:link, .post-title a:visited, .post-title a:hover, .post-title a:active
+{
+	text-decoration:none;
+	color:#676E04;
+}
+.post-date {
+	float: left;
+	color: #BBC4A3;
+	font-family: Georgia,'Lucida sans ms', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	text-align: center;
+	font-weight: bold;
+	margin: 3px 10px 0 0;
+	padding: 8px 3px;
+	width: 68px;
+	background: #E7EBDE;
+	line-height:1em;
+}
+
+#content .sticky .post-title a {
+color: #222;
+}
+
+#content .sticky .post-date {
+background: #333;
+color: #f7f7f7;
+}
+.post-footer
+{
+	padding-top:20px;
+	background:url(img/divider.gif) no-repeat center;
+	clear: both;
+}
+#footer {
+	margin:0 auto;
+	padding: 7px 0;
+	border-top:#BBC4A3 1px solid;
+	clear: both;
+	font-size: 0.8em;
+	color: #999;
+	text-align:center;
+	width:740px;
+}
+#footer a {
+border:none;
+color:#7A7636;
+}
+
+.commentlist {
+	font-size:1em;
+	font-weight:normal;
+}
+
+.commentlist li .avatar { 
+	border: 1px solid #7A7636;
+	padding: 2px;
+	float: right; 
+}
+
+#commentform
+{
+	margin:0 0 0 40px;
+}
+#commentform textarea {
+	width: 80%;
+}
+#commentform p {
+	margin: 0 0 1em;
+}
+#comments,#respond h3 {
+	text-transform: uppercase;
+	margin: 3em 0 1em 40px;
+	color: #676E04;
+	font: 0.9em verdana, helvetica, sans-serif;
+}
+.commentlist li
+{
+	margin:5px 0;
+	padding:10px 10px 20px 10px;
+	background:#F3F6ED url(img/comments_bottom.jpg) repeat-x bottom;
+	border:#E1D6C6 1px solid;
+}
+.commentlist li .children
+{
+	list-style-type:none;
+}
+
+.commentlist .alt
+{
+
+}
+#topnav
+{
+	list-style:none;
+	font-size:0.9em;
+	margin:0 auto;
+	padding:12px 20px 0 0;
+	text-align:right;
+	font-family:Verdana, Arial, Sans-Serif;
+}
+#topnav li
+{
+	list-style:none;
+	display:inline;
+	margin:0 0 0 0;
+	padding:0 6px 0 5px;
+	font-weight:bold;
+	border-right: 2px solid #BBC4A3;
+}
+
+#topnav li a:link, #topnav li a:visited
+{
+	text-decoration:none;
+	color:#BBC4A3;
+}
+#topnav li a:hover, #topnav li a:active
+{
+	color:#F7F3ED;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
