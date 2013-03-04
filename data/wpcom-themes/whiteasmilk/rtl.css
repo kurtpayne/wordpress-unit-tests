@@ -1,0 +1,90 @@
+/*
+RTL for Theme: : White as Milk
+THEME URI: http://www.azeemazeez.com/stuff/themes/
+DESCRIPTION: RTL Style for RTL language (  e.g. Farsi,Arabic,Hebrew, ... )
+VERSION: 1.6
+AUTHOR: Navid Kashani
+AUTHOR URI:http://www.asroone.net/
+Persian WordPress Project :  wp-persian.com
+*/
+body {
+	direction:rtl;
+	font-family:tahoma, arial;
+}
+#page {
+	text-align:right;
+}
+.narrowcolumn .postmetadata {
+	text-align:right;
+}
+h1, h2, h3 {
+	font-family:arial, tahoma;
+	text-align:right;
+}
+#header a , .description, #header p {
+	margin:0 190px 0 0;
+}
+#sidebar h2 {
+	font-family:arial, tahoma;
+}
+.commentlist li, #commentform input, #commentform textarea, #commentform p, #sidebar, #wp-calendar caption , small {
+	font-family:tahoma, arial;
+}
+input#searchsubmit {
+	font-family:tahoma, arial;
+	font-size:11px;
+}
+acronym, abbr, span.caps {
+	letter-spacing:0;
+}
+.narrowcolumn {
+	padding: 0 15px 10px 0;
+}
+div.post div.entry ul {
+	padding: 0 10px 0 0;
+}
+div.post div.entry li {
+	margin: 7px 10px 8px 0;
+}
+.entry ol {
+	padding: 0 35px 0 0;
+}
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px 10px 0 0;
+}
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 10px 0 0;
+}
+#commentform input {
+	margin: 5px 0 1px 5px;
+}
+.commentlist p {
+	margin: 10px 0 10px 5px;
+}
+#wp-calendar #next a {
+	padding:0 0 0 10px;
+	text-align:left;
+}
+blockquote {
+	margin: 15px 10px 0 30px;
+	padding: 0 20px 0 0;
+	border-right: 5px solid #ddd;
+	border-left:0 none;
+}
+hr {
+	margin-right:0;
+}
+code {
+	display:block;
+	text-align:left;
+	direction:ltr;
+}
+.alignright {
+	float: left;
+}
+.alignleft {
+	float: right;
+}
+#email,#url {
+	direction:ltr;
+}
