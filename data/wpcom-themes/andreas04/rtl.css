@@ -1,0 +1,96 @@
+/*
+	Theme: Andreas04
+	RTL by Yoav Farhi, yoav@automattic.com
+*/
+
+
+body{
+direction:rtl;
+unicode-bidi:embed;
+}
+
+h1{
+margin:12px 20px 5px 0;
+}
+
+
+h2{
+margin:-10px 50px 0 0;
+}
+
+h3{
+margin:1em 0.5em 0.5em 0;
+}
+
+
+
+#container{
+text-align:right;
+}
+
+#sitetitle{
+float:right;
+}
+
+#menu{
+text-align: left;
+}
+
+
+#content{
+background-position: right bottom !important;
+}
+
+
+#left{
+float:right;
+}
+
+#right{
+margin-right:64%;
+margin-left:0;
+}
+
+#footer{
+padding:10px 24px 12px 0;
+text-align:right;
+}
+
+
+.link{
+background:url(images/linkarrow-rtl.gif) right no-repeat;
+}
+
+.link:hover{
+background:url(images/linkarrow-rtl.gif) right no-repeat; 
+}
+
+.thumbs img{
+margin:0 0 2px 2px;
+}
+
+.entry {
+	width:100%;
+}
+
+.entryphoto{
+margin:5px 0 10px 10px;
+float:right;
+}
+
+.meta{
+padding: 5px 0px 0 1px;
+text-align:right;
+}
+
+.rightsub{
+float:right;
+}
+
+.rightsub2{
+float:left;
+}
+
+.right{
+text-align:left;
+}
