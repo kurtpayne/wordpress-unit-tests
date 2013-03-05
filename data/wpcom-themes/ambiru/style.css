@@ -1,0 +1,372 @@
+/*  
+Theme Name: Ambiru
+Theme URI: http://ifelse.co.uk/ambiru/
+Description: A calm, relaxing theme one-column theme with a customizable header.
+Version: 1.0-wpcom
+Author: Phu Ly
+Author URI: http://ifelse.co.uk/
+Tags: one-column, custom-header, green, fixed-width, rtl-language-support, white, light, sticky-post, widgets
+*/
+
+/*************************************
+ +Containers
+ *************************************/
+
+body{
+	background:#444 url(./images/stripes.gif) repeat-x;
+	border-top:5px solid #7F9B74;
+	color:#555;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size:67.5%;
+	line-height:1.5;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+#wrap{
+	background:#fff;
+	border-left:7px solid #eee;
+	border-right:7px solid #eee;
+	margin:0 auto;
+	padding:0 15px;
+	text-align:left;	
+	width:500px;
+}
+#content{
+	font-size:1.1em;
+	float:left;
+	margin:0 5px;
+	width:480px;
+	overflow: hidden;
+}
+#sidebar{
+	background:#484848  url(./images/sidebar.png) repeat-x;
+	border:5px solid #ddd;
+	border-bottom:none;
+	color:#eee;
+	float:right;
+	margin:0 10px;
+	padding:10px;
+	width:460px;
+}
+#sidebar a{
+color:#b3cFc1;
+}
+#sidebar a:hover{
+color:#eda;
+}
+#sidebar .sec-a{
+	float:left; 
+	width:200px;
+	padding:0 10px;
+}
+#sidebar .sec-b{
+	float:right;
+	width:200px;
+	padding:0 10px;
+}
+
+#footer{
+	background:#333;
+	border-top:1px solid #777;
+	clear:both;
+	color:#888;
+	font-size:0.9em;
+	padding:5px;
+}
+.navigation{
+	margin-bottom:10px;
+	padding:5px;
+	text-align:center;
+}
+
+/*************************************
+ +Header
+ *************************************/
+h1, h2, h3{
+	font-family: Sylfaen, Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+	letter-spacing: -1px;
+	margin:0;
+}
+#header{
+	background: url(./images/header.png) no-repeat;
+	height:225px;
+	text-align:right;
+	width:500px;
+	padding:30px 0;
+}
+#header h1{
+	font-size:2em;
+	margin:0;
+	margin-top:120px;
+}
+#header h1 a{
+	color:#E5F2E9;
+}
+#desc {
+	color:#E5F2E9;
+	font-size:1em;
+	margin-top:-0.5em;
+}
+#header h1, #desc {
+	margin-right:30px;
+}
+/*************************************
+ +Entry
+ *************************************/
+.entry{
+	margin-bottom:15px;
+padding:5px 10px;
+font-size:0.9em;
+}
+
+.entrymeta{
+	font-size:0.9em;
+color:#999;
+clear:both;
+}
+.entrymeta a{
+color:#677;
+}
+.entrymeta a:hover{
+color:#255;
+}
+.entrytitle h2{
+	color:#58BBEB;
+	font-size:2.2em;
+}
+.entrytitle h2 a{
+color:#2C5F3F;
+}
+.entrytitle h2 a:hover{
+	color:#C8A799;
+}
+.entrytitle h3{
+	color:#6F6F6F;
+	font-size:1.8em;
+}
+.postedby{
+}
+.filedto{
+	background:url("./images/file.gif") no-repeat 0 2px;
+	padding-left:15px;
+}
+.commentslink{
+	background:url("./images/comments.gif") no-repeat 0 3px;
+	padding-left:15px;
+}
+body#home .entry-1, .sticky
+{
+background:#f8f9f1;
+border:1px solid #d8d9c8;
+border:1px solid #fafbfa;
+font-size:1em;
+}
+body#home .entry-1 .entrymeta, .sticky .entrymeta{
+background: #fafbfa;
+border-top:1px solid #d8d9c8;
+margin:-5px -10px;
+padding:5px 10px;
+}
+/*************************************
+ +Sidebar
+ * note: sidebar is actually featured 
+ * on the bottom.
+ *************************************/
+
+#sidebar h3{
+	color:#aaa;
+	font-size:1.5em;
+	font-weight:bold;
+	margin:10px 0;
+}
+#sidebar ul li{
+	border-bottom:1px dotted #414141;
+	margin-bottom:3px;
+	padding:3px;
+}
+/*************************************
+ +Nav
+ *************************************/
+#nav{
+	background:#333;
+	border:5px solid #222;
+	border-top:none;
+	font-size:0.9em;
+	margin-bottom:30px;
+	padding:0;
+	width:490px;
+	margin-top:-60px;
+}
+
+#nav ul{
+	list-style-type:none;
+}
+#nav ul li{
+	font-weight:bold;	
+	float:left;
+	letter-spacing:1px;
+	margin-bottom:-3px;
+	margin-right:10px;
+	padding:2px 5px;
+}
+#nav ul li a{
+	color:#fff;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+#nav ul li a:hover{
+	color:#E0EEE5;
+}
+/*************************************
+ +Comments
+ *************************************/
+.commentsblock{
+	margin:0.5em;
+	padding:1em;
+	font-size:1.1em;
+	clear:both;
+}
+.commentsblock textarea{
+	width:410px;
+}
+.commentsblock input, .commentsblock textarea{
+	border:1px solid #d1d1d1;
+}
+.commentsblock textarea:focus{
+	background:#eee;
+	border:1px solid #a1a1a1;
+}
+.commentsblock textarea:focus, .commentsblock input:focus{
+	background:#eee;
+	border:1px solid #a1a1a1;
+}
+.commentauthor{
+	display:block;
+	font-size:1.5em;
+}
+ol.commentlist{
+	color:#777;
+	font-size:0.9em;
+	list-style-type:none;
+	margin:0;
+	margin-top:1.5em;
+	padding:0;
+}
+ ol.commentlist .children {
+	list-style-type:none;
+} 
+.commentlist li{
+	margin-bottom:0.5em;
+	padding:0.5em 1em;
+}
+.navigation {
+	padding-bottom: 1em;
+}
+.commentsblock textarea {
+	width:100%;
+}
+
+/* Comment Avatar */
+
+.commentlist li .avatar { 
+	border: 1px solid #E8E7D0;
+	padding: 2px;
+	margin: -2px 10px 0 0;
+ 	float: left; 
+}
+
+li.thread-alt{
+	background:#f3f3f3;
+	border:1px solid #EEEEEE;
+	padding:0.5em;
+}
+h3#comments{
+font-size:1.6em;
+}
+/*************************************
+ +Misc
+ *************************************/
+
+#nav ul{
+	margin:0;
+	padding:0;
+}
+a{
+	color:#579;
+	text-decoration:none;
+}
+a:hover{
+	color:#CC0000;
+}
+.clearfix:after{ 
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility:hidden; 
+}
+* html .clearfix {height: 1%;}
+
+**************
+* Images
+**************
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.attachment img {
+	border: 2px solid #CFCFCF;
+}
