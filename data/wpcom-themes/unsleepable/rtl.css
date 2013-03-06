@@ -1,0 +1,315 @@
+/*
+Theme: Unsleepable
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+.footer_image {
+margin-right: 10px;
+margin-left:0;
+}
+
+.editlink {
+background-position: right;
+}
+
+.category {
+background-position:right;
+padding: 2px 18px 2px 0;
+}
+
+#title {
+float: right;
+border-left: 1px solid #555;
+border-right: 0;
+}
+
+#menu li {
+float: right;
+border-left: 1px solid #555;
+border-right: 0;
+}
+
+body {
+background-position: right top;
+direction:rtl;
+unicode-bidi:embed;
+}
+
+#page {
+background-position: left !important;
+text-align: right;
+}
+
+#header {
+border-right: 1px solid #555;
+border-left: 0;
+}
+
+.primary {
+float: right;
+}
+
+ul.secondary {
+padding: 5px 5px 20px 0;
+margin: 0px 71% 0px 0;
+}
+
+.comments {
+text-align: right;
+}
+
+/*- Sidebar Subpages Menu */
+
+.sb-pagemenu ul {
+margin-right: 10px;
+margin-left: 0;
+}
+
+.sb-pagemenu ul ul .page_item {
+margin-right: 10px;
+margin-left: 0;
+}
+
+/*- Headings -*/
+.primary .item .itemhead .metalink, .comments .primary .metalink {
+margin-right: 15px;
+margin-left: 0;
+}
+
+.comments .primary .metalink {
+margin: 0 0 0 15px;
+}
+
+.secondary .aside .metalink {
+padding-right: 0px;
+padding-left: auto;
+}
+
+.secondary span a {
+margin-right: 10px;
+margin-left: 0;
+}
+
+.editlink img {
+left: 0;
+right: auto;
+}
+
+.commentseditlink {
+padding-right: 10px;
+padding-left: 0;
+}
+
+.commentslink {
+padding: 2px 20px 2px 0;
+background-position: right center;
+margin-left: 10px;
+margin-right: 0;
+}
+
+.chronodata {
+margin-right: 3px !important;
+margin-left: 0 !important;
+}
+
+.tagdata {
+padding: 2px 20px 2px 0;
+background-position: right center;
+}
+
+/*- Primary Contents */
+
+.primary .item .itemtext {
+text-align: right;
+background-position: right bottom;
+}
+
+.commentsrsslink {
+background-position: right top;
+padding: 2px 20px 2px 0;
+margin-left: 10px;
+margin-right: 0;
+}
+
+.trackbacklink {
+background-position: right top;
+padding: 2px 20px 2px 0;
+}
+
+.comments .commentlist li {
+padding: 10px 10px 5px 0px;
+}
+
+.comments .commentlist li img.avatar {
+float: left;
+}
+
+.comments .commentlist li .counter {
+float: right;
+}
+
+.comments .pinglist li {
+margin-right: 40px;
+margin-left: 0;
+}
+
+.comments .pinglist li span.favatar img {
+margin-right: -25px;
+margin-left: 0;
+float: right;
+}
+
+.comments form input[type=text] {
+width: 45%;
+margin: 5px 0 1px 5px;
+}
+
+.comments form #submit {
+float: left;
+}
+
+/*- Various Tags and Classes */
+
+.primary img {
+margin-right: -5px;
+margin-left: 0;
+}
+
+.alignright {
+float: left;
+}
+
+.alignleft {
+float: right
+}
+
+.favorite img {
+margin: 0 -15px 0 0 !important;
+}
+
+blockquote {
+padding: 0 50px 0 20px;
+background: url('images/quote-rtl.png') 95% 0% no-repeat;
+}
+
+.navigation .left {
+float: right;
+text-align: right;
+}
+
+.navigation .right {
+float: left;
+text-align: left;
+}
+
+.navigation p {
+margin: 0;
+padding: 0;
+}
+
+img.wp-smiley {
+border: none !important;
+padding: 0 5px 0 0 !important;
+}
+
+/*- Begin Lists */
+
+.itemtext ol {
+padding: 0 35px 0 0;
+}
+
+.secondary ul, .secondary ol {
+padding-right: 0;
+padding-left: auto;
+}
+
+.secondary ol {
+margin-right: 15px;
+margin-left: 0;
+}
+
+.widget_categories ul li ul {
+margin-right: 10px;
+margin-left: 0;
+}
+
+/*- Search Form and Livesearch */
+
+input[type=text], textarea {
+padding: 2px 2px 2px 0;
+}
+
+#searchcontrols {
+background-image: url('images/livesearchbgdark-rtl.jpg');
+}
+
+/* CSS Beyond this point is for various supported plugins and not the 'core' K2 template */
+
+.sb-latest li {
+margin-right: -40px;
+margin-left: -0;
+}
+
+.sb-latest h2 {
+padding-right: 40px;
+padding-left: 0;
+}
+
+.sb-comments {
+margin: -10px -40px 0 0 !important;
+}
+
+.item2 {
+text-align: right;
+}
+
+.itemtext2 {
+text-align: right;
+}
+
+/*------------styling for bottomblock.php---------------*/
+
+#glass-bottomblock { /* This is the main bottomblock container */
+        padding: 5px 10px 20px 0px; 
+        background-position: right top;
+        }
+
+#glass-bottomblock h2 {
+        padding-right: 0px;
+        padding-left: auto;
+        }
+
+/* These are the individual blocks */
+
+.bottomblockleft { 
+        padding: 2px 13px 0px 10px;
+        float: right;
+        }
+
+.bottomblockmiddle {
+        padding: 2px 15px 0px 10px;
+        float: right;
+        }
+
+.bottomblockright {
+        padding: 0px 15px 0px 7px;
+        float: right;
+        }
+
+.bottomblockleft, .bottomblockmiddle {
+        margin-left:13px;
+        margin-right:0;
+        }
+
+.bottomblock { 
+        padding: 5px 13px 0px 10px;
+        float: right;
+        }
+
+.bottomblock ul ul { padding-right: 30px;  padding-left: 0;}
+
+.content .sticky {
+padding: 5px 5px 10px 10px;
+}
