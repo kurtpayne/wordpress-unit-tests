@@ -1,0 +1,149 @@
+/*  
+Theme Name: Ocadia
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+/* Basics */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+ol, ul {
+	margin: 1.2em 2em 1.2em 0;
+}
+blockquote {
+	background: url(images/commentalt-rtl.gif) repeat-y;
+}
+/* Layout */ 
+
+#wrapper {
+	background: #FFF url(images/wrapper-rtl.gif) repeat-y;
+	text-align: right;
+}
+#header {
+	background: url(images/header-rtl.gif) no-repeat;
+}
+
+	/* Header styles */
+	#header h1 {
+		padding: 35px 40px 0 0;
+	}
+	#header p {
+		padding: 5px 40px 0 0;
+	}
+	
+#content {
+	float: right;
+	padding: 0 40px 0 10px;
+	background: url(images/content-rtl.gif) no-repeat right top;
+	
+} 
+#sidebar {
+	float: right;
+	background: url(images/sidebar-rtl.gif) no-repeat top left;
+}
+
+	/* Sidebar styles */
+	#sidebar ul {
+		background: url(images/sidebar2-rtl.gif) right top repeat-y;
+	}
+	#sidebar ul li {
+		padding: 0 30px 1.5em 0;
+		background: url(images/sidebar-bottom-rtl.gif) no-repeat bottom right;
+	}
+	#sidebar div {
+		padding: 10px 0px 10px 40px;
+	}
+	#sidebar h2 {
+		margin: 0 -30px 0 0;
+		padding: 1.2em 30px 10px 40px;
+		background: url(images/sidebar-top-rtl.gif) right top no-repeat;
+	}
+	/* Fix our list and paragraph styles */
+	#sidebar p, #sidebar ul ul, #sidebar ul ol {
+		padding: 0 20px 0 40px;
+	}
+	#sidebar ul ol {
+		margin: 1em 20px 0 0;
+	}
+	#sidebar ul ul ul {
+		padding: 0 0.8em 0 0;
+	}
+	#sidebar ul ul li {
+		padding: 0 1.5em 0 0;
+		background-position: 100% 0.2em !important;
+	}
+	
+#footer {
+	background: url(images/footer-rtl.gif) no-repeat;
+}
+
+/* Blog */
+
+.storydate {
+	float: right;
+	margin: 0 0 0 0.5em;
+	padding: 0 0 0 0.5em;
+	border-left: 1px solid #CCC;
+	border-right: 0;
+}
+.storytitle {
+	float: right;
+}
+
+.sticky .storytitle, .sticky .storydate {
+background: transparent url(images/commentalt-rtl.gif) repeat-y scroll 100% 0;
+margin-left: 0;
+margin-right: auto;
+}
+.meta {
+	padding: 0.5em 3em 0 0;
+} 
+.feedback {
+	padding: 0 3em 0 0;
+}
+.meta, .feedback {
+	background: url(images/deco.gif) no-repeat bottom right;	
+}
+.permalink {
+	margin: 0 0 0 1.5em;
+	padding: 0 1.2em 0 0;
+	background: url(images/perma.gif) no-repeat center right;
+}
+.commentslink {
+	padding: 0 1.5em 0 0;
+	background: url(images/comments.gif) no-repeat center right;
+}
+
+/* Comments */
+
+#commentlist li {
+	background: url(images/comment-rtl.gif) repeat-y;
+}
+#commentlist .children li {
+	padding-left:0;
+	padding-right:auto;
+}
+
+#commentlist li .avatar {
+	float: left;
+}
+#commentlist li.thread-alt, #commentlist li.thread-alt li {
+	background: url(images/commentalt-rtl.gif) repeat-y !important;
+}
+#wp-calendar {
+	margin-right: 13px;
+	margin-left: 0;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}

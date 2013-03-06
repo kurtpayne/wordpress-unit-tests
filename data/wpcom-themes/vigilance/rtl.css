@@ -1,0 +1,206 @@
+/*
+RTL for Vigilance: Yoav Farhi
+*/
+
+/*Body & Links 
+------------------------------------------------------------ */
+body {
+	unicode-bidi:embed;
+	direction:rtl;
+	}
+/*Basic Structure
+------------------------------------------------------------ */
+#wrapper{
+	text-align: right;
+	}
+#content{ 
+	float: right; 
+	padding: 20px 0 20px 20px;
+	}
+#sidebar { 
+	float: left; 
+	}
+.thin-sidebar {
+	float: right;
+	}
+.spad { padding-left: 20px; 
+	 padding-right: 0; 
+	}
+/*Description
+---------------------------------------*/
+#description {
+	float: right;
+	}
+/*Nav
+---------------------------------------*/
+#nav {
+	float: left;
+	}
+#nav ul {
+	padding: 0 20px 0 0;
+	float: left;
+		}
+#nav ul li {
+	margin: 0 15px 0 10px;
+	}
+/*Post Styling
+------------------------------------------------------------ */
+/*Post Header
+---------------------------------------*/
+.comments a {
+	padding: 0 26px 0 0;
+	background: url(images/comments-bubble-rtl.gif) no-repeat 100% .4em;	}
+.comments a:hover {
+	background: url(images/comments-bubble-hover-rtl.gif) no-repeat 100% .4em;
+	}
+.date {
+	float: left;
+	}
+/*Post Meta
+---------------------------------------*/
+.tags { 
+	float: left; 
+  text-align: left;
+	}
+/*Post Body
+---------------------------------------*/
+
+code {
+ direction:ltr;
+  }
+blockquote {
+  padding: 20px 45px 10px 20px;
+  background: #e7e6e2 url(images/blockquote-rtl.gif) no-repeat top right;
+  }
+.float-quote {
+	float: right;
+	margin: 10px 0 0 10px;
+	}
+.entry .float-quote p {
+	padding: 0 40px 0 0;
+	background: url(images/float-quote-rtl.gif) no-repeat top right;
+	}
+.highlight-box {
+	float: left;
+  margin: 0 10px 10px 0;
+}
+.entry .highlight-box ul li {
+  background-position: 100% .4em; 
+   }
+.entry ul, #comments ul {
+	margin: 0 10px 10px 0;
+	}
+.entry ul li, #comments ul li {
+	padding: 0 17px 0 0;
+	background-position: 100% .3em;
+	}
+.entry ol, #comments ol {
+	margin: 0 10px 10px 0;
+	}
+
+
+/*Archives List
+---------------------------------------*/
+img.archive-comment {
+  float: left;
+  margin: 0 0 .5em .5em;
+  }
+.entries ul {
+	background-position:  bottom right;
+	}
+.entries ul li {
+	background-position: top right;
+	}
+.entries span {
+	text-align: left;
+	}
+.entries span.archdate, .entries a:hover span.archdate  {
+  float: right;
+	margin-right: 0;
+	margin-left: 3em;
+  padding-left: 0;
+  padding-right: .5em;
+
+	}
+.entries span.comments_number{
+	float: right;
+  margin-left: .5em;
+  margin-right: 0;
+	}	
+/*Sidebar
+------------------------------------------------------------ */
+
+ul li.widget ul li ul { 
+  margin-right: 5px;
+  margin-left: 0;
+ }
+ul li.widget ul li a {
+	padding: 0 14px 0 0;
+	background: url(images/list-item-rtl.gif) no-repeat 100% .35em;
+	}
+ul li.widget ul li a:hover {
+	background: url(images/list-item-hover-rtl.gif) no-repeat 100% .35em;
+	}
+/*RSS Box
+---------------------------------------*/
+#rss-feed a.rss, #rss-feed a.email {
+  float: right;
+  padding: 0 19px 0 0;
+  background-position:100% .3em;
+  }
+#rss-feed a.email {
+  float: left;
+  padding: 0 25px 0 0;
+  background-position: 100% .45em;
+  }
+/*Search Box
+---------------------------------------*/
+#search_form input { 
+  border-left: 1px solid #ccc;  }
+
+/*Comments
+------------------------------------------------------------ */
+/*Top
+---------------------------------------*/
+.comment-number {
+	padding: 0 30px 10px 0;
+	background: url(images/comments-bubble-big-rtl.gif) no-repeat 100% .1em;
+	}
+
+a#leavecomment { padding-left: 0; padding-right: 10px; }
+/*Body
+---------------------------------------*/
+ul.children {
+	margin: 10px 20px 0 0;
+	}
+div.c-grav {
+	float: right;
+	text-align: left;
+	}
+div.c-body {
+	float: left;
+	}
+div.c-date {
+  float: left;
+}
+div.reply, div.cancel-comment-reply { float: left; }
+/*Form
+---------------------------------------*/
+input.text-input, form#commentform textarea {
+  border-left: 1px solid #ccc;
+	}
+p.comments-rss a {
+  padding: 0 19px 0 0;
+  background-position: 100% .15em;
+  }
+/*Pingbacks/Trackbacks
+---------------------------------------*/
+ol.pinglist {
+	margin: 0 10px 10px 0;
+  }
+
+/*Footer
+------------------------------------------------------------ */
+#footer p.right { float: left; }
+.alignleft { float: right; }
+.alignright { float: left; }
