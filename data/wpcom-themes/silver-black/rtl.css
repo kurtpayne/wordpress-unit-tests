@@ -1,0 +1,30 @@
+/*
+Theme: Silver is the New Black
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {direction:rtl; unicode-bidi:embed;}
+blockquote { border-right: 3px solid #E8E8E8; border-left:0;; }
+.feedback {text-align: left; }
+.post { margin: 20px 0px 10px 5px; }
+#content { margin: 0 14px 0 220px; }
+#content, #header, #menu ul, #menu ul ul { text-align: right; }
+#header a { padding: 30px 50px 12px 10px; }
+#menu { padding-right: 7px; padding-right:0; right:auto; left: 14px; background:transparent;}
+#menu form { padding: 0 10px 0 0; }
+#menu ul { margin-left:0; margin-right: 5px;}
+#menu ul li { padding: 4px 5px 0 0; }
+#menu ul ul { margin-right: -5px; margin-left:0;}
+#menu ul ul ul { margin-left:auto !important; margin-right: 0px !important; }
+#menu ul ul ul li a, #menu ul ul ul li span { margin-left:auto !important;  margin-right: 20px !important; }
+#menu ul ul ul ul { margin-left:auto !important;  margin-right: 0px !important; }
+#menu ul ul ul ul li a, #menu ul ul ul ul li span {margin-left:0 !important;  margin-right: 40px !important; }
+#menu ul ul ul ul ul{ margin-left:auto !important; margin-right: 0px !important; }
+#menu ul ul ul ul ul li a, #menu ul ul ul ul ul li span {margin-left:0 !important; margin-right: 60px !important; }
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
