@@ -1,0 +1,80 @@
+/*
+RTL for Theme: : Cutline
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:Tahoma, Arial, serif;
+}
+blockquote {
+	border-left:0 none;
+	border-right:1px solid #AAAAAA;
+	padding: 0 10px 0 0;
+	font-family:Tahoma, Arial;
+}
+h1 {
+	font-family:arial;
+	letter-spacing:0;
+}
+* html h1 {
+	letter-spacing:0;
+}
+h2, h3, h4, #footer {
+	font-family:arial;
+}
+#container {
+	direction:rtl;
+}
+#content_box {
+	text-align:right;
+}
+ul#nav li {
+	float:right;
+	font-family:arial;
+	padding:12px 0 10px 40px;
+}
+.entry ul, .entry ol {
+	margin: 0 40px 15px 0;
+}
+.entry ul li ul, .entry ul li ol, .entry ol li ul, .entry ol li ol {
+	margin:5px 30px 5px 0;
+}
+.entry dd {
+	margin:0 20px 15px 0;
+}
+.entry img {
+	margin:0 4px;
+}
+.previous {
+	float:right;
+	padding:0 0 0 20px;
+}
+.next {
+	float:left;
+}
+li.widget ul, li.linkcat ul {
+	margin: 0 20px 15px 0;
+}
+li.widget ol {
+	margin: 0 20px 15px 0;
+}
+li.widget li .recent_date {
+	padding:0 8px 0 0;
+}
+ul.sidebar_list li#linkcat-1 ul, ul.sidebar_list li#linkcat-2 ul, ul.sidebar_list li#linkcat-3 ul, ul.sidebar_list li#linkcat-4 ul, ul.sidebar_list li#linkcat-5 ul, ul.sidebar_list li#linkcat-6 ul, ul.sidebar_list li#linkcat-7 ul, ul.sidebar_list li#linkcat-8 ul, ul.sidebar_list li#linkcat-9 ul {
+	margin: 0 20px 15px 0;
+}
+#comment_form .text_input, #comment_form .form_submit, #search_form .search_input {
+	font-family:tahoma;
+}
+.avatar {
+	float:left;
+	margin-left:0;
+	margin-right:5px;
+}
+.posts h4, .tagged {
+	background-position:right top;
+}
+#email, #url {
+	direction:ltr;
+}
