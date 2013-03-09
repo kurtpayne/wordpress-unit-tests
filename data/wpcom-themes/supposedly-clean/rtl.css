@@ -1,0 +1,93 @@
+/*
+Theme: Supposedly Clean
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body{
+	direction:rtl;
+	unicode-bidi:embed;
+	background:#ccc url(images/lgrey043.jpg);
+}
+
+/*---[ Container CSS ]---*/
+#matt{
+	text-align:right;
+}
+/*---[ Header CSS ]---*/
+#boren_head{
+	background:#8d0a0a url(images/competition_03-rtl.gif) right no-repeat;
+}
+
+/*---[ Content CSS ]---*/
+#mike_content{
+	padding-left:15px;
+	padding-right:0;
+}
+/*info*/
+.info{
+	float:left;
+    margin:10px 4px 4px 0;
+}
+.category{
+	text-align:left;
+}
+/*unordered list*/
+.post ul{
+	padding-right:20px;
+	padding-left:0;
+}
+.post ul li{
+	background:url(images/0081_ulli.gif) no-repeat top right;
+	background-position:98% 1px;
+	padding-right:20px;
+	padding-left:0;
+}
+.post ol { padding-right:20px; 	padding-left:0;}
+/*---[ Sidebar CSS ]---*/
+
+#dooncha_sidebar ul.nonnavigational li{
+	background:url(images/0081_ulli.gif) no-repeat top right;
+	background-position:100% 1px;
+	padding:0 17px 0 0;
+	
+}
+
+/*---[ footer ]---*/
+#footer p{
+	padding-left:15px;
+	padding-right:0;
+}
+/*---[ comment ]---*/
+ol#commentlist{
+	margin-right:19px!important;
+	margin-right:23px;
+	margin-left:0;
+}
+ol#commentlist li{
+	padding-right: 10px;
+	padding-left: 0;
+}
+ol#commentlist li.depth-1
+{
+	padding-left: 10px;
+}
+#commentlist li .avatar {
+	float: left;
+}
+#commentform input{
+    clear:right;
+}
+#commentform textarea{
+    clear:right;
+}
+#commentform input#submit{
+	float:left;
+
+}
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
