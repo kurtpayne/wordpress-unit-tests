@@ -1,0 +1,16 @@
+/* CSS Document */
+
+* {background-image: none !important;}
+img {-ms-interpolation-mode: bicubic;}
+.leftCorner, .rightCorner, .leftShade, .rightShade {display: none;}
+.rss {background: url(../images/rss.gif) top no-repeat !important;}
+a .prev {background: url(../images/prev.gif) top no-repeat !important;}
+a .next {background: url(../images/next.gif) top no-repeat !important;}
+#mainCol {width: 49em; overflow: hidden;}
+#sideCol {width: 18em; overflow: hidden;}
+.post {float: left; margin: 0 1em 1em 1em; padding: 2em 0 1em 0; width: 46em;}
+
+
+
+
+
