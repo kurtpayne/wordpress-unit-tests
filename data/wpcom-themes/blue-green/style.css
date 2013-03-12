@@ -1,0 +1,394 @@
+/*
+Theme Name: Shocking Blue Green
+Theme URI: http://wordpress.com/
+Description: A light and flexible theme in, you guessed it, blue and green.
+Version: 1.0-wpcom
+Author: Chris M.
+Author URI: http://aphotolog.com/
+Template: classic
+Tags: two-columns, flexible-width, green, blue, rtl-language-support, white, light, widgets, right-sidebar, sticky-post
+*/
+a {
+	color: #6699CC;
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+a:visited {
+	color: #6699CC;
+}
+
+a:hover {
+	color: #CEA353;
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #84939F;
+}
+
+acronym, abbr, span.caps {
+	cursor: help;
+}
+
+blockquote {
+	border-left: 1px solid #CEA353;
+	margin-left: 3em;
+	padding-left: 10px;
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 76%;
+	margin: 10px 0;
+  padding: 0;
+	background-color: white;
+	color: #333333;
+}
+
+cite {
+	font-size: .9em;
+	font-style: normal;
+	color: #84939F;
+}
+
+code {
+	font-size: 1.1em;
+	font-style: normal;
+	color: #84939F;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+form p {
+	margin: 1px 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: Tahoma, Verdana, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+	font-weight: normal;
+  margin: 0 0 10px 0;
+	padding: 5px;
+	background-color: #E2E2E2;
+}
+
+h2 {
+	font-size: 1.3em;
+	font-weight: normal;
+	margin: 0 0 10px 0;
+	padding: 0;
+	border-bottom: 1px solid #6699CC;
+}
+
+h3 {
+	font-size: 1.2em;
+	font-weight: normal;
+	text-transform: capitalize;
+	margin-top: 10px;
+	
+}
+
+#comments {
+	clear: both;
+}
+
+ol#comments li p {
+	font-size: 1em;
+}
+
+p, li, .feedback {
+	font: 1em/1.3em Verdana, Arial, Helvetica, sans-serif;
+}
+
+.credit {
+	background: #6699CC;
+	color: #fff;
+	font-size: .9em;
+	margin: 10px 0 0 0;
+	padding: 3px;
+	text-align: center;
+}
+
+.credit a:link, .credit a:hover {
+	color: #fff;
+}
+
+.credit cite {
+	color: #fff;
+}
+
+.feedback {
+	color: #ccc;
+	text-align: right;
+	clear: both;
+}
+
+.meta {
+	margin: 0;
+	padding: 0;
+}
+
+.meta, .meta a {
+	color: #CCC;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+.meta ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.meta li {
+	display: inline;
+}
+
+.post ol li {
+	margin: 10px 0;
+	padding: 0;
+}
+
+.post ol li p {
+	margin: 5px 0;
+	padding: 0;
+}
+
+.storytitle {
+	margin: 0;
+}
+
+.storytitle a {
+	text-decoration: none;
+}
+
+#commentform input, #commentform textarea {
+	background: #F3F6EC;
+	border: 1px solid #84939F;
+}
+
+#commentform textarea {
+	width: 80%;
+}
+
+#commentform input:focus, #commentform textarea:focus {
+	background: #fff;
+	border: 1px solid #CEA353;
+} 
+
+#content {
+	margin: 30px 13em 0 3em;
+	padding-right: 70px;
+}
+
+#header {
+	background-color: #99CC66;
+	font: normal 2em Georgia, Tahoma, Verdana, Helvetica, sans-serif;
+	color: #fff;
+	margin: 0;
+	padding: 10px 20px;
+}
+
+#header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+#menu {
+	background: #F3F6EC;
+	padding: 5px;
+	position: absolute;
+	right: 30px;
+	top: 31px;
+	width: 14em;
+}
+
+#menu form {
+	margin: 0 0 0 13px;
+}
+
+#menu input {
+	font-size: .9em;
+	background: #F5F5F5;
+	border: 1px solid #84939F;
+}
+
+#menu input:focus {
+	background: #fff;
+	border: 1px solid #CEA353;
+} 
+
+#menu ul {
+	color: #84939F;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 3px;
+	text-transform: lowercase;
+}
+
+#menu ul li {
+	font: normal 1em Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 10px;
+}
+
+#menu ul ul {
+	list-style-type: none;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	border-top: 1px solid #fff;
+}
+
+#menu ul ul li {
+	border: 0;
+	font: normal normal 1em Verdana, Arial, Helvetica, sans-serif;
+	letter-spacing: 0;
+	margin-top: 5px;
+	padding: 0;
+	padding-left: 10px;
+}
+
+#menu ul ul li a {
+	text-decoration: none;
+}
+
+#menu ul ul li a:hover {
+	color: #CEA353;
+}
+
+#wp-calendar {
+	background-color: #FAFAFA;
+	empty-cells: show;
+	font-size: 1em;
+	margin: 0;
+	width: 99%;
+}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+}
+
+#wp-calendar a {
+	display: block;
+	text-decoration: none;
+}
+
+#wp-calendar a:hover {
+	background: #e0e6e0;
+	color: #CEA353;
+}
+
+#wp-calendar caption {
+	font: normal 1.2 Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+	border-bottom: 1px solid #fff;
+}
+
+#wp-calendar td {
+	color: #ccc;
+	font: normal 1em Verdana, Arial, Helvetica, sans-serif;
+	letter-spacing: normal;
+	padding: 1px 0;
+	text-align: center;
+}
+
+#wp-calendar td.pad:hover {
+	background: #fff;
+}
+
+#wp-calendar td:hover, #wp-calendar #today {
+	background: #eee;
+	color: #333;
+}
+
+#wp-calendar th {
+	font-weight: normal;
+	background-color: #EFEFEF;
+	text-transform: capitalize;
+} 
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.sticky {
+	background: #f7f7f7;
+	padding: 5px 10px 10px 10px;
+	margin-bottom: 10px;
+}
