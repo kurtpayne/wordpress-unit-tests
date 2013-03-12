@@ -1,0 +1,373 @@
+/*
+Theme Name: Neat!
+Description: Just another stylish two-column dark blue theme with customizable header.
+Version: 0.01-wpcom
+Author: Topi Peltonen
+Tags: custom-header, two-columns, blue, fixed-width, rtl-language-support, right-sidebar, widgets, sticky-post, white, light
+*/
+
+/* ************** STRUCTURE ************** */
+
+body { background: url(images/bg.jpg) repeat-x top center fixed; border: none; }
+#header { background: url(images/header.jpg) no-repeat bottom center; border: none; }
+#sidebar { background: url(images/sidebar.gif) repeat-y top left; border: none; }
+
+body {
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	background-color: #454C67;
+	color: #61636A;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+
+img.noborder {
+	border: 0;
+	margin: 0;
+	padding: 0;	
+}
+
+#header {
+	margin: 0;
+	padding: 0;
+	height: 200px;
+	100%;
+}
+
+#header h1 { display: none; }
+#header .description { display: none }
+
+#page {
+	background-color: white;
+	margin: 0 auto;
+	padding: 0;
+	width: 700px;
+}
+
+#content {
+	float: left;
+	background-color: white;
+	margin: 0;
+	padding: 20px 0 0 25px;
+	width: 450px;
+	overflow: hidden;
+}
+
+#sidebar {
+	margin: 0 0 0 492px;
+	padding: 10px 0 20px 25px;
+	width: 170px;
+}
+
+#footer {
+	text-align: right;
+	clear: both;
+	margin: 0;
+	padding: 20px 15px 0 0;
+	height: 50px;
+}
+
+/* **************** LINKS **************** */
+
+a {
+	color: #36769C;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #399CC6;
+	text-decoration: none;
+}
+
+/* *************** HEADERS *************** */
+
+h1, h2, h3 {
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font-weight: bold;
+	font-size: 1.7em;
+}
+
+h2.pagetitle {
+	text-align: right;
+	border-bottom: 1px solid #454C67;
+	color: #454C67;
+	margin-top: 0;
+	padding-bottom: 5px;
+	margin-bottom: 30px;
+}
+
+/* Next's that image before the post title */
+
+img.lefth2img {
+	margin: 0;
+	padding: 0 5px 0 0;
+}
+
+p img {
+	margin: 0 5px;
+}
+
+.wp-smiley {
+	width: 15px;
+	height: 15px;
+}
+
+#sidebar h2 {
+	color: #36769C;
+	font-family: 'Lucida Grande', Verdana, Sans-Serif;
+	background: url(images/h2.gif) bottom left no-repeat;
+	padding-bottom: 17px;
+	margin-bottom: 0;
+}
+
+.post h2 {
+	display: inline;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	line-height: 1.2;
+}
+
+.post small { display: block; }
+
+.post h3 {
+	font-size: 1.5em;
+	padding: 0;
+	margin: 15px 0 0 0;
+}
+
+/* ****************** POST ****************** */
+
+.post {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	text-align: justify;
+	clear: both;
+}
+
+.sticky {
+background: #f7f7f7;
+padding: 10px 10px 10px 10px;
+margin-bottom: 10px;
+}
+
+
+.postmetadata {
+	text-align: right;
+	padding-bottom: 20px;
+	margin-top: 5px;
+	padding-top: 5px;
+	border-top: 1px solid #454C67;
+	clear: both;
+}
+
+.sticky .postmetadata {
+padding-bottom: 10px;
+}
+
+blockquote {
+	margin: 15px 30px 0 0;
+	padding-left: 15px;
+	border-left: 4px solid #454C67;
+}
+
+blockquote cite {
+	margin: 5px 0 0;
+	display: block;
+}
+
+code {
+	display: block;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid black;
+	font: 1.1em 'Courier New', Courier, Fixed;
+	background-color: #eeeeee;
+	color: black;
+}
+
+.navigation { margin-bottom: 15px; }
+
+/* ************* SIDEBAR LISTS ************** */
+
+/* That next line puts '  ' front of the list-items
+   in the sidebar, with moder browsers only :| */
+
+#sidebar ul ul li:before { content: "\00BB \0020"; }
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	margin-bottom: 15px;
+}
+
+#sidebar ul p, #sidebar ul select { margin: 5px 0 8px; }
+
+#sidebar ul ul, #sidebar ul ol { margin: 5px 0 0 10px; }
+
+#sidebar ul ul ul, #sidebar ul ol { margin: 0 0 0 10px; }
+
+ol li, #sidebar ul ol li { list-style: decimal outside; }
+
+ol ul li { list-style: disc outside; }
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 3px 0 0;
+	padding: 0;
+}
+
+/* *************** SEARCHFORM *************** */
+
+#searchform {
+	margin: auto 0;
+	padding: 5px 3px; 
+	text-align: left;
+}
+
+form#searchform input:focus {
+	border: 2px solid #454C67;
+	margin: 1px;
+}
+
+#searchform input { 
+	font: 1em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	border: 1px solid #399CC6;
+	margin: 2px;
+}
+
+#searchform #s {
+	width: 115px;
+	padding: 2px;
+}
+
+#searchsubmit { display: none; }
+
+/* **************** COMMENTS **************** */
+
+/* Form */
+
+#respond { margin-top: 30px; }
+
+#commentform input {
+	width: 170px;
+	padding: 2px;
+	margin: 5px 5px 1px 0;
+}
+
+#commentform textarea {
+	width: 97%;
+	padding: 2px;
+}
+
+#commentform #submit {
+	margin: 0;
+	float: right;
+}
+
+#commentform p { margin: 5px 0; }
+
+/* Comments */
+
+.thread-alt {
+	background-color: #EEEEEE;
+	border-top: 1px solid #136284;
+	border-bottom: 1px solid #136284;
+}
+
+.commentlist {
+	padding: 0;
+	margin: 0 0 20px 0;
+	text-align: justify;
+}
+
+.commentlist li {
+	margin: 5px 0 3px 0;
+	padding: 5px 10px 3px 10px;
+	list-style: none;
+}
+
+.commentlist li .avatar {
+	padding: 2px;
+	float: right;
+	border: 1px solid #ddd;
+	margin-left: 8px;
+}
+
+.commentlist p { margin: 0 0 15px 0; }
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.attachment img, .attachment p img {
+	border: none;
+	margin: 0;
+}
