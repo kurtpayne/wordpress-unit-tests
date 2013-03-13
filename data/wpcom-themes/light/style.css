@@ -1,0 +1,616 @@
+/*
+	Theme Name: Light
+	Theme URI: http://vaguedream.com/wordpress-themes/
+	Description: A two-column theme with tabbed navigation and crisp colors.
+	Version: 1.0-wpcom
+	Author: Stephen Reinhardt
+	Author URI: http://vaguedream.com/
+	Tags: two-columns, fixed-width, blue , white, light, widgets, right-sidebar, sticky-post, rtl-language-support
+*/
+* {
+margin:0;
+padding:0;
+}
+
+body {
+background-color:#e5e5e5;
+background-image:url(images/wrap.gif);
+background-position:center;
+background-repeat:repeat-y;
+color:#697C83;
+font-family:'Trebuchet MS','Lucida Grande', Arial, sans-serif;
+font-size:small;
+font-weight:400;
+text-align:left;
+margin:0;
+padding:0;
+}
+
+body,html,ul {
+color:#697C83;
+margin:0;
+padding:0;
+}
+
+.utw {
+text-transform:lowercase;
+}
+
+#wrap {
+overflow:hidden;
+padding-left:10px;
+padding-right:10px;
+position:relative;
+width:770px;
+margin:0 auto;
+}
+
+#header {
+background-image:url(images/top.gif);
+background-position:top;
+background-repeat:repeat-x;
+height:145px;
+margin:0;
+padding:0;
+}
+
+#adsense {
+padding:0 0 10px;
+}
+
+#logo {
+height:100px;
+width:770px;
+margin:0 auto;
+}
+
+#blogname {
+height:30px;
+padding-left:22px;
+padding-top:28px;
+text-align:left;
+}
+
+h1#blogname a {
+color:#FFF;
+font-size:36px;
+font-weight:400;
+}
+
+.description {
+color:#CAE972;
+font-size:1em;
+font-style:italic;
+font-weight:400;
+height:24px;
+padding-right:20px;
+text-align:right;
+}
+
+#content {
+color:#656565;
+display:inline;
+float:left;
+font-size:100%;
+line-height:1.6em;
+text-align:left;
+width:500px;
+margin:15px 0 0 20px;
+padding:5px 0 15px;
+}
+
+#sidebar {
+display:inline;
+float:right;
+line-height:1.5em;
+padding-top:5px;
+width:200px;
+margin:5px 20px 20px 0;
+list-style: none;
+}
+
+#sidebar .pagenav {
+	list-style: none;
+}
+
+#sidebar #wp-calendar a {
+	color:#5ca605
+}
+
+#footer {
+background-image:url(images/top.gif);
+background-position:bottom;
+background-repeat:repeat-x;
+clear:both;
+height:60px;
+padding-bottom:10px;
+padding-top:25px;
+text-align:center;
+width:770px;
+margin:0 auto;
+}
+
+h2 {
+font-size:150%;
+}
+
+h4 {
+font-size:130%;
+}
+
+ol#commentlist {
+list-style:none;
+margin:15px 0 0;
+padding:0;
+}
+
+ol#commentlist .children {
+list-style:none;
+margin-left: 2em;
+}
+
+
+#commentlist li .avatar {
+	float: right;
+	padding: 2px;
+	background: #E9FFCE;
+	margin-top: 2px;
+}
+
+#nocomment {
+	margin-bottom: 1em;
+}
+
+.commentname {
+color:#4b5ba2;
+}
+
+.commentname a {
+color:#333;
+font:bold 110% "Trebuchet MS", "Lucida Grande", verdana, helvetica, arial, sans-serif;
+text-decoration:underline;
+}
+
+.commenttext {
+background:#E9FFCE url(images/comm.png) no-repeat left top;
+min-height:90px;
+}
+
+* html .commenttext {
+height:90px;
+overflow:visible;
+}
+
+.commentp {
+padding:20px 12px 10px 10px;
+}
+
+.commenttext p {
+margin:0 0 10px;
+padding:0;
+}
+
+#commentblock ol li {
+margin-bottom:30px;
+}
+
+#commentblock {
+margin-left:4px;
+clear: both;
+}
+
+.gravatar {
+background:url(images/grav.png) no-repeat;
+display:inline;
+float:left;
+height:32px;
+width:32px;
+margin:20px 0 0 10px;
+padding:8px;
+}
+
+#commentsform p {
+margin-bottom:5px;
+margin-top:5px;
+}
+
+#commentsform textarea {
+width: 100%;
+}
+
+a img {
+border:0;
+}
+
+h3.entrytitle,h3 {
+color:#5CA605;
+display:block;
+font-size:170%;
+font-weight:400;
+line-height:100%;
+margin:0;
+}
+
+h3.entrytitle a,h3.entrytitle a:visited,h3 a {
+color:#5CA605;
+font-weight:400;
+text-decoration:none;
+}
+
+h3.entrytitle a:hover,h3 a:hover {
+text-decoration:underline;
+}
+
+.entry {
+margin-bottom:25px;
+margin-top:0;
+padding-bottom:25px;
+padding-left:2px;
+}
+
+.sticky {
+background: #f7f7f7;
+padding: 0 10px 10px 10px;
+}
+.sticky h3.entrytitle {
+padding-top: 10px;
+}
+
+.entrybody img {
+border:1px solid #e5e5e5;
+}
+
+.entrybody {
+background-image:url(images/postbg.jpg);
+background-position:top left;
+background-repeat:repeat-y;
+margin:0;
+padding:5px 5px 10px 10px;
+}
+
+.entrybody p {
+margin-bottom:15px;
+text-align:left;
+}
+
+code {
+background-color:#eee;
+border:1px solid #CCC;
+padding:5px;
+}
+
+.entrymeta {
+color:#656565;
+font-weight:400;
+margin-bottom:5px;
+margin-top:3px;
+}
+
+h2.archives {
+background-color:#FFC;
+color:#999;
+font-style:italic;
+margin-bottom:25px;
+text-align:center;
+}
+
+.entrymeta-single {
+color:#333;
+margin-bottom:20px;
+margin-top:3px;
+}
+
+#sidebar ul#feed {
+list-style:none;
+margin:15px 0;
+padding:0;
+}
+
+#sidebar ul#feed li {
+padding-bottom:3px;
+padding-top:3px;
+}
+
+#sidebar ul#feed li a {
+background:url(images/feed-icon-16x16.png) no-repeat left 50%;
+padding-left:25px;
+border-style:none;
+}
+
+.entrybody ul,.entrybody ol {
+margin-bottom:10px;
+margin-left:30px;
+margin-top:10px;
+}
+
+.entrybody li {
+padding-bottom:2px;
+padding-top:2px;
+}
+
+#sidebar h2 {
+border-bottom:1px solid #eee;
+color:#454545;
+font-size:18px;
+font-weight:400;
+letter-spacing:0;
+line-height:12px;
+margin:0;
+padding:0;
+}
+
+#sidebar h2 a {
+color:#454545;
+}
+
+.sidebarbg {
+background-color:#eee;
+padding:3px;
+}
+
+.scrobblersmall {
+color:#ccc;
+font-size:11px;
+font-style:italic;
+}
+
+#sidebar p {
+margin-bottom:10px;
+margin-top:10px;
+}
+
+#sidebar ul {
+list-style:none;
+margin:5px 0;
+padding:10px 0;
+}
+
+#sidebar ul ul {
+	margin: 0 10px;
+	padding: 0;
+}
+
+#sidebar ul li a {
+color:#999;
+text-decoration:none !important;
+margin:0;
+}
+
+#sidebar ul li a:hover {
+background:#F5FBFF;
+color:#516F86;
+}
+
+#searchdiv {
+font-weight:700;
+margin-bottom:25px;
+margin-top:15px;
+padding:0;
+}
+
+.adwrap,.adwrapwide,.adwrap-lu,.adwrapbutton {
+background:#fff;
+border-color:#d5d7d0;
+border-style:solid;
+border-width:1px 0;
+margin:0 0 1em;
+padding:4px 0;
+}
+
+.adwrap object {
+height:280px;
+width:336px;
+}
+
+.adwrapwide iframe,.adwrapwide object {
+height:65px;
+width:468px;
+}
+
+.adwrap-lu {
+float:right;
+width:180px;
+margin:0 0 1em 1em;
+}
+
+.adwrap-lu object {
+height:90px;
+width:180px;
+}
+
+.adwrapbutton iframe,.adwrapbutton object {
+height:150px;
+width:180px;
+}
+
+table {
+margin:10px;
+}
+
+td,th {
+font-weight:400;
+padding:3px;
+}
+
+.navigation {
+clear:both;
+width:729px;
+margin:0 auto;
+}
+
+.navigation:after {
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: hidden;
+}
+
+.navigation {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .navigation {height: 1%;}
+.navigation {display: block;}
+/* End hide from IE-mac */
+
+.navigation a:link,.navigation a:visited {
+background:#FFF url(images/active1.gif) left bottom no-repeat;
+color:#787878;
+height:24px;
+margin-right:2px;
+padding-left:12px;
+text-decoration:none;
+}
+
+.navigation a:link,.navigation a:link span,.navigation a:visited,.navigation a:visited span {
+cursor:pointer;
+display:block;
+float:left;
+}
+
+.navigation li {
+line-height:23px;
+float:left;
+list-style:none;
+margin:0;
+}
+
+.navigation a:hover {
+background:url(images/active1.gif) left bottom no-repeat;
+color:#253C4E;
+height:24px;
+padding-left:12px;
+text-decoration:none;
+}
+
+.navigation .current_page_item a:link,.navigation .current_page_item a:visited {
+background:#FFF url(images/current1.gif) left bottom no-repeat;
+color:#AAC8E0;
+height:27px;
+line-height:24px;
+margin-right:2px;
+padding-left:15px;
+text-decoration:none;
+}
+
+.navigation .current_page_item a:hover {
+background:#FFF url(images/current1.gif) left bottom no-repeat;
+color:#AAC8E0;
+height:27px;
+margin-right:2px;
+padding-left:15px;
+text-decoration:none;
+}
+
+.navigation ul {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+blockquote {
+border-left:2px solid #CADAE7;
+color:#999;
+font-style:italic;
+padding-left:8px;
+margin:0 25px;
+}
+
+h1,h2,h3,h4,#comments {
+font-weight:400;
+}
+
+h3,#commentblock h2 {
+font-size:140%;
+}
+
+.entrybody a:link,.entrybody a:visited {
+color:#707070;
+font-weight:400;
+text-decoration:underline;
+}
+
+.entrybody a:active,.entrybody a:hover {
+color:#707070;
+font-weight:400;
+text-decoration:none;
+}
+
+a,a:visited,a:hover {
+color:#697C83;
+text-decoration:none;
+}
+
+.navigation a:link span,.navigation a:visited span,.navigation a:hover span {
+background:url(images/active2.gif) right bottom no-repeat;
+height:24px;
+padding-right:12px;
+}
+
+.navigation .current_page_item a:link span,.navigation .current_page_item a:visited span,.navigation .current_page_item a:hover span {
+background:url(images/current2.gif) right bottom no-repeat;
+height:27px;
+padding-right:15px;
+}
+
+#searchform { margin-bottom: 12px; }
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
