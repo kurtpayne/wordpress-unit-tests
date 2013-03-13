@@ -1,0 +1,44 @@
+/*
+RTL for Theme: : Ambiru
+Editors: Navid Kashani,Mahyar Abbaspour
+Persian WordPress Project : wp-persian.com
+*/
+#wrap {
+	text-align:justify;
+	direction:rtl;
+}
+h1, h2, h3 {
+	font-family:arial,tahoma;
+	letter-spacing:0;
+}
+.commentslink {
+	background:none;
+	padding-right:10px;
+}
+.filedto {
+	background:none;
+	padding:0;
+}
+#nav ul li {
+	float:right;
+	letter-spacing:0;
+}
+.commentlist li .avatar {
+	float:right;
+	margin:-2px 0 0 10px;
+}
+code {
+	display:block;
+	text-align:left;
+	direction:ltr;
+	background-color:#DFDFDF;
+}
+.entrytitle h3 {
+	font-size:1.4em;
+}
+.entrybody img {
+	margin:0 4px;
+}
+#email, #url {
+	direction:ltr;
+}
