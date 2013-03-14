@@ -1,0 +1,318 @@
+/*  
+Theme Name: ChaoticSoul
+Theme URI: http://sandbox.avalonstar.com/
+Description: A dark 2 column theme based off of a certain designer's old website. 
+Version: 1.2-wpcom
+Author: Bryan Veloso
+Author URI: http://avalonstar.com/
+Tags: dark, two-columns, black, custom-header, fixed-width, right-sidebar, widgets, sticky-post, rtl-language-support
+*/
+
+
+/*  -----|  Globals  |------------------------------------------------------  */
+
+body { 
+	background-color: #161410;
+	color: #999;
+	font: 62.5%/125% 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	}
+
+/* hr { display: none; } */
+
+.hr {
+	background-color: #22201d;
+	border: 1px solid #363430;
+	height: 10px;
+	margin: 10px 0;
+	width: 758px;
+	}
+	
+a:link, a:visited, a:active { color: #d8d7d3; text-decoration: none; }
+a:hover { color: #fff; text-decoration: none; }
+
+a img { border: 0; }
+
+ul { list-style: none; }
+
+input, textarea {
+	color: #9c9890;
+	font-size: 11px; 
+	text-decoration: none; 
+	background-color: #161410; 
+	border: 1px solid #363430;
+	padding: 5px;
+	}
+	
+blockquote {
+	background: #1b1814;
+	padding: 1px 15px 5px;
+	border-bottom: 1px solid #35302a;
+}
+
+table { width: 100%; border-collapse: collapse; }
+	th { border-bottom: 1px solid #35302a; text-align: left; }
+
+pre {
+	padding: 5px 0;
+	border-top: 1px dotted #35302a;
+	border-bottom: 1px dotted #35302a;
+}
+
+
+
+/*  -----|  Structure  |----------------------------------------------------  */
+	
+#page {
+	margin: 50px auto 25px;
+	padding: 0;
+	width: 760px;
+	}
+	
+#header {
+	text-align: center;
+	}
+
+#wrapper, #headerimg { width: 760px; position: relative; }
+#wrapper { background: url('images/content_bkg.gif') repeat-y top left;}
+
+#header-overlay { 
+	background: url('images/header_overlay.gif') no-repeat top left;
+	width: 760px;
+	height: 151px;
+	z-index: 5; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+	
+#footer {
+	font-family: Georgia, 'Times New Roman', serif; 
+	color: #999;
+	}
+	
+#content, #sidebar { 
+	border-left: 1px solid #363430;
+	border-right: 1px solid #363430;
+	padding: 0 10px; 
+	overflow: hidden;
+	}
+	
+	#content { float: left; font-size: 1.1em; width: 517px; }
+	#content h2 { margin: 0 0 10px; }
+	#content p { line-height: 1.5em; }
+	
+	#sidebar { border-left: 0; float: right; width: 200px; }
+	#sidebar h3 { color: #bd934f; margin: 15px 0 5px; font-variant: small-caps; font-size: 12px; }
+	#sidebar h3 a { color: #bd934f; }
+	#sidebar ul, #akismetwrap { margin: 0 0 10px; padding: 0; border-top: 1px solid #363430; border-bottom: 1px solid #363430; }
+	#sidebar li, #akismetwrap { display: block; padding: 4px 10px; background: #22201d; margin: 1px 0; }
+	#sidebar li:hover { background: #363430; }
+	#sidebar ul ul { border: 0; margin: 0; list-style: disc; }
+	#sidebar ul ul li:before { content: "\2022 \20"; }
+	#sidebar ul ul li { margin: 0 -10px; }
+		
+#searchform { background: #22201d; padding: 10px; text-align: center; }
+	#s { width: 160px; }
+	
+.goleft { float: left; }
+.goright { float: right; }
+
+ul.navigation { 
+	border-top: 1px solid #363430; 
+	border-bottom: 1px solid #363430; 
+	}
+	
+	ul.navigation li { display: block; padding: 4px 10px; background: #22201d; margin: 1px 0; }
+	ul.navigation li:hover { background: #363430; }
+
+/* Post Structure */
+
+.post { padding: 10px 0 0; clear: both; }
+.widecolumn .post { padding: 0; margin: 0; }
+
+.sticky, .top { padding: 15px 10px 0px; background: #1b1814; margin-bottom: 15px; border-bottom: 1px solid #35302a; }
+.lastfive { padding-left: 10px; padding-right: 10px; }
+	.postmetadata { margin: 3px 0; padding: 0; clear: both;}
+		.postmetadata a { font-weight: bold; }
+		.top .postmetadata { border-top: 1px solid #35302a; padding: 8px 0; }
+		.post .postmetadata { font-size: 10px; color: #555;}
+		.post .postmetadata a { font-weight: normal; color: #999; }
+		.post .postmetadata a:hover { color: #fff; }
+		#sidebar .postmetadata { line-height: 1.5em; }
+	.continue { font-weight: bold; font-size: 1.3em; }
+	
+	.top .entry { font-size: 1.1em; }
+	.entrytext { padding: 0 10px 0; line-height: 2em; font-size: 1.1em; }
+	
+	.entrytext h2 { border-bottom: 1px solid #bd934f; display: block; }
+	.entry ul, .entrytext ul { list-style-type: square; }
+	
+/* Comments Structure */
+
+.comments { padding: 10px; margin-top: 15px; background: #1b1814; border-top: 1px solid #35302a; position: relative; }
+	#commentform p { float: left; margin: 0 10px 10px 0; }
+	
+.commentlist { background: #1b1814; list-style: none; margin: 0; padding: 0; }
+	.commentlist li { background: #161410; margin-top: 10px; padding: 5px 0 0; }
+	.commentlist li p { padding: 5px 10px 0; margin: 0; }
+	.commentlist li p.commentmetadata { border-bottom: 1px solid #35302a; background: #181612; padding: 5px 10px; margin-top: 10px; }
+	.commentlist #commentform #comment {
+	width: 100%;
+	}
+ul.archive { list-style: none; padding: 0; margin: 0 10px 25px; font-size: 1.3em; }	
+ul.archive li { display: inline; }
+
+
+/*  -----|  Typography  |---------------------------------------------------  */
+
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; }
+
+h1 { text-transform: lowercase; color: #fff; font-size: 2em; margin: 0 0 8px; }
+h1:before, h1:after { content: " . . "; color: #444; }
+h1 span { color: #bd934f; }
+
+h2 { color: #bd934f; font-size: 1.25em; line-height: 1.15em; margin: 0; padding: 1px 0; display: inline; border-bottom: 1px solid #35302a; }
+	.post h2 a { color: #bd934f; }
+	.post h2.first { font-size: 1.75em; }
+	
+	.widecolumn h2.title { 
+		display: block; 
+		padding: 13px 10px;
+		background: #1b1814;
+		margin: 0 0 15px; 
+		border-bottom: 1px solid #35302a; 
+		font-size: 1.75em; }
+
+.description { color: #666; font-weight: bold; }
+
+.comments h3 { margin: 0 0 10px 0; color: #bd934f; }
+
+
+
+/*  -----|  Miscellaneous  |------------------------------------------------  */
+
+.clear {
+	height: 0;
+	clear: both;
+}
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-table;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+#sidebar li.linkcat { background-color: #161410; margin: 0; padding: 0; list-style: none;  }
+
+.commentmetadata .avatar { 
+	margin: -26px 0 0;
+	border: 1px solid #35302a;
+	padding: 2px;
+	float: right;
+}
+
+.navigation { 
+	margin-top: 10px;
+	padding: 10px;
+	border-top: 1px solid #35302a;
+	}
+.navigation .left { float: left; }
+.navigation .right { float: right; }
+
+.authormeta {
+	border-top: 1px solid #35302a;
+	font-size: 10px;
+	padding-top: 10px; 
+	color: #fff;
+	font-weight: bold;
+	clear: both;
+}
+
+#commentform #comment {
+	width: 480px;
+}
+
+/* flickr widget color fixes */
+#flickr_badge_wrapper {
+	background-color: #161410 !important;
+	border: none !important;
+}
+
+#flickr_badge_wrapper a {
+	color: #d8d7d3 !important;
+}
+#flickr_badge_wrapper a:hover {
+	color: #fff !important;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	color: #000;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+#tag_cloud div, #wp_tag_cloud div {
+line-height: 2em;
+}
