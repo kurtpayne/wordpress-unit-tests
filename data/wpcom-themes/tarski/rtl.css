@@ -1,0 +1,212 @@
+/*
+Theme Name: Tarski
+RTL (redux): Yoav Farhi
+*/
+
+/* Main structure
+----------------------------------------------- */
+body {
+	font-family: Tahoma, Helvetica, Arial, sans-serif; 
+	direction:rtl;
+	unicode-bidi:embed;
+	}
+#wrapper {
+	text-align: right;
+	}
+		#primary {
+	 		float: left;
+			}
+		#secondary {
+			float: right;
+			}
+		#intro {
+			padding: 0 220px 1em 0;
+			}
+		body.janus #primary, body.janus #nav-1, body.janus .comment-content, body.janus .trackback-data, body.janus #comment-input, body.janus #about {
+			float: right;
+			}
+		body.janus #secondary, body.janus #nav-2, body.janus .comment-metadata, body.janus .trackback-time, body.janus #info-input, body.janus #miscellany {
+			float: left;
+			}
+		body.janus #intro {
+			padding: 0 0 1em 220px;
+			}
+	#miscellany {
+	 	float: right;
+		}
+	#about {
+	 	float: left;
+		}
+/* Alignment
+----------------------------------------------- */
+.primary {
+ 	float: left;
+	}
+	body.janus .primary {
+		float: right;
+		}
+.secondary {
+ 	float: right;
+	}
+	body.janus .secondary {
+		float: left;
+		}
+body.left {
+	text-align: right;
+	}
+
+/* Header
+----------------------------------------------- */
+#header {
+	padding: 0 20px 0 20px;
+	}
+/* Navigation
+----------------------------------------------- */
+#nav-1 {
+ 	float: left;
+	}
+	#nav-1 li {
+		margin: 0 0 0 1em;
+		}
+#nav-2 {
+	float: right;
+	}
+	#nav-2 li {
+		display: inline;
+		}
+
+/* Feed icon
+----------------------------------------------- */
+.feed {
+	padding: 5px 20px 5px 0;
+	background-position: 100% 50%;
+	}
+
+/* Content
+----------------------------------------------- */
+ul, ol {
+	margin: 0 2em 1em 0; 
+	}
+.entry ol {
+	padding-right: 10px;
+	padding-left: 0;
+}
+		/* Post content
+		--------------------------------------- */
+		#post-nav {
+		 	padding: 0 220px 0 0;
+			}
+			body a.download {
+				 padding: 5px 36px 5px 5px;
+				}
+			body a.download:link, body a.download:visited, body a.download:active {
+				background-position: 90% 50%;
+				}
+			body a.download:hover {
+				background-position: 90% 50%;
+				}
+				.imageleft {
+					float: right;
+					margin: 0 0 10px 10px;
+					}
+				.imageright {
+					float: left;
+					margin: 0 10px 10px 0;
+					}
+			.aside-meta {
+ 				text-align: left;
+				}
+
+		/* Comments
+		--------------------------------------- */
+		#comments {
+margin-right: 20px;
+margin-left:0;
+float: right;
+			}
+			h2.comments-title {
+		 		float: right;
+				}
+			.comments-feed {
+		 float: left; text-align: left;
+				}
+				.comments-feed a {
+					padding: 5px 0 5px 24px;
+					background-position:  0% 50%;
+					}
+			.comment-metadata {
+			 	float: right;
+				}
+			.comment .avatar {
+				float: left;
+				margin: 0 6px 3px 0;
+				}
+			body.janus .avatar {
+				float: right;
+				margin: 0 0 3px 6px;
+				}
+		.bypostauthor {
+			/* author highlighting: uncomment the following line to turn it on */
+			/* background: #fbfeff; */
+			}
+		.trackback, .pingback {
+			background-position:  0% 60%;
+			}
+			.trackback-time {
+			 	float: right;
+				}
+			.trackback-data {
+			 	float: left;
+				}
+		
+		#respond {
+			margin-right: 20px;
+			margin-left: 0;
+			float: right;	
+			}
+			.comments-info {
+				margin: 0.6em 220px 1em 0;
+				}
+/* Forms
+----------------------------------------------- */
+		#info-input {
+			 float: right;
+			}
+		#comment-input {
+ 			float: left;
+			}
+
+		
+/* Widgets
+----------------------------------------------- */
+		.widgets .navlist ul {
+			margin: 0 1em 0 0;
+			}
+	.widget_pages ul li.page_item ul, .widgets .pagenav ul li ul {
+		margin: 0 1em 0 0;
+		}
+.widgets .widget_gsearch div {
+	text-align: right !important;
+	}
+
+	.widget_calendar table, .widget_calendar tr, widget_calendar th {
+		text-align: right;
+		}
+
+.widgets #wp-calendar caption {
+	text-align: right;
+	}
+		}
+		.widgets ul li ul {
+			margin: 0 1em 0 0;
+			}
+.navigation .left { float: right; }
+.navigation .right { float: left; }
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
