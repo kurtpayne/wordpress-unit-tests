@@ -1,0 +1,47 @@
+/*
+Theme Name:	Vigilance
+Theme URI: 	http://themes.jestro.com/vigilance/
+Description: 	A lean and clean WordPress theme featuring standards and search friendly code. Theme Options Menu allows for serious customization. Designed and coded by <a href="http://www.jestro.com">Jestro</a>.
+Version: 		1.22
+Author:		Drew Strojny
+Author URI:	http://www.jestro.com
+Tags: fixed-width, two-columns, white, red, rtl-language-support, right-sidebar, theme-options, custom-header, custom-colors, widgets, light, sticky-post
+*/
+
+/*
+    Copyright 2008 Jestro LLC
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+/* Import Stylesheets
+-----------------------------------------------------------*/
+@import url("css/undo.css");
+@import url("css/master.css?20091011");
+
+/* Required WordPress Classes, don't remove these.
+-----------------------------------------------------------*/
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+.alignleft { float: left; }
+.alignright { float: right; }
+
+/* Make all custom CSS changes in a Child Theme. See this tutorial for instructions:
+     ----> http://themes.jestro.com/vigilance/easy-upgrading-wordpress-child-themes/ <----
+ Any custom changes you make here will be overidden when you upgrade the theme.
+-----------------------------------------------------------*/
