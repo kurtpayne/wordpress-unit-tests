@@ -1,0 +1,40 @@
+/*
+RTL for Theme: : Regulus
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+* {
+	font-family:Tahoma, Arial, Sans-Serif;
+}
+#wrapper {
+	text-align:right;
+	direction:rtl;
+}
+#content blockquote {
+	text-align:justify;
+}
+#sidebar .col {
+	margin:0 0 0 10px;
+}
+#sidebar ul ul {
+	margin:0 16px 0 0;
+}
+#search label {
+	margin:0 0 0 5px;
+}
+#feeds li {
+	float:right;
+}
+#comments dt .avatar {
+	float:left;
+}
+p img {
+	margin:0 4px;
+}
+code, pre {
+	direction:ltr;
+	text-align:left;
+}
+#email, #url {
+	direction:ltr;
+}
