@@ -1,0 +1,139 @@
+/* 
+Andreas09 RTL: Yoav Farhi
+*/
+
+/* General Element Styling */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+/*** Main container ***/
+
+
+
+#container {
+	text-align:right;
+}
+
+/*** Header section ***/
+
+#sitename {
+	text-align:right;
+}
+
+
+/*** Content wrap ***/
+
+
+#mainmenu ul {
+	background-position:center right;
+	padding: 0 5px 0 0;
+}
+
+#mainmenu li {
+	margin-left: 0;
+	margin-right: -4px;
+}
+
+/*** Sidebars ***/
+
+#leftside {
+	float:right;
+	margin-right:0px;
+	margin-left:10px;
+}
+
+#rightside {
+	float:left;
+	margin-left:0px;
+	margin-right:10px;
+}
+
+
+/*** Sidebar menu ***/
+
+#leftside h2, #rightside h2 {
+	padding: 5px 0px 5px 5px;
+}
+
+#leftside ul, #rightside ul {
+	padding-left: auto;
+	padding-right: 0px;
+}
+
+li#archives li a, li.pagenav li a {
+	padding:5px 10px 4px 4px;
+}
+
+
+li#archives ul.children li a, li.pagenav ul.children li a {
+	float: right;
+	padding:5px 10px 4px 4px;
+}
+
+ul.children li {
+margin-left: 0px;
+margin-right: 10px;
+}
+
+li#categories ul.children li li, li#archives ul.children li li, li.pagenav ul.children li li {
+	padding-right: 10px;
+	padding-left: 0px;
+}
+
+
+li.feed {
+	background-position:right top;
+	padding: 2px 20px 8px 0;
+}
+
+/*** Content ***/
+
+#contentalt {	
+	margin:0 20px 0 200px;
+}
+
+.archives ul.children {
+	padding-left: 0;
+	padding-right: 10px;
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+/*** Footer ***/
+
+#footer {
+	background-position:top right;
+}
+
+/*** comments Form ***/
+
+.thumbnail {
+	margin:0 10px 10px 0;
+}
+
+/* Search Form */
+
+#searchbox {
+	margin:0 0 0 4px;
+}
+
+/* Comment Avatar */
+
+ol.commentlist li .avatar { 
+ 	float: left;
+}
+
+/* Previous/Next Page Navigation */
+
+.alignleft {
+	float: right;
+	text-align: right;
+}
+
+.alignright {
+	float: left;
+	text-align: left;
+}
