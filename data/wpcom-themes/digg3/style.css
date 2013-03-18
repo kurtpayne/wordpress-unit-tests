@@ -1,0 +1,499 @@
+/*  
+Theme Name: Digg 3 Column
+Theme URI: http://www.wpdesigner.com
+Description: Digg-like 3 column theme with two sidebars and a customizable header.
+Version: 1.0.2
+Author: Small Potato
+Author URI: http://www.wpdesigner.com/
+Tags: custom-header, three-columns, fixed-width, rtl-language-support, left-sidebar, right-sidebar, widgets, sticky-post
+*/
+
+body, h1, h2, h3, h4, h5, h6, address, blockquote, dd, dl, hr, p, form{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, Helvetica, Georgia, Sans-Serif;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: top;
+	background: #666 url(images/bg_body.gif);
+	color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: Arial, Helvetica, Georgia, Sans-Serif;
+	font-size: 16px;
+}
+
+a{
+	text-decoration: underline;
+	color: #105cb6;
+}
+
+a:hover{ text-decoration: none; }
+
+a img{ border: 0; }
+
+abbr, acronym{ border: 0; }
+
+address, dl, p{ padding: 10px 0 0; }
+
+blockquote{
+	margin: 10px 10px 0;
+	background: #fffada url(images/bg_blockquote.gif) no-repeat 5px 7px;
+	color: #736926;
+}
+
+blockquote p{
+	padding: 10px 10px 10px 20px;
+}
+
+blockquote blockquote{
+	margin: 10px 20px;
+	background: #fff;
+	color: #333;
+}
+
+blockquote blockquote p{ padding: 10px; }
+
+code{
+	background: #f9f9f9;
+}
+
+dt{
+	font-weight: bold;
+}
+
+dd{
+	padding: 0 0 5px 15px;
+}
+
+hr{
+	clear: both;
+	margin: 15px 0 5px;
+	width: 100%;
+	border: 0;
+	height: 1px;
+	text-align: left;
+	background: url(images/bg_comment_bottom.gif) no-repeat;
+}
+
+small{
+	font-size: 10px;
+}
+
+input, textarea{
+	font-family: Arial, Helvetica, Georgia, sans-serif;
+	font-size: 12px;
+	padding: 2px;
+}
+
+input#author, input#email, input#url, textarea#comment{
+	border: 1px solid #cbb945;
+	background-color: #fffadb;
+	padding: 3px;
+}
+
+input#author, input#email, input#url{
+	margin: 0 5px 0 0;
+}
+
+#container, #header, #menu, #menu ul li, #menu ul li a, #pagetitle, h1, #syndication, .pagewrapper, #page, .wrapper, .narrowcolumnwrapper, .narrowcolumn, .content, .post, .entry, .browse, .sidebar{
+	text-align: left;
+	vertical-align: top;
+}
+
+#container{
+	margin: 0 auto;
+	width: 904px;
+	padding: 10px 0 10px;
+}
+
+#header{
+	margin: 0 0 10px;
+	width: 904px;
+	height: 250px;
+	color: #333;
+	position: relative;
+}
+#header-box{
+	position: absolute;
+	top: 40px;
+	left: 0;
+	z-index: 10;
+}
+#header-image{
+	margin: 0 0 10px;
+	position: absolute;
+	z-index: -2;
+}
+#header-overlay{
+	position: absolute;
+	width: 904px;
+	height: 160px;
+	z-index: -1;
+}
+#pagetitle, #syndication, #searchbox {
+	z-index: 3;
+}
+
+#menu ul{
+	margin: 0;
+	padding: 0 0 0 10px;
+	list-style: none;
+}
+
+#menu ul li{
+	float: left;
+	margin: 0 5px 0 0;
+	font-size: 14px;
+	font-weight: bold;
+	background: url(images/bg_tab_right.gif) no-repeat right top;
+	color: #325b0a;
+}
+
+#menu ul li a{
+	display: block;
+	padding: 14px 20px 10px;
+	text-decoration: none;
+	background: url(images/bg_tab_left.gif) no-repeat left top;
+	color: #325b0a;
+}
+
+#menu ul li a:hover{
+	text-decoration: underline;
+}
+
+#pagetitle{
+	clear: both;
+	width: 904px;
+	height: 155px;
+}
+
+#pagetitle h1{
+	padding: 36px 28px 0;
+	font-size: 24px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+#pagetitle h1 a{
+	text-decoration: none;
+	color: #fff;
+}
+
+#syndication{
+	float: left;
+	padding: 15px 31px 0;
+	color: #999;
+}
+
+#syndication a{ color: #666; }
+
+#syndication a.feed{
+	padding: 0 0 0 19px;
+	background: url(images/feed_icon.png) no-repeat 0 1px;
+}
+
+#searchbox{
+	float: right;
+	padding: 10px 31px 0;
+}
+
+#searchbox input#s{
+	border: 1px solid #ddd;
+	padding: 3px;
+	background: #fff;
+}
+
+#searchbox input#searchsubmit{ height: 24px; }
+
+.pagewrapper{
+	margin: 0 0 10px;
+	float: left;
+	width: 904px;
+	background: #fff url(images/bg_page_bottom.gif) no-repeat left bottom;
+	color: #333;
+}
+
+#page{
+	float: left;
+	padding: 0 5px 5px;
+	background: url(images/bg_page_top.gif) no-repeat;
+}
+
+.wrapper{ /* This wrapper class appears only on Page and Single Post pages. */
+	float: left;
+	width: 500px;
+}
+
+.narrowcolumnwrapper{
+	margin: 5px 0 0;
+	float: left;
+	width: 500px;
+	background: #fff url(images/bg_narrowcol.gif) repeat-y;
+}
+
+.narrowcolumn{
+	float: left;
+	width: 500px;
+	background: url(images/bg_narrowcol_bottom.gif) no-repeat left bottom;
+}
+
+.content{
+	float: left;
+	width: 500px;
+	background: url(images/bg_narrowcol_top.gif) no-repeat left top;
+	overflow: hidden;
+}
+
+.post{
+	padding: 9px 16px 15px;
+	line-height: 18px;
+}
+
+.post h2{
+	padding: 0 0 2px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 27px;
+}
+
+.post h2 a{
+	text-decoration: none;
+	color: #105cb6;
+	border-bottom: 1px solid #75abea;
+}
+.sticky h2 a {
+color: white;
+background: #105cb6;
+padding: 10px;
+display: block;
+margin: 5px 0;
+}
+
+.post img{
+	padding: 4px;
+	border: 1px solid #ddd;
+	background: #fff;
+}
+
+.post img.alignleft{
+	float: left;
+	margin: 5px 10px 0 0;
+}
+
+.post img.alignright{
+	float: right;
+	margin: 5px 0 0 10px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.post img.wp-smiley{
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+.entry{
+	max-width:475px;
+}
+
+.entry h1, .entry h2, .entry h3, .entry h4, .entry h5, .entry h6{
+	padding: 9px 0 0;
+}
+
+.entry h1{
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.entry h2{ line-height: 18px; }
+
+.entry h3{ font-size: 14px; }
+
+.entry h4{ font-size: 12px; }
+
+.entry h5{ font-size: 11px; }
+
+.entry h6{ font-size: 10px; }
+
+.attachment .entry .image { text-align: center; }
+.attachment .navigation { padding: 10px 0px 0px 0px; overflow: hidden; }
+
+.postinfo{
+	font-size: 11px;
+	color: #999;
+	clear: both;
+}
+
+.postinfo a{
+	color: #578cca;
+}
+
+.postdate{ color: #a12a2a; }
+
+.browse{
+	border-top: 1px solid #bdbdbd;
+	padding: 15px 16px;
+	line-height: 18px;
+}
+
+.sidebar, .obar{
+	margin: 0 0 0 5px;
+	float: right;
+	width: 192px;
+	line-height: 18px;
+	overflow: hidden; 
+}
+
+.obar{
+	margin: 0 5px 0 0;
+	float: left;
+}
+
+.sidebar ul, .obar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar ul li, .obar ul li{
+	margin: 5px 0 0;
+	padding: 9px 16px 15px;
+	background: url(images/bg_ul_li.gif) no-repeat left top;
+}
+
+.sidebar ul li.widget_search, .obar ul li{
+	padding: 15px 16px;
+}
+
+.sidebar ul li h2, .obar ul li h2{
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 27px;
+	color: #8dab3b;
+}
+
+.sidebar ul ul li, .obar ul ul li{
+	margin: 0;
+	padding: 6px 0 3px;
+	background: none;
+}
+
+.sidebar ul ul ul, .obar ul ul ul{ padding: 3px 0 0; }
+
+.sidebar ul ul ul li, .obar ul ul ul li{
+	padding: 6px 0px 3px 15px;
+	background: url(images/bg_arrow_right.gif) no-repeat 0px 8px;
+}
+
+.sidebar ul ul ul ul li, .obar ul ul ul li{
+	background: url(images/bg_arrow_right_2.gif) no-repeat 0px 8px;
+}
+
+.sidebar ul li select { 
+	width:100%; 
+} 
+/* COMMENTS TEMPLATE */
+
+.post h3#comments, .post h3#respondtitle{
+	line-height: 27px;
+	color: #e45b00;
+}
+
+.post h3#respondtitle{
+	color: #333;
+}
+
+ol.commentlist{
+	margin: 0 0 11px;
+	padding:0;
+	list-style: none;
+}
+
+ol.commentlist li>div {
+	padding: 13px 0;
+	background: url(images/bg_comment_bottom.gif) no-repeat left bottom;
+}
+
+ol.commentlist li{
+	list-style: none;
+}
+
+ol.commentlist li .commentmetadata{
+	font-size: 11px;
+	color: #546477;
+}
+
+ol.commentlist li .commentmetadata a{
+	color: #546477;
+}
+
+div.navigation {
+padding-bottom: 3em;
+}
+
+form#commentform small{
+	font-size: 11px;
+}
+
+#footer {
+	font-size: 11px;
+	color: #000;
+	text-align: center;
+	margin: 10px 0;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+div.avatar { 
+	float: right;
+	padding: 0;
+	margin: 0;
+}
