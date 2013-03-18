@@ -1,0 +1,156 @@
+/* 
+Theme: Black-LetterHead
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+/* Begin Typography & Colors */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+	}
+
+#page {
+	text-align: right;
+	}
+********
+
+	
+.narrowcolumn .postmetadata {
+	text-align: right;
+	}
+
+/* End Typography & Colors */
+
+
+/* Begin Structure */
+
+
+.narrowcolumn {
+	float: right;
+	padding: 0 45px 20px 0;
+	}
+
+.widecolumn {
+	margin: 5px 150px 0 0;
+	}
+
+	
+.post {
+	text-align: right;
+	}
+
+/* End Structure */
+
+
+/* Begin Lists
+
+	Special stylized non-IE bullets
+	Do not work in Internet Explorer, which merely default to normal bullets. */
+
+html>body .entry ul {
+	margin-right: 0px;
+	margin-left: auto;
+	padding: 0 30px 0 0;
+	padding-right: 10px;
+	padding-left: 0;
+	} 
+
+html>body .entry li {
+	margin: 7px 10px 8px 0;
+	}
+
+.entry ol {
+	padding: 0 35px 0 0;
+	}
+
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px 10px 0 0;
+	}
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 10px 0 0;
+	}
+
+/* End Entry Lists */
+
+
+/* Begin Form Elements */
+
+
+#commentform input  {
+	margin: 5px 0 1px 5px;
+	}
+
+
+
+#commentform #submit {
+	float: left;
+	}
+
+
+/* End Form Elements */
+
+
+/* Begin Comments*/
+
+
+.commentlist {
+	text-align: right;
+	}
+
+
+.commentlist p {
+	margin: 10px 0 10px 5px;
+	}
+
+/* End Comments */
+
+
+/* Begin Sidebar */
+
+#sidebar
+{	
+	margin-left: 0;
+	margin-right: 545px;
+	}
+
+/* End Sidebar */
+
+
+/* Begin Calendar */
+
+
+#wp-calendar #next a {
+	padding-left: 10px;
+	padding-right: 0;
+	text-align: left;
+	}
+
+#wp-calendar #prev a {
+	padding-right: 10px;
+	padding-left: 0;
+	text-align: right;
+	}
+
+
+/* End Calendar */
+
+/* Begin Various Tags & Classes */
+
+blockquote {
+	margin: 15px 10px 0 30px;
+	padding-right: 20px;
+	padding-left: 0;
+	border-right: 1px solid #333;
+	border-left: 0;
+	}
+
+/* End Various Tags & Classes*/
+
+div.comment-avatar {
+	float: right;
+	padding-right: 0;
+	padding-left: 6px;
+}
+
