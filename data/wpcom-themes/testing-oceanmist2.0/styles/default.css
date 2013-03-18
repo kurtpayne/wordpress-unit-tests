@@ -1,0 +1,218 @@
+* {font-size: 100%; margin: 0; padding: 0; line-height: 1.3em;}
+body {position: relative; background: url(../images/bkg.png) top repeat-x; font: 68.75% Verdana, Helvetica, Arial, sans-serif; text-align: center; padding-bottom: 40px;}
+#center {width: 68em; margin: 24px auto; text-align: left;}
+#container {position: relative; width: 68em; float: left; background: url(../images/rightShade2.png) 50em repeat-y; margin-bottom: 40px;}
+#header {position: relative; background-image: url(../images/header.png) bottom repeat-x; padding: 2.5em 3em; background: url(../images/header.png) bottom repeat-x;}
+#photo {float: left; position: relative; z-index: 100;}
+#content {position: relative; float: left; width: 68em; clear: both;}
+#footer {position: relative; float: left; width: 68em; clear: both; top: 6px; padding: 1em 0;}
+#mainCol {position: relative; float: left; width: 50em;}
+#subCol {position: relative; float: left; width: 18em;}
+
+.rightShade {position: absolute; right: 0; margin-top: 3px; margin-right: -7px; display: block; height: 100%; width: 7px; background: url(../images/rightShade.png) bottom repeat-y;}
+.leftShade {position: absolute; left: 0; margin-top: 3px; margin-left: -7px; display: block; height: 100%; width: 7px; background: url(../images/leftShade.png) bottom repeat-y;}
+
+#header .leftShade {position: absolute; z-index: 100; top: 0; left: 0; margin-top: -7px; margin-left: -6px; display: block; height: 10px; width: 100%; background: url(../images/topLeftShade.png) top left no-repeat;}
+#header .rightShade {position: absolute; z-index: 100; top: 0; right: 0; margin-top: -7px; margin-right: -6px; display: block; height: 10px; width: 12px; background: url(../images/topRightShade.png) top right no-repeat;}
+#footer .rightShade {position: absolute; z-index: 100; top: none; bottom: -7px !important; right: 0; margin-right: -6px; display: block; height: 10px; width: 12px; background: url(../images/bottomRightShade.png) bottom right no-repeat;}
+#footer .leftShade {position: absolute; z-index: 100; top: none; bottom: -7px !important; left: 0; margin-left: -6px; display: block; height: 10px; width: 100%; background: url(../images/bottomLeftShade.png) bottom left no-repeat;}
+#mainCol .rightShade {position: absolute; z-index: 100; top: none; bottom: -16px !important; left: 0; margin-right: -6px; display: block; height: 16px; width: 100%; padding-left: 7px; background: url(../images/bottomRightShade2.png) bottom right no-repeat;}
+
+.leftCorner {position: absolute; top: 0; left: 0; display: block; width: 4px ; height: 4px; background: url(../images/topCorner.png) repeat;}
+.rightCorner {position: absolute; top: 0; right: 0; display: block; width: 4px ; height: 4px; background: url(../images/topCorner.png) repeat;}
+#footer .leftCorner {top: auto; bottom: 0; background-image: none;}
+#footer .rightCorner {top: auto; bottom: 0; background-image: none;}
+.dot {position: absolute; display: block; width: 1px; height: 1px;}
+.dot1a {top: 0; left: 0;}
+.dot1b {top: 0; left: 1px;}
+.dot1c {top: 0; left: 2px;}
+.dot1d {top: 0; left: 3px;}
+.dot2a {top: 1px; left: 0;}
+.dot2b {top: 1px; left: 1px;}
+.dot2c {top: 1px; left: 2px;}
+.dot2d {top: 1px; left: 3px;}
+.dot3a {top: 2px; left: 0;}
+.dot3b {top: 2px; left: 1px;}
+.dot3c {top: 2px; left: 2px;}
+.dot3d {top: 2px; left: 3px;}
+.dot4a {top: 3px; left: 0;}
+.dot4b {top: 3px; left: 1px;}
+.dot4c {top: 3px; left: 2px;}
+.dot4d {top: 3px; left: 3px;}
+.rightCorner .dot1a {top: 0; left: 3px;}
+.rightCorner .dot1b {top: 0; left: 2px;}
+.rightCorner .dot1c {top: 0; left: 1px;}
+.rightCorner .dot1d {top: 0; left: 0;}
+.rightCorner .dot2a {top: 1px; left: 3px;}
+.rightCorner .dot2b {top: 1px; left: 2px;}
+.rightCorner .dot2c {top: 1px; left: 1px;}
+.rightCorner .dot2d {top: 1px; left: 0;}
+.rightCorner .dot3a {top: 2px; left: 3px;}
+.rightCorner .dot3b {top: 2px; left: 2px;}
+.rightCorner .dot3c {top: 2px; left: 1px;}
+.rightCorner .dot3d {top: 2px; left: 0;}
+.rightCorner .dot4a {top: 3px; left: 3px;}
+.rightCorner .dot4b {top: 3px; left: 2px;}
+.rightCorner .dot4c {top: 3px; left: 1px;}
+.rightCorner .dot4d {top: 3px; left: 0;}
+#footer .dot1a {top: 3px;}
+#footer .dot1b {top: 3px;}
+#footer .dot1c {top: 3px;}
+#footer .dot1d {top: 3px;}
+#footer .dot2a {top: 2px;}
+#footer .dot2b {top: 2px;}
+#footer .dot2c {top: 2px;}
+#footer .dot2d {top: 2px;}
+#footer .dot3a {top: 1px;}
+#footer .dot3b {top: 1px;}
+#footer .dot3c {top: 1px;}
+#footer .dot3d {top: 1px;}
+#footer .dot4a {top: 0;}
+#footer .dot4b {top: 0;}
+#footer .dot4c {top: 0;}
+#footer .dot4d {top: 0;}
+.dot0 {filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0;}
+.dot50 {filter: alpha(opacity=50); -moz-opacity: .5; opacity: .5;}
+.dot30 {filter: alpha(opacity=30); -moz-opacity: .3; opacity: .3;}
+
+#photo {position: relative;}
+#photo img {float: left; width: 68em; height: auto; margin: 0;}
+#header, #photo {border-bottom: 3px solid;}
+
+#logo {font: 2.5em Tahoma, Helvetica, Arial, sans-serif; margin-bottom: -0.1em; color: #fff; text-decoration: none;}
+#logo a, #logo a:visited {color: #fff; text-decoration: none;}
+#strapline {color: #cadfed; margin: 0;}
+
+.post {float: left; margin: 0 2em 1em 2em; padding: 2em 0 1em 0; width: 46em;}
+
+#footer p {margin: 1em 2em; text-align: center;}
+.or {font: 90% Tahoma, Arial, Helvetica, sans-serif; border-top: 1px solid #cad6e1; height: 1px; overflow: visible; margin: 0.3em 0 0.7em; text-align: center; text-transform: uppercase;}
+.or span {position: relative; top: -0.8em; padding: 0 0.5em;}
+
+.title {display: block; float: left; clear: left; width: 41.5em; padding: 0.95em 2em 1em; margin: 0; font: 1.1em Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: normal; background: url(../images/headingMaincol.png) bottom repeat-x;}
+p.title {text-transform: none;}
+.post h1 {display: block; font: 2em Helvetica, Arial, sans-serif; padding: 0.1em 0 0; margin: 0;}
+.post .pageH1 {margin-bottom: 1em;}
+.author {color: #697c85; margin-bottom: 2em;}
+.author span {font-weight: bold;}
+h1, h2, h3, h4, h5, h6 {font-family: Helvetica, Arial, sans-serif; font-weight: normal;}
+code, pre {font: 1.2em "Courier New", Courier, monospace; color: #bb5800;}
+pre {color: #4f7c00}
+h1 {margin: 0 0 1em;} 
+p, code, pre, h1, h2, h3, h4, h5, h6 {margin: 0 0 1em;}
+.entry h2, .entry h3, .entry h4, .entry h5, .entry h6 {margin: 1em 0 0.5em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.3em; font-weight: bold;}
+h6 {font-size: 1.2em; font-weight: bold;}
+a, a:visited {text-decoration: none;}
+
+#mainCol ul, #mainCol ol {margin: 0 0 1em 2em;} 
+#mainCol ul ul, #mainCol ul ol, #mainCol ol ol, #content ol ul {margin-bottom: 0;}
+#mainCol dl {margin: 0 0 1em 0;}
+.entry dt {font-weight: bold;}
+.entry dd {margin: 0.3em 0 0.3em 2em;}
+.entry dd + dt {margin-top: 1em;}
+
+
+#subCol li {display: block; clear: both;}
+#subCol ul {list-style: none;}
+#subCol ul ul ul {padding: 0;}
+.pad, #subCol li ul {padding: 0 2em 1em;} /* sidebar padding */
+.textwidget, #aka, #twitter-link, .st-tag-cloud {padding: 0 2em 1em;} /* sidebar widget padding - add to this list to add padding to your widgets */
+#subCol ul ul ul li {padding: 0 0 0 1em; background: url(../images/bullet.gif) 0.2em 0.55em no-repeat;}
+#subCol ul ul ul ul li {background-position: 0.2em 0.5em;}
+#subCol h2 {display: block; padding: 0.8em 2em 0.9em; margin-bottom: 1em; background: url(../images/rightShade2.png) left repeat-y; font: 1.1em Helvetica, Arial, sans-serif; text-transform: uppercase; font-weight: normal; background: url(../images/headingSidecol.png) bottom left no-repeat;}
+
+
+.date {float: left; margin: 0 2em 0.5em 0; display: block; width: 3.5em; text-align: center; font-family: Arial, Helvetica, sans-serif; padding: 2px; background: #fff; border: 1px solid #ccc; border-color: #eee #ccc #ccc #eee;}
+.d1 {display: block; width: 100%; font-size: 1.8em; overflow: hidden; background: url(../images/bottomShade2.png) 0 -1px repeat-x;}
+.d2 {display: block; width: 100%; font-size: 90%; overflow: hidden;}
+.d3 {display: block; width: 100%; font-size: 90%; overflow: hidden;}
+
+.rss, .title a[href*="rss2"] {float: right; width: 16px; height: 16px; text-indent: -9999px; background: url(../images/rss.gif) top no-repeat;}
+.rss:hover, .title a[href*="rss2"]:hover {background-position: bottom;}
+.edit, .title a[href*="action=edit"] {float: right; width: 16px; height: 16px; text-indent: -9999px; background: url(../images/edit.gif) top no-repeat;}
+.edit:hover, .title a[href*="action=edit"]:hover {background-position: bottom;}
+a .prev, .olderEntries {float: right; width: 16px; height: 16px; text-indent: -9999px; background: url(../images/prev.gif) top no-repeat; margin-left: 0.5em;}
+a:hover .prev, .olderEntries:hover {background-position: bottom;}
+a .next, .newerEntries {float: right; width: 16px; height: 16px; text-indent: -9999px; background: url(../images/next.gif) top no-repeat; margin-left: 0.5em;}
+a:hover .next, .newerEntries:hover  {background-position: bottom;}
+
+/* forms */
+fieldset {border: none; margin: 0; padding: 0;}
+#searchsubmit {position: absolute; width: 1.7em; height: 1.7em;}
+#s {width: 11.6em; padding: 2px; margin-right: 0.2em;}
+select, .field {width: 14em; margin: 0 0 0.4em 0; padding: 0.2em;}
+.field {padding: 0.2em; width: 14em;}
+textarea {padding: 0.2em; width: 30em; font: 1em Verdana, Arial, Helvetica, sans-serif;}
+#submit {padding: 0.3em;}
+
+
+/* calendar */
+#wp-calendar caption, #calendar caption {width: 14em; text-align: center; background: #4b5d67; color: #fff; border-bottom: 2px solid #e6eef7;}
+#wp-calendar table, #calendar table {border-collapse: collapse; text-align: center; background: url(../images/cal_bkg.gif) bottom right no-repeat; width: 14em; padding: 0 1px 1px 0; margin: 2em;}
+#wp-calendar thead tr {background: url(../images/cal_bkg.gif) bottom right no-repeat;}
+#wp-calendar thead th {background: url(../images/cal_single.gif) top left no-repeat;}
+#wp-calendar tbody td {background: url(../images/cal_single2.gif) top left no-repeat; padding: 2px 0; width: 2em;}
+#wp-calendar #today {background: url(../images/cal_single_today.gif) top left no-repeat; color: #000;}
+#wp-calendar tbody .pad { background: url(../images/cal_pad.gif) top left no-repeat;}
+#wp-calendar a {padding: 2px 0; font-weight: bold;}
+#wp-calendar tfoot td {padding: 3px 0; background: url(../images/cal_pad.gif) top left no-repeat;}
+#wp-calendar #next {text-align: right; padding-right: 10px;}
+#wp-calendar {display: block; }
+
+#content img {display: inline; margin: 0 1em 0.5em 0; padding: 4px; background: #fff; border: 1px solid #ccc; border-color: #eee #ccc #ccc #eee;}
+#content img.wp-smiley {margin: 0; padding: 0; border: none; background: transparent;}
+.alignleft {float: left;}
+.alignright {margin: 0 0 0.5em 1em;}
+.alignright {float: right;}
+.wp-caption {background: #eee;}
+.wp-caption-text {padding: 0 1em; font-style: italic; font-size: 1.1em;}
+
+.commentlist {list-style: none; margin: 0 !important;}
+.commentText {position: relative; float: left; display: block; width: 44em; background: #eee; padding: 1em 1em 0; margin: 0 0 0.5em 0; background: #F8F8F8 none repeat scroll 0 0; border-color: #eee #ccc #ccc #eee; border-style: solid; border-width: 1px;}
+.moderation .commentText {border-style: dashed; border-color: #ddd #ccc #ccc #ddd;}
+.moderation .commentText h3 em {background: #E5E5E5 none repeat scroll 0 0; color: #999999; display: block; font-style: normal; padding: 0.5em 0; text-align: center;}
+.moderation .commentText p, .moderation .commentCite p, .moderation .commentCite p a {color: #697c85;}
+.commentText span {position: absolute; display: block; width: 27px; height: 27px; bottom: -26px; left: 1em; background: url(../images/comment.gif) top left no-repeat;}
+.commentCite {float: left; width: 42em; padding: 0 0 0 4em; margin: 0 0 1.5em;}
+.commentCite cite {font-weight: bold; font-style: normal;}
+#content .commentCite img {float: left; margin: 0 1em 0.5em 0;}
+.commentCite p {text-align: left; margin: 0.2em 0 0;}
+.commentCite p + p { font-size: 90%; margin: 0; color: #697c85;}
+.commentLink {float: left; width: 13px; height: 7px; text-indent: -9999px; background: url(../images/permalink.gif) top no-repeat; margin: 0.3em 0 0;}
+.commentLink:hover {background-position: bottom;}
+
+#commentform, #commentform p {display: block; clear: both; width: 46em;}
+#commentform .field {float: right; width: 29.4em;}
+#commentform .button {margin-left: 16em; }
+.req {font-weight: bold; color: #990000;}
+
+select, .field, textarea {font: 1em Tahoma, Helvetica, Arial, sans-serif;}
+
+#nav {position: absolute; bottom: 0; left: 0; list-style: none; margin-left: 2em;}
+#nav ul {margin: 0; border-top: 3px solid #67939b; background: url(../images/bottomShade.png) 0 -1px repeat-x #67939b; list-style: none;}
+#nav ul ul {margin: 0; border-top: none;}
+#nav li {float: left; position: relative;}
+#nav li a {display: block; padding: 0.6em 1em; background: url(../images/topShade.png) bottom repeat-x #526a74; margin-right: 0.2em; font-weight: bold; color: #fff; min-height: 1.4em; -moz-border-radius-topleft: 2px;  -moz-border-radius-topright: 2px; -webkit-border-top-right-radius: 2px; -webkit-border-top-left-radius: 2px;}
+#nav ul li a { width: 10em; background: none; font-weight: normal; padding: 0.3em 1em; margin: 0; border-bottom: 1px solid #7ea6ad; min-height: none;}
+#nav li a:hover {background-color: #5c7d86;}
+#nav li ul, #nav li:hover ul ul {display: none; z-index: 1000;}
+#nav li:hover ul, #nav ul li:hover ul {display: block; position: absolute; top: 2.5em; z-index: 100;}
+#nav ul li:hover ul {top: 0 !important; left: 12em;}
+#nav li ul a {-moz-border-radius-topleft: 0;  -moz-border-radius-topright: 0; -webkit-border-top-right-radius: 0; -webkit-border-top-left-radius: 0;}
+
+.tags {display: block; float: left; width: 44em; padding: 0 0.5em; background: #f5f5f5; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #eee;}
+#tagCloud .pad, #tag_cloud .pad {text-align: center; font-size: 90%;}
+.tags a, #tagCloud a, #tag_cloud a {padding: 0.2em 0.5em; background: #fff; -moz-border-radius: 3px; -webkit-border-radius: 3px; border: 1px solid #e5e5e5; border-bottom-color: #d5d5d5; border-right-color: #d5d5d5;}
+#tagCloud a, #tag_cloud a {line-height: 1.9em; margin-right: -3px;}
+.tags a:hover, #tagCloud a:hover, #tag_cloud a:hover {border-color: #ddd; border-bottom-color: #bbb; border-right-color: #bbb;}
+.tags p {margin: 0.5em 0;}
+
+.recentcomments {margin-bottom: 0.5em;}
+#recentcomments .lastLi {margin-bottom: 0;}
+
+blockquote {background: #eaeaea; padding: 1em 1em 0.1em 1em; margin-bottom: 1em; border-left: 3px solid #ccc;}
+blockquote blockquote {background: #dadada; border-left: 3px solid #bbb;}
