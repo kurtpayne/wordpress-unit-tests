@@ -1,0 +1,151 @@
+﻿/*
+Theme Name: The Journalist
+Persian Editors: Bahman
+Persian Editors URI: http://bahman.wordpress.com/
+Version: 0.1
+*/
+
+
+
+body {
+	direction: rtl;
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+	font-size:13px;
+}
+
+#container h1 {
+	font-family: "Arial", "Sans-Serif", Tahoma, Georgia, Times New Roman, Times, serif;
+	font-size:32px;
+	padding:20px 10px;
+}
+
+#content {
+	padding:20px 0 0 10px;
+}
+
+#content h2 {
+	font-family: "Arial", "Sans-Serif", Tahoma, Georgia, Times New Roman, Times, serif;
+	font-size:22px;
+	margin:0 0 10px 0;
+}
+
+.main p {
+	line-height:22px;
+	margin:20px 0 10px 0;
+}
+
+.main a, .tags a {
+	color:#004276;
+	text-decoration:none;
+}
+
+.main a:hover, .tags a:hover {
+	color:#2b9cce;
+	text-decoration:none;
+}
+
+a img {
+	border:#fff 0px solid;
+}
+
+.meta {
+	font-family: "Tahoma", "Sans-Serif", Helvetica;
+	font-size:10px;
+	padding:4px 10px;
+}
+
+#sidebar {
+	font-family: "Tahoma", "Sans-Serif", "Trebuchet MS", Arial, Helvetica;
+	font-size:11px;
+}
+
+#sidebar h3 {
+	font-size:12px;
+}
+
+#sidebar a {
+	color:#444;
+}
+
+#sidebar ul li {
+	padding:0 8px 5px 0;
+}
+
+#searchform {
+	margin:15px 0 0 0;
+}
+
+#searchform input {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+	padding: 1px 5px 4px 6px;
+}
+
+#searchform #s {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+	width: 170px;
+}
+
+input.submit {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+input.subcom {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+input.comment {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+textarea {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+.postinput small {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+p.logged {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+h3.reply {
+	font-size: 15px;
+	margin:0 20px 10px 0;
+}
+
+.nocomments {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+ol.commentlist {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+	padding:0 20px 10px 0;
+}
+
+.comment_author {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+	font-size:12px;
+}
+
+.comment_meta {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+	padding:0 20px 0 0;
+}
+
+blockquote {
+	font-style:italic;
+	padding:0 40px 0 40px;
+}
+
+#footer {
+	font-family: "Tahoma", "Sans-Serif", "Georgia", "Times New Roman", Times, serif;
+}
+
+
+
+/* "Hello my dear rtl-blogger friends in WordPress. I'm really loving to hear from you.
+	چه دیر می‌روی زندگی هزاران ساله‌ی من،
+	یقین فسرده‌ات چه دیر به بار ایمان می‌نشیند،
+	و میوه‌های اکنون‌ات چه زود خشک می‌شوند!" */
+
