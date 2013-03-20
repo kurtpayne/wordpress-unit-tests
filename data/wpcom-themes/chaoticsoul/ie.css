@@ -1,0 +1,6 @@
+#page { padding-top: 50px; }
+.comments { padding-top: 10px;}
+.comments form { padding-bottom: 10px; }
+#sidebar ul ul * { background: none; }
+#sidebar ul ul { margin-left:16px; }
+#sidebar ul ul li {	padding-left: 0; margin-left: 0; }
