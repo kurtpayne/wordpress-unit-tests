@@ -1,0 +1,302 @@
+/*
+Theme Name: DePo Masthead
+Theme URI: http://powazek.com
+Description: A classy template that draws on classic magazine design design for a simple, bold style.
+Version: 0.1
+Author: Derek Powazek/Noel Jackson
+Author URI: http://powazek.com/
+Tags: fixed-width, black, red, white, one-column, three-columns, rtl-language-support, widgets, light, theme-options
+*/
+
+/* meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+/* remember to define focus styles! */
+:focus{outline:0;}
+body{line-height:1;color:black;background:#fff;}
+ol,ul{list-style:none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:normal;}
+blockquote:before,blockquote:after,
+q:before,q:after{content:"";}
+blockquote,q{quotes:"" "";}
+/* Tables still need 'cellspacing="0"' in the markup. */
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:400;}
+/* Remove possible quote marks (") from <q>,<blockquote>. */
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+blockquote,q{quotes:"" "";}
+a img{border:none;}
+
+/*************************************/
+/* Defaults */
+body {
+	font: 88%/1.28em Georgia, serif;
+}
+
+a, a:link, a:visited { 
+	color: #900;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #C00;
+}
+em, cite { font-style: italic; }
+
+code, pre { font-family:"Courier New",Courier,monospace; }
+strong { font-weight: bold; }
+
+h1,h2,h3,h4,h5,h6 { }
+.wp-caption, table, p, pre, dl, ul, ol { margin-bottom: 1.1em; }
+table, td, th, tr, thead, tbody, tfoot {}
+dd, dt, li { }
+#content ul, #content dl { list-style-type: disc;}
+#content ol { list-style-type: decimal;}
+#content ol, #content ul { margin-left: 1em; }
+#content li, #content dd, #content dt { margin-left: 1em; }
+#content ul ul, #content ol ol { margin-top: .25em; margin-bottom: .25em; }
+blockquote { font-style: italic; color: #666; }
+blockquote cite { color: #444; }
+form, fieldset, address{}
+
+table { width: 100%; border: 1px solid #999; padding: 1px;}
+th { background: #ddd; }
+th, td { padding: .5em; border: 1px solid #fff; }
+#right_sidebar table, #left_sidebar table, #middle_sidebar table { border: 0 !important; }
+tr.alternate { float: none; background: #F3F3F3;}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+/* Structure */
+
+#page, #content, #sidebar, #footer {
+width: 1000px;
+margin: 0 auto;
+}
+
+#page { margin-top: 50px; }
+
+#container .sleeve, #page #sidebar .sleeve {
+border: 1px solid #999;
+}
+#container .sleeve { border-width: 1px 1px 0 1px; margin-bottom: 3em;}
+#page #sidebar .group .sleeve { border: 0; }
+
+
+h1.name { text-align: center; position: relative; height: 33px; margin-bottom: -16.5px;}
+h1.name span { display: block; color: #fff; text-transform: uppercase; background: #666; font: 1.28em/33px Arial, Helvetica, "Helvetica Neue", sans-serif; text-align: center; display: inline; padding: 5px 10px;}
+h1.name a, h1.name a:link, h1.name a:visited { color: #fff; }
+
+#container h1 { width: 980px; margin: 54px auto 44px auto; text-align: center; font-size: 4em; line-height: 1em;}
+#container h1 a, #container h1 a:link, #container h1 a:visited { color: #900; }
+#container h1 a:hover, #container h1 a:active { color: #C00; }
+
+#menu {padding: 0 10px; margin: 0 auto 46px auto; text-align: center;}
+#menu li { display: inline; line-height: 3em; color: #ccc; }
+#menu li a, #menu li a:link, #menu li a:visited {
+color: #900;
+border: 1px solid #ccc;
+border-width: 1px 0;
+text-align: center;
+text-transform: uppercase;
+font: bold 1em/1em Arial, Helvetica, "Helvetica Neue", sans-serif;
+padding: 2px 4px;
+
+}
+#menu li span { padding: 0 5px; }
+#menu li a:hover, #menu li a:active { background-color: #900; color: #fff;}
+
+.attachment, .post, .page { position: relative; width: 604px; margin: 0 auto;}
+.attachment .entry, .post .entry, .page .entry {overflow: hidden;}
+#home .post { width: 332px; float: left; }
+#content .entry { font-size: 1.09em; line-height: 1.4em;}
+#home #content .entry { margin: 0 15px 3em 15px; }
+#home #content { font-size: 1em; }
+
+#content .attachment { margin-top: 2em; text-align: center; }
+#content .postmetadata { text-transform: uppercase; font: bold .86em/1.166em Arial, Helvetica, "Helvetica Neue", sans-serif; text-align: center; margin: 0;}
+#home .postmetadata { margin: 0 15px;}
+#content .postmetadata, #content .postmetadata a, #content .postmetadata a:link, #content .postmetadata a:visited {  color: #999; }
+#content .postmetadata a:hover { color: #C00; }
+
+#content h2 { font-size: 1.72em; line-height: 1.3em; text-align: center; font-weight: bold;}
+h2.page { margin-bottom: 1em; }
+#content .entry h2 { text-align: left; }
+#content h3 { font-size: 1.5em; } 
+#content h4 { font-size: 1.4em; }
+#content h5 { font-size: 1.3em; }
+#content h6 { font-size: 1.2em; }
+#content h2 a:hover, h2 a:hover { color: #C00; }
+#home h2 { font-size: 1.28em; line-height: 1.5em; margin: .25em 15px;}
+#home h2 a:link, #home h2 a:visited { color: #900; }
+#home h2 a:hover { color: #C00; }
+#content small { display: block; text-align: center; color: #999; font: italic .86em/1.166em normal Georgia, serif; margin-bottom: 2em;}
+#home small { padding: 0 15px;}
+#content small strong, #content small a, #content small a:link, #content small a:visited { color: #333; font-weight: normal;}
+#content small a:hover { color: #C00;}
+#content .readmore { margin-top: 15px; width: 50%; border-top: 1px solid #999; position: absolute; left: 0; bottom: 0;}
+#content .readmore a, #content .readmore a:link, #content .readmore a:visited { text-align: center; text-transform: uppercase; font: .6875em/2.5em Arial, Helvetica, "Helvetica Neue", sans-serif; color: #fff; background: #900; display: block; width: auto;  position: absolute; top: -15px; left: 100%; padding: 0 5px; }
+#content .readmore a:hover, #content .readmore a:active { background-color: #c00; color: #fff; }
+
+.pagetitle { font-size: 1.7142em; text-align: center; font-weight: bold; font-style: italic; color: #666; margin-bottom: 2em;}
+
+.navigation{border:1px solid #ccc;border-width:1px 0;width:604px;margin:0 auto;line-height:4em;clear:both;height:auto; position: relative;padding-top: 17px; padding-bottom: 17px;}
+.navigation span { display: block; }
+.navigation .arrow{font-size:9.28em; margin-top:-10px;color:#e5e5e5;position:absolute;display:block;float:left;z-index:1000; }
+.navigation .arrow,.navigation a:link .arrow,.navigation a:visited .arrow{color:#e5e5e5;;}
+.navigation a:hover .arrow , .navigation a:active .arrow {color:#900;}
+.navigation .next, .navigation .prev { width:50%; min-height: 4em; }
+
+.navigation .next .arrow { right: 0; }
+.navigation .link{ line-height:1em;position:relative;display:block;float:left; }
+.navigation .link span{margin-left:6em;display:block;}
+.navigation .link .before, .navigation .link .after{ clear:both;text-transform:uppercase;font:bold .86em/1.166em Arial,Helvetica,"Helvetica Neue",sans-serif;color:#999;}
+.navigation .link .after { text-align: right; margin-right: 6em; margin-left: auto;}
+.navigation .link .title {margin-left:4em;margin-top:4px;clear:both;font-size:1.285em;font-weight:bold; line-height: 1.1em; width: 230px; overflow: hidden; }
+.navigation .link .date {margin-left:6em; clear:both;font-size: .86em; line-height: 2em; font-style: italic; color: #333; }
+.navigation a:hover .link .date { color: #C00; }
+.navigation .next .title { margin-right: 4em; text-align: right; margin-left: auto; }
+.navigation .next .date { margin-right: 6em; text-align: right; margin-left: auto; }
+.navigation .next .link { right: 0; position: absolute;}
+.navigation .link .image { margin-right: 0; margin-left: 0;}
+.clear { clear: both; height: 1px; }
+
+.attachment.navigation img { max-height: 75px; }
+
+
+#showcomments {text-align:center;font:normal .86em/1.166em Arial,Helvetica,"Helvetica Neue",sans-serif;margin-top:3em;margin-bottom:3em;}
+#showcomments a,#showcomments a:link,#showcomments a:visited{padding:5px 10px;background:#900;color:#fff;}
+#showcomments a:hover,#showcomments a:active{background:#c00; color: #fff; }
+#showcomments.archive a { border: 5px solid #fff; position: relative; z-index: 1000;}
+#showcomments.archive { width: 604px; margin: 1em auto 4em auto; position: relative; }
+#showcomments.archive .divider { height: 1px ; background: #d1d1d1; position: absolute; top: 50%; width: 604px; z-index: 1;}
+
+
+#comments {width:604px; margin: 0 auto;}
+#comments .comments_text { background: #e5e5e5; padding: 15px; color: #666;}
+#comments .commentlist, #comments .commentlist li { list-style: none; margin: 0;}
+#comments .commentmetadata { margin-bottom: 3em; text-align: center; position: relative; margin-left: -25%; height: 44px; background: url(./images/comment-corner.png) no-repeat 47% 0; }
+#comments .commentmetadata .cite { margin-top: 22px; position: absolute; left: 50%; margin-left: 42px; text-align: left; }
+#comments .commentmetadata cite { font-weight: bold; }
+#comments .commentmetadata cite, #comments .commentmetadata small { display: block; padding-left: 1em; }
+
+#comments .commentmetadata small { font-size: .86em; font-style: italic; color: #999;}
+#comments .commentmetadata small strong { color: #333; }
+#comments .commentmetadata img  { top: 17px; position: absolute; left: 50%;}
+
+
+.possibly-related hr { border: 0; background: white; margin-left: -2em; display: block; height: .5em; position: relative; z-index: 1000;}
+.possibly-related p { text-align:center; margin-top: 3em; }
+.possibly-related p strong { font:normal .86em/1.166em Arial,Helvetica,"Helvetica Neue",sans-serif;margin-top:3em;margin-bottom:3em; padding:5px 10px;background:#ccc;color:#fff; }
+.possibly-related li { font-size: .89em; line-height: 1.4em;  }
+
+/* comment form */
+#comments textarea { padding: 10px; width: 554px; height: 100px; border: 15px solid #999; margin: 0;}
+#comments form { float: left; background: #e5e5e5; margin-bottom: 1em;}
+#comments form p { margin: 0; }
+#comments form .rules { background: url(./images/comment-form-corner.png) no-repeat top right ; width: 197px; float: left; padding: 15px 15px; color: #666; font-size: .92em; line-height: 1.35em;}
+
+#comments form .form {  float: left; width: 360px; padding: 17px 0 0 17px;}
+#comments form .form input, #comments form .form small {  float: left;}
+#comments form .form small { text-transform: uppercase; margin-left: 1em; font:bold .78em/2em Arial,Helvetica,"Helvetica Neue",sans-serif; }
+#comments form .form span { font: .78em/2em Arial,Helvetica,"Helvetica Neue",sans-serif; padding-left: .5em; color: #999;}
+#comments form .form label { clear: both; }
+#comments form .form p { padding-bottom: 1em; clear:left; }
+#comments form .form input { height: 1.28em; }
+#comments form #submit { height: 2em; margin-bottom: 2em;}
+
+#sidebar { position: relative; color: #666; font-size: .928em; line-height: 1.23em;}
+#sidebar .sleeve { position: relative; margin-bottom: 0; background: transparent;}
+#sidebar a:link, #sidebar a:visited { color: #333; }
+#sidebar a:hover, #sidebar a:active { color: #C00; }
+
+#sidebar h2, #sidebar h3 { margin-bottom: 15px; text-align: center; color: #333; text-transform: uppercase; font: bold 1em/1em Arial, Helvetica, "Helvetica Neue", sans-serif; margin-bottom: 1em;}
+#sidebar caption { text-align: center; margin-bottom: .5em;}
+#sidebar h2, #sidebar h2  a, #sidebar h2  a:link, #sidebar h2  a:visited { color: #333; }
+#sidebar h2 a:hover #sidebar h2  a:active {  }
+#sidebar { background:url(./images/sidebar-bg.png) repeat-y }
+#sidebar .closer { height: 20px; background: #fff; clear: both;}
+#sidebar ul {border-top: 20px solid white;}
+#sidebar ul li{ width: 302px; float: left; border-top:20px solid #fff; margin: 15px 15px 15px 15px;border:0; position: static;}
+#sidebar ul li ul { border: 0; }
+#sidebar ul li ul li{width:auto;margin:0 auto 1em;float:none;border:0;}
+#sidebar ul li ul li ul { margin-bottom: .5em; }
+#sidebar ul li ul li ul li { margin-bottom: .5em; margin-top: .5em;  }
+#sidebar ul li ul li ul li ul li { margin-left: 1em; }
+#sidebar #depo_archives ul { float: left; width: 50%; list-style: disc; }
+#sidebar #depo_archives ul ul { float: none; width: 100%; margin-top: 1em; }
+#sidebar #depo_archives li { list-style-type: disc; list-style-position: inside; margin-top: 0; margin-bottom: 1em; }
+
+#footer { margin: 2.5em auto; font-size: .928em; line-height: 1em; text-align: center; color: #999;}
+#footer a, #footer a:link, #footer a:visited { color: #333;  }
+#footer a:hover, #footer a:active { color: #C00; } 
+
+/* Alignment */
+.alignleft,.alignright,.align-left,.align-right { }
+.alignright,.align-right, .inset { float:right; }
+.alignleft, .align-left, .alternate { float:left; }
+.aligncenter, .align-center { margin: 0 auto; text-align: center; }
+img.aligncenter, .aligncenter img, img.centered { display: block; margin-left: auto; margin-right: auto; }
+.entry .alignleft { margin-right: 10px; }
+.entry .alignright { margin-left: 10px; }
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+/* Figures & images */
+.image {}
+.figure {}
+.figure .caption {}
+
+/* Utility */
+.group:after {
+	content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.highlite, blockquote em, { background-color:#FFFCCE; }
+.none, .hidden { text-indent: -1000em; display: block; height: 1px; line-height: 1px;}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 1.1em;
+}
+
+.wp-caption img {
+	margin: 0 auto .25em auto;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+#home .gallery dt { margin: 0; }
+
+
+#home .entry {
+width: 302px;
+}
+#recent-comments td.recentcommentstexttop, #recent-comments td.recentcommentstextend {
+vertical-align: top;
+}
