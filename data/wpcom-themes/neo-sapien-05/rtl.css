@@ -1,0 +1,88 @@
+/*  
+Theme: Neo-Sapien
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+body{
+	text-align: right;
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+#sidebar{
+	float: right;
+	text-align: right;
+}
+
+#sidebar ul{
+	text-align: right;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.narrowcolumn{
+	float: right;
+	text-align: right;
+}
+
+#menu{
+	padding: 0 10px 0 -;
+	text-align: right;
+}
+
+#menu ul li{
+	float: right;
+	margin: 0 0 0 5px;
+}
+
+.post h2{
+	text-align: right;
+}
+
+.entry{
+	text-align: right;
+}
+
+.navigation{
+	text-align: right;
+}
+
+blockquote{
+	margin: 5px 5px 5px 0;
+	text-align: right;
+}
+
+#obar{
+	float: right;
+	text-align: right;
+}
+
+.sub-obar{
+	float: right;
+	text-align: right;
+}
+
+.sub-obar ul{
+	padding: 10px 10px 10px 0;
+	text-align: right;
+	margin-left: auto;
+	margin-rught: 0;
+}
+
+#wp-calendar caption{
+	padding: 0 10px 0 0;
+	text-align: right;
+}
+
+.avatar {
+	float: left;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
