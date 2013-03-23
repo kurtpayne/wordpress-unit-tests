@@ -1,0 +1,507 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-12-15 21:57+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Emil Minev <emil.minev@dir.bg>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: D:\\workspace\\php\\blog\\wp-content\\themes\\inove\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+#: header.php:43
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - всички публикации"
+
+#: 404.php:9
+#: header.php:44
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - всички коментари"
+
+#: 404.php:22
+msgid "Talker"
+msgstr ""
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "Грешка 404"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "Попаднахте на тази страница, понеже сте посетили връзка, която не съществува. Причината най-вероятно е при нас, за което се извиняваме!"
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "Можете да се върнете обратно, като натиснете бутона за навигация на вашия браузър или да се върнете в началната страница, като използвате следния линк:"
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "Обратно към началната страница &raquo;"
+
+#: archive.php:4
+msgid "Archive"
+msgstr "Архив"
+
+#: archive.php:9
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "Архив за &#8216;%1$s&#8217; категория"
+
+#: archive.php:12
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "Статии по ключова дума: &#8216;%1$s&#8217;"
+
+#: archive.php:15
+#: archive.php:18
+#: archive.php:21
+#, php-format
+msgid "Archive for %1$s"
+msgstr "Архив за %1$s"
+
+#: archive.php:15
+#: archive.php:37
+#: archives.php:15
+#: comments.php:85
+#: functions.php:391
+#: index.php:18
+#: links.php:15
+#: page.php:9
+#: search.php:12
+#: single.php:15
+msgid "F jS, Y"
+msgstr "j F, Y"
+
+#: archive.php:18
+msgid "F, Y"
+msgstr ""
+
+#: archive.php:21
+msgid "Y"
+msgstr ""
+
+#: archive.php:24
+msgid "Author Archive"
+msgstr "Архив на автор"
+
+#: archive.php:27
+msgid "Blog Archives"
+msgstr "Архив на блог"
+
+#: archive.php:39
+#: index.php:20
+#: search.php:14
+msgid "No comments"
+msgstr "Няма коментари"
+
+#: archive.php:39
+#: index.php:20
+#: search.php:14
+msgid "1 comment"
+msgstr "1 коментар"
+
+#: archive.php:39
+#: index.php:20
+#: search.php:14
+#, php-format
+msgid "% comments"
+msgstr "% коментари"
+
+#: archive.php:40
+#: archives.php:21
+#: comments.php:89
+#: functions.php:399
+#: index.php:21
+#: links.php:24
+#: page.php:15
+#: search.php:15
+#: single.php:21
+msgid "Edit"
+msgstr "Редактирай"
+
+#: archive.php:46
+#: index.php:27
+#: search.php:21
+msgid "Read more..."
+msgstr "Продължи към пълния текст »"
+
+#: archive.php:58
+#: archives.php:33
+#: index.php:39
+#: links.php:43
+#: page.php:28
+#: search.php:33
+#: single.php:38
+msgid "Sorry, no posts matched your criteria."
+msgstr "Съжалявам, но не открих статии, които да отговарят на вашето търсене"
+
+#: archive.php:66
+#: index.php:47
+#: search.php:41
+msgid "Newer Entries"
+msgstr "По-нови статии"
+
+#: archive.php:67
+#: index.php:48
+#: search.php:42
+msgid "Older Entries"
+msgstr "По-стари статии"
+
+#: archives.php:18
+#: links.php:18
+#: page.php:12
+#: single.php:18
+msgid "Goto comments"
+msgstr "Виж коментарите"
+
+#: archives.php:19
+#: comments.php:27
+#: links.php:19
+#: page.php:13
+#: single.php:19
+msgid "Leave a comment"
+msgstr "Коментирай"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "Трябва да въведете парола, за да можете да разглеждате коментарите"
+
+#: comments.php:24
+msgid "Comments"
+msgstr "Коментари"
+
+#: comments.php:25
+msgid "Trackbacks"
+msgstr ""
+
+#: comments.php:30
+msgid "Trackback"
+msgstr ""
+
+#: comments.php:54
+msgid "No comments yet."
+msgstr "Все още няма коментар"
+
+#: comments.php:68
+msgid "Comment pages"
+msgstr "Коментари"
+
+#: comments.php:85
+#: functions.php:391
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s в %2$s"
+
+#: comments.php:85
+#: functions.php:391
+msgid "H:i"
+msgstr ""
+
+#: comments.php:102
+msgid "No trackbacks yet."
+msgstr "0 trackbacks"
+
+#: comments.php:116
+msgid "Comments are closed."
+msgstr "Коментарите са затворени"
+
+#: comments.php:127
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Трябва да сте  <a href=\"%s\">регистриран</a> за да публикувате коментар."
+
+#: comments.php:143
+msgid "Logged in as"
+msgstr "Регистриран сте като "
+
+#: comments.php:144
+msgid "Log out of this account"
+msgstr "Изход от този потребител"
+
+#: comments.php:144
+msgid "Logout &raquo;"
+msgstr "Излез &raquo;"
+
+#: comments.php:150
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "Добре дошъл отново <strong>%s</strong>."
+
+#: comments.php:151
+msgid "Change &raquo;"
+msgstr "Промени името &raquo;"
+
+#: comments.php:152
+msgid "Close &raquo;"
+msgstr "Затвори &raquo;"
+
+#: comments.php:159
+msgid "Name"
+msgstr "Име"
+
+#: comments.php:159
+#: comments.php:163
+msgid "(required)"
+msgstr "(задължително)"
+
+#: comments.php:163
+msgid "E-Mail (will not be published)"
+msgstr "Е-мейл (няма да се вижда)"
+
+#: comments.php:167
+msgid "Website"
+msgstr "Уеб страница"
+
+#: comments.php:184
+msgid "Subscribe to comments feed"
+msgstr "Абонирай се за коментарите"
+
+#: comments.php:186
+msgid "Submit Comment"
+msgstr "Публикувай коментар"
+
+#: footer.php:11
+msgid "Top"
+msgstr "Горе"
+
+#: footer.php:20
+msgid "Copyright &copy; "
+msgstr ""
+
+#: footer.php:30
+msgid "Theme by <a href=\"http://www.neoease.com/\">mg12</a>. Valid <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> and <a href=\"http://jigsaw.w3.org/css-validator/\">CSS 3</a>."
+msgstr ""
+
+#: functions.php:132
+msgid "Current Theme Options"
+msgstr "Настройки на темата"
+
+#: functions.php:137
+msgid "Meta"
+msgstr ""
+
+#: functions.php:139
+msgid "Description:"
+msgstr "Описание:"
+
+#: functions.php:143
+msgid "Keywords:"
+msgstr "Ключови думи:"
+
+#: functions.php:143
+msgid "( Separate keywords with commas )"
+msgstr "(отделете думите със запетая)"
+
+#: functions.php:154
+msgid "Search"
+msgstr "Търсене"
+
+#: functions.php:158
+msgid "Using google custom search engine."
+msgstr ""
+
+#: functions.php:161
+msgid "CX:"
+msgstr ""
+
+#: functions.php:164
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr ""
+
+#: functions.php:173
+msgid "Menubar"
+msgstr ""
+
+#: functions.php:177
+msgid "Show pages as menu."
+msgstr "Показвай страниците като меню"
+
+#: functions.php:181
+msgid "Show categories as menu."
+msgstr "Показвай категориите като меню"
+
+#: functions.php:192
+msgid "Notice"
+msgstr ""
+
+#: functions.php:194
+#: functions.php:218
+msgid "HTML enabled"
+msgstr ""
+
+#: functions.php:200
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr ""
+
+#: functions.php:216
+#: sidebar.php:52
+msgid "Showcase"
+msgstr ""
+
+#: functions.php:222
+msgid "This showcase will display at the top of sidebar."
+msgstr ""
+
+#: functions.php:224
+msgid "Who can see?"
+msgstr ""
+
+#: functions.php:227
+msgid "Registered Users"
+msgstr ""
+
+#: functions.php:231
+msgid "Commentator"
+msgstr ""
+
+#: functions.php:235
+msgid "Visitors"
+msgstr ""
+
+#: functions.php:240
+msgid "Title:"
+msgstr ""
+
+#: functions.php:256
+msgid "Categories & Tags"
+msgstr ""
+
+#: functions.php:260
+msgid "Show categories on posts."
+msgstr ""
+
+#: functions.php:264
+msgid "Show tags on posts."
+msgstr ""
+
+#: functions.php:274
+msgid "Feed"
+msgstr ""
+
+#: functions.php:278
+msgid "Custom feed."
+msgstr ""
+
+#: functions.php:281
+#: functions.php:288
+msgid "URL:"
+msgstr ""
+
+#: functions.php:285
+msgid "Email feed."
+msgstr ""
+
+#: functions.php:295
+msgid "Save Changes"
+msgstr ""
+
+#: functions.php:395
+msgid "Reply"
+msgstr "Отговори"
+
+#: functions.php:396
+msgid "Quote"
+msgstr "Цитирай"
+
+#: functions.php:401
+msgid "Advanced edit"
+msgstr "Редактирай"
+
+#: functions.php:407
+msgid "Your comment is awaiting moderation."
+msgstr "Вашият коментар подлежи на одобрение."
+
+#: header.php:78
+#: single.php:7
+msgid "Home"
+msgstr "Начало"
+
+#: header.php:97
+#: header.php:104
+msgid "Switcher"
+msgstr ""
+
+#: links.php:22
+msgid "Edit links"
+msgstr ""
+
+#: search.php:4
+msgid "Search Results"
+msgstr "Резултати от търсенето"
+
+#: search.php:5
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "Ключови думи: &#8216;%1$s&#8217;"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "Абонамирай се за този блог..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed"
+msgstr "Четете новини от блога чрез <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+
+#: sidebar.php:27
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+msgid "Subscribe with "
+msgstr "Абонирай се с"
+
+#: sidebar.php:27
+msgid "Google"
+msgstr ""
+
+#: sidebar.php:28
+msgid "Youdao"
+msgstr ""
+
+#: sidebar.php:29
+msgid "Xian Guo"
+msgstr ""
+
+#: sidebar.php:30
+msgid "Zhua Xia"
+msgstr ""
+
+#: sidebar.php:31
+msgid "My Yahoo!"
+msgstr ""
+
+#: sidebar.php:32
+msgid "newsgator"
+msgstr ""
+
+#: sidebar.php:33
+msgid "Bloglines"
+msgstr ""
+
+#: sidebar.php:34
+msgid "iNezha"
+msgstr ""
+
+#: sidebar.php:38
+msgid "Subscribe to this blog via email..."
+msgstr "Абонирай се за този блог по електронна поща"
+
+#: sidebar.php:38
+msgid "Email feed"
+msgstr "или ги получавайте на  е-мейл:"
+
+#: single.php:7
+msgid "Goto homepage"
+msgstr "Към начална страница"
+
