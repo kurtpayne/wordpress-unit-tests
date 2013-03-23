@@ -1,0 +1,593 @@
+/*
+Theme Name: Green Marinée
+Theme URI: http://e-lusion.com/
+Description: A very versatile green two-column theme with widgets and lots of style.
+Version: 1.0-wpcom
+Author: Ian Main
+Author URI: http://e-lusion.com/
+Tags: two-columns, fixed-width, green, rtl-language-support, right-sidebar, sticky-post, white, light, widgets
+
+For the WordPress community (GPL), enjoy it guys.
+by Ian Main - e-lusion.com
+*/
+
+/*
+
+	1) General selectors - body,h1/h3,a,blockquote,code,p
+	2) Structure - container,content,tagline
+	3) Left selectors - main,meta,comments
+	4) Right selectors - author,links,line,search,themes
+	5) Footer - extras
+	6) Forms - input,textarea
+	7) Accessibility - skip,hr
+	8) Hacks - clearfix
+
+*/
+
+/* 1) -=-=-=- General selectors -=-=-=- */
+
+body {
+	background: #FCFEF4 url(images/bg_top.gif) repeat-x;
+	margin: 68px 0 20px 0;
+	padding: 0;
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 76%;
+	color: #3F3F3F;
+	text-align: center;
+	}
+
+.main img {
+	margin: 0 5px;
+}
+
+.wp-smiley {
+	width: 15px;
+	height: 15px;
+}
+
+h1 {
+	color: #FCFEF4;
+	margin: -35px 0 0 7px;
+	position: absolute;
+	font-size: 2.2em;
+	}
+	
+/* Uncomment if you want to use the tagline feature (make sure you uncomment .tagline below) - off by default
+h1 {
+	color: #FCFEF4;
+	margin: -45px 0 0 7px;
+	position: absolute;
+	font-size: 2.2em;
+	}
+*/
+	
+h1 a:link, h1 a:visited {
+	color: #FCFEF4;
+	text-decoration: none;
+	}
+	
+h1 a:hover, h1 a:active {
+	background: none;
+	color: #DAED9C;
+	text-decoration: none;
+	}
+	
+h2 {
+	color: #7DA721;
+	font-weight: normal;
+	font-size: 1.8em;
+	margin: 20px 0 0 0;
+	}
+	
+h2 a:link, h2 a:visited {
+	color: #7DA721;
+	font-weight: normal;
+	text-decoration: none;
+	}
+
+h2 a:hover, h2 a:active {
+	color: #3F3F3F;
+	background: none;
+	font-weight: normal;
+	text-decoration: none;
+	}
+	
+h3 {
+	font-size: 1.4em;
+	margin: 20px 0 -10px 0;
+	font-weight: normal;
+	}
+	
+a:link {
+	color: #78A515;
+	font-weight: bold;
+	text-decoration: none;
+	}
+	
+a:visited {
+	color: #999;
+	}
+	
+a:hover, a:active {
+	background: #78A515;
+	color: #fff;
+	text-decoration: none;
+	}
+	
+blockquote {
+	border-left: 4px solid #3F3F3F;
+	padding: 0 10px;
+	margin: 0 0 0 10px;
+	font-style: italic;
+	}
+	
+code {
+	display: block;
+	padding: 10px;
+	color: #444E1F;
+	background: #F5F8E8;
+	font-size: 1.2em;
+	border-top: 2px solid #D0EC98;
+	}
+
+p {
+	line-height: 1.4;
+	}
+	
+/* 2)-=-=-=- Structure -=-=-=- */
+		
+#container {
+	width: 765px;
+	margin: 0 auto;
+	text-align: left;
+	}
+	
+.container_left {
+	background: url(images/container_left.gif) no-repeat;
+	}
+	
+.container_right {
+	background: url(images/container_right.gif) no-repeat top right;
+	}
+	
+.topline {
+	background: url(images/container_top.gif) no-repeat;
+	}
+	
+#content {
+	padding-top: 30px;
+	margin: 20px;
+	width: 480px;
+	overflow: hidden;
+	}
+	
+#content_bg {
+	background: #fff url(images/container.gif) repeat-y;
+	}
+	
+/* Uncomment if you want to use the tagline feature (make sure you uncomment h1 above and comment the original h1) - off by default
+.tagline {
+	color: #888;
+	margin: -18px 0 0 9px;
+	position: absolute;
+	font-size: 1em;
+	}
+*/
+	
+/* 3)-=-=-=- Left selectors -=-=-=- */	
+
+.sticky {
+background-color: #f7f7f7;
+padding: 10px;
+padding-top: 0;
+}
+.sticky h2 {
+	padding-top: 10px;
+}
+.main li {
+	background: url(images/content_bullet.gif) no-repeat 0 7px;
+	padding: 2px 0 0 10px;
+	list-style: none;
+	}
+	
+.main ul {
+	padding: 0 0 20px 10px;
+	margin: 0;
+	}
+	
+.main img {
+	padding: 3px;
+	border: 1px solid #ACE149;
+	}
+	
+.meta {
+	background: #F5F5F5;
+	font-size: .9em;
+	padding: 2px;
+	}
+	
+.meta:hover {
+	background: #F7FEDC;
+	}
+	
+.highlight { /* Basic highlight for text */
+	background: #F7FEDC;
+	}
+	
+.comments {
+	font-size: 1.2em;
+	padding-bottom: 25px;
+	border-bottom: 3px double #eee;
+	clear: both;
+	}
+	
+.comments a:link, .comments a:visited {
+	color: #78A515;
+	font-weight: bold;
+	text-decoration: none;
+	}
+	
+.comments a:hover, .comments a:active {
+	background: #78A515;
+	color: #fff;
+	text-decoration: none;
+	}	
+	
+.thread-alt {
+	background: #EAF8CF !important; 
+	border: 1px solid #D5F0A4 !important;
+	padding: 10px 10px 0 10px !important;
+	}
+	
+.thread-alt:hover {
+	border: 1px solid #ACE149 !important;
+	}
+	
+.commentlist li:hover {
+	border: 1px solid #ACE149;
+	}
+	
+.commentlist {
+	padding: 0;
+	margin: 0;
+	}
+	
+.commentlist li {
+	list-style: none;
+	padding: 10px 10px 0 10px;
+	background: #F6FCEB;
+	border: 1px solid #DEF3B6;
+	margin: 10px;
+	color: #3C452D;
+	}
+
+.commentlist li .avatar { 
+	border: 1px solid #DEF3B6;
+	padding: 2px;
+	float: right; 
+}
+
+#respond textarea {
+	width:96%;
+}
+
+p.metadate {
+	font-size: .8em;
+	margin: 0;
+	text-transform: uppercase;
+	}
+	
+p.comment_meta {
+	margin: 0 0 10px 10px;
+	font-size: .9em;
+	}
+	
+.comment_author a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	}
+	
+.reply {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin: 10px 0 0 10px;
+	}
+	
+.warning p { /* Used on the search page (image will appear if no result is found) */
+	background: url(images/warning.gif) no-repeat left;
+	height: 160px;
+	padding: 20px 0 0 90px;
+	font-size: 1.5em;
+	margin: 0 0 0 10px;
+	}
+	
+.postinput {
+	margin-left: 10px;
+	}
+	
+/* 4)-=-=-=- Right selectors -=-=-=- */	
+	
+#right {
+	float: right;
+	width: 250px;
+	padding: 10px 15px;
+	
+	/* Box model hack used for IE5.5/5 */
+	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	width: 230px;
+	}
+	
+#author li {
+	list-style: none;
+	margin: 0;
+	padding: 0 5px 20px 0;
+	font-size: .9em;
+	line-height: 1.4;
+	}
+	
+#author ul {
+	padding: 20px 0 0 0;
+	margin: 0;
+	}
+	
+#links li, .widget li {
+	list-style: none;
+	background: url(images/links_bullet.gif) no-repeat 0 .3em;
+	padding: 2px 0 2px 20px;
+	}
+	
+#links ul, .widget ul, .widget div {
+	padding: 20px 10px 30px 10px;
+	margin: 0;
+	}
+
+.widget select { 
+	margin: 20px 0px 30px 10px; 
+	}
+
+.PDS_Poll div { 
+	padding: 0; margin: 0; 
+	}
+
+#links ul ul, .widget ul ul {
+	padding: 0px 0px 0px 0px;
+}
+
+#links a, .widget a {
+	font-size: .9em;
+	text-decoration: none;
+	}
+	
+#links a:link, .widget a:link {
+	color: #565D4A;
+	font-weight: normal;
+	}
+	
+#links a:visited, .widget a:visited {
+	color: #aaa;
+	}
+	
+#links a:hover, #links a:active, .widget a:hover, .widget a:active {
+	background: #80BE14;
+	color: #fff;
+	}
+	
+.line {
+	border-top: 3px solid #ACE149;
+	margin-top: -5px;
+	}
+	
+#search {
+	height: 56px;
+	margin: 0 auto;
+	padding-top: 22px;
+	}
+	
+#search h3 {
+	font-size: 1.4em;
+	margin: 20px 0 -10px 0;
+	font-weight: normal;
+	}
+	
+p.searchinfo {
+	margin: 2px 0 -8px 2px;
+	font-size: .9em;
+	color: #999;
+	}
+	
+.searchfield {
+	background: #fff;
+	border: 1px solid #ACE149;
+	color: #7DA721;
+	padding: 2px 5px 1px 5px;
+	width: 160px;
+	}
+	
+.searchfield:hover {
+	border: 1px solid #BFBFBF;
+	color: #949494;
+	}
+	
+.submit {
+	background: url(images/search_submit.gif) no-repeat;
+	height: 20px;
+	width: 52px;
+	border: 0;
+	margin-left: 2px;
+	text-indent: -9999px;
+	cursor: pointer;
+	}
+	
+.submit:hover {
+	background: url(images/search_submit.gif) no-repeat 0 -20px;
+	height: 20px;
+	width: 52px;
+	border: 0;
+	margin-left: 2px;
+	cursor: pointer;
+	}
+	
+.themes {
+	font-size: .9em;
+	}
+	
+/* 5)-=-=-=- Footer -=-=-=- */	
+	
+#footer {
+	background: url(images/footer.gif) no-repeat;
+	height: 75px;
+	}
+	
+#footer p {
+	padding: 30px 0 0 70px;
+	float: left;
+	text-transform: uppercase;
+	font-size: .9em;
+	color: #777;
+	}
+	
+.extras {
+	float: right;
+	padding: 33px 18px 0 0;
+	}
+	
+.extras a {
+	text-decoration: none;
+	font-weight: bold;
+	}
+	
+.extras a:link, .extras a:visited {
+	background: #ccc;
+	color: #fff;
+	padding: 5px;
+	border: 2px solid #fff;
+	}
+	
+.extras a:hover, .extras a:active {
+	background: #DEEEA4;
+	color: #7AB90C;
+	padding: 5px;
+	border: 2px solid #C9E979;
+	}
+	
+.extras li {
+	display: inline;
+	}
+	
+.extras ul {
+	padding: 0 0 10px 0;
+	margin: 0;
+	}
+	
+/* 6)-=-=-=- Forms -=-=-=- */
+	
+input {
+	border: 1px solid #BFBFBF;
+	color: #949494;
+	background: #fff;
+	padding: 2px 5px 1px 5px;
+	font-size: 1em;
+	}
+	
+input:hover {
+	background: #fff;
+	border: 1px solid #ACE149;
+	color: #7DA721;
+	font-size: 1em;
+	}
+	
+textarea {
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 1.1em;
+	border: 1px solid #BFBFBF;
+	color: #949494;
+	padding: 2px 5px 1px 5px;
+	width: 450px;
+	}
+	
+textarea:hover {
+	background: #fff;
+	border: 1px solid #ACE149;
+	color: #7DA721;
+	}
+	
+/* 7)-=-=-=- Accessibility -=-=-=- */
+	
+#skip {
+	display: none;
+	}
+	
+hr { /* Simple style when CSS not in use */
+	display: none;
+	}
+	
+/* 8)-=-=-=- Hacks -=-=-=- */
+	
+.clearfix:after { /* float hack used to float content correctly */
+    content: "."; 
+   	display: block; 
+   	height: 0; 
+   	clear: both; 
+    visibility: hidden;
+	}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */	
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
