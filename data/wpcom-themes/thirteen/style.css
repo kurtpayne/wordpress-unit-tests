@@ -1,0 +1,353 @@
+/*  
+Theme Name: Thirteen
+Theme URI: http://beccary.com/goodies/wordpress-themes/
+Description: A stylish fixed-width two-column theme in green adorned with interesting flora.
+Version: 1.0-wpcom
+Author: Becca Wei
+Author URI: http://beccary.com
+Tags: two-columns, fixed-width, green, rtl-language-support, left-sidebar, widgets, sticky-post
+*/
+
+/* Basics and Typography */
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #4E5706 url(images/bg.gif);
+	color: #000;
+	font-size: x-small;
+	font-family: "Lucida Sans Unicode", Tahoma, Arial, sans-serif;
+	text-align: center;
+	voice-family: "\"}\""; 
+	voice-family: inherit;
+	font-size: small;
+}
+html>body {
+	font-size: small;
+}
+p {
+	margin: 1.2em 0;
+	padding: 0;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+ol, ul {
+	margin: 1.2em 0 1.2em 2.4em;
+	padding: 0;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	margin: 1.2em 0 1.2em 0;
+	padding: 0;
+	color: #4E5706; 
+	font-family: Georgia, serif; 
+}
+h1, h2 {
+	font-size: 1.6em;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.3em;
+}
+h5 {
+	font-size: 1.2em;
+}
+h6 {
+	font-size: 1.1em;
+}
+a {
+	text-decoration: none;	
+}
+a:link {
+	color: #C86C00;
+}
+a:visited, a:active {
+	color: #B26A16;
+}
+.sticky .posttitle, .sticky h2, a:hover {
+	background-color: #4E5706;
+	color: #FFF;
+}
+.sticky h2 {
+padding: 5px;
+}
+.sticky h2 a {
+border-bottom: 0;
+}
+
+#sidebar a:link, #footer a:link {
+	color: #C79A65;
+}
+#sidebar a:visited, #sidebar a:active, #footer a:visited, #footer a:active {
+	color: #C0996C;
+}
+#sidebar a:hover, #footer a:hover {
+	background-color: #A3963B;
+	color: #000;
+}
+blockquote {
+	margin: 0 20px;
+	padding: 0 20px;
+	border-left: 4px solid #4E5706;
+	font-size: 0.92em;
+}
+code {
+	color: #333;
+	font-family: monospace;
+}
+input, textarea, select {	
+	background-color: #FFF;
+	border: 1px solid #4E5706;
+	color: #000;
+	font: 1em "Lucida Sans Unicode", Tahoma, Arial, sans-serif;
+}
+.submit {
+	border: 1px solid #000;
+	background-color: #4E5706;
+	color: #FFF;
+}
+form, img {
+	border: 0; 
+	margin: 0; 
+	padding: 0;
+}
+
+/* The Layout */
+
+#headwrapper {
+	height: 350px;
+	background: url(images/bg2.gif) repeat-x;
+}
+#header {
+	margin: 0 auto;
+	width: 765px;
+	height: 85px;
+	background: url(images/header.gif) no-repeat;
+	text-align: left;
+	overflow: hidden;
+}
+
+	/* Header Styles */
+	
+	#title {
+		margin: 0;
+		padding: 10px 0 0 237px;
+		font-size: 2.6em;
+		font-variant: small-caps;
+	}
+	#title a {
+		display: block;
+		float: left;
+		padding: 10px 25px 0 25px;
+		height: 55px;
+		background: #A79E45 url(images/title.gif) repeat-x;
+		color: #2C3101;
+		voice-family: "\"}\""; 
+		voice-family: inherit;
+		height: 45px;
+	}
+	html>body #title a {
+		height: 45px;
+	}
+	
+#wrapper {
+	margin: -265px auto 0 auto;
+	width: 765px;
+	background: #FFFFE3 url(images/wrapper.gif) repeat-y;
+	text-align: left;
+	font-size: 0.92em;
+}
+#content {
+	float: right;
+	padding: 0 38px 0 23px;
+	width: 538px;
+	background: url(images/content.gif) no-repeat 100% 0;
+	voice-family: "\"}\""; 
+	voice-family: inherit;
+	width: 477px;
+}
+html>body #content {
+	width: 477px;
+}
+#sidebar {
+	float: right;
+	padding: 265px 15px 0 27px;
+	width: 227px;
+	background: url(images/sidebar.gif) no-repeat;
+	color: #E5E6C2;
+	font-size: 0.92em;
+	voice-family: "\"}\""; 
+	voice-family: inherit;
+	width: 185px;
+}
+html>body #sidebar {
+	width: 185px;
+}
+* html #content, * html #sidebar {
+	overflow: hidden; /* For IE */
+}
+#footer {
+	clear: both;
+	background: url(images/bg.gif);
+	color: #E5E6C2;
+	font-size: 0.92em;
+	position: relative; /* IE disappearing background fix */
+}
+
+	/* Footer Styles */
+	
+	#footer p {
+		margin: 0;
+		padding: 2em 0 1.8em 242px;
+		background: url(images/footer.gif) no-repeat;
+	}
+	* html #footer p {
+		padding-top: 1em; /* IE doubles top padding, reason unknown */
+	}
+	
+/* Sidebar Styles */
+
+#sidebar ul {
+	margin: 0;
+	list-style-type: none;
+}
+#sidebar h2 {
+	margin: 0 -15px;
+	padding: 5px 0 0 15px;
+	height: 28px;
+	background: url(images/sidebarheader.gif) no-repeat;
+	color: #212503;
+	font-size: 1.2em;
+	voice-family: "\"}\""; 
+	voice-family: inherit;
+	height: 23px;
+}
+html>body #sidebar h2 {
+	height: 23px;
+}
+#sidebar ul ul, #sidebar p {
+	margin: 0.6em 0;
+}
+#sidebar ul ul ul {
+	margin: 0;
+}
+#sidebar ul ul li {
+	padding: 0 0 0 15px;
+	background: url(images/bullet.gif) no-repeat 0 0.55em;
+}
+
+/* Blog and Comments */
+
+.post {
+	margin: 0 0 1em 0;
+	padding: 0.1em 0 18px 0;
+	background: url(images/divider.gif) no-repeat 50% 100%;
+}
+.posttitle {
+	margin: 0.6em 0 0 0;
+	padding: 0 0 0.1em 0;
+	background: url(images/underline.gif) no-repeat 0 100%;
+}
+.postdate {
+	margin: 0.1em 0 1.2em 0;
+	color: #7C7D66;
+	font-size: 0.92em;
+}
+.postmeta {
+	clear: both;
+}
+.commentlist {
+	margin: 0 0 0 1.2em;
+	padding: 0 0 0.4em 0;
+}
+#commentlist {
+	position: relative;
+}
+#commentlist li .avatar { 
+	float: left;
+	position: absolute;
+	right: 150px;
+	padding: 2px;
+	border: 1px solid #c5c799; 		
+}
+.commentauthor {
+	margin: 0;
+	padding: 0 0 0.1em 0;
+	background: url(images/underline.gif) no-repeat 0 100%;
+	font-size: 1.1em;
+}
+.commentauthor a {
+	text-decoration: none;
+}
+.commentdate {
+	margin-top: 0.2em;
+	color: #7C7D66;
+	font-size: 0.92em;
+}
+#comment {
+	width: 98%;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
