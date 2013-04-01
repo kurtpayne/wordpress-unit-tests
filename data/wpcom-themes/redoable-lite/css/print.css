@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+	padding: 0 20px;
+}
+
+.itemtext p {
+	line-height: 1.4em;
+}
+
+* {
+	color: black;
+	text-decoration: none;
+}
+
+h3 {
+	font-size: 2em;
+	margin-bottom: 0;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+.comments ol li {
+	list-style-type: none;
+}
+
+li.item {
+	position: relative;
+	margin: 0 0 30px;
+}
+
+.counter, .commentauthor {
+	font-size: 1.1em;
+	position: relative;
+	left: -25px;
+}
+
+.commentauthor {
+	font-weight: bold;
+	left: -14px;
+}
+
+.tagdata, .commentmetadata {
+	display: block;
+}
+
+#header, .metalinks, hr, #rollingarchives, .navigation, .secondary, #footer, hr, .editlink, .commentseditlink, .quoter_comment, #commentform, h4.reply {
+	display: none;
+}
