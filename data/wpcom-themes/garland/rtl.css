@@ -1,0 +1,48 @@
+/*
+RTL for Theme: :  Garland
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:tahoma,Arial,sans-serif
+}
+dl {
+	margin:0.5em 1.5em 1em 0px;
+}
+dl dd {
+	margin:0pt 1.5em 0.5em 0px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family:arial,tahoma;
+}
+textarea, select {
+	font-family:tahoma,arial;
+}
+input {
+	font-family:tahoma,arial;
+	vertical-align:top;
+}
+.content ul li {
+	margin:0.4em 1.5em 0.4em 0px;
+}
+ul.primary-links {
+	float:left;
+}
+#wrapper {
+	direction:rtl;
+}
+.menu li li, .item-list ul li, li.leaf, .links li {
+	padding:0pt 13px 0.3em 0;
+	background-position:right center;
+}
+.commentlist .avatar {
+	float:left;
+	margin-left:25px;
+	margin-right:0px;
+}
+.content img {
+	margin:0 5px;
+}
+#email, #url {
+	direction:ltr;
+}
