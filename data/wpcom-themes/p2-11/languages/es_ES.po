@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Traduccion de P2 al español\n"
+"Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
+"POT-Creation-Date: 2009-03-30 16:48+0300\n"
+"PO-Revision-Date: 2009-04-29 16:19-0300\n"
+"Last-Translator: Luxiano <luxiano.a2000@gmail.com>\n"
+"Language-Team: Luxiano <luxiano.a2000@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: ARGENTINA\n"
+
+#: archive.php:7
+#: author.php:11
+#, php-format
+msgid "Updates from %s"
+msgstr "Actualizaciones de %s"
+
+#: baba.php:1
+#: comment-form.php:1
+#: entry.php:17
+#: functions.php:326
+#: functions.php:715
+#: functions.php:1127
+msgid "Reply"
+msgstr "Responder"
+
+#: baba.php:5
+#: comment-form.php:5
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Debes estar <a href=\"%s\">identificado</a> para publicar un comentario."
+
+#: baba.php:15
+#: comment-form.php:15
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Identificado como <a href=\"%1$s\">%2$s</a>."
+
+#: baba.php:15
+#: comment-form.php:15
+msgid "Log out of this account"
+msgstr "Salir de esta cuenta."
+
+#: baba.php:15
+#: comment-form.php:15
+msgid "Log out &rarr;"
+msgstr "Salir &rarr;"
+
+#: baba.php:20
+#: comment-form.php:20
+msgid "Name <em>(required)</em>"
+msgstr "Nombre <em>(requerido)</em>"
+
+#: baba.php:24
+#: comment-form.php:24
+msgid "Email <em>(required)</em>"
+msgstr "Email <em>(requerido)</em>"
+
+#: baba.php:28
+#: comment-form.php:28
+msgid "Web Site"
+msgstr "Sitio web"
+
+#: baba.php:35
+#: comment-form.php:35
+msgid "Post Comment"
+msgstr "Publicar Comentario"
+
+#: baba.php:38
+#: comment-form.php:38
+#: functions.php:45
+#: post-form.php:24
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Por favor, no cargue esta p&aacute;gina directamente. Gracias!"
+
+#: comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Este post est&aacute; protegido con contrase&ntilde;a. Ingrese la contrase&ntilde;a para ver los comentarios."
+
+#: entry.php:11
+#: functions.php:335
+#: functions.php:709
+#, php-format
+msgid "%s <em>on</em> %s"
+msgstr "%s <em>el</em> %s"
+
+#: entry.php:14
+#: functions.php:245
+#: functions.php:334
+#: functions.php:713
+msgid "Permalink"
+msgstr "Enlace permanente"
+
+#: entry.php:20
+#: functions.php:245
+#: functions.php:330
+#: functions.php:717
+msgid "Edit"
+msgstr "Editar"
+
+#: entry.php:24
+#: functions.php:721
+msgid "Tags:"
+msgstr "Etiquetas:"
+
+#: entry.php:28
+#: functions.php:724
+msgid "(More ...)"
+msgstr "(M&aacute;s...)"
+
+#: footer.php:5
+msgid "Blog at WordPress.com"
+msgstr "Blog en WordPress.com"
+
+#: footer.php:5
+#, php-format
+msgid "P2 theme by %s."
+msgstr "Plantilla P2 por %s."
+
+#: functions.php:37
+#: functions.php:525
+#: post-form.php:18
+#: post-form.php:19
+#: post-form.php:20
+msgid "Tag it"
+msgstr "Etiqu&eacute;talo"
+
+#: functions.php:38
+msgid "Go to homepage"
+msgstr "Ir a la p&aacute;gina principal"
+
+#: functions.php:40
+#, php-format
+msgid "%d new update(s)"
+msgstr "%d nueva(s) actualizaci&oacute;n(es)"
+
+#: functions.php:41
+#, php-format
+msgid "%d new comment(s)"
+msgstr "%d nuevo(s) comentario(s)"
+
+#: functions.php:42
+msgid "Jump to top"
+msgstr "Ir al principio"
+
+#: functions.php:43
+msgid "An error has occured, your post was not posted"
+msgstr "Ocurri&oacute; un error, su post no fue publicado."
+
+#: functions.php:44
+msgid "You update has been posted"
+msgstr "Su actualizaci&oacute; fue publicada"
+
+#: functions.php:46
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: functions.php:47
+msgid "Save"
+msgstr "Guardar"
+
+#: functions.php:48
+#: index.php:14
+msgid "Hide threads"
+msgstr "Ocultar temas"
+
+#: functions.php:49
+msgid "Show threads"
+msgstr "Mostrar temas"
+
+#: functions.php:122
+#: functions.php:225
+#: functions.php:226
+#: sidebar.php:7
+msgid "Recent Tags"
+msgstr "Etiquetas recientes"
+
+#: functions.php:185
+msgid "All Updates RSS"
+msgstr "Todas las Actualizaciones RSS"
+
+#: functions.php:215
+#: functions.php:806
+msgid "Title:"
+msgstr "T&iacute;tulo:"
+
+#: functions.php:219
+msgid "Num of tags to show:"
+msgstr "N&uacute;mero de etiquetas a mostrar:"
+
+#: functions.php:250
+#: functions.php:332
+msgid "Your comment is awaiting moderation."
+msgstr "Tu comentario aguarda moderaci&oacute;n."
+
+#: functions.php:261
+msgid "Anonymous"
+msgstr "An&oacute;nimo"
+
+#: functions.php:307
+#, php-format
+msgid "%s on <a href='%s' class='tooltip' title='%s'>%s</a>"
+msgstr "%s en <a href='%s' class='tooltip' title='%s'>%s</a>"
+
+#: functions.php:330
+msgid "Edit comment"
+msgstr "Editar comentario"
+
+#: functions.php:416
+msgid "Video Post"
+msgstr "Post con Video"
+
+#: functions.php:418
+msgid "Image Post"
+msgstr "Post con Im&aacute;gen"
+
+#: functions.php:420
+msgid "No Title"
+msgstr "Sin T&iacute;tulo"
+
+#: functions.php:428
+#: functions.php:459
+#: functions.php:486
+#: functions.php:501
+#: functions.php:516
+msgid "Error: not logged in."
+msgstr "Error: no identificado."
+
+#: functions.php:435
+#: functions.php:491
+msgid "Error: not allowed to edit post."
+msgstr "Error: no est&aacute; autorizado para editar este post."
+
+#: functions.php:467
+msgid "Error: not allowed to edit this comment."
+msgstr "Error: no est&aacute; autorizado para editar este comentario."
+
+#: functions.php:519
+msgid "Error: not allowed to post."
+msgstr "Error: no est&aacute; autorizado para publicar."
+
+#: functions.php:598
+msgid "Error: you must be logged in to post a comment."
+msgstr "Error: debes estar identificado para publicar un comentario."
+
+#: functions.php:606
+msgid "Error: please fill the required fields (name, email)."
+msgstr "Error: por favor complete los campos requeridos (nombre, email)."
+
+#: functions.php:608
+msgid "Error: please enter a valid email address."
+msgstr "Error: por favor, ingrese un email v&aacute;lido."
+
+#: functions.php:613
+msgid "Error: Please type a comment."
+msgstr "Error: Por favor, escriba un comentario."
+
+#: functions.php:630
+msgid "Error: Unknown error occured. Comment not posted."
+msgstr "Error: Ocurri&oacute; un error desconocido. Comentario no publicado."
+
+#: functions.php:747
+#: functions.php:850
+#: functions.php:851
+msgid "Recent Comments"
+msgstr "Comentarios Recientes"
+
+#: functions.php:807
+msgid "Number of comments to show:"
+msgstr "N&uacute;mero de comentarios a mostrar:"
+
+#: functions.php:807
+msgid "(at most 15)"
+msgstr "(como mucho 15)"
+
+#: functions.php:808
+msgid "Avatar Size (px):"
+msgstr "Tama&ntilde;o de avatar (px):"
+
+#: functions.php:809
+msgid "No Avatars"
+msgstr "Sin Avatar"
+
+#: functions.php:816
+msgid "Avatar background color:"
+msgstr "Color de fondo de avatar:"
+
+#: functions.php:817
+msgid "Text background color:"
+msgstr "Color de fondo del texto:"
+
+#: functions.php:1128
+msgid "Log in to Reply"
+msgstr "Identificarse para Responder"
+
+#: functions.php:1171
+msgid "&larr;&nbsp;Newer&nbsp;Posts"
+msgstr "&larr;&nbsp;P&aacute;gina&nbsp;Anterior"
+
+#: functions.php:1171
+msgid "Older&nbsp;Posts&nbsp;&rarr;"
+msgstr "Siguiente&nbsp;P&aacute;gina&nbsp;&rarr;"
+
+#: header.php:17
+msgid "compose new post"
+msgstr "componer nuevo post"
+
+#: header.php:18
+msgid "next post/next comment"
+msgstr "siguiente post/siguiente comentario"
+
+#: header.php:19
+msgid "previous post/previous comment"
+msgstr "anterior post/anterior comentario"
+
+#: header.php:20
+msgid "reply"
+msgstr "responder"
+
+#: header.php:21
+msgid "edit"
+msgstr "editar"
+
+#: header.php:22
+msgid "show/hide comments"
+msgstr "mostrar/ocultar comentarios"
+
+#: header.php:23
+msgid "go to top"
+msgstr "ir al principio"
+
+#: header.php:24
+msgid "cancel"
+msgstr "cancelar"
+
+#: index.php:11
+msgid "Recent Updates"
+msgstr "Actualizaciones Recientes"
+
+#: index.php:11
+#, php-format
+msgid "Page %s"
+msgstr "P&aacute;gina %s"
+
+#: index.php:14
+msgid "Keyboard Shortcuts"
+msgstr "Atajos de Teclado"
+
+#: index.php:30
+msgid "No posts yet!"
+msgstr "Sin posts a&uacute;n!"
+
+#: page.php:15
+msgid "Read the rest of this page &rarr;"
+msgstr "Lee el resto de esta p&aacute;gina &rarr;"
+
+#: page.php:19
+msgid "Pages:"
+msgstr "P&aacute;ginas:"
+
+#: post-form.php:12
+#, php-format
+msgid "Hi, %s. Whatcha up to?"
+msgstr "Hola, %s. Qu&eacute; cuentas?"
+
+#: post-form.php:21
+msgid "Post it"
+msgstr "Publicar"
+
+#: search.php:6
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Resultados de la B&uacute;squeda para: %s"
+
+#: search.php:20
+#: single.php:19
+#: tag.php:25
+msgid "No posts found!"
+msgstr "No se encontraron posts!"
+
+#: tag.php:11
+#, php-format
+msgid "Latest Updates: %s"
+msgstr "&Uacute;ltimas Actualizaciones: %s"
+
