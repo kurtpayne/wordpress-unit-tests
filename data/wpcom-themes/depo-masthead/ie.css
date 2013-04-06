@@ -1,0 +1,15 @@
+.navigation .next, .navigation .previous { position: relative; }
+.navigation .previous { float: left;}
+.navigation .next { float: right; }
+.navigation .previous .arrow { float: none; left: 0; top: 0;}
+.navigation .next .arrow { right: 0;}
+.navigation .link { display: block; float: none; }
+
+
+#showcomments.archive .divider { height: 1px ; background: #d1d1d1; position: absolute; left: 0; top: 50%; width: 604px; z-index: 1;}
+
+body { padding-top: 44px; }
+#comments #respond form { border-bottom: 2em solid white; margin-bottom: 0;}
+#comments #respond form .form { padding-bottom: 17px; }
+#comments #respond form .form p { clear: both; padding: 0; margin: 0; line-height: 1em; }
+#comments #respond form .form #submit { display: block; margin-bottom: 17px; }
