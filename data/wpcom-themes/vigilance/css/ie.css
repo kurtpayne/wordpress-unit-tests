@@ -1,0 +1,4 @@
+/* clear the floats for all our IE friends*/
+.clear, li.comment {zoom: 1;}
+/*IE doesn't like the top border on our navigation list items */
+#nav ul { position: relative; }
