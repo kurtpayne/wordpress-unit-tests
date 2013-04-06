@@ -1,0 +1,548 @@
+/*  
+Theme Name: Sapphire
+Theme URI: http://www.michaelmartine.com/
+Description: A two-column blueish theme with that professional "Apple" feel.
+Version: 1.0-wpcom
+Tags: custom-header, two-columns, fixed-width, blue, right-sidebar, widgets, white, rtl-language-support
+Author: Michael Martine
+Author URI: http://www.michaelmartine.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+	
+	Tweak this CSS howsoever you will.
+	
+	Under the GPL, I have the right to sell this WordPress theme to you. Once the theme is yours, you 
+	have the same rights that I had. 
+
+	*** REGARDING IMAGES ***
+	All CSS that involves the use of images, can be found in the 'index.php' file.
+	This is to ease installation inside subdirectories of a server.
+	
+	CSS SECTIONS IN ORDER:
+	Sidebar, Posts, Headings, Images, Forms, Comments, Content Area, Footer
+	
+
+*/
+
+/* Sidebar */
+
+#sidebar h2 {
+	font-family: Georgia, Serif;
+	font-size: 1.2em;
+	margin: 15px 0 10px 0;
+	padding: 0;
+	}
+
+#sidebar {
+	padding: 20px 0 10px 0;
+	margin-left: 545px;
+	width: 190px;
+	font: 1.2em Verdana, Arial, Sans-Serif;
+	color: #000;
+	}
+
+.page_item a:hover {
+	text-decoration: none;
+	}
+
+.page item current_page_item {
+	color: #000;
+	}
+
+.navigation {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 60px;
+	}
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0;
+	padding: 0;
+	}
+
+#sidebar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	margin-bottom: 5px;
+	}
+
+#sidebar ul p, #sidebar ul select {
+	margin: 5px 0 8px;
+	}
+
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px 0 0 10px;
+	}
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 0 0 10px;
+	}
+
+ol li, #sidebar ul ol li {
+	list-style: decimal outside;
+	}
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 3px 0 0;
+	padding: 0;
+	}
+
+/* Posts */
+.postmetadata {
+	clear: both;
+}
+
+
+.widecolumn .postmetadata {
+	margin: 30px 0;
+	font-size: .7em;
+	}
+
+.entry p a:visited {
+	color: #666;
+	}
+
+.entry p, .entrytext  {
+	font-family: Georgia, serif;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	text-align: left;
+	}
+	
+.widecolumn .entry p {
+	font-size: 1.3em;
+	}
+
+.narrowcolumn .entry, .widecolumn .entry {
+	line-height: 1.4em;
+	}
+
+.widecolumn {
+	line-height: 1.6em;
+	}
+
+small {
+	font-family: Verdana, Arial, Helvetica, Sans-Serif;
+	font-size: 0.9em;
+	line-height: 2.5em;
+	}
+
+.narrowcolumn {
+	float: left;
+	padding: 0 0 20px 45px;
+	margin: 0px 0 0;
+	width: 450px;
+	overflow: hidden;
+	}
+
+.widecolumn {
+	padding: 10px 0 20px 0;
+	margin: 5px 0 0 150px;
+	width: 450px;
+	overflow: hidden;
+	}
+	
+.post {
+	margin: 0 0 40px;
+	}
+
+.sticky h2 {
+padding-bottom: 5px;
+border-bottom: 3px double #CECECE;
+}
+
+.widecolumn .post {
+	margin: 0;
+	}
+
+.narrowcolumn .postmetadata {
+	padding: 5px;
+}
+
+html>body .entry ul {
+	margin-left: 0px;
+	padding: 0 0 0 30px;
+	list-style: none;
+	padding-left: 10px;
+	text-indent: -10px;
+	} 
+
+html>body .entry li {
+	margin: 7px 0 8px 10px;
+	}
+
+.entry ol {
+	padding: 0 0 0 35px;
+	margin: 0;
+	}
+
+.entry ol li {
+	margin: 0;
+	padding: 0;
+	}
+
+.postmetadata ul, .postmetadata li {
+	display: inline;
+	list-style-type: none;
+	list-style-image: none;
+	}
+	
+/* Headings */
+
+h1, h2, h3 {
+	font-family: Verdana, Arial, Sans-Serif;
+	}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+	}
+
+.description {
+	font-size: 1.7em;
+	text-align: center;
+	}
+
+h2 {
+	font-size: 1.6em;
+	}
+
+h2.pagetitle {
+	font-size: 1.6em;
+	}
+
+h3 {
+	font-size: 1.3em;
+	}
+
+h1, h1 a, h1 a:hover, h1 a:visited, .description {
+	text-decoration: none;
+	color: white;
+	}
+
+h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited {
+	color: #000;
+	}
+
+h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar h2, #wp-calendar caption, cite {
+	text-decoration: none;
+	}
+
+h1 {
+	padding-top: 60px;
+	margin: 0;
+	}
+
+.description {
+	text-align: center;
+	}
+
+h2 {
+	margin: 30px 0 0 0;
+	color: #000;
+	}
+
+h2.pagetitle {
+	margin-top: 30px;
+}
+
+h3 {
+	padding: 0;
+	margin: 30px 0 0;
+	}
+
+h3.comments {
+	padding: 0;
+	margin: 40px auto 20px ;
+	}
+
+/* Images */
+p img {
+	padding: 0;
+	margin: 0 5px;
+	}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+
+.alignright {
+	float: right;
+	}
+	
+.alignleft {
+	float: left
+	}
+
+/* Forms */
+#searchform {
+	margin: 0 auto 10px;
+	padding: 5px 3px; 
+	text-align: center;
+	}
+
+#sidebar #searchform #s {
+	width: 115px;
+	padding: 2px;
+	}
+
+#sidebar #searchsubmit {
+	padding: 1px;
+	}
+
+.entry form { /* This is mainly for password protected posts, makes them look better. */
+	text-align:center;
+	}
+
+select {
+	width: 130px;
+	}
+
+#commentform input {
+	width: 170px;
+	padding: 2px;
+	margin: 5px 5px 1px 0;
+	}
+
+#commentform textarea {
+	width: 100%;
+	padding: 2px;
+	border: 1px solid #c2c2c2;
+	}
+
+#commentform #submit {
+	margin: 0;
+	float: right;
+	}
+
+/* Comments */
+.thread-alt {
+	margin: 0;
+	padding: 10px;
+	border: 1px solid #cecece;
+	}
+
+.commentlist {
+	padding: 0;
+	text-align: justify;
+	}
+
+.commentlist li {
+	margin: 15px 0 3px;
+	padding: 5px 0px 3px 10px;
+	list-style: none;
+	}
+
+.commentlist li .avatar {
+	float: right;
+	padding: 2px;
+	border: 1px solid #eee;
+	}
+
+.commentlist p {
+	margin: 10px 5px 10px 0;
+	}
+
+#commentform p {
+	margin: 5px 0;
+	}
+
+.nocomments {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	}
+
+.commentmetadata {
+	margin: 0;
+	display: block;
+	}
+
+.commentlist li, #commentform input, #commentform textarea {
+	font: Verdana, Arial, Sans-Serif;
+	}
+	
+.commentlist li {
+	font-weight: bold;
+	}
+
+.commentlist cite, .commentlist cite a {
+	font-weight: bold;
+	font-style: normal;
+	font-size: 1.1em;
+	}
+
+.commentlist p {
+	font-weight: normal;
+	line-height: 1.5em;
+	text-transform: none;
+	}
+
+#commentform p {
+	font-family: Verdana, Arial, Sans-Serif;
+	}
+
+.commentmetadata {
+	font-weight: normal;
+	}
+
+/* Main Content Area */
+
+body {
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-family: Verdana, Arial, Sans-Serif;
+	background-color: #d5d6d7;
+	color: #000;
+	text-align: center;
+	margin: 0;
+	padding: 0; 
+	}
+	
+#page {
+	border: 1px solid #959596;
+	text-align: left;
+	background-color: white;
+	margin: 20px auto;
+	padding: 0;
+	width: 760px;
+	border: 1px solid #959596;
+	}
+
+#header {
+	padding: 0;
+	margin: 0 auto;
+	height: 200px;
+	width: 100%;
+	background-color: #73a0c5;
+	}
+
+#content {
+	font-size: 1.2em
+	overflow: hidden;
+	}
+
+code {
+	font: 1.1em 'Courier New', Courier, Fixed;
+	}
+
+acronym, abbr, span.caps
+{
+	font-size: 0.9em;
+	letter-spacing: .07em;
+	}
+
+a, h2 a:hover, h3 a:hover {
+	color: #c60;
+	text-decoration: none;
+	}
+
+a:hover {
+	color: #f90;
+	text-decoration: underline;
+	}
+	
+#headerimg {
+	margin: 0;
+	height: 200px;
+	width: 100%;
+	}
+
+acronym, abbr, span.caps {
+	cursor: help;
+	}
+
+acronym, abbr {
+	border-bottom: 1px dashed #999;
+	}
+
+blockquote {
+	margin: 15px 30px 0 10px;
+	padding-left: 20px;
+	border: 3px double #cecece;
+	font-style: italic;
+	}
+
+blockquote cite {
+	margin: 5px 0 0;
+	display: block;
+	}
+
+.center {
+	text-align: center;
+	}
+
+hr {
+	display: none;
+	}
+
+a img {
+	border: none;
+	}
+
+/* Footer */
+
+#footer {
+	background-color: #333;
+	color: #fff;
+	margin: 0 auto;
+	width: 760px;
+	clear: both;
+	}
+* html #footer {
+	padding: 0 0 0 1px;
+}
+#footer p {
+	margin: 0;
+	padding: 20px 0;
+	text-align: center;
+	}
+
+#footer a {
+	color: #fff;
+	}	
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption, .wp-caption p {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
