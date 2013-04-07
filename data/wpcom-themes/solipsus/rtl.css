@@ -1,0 +1,83 @@
+﻿/*
+RTL for Theme: : Solipsus
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:Tahoma,Arial,sans-serif;
+	direction:rtl;
+	line-height:150%;
+}
+#wrapper {
+	text-align:right;
+}
+#header h1 {
+	text-align:left;
+	font-family:arial;
+}
+blockquote {
+	padding:0pt 55px 0px 20px;
+	background-position:right top;
+}
+.posttitle a {
+	float:right;
+	font-family:Arial, Tahoma;
+}
+.postmeta {
+	padding-right:10px;
+}
+#sidebar h2 {
+	padding:5px 25px 5px 0;
+	background-position:right center;
+	font-family:tahoma;
+}
+#sidebar ul ul {
+	padding-left:0;
+	padding-right:5px;
+}
+#sidebar ul ul li {
+	padding:0pt 10px 0pt 0;
+}
+#sidebar ul ul li a {
+	padding:2px 18px 2px 2px;
+	margin:0pt -10px 0pt 0px;
+}
+#sidebar ul ul li a#activetheme {
+	padding:4px 20px 0px 0px;
+}
+#sidebar ul ul li a:hover {
+	padding:4px 20px 0px 0;
+}
+#sidebar ul ul ul li a {
+	margin:0pt -25px 0pt 0px;
+	padding:2px 35px 2px 10px;
+}
+#sidebar h2 img {
+	margin:0;
+	padding:0;
+}
+.post ul li, .page ul li {
+	background-position:right top;
+	padding-left:0;
+	padding-right:28px;
+}
+.commentslink {
+	background:transparent none repeat scroll 0%;
+}
+#commentlist {
+	padding-right:10px;
+	padding-left:0px;
+}
+h1, h2, h3, h4, h5, h6 {
+	padding-right:10px;
+	padding-left:0px;
+	font-family:arial, tahoma;
+}
+code {
+	display:block;
+	direction:ltr;
+	text-align:left;
+}
+#email, #url {
+	direction:ltr;
+}
