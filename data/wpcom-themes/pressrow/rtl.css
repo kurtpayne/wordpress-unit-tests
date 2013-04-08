@@ -1,0 +1,123 @@
+/*
+RTL: Yoav Farhi
+*/
+
+body { direction:rtl; unicode-bidi:embed; }
+
+/*---:[ global elements ]:---*/
+
+pre { float: right; }
+
+/*---:[ headlines ]:---*/
+
+	#header h1 { text-align: left; }
+		
+	h2.archive_head {  padding: 4px 32px 4px 4px; background-position: 470px 50%; }
+	
+	h2.comment_head { padding-left: 0; padding-right:0; background-position:right center; }
+	
+
+/*---:[ core layout elements ]:---*/
+
+	#page { float: right; }
+		#header { float: right; }
+		#content_box { text-align: right; float: right; }
+			#content { padding-left: 40px; padding-right:0;  float: right; }
+			
+			
+			#sidebar { float: right; }
+		
+		#footer { float:right; }
+
+/*---:[ header styles ]:---*/
+
+#nav {  float: right; }
+		#nav li { float: right; }
+		
+			#nav li a, #nav li a:visited { float: right; }
+
+#pic { float: right; }
+
+/*---:[ content styles ]:---*/
+.post, .page, .attachment {  float: right; }
+	.entry ul, .entry ol { margin: 0 40px 15px 0px; }
+		.entry ul li ul, .entry ul li ol, .entry ol li ul, .entry ol li ol { margin: 0 30px 0 0; }
+
+	.entry dd { margin: 0 20px 0 0px;  }
+
+	.entry img.left { padding: 6px; margin: 0 10px 5px 0; background: #f5f5f5; border: 1px solid #bbb; float: left; }
+
+	.entry img.left_off { margin: 0 10px 5px 0; float: left; }
+	
+	.entry img.right { padding: 6px; margin: 0 0 5px 10px; background: #f5f5f5; border: 1px solid #bbb; float: right; }
+
+	.entry img.right_off { margin: 0 0 5px 10px; float: right; }
+	
+	.entry img.center { display: block; padding: 6px; margin: 0 auto 15px auto; background: #f5f5f5; border: 1px solid #bbb; }
+	
+	.entry img.center_off { display: block; margin: 0 auto 15px auto; }
+	
+	.post_meta { float: right; }
+	
+		p.num_comments { padding-right: 27px; padding-left:0; background-position: right center; float: left; }
+	
+		p.tagged { padding-right: 27px;  padding-left: 0; background-position: right top;  float: right; }
+	
+.navigation { float: right; }
+
+
+	.next { padding-right:0; padding-left: 27px; margin-bottom: 0; background: url('images/icon_previous.gif') 0 50% no-repeat; float: left; }
+	
+	.previous {  padding-left:0; padding-right: 27px; margin-bottom: 0; background: url('images/icon_next.gif') 100% 50% no-repeat; float: right; }
+	
+	.jump { padding: 4px 33px 4px 6px; margin: 0 10px 10px; background-position: right 50%; float: left; }
+
+
+/*---:[ sidebar styles ]:---*/
+
+		#sidebar ul li.widget ul { padding: 10px 20px 7px 0; }
+
+	
+			#sidebar ul li ul, #sidebar ul li ol { padding-right: 20px; padding-left: 0; }
+
+				#sidebar ul li ul li, #sidebar ul li ol li { padding: 3px 0 3px 10px; }
+
+					.quick_date { padding-right:10px; padding-left: 0; }
+	
+#akismetwrap {  padding-right: 10px; padding-left: 0; }
+
+
+/*---:[ comment styles ]:---*/
+
+#comments {  float: right; }
+
+	ul.comment_list { float: right; }
+
+		ul.comment_list li .children { padding-right: 20px; padding-left: 0; }
+	
+				.avatar { float: left; margin: 0 10px 10px 0; }
+
+/*---:[ comment form styles ]:---*/
+
+#comment_form { float: right; }
+
+		#comment_form label { padding-right: 10px;  padding-left: 0; }
+
+		#comment_form .text_input { border-right: 2px solid #999; border-left: 1px solid #fff; }
+		
+		#comment_form .text_area { border-right: 2px solid #999; border-left: 1px solid #fff;  }
+	
+		#comment_form .text_input:focus, #comment_form .text_area:focus { border-right: 2px solid #444; border-left: 1px solid #ddd; }
+	
+
+/*---:[ search form styles ]:---*/
+
+	#searchform #s, #search_form .text_input { border-right: 1px solid #999; border-left: 1px solid #f5f5f5; }
+	
+	#searchform #s, #search_form .text_input:focus { border-right: 1px solid #444; border-left: 1px solid #ddd; }
+
+
+.entry dd .wp-caption p.wp-caption-text, .wp-caption p.wp-caption-text {
+	padding: 0 0 5px 4px;
+}
+
