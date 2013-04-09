@@ -6,7 +6,7 @@ before_script:
  # Setup config file
  - cp wp-tests-config-sample.php wp-tests-config.php
  - sed -i 's/yourdbnamehere/wordpress_tests/g' wp-tests-config.php
- - sed -i 's/yourdbnamehere/root/g' wp-tests-config.php
+ - sed -i 's/yourusernamehere/root/g' wp-tests-config.php
  - sed -i 's/yourpasswordhere//g' wp-tests-config.php
  - mysql -e 'create database wordpress_tests;'
 
