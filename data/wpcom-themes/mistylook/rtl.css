@@ -1,0 +1,78 @@
+﻿/*
+RTL for Theme: : MistyLook
+Persian Editors: Navid Kashani,Mahyar Abbaspour
+Persian WordPress Project : wp-persian.com
+*/
+blockquote {
+	background-position:right top;
+	padding:0 50px 10px 0;
+}
+body,input.textbox, textarea {
+	font-family:tahoma, arial;
+}
+h1, h2, h3, h4, h5, h6, .post h4 {
+	font-family:arial, tahoma;
+}
+#container {
+	text-align:right;
+	direction:rtl;
+}
+#navigation {
+	font-family:arial;
+	letter-spacing:0;
+	text-align:right;
+}
+#navigation ul li.search {
+	direction:rtl;
+}
+#header {
+	float:right;
+}
+#header h1 {
+	margin:10px 10px 0 0;
+	letter-spacing:0;
+}
+#header h2 {
+	letter-spacing:0;
+	margin:5px 10px 0 0;
+}
+#feedarea dl dd {
+	background:none;
+}
+#content .post-info {
+	background-position:right bottom
+}
+#sidebar ul ul {
+	margin:0.5em 1em 0 0;
+}
+#sidebar ul ul ul {
+	margin: 0 1em 0 0;
+}
+li.sidebox h2 {
+	text-align:right;
+}
+#footer {
+	text-align:right;
+	direction:rtl;
+}
+#footer p {
+	float:right;
+}
+.commentlist li .cmtinfo em, .cmtinfo .avatar {
+	float:left;
+}
+#content .trackback, #content .commentsfeed {
+	padding-left:0;
+	padding-right:20px;
+	background-position:right center;
+	display:block;
+}
+code {
+	display:block;
+	text-align:left;
+	direction:ltr;
+	background-color:#CFCFCF;
+}
+#email, #url {
+	direction:ltr;
+}
