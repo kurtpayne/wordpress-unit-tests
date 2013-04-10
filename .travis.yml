@@ -5,8 +5,8 @@ before_script:
 
  # Setup config file
  - cp wp-tests-config-sample.php wp-tests-config.php
- - sed -i 's/yourdbnamehere/wordpress_tests/g' wp-tests-config.php
- - sed -i 's/yourusernamehere/root/g' wp-tests-config.php
+ - sed -i 's/putyourdbnamehere/wordpress_tests/g' wp-tests-config.php
+ - sed -i 's/usernamehere/root/g' wp-tests-config.php
  - sed -i 's/yourpasswordhere//g' wp-tests-config.php
  - mysql -e 'create database wordpress_tests;'
 
@@ -15,7 +15,7 @@ before_script:
  # - echo "disable_functions = set_time_limit" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
 
 script:
- - phpunit -c phpunit.xml.dist
+ - phpunit -c phpunit.xml
 
 after_script:
  - rm wp-tests-config.php
