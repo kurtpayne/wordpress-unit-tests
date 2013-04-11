@@ -1,0 +1,148 @@
+/*
+Theme: Iceburgg
+RTL: Yoav Farhi
+*/
+
+body {
+direction:rtl;
+unicode-bidi:embed;
+}
+
+
+#logo .title {
+float: right;
+padding-left: 0;
+padding-right: 10px;
+}
+
+#logo .tagline {
+text-align: left;
+float: left;
+padding-left: 10px;
+padding-right: 0;
+}
+
+
+#navigation ul li {
+float: right;
+}
+
+#n
+#navigation ul li a {
+float: right;
+margin: 0 0 0 1px;
+}
+
+
+#maincontent .post .words {
+float: left;
+padding-right: 0;
+padding-left: 5px;
+}
+
+/*
++++++++
+Continue With Everything Else
++++++++
+*/
+
+#maincontent .post .words ul {
+margin-left: 0;
+margin-right: 1.5em;
+}
+
+
+#maincontent .post .words blockquote {
+margin-left: 0;
+margin-right: 10px;
+}
+
+
+#middle .left {
+float: right;
+margin-left: 14px;
+margin-right: 0;
+border-left: 1px solid #e2e2e2;
+border-right: 0;
+}
+
+#middle .mid {
+float: right;
+margin-left: 14px;
+margin-right: 0;
+border-left: 1px solid #e2e2e2;
+border-right:0;
+}
+
+#middle .right {
+float: left;
+}
+
+#middle ul {
+margin-right: 25px;
+margin-left: 0;
+}
+
+
+/*
+++++++++++
+Postbit
+++++++++++
+*/
+
+#maincontent .pb {
+margin-right: 0;
+margin-left: 10px;
+float: right;
+}
+
+/*
+**********************************
+POST COMMENTS
+**********************************
+*/
+
+#commentarea {
+float: left;
+padding-left: 5px;
+padding-right: 0;
+}
+
+.comleft {
+float: right;
+}
+
+.comright {
+float: left;
+text-align: left;
+}
+
+/* Comment/Trackback Favatars & Gravatars */
+.comment-favatar {
+	float: left;
+}
+
+.trackback-favatar {
+	float: right;
+	margin: 2px 2px 0 6px;
+}
+.comment-gravatar img {
+	float: left;
+}
+
+.comment-author .avatar {
+	margin-left: -5px;
+	margin-right: 0;
+	float: left;
+	}
+
+ol.commentlist blockquote {
+	background-position: right top !important;
+}
+
+#maincontent .sidecomments {
+margin-left: 10px;
+margin-right: 0;
+float: right;
+}
+
