@@ -1,0 +1,185 @@
+/* Background Graphics --------------------------------------------- */
+
+#container {
+	background-image: url(back_content.gif);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+
+#header {
+	background-image: url(back_header.gif);
+	background-repeat: repeat-x;
+}
+
+
+#footer {
+	background-image: url(back_footer.gif);
+	background-repeat: repeat-x;
+}
+
+#footer .style_content {
+	background-image: url(footer.jpg);
+	background-repeat: no-repeat;
+}
+
+.comment .metadata {
+	background-image: url(back_comment.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+.prominent {
+	background-image: url(back_corner_top.gif);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.prominent .inner {
+	margin: 0px;
+	padding: 20px 20px 1px;
+	background-image: url(back_corner_bottom.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+}
+
+#container .comment .metadata {
+	background-image: url(back_comment.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	height: 65px;
+}
+
+
+/* Color ----------------------------------------------------------- */
+
+#div {
+	border: 1px solid #FF0000;
+}
+
+body {
+	background-color: #333333;
+}
+
+a, a:link {
+	color: #9e3c03;
+}
+
+a:hover, a:active {
+	color: #e05505;
+}
+
+#header a, #header a:link, #footer a, #footer a:link {
+	color: #FFFFFF;
+}
+
+#header a:hover, #header a:active, #footer a:hover, #footer a:active {
+	color: #DDDDDD;
+}
+
+#content .summary {
+	padding-top: 20px;
+	border-top: 1px dotted #cacaca;
+	background-position: 0px 20px;
+}
+
+.prominent, .comment .metadata {
+	background-color: #333333;
+	color: #ffffff;
+	margin: 0px 0px 15px;
+	padding: 10px 10px 0px 10px;
+}
+
+.prominent a, .prominent a:link, .comment .metadata a, .comment .metadata a:link {
+	color: #e05505;
+}
+
+.prominent a:hover, .prominent a:active, .comment .metadata a:hover, .comment .metadata a:active {
+	color: #9e3c03;
+}
+
+
+#header, #footer {
+	color: #ffffff;
+}
+
+/* Typography ------------------------------------------------------ */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #382e1f;
+	line-height: 18pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 900;
+	letter-spacing: -0.06em;
+}
+
+.reduced p, .reduced center, .reduced blockquote, .reduced quote, .reduced pre, .reduced ol, .reduced ul, .reduced table, .reduced dl, .reduced dd, .reduced dt {
+	font-size: 95%;
+	line-height: 160%;
+}
+
+/* Layout ---------------------------------------------------------- */
+
+
+
+#content .style_content {
+	padding: 25px 40px 0px;
+}
+
+html>body #content .style_content {
+	padding: 25px 0px 0px;
+}
+
+.content img {
+	margin: 0px 10px 15px;
+	border: 0px none;
+}
+
+#container .comment .comment_number {
+	font-weight: 900;
+	letter-spacing: -0.06em;
+}
+
+#button_email_address {
+	vertical-align: middle;
+}
+
+#widgets.home {
+	width: 320px;
+}
+
+#container .widget_set {
+	width: 149px;
+	padding-left: 20px;
+	border-left: 1px dotted #cacaca;
+}
+
+html>body #container .widget_set {
+	width: 129px;
+	padding-left: 20px;
+	border-left: 1px dotted #cacaca;
+}
+
+.flickr_photo, .flickr_photo_last  {
+	margin-bottom: 10px;
+}
+
+
+
+/* Forms ----------------------------------------------------------- */
+
+.input {
+	background-color: #FFFFFF;
+	background-image: url(../../assets/images/back_input.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	border: 1px solid #a79d8f;
+	margin: 0px;
+	padding: 2px 1px;
+	line-height: inherit;
+	font-size: inherit;
+	display: inline;
+}
