@@ -1,0 +1,45 @@
+#page {
+	width:780px;
+	margin: 0 auto;
+	padding: 0;
+}
+#title {
+	height: 51px;
+}
+#frame {
+	margin: 0 -22px 0 0;
+}
+.menu li a {
+	display: block;
+	float: left;
+	height: 48px;
+}
+.menu li a.last_menu,
+.menu li a.last_menu_off {
+	padding-right:35px;
+	height: 80px;
+}
+#content {
+	width:500px !important;
+}
+#footer .footer_content {
+	border-top: none;
+}
+#footer {
+	margin-bottom: 0;
+}
+input,
+label {
+	height:2em;
+}
+#sidebar input.btn,
+#searchform input {
+	width:75px;
+}
+.menu li a {
+	line-height:80px;
+}
+#footer .footer_content {       
+	width:780px;
+	margin-left:1px;
+}
