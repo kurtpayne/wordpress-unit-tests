@@ -1,0 +1,478 @@
+# Norwegian Bokmal translations for PACKAGE package.
+# This file is put in the public domain.
+#  <kjellkk@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Sandbox 1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-10 00:53-0500\n"
+"PO-Revision-Date: 2008-06-09 10:52+0100\n"
+"Last-Translator: Havard Grimelid <hgrimelid@gmail.com>\n"
+"Language-Team: Norwegian Nynorsk <hgrimelid@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Norwegian Nynorsk\n"
+"X-Poedit-Country: NORWAY\n"
+
+#: 404.php:7
+#: header.php:4
+msgid "Not Found"
+msgstr "Ikkje funne"
+
+#: 404.php:9
+msgid "Apologies, but we were unable to find what you were looking for. Perhaps  searching will help."
+msgstr "Vi fann ikkje det du leita etter. Kanskje det hjelper å søke?"
+
+#: 404.php:14
+#: functions.php:271
+#: search.php:53
+#: sidebar.php:39
+msgid "Find"
+msgstr "Søk"
+
+#: archive.php:9
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr "Dagleg arkiv: <span>%s</span>"
+
+#: archive.php:11
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Månadleg arkiv: <span>%s</span>"
+
+#: archive.php:13
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Årleg arkiv: <span>%s</span>"
+
+#: archive.php:15
+msgid "Blog Archives"
+msgstr "Bloggarkiv"
+
+#: archive.php:21
+#: archive.php:48
+#: author.php:12
+#: author.php:37
+#: category.php:10
+#: category.php:39
+#: index.php:7
+#: index.php:35
+#: search.php:11
+#: search.php:39
+#: tag.php:9
+#: tag.php:39
+msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&laquo;</span> Eldre innlegg"
+
+#: archive.php:22
+#: archive.php:49
+#: author.php:13
+#: author.php:38
+#: category.php:11
+#: category.php:40
+#: index.php:8
+#: index.php:36
+#: search.php:12
+#: search.php:40
+#: tag.php:10
+#: tag.php:40
+msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Nyare innlegg <span class=\"meta-nav\">&raquo;</span>"
+
+#: archive.php:28
+#: author.php:19
+#: category.php:17
+#: index.php:13
+#: search.php:18
+#: tag.php:16
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalenke til %s"
+
+#: archive.php:29
+#: author.php:20
+#: category.php:18
+#: index.php:14
+#: search.php:19
+#: tag.php:17
+#, php-format
+msgid "%1$s &#8211; %2$s"
+msgstr "%1$s &#8211; %2$s"
+
+#: archive.php:31
+#: attachment.php:13
+#: author.php:22
+#: category.php:20
+#: index.php:16
+#: search.php:21
+#: single.php:15
+#: tag.php:19
+msgid "Read More <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Les meir <span class=\"meta-nav\">&raquo;</span>"
+
+#: archive.php:35
+#: category.php:24
+#: index.php:21
+#: search.php:25
+#: tag.php:23
+#, php-format
+msgid "By %s"
+msgstr "Av %s"
+
+#: archive.php:35
+#: attachment.php:19
+#: category.php:24
+#: index.php:21
+#: search.php:25
+#: single.php:21
+#: tag.php:23
+#, php-format
+msgid "View all posts by %s"
+msgstr "Sjå alle innlegg av %s"
+
+#: archive.php:37
+#: author.php:26
+#: index.php:23
+#: search.php:27
+#: tag.php:25
+#, php-format
+msgid "Posted in %s"
+msgstr "Publisert i %s"
+
+#: archive.php:39
+#: author.php:28
+#: category.php:30
+#: index.php:25
+msgid "<span class=\"tag-links\">Tagged "
+msgstr "<span class=\"tag-links\">Merka"
+
+#: archive.php:40
+#: archives.php:32
+#: attachment.php:39
+#: author.php:29
+#: category.php:31
+#: comments.php:41
+#: comments.php:67
+#: index.php:26
+#: links.php:21
+#: page.php:14
+#: search.php:31
+#: single.php:41
+#: tag.php:31
+msgid "Edit"
+msgstr "Rediger"
+
+#: archive.php:41
+#: author.php:30
+#: category.php:32
+#: index.php:27
+#: search.php:32
+#: tag.php:32
+msgid "Comments (0)"
+msgstr "Kommentarar (0)"
+
+#: archive.php:41
+#: author.php:30
+#: category.php:32
+#: index.php:27
+#: search.php:32
+#: tag.php:32
+msgid "Comments (1)"
+msgstr "Kommentarar (1)"
+
+#: archive.php:41
+#: author.php:30
+#: category.php:32
+#: index.php:27
+#: search.php:32
+#: tag.php:32
+msgid "Comments (%)"
+msgstr "Kommentarar (%)"
+
+#: archives.php:20
+msgid "Archives by Category"
+msgstr "Arkivert etter kategori"
+
+#: archives.php:26
+msgid "Archives by Month"
+msgstr "Arkivert etter månad"
+
+#: attachment.php:15
+#: index.php:18
+#: single.php:17
+msgid "Pages:"
+msgstr "Sider:"
+
+#: attachment.php:18
+#, php-format
+msgid "This entry was written by %1$s, posted on <abbr class=\"published\" title=\"%2$sT%3$s\">%4$s at %5$s</abbr>, filed under %6$s and tagged %7$s. Bookmark the <a href=\"%8$s\" title=\"Permalink to %9$s\" rel=\"bookmark\">permalink</a>. Follow any comments here with the <a href=\"%10$s\" title=\"Comments RSS to %9$s\" rel=\"alternate\" type=\"application/rss+xml\">RSS feed for this post</a>."
+msgstr "Dette innlegget vart skrive av %1$s, publisert <abbr class=\"published\" title=\"%2$sT%3$s\">%4$s klokka %5$s</abbr>, arkivert under %6$s og merka %7$s. Bokmerk <a href=\"%8$s\" title=\"Permalenke til %9$s\" rel=\"bookmark\">permalenka</a>. Følg opp kommentarar ved hjelp av <a href=\"%10$s\" title=\"Kommentar RSS for %9$s\" rel=\"alternate\" type=\"application/rss+xml\">RSS-straum til dette innlegget</a>."
+
+#: attachment.php:25
+#: single.php:27
+msgid "and tagged"
+msgstr "og merka"
+
+#: attachment.php:31
+#: single.php:33
+#, php-format
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Legg til ein kommentar\">Kommentér</a> eller legg att ei tilbakesporing: <a class=\"trackback-link\" href=\"%s\" title=\"Tilbakesporings-URL for innlegget ditt\" rel=\"trackback\">Tibakesporings-URL</a>."
+
+#: attachment.php:33
+#: single.php:35
+#, php-format
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Kommentarar er stengt, men du kan legge att ei tilbakesporing: <a class=\"trackback-link\" href=\"%s\" title=\"Tilbakesporings-URL til innlegget ditt\" rel=\"trackback\">Tilbakesporings-URL</a>."
+
+#: attachment.php:35
+#: single.php:37
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Tilbakesporing er stengt, men du kan <a class=\"comment-link\" href=\"#respond\" title=\"Legg til kommentar\">kommentere</a>."
+
+#: attachment.php:37
+#: single.php:39
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Både kommentarar og tilbakesporingar er sperra."
+
+#: author.php:8
+#, php-format
+msgid "Author Archives: <span class=\"vcard\">%s</span>"
+msgstr "Forfattararkiv: <span class=\"vcard\">%s</span>"
+
+#: category.php:6
+msgid "Category Archives:"
+msgstr "Kategoriarkiv:"
+
+#: category.php:27
+#, php-format
+msgid "Also posted in %s"
+msgstr "Også arkivert under %s"
+
+#: comments.php:11
+msgid "This post is protected. Enter the password to view any comments."
+msgstr "Dette innlegget er passordbeskytta. Skriv inn passordet for å lese kommentarar."
+
+#: comments.php:30
+#, php-format
+msgid "<span>%d</span> Comments"
+msgstr "<span>%d</span> Kommentarar"
+
+#: comments.php:30
+msgid "<span>One</span> Comment"
+msgstr "<span>Ein</span> kommentar"
+
+#: comments.php:37
+#, php-format
+msgid "Posted %1$s at %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Permalink to this comment\">Permalink</a>"
+msgstr "Posted %1$s at %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Permalenke til denne kommentaren\">Permalink</a>"
+
+#: comments.php:42
+msgid "\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n"
+msgstr "\t\t\t\t\t<span class='unapproved'>Din kommentar ventar på godkjenning.</span>\n"
+
+#: comments.php:56
+#, php-format
+msgid "<span>%d</span> Trackbacks"
+msgstr "<span>%d</span> tilbakesporing"
+
+#: comments.php:56
+msgid "<span>One</span> Trackback"
+msgstr "<span>Ei</span> tilbakesporing"
+
+#: comments.php:63
+#, php-format
+msgid "By %1$s on %2$s at %3$s"
+msgstr "Av %1$s den %2$s kl %3$s"
+
+#: comments.php:68
+msgid "\\t\\t\\t\\t\\t<span class=\"unapproved\">Your trackback is awaiting moderation.</span>\\n"
+msgstr "\\t\\t\\t\\t\\t<span class=\"unapproved\">Tilbakesporinga di ventar på godkjenning.</span>\\n"
+
+#: comments.php:81
+msgid "Post a Comment"
+msgstr "Legg inn ein kommentar"
+
+#: comments.php:84
+#, php-format
+msgid "You must be <a href=\"%s\" title=\"Log in\">logged in</a> to post a comment."
+msgstr "Du må vere <a href=\"%s\" title=\"Log in\">pålogga</a> for å kommentere."
+
+#: comments.php:92
+#, php-format
+msgid "<span class=\"loggedin\">Logged in as <a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">Log out?</a></span>"
+msgstr "<span class=\"loggedin\">Pålogga som <a href=\"%1$s\" title=\"Pålogga som  %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Logg ut frå denne kontoen?\">Logg ut?</a></span>"
+
+#: comments.php:99
+msgid "Your email is <em>never</em> published nor shared."
+msgstr "Epost-adressa di vil <em>aldri</em> bli vist eller videreformidla."
+
+#: comments.php:99
+msgid "Required fields are marked <span class=\"required\">*</span>"
+msgstr "Obligatoriske felt er merka med <span class=\"required\">*</span>"
+
+#: comments.php:101
+msgid "Name"
+msgstr "Namn"
+
+#: comments.php:101
+#: comments.php:104
+msgid "<span class=\"required\">*</span>"
+msgstr "<span class=\"required\">*</span>"
+
+#: comments.php:104
+msgid "Email"
+msgstr "E-post"
+
+#: comments.php:107
+msgid "Website"
+msgstr "Nettstad"
+
+#: comments.php:112
+msgid "Comment"
+msgstr "Kommentar"
+
+#: comments.php:115
+msgid "Post Comment"
+msgstr "Legg til kommentar"
+
+#: footer.php:3
+msgid "WordPress"
+msgstr "WordPress"
+
+#: footer.php:5
+msgid "Sandbox for WordPress"
+msgstr "Sandbox for WordPress"
+
+#: footer.php:5
+msgid "Sandbox"
+msgstr "Sandbox"
+
+#: functions.php:270
+#: functions.php:378
+#: functions.php:380
+#: sidebar.php:35
+msgid "Search"
+msgstr "Søk"
+
+#: functions.php:299
+#: functions.php:352
+msgid "Title:"
+msgstr "Tittel:"
+
+#: functions.php:300
+msgid "Button Text:"
+msgstr "Knappetekst:"
+
+#: functions.php:309
+#: functions.php:387
+#: functions.php:389
+#: sidebar.php:55
+msgid "Meta"
+msgstr "Meta"
+
+#: functions.php:328
+#: functions.php:396
+#: functions.php:397
+msgid "RSS Links"
+msgstr "RSS-lenker"
+
+#: functions.php:333
+#: header.php:8
+#: sidebar.php:49
+msgid "Posts RSS feed"
+msgstr "Innlegg RSS-straum"
+
+#: functions.php:333
+#: sidebar.php:49
+msgid "All posts"
+msgstr "Alle innlegg"
+
+#: functions.php:334
+#: header.php:9
+#: sidebar.php:50
+msgid "Comments RSS feed"
+msgstr "Kommentar RSS-straum"
+
+#: functions.php:334
+#: sidebar.php:50
+msgid "All comments"
+msgstr "Alle kommentarar"
+
+#: functions.php:376
+msgid "A search form for your blog (Sandbox)"
+msgstr "Ein søkeboks til bloggen din (Sandbox)"
+
+#: functions.php:385
+msgid "Log in/out and administration links (Sandbox)"
+msgstr "Logg inn/ut og administrasjonslinker (Sandbox)"
+
+#: functions.php:394
+msgid "RSS links for both posts and comments <small>(Sandbox)</small>"
+msgstr "RSS-lenker for både artiklar og kommentarar <small>(Sandbox)</small>"
+
+#: header.php:4
+msgid " &raquo; "
+msgstr " &raquo; "
+
+#: header.php:25
+msgid "Skip navigation to the content"
+msgstr "Hopp over navigasjon og gå til innhold"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Gå til innhold"
+
+#: page.php:12
+msgid "Pages: "
+msgstr "Sider:"
+
+#: search.php:8
+msgid "Search Results for:"
+msgstr "Søkeresultat for:"
+
+#: search.php:29
+msgid "Tagged "
+msgstr "Merka"
+
+#: search.php:46
+msgid "Nothing Found"
+msgstr "Ingenting funne"
+
+#: search.php:48
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Beklagar, men søket ditt fant ingenting. Prøv igjen med andre nøkkelord."
+
+#: sidebar.php:6
+msgid "Pages"
+msgstr "Sider"
+
+#: sidebar.php:13
+msgid "Categories"
+msgstr "Kategoriar"
+
+#: sidebar.php:21
+msgid "Archives"
+msgstr "Arkiver"
+
+#: sidebar.php:47
+msgid "RSS Feeds"
+msgstr "RSS-straumar"
+
+#: single.php:20
+#, php-format
+msgid "This entry was written by %1$s, posted on <abbr class=\"published\" title=\"%2$sT%3$s\">%4$s at %5$s</abbr>, filed under %6$s%7$s. Bookmark the <a href=\"%8$s\" title=\"Permalink to %9$s\" rel=\"bookmark\">permalink</a>. Follow any comments here with the <a href=\"%10$s\" title=\"Comments RSS to %9$s\" rel=\"alternate\" type=\"application/rss+xml\">RSS feed for this post</a>."
+msgstr "Dette innleget vart skrive av %1$s, publisert <abbr class=\"published\" title=\"%2$sT%3$s\">%4$s klokka %5$s</abbr>, arkivert under %6$s%7$s. Bokmerk <a href=\"%8$s\" title=\"Permalenke til %9$s\" rel=\"bookmark\">permalinken</a>. Hald deg oppdatert på kommentarar: <a href=\"%10$s\" title=\"Kommentar RSS for %9$s\" rel=\"alternate\" type=\"application/rss+xml\">RSS-straum for dette innlegget</a>."
+
+#: tag.php:6
+msgid "Tag Archives:"
+msgstr "Merkelapparkiv:"
+
+#: tag.php:28
+#, php-format
+msgid "Also tagged %s"
+msgstr "Også merka %s"
+
