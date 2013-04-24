@@ -1,0 +1,109 @@
+/*
+Theme: Connections
+RTL by Yoav Farhi, yoav@automattic.com
+*/
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+#rap
+{
+	background:#fff url(img/rap.jpg) center repeat-y;
+	text-align: right;
+}
+
+#headimg {
+	margin: 2px 10px 0 0;
+}
+
+* html #headimg {
+	margin: 2px 9px 0 0;
+}
+
+#content {
+	float:right;
+}
+
+#sidebar {
+	float:left;
+}
+
+blockquote {
+	margin: 15px 45px 0 30px;
+	padding: 0 45px 0 0;
+	background: url(img/blockquote-rtl.gif) no-repeat right top;
+}
+
+
+#header h1
+{
+	padding:10px 0 0 20px;
+	text-align:left;
+}
+
+#header #desc
+{
+	text-align:left;
+	padding:0 0 0 20px;
+}
+
+#sidebar ul ul li
+{
+	padding-right:10px;
+	padding-left:0;
+	margin-right:10px;
+	margin-left:0;
+	background:url(img/subcat_bullet-rtl.gif) no-repeat 100% 6px;
+}
+#content ul {
+	margin-right: 0;
+	margin-left: auto;
+	padding-right: 45px;
+	padding-left: 0;
+}
+#content ul li {
+	background-position: 100% 7px;
+	padding-right: 1.5em;
+	padding-left: 0;
+}
+
+.post-date {
+	float: right;
+	margin: 3px 0 0 10px;
+}
+
+
+.commentlist li .avatar { 
+	float: left; 
+}
+
+#commentform
+{
+	margin:0 40px 0 0 ;
+}
+
+#comments,#respond h3 {
+	margin: 3em 40px 1em 0;
+}
+
+#topnav
+{
+	padding:12px  0 0 20px;
+	text-align:left;
+}
+#topnav li
+{
+	padding:0 5px 0 6px;
+	border-right: 0;
+	border-left: 2px solid #BBC4A3;
+}
+
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
