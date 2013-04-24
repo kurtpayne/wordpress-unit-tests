@@ -1,0 +1,21 @@
+language: php
+php:
+  - 5.3
+before_script:
+
+ # Setup config file
+ - cp wp-tests-config-sample.php wp-tests-config.php
+ - sed -i 's/yourdbnamehere/wordpress_tests/g' wp-tests-config.php
+ - sed -i 's/yourusernamehere/root/g' wp-tests-config.php
+ - sed -i 's/yourpasswordhere//g' wp-tests-config.php
+ - mysql -e 'create database wordpress_tests;'
+
+ # Disable set_time_limit
+ - sed -ri 's/max_execution_time\s*=\s*[0-9]+/max_execution_time = 120/g' `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+ # - echo "disable_functions = set_time_limit" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+
+script:
+ - phpunit -c phpunit.xml.dist
+
+after_script:
+ - rm wp-tests-config.php
