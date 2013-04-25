@@ -1,0 +1,189 @@
+/*
+Theme Name:Duotone
+Theme URI:http://duotonedemo.wordpress.com/
+Description:A photo blogging theme. Colors change to match the photo.
+Version:1.0
+Author:Noel Jackson / eight6
+Author URI:http://eight6.com
+Tags:photoblogging,one column,fixed width,custom colors
+*/
+/* --------------------------------------------------------------
+* Resets default browser CSS.
+Based on work by Eric Meyer:* meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+-------------------------------------------------------------- */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+/* remember to define focus styles! */
+:focus{outline:0;}
+body{line-height:1;color:black;background:white;}
+ol,ul{list-style:none;}
+/* tables still need 'cellspacing="0"' in the markup */
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:normal;}
+blockquote:before,blockquote:after,
+q:before,q:after{content:"";}
+blockquote,q{quotes:"" "";}
+/* Tables still need 'cellspacing="0"' in the markup. */
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:400;}
+/* Remove possible quote marks (") from <q>,<blockquote>. */
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+blockquote,q{quotes:"" "";}
+a img{border:none;}
+/************* END RESET RELOADED *************************/
+body{font:normal 75%/1.6em "Lucida Sans","Lucida Grande","Trebuchet MS",Georgia,Helvetica,sans-serif;color:#444;background-color:white; margin-top: 1em;}
+a,a:link,a:visited,a:active{color:#333;text-decoration:none;}
+a:hover{color:#666;}
+h1,h2,h3,h4,h5,h6{ font-family:"Lucida Fax",Georgia,Helvetica,sans-serif; }
+h2{ font-size:1.5em;line-height:1;font-weight:bold;margin-bottom:.25em;color #333; }
+h2,h2 a,h2 a:link,h2 a:visited,h2 a:active{ color:#6c6c6c;font-weight:bold;text-decoration:none;letter-spacing:-.02em; }
+h2 a:hover{}
+h3{line-height:1em;padding-bottom:5px;font-size:1.2em;font-weight:bold;color:#6e6e6e;}
+h4{}
+#content ul, #content dl, #content ol { margin-left: 20px; }
+#content li { list-style: square; }
+strong{font-weight:bold;}
+blockquote,em, cite, q {font-style:italic;}
+/* Structure */
+#page{width:840px;margin:1.5em auto 35px auto;background-color:white; position: relative;}
+.archive #page{width:820px;}
+.vertical #page{width:560px;}
+/* Header */
+#header{clear:both;}
+h1{font-size:1.5em;line-height:2.666em;float:left;letter-spacing:-.02em;margin-left:10px;}
+h1 a,h1 a:link,h1 a:visited,h1 a:active{color:#333;text-decoration:none;font-weight:bold;}
+h1 a:hover{}
+.archive h1{margin-left:0;}
+.description{float:left;line-height:4em;margin-left:1em;font-style:italic;padding-left:1em;color:#444;}
+#menu{
+right: 0;
+top: -2em;
+position: absolute;	
+float:right;margin-right:10px; font-size: .75em;}
+.archive #menu{margin-right:0;}
+#menu li{display:block;float:left;}
+#menu li a,#menu li a:link,#menu li a:visited,#menu li a:active{display:block;float:left;font-weight:normal;letter-spacing:normal;margin-left:10px;text-transform:uppercase;}
+#menu li.first a{border-left:0;}
+
+
+/* Sidebar */
+#content #sidebar {
+clear: both;
+border-top: 1px solid #ccc;
+margin: 0 10px;
+padding: 0 10px;
+}
+#sidebar ul {
+margin-left: 0;
+}
+#sidebar li {
+list-style: none;
+float: left;
+margin-top: 1em;
+width: 33%;
+}
+#content #sidebar h2 {
+font-size: 1.25em;
+margin: 0 0 .25em 0;
+}
+#sidebar li ul {
+padding-left: 20px;
+}
+#sidebar li ul li {
+width: auto;
+list-style: square;
+float: none;
+margin-top: .5em;
+}
+
+
+
+/* Content */
+#content{clear:both;}
+#content .sleeve{margin:0;}
+.vertical #container{clear:both;margin:0 0 0 10px;}
+#content h2{color:#333;margin-left:210px;margin-top:10px;}
+.archive #content h2{margin-left:0;margin-bottom:10px;}
+.image{float:left;text-align:center;position:relative;width:840px;}
+.image img{margin:0;padding:0 0 10px 0;}
+.vertical .image{width:560px;clear:both;float:none;}
+
+#content ul.thumbnails { list-style-type: none; margin: 0 auto !important; padding: 0 !important; width: 860px; }
+#content .thumbnails li { list-style-type: none; margin: 0 auto; float: left; margin-right: 10px; width:133px; height:85px;}
+a .thumbnail,a:link .thumbnail,a:visited .thumbnail,a:active .thumbnail{background:#c4c4c4; text-align:left; padding: 5px;}
+a:hover .thumbnail{background:#919191;}
+.thumbnail { float: none; width: auto; }
+.thumbnail img { padding: 0;}
+
+#container{clear:both;margin:0 0 0 10px;padding-top:5px;}
+
+/* Post Layout */
+#post{float:left;margin:0 20px 0 0;width:340px;border-top:1px solid #ccc;font-size:1.1em;}
+.vertical #post{margin:0;}
+#post .sleeve{border-top:2px solid #ccc;padding:10px;display:block;position:none;}
+#postmetadata .sleeve{padding:10px; margin-bottom: 20px;}
+#postmetadata,.commentlist li .metadata{font-size:.92em;line-height:1.45em;width:200px;float:left;border-top:1px solid #ccc;}
+#postmetadata cite,
+#postmetadata small{clear:both;}
+#post p{margin-bottom:1.5em;}
+.navigation{font-family:"Courier New","Lucida Grande",Tahoma,"Trebuchet MS",sans-serif;width:260px;font-size:100px;line-height:.5em;float:left; padding-bottom: 20px;}
+.vertical .navigation{margin:0px;width:540px;}
+.navigation div{float:left;display:block;width:50%;}
+.navigation div.prev{text-align:left;}
+.navigation div.next{float:right;text-align:right;}
+.vertical .navigation div.prev{text-align:right;}
+.vertical .navigation div.next{float:right;text-align:left;}
+
+/* Comments list */
+.commentlist{clear:both;width:540px; margin-left: 0 !important;}
+.commentlist li{border-bottom:1px solid #ccc; list-style: none !important; }
+.commentlist li .metadata{border:0;margin:10px 0;width:148px;float:left;}
+.commentlist li .gravatar{float:left;width:32px;margin:10px;}
+.commentlist li cite,
+.commentlist li small{font-weight:bold;clear:both;display:block;}
+.commentlist li .content{padding:10px;float:left;clear:right;width:287px;}
+.commentlist li .clear{clear:both;}
+#content .commentlist .comment p{font-weight:normal ;}
+
+/* Comment Form */
+h3#respond,h3#comments{width:530px;margin:0;padding:0 0 5px 10px;clear:both;border-bottom:1px solid #afb1b2;padding-top:20px;}
+#comments{border-bottom:2px solid #afb1b2;}
+#commentform{width:540px;margin-bottom:10px;}
+#commentform p{padding:10px;}
+#commentform small{display:inline;}
+#commentform .sleeve{margin:10px;}
+#commentform label{width:200px;display:block;float:left;font-size:.96em;line-height:2em;}
+#commentform label{margin:0px;margin-bottom:10px;}
+#commentform p input{float:left;margin:0;border:none;width:310px;padding:3px;margin-bottom:10px;}
+#commentform input#submit{width:15em;height:2em;margin-left:10px;}
+#commentform textarea,#commentform input{font-family:"Lucida Grande",Tahoma,"Trebuchet MS";font-size:1.2em;}
+#commentform p{clear:both;border-top:1px solid #ccc;line-height:1.6em;}
+#commentform textarea{:10px;width:520px;}
+
+/* EXIF */
+.photo-tech { margin-top: 1em; }
+.photo-tech th { margin-right: .5em; }
+.photo-tech td, .photo-tech th { display: inline; }
+/* Footer */
+#footer{clear:both;height:42px;padding-top:20px;margin:0px 10px 0px 10px;width:820px;}
+.archive #footer{margin:0;}
+.vertical #footer{width:540px;}
+#footer .info{clear:both;float:left;width:50%;height:32px;display:block;line-height:32px;position:relative;padding-left:42px;}
+#footer .info img{position:absolute;margin-left:-42px;}
+#searchform{float:right;}
+#searchform #s{width:150px;}
+.archive{margin:0 auto;}
+#filters{clear:both;height:2em;margin-bottom:1em !important; margin-left: 0 !important;}
+#filters li{ list-style: none;  margin-left: 0; float:left;margin-right:2em;}
+a:hover .nav_over{background-color:#afb1b2;}
+.image .nav{position:absolute;width:50%;height:100%;z-index:1000;}
+.image .nav a,.image .nav a:link,.image .nav a:visited,.image .nav a:active{width:100%;height:100%;display:block;position:absolute;text-indent:-1000em;}
+.prev{left:0;width:50%;}
+.next{top:0;left:50%;width:50%;}
+.nav_over{position:absolute;top:50%;margin-top:-1em;display:block;z-index:1000;color:#fff;width:1em;height:1em;line-height:1em;text-align:center;font-size:2em;}
