@@ -1,0 +1,181 @@
+/*  
+Theme: Greenery
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+/**********
+*  Basic  *
+***********/
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+ol, ul {
+	margin: 1.2em 2em 1.2em 0;
+	padding: 0 15px 0 0;
+}
+
+ol {
+	padding: 0 20px 0 0;
+}
+
+blockquote {
+	margin: 0 20px;
+	padding: 0 25px 0 10px;
+	border-right: 4px solid #c9ee58;
+	border-left:0;
+}
+
+.alignleft {
+	float: right;
+	margin-right: 10px;
+	margin-left: 0;
+	clear: right;
+}
+.alignright {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	clear: left;
+}
+
+
+/***********
+*  Layout  *
+************/
+
+#wrapper {
+	text-align: right;
+}
+	
+#content {
+	float: right;
+	margin: 0 14px 0 0;
+	border: 2px solid #8ac60e;
+	border-right: 5px solid #8ac60e;
+	border-left:  2px solid #8ac60e;
+}
+
+#sidebar {
+	float: left;
+	margin: 0 5px 0 14px;
+	border: 2px solid #8ac60e;
+	border-right: 2px solid #8ac60e;
+	border-left:  5px solid #8ac60e;
+}
+
+
+/***********
+*  Header  *
+************/
+
+#header {
+	background: url(images/header-rtl.jpg) top center no-repeat !important;
+}
+
+#header h1 {
+	margin: 10px 40px 0 0;
+}
+
+/* Navigation Menu */
+
+ul.menu {
+	margin: 0 10px 0 0;
+	text-align: right;
+}
+
+
+/************
+*  Sidebar  *
+*************/
+
+#sidebar h2 {
+	margin: 0 10px 0 0 ;
+}
+
+	
+#sidebar ul ul li {
+	padding: 0 12px 0 0;
+	background-position: 100% 3px;
+}
+
+
+.widget div {
+	margin:0pt 10px 0pt 0px;
+}
+
+/************
+*  Entries  *
+*************/
+
+.posttitle {
+	padding: 0 2px 0 0;
+}
+
+.postfeedback {
+	text-align: left;
+}
+
+/* Page Navigation */
+.pagenav,
+.pagenav-alt {
+	float: right;
+}
+.pagenav-alt {
+	text-align: left;
+}
+
+/* Tags & del.icio.us */
+.utwtags {
+	padding: 5px 18px 0 0;
+	background-position: right bottom;
+}
+
+.delicious {
+	padding: 5px 18px 0 0;
+	background-position: right bottom;
+}
+
+
+/*************
+*  Comments  *
+**************/
+
+/* Comment Counter */
+.commentcounter {
+	float: left;
+}
+/* Gravatar */
+.commentgravatar {
+	float: right;
+	margin: 12px 0 0 6px;
+}
+
+
+/**************
+*   Plugins   *
+***************/
+
+/* Sweet Title */
+body div#toolTip {
+	text-align: right;
+}
+
+#akismetwrap {
+	margin-right: 20px;
+	margin-left: 0;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
