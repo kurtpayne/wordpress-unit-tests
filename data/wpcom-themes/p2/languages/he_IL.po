@@ -1,0 +1,394 @@
+# Hebrew translation for P2 theme.
+# This file is distributed under the same license as the P2 theme.
+# Yoav Farhi <yoav@farhi.org>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: p 2\n"
+"Report-Msgid-Bugs-To: wp-polyglots@lists.automattic.com\n"
+"POT-Creation-Date: 2009-03-30 16:48+0300\n"
+"PO-Revision-Date: 2009-03-31 16:42+0200\n"
+"Last-Translator: Yoav Farhi <yoav@farhi.org>\n"
+"Language-Team: Bulgarian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: archive.php:7
+#: author.php:11
+#, php-format
+msgid "Updates from %s"
+msgstr "עדכונים מאת %s"
+
+#: baba.php:1
+#: comment-form.php:1
+#: entry.php:17
+#: functions.php:326
+#: functions.php:715
+#: functions.php:1127
+msgid "Reply"
+msgstr "להגיב"
+
+#: baba.php:5
+#: comment-form.php:5
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "צריך להיות <a href=\"%s\">מחובר</a> כדי להגיב."
+
+#: baba.php:15
+#: comment-form.php:15
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "מחובר עם שם המשתמש <a href=\"%1$s\">%2$s</a>."
+
+#: baba.php:15
+#: comment-form.php:15
+msgid "Log out of this account"
+msgstr "יציאה"
+
+#: baba.php:15
+#: comment-form.php:15
+msgid "Log out &rarr;"
+msgstr "לצאת מהמערכת &rarr;"
+
+#: baba.php:20
+#: comment-form.php:20
+msgid "Name <em>(required)</em>"
+msgstr "שם <em>נדרש</em>"
+
+#: baba.php:24
+#: comment-form.php:24
+msgid "Email <em>(required)</em>"
+msgstr "דואל <em>נדרש</em>"
+
+#: baba.php:28
+#: comment-form.php:28
+msgid "Web Site"
+msgstr "אתר"
+
+#: baba.php:35
+#: comment-form.php:35
+msgid "Post Comment"
+msgstr "הוספת תגובה"
+
+#: baba.php:38
+#: comment-form.php:38
+#: functions.php:45
+#: post-form.php:24
+msgid "Loading..."
+msgstr "טוען..."
+
+#: comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "אין כאן שום דבר."
+
+#: comments.php:6
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "הפוסט הזה מוגן בסיסמה. צריך להזין את הסיסמא כדי לצפות בתגובות."
+
+#: entry.php:11
+#: functions.php:335
+#: functions.php:709
+#, php-format
+msgid "%s <em>on</em> %s"
+msgstr "%s <em>ב</em> %s"
+
+#: entry.php:14
+#: functions.php:245
+#: functions.php:334
+#: functions.php:713
+msgid "Permalink"
+msgstr "קישור קבוע"
+
+#: entry.php:20
+#: functions.php:245
+#: functions.php:330
+#: functions.php:717
+msgid "Edit"
+msgstr "עריכה"
+
+#: entry.php:24
+#: functions.php:721
+msgid "Tags:"
+msgstr "תגיות"
+
+#: entry.php:28
+#: functions.php:724
+msgid "(More ...)"
+msgstr "(המשך...)"
+
+#: footer.php:5
+msgid "Blog at WordPress.com"
+msgstr "בלוג ב-WordPress.com"
+
+#: footer.php:5
+#, php-format
+msgid "P2 theme by %s."
+msgstr "התבנית P2 על ידי %s."
+
+#: functions.php:37
+#: functions.php:525
+#: post-form.php:18
+#: post-form.php:19
+#: post-form.php:20
+msgid "Tag it"
+msgstr "תגיות"
+
+#: functions.php:38
+msgid "Go to homepage"
+msgstr "מעבר לעמוד הבית"
+
+#: functions.php:40
+#, php-format
+msgid "%d new update(s)"
+msgstr "%d עדכונים חדשים"
+
+#: functions.php:41
+#, php-format
+msgid "%d new comment(s)"
+msgstr "%d תגובות חדשות"
+
+#: functions.php:42
+msgid "Jump to top"
+msgstr "קפוץ למעלה"
+
+#: functions.php:43
+msgid "An error has occured, your post was not posted"
+msgstr "ארעה שגיאה, והעדכון לא פורסם"
+
+#: functions.php:44
+msgid "You update has been posted"
+msgstr "העדכון פורסם"
+
+#: functions.php:46
+msgid "Cancel"
+msgstr "ביטול"
+
+#: functions.php:47
+msgid "Save"
+msgstr "שמירה"
+
+#: functions.php:48
+#: index.php:14
+msgid "Hide threads"
+msgstr "הסתר תגובות"
+
+#: functions.php:49
+msgid "Show threads"
+msgstr "הצג תגובות"
+
+#: functions.php:122
+#: functions.php:225
+#: functions.php:226
+#: sidebar.php:7
+msgid "Recent Tags"
+msgstr "תגיות אחרונות"
+
+#: functions.php:185
+msgid "All Updates RSS"
+msgstr "רסס לכל העדכונים"
+
+#: functions.php:215
+#: functions.php:806
+msgid "Title:"
+msgstr "כותרת:"
+
+#: functions.php:219
+msgid "Num of tags to show:"
+msgstr "מספר תגיות שתוצגנה:"
+
+#: functions.php:250
+#: functions.php:332
+msgid "Your comment is awaiting moderation."
+msgstr "תגובתך ממתינה לאישור."
+
+#: functions.php:261
+msgid "Anonymous"
+msgstr "אלמוני"
+
+#: functions.php:307
+#, php-format
+msgid "%s on <a href='%s' class='tooltip' title='%s'>%s</a>"
+msgstr "%s ב <a href='%s' class='tooltip' title='%s'>%s</a>"
+
+#: functions.php:330
+msgid "Edit comment"
+msgstr "עריכת תגובה"
+
+#: functions.php:416
+msgid "Video Post"
+msgstr "פוסט וידאו"
+
+#: functions.php:418
+msgid "Image Post"
+msgstr "פוסט תמונה"
+
+#: functions.php:420
+msgid "No Title"
+msgstr "ללא כותרת"
+
+#: functions.php:428
+#: functions.php:459
+#: functions.php:486
+#: functions.php:501
+#: functions.php:516
+msgid "Error: not logged in."
+msgstr "שגיאה: משתמש לא מחובר"
+
+#: functions.php:435
+#: functions.php:491
+msgid "Error: not allowed to edit post."
+msgstr ".שגיאה: אין הרשאת עריכה לפוסט"
+
+#: functions.php:467
+msgid "Error: not allowed to edit this comment."
+msgstr "שגיאה: אין הרשאת עריכה לתגובה."
+
+#: functions.php:519
+msgid "Error: not allowed to post."
+msgstr "שגיאה: אין הרשאה לפרסום פוסטים."
+
+#: functions.php:598
+msgid "Error: you must be logged in to post a comment."
+msgstr "שגיאה: צריך להכנס למערכת כדי להגיב."
+
+#: functions.php:606
+msgid "Error: please fill the required fields (name, email)."
+msgstr "שגיאה: צריך למלא שם וכתובת דואל."
+
+#: functions.php:608
+msgid "Error: please enter a valid email address."
+msgstr "שגיאה: צריך למלא כתובת דואל תקנית."
+
+#: functions.php:613
+msgid "Error: Please type a comment."
+msgstr "שגיאה: לא הכנסת תגובה!"
+
+#: functions.php:630
+msgid "Error: Unknown error occured. Comment not posted."
+msgstr "שגיאה לא ידועה ארעה. התגובה לא נשלחה."
+
+#: functions.php:747
+#: functions.php:850
+#: functions.php:851
+msgid "Recent Comments"
+msgstr "תגובות אחרונות"
+
+#: functions.php:807
+msgid "Number of comments to show:"
+msgstr "מספר התגובות שתוצגנה:"
+
+#: functions.php:807
+msgid "(at most 15)"
+msgstr "(לכל היותר 15)"
+
+#: functions.php:808
+msgid "Avatar Size (px):"
+msgstr "גודל אוואטר (פיקסלים):"
+
+#: functions.php:809
+msgid "No Avatars"
+msgstr "ללא אווטרים"
+
+#: functions.php:816
+msgid "Avatar background color:"
+msgstr "צבע רקע לאווטר:"
+
+#: functions.php:817
+msgid "Text background color:"
+msgstr "צבע רקע לטקסט:"
+
+#: functions.php:1128
+msgid "Log in to Reply"
+msgstr "להתחבר כדי להגיב"
+
+#: functions.php:1171
+msgid "&larr;&nbsp;Newer&nbsp;Posts"
+msgstr "&rarr;&nbsp;פוסטים&nbsp;חדשים"
+
+#: functions.php:1171
+msgid "Older&nbsp;Posts&nbsp;&rarr;"
+msgstr "פוסטים&nbspישנים&nbsp;&larr;"
+
+#: header.php:17
+msgid "compose new post"
+msgstr "כתיבת פוסט חדש"
+
+#: header.php:18
+msgid "next post/next comment"
+msgstr "לפוסט הבא\\תגובה הבאה"
+
+#: header.php:19
+msgid "previous post/previous comment"
+msgstr "לפוסט הקודם\\תגובה קודמת"
+
+#: header.php:20
+msgid "reply"
+msgstr "להגיב"
+
+#: header.php:21
+msgid "edit"
+msgstr "לערוך"
+
+#: header.php:22
+msgid "show/hide comments"
+msgstr "הצגה\\הסתרה של התגובות"
+
+#: header.php:23
+msgid "go to top"
+msgstr "חזרה למעלה"
+
+#: header.php:24
+msgid "cancel"
+msgstr "ביטול"
+
+#: index.php:11
+msgid "Recent Updates"
+msgstr "עדכונים אחרונים"
+
+#: index.php:11
+#, php-format
+msgid "Page %s"
+msgstr "עמוד %s"
+
+#: index.php:14
+msgid "Keyboard Shortcuts"
+msgstr "מקשי קיצור"
+
+#: index.php:30
+msgid "No posts yet!"
+msgstr "אין פוסטים עדיין!"
+
+#: page.php:15
+msgid "Read the rest of this page &rarr;"
+msgstr "המשך העמוד &larr;"
+
+#: page.php:19
+msgid "Pages:"
+msgstr "עמודים:"
+
+#: post-form.php:12
+#, php-format
+msgid "Hi, %s. Whatcha up to?"
+msgstr "היי, %s. מה חדש?"
+
+#: post-form.php:21
+msgid "Post it"
+msgstr "שליחה"
+
+#: search.php:6
+#, php-format
+msgid "Search Results for: %s"
+msgstr "תוצאות חיפוש עבור: %s"
+
+#: search.php:20
+#: single.php:19
+#: tag.php:25
+msgid "No posts found!"
+msgstr "לא נמצאו פוסטים!"
+
+#: tag.php:11
+#, php-format
+msgid "Latest Updates: %s"
+msgstr "עדכונים אחרונים: %s"
+
