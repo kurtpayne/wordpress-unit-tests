@@ -1,0 +1,279 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: P2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-17 15:45+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ufo <webmaster@giuda.it>\n"
+"Language-Team: http://www.giuda.it/ <webmaster@giuda.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: p2103/archive.php:7
+#: p2103/author.php:11
+#, php-format
+msgid "Updates from %s"
+msgstr "Aggiornamenti da %s"
+
+#: p2103/comment-form.php:5
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Devi <a href=\"%s\">autenticarti</a> per inviare un commento."
+
+#: p2103/comment-form.php:15
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr "Sei collegato come <a href=\"%1$s\">%2$s</a>."
+
+#: p2103/comment-form.php:15
+msgid "Log out of this account"
+msgstr "Disconnettiti da questo account"
+
+#: p2103/comment-form.php:35
+msgid "Post Comment"
+msgstr "Invia un commento"
+
+#: p2103/comment-form.php:38
+#: p2103/functions.php:44
+#: p2103/post-form.php:24
+msgid "Loading..."
+msgstr "Loading..."
+
+#: p2103/comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Sei pregato di non caricare questa pagina direttamente. Grazie!"
+
+#: p2103/entry.php:11
+#: p2103/functions.php:335
+#: p2103/functions.php:709
+#, php-format
+msgid "%s <em>on</em> %s"
+msgstr "%s <em>il</em> %s"
+
+#: p2103/entry.php:17
+#: p2103/functions.php:326
+#: p2103/functions.php:715
+#: p2103/functions.php:1135
+msgid "Reply"
+msgstr "Rispondi"
+
+#: p2103/entry.php:24
+#: p2103/functions.php:721
+msgid "Tags:"
+msgstr "Tags:"
+
+#: p2103/entry.php:28
+#: p2103/functions.php:724
+msgid "(More ...)"
+msgstr "(Continua...)"
+
+#: p2103/footer.php:7
+#, php-format
+msgid "P2 theme by %s."
+msgstr "Tema P2 creato da %s e tradotto da <a href=\"http://www.giuda.it/\" title=\"Giuda, il sito che non tradisce\">Giuda</a>."
+
+#: p2103/functions.php:36
+#: p2103/functions.php:526
+#: p2103/post-form.php:18
+#: p2103/post-form.php:19
+#: p2103/post-form.php:20
+msgid "Tag it"
+msgstr "Tag it"
+
+#: p2103/functions.php:37
+msgid "Go to homepage"
+msgstr "Vai alla prima pagina"
+
+#: p2103/functions.php:39
+#, php-format
+msgid "%d new update(s)"
+msgstr "%d nuovo/i aggiornamento/i"
+
+#: p2103/functions.php:40
+#, php-format
+msgid "%d new comment(s)"
+msgstr "%d nuovo/i commento/i"
+
+#: p2103/functions.php:41
+msgid "Jump to top"
+msgstr "Torna in alto"
+
+#: p2103/functions.php:42
+msgid "An error has occured, your post was not posted"
+msgstr "E' avvenuto un errore, il tuo messaggio non è stato pubblicato"
+
+#: p2103/functions.php:43
+msgid "You update has been posted"
+msgstr "Il tuo aggiornamento è stato pubblicato"
+
+#: p2103/functions.php:45
+msgid "Cancel"
+msgstr "Annulla"
+
+#: p2103/functions.php:46
+msgid "Save"
+msgstr "Salva"
+
+#: p2103/functions.php:47
+msgid "Hide threads"
+msgstr "Nascondi i thread"
+
+#: p2103/functions.php:48
+msgid "Show threads"
+msgstr "Mostra i thread"
+
+#: p2103/functions.php:49
+msgid "Your comments or posts will be lost if you continue."
+msgstr "I tuoi commenti o i tuoi messaggi andranno persi se continui."
+
+#: p2103/functions.php:120
+#: p2103/functions.php:223
+#: p2103/functions.php:224
+#: p2103/sidebar.php:7
+msgid "Recent Tags"
+msgstr "Tag recenti"
+
+#: p2103/functions.php:243
+#: p2103/functions.php:330
+msgid "Edit"
+msgstr "Modifica"
+
+#: p2103/functions.php:259
+msgid "Anonymous"
+msgstr "Anonimo"
+
+#: p2103/functions.php:307
+#, php-format
+msgid "%s on <a href='%s' class='tooltip' title='%s'>%s</a>"
+msgstr "%s in <a href='%s' class='tooltip' title='%s'>%s</a>"
+
+#: p2103/functions.php:330
+msgid "Edit comment"
+msgstr "Modifica commento"
+
+#: p2103/functions.php:332
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento è in attesa di essere moderato."
+
+#: p2103/functions.php:334
+msgid "Permalink"
+msgstr "Permalink"
+
+#: p2103/functions.php:417
+msgid "Video Post"
+msgstr "Messaggio con video"
+
+#: p2103/functions.php:419
+msgid "Image Post"
+msgstr "Messaggio con immagine"
+
+#: p2103/functions.php:421
+msgid "No Title"
+msgstr "Nessun titolo"
+
+#: p2103/functions.php:429
+#: p2103/functions.php:460
+#: p2103/functions.php:487
+#: p2103/functions.php:502
+#: p2103/functions.php:517
+msgid "Error: not logged in."
+msgstr "Errore: non sei connesso."
+
+#: p2103/functions.php:436
+#: p2103/functions.php:492
+msgid "Error: not allowed to edit post."
+msgstr "Errore: non hai i permessi per modificare questo messaggio."
+
+#: p2103/functions.php:468
+msgid "Error: not allowed to edit this comment."
+msgstr "Errore: non hai i permessi per modificare questo commento."
+
+#: p2103/functions.php:520
+msgid "Error: not allowed to post."
+msgstr "Errore: non hai i pemessi per inviare un messaggio."
+
+#: p2103/functions.php:600
+msgid "Error: you must be logged in to post a comment."
+msgstr "Errore: devi collegarti per inviare un commento."
+
+#: p2103/functions.php:608
+msgid "Error: please fill the required fields (name, email)."
+msgstr "Errore: sei pregato di riempire i campi richiesti (nome, email)."
+
+#: p2103/functions.php:610
+msgid "Error: please enter a valid email address."
+msgstr "Errore: sei pregato di inserire un indirizzo email valido."
+
+#: p2103/functions.php:615
+msgid "Error: Please type a comment."
+msgstr "Errore: sei pregato di scrivere un commento."
+
+#: p2103/functions.php:632
+msgid "Error: Unknown error occured. Comment not posted."
+msgstr "Errore sconosciuto. Commento non pubblicato."
+
+#: p2103/functions.php:747
+#: p2103/functions.php:850
+#: p2103/functions.php:851
+msgid "Recent Comments"
+msgstr "Commenti Recenti"
+
+#: p2103/functions.php:1136
+msgid "Log in to Reply"
+msgstr "Autenticati per rispondere"
+
+#: p2103/functions.php:1179
+msgid "&larr;&nbsp;Newer&nbsp;Posts"
+msgstr "&larr;&nbsp;Messaggi&nbsp;più recenti"
+
+#: p2103/functions.php:1179
+msgid "Older&nbsp;Posts&nbsp;&rarr;"
+msgstr "Messaggi&nbsp;più vecchi&nbsp;&rarr;"
+
+#: p2103/functions.php:1185
+#, php-format
+msgid "<strong>%1$s</strong> is proudly powered by %2$s."
+msgstr "<strong>%1$s</strong> usa orgogliosamente %2$s."
+
+#: p2103/functions.php:1190
+msgid "Blog at WordPress.com"
+msgstr "Blog su WordPress.com"
+
+#: p2103/index.php:11
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: p2103/page.php:15
+msgid "Read the rest of this page &rarr;"
+msgstr "Leggi il seguito di questa pagina &rarr;"
+
+#: p2103/page.php:19
+msgid "Pages:"
+msgstr "Pagine:"
+
+#: p2103/post-form.php:12
+#, php-format
+msgid "Hi, %s. Whatcha up to?"
+msgstr "Ciao, %s. Che cos' hai da dire?"
+
+#: p2103/post-form.php:21
+msgid "Post it"
+msgstr "Invia"
+
+#: p2103/search.php:6
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
+
+#: p2103/tag.php:11
+#, php-format
+msgid "Latest Updates: %s"
+msgstr "Ultimi aggiornamenti: %s"
+
