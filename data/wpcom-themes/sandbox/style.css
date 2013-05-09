@@ -1,0 +1,291 @@
+/*
+THEME NAME: Sandbox 0.6.1
+THEME URI: http://www.plaintxt.org/themes/sandbox/
+DESCRIPTION: A theme with powerful, semantic CSS selectors and the ability to add new skins.
+VERSION: 0.6.1-wpcom
+AUTHOR: <a href="http://andy.wordpress.com/">Andy Skelton</a> &amp; <a href="http://www.plaintxt.org/">Scott Allan Wallick</a>
+AUTHOR URI:
+TAGS: white, left-sidebar, theme-options, widgets, two-columns, one-column, three-columns, right-sidebar, flexible-width, microformats, rtl-language-support
+*/
+/* MARGINS, PADDING, ETC., FOR ALL LAYOUT DIVS */
+div#header {
+	padding: 2em 0;
+}
+div#content, div.sidebar {
+	padding: 0 10px;
+}
+div#footer {
+	margin: 2em 0;
+	padding: 3em 0 0 0;
+}
+/* HEADER STUFF */
+div#header {
+	text-align: center;
+}
+div#header h1#blog-title {
+	font-size: 3em;
+	margin: 0;
+}
+div#header p#blog-description {
+	margin: 1.5em 0;
+}
+div#header p.access {
+	display: none;
+}
+/* GENERAL TAGS FOR CONTENT, MOSTLY */
+abbr.published {
+	border: 0;
+	cursor: default;
+	margin: 0;
+}
+body.home abbr.published, body.archive abbr.published, div.page-link {
+	font-weight: bold;
+}
+div.entry-content p {
+	margin: 1em 0;
+}
+div.entry-content ul li {
+	list-style: square;
+}
+div.entry-content ul li ul {
+	margin-bottom: 0.3em;
+}
+div.entry-content ul li ul li {
+	list-style: circle;
+}
+div.entry-content ul#linkcats, div.entry-content ul#linkcats li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+div.entry-content ul#linkcats li ul li {
+	list-style: square;
+}
+div.entry-content img.center, div.entry-content img.centered, img.aligncenter {
+	display: block;
+	margin: 0.4em auto;
+}
+div.entry-content img.alignright {
+	margin: 0.4em 0 0.4em 1.1em
+}
+div.entry-content img.alignleft {
+	margin: 0.4em 1.1em 0.4em 0;
+}
+div.entry-meta {
+	font-style: italic;
+	line-height: 140%;
+	clear: both;
+}
+body.home .entry-meta, body.archive .entry-meta {
+	margin: 0 0 4em 0;
+}
+body.single .entry-meta {
+	font-size: 0.9em;
+}
+body.single div.navigation {
+	padding: 0 0 3em 0;
+}
+div.archive-meta {
+	margin: 1em 0 3em 0;
+}
+div.edit-link {
+	clear: both;
+}
+abbr, acronym {
+	border-bottom: 1px dotted blue;
+	cursor: help;
+}
+blockquote {
+	border-left: 1em solid #e6e6fe;
+	padding: 0 0 0 1em;
+}
+code, pre {
+	font-family: "courier new", courier, monospace;
+}
+/* HEADINGS */
+h2, h3, h4 , h5, h6 {
+	line-height: 125%;
+}
+body.home h2.entry-title {
+	clear: both;
+	font-size: 1.6em;
+	margin: 0;
+}
+body.single h2.entry-title, body.page h2.entry-title {
+	font-size: 1.6em;
+	margin: 0 0 -0.4em 0;
+}
+body.category h2.page-title, body.author h2.page-title {
+	font-size: 1.6em;
+	margin: 0;
+}
+body.date h2.page-title, body.single h2.page-title {
+	font-size: 1.6em;
+	margin: 0 0 2em 0;
+}
+body.archive h3.entry-title, body.single h3.entry-title {
+	font-size: 1.3em;
+	margin: 0;
+}
+body.single h3.comment-header {
+	font-size: 1.4em;
+	margin: 3em 0 1em 0;
+}
+body.single div#respond h3 {
+	font-size: 1.2em;
+	margin: 3em 0 0.5em 0;
+}
+div.entry-content ul#linkcats li h3 {
+	margin: 1em 0 0 0;
+}
+div.entry-content h2 {
+	font-size: 1.2em;
+	margin: 1.5em 0 -0.7em;
+}
+div.entry-content h3 {
+	font-size: 1.1em;
+	margin: 1.5em 0 -0.9em;
+}
+div.entry-content h4, div.entry-content h5, div.entry-content h6 {
+	font-size: 1em;
+	margin: 1.5em 0 -1.1em;
+}
+/* COMMENTS STUFF */
+ol.commentlist li {
+	margin: 0 0 3.5em 0;
+}
+ol.commentlist .comment-meta {
+	font-style: italic;
+}
+form#commentform, form#commentform p {
+	padding: 0;
+}
+form#commentform span.req-field {
+	background: #fff;
+	color: red;
+}
+form#commentform .form-label {
+	margin: 1em 0 0 0;
+}
+input#author, input#email, input#url, textarea#comment {
+	font-family: "courier new", courier, monospace;
+	font-size: 1em;
+	padding: 0.2em;
+}
+input#author, input#email, input#url {
+	width: 50%;
+}
+textarea#comment {
+	height: 13em;
+	margin: 0 0 0.5em 0;
+	overflow: auto;
+	width: 66%;
+}
+/* SIDEBAR STUFF */
+div.sidebar div, div.sidebar h3, div.sidebar h4, div.sidebar ul, div.sidebar li {
+	margin: 0;
+	padding: 0;
+}
+div.sidebar li {
+	list-style: none;
+}
+div.sidebar li form {
+	margin: 0.2em 0 0 0;
+	padding: 0;
+}
+div.sidebar h3 {
+	font-size: 1.2em;
+}
+div.sidebar h4 {
+	font-size: 1.0em;
+}
+div.sidebar li {
+	margin: 0 0 1em 0;
+}
+div.sidebar ul ul {
+	margin: 0 0 0 1.0em;
+}
+div.sidebar ul ul ul {
+	margin: 0 0 0 0.5em;
+}
+div.sidebar ul ul li {
+	margin: 0;
+	list-style: disc;
+}
+div.sidebar ul ul ul li {
+	list-style: circle;
+}
+div.sidebar ul#bookmarks {
+	margin: 0 0 0.5em 0.5em;
+}
+div.sidebar ul#bookmarks li {
+	list-style: none;
+}
+div.sidebar ul#bookmarks ul {
+	margin: 0 0 .5em 1.0em;
+}
+div.sidebar ul#bookmarks ul li {
+	list-style: disc;
+}
+div.sidebar input#s {
+	width: 7em;
+}
+/* FOOTER STUFF */
+div#footer {
+	text-align: center;
+}
+/*  COMMON MULTI-PURPOSE ELEMENTS */
+.alignleft, div.nav-previous, #archives-by-category {
+	float: left;
+}
+.alignright, div.nav-next, #archives-by-month {
+	float: right;
+}
+.clearer {
+	clear: both;
+}
+div#nav-above, body.single div#nav-below {
+	display: none;
+}
+body.single div#nav-above {
+	display: block;
+}
+body.home div.nav-next, body.home div.nav-previous, body.archive div.nav-next, body.archive div.nav-previous,  #archives-by-category, #archives-by-month {
+	width: 48%;
+}
+body.home div.nav-next, body.archive div.nav-next {
+	text-align: left;
+}
+body.home div.nav-previous, body.archive div.nav-previous {
+	text-align: right;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
