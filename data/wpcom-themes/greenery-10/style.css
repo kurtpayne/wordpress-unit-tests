@@ -1,0 +1,622 @@
+/*  
+Theme Name: Greenery
+Theme URI: http://www.ilemoned.com/wordpress/theme-greenery/
+Description: A green, fresh and clear two-column theme. Did we mention it was green?
+Version: 1.05-wpcom
+Author: LEMONed
+Author URI: http://www.ilemoned.com
+Tags: two-columns, fixed-width, green, custom-header, white, right-sidebar, widgets, sticky-post, light, rtl-language-support
+*/
+
+/**********
+*  Basic  *
+***********/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #b1e11c url(images/bg.gif) repeat;
+	font-size: 62.5%; /* Resets 1em to 10px, do NOT modify this! */
+	font-family: "Lucida Grande", Verdana, Arial, Sans-Serif;
+	color: #a6b79b;
+	text-align: center;
+}
+
+p {
+	line-height: 1.5em;
+	margin: 1.2em 0;
+}
+
+ol, ul {
+	line-height: 1.5em;
+	margin: 1.2em 0 1.2em 2em;
+	padding: 0 0 0 15px;
+}
+
+ol {
+	padding: 0 0 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 1.2em 0;
+	font-family: "Trebuchet MS", Tahoma, Arial, Sans-Serif;
+	color: #cbad57; 
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+
+hr {/* to be styled */}
+
+a:link,
+a:visited {
+	color: #95c725;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #86b224;
+	text-decoration: underline;
+}
+
+input, textarea, select {
+	border: 1px solid #e4ead2;
+	background: #f8ffe5;
+	color: #556b38;
+	font-size: 1.1em;
+	font-family: Tahoma, Arial, Sans-Serif;
+}
+input, textarea {
+	background: #f8ffe5 url(images/inputbg.gif) repeat-x top;
+}
+.button { background: #f8ffe5 none; }
+
+blockquote {
+	margin: 0 20px;
+	padding: 0 10px 0 25px;
+	border-left: 4px solid #c9ee58;
+}
+
+code {
+	font-family: monospace;
+	color: #666;
+	font-size: 1.1em;
+}
+
+form, img, img a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.small {
+	font-size: 0.9em;
+	color: #999;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 10px;
+	clear: left;
+}
+.alignright {
+	float: right;
+	margin-left: 10px;
+	clear: right;
+}
+
+
+/***********
+*  Layout  *
+************/
+
+#wrapper {
+	width: 768px;
+	margin: 0 auto;
+	padding: 0;
+	background: url(images/innerbg.gif) repeat-x top center;
+	text-align: left;
+/*	font-size: 1.2em !important; */ /* Enable this line if you're blogging in Asian languages and is using firefox. */
+	font-size: 1.1em;
+	overflow: hidden;
+}
+	
+#content {
+	float: left;
+	margin: 0 0 0 14px;
+	padding: 0 15px;
+	width: 472px;
+	display: inline;
+	border: 2px solid #8ac60e;
+	border-left: 5px solid #8ac60e;
+	border-bottom: 4px solid #8ac60e;
+	background: #fff;
+	overflow: hidden;
+}
+
+#sidebar {
+	float: right;
+	margin: 0 14px 0 5px;
+	padding: 10px 0 20px 0;
+	width: 212px;
+	border: 2px solid #8ac60e;
+	border-right: 5px solid #8ac60e;
+	border-bottom: 4px solid #8ac60e;
+	background: #f7ffe4 url(images/sidebarbg.gif) repeat;
+	display: inline;
+	overflow: hidden;
+}
+
+
+/***********
+*  Header  *
+************/
+
+#header {
+	height: 171px;
+	margin: 0 15px 10px;
+	padding: 0;
+	background: url(images/header.jpg) no-repeat top center;
+	border-top: 5px solid #89c410;
+	border-left: 5px solid #89c410;
+	border-right: 5px solid #89c410;
+	border-bottom: 5px solid #89c410;
+}
+
+#header h1 {
+	margin: 10px 0 0 40px;
+	font-size: 2em;
+}
+#header h1 a {
+	color: #80904F;
+}	
+
+/* Navigation Menu */
+
+ul.menu {
+	margin: 0 10px 0 0;
+	padding: 0;
+	text-align: right;
+}
+
+ul.menu li {
+	margin: 0 2px;
+	display: inline;
+}
+
+ul.menu,
+ul.menu li a { padding: 2px 15px 4px; }
+
+ul.menu li a {
+	margin: 0;
+	font-family: Verdana, Helvetica, Arial, Sans-Serif;
+	font-weight: bold;
+	color: #7db40b;
+}
+
+ul.menu li a:hover {
+	background: #90ce0e;
+	text-decoration: none;
+	color: #fff;
+}
+
+ul.menu li.current_page_item a,
+ul.menu li.current_page_item a:link,
+ul.menu li.current_page_item a:hover {
+	background: #7db40b;
+	text-decoration: none;
+	color: #fff;
+}
+
+
+/************
+*  Sidebar  *
+*************/
+
+#sidebar h2 {
+	display: inline;
+	margin: 0 0 0 10px;
+	padding: 10px 0 0 0;
+	border-bottom: 1px solid #89bcc2;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #89bcc2;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+	
+#sidebar ul li {
+	margin: 0;
+	padding: 0 0 15px 0;
+	display: block;
+}
+
+#sidebar ul li a {
+	display: inline;
+}
+
+#sidebar p,
+#sidebar ul ul {
+	margin: 10px 0 0 0;
+	padding: 0 10px;
+}
+
+#sidebar ul ul {
+	background: none;
+}
+
+#sidebar ul ul ul {
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+#sidebar ul ul li {
+	padding: 0 0 0 12px;
+	background: url(images/indicator.gif) no-repeat 0 3px;
+}
+
+
+/*  Customizing Sidebar  */
+
+#sidebar #sb-posts li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+#sidebar #sb-blc li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+#sidebar #sb-grc li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+#sidebar #sb-feeds li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+#sidebar #sb-cates li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+#sidebar #sb-archives li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+#sidebar #sb-misc li { /* background: url(images/*.gif) no-repeat 0 2px; */ }
+
+#sidebar #s {
+	margin: 0;
+	width: 120px !important;
+	width: 128px;
+}
+
+.widget div {
+	margin:0pt 0pt 0pt 10px;
+	padding:10px 0pt 0pt;
+}
+
+/************
+*  Entries  *
+*************/
+
+.post {/* To be styled */}
+
+.sticky {
+	background-color: #F7FFE4;
+	padding: 0 10px;
+}
+.sticky h2.posttitle {
+	padding-top: 10px;
+}
+.sticky .commentslink {
+	padding-bottom: 10px;
+}
+.posttitle {
+	margin-bottom: -8px;
+	padding: 0 0 0 2px;
+	width: 100%;
+	color: #88dc00;
+	overflow: auto;
+}
+
+.posttitle a {
+	padding: 0;
+}
+
+.posttitle a:link,
+.posttitle a:visited {
+	color: #cbad57;
+}
+
+.posttitle a:hover,
+.posttitle a:active {
+	color: #9bbb38;
+	text-decoration: none;
+}
+
+.postmeta {
+	border: 1px solid #ecf4d9;
+	background: #faffee;
+	padding: 0 5px !important;
+	padding: 0 5px 1px 5px;
+	font-family: Verdana;
+	font-size: 0.9em;
+	color: #d3deb4;
+}
+.postmeta a {
+	color: #b3d64f;
+}
+
+.postentry {
+	width: 100%;
+	margin: 0;
+	padding: 0 2px;
+	text-align: justify;
+	color: #748669;
+	clear: both;
+}
+
+.postentry a:hover {
+	text-decoration: underline;
+}
+
+/* .img in the post */
+.postentry img {
+	padding: 4px;
+	border: 1px solid #d9e2d3;
+}
+img.noborder {
+	padding: 0;
+	border: none;
+}
+
+.postfeedback {
+	text-align: right;
+	clear: both;
+}
+
+/* Page Navigation */
+.pagenav,
+.pagenav-alt {
+	float: left;
+	margin: 10px 0;
+	padding: 0 5px 1px 5px;
+	border: 1px solid #ecf4d9;
+	background: #faffee;
+	font-family: Verdana;
+	font-size: 0.9em;
+}
+.pagenav-alt {
+	width: 460px;
+	text-align: right;
+}
+
+/* Tags & del.icio.us */
+.utwtags {
+	padding: 5px 0 0 18px;
+	background: url(images/technorati.gif) no-repeat left bottom;
+	clear: both;
+}
+.utwtags a {
+	color: #70b000;
+}
+
+.delicious {
+	padding: 5px 0 0 18px;
+	background: url(images/delicious.gif) no-repeat left bottom;
+	clear: both;
+}
+.delicious a {
+	color: #70b000;
+}
+.delicious a:hover {
+	color: #679bf1;
+}
+
+.commentslink {
+/*	padding: 0 0 0 15px;
+	font-family: Verdana, Arial, Sans-Serif;
+	background: url(images/comments.gif) no-repeat left center;
+*/ }
+
+
+/*************
+*  Comments  *
+**************/
+
+#commentlist {
+	margin: 1.2em 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#commentlist li {
+	margin: 10px 0;
+	border: 1px solid #eff3e4;
+	padding: 1px 20px;
+	background: #fbfff4;
+	color: #97a28b;
+	list-style-type: none;
+}
+
+h3.commenttitle {
+	margin: 19px 0 0 0;
+	font-family: "Lucida Grande", Verdana, Arial, Sans-Serif;
+	font-size: 1em;
+	color: #cbad57;
+}
+
+.commentmeta {
+	margin: 9px 0 10px 0;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 0.9em;
+	color: #999;
+}
+
+.commentmeta a:link,
+.commentmeta a:visited,
+.commentmeta a:hover,
+.commentmeta a:active {
+	color: #d0c39e;
+}
+
+#commentlist hr {
+	width: 100%;
+	height: 1px;
+	color: #eff3e4;
+}
+
+/* Comment Counter */
+.commentcounter {
+	float: right;
+	height: 30px; /* IE hack */
+	margin: 15px 0 0;
+	padding: 5px 0 0;
+	color: #e6ffb4;
+	font-family: 'Century Gothic', Verdana, Sans-Serif;
+	font-size: 3em;
+	font-style: italic;
+	font-weight: bold;
+}
+#commentlist .bypostauthor .commentcounter {
+	color: #caf545;
+}
+#commentlist .bypostauthor {
+	background: #fff;
+}
+
+/* Gravatar */
+.commentgravatar {
+	float: left;
+	margin: 12px 6px 0 0;
+	padding: 0;
+}
+
+img.avatar {
+	padding: 1px;
+	border: 1px solid #ddd;
+}
+
+#respond textarea {
+	width: 100%;
+}
+
+
+/***********
+*  Footer  *
+************/
+
+#footer {
+	clear: both;
+	margin: 0;
+	padding: 10px 0;
+	text-align: center;
+}
+
+#footer p {
+	margin: 0 14px;
+	padding: 10px 15px;
+	background: #8fce0e;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #e2ffa8;
+}
+
+#footer p a,
+#footer p a:link,
+#footer p a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer p a:hover,
+#footer p a:active {
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+/**************
+*   Plugins   *
+***************/
+
+/* Sweet Title */
+body div#toolTip {
+	position: absolute;
+	z-index: 1000;
+	width: 220px;
+	background: #43613b;
+	border: 2px double #b1e11c;
+	text-align: left;
+	padding: 5px;
+	min-height: 1em;
+/*	-moz-border-radius: 5px; */
+}
+
+body div#toolTip p {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font: 11px/12px Verdana, Arial, Sans-Serif;
+}
+
+body div#toolTip p em {
+	display: block;
+	margin-top: 2px;
+	color: #b2ee5c;
+	font-style: normal;
+	font-weight: bold;
+}
+
+body div#toolTip p em span {
+	font-weight: bold;
+	color: #fff;
+}
+
+#akismetwrap {
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+#respond {
+	clear: both;
+}
