@@ -1,0 +1,169 @@
+/*
+Theme: Banana Smoothie
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+	/* main document style */
+	body {
+		direction:rtl;
+		unicode-bidi:embed;
+		background-image: url("images/body-background-rtl.png");
+		background-position:right top;
+	}
+
+	/* some common and default styles */
+	blockquote {
+		margin: 5px 5px 5px 25x;
+		padding-right: 20px;
+		padding-left: 0;
+		background-position: right top;
+	}
+
+	/* header style */
+	h1#header {
+		right: 135px;
+		left: auto;
+		background-image: url("images/header-background-rtl.png");
+	}
+	h1#header a {
+		position: absolute;
+		left: 15px;
+		right: auto;
+	}
+
+	/* content style */
+	#content {
+		position: relative;
+		right: 150px;
+		left: auto;
+		padding: 5px 55px 0 205px;
+		background-image: url("images/content-background-rtl.png");
+		background-position: top right;
+	}
+	/* date header style */
+	#content h2 {
+		text-align: left;
+		background-position: left center;
+	}
+
+	/* menu formatting */
+	#menu {
+		right: 670px;
+		left: auto;
+	}
+	#menu:after {
+		content: url("images/menu-end-rtl.png");
+	}
+	#menu a:link {
+		color: #b28e35;
+		text-decoration: none;
+	}
+	#menu a:visited {
+		color: #b28e35;
+		text-decoration: line-through;
+	}
+	#menu a:hover {
+		color: #f2c04e;
+		text-decoration: none;
+		border: 0;
+	}
+	#menu ul li ul li {
+		font-weight: normal;
+		padding: 4px 5px 0 0 ;
+	}
+	#menu ul li[id]:after {
+		margin: 0 -5px 0 0;
+		content: url("images/menugroup-end-rtl.png");
+	}
+	#menu ul ul {
+		margin-right: 11px;
+		margin-left: 0;
+	}
+	#menu ul ul.children {
+		margin-right: 5px;
+		margin-left: 0;
+	}
+
+	/* calendar style */
+
+	#wp-calendar #prev a {
+		padding-left: 0;
+		padding-right: 10px;
+		text-align: right;
+	}
+	#wp-calendar #next a {
+		color: #b28e35;
+		padding-right: 0;
+		padding-left: 10px;
+		text-align: left;
+	}
+
+	/* next/previous post link */
+	div#prevpost, div#nextpost {
+		float: right;
+	}
+	div#nextpost {
+		text-align: left;
+	}
+
+	/* post style */
+
+	div.storycontent ul, div.storycontent ol {
+		padding-right: 15px;
+		padding-left: 0;
+	}
+	/* meta information; "filed under"... */
+	div.meta {
+		background-position: right center;
+		padding: 2px 12px 1px 0;
+	}
+
+	/* feedback information style */
+	div.feedback {
+		text-align: left;
+	}
+	/* styles for comments */
+	h2#comments, h2#postcomment {
+		background-position: right center;
+		text-align: right;
+		padding: 3px 22px 3px 0;
+	}
+	#commentlist {
+		font-size: 8pt;
+		padding-right: 30px;
+		padding-left: 0;
+	}
+	/* credit style */
+	.credit {
+		position: relative;
+		left: auto;
+		right: 150px;
+		padding: 0 55px 0 0;
+	}
+
+/* images */
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
