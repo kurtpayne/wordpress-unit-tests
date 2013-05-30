@@ -1,0 +1,68 @@
+/*
+Theme: Fresh Bananas
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+#header {
+	text-align: right;
+}
+
+#header a {
+	background: url(images/box-bottom.jpg) right bottom no-repeat;
+}
+
+#text {
+	background: url(images/text-repeat-rtl.jpg);
+	text-align: right;
+}
+
+/*
+ * Main!
+ */
+
+#text #main {
+	background: url(images/text-top-rtl.jpg) top right no-repeat;
+	float: right;
+	padding: 10px 30px 0 10px;
+}
+
+#commentlist li {
+	margin-left: 20px;
+	margin-right: 0;
+}
+#commentlist li .avatar { 
+	float: left; 
+}
+
+/* Search Highlight */
+
+#text #sidebar {
+	background: url(images/text-top-rtl.jpg) top left no-repeat;
+	right: 50%;
+	left: auto;
+	margin-right: 175px;
+	margin-left: 0;
+	padding: 10px 10px 0 20px;
+}
+
+/* Lists */
+
+#text #sidebar ul, #text #sidebar ul ul {
+	padding: 0 1em 0 0;
+}
+
+/* ------------------------- */
+
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
