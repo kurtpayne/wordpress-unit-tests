@@ -1,0 +1,791 @@
+/*  
+Theme Name: Freshy
+Theme URI: http://www.jide.fr
+Description: A darker theme with header image and page navigation.
+Version: 1.0-wpcom
+Author: Julien De Luca
+Author URI: http://www.jide.fr
+Tags: custom-header, fixed-width, two-columns, rtl-language-support, white, light, right-sidebar, widgets, sticky-post
+*/
+
+@import "layout.css?2";
+@import "pp_album.css";
+
+
+body, html {
+	margin:0;
+	padding:0;
+	/*font: normal 100.01%/1.5em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;*/
+	font-size : 90%;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+}
+
+body {
+	margin:0;
+	padding:0;
+	background:#7F7F7F;
+}
+
+::-moz-selection {
+	background:#FF3C00;
+	color:white;
+}
+
+::selection {
+	background:#FF3C00;
+	color:white;
+}
+
+/*-----------GENERAL STYLING--------------*/
+
+a {
+	color:#515151;
+	text-decoration:none;
+}
+
+#content a {
+	border-bottom:1px dotted silver;
+}
+
+#content a:hover {
+	border-bottom:1px dotted #FF3C00;
+}
+
+/*------HEADER------*/
+
+#title_image {
+	margin:0;
+	text-align:left;
+	display:block;
+	height:95px;
+	background:url(images/headers/header_image2.jpg) center center transparent repeat-y;
+}
+
+#title {
+	background:url(images/header.gif) top #7F7F7F no-repeat;
+	height:76px;
+	margin:0;
+	padding:25px 25px 0 25px;
+	clear:both;
+	text-align:left;
+}
+
+html>body #title {
+	height:51px;
+}
+
+#title h1 {
+	padding:0;
+	margin:0;
+	font-weight:normal;
+	line-height:1em;
+	font-size:2.1em;
+	font-family:helvetica;
+}
+
+#title h1 a {
+	color:white;
+	display:block;
+}
+
+.description {
+	color:#c9e45a;
+}
+
+#content h2 {
+	color:#515151;
+	padding:0;
+	margin:0;
+	border:none;
+	clear:both;
+}
+
+#content h2 a {
+	text-decoration:none;
+	border:none;
+}
+
+#content h2 a:hover {
+	border-bottom:1px dotted silver;
+}
+
+hr {
+	display:none;
+	clear:both;
+}
+
+h3, h4 {
+	color:#515151;
+	padding:0;
+	margin:2em 0 0 0;
+	clear:both;
+}
+
+input,
+textarea,
+select {
+	padding:4px;
+	border:1px solid #515151;
+	font-size:.9em;
+	line-height:1em;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+}
+
+input,
+label {
+	height:auto;
+	width:auto;
+	padding:4px;
+}
+
+label {
+	font-size:.9em;
+}
+
+
+#searchform input#s {
+	width:130px !important;
+	padding:4px;
+	border:1px solid #515151;
+	font-size:.9em;
+	line-height:1em;
+	text-transform:none;
+	color:black;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+	background:white;
+}
+
+#sidebar input.btn,
+#searchform input {
+	width:65px;
+}
+
+#searchform {
+	margin-top:10px !important;
+}
+
+#searchform br {
+	display:none;
+}
+
+input.btn,
+#searchform input,
+input#submit {
+	background:#111111;
+	color:#FFFFFF;
+	padding:4px;
+	border:1px outset #000000;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+	text-transform:uppercase;
+}
+
+input[class=btn],
+input[type=submit]
+input[id=submit] {
+	padding:3px;
+}
+
+textarea {
+	overflow:auto;
+	display:block;
+	width:100%;
+}
+
+ul,
+ol {
+	list-style-type:none;
+	list-style-position:outside;
+	padding:0;
+	margin:.2em 0 .2em 0;
+}
+
+#content ul li,
+#content ol li {
+	background:transparent url(images/puce.png) 11px .4em no-repeat;
+	padding-left: 27px;
+	margin-bottom: .6em;
+}
+
+ul ul li,
+ol ol li {
+	background:transparent url(images/bullet.gif) 0px .5em no-repeat;
+	padding-left:8px;
+}
+
+#content ol {
+	list-style-position: inside;
+}
+
+#content ol li {
+	background: transparent;
+	padding-left: 0;
+	margin-left: 27px;
+	list-style: decimal;
+}
+
+#content ol ol, #content ul ul {
+	margin-top: .6em;
+}
+
+a img {
+	border: 0 none;
+}
+
+form {
+	padding:0;
+	margin:0;
+}
+
+pre,
+code {
+   display:block;
+   font: 1em 'Courier New', Courier, Fixed, monospace;
+   font-size : 100%;
+   color: #000;
+   background : #fff url(images/preback.jpg) no-repeat left top;
+   overflow : auto;
+   text-align:left;
+   border : 1px solid #99cc66; /*highlight color */
+   padding : 0px 20px 0 30px;
+   margin:1em 0 1em 0;
+   line-height:17px;
+}
+
+.alt {
+	background-color:#F5F5F5 !important;
+}
+
+.icon {
+	vertical-align:middle;
+	border:0;
+}
+.with_icon {
+	padding:2px 0 2px 0
+}
+
+.navigation {
+	clear:both;
+	padding:0;
+	display:block;
+}
+
+.alignleft {
+	display:block;
+	float: left;
+}
+
+.alignright {
+	display:block;
+	float: right;
+}
+
+
+/*-------SIDEBAR---------*/
+
+#sidebar {
+	font-size:.9em;
+}
+ 
+#sidebar ul,
+#sidebar ol {
+	padding:0;
+}
+
+#sidebar form,
+#sidebar p {
+	padding:0;
+	margin:0 0 1em 0;
+}
+
+#sidebar h2 {
+	background:#6a6765 url(images/stripe_gray-large.gif);
+	padding: 8px;
+	margin:10px 0 10px 0;
+	font-size: 1em;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:gray;
+/*	border-bottom:3px solid gray;*/
+}
+
+html>body .ellipsis li {
+	clear:both;
+}
+
+html>body .ellipsis li:after { 
+	content: "...";
+	display:inline;
+}
+
+html>body .ellipsis li span {
+	white-space:nowrap;
+	overflow:hidden;
+	max-width:180px;
+	width:auto !important;
+	display:inline;
+	float:left;
+}
+
+ol.ellipsis li span {
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width:190px;
+	display:block;
+}
+
+#sidebar a{
+	text-decoration: none;
+}
+
+#sidebar a:hover,
+#sidebar .current_page_item li a:hover,
+#sidebar .current-cat li a:hover {
+	color:#FF3C00;
+}
+
+#sidebar .current_page_item a,
+#sidebar .current-cat a {
+	font-weight:bold;
+	color:#FF3C00;
+}
+
+#sidebar .current_page_item li a,
+#sidebar .current-cat li a {
+	font-weight:normal;
+	color:#515151;
+}
+
+#sidebar li img {
+	vertical-align:middle;
+	border:0;
+}
+
+#sidebar input.btn {
+	margin-left:4px;
+}
+
+/*
+menu
+*/
+
+.menu {
+	list-style-type:none;
+	background:url(images/menu/menu_bg.gif) 50% 0 #515151 repeat-x;
+	margin:0;
+	padding:0;
+	height:80px;
+	width:780px;
+	border-top:1px solid #FFFFFF;
+	overflow:hidden;
+}
+
+.menu li {
+	background:none;
+	padding:0;
+	display:table-row;
+	vertical-align:middle;
+	float:left;
+	height:80px;
+	
+}
+
+.menu li.last_menu,
+.menu li.right_menu {
+	float:right;
+}
+
+
+.menu li a {
+	font-size:.8em;
+	text-transform:uppercase;
+	line-height:normal;
+	display:table-cell;
+	vertical-align:middle;
+	height:80px;
+	padding:0 10px 0 10px;
+	background:url(images/menu/menu_triple.gif) top left transparent repeat-x;
+}
+
+.menu li a:hover,
+.menu li a:active {
+	background-position:center left;
+	color:#FFFFFF;
+}
+
+.menu li.current_page_item a {
+	background-position:bottom left !important;
+	color:#1F3700 !important;
+}
+
+.menu li a.first_menu {
+	padding-left:35px;
+	background-repeat:no-repeat;
+	background-image:url(images/menu/menu_start_triple.gif);
+}
+
+.menu li a.last_menu,
+.menu li a.last_menu_off {
+	padding-right:35px;
+	background-repeat:no-repeat;
+	background-image:url(images/menu/menu_end_triple.gif);
+	background-position:top right;
+}
+
+.menu li a.last_menu:hover,
+.menu li a.last_menu:active {
+	background-position:center right;
+}
+
+.menu li.current_page_item a.last_menu {
+	background-position:bottom right !important;
+}
+
+.menu li a {
+	color:white;
+	text-decoration:none;
+}
+
+.menu li.lang_menu {
+	float:right;
+}
+
+.menu li.lang_menu a span {
+	width:19px;
+	height:80px;
+	overflow:hidden;
+	text-indent:100px;
+	display:block;
+}
+
+
+.menu li.lang_menu a {
+	display:block;
+	width:19px;
+	cursor:pointer;
+}
+
+
+/*---------LANGS----------*/
+
+.menu li#fr_FR a span {
+	background:url(images/lang_fr.gif) left transparent no-repeat;
+}
+
+.menu li#en_US a span {
+	background:url(images/lang_en.gif) left transparent no-repeat;
+}
+
+.menu li#fr_FR.current_page_item a span,
+.menu li#fr_FR  a:active span {
+	background-image:url(images/lang_fr.gif);
+}
+
+.menu li#en_US.current_page_item a span,
+.menu li#en_US  a:active span {
+	background-image:url(images/lang_en.gif);
+}
+
+/*--------FOOTER---------*/
+
+#footer .footer_content {	
+	width:760px;
+	display:block;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	padding:10px 10px 10px 10px;
+	border-top:1px dotted silver;
+	text-align:center;
+}
+
+/*--------POST--------*/
+
+.post {
+	font-size:.9em;
+	border-top:20px solid #F5F5F5;
+	margin-bottom:10px;
+	padding:1em 0 1em 0;
+}
+.sticky {
+border-top:20px solid #ccc;
+background: #f7f7f7;
+padding: 10px;
+}
+.post h2,
+.post h3,
+.post h4,
+.post h5 {
+	font-size:2em;
+}
+
+.post hr {
+	display:block;
+}
+
+.highlight_box {
+	font-size:.9em;
+	border:2px solid #F5F5F5;
+	padding:1em;
+	margin-bottom:20px;
+}
+
+.highlight_box .post {
+	font-size:1em;
+	border:0px none;
+	margin-bottom:0px;
+	padding:0 0 0 0;
+}
+
+.highlight_box .post p {
+	margin:0;
+}
+
+.highlight_box .post .date {
+	display:none;
+}
+
+.highlight_box h2,
+.highlight_box h3,
+.highlight_box h4,
+.highlight_box h5 {
+	font-size:2em;
+	border-bottom:10px solid #F5F5F5;
+}
+
+.highlight_box .post h2,
+.highlight_box .post h3,
+.highlight_box .post h4,
+.highlight_box .post h5 {
+	font-size:1.5em;
+}
+
+.readmore {
+	display:block;
+	text-align:left;
+	font-weight:bold;
+	clear:both;
+	margin:1em 0 1em 0;
+	color:#FF3C00;
+}
+
+.date { /* date & author */
+	color : silver;
+	float:right;
+	line-height:2.3em;
+	margin:1.5em 0 5px 10px;
+	padding-left:5px;
+	border-left:1px solid silver;
+	font-size:.8em;
+	text-align:center;
+	position:relative;
+	right:0;
+}
+
+.date_day {
+	display:block;
+	font-size:3em;
+	text-align:right;
+}
+
+.date_month {
+	display:block;
+	font-size:3em;
+	text-align:right;
+	font-weight:bold;
+}
+
+.date_year {
+	display:block;
+	font-size:1.4em;
+	line-height:.9em;
+}
+
+#content .postmetadata a {
+	color : #FF3C00;
+	border:none;
+	text-decoration:none;
+}
+
+#content .postmetadata a:hover {
+	border-bottom:1px dotted silver;
+}
+
+.postmetadata {
+	margin:0;
+	color:#515151;
+	list-style-type:none;
+}
+
+.clear {
+	clear: both;
+}
+
+.comment-author .avatar {
+	float:left;
+	margin:0 5px 0 0;
+	border:1px solid silver;
+	vertical-align:middle;
+}
+
+#content .commentlist dt{
+	/*	clear:both;*/
+	position:absolute;
+}
+
+html > body #content .commentlist dt{
+	position:static;
+}
+
+#content .commentlist dd {
+	margin:0;
+	padding:10px 3em 10px 10px; /* for ie not overlapping the comment with the date */
+	font-size:1em;
+	line-height:1.5em;
+	color:silver;
+	margin:0 0 1em 0;
+}
+
+html > body #content .commentlist dd {
+	padding:10px;
+}
+
+#content .commentlist div.comment {
+	color:#000000;
+	overflow: hidden;
+}
+
+#content .commentlist .date {
+	margin-right:5px;
+	font-size:.5em;
+}
+
+#content .commentlist .comment_text {
+	margin-top:5px;
+	display:block;
+}
+
+html > body #content .commentlist dd.author_comment {
+	background:url(images/transp-80.png) #c9e45a !important;
+	width:auto;
+}
+
+#content .commentlist dd.author_comment {
+	background-color:#c9e45a !important;
+	filter:alpha(opacity=20);
+	width:510px;
+}
+
+#content .commentlist .author_comment .author,
+#content .commentlist .author_comment .author a {
+	color:#c9e45a !important;
+	border-color:#c9e45a !important;
+}
+
+
+#content .commentlist dd.author_comment * { /* ie */
+	filter:alpha(opacity=100);
+	position:relative;
+}
+
+#content .commentlist dt.author_comment .date {
+	color:#a5ba52 !important;
+	border-color:#a5ba52 !important;
+}
+
+#content textarea#comment {
+	font-size:1em;
+	line-height:1.3em;
+}
+
+#commentform small {
+	color:#515151;
+}
+
+.commentmetadata {
+
+}
+
+.entry {
+	margin:0;
+	text-align:justify;
+}
+
+.entry p {
+	margin:1em 0 1em 0;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+
+#content .commentlist dd.depth-2 {
+	margin-left:2em;
+}
+#content .commentlist dd.depth-3 {
+	margin-left:4em;
+}
+#content .commentlist dd.depth-4 {
+	margin-left:6em;
+}
+#content .commentlist dd.depth-5 {
+	margin-left:8em;
+}
+#content .commentlist dd.depth-6 {
+	margin-left:10em;
+}
+#content .commentlist dd.depth-7 {
+	margin-left:12em;
+}
+#content .commentlist dd.depth-8 {
+	margin-left:14em;
+}
+#content .commentlist dd.depth-9 {
+	margin-left:16em;
+}
+

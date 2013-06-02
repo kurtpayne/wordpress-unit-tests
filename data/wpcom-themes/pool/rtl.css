@@ -1,0 +1,43 @@
+/*
+RTL for Theme: : Pool
+Editors: Navid Kashani ,Mahyar Abbaspour
+Persian WordPress Project,wp-persian.com
+*/
+body, #credits, #noticias small {
+	font-family:tahoma, arial;
+}
+#content {
+	direction:rtl;
+	text-align:right;
+}
+#header h1 {
+	letter-spacing:0;
+	padding:20px 30px 20px 0;
+}
+#noticias ul {
+	margin:0 30px 0 0;
+}
+#commentlist li .avatar {
+	float:left;
+	margin-left:0;
+	margin-right:10px;
+}
+code {
+	direction:ltr;
+	text-align:left;
+	display:block;
+	background-color:#CFCFCF;
+}
+.snap_preview img {
+	margin:0 4px;
+}
+#header h1 {
+	font-family:arial;
+}
+#noticias h2, #noticias h2 a {
+	font-size:22px;
+	font-family:arial;
+}
+#email, #url {
+	direction:ltr;
+}
