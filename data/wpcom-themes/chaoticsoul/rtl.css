@@ -1,0 +1,49 @@
+/*  
+Theme: ChaoticSoul
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+/*  -----|  Globals  |------------------------------------------------------  */
+
+body { 
+	direction:rtl;
+	unicode-bidi:embed;
+	}
+
+
+	th {  text-align: right; }
+
+
+/*  -----|  Structure  |----------------------------------------------------  */
+
+#wrapper { background: url('images/content_bkg-rtl.gif') repeat-y top right;}
+	
+#header-overlay { 
+	left: auto;
+	right:0;
+	}
+	
+	#content { float: right;}
+	
+	#sidebar { border-left: auto; float: left; border-right:0; }
+		
+
+.goleft { float: right; }
+.goright { float: left; }
+
+/* Comments Structure */
+
+	#commentform p { float: right; margin: 0 0 10px 10px; }
+
+
+
+/*  -----|  Miscellaneous  |------------------------------------------------  */
+
+.commentmetadata .avatar { 
+	float: left;
+}
+.navigation .left { float: right; }
+.navigation .right { float: left; }
+
+
