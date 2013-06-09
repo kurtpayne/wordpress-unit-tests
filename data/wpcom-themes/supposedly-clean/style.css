@@ -1,0 +1,343 @@
+/*
+Theme Name: Supposedly Clean
+Theme URI: http://www.alvinwoon.com/blog
+Description: A simple theme with color choices and a sidebar that switches position.
+Version: 1.0
+Author: Alvin Woon
+Tags: two-columns, fixed-width, theme-options, right-sidebar, left-sidebar, red, blue, green, sticky-post, widgets, rtl-language-support
+*/
+
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	height:100%;
+	text-align:center;
+	font-family:verdana, Helvetica, sans-serif;
+	font-size:0.8em;
+	color:#000;
+	background:#ccc url(images/lgrey043.jpg);
+}
+
+/*---[ Container CSS ]---*/
+#container{
+	width:610px;
+	margin:0 auto;
+}
+#matt{
+	width:610px;
+	background-color:#fcf7ef;
+	padding:10px 20px;
+	text-align:left;
+	border-left:1px solid #bfbfbf;
+	border-right:1px solid #bfbfbf;
+}
+#matt:after{/*gecko trick*/
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+/*---[ Header CSS ]---*/
+#matt h1{
+	font-size:17px;
+	font-weight:normal;
+}
+#matt h1 a{
+	color:#000000;
+	text-decoration:none;
+}
+#matt h1 a:hover{
+	text-decoration:underline;
+}
+#boren_head{
+	background:#8d0a0a url(images/competition_03.gif) no-repeat;
+	margin:5px auto 9px auto;
+	width:610px;
+	height:173px;
+}
+
+/*---[ Content CSS ]---*/
+#mike_content{
+	width:370px;
+	float:left;
+	font-size:0.85em;
+	word-spacing:0.05em;
+	padding-right:15px;
+}
+#mike_content a, #footer p a{
+	color:#5984ad;
+	text-decoration:none;
+}
+#mike_content a:hover, #footer p a:hover{
+	background-color:#f1e6cd;
+	border-bottom:1px solid #b9ae73;
+}
+/*info*/
+.info{
+	float:right;
+	color:#ce7424;
+    margin:10px 0 4px 4px;
+	font-size:9px;
+	text-align:center;padding:4px;
+	background-color:#dfebee;
+	border-top:1px solid #412618;
+}
+/*paragraph*/
+#mike_content p{
+	padding:6px 0;
+	line-height:18px;
+}
+/*post title*/
+#mike_content h2{
+	font-size:17px;
+	font-family:"Trebuchet MS", Arial;
+}
+#mike_content h2 span{
+	color:#CCCCCC;
+}
+/*post line*/
+.post_line{
+	width:370px;
+	border-bottom:1px solid #333;
+	clear:both;
+}
+.sidebar_line{
+	border-bottom:2px solid #8d0a0a!important;
+	border-bottom:3px solid #8d0a0a;
+	height:auto!important;
+	height:3px;
+	margin-bottom:25px!important;
+	margin-bottom:20px;
+	margin-top:-10px!important;
+	margin-top:-15px;
+}
+.category{
+	background-color:#f1ece3;
+	margin-bottom:30px;
+	margin-top:0!important;
+	margin-top:-6px;
+	padding:2px;
+	width:365px;
+	color:#999;
+	text-align:right;
+	font-size:9px;
+}
+.post ul.post-categories{
+	list-style:none;
+}
+.post ul.post-categories li{
+	display:inline;
+	background:#f1ece3;
+}
+/*unordered list*/
+.post ul{
+	list-style:none;
+	padding-left:20px;
+}
+.post ul li{
+	background:url(images/0081_ulli.gif) no-repeat top left;
+	background-position:2px 1px;
+	padding-left:20px;
+}
+.post ol { padding-left:20px; }
+/*blockquote*/
+blockquote{
+	margin:0 8px;
+	padding:5px;
+	background-color:#e2e3ae;
+	border-top:1px dashed #a9aa53;
+	border-bottom:1px dashed #a9aa53;
+}
+/*---[ Sidebar CSS ]---*/
+#dooncha_sidebar{
+	font-family:Arial, Helvetica, sans-serif;
+	float:right;
+	width:215px;
+	overflow: hidden;
+}
+#dooncha_sidebar ul#navigational, #dooncha_sidebar ul.nonnavigational, #author_talk{
+	font-weight:bold;
+    margin-bottom:25px;
+	padding-bottom:3px;
+	position:relative;
+	border-bottom:3px solid #8d0a0a;
+}
+#author_talk{
+	font-weight:normal;
+}
+#dooncha_sidebar ul.nonnavigational{
+	list-style:none;
+	
+}
+#dooncha_sidebar ul#navigational li{
+	display:inline;
+}
+#dooncha_sidebar ul.nonnavigational li{
+	background:url(images/0081_ulli.gif) no-repeat top left;
+	background-position:0 1px;
+	padding:0 0 0 17px;
+	
+}
+#dooncha_sidebar ul#navigational li a, #dooncha_sidebar ul.nonnavigational li a{
+	color:#000;
+	text-decoration:none;
+}
+#dooncha_sidebar ul#navigational li a:hover, #dooncha_sidebar ul.nonnavigational li a:hover{
+	color:#d84708;
+}
+#searchform{
+	margin-bottom:15px;
+}
+.side_title{
+	font-size:0.8em;
+	margin-bottom:5px;
+	color:#666;
+}
+
+/*---[ footer ]---*/
+#footer{
+	background-color:#fcf7ef;
+	width:610px;
+	padding:10px 20px;
+	text-align:center;
+	border-left:1px solid #bfbfbf;
+	border-right:1px solid #bfbfbf;
+}
+#footer p{
+	background-color:#f1ece3;
+	padding:3px;
+	font-size:0.7em;
+	word-spacing:0.05em;
+	padding-right:15px;
+}
+#footer span{
+	font-weight:bold;
+}
+
+/*---[ comment ]---*/
+ol#commentlist{
+	margin-left:19px!important;
+	margin-left:23px;
+}
+ol#commentlist li{
+	margin:5px 0;
+	padding-left: 10px;
+	background-color:#deecf3;
+}
+ol#commentlist li.depth-1
+{
+	border-bottom:2px solid #ee8b42;
+	padding-right: 10px;
+}
+ol#commentlist li .children {
+	list-style-type:none;
+}
+#commentlist li .avatar {
+	float: right;
+	padding: 2px;
+	margin-top: 9px;
+	background: #fff;	
+}
+#commentform input{
+	font-size:12px;
+	padding:2px;
+	background:#fff;
+	display:block;
+    clear:left;
+    width:100%;
+    border:1px solid #ccc;
+    border-color:#ccc #fff #fff #ccc;
+    color:#333;
+}
+#commentform textarea{
+	font-size:12px;
+	padding:2px;
+	height:150px;
+	background:#fff;
+ 	display:block;
+    clear:left;
+    width:100%;
+    border:1px solid #ccc;
+    border-color:#ccc #fff #fff #ccc;
+    color:#333;
+}
+#commentform input#submit{
+	width:150px;
+	float:right;
+	border-color:#fff #ccc #ccc #fff;
+
+}
+#commentform input#hidden{
+	border:0px;padding:0;
+}
+#postcomment a{
+	font-size:11px;
+}
+code {
+	font-size: 1.1em;
+}
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.sticky h2{
+background: #F1ECE3;
+padding: 10px;
+}
