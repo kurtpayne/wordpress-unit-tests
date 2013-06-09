@@ -1,0 +1,163 @@
+
+
+#af-ela {
+	position: relative;
+	margin: 40px 0 50px;
+	background-color: #333333;
+	}
+
+#af-ela ul {
+	position: relative;
+	list-style: none;
+	padding: 3px 0;
+	}
+
+#af-ela ul li:hover a {
+	color: #C00 !important;
+	}
+	
+#af-ela a:hover {
+	color: #C00 !important;
+	}
+
+#af-ela-menu, #af-ela-year, #af-ela-month, #af-ela-category {
+	text-align: center;
+	}
+
+#af-ela-tag {
+	text-align: justify;
+	}
+
+#af-ela-menu li {
+	font: 1.7em 'Lucida Grande', Verdana, Sans-Serif;
+	}
+
+#af-ela-year li, #af-ela-category li, #af-ela-tag li {
+	font: 1.3em/2.3em 'Lucida Grande', Verdana, Sans-Serif;
+	}
+
+#af-ela-month li {
+	font: 0.9em/1.5em 'Lucida Grande', Verdana, Sans-Serif;
+	}
+
+#af-ela-menu li, #af-ela-year li, #af-ela-month li, #af-ela-category li, #af-ela-tag li {
+	display: inline;
+	color: #CCC;
+	margin: 0 15px;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding: 4px 0;
+	}
+
+#af-ela-menu a, #af-ela-year a, #af-ela-month a, #af-ela-category a, #af-ela-tag a {
+	background: red !important;
+	}
+
+/*#af-ela-tag li {
+	display: inline;
+	margin: 0 3px;
+	line-height: 20px;
+	}*/
+
+#af-ela-month li, #af-ela-category li, #af-ela-tag li {
+	margin: 0 6px;
+	letter-spacing: 0;
+	}
+
+/* Hide Number of Entries on Year and Month */
+#af-ela-year span, #af-ela-month span {
+	display: none;
+	}
+
+/* Number of Entries */
+#af-ela-category span {
+	font-size: 8px;
+	color: #DDD;
+	}
+
+#af-ela-year li.selected, #af-ela-month li.selected, #af-ela-post li.selected, #af-ela-category li.selected,  #af-ela-menu li.selected {
+	color: #FFF;
+	background: url('images/elaindicator.png') bottom center no-repeat;
+	}
+#af-ela-year li:hover, #af-ela-month li:hover, #af-ela-post li:hover, #af-ela-category li:hover, #af-ela-menu li:hover,
+#af-ela-post-prev:hover, #af-ela-post-next:hover, #af-ela-post-prev-off:hover, #af-ela-post-next-off:hover {
+	color: #FFF;
+	}
+
+#af-ela-post-chrono, #af-ela-post-cats, #af-ela-post-tags {
+	margin-top: 15px !important;
+	}
+
+#af-ela-post-chrono li, #af-ela-post-cats li, #af-ela-post-tags li {
+	position: relative;
+	font-size: 1.1em;
+	line-height: 1.7em;
+	color: #bbb;
+	margin: 0 15px;
+	padding: 1px 20px;
+	}
+
+#af-ela-post-chrono li a, #af-ela-post-cats li a, #af-ela-post-tags li a {
+	color: #FFF;
+	}
+
+#af-ela-post-chrono li a {
+	position: absolute;
+	left: 60px;
+	}
+
+#af-ela-post-chrono li:hover, #af-ela-post-cats li:hover, #af-ela-post-tags li:hover {
+	background: #f8f8f8;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	padding-top: 0;
+	padding-bottom: 0;
+	color: #444;
+	}
+
+#af-ela-post-chrono li:hover > span, #af-ela-post-cats li:hover > span, #af-ela-post-tags li:hover > span {
+	color: #444;
+	}
+
+#af-ela-post-chrono a, #af-ela-post-cats a, #af-ela-post-tags a {
+	border: none;
+	}
+
+#af-ela-post-chrono li span, #af-ela-post-cats li span, #af-ela-post-tags li span {
+	position: absolute;
+	right: 20px;
+	font-weight: normal;
+	color: #AAA;
+	}
+
+/* Next and Previous Links */
+#af-ela-post-next, #af-ela-post-next-off {
+	right: 0;
+	}
+
+#af-ela-post-prev, #af-ela-post-prev-off {
+	left: 0;
+	}
+
+#af-ela-post-prev, #af-ela-post-next, #af-ela-post-prev-off, #af-ela-post-next-off {
+	position: absolute;
+	bottom: -35px;
+	font: 1.1em/1.3em 'Lucida Grande', Verdana, Sans-Serif;
+	color: #ccc;
+	margin: 0 30px;
+	display: inline;
+	}
+
+#af-ela-post-prev-off, #af-ela-post-next-off {
+	visibility: hidden;
+	}
+
+.elaload {
+	border: none !important;
+	background: none !important;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 5px;
+	top: 1px;
+	}
