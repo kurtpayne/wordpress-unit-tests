@@ -1,0 +1,405 @@
+/*
+Theme Name: Benevolence
+Theme URI: http://www.thoughtmechanics.com/blog/2005/01/03/benevolence/
+Description: A two-column simplistic theme with an inclination to perform kind, charitable acts.
+Version: 1.0
+Author: Theron Parlin
+Author URI: http://www.thoughtmechanics.com/ 
+Tags: fixed-width, custom-header, two-columns, widgets, white, light, left-sidebar, sticky-post, rtl-language-support
+*/
+
+body {
+	position: relative;
+	background: #333;
+	height: 100%;
+	font-family: Arial;
+	text-align:left;
+	color:#000;
+	font-size: 8pt;
+	margin:  0px;
+	padding: 0;
+	text-align: center;
+}
+
+#wrapper {
+	position: relative;
+	height: 100%;
+	width: 700px;
+	border-left: 10px solid black;
+	border-right: 10px solid black;
+	margin: 0 auto;
+	background-color: #000;
+} 
+
+#insideWrapper {
+	position: relative;
+	top: 0px;
+	height: 100%;
+	width: 700px;
+	margin: 0px;
+	background-color: #fff;
+	text-align: left;
+}
+
+#insideWrapper:after{
+content: "."; display: block; line-height: 1px; font-size: 1px; clear: both;}
+
+.post, .page {
+	position: relative;
+	top: 0px;
+	width: 420px;
+	left: 0px;
+	margin: 0px;
+	background-color: #fff;
+	text-align: left;
+	overflow: hidden;
+}
+
+.sticky {
+border: 2px solid #333;
+padding: 10px;
+}
+
+#content {
+	width: 420px;
+	margin-left: 250px;
+	background-color: #fff;
+	text-align: left;
+}
+
+#sidebar {
+	position: relative;
+	float: left;
+	width: 180px;
+	left: 40px;
+	padding: 0px;
+	background-color: #fff;
+	text-align: left;
+	font-family: Arial;
+	color: #000;
+	font-size: 7.5pt;
+	line-height: 11pt;
+	text-transform: uppercase;
+} 
+
+#sidebar p {
+	text-transform: none;
+	margin: 4px 0 4px;
+}
+
+.left {
+	float: left;
+	margin: 0px 10px 0px 10px;
+}
+
+.right {
+	float: right;
+	margin: 0px 10px 0px 10px;
+}
+
+#masthead {
+	position: relative;
+	top: 0px;
+	background: url('images/masthead.jpg');
+ 	width: 700px;
+ 	height: 225px;
+	margin: 0px;
+	margin-top: 0px;
+}
+
+.centeredImage {
+    text-align:center;
+    margin-top:10px;
+    margin-bottom:0px;
+    padding:0px;
+}
+
+#footer {
+	font-size: 7pt;
+	position: relative;
+	color: #fff;
+	top: 5px;
+	width: 700px;
+	margin: 0px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+#footer a {
+	color: #fff;
+}
+
+#footer a:visited {
+	color: #fff;
+}
+
+#footer a:hover {
+	color: #ff3333;
+	border: 0px;
+}
+ 
+
+.sep {
+	position: relative;
+	background: url('images/sep.jpg');
+ 	width: 162px;
+	height: 14px;
+	margin: 0px;
+	padding: 0px;
+	left: 132px;
+	text-align: center;
+}
+
+.attachment .sep {
+	clear: both;
+}
+
+#sidebar a {
+	color: #000;
+}
+
+#sidebar a:visited {
+	color: #000;
+}
+
+#sidebar a:hover {
+	color: #999;
+}
+
+.commentBox {
+	position: relative;
+	margin: 0 auto;
+	width: 90%; 
+	background-color: #f5f5f5; 
+	text-align: left; 
+	border: 1px solid #999; 
+	padding: 5px;
+}
+
+.commentBox .avatar { 
+	border: 1px solid #ccc;
+	padding: 2px;
+	margin: 0;
+	float: right; 
+}
+
+#respond textarea {
+	width: 99%;
+}
+
+.cite {
+	font-size: 7pt;
+	color:#666;
+}
+
+code {
+	font-family: Courier New, Verdana;
+	text-align:left;
+	color:#666;
+	font-size: 8pt;
+}
+
+input {
+	border: 1px solid #333333;
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000000;
+	padding: 0px;
+}
+
+h2 {
+	color: #666;
+	font-size: 14px;
+	text-align: left;
+}
+
+
+#sidebar ul {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+}
+
+#sidebar li {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+#sidebar .widget_categories li ul li {
+	margin-left: 15px;
+}
+
+blockquote, blockquote p {
+	text-indent: 0px;
+	margin-bottom: 7px;
+	color: #666;
+}
+
+.footerLink {
+	color: #666;
+	text-decoration: underline;
+}
+
+a.footerLink {
+	color: #666;
+	text-decoration: underline;
+}
+
+a.footerLink:visited {
+	color: #666;
+	text-decoration: underline;
+}
+
+a.footerLink:hover {
+	color: #999;
+	text-decoration: underline;
+}
+
+.title, #sidebar h2 {
+	font-family: 'Arial Black';
+	color: #333;
+	font-size: 7.5pt;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin: 14px 0 0;
+}
+
+a.title {
+	color: #333;
+}
+
+a.title:visited {
+	color: #333;
+}
+
+a.title:hover {
+	color: #999;
+	border: 0px;
+}
+
+#blogTitle {
+	position: relative;
+	top: 50px;
+	left: 20px;
+	font-family: 'Arial Black';
+	font-size: 8pt;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+#blogTitle a {
+	color: #333;
+}
+
+#blogTitle a:visited {
+	color: #333;
+}
+
+#blogTitle a:hover {
+	color: #ff3333;
+	border: 0px;
+}
+
+.commentPos {
+	font-family: 'Arial Black';
+	font-size: 7pt;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	clear: both;
+}
+
+a.commentPos {
+	font-family: 'Arial Black';
+	color: #ff3333;
+}
+
+a.commentPos:visited {
+	color: #ff3333;
+}
+
+a.commentPos:hover {
+	color: #000;
+	border: 0px;
+}
+
+a {
+	color: #ff3333;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #ff3300;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #394651;
+	text-decoration: none;
+	border-bottom: 1px dashed #394651;
+}
+
+#sidebar a img {
+	border: 0;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
