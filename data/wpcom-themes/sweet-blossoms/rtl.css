@@ -1,0 +1,69 @@
+/*-------------------------
+Theme: Sweet Blossoms
+RTL: Yoav Farhi, yoav@automattic.com
+-------------------------*/
+
+/* ----- BASICS ELEMENTS ------------------------------------------------------------------------------------------------- */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+/* ----- LAYOUT ------------------------------------------------------------------------------------------------- */
+
+#container {
+	background-image:url(images/mainbg-rtl.gif);
+}
+
+#header{
+	background-image:url(images/header-rtl.gif);
+	text-align:right;
+}
+
+		#title{
+			padding:185px 160px 0px 0px;
+		}
+		
+		#subtitle{			
+			padding:0px 190px 2px 10px;
+		}
+
+#main {
+	float:right;
+	text-align:right;
+	padding:0px 140px 0px 0px;
+}
+
+#side {
+	float:left;
+	text-align:right;
+	padding:0px 0px 0px 150px;
+}
+
+		#side ul{
+			padding: 0px 15px 0px 0px;
+		}
+		
+ul.commentlist {
+	padding-right: 10px;
+	padding-left: 0;
+}
+
+ul.children {
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+#copyright {
+	float:right;
+	padding:10px 140px 10px 10px;
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
