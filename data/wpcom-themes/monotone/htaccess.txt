@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING}	^.*(w|h|f)\=.*$
+RewriteRule ^(wp\-content\/uploads\/.*\.)(jpg|JPG|jpeg|png|PNG|gif|GIF)$ /thumb.php?image=$1$2 [QSA,L]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
