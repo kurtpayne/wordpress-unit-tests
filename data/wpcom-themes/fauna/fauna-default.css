@@ -1,0 +1,194 @@
+/*
+
+	Fauna Images and Colors Stylesheet
+	
+	If you only need to change colors you only need to edit this file.
+	
+*/
+
+/* Basic Colors
+------------------------------------------*/
+body {
+	background-color: #F5F5EF;
+	color: #565654;
+}
+.box, #searchbox {
+	background-color: #fff;
+}
+#sidebar, #secondary, #copyright {
+	color: #A5A5A3;
+}
+
+/* All Images
+------------------------------------------*/
+#header {
+	background: #CBF400 url(images/masthead.jpg);
+}
+.commentbox { /* Vertical drop shadow near comment box */
+	background: url(images/long-vertical-shadow.gif) no-repeat right top; 
+}
+.bg {
+	background: #F5F5EF url(images/bg.gif) no-repeat center top; 
+} 
+
+/* Links
+------------------------------------------*/
+a:link, a:active { text-decoration: underline; color: #17A; }
+a:visited { text-decoration: underline; color: #035; }
+a:hover, a:focus { text-decoration: underline; color: #6BD; }
+
+#sidebar a:link, #sidebar a:active { text-decoration: none; color: #79A; }
+#sidebar a:visited { text-decoration: none; color: #578}
+#sidebar a:hover { text-decoration: underline; color: #79A}
+
+.secondary a:link, .secondary a:active { text-decoration: none; color: #79A; }
+.secondary a:visited { text-decoration: none; color: #578}
+.secondary a:hover	{ text-decoration: underline; color: #79A}
+
+.comment-header em a:link, .comment-header em a:active, .comment-header em a:visited { text-decoration: none; color: #39C; }
+.comment-header em a:hover	{ text-decoration: none; color: #146; }
+
+/* Headings & Titles
+------------------------------------------*/
+h2 a:link, h2 a:active, h2 a:visited {
+	color: #035;
+}
+h2 a:hover, h2 a:focus {
+	color: #39C;
+}
+.entry-date, .entry-meta {
+	color: #989D3C !important;
+}
+.entry-date a, .entry-meta a {
+	color: #989D3C !important;
+	border-bottom: 1px dotted #989D3C;
+	text-decoration: none;
+}
+.entry-date a:hover, .entry-meta a:hover {
+	color: #D3D764 !important;
+	border-bottom: 1px dotted #D3D764;
+	text-decoration: none;
+}
+.entry p a img {
+	border-bottom: 1px solid #17A;
+}
+.entry p a img:hover {
+	border-bottom: 1px solid #6BD;
+}
+#menu a:link, #menu a:visited { color: #A5A5A3; }
+#menu a:active, #menu a:hover { color: #000; }
+body#index li#current-index a, body#index #current-index a:visited,
+.current_page_item a, .current_page_item a:visited
+{
+	color: #000 !important;
+}
+
+/* Various
+------------------------------------------*/
+acronym, abbr {
+	border-bottom: 1px dashed #C63;
+}
+strike, del {
+	color: #CACAC8;
+}
+code, pre, kbd {
+	color: #000;
+}
+ins {
+	color: #989D3C;
+}
+label:hover {
+	color: #000;
+}
+fieldset {
+	border: 1px solid #F4F8FB;
+	background-color: #F4F8FB;
+}
+legend {
+	background-color: #fff;
+}
+.notice, .comment-header small { /* Moderation Message */
+	color: #000;
+	border-top: 1px solid #FFF200;
+	border-bottom: 1px solid #FFF200;
+	background-color: #FFFFF4;
+}
+blockquote, pre {
+	border-left: 1px solid #D9D9D9;
+}
+#tags-allowed {
+	border-top: 1px solid #D6E1ED;
+	border-bottom: 1px solid #D6E1ED;
+	background-color: #F8FAFC;
+}
+
+/* Comments & Trackbacks
+------------------------------------------*/
+.comment-even, .comment-preview {
+	background-color: #F8FAFC;
+}
+.comment-odd {
+	background-color: #F8FAFC; /* Change this colour to add "Flip flopping" backgrounds */
+}
+.comment-author { /* Author background color */
+	background-color: #EEF4F9;
+}
+
+#trackbacklist li a {
+	background-color: #FBFCFD;
+}
+#trackbacklist li small {
+	color: #565654;
+}
+#trackbacklist li a:hover {
+	background-color:#F4F8FB;
+	color: #035;
+}
+#trackbacklist li a:active {
+	background-color:#FBFCFD;
+	color: #035;
+}
+
+/* Forms
+------------------------------------------*/
+.inputbox, .inputfield, .searchbox {
+	color: #777773;
+}
+.inputbox:focus, .inputfield:focus, .searchbox:focus {
+	color: #424240;
+	background-color:#FFFFF4;
+}
+
+/* Logo
+------------------------------------------*/
+h1 a:link, h1 a:visited {
+	color: #686865;
+	border-bottom: 1px solid #F5F5EF;
+}
+h1 a:hover, h1 a:active {
+	color: #A6A6A4;
+	border-bottom: 1px dotted #A6A6A4;
+}
+
+/* WordPress Calendar
+------------------------------------------*/
+#wp-calendar caption {
+	color: #989D3C;
+}
+#wp-calendar a {
+	color: #39C;
+	background-color: #F8FAFC;
+}
+#wp-calendar a:hover {
+	color: #035 !important;
+	background-color: #EEF4F9 !important;
+}
+#wp-calendar td.pad:hover { /* Doesn't work in IE */
+	background-color: #F8FAFC;
+}
+
+/* For Plugins
+------------------------------------------*/
+#recent-activity small a:link, #recent-activity small a:visited, .secondary small a:link, .secondary small a:visited {
+	color: #ACC;
+}
