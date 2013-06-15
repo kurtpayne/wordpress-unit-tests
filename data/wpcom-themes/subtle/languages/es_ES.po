@@ -1,0 +1,428 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR
+#
+#
+#
+# Translation Version: 0.2 by: Xantor
+# First translation Attempt. could have typing mistakes and/or orthographic errors
+# It is also necessary to check the translation in context.
+#
+# ----
+# Primer intento de Traduccion. Puede contener errores de tipeo y/o ortográficos
+# también es necesario verificar que la traduccióon encaje en el contexto.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Subtle Theme\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-09-17 12:51-0800\n"
+"Last-Translator: Christopher Frazier <cfrazier@gluedideas.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#: ../comments.php:20
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Este Artículo esta protegido por una clave, por favor introduzca la clave para ver los comentarios"
+
+#: ../comments.php:35
+msgid "Write a Comment"
+msgstr "Agrege un Comentario"
+
+#: ../comments.php:36
+msgid "Take a moment to comment and tell us what you think.  Some basic HTML is allowed for formatting."
+msgstr "Tome un momento para hacer un comentario diciendonos que piensa. Se permite utilizar algunos comandos de HTML básico para dar formato al texto."
+
+#: ../comments.php:39
+msgid "You must be logged in to post a comment."
+msgstr "Ud. debe estar identificado para poder agregar un comentario"
+
+#: ../comments.php:39
+msgid "Click here to login."
+msgstr "Haga click aquí para identificarse"
+
+#: ../comments.php:44
+msgid "Logged in as"
+msgstr "Identificado como"
+
+#: ../comments.php:44
+msgid "Click to log out"
+msgstr "Hacer click aquí para salir"
+
+#: ../comments.php:48
+msgid "Name"
+msgstr "Nombre"
+
+#: ../comments.php:49
+msgid "E-mail"
+msgstr "E-mail"
+
+#: ../comments.php:50
+msgid "Website"
+msgstr "Sitio Web"
+
+#: ../comments.php:54
+msgid "Allow comment box to float next to comments."
+msgstr "Permitir quie la caja de comentarios flote al lado del comentario"
+
+#: ../comments.php:56
+msgid "Type your comment here."
+msgstr "Agrege aquí su comentario"
+
+#: ../comments.php:72
+msgid "Reader Comments"
+msgstr "Comentarios de los Lectores"
+
+#: ../comments.php:82
+msgid "What is this?"
+msgstr "¿Que es esto?"
+
+#: ../comments.php:84
+msgid "Comment Number:"
+msgstr "Comentario Numero:"
+
+#: ../comments.php:86
+msgid "Written by:"
+msgstr "Escrito por:"
+
+#: ../comments.php:87
+msgid "Posted on:"
+msgstr "Agregado el:"
+
+#: ../comments.php:100
+msgid "Be the first to leave a comment!"
+msgstr "!Sea el primero en agregar un comentario!"
+
+#: ../comments.php:103
+msgid "Sorry, comments are closed."
+msgstr "Lo sentimos, los comentario estan cerrados"
+
+#: ../footer.php:32
+msgid "E-mail Subscription"
+msgstr "Suscripción de E-mail"
+
+#: ../footer.php:42
+msgid "Powered by WordPress"
+msgstr "Manejado por WordPress"
+
+#: ../footer.php:43
+msgid "Design by Glued Ideas"
+msgstr "Diseñado por Glued Ideas"
+
+#: ../footer.php:44
+msgid "Icons by Fam Fam Fam"
+msgstr "Diseño de iconos Fam Fam Fam"
+
+#: ../footer.php:47
+msgid "Unless otherwise specified, all content is made available under the <a href=\"http://creativecommons.org/licenses/by/2.5/\">Creative Commons License</a>."
+msgstr "A menos que se especifique de otra manera todo el contenido se encuentra disponible bajo licencia <a href=\"http://creativecommons.org/licenses/by/2.5/\">Creative Commons</a>."
+
+#: ../functions.php:75
+msgid "This theme style does not support uploadable headers"
+msgstr "Este estilo del tema no permite encabezados a la medida"
+
+#: ../functions.php:121
+msgid "Based on a joke my brother-in-law made, Subtle is the first public theme released by Glued Ideas.  Designed for sites that have multiple authors, Subtle also makes use of WordPress Widgets, making customization a snap.  For more information about this and other themes from Glued Ideas, <a href=\"http://blog.gluedideas.com\">visit us at our blog</a>."
+msgstr "Inspirado en una broma hecha por mi cuñado, Subtle es el primer tema público de Glued Ideas.  Diseñado para sitios donde escriban multiples autores, al mismo tiempo Subtle hace uso de los Widgets de WordPress, Haciendo la adaptación muy facil.  Para más informacin sobre este y otros temas hechos por Glued Ideas, <a href=\"http://blog.gluedideas.com\">Visitenos en nuestro blog</a>."
+
+#: ../functions.php:124
+msgid "The following errors occured when saving your options:"
+msgstr "Los siguientes errores ocurrieron al tratar de guardar sus opciones"
+
+#: ../functions.php:135
+msgid "Theme Specific Options"
+msgstr "Opciones especificas de este tema"
+
+#: ../functions.php:138
+msgid "Theme Style"
+msgstr "Estilo de tema"
+
+#: ../functions.php:151
+msgid "Please install a valid style in the /styles/ folder."
+msgstr "Por favor instale un estilo valido en el directorio /styles/"
+
+#: ../functions.php:155
+msgid "Select a style for this theme.  Find more styles at our <a href=\"http://blog.gluedideas.com/\">development blog</a>."
+msgstr "Seleccione un estilo para este tema. Puede encontrar estilos adicionales en nuestro <a href=\"http://blog.gluedideas.com/\">blog de desarrollo</a>."
+
+#: ../functions.php:158
+msgid "Upload Header"
+msgstr "Subir encabezado"
+
+#: ../functions.php:160
+msgid "Select an image from your computer to use as your header image.<br />Note: File dimensions should be 820 x 145 pixels."
+msgstr "Seleccione una imagen en su computadora para usar como imagen de encabezado.<br />Nota: Las dimensiones de la imagen deben ser 820 x 145 pixeles."
+
+#: ../functions.php:163
+msgid "Reset Header"
+msgstr "Restituir Encabezado"
+
+#: ../functions.php:164
+msgid "Reset the Default style's header."
+msgstr "Restituir el encabezado por defecto de este estilo"
+
+#: ../functions.php:167
+msgid "Show Metalinks"
+msgstr "Mostrar los Metaenlaces"
+
+#: ../functions.php:168
+msgid "Show Comment Number and Technorati / Digg / Delicious links with posts."
+msgstr "Mostar en el Artículo el No. de Comentario y los enlaces de Technorati / Digg / Delicious."
+
+#: ../functions.php:172
+msgid "Show Sub-Pages"
+msgstr "Mostrar Subpáginas"
+
+#: ../functions.php:173
+msgid "Show sub-pages when viewing a page."
+msgstr "Mostar subpáginas cuando este viendo una página"
+
+#: ../functions.php:176
+msgid "Site Description"
+msgstr "Descripción de el Sitio Web"
+
+#: ../functions.php:177
+msgid "If a description for the site is given here, it will be displayed as a prominent information box on the home page."
+msgstr "Si coloca aquí una descripción de su Sitio Web, esta aparecerá resaltada en la página de inicio del sitio."
+
+#: ../functions.php:180
+msgid "Number of Leads"
+msgstr "Cantidad de Artículos resaltados"
+
+#: ../functions.php:182
+msgid "The number of posts on the home page to be shown as \"lead stories\" - these will display with their full-text (up to the \"more\" tag)."
+msgstr "La cantidad de artículos a ser mostrado en la página de inicio como \"Artículos Resaltados\" - estos Artículos se mostraran completos (hasta el indicador \"more\")."
+
+#: ../functions.php:185
+msgid "Categories to Display"
+msgstr "Categoría a Mostrar"
+
+#: ../functions.php:187
+msgid "Display only the categories you want to display in your front-page loop.  Just provide a comma-separated list of category slugs you'd like to use."
+msgstr "Indique las categorias que Ud. desea aparezcan en la página principal. Solo indique en una lista separada por comas los nombres de las categorías a mostrar."
+
+#: ../functions.php:195
+msgid "Gravatar Options"
+msgstr "Opciones de Gravatar"
+
+#: ../functions.php:196
+msgid "Allow your readers to show off their personalities in comments through <a href=\"http://gravatar.com\">Gravatars</a>."
+msgstr "Permita a sus lectores mostrar sus personaliidades en sus comentarios mediante el uso de <a href=\"http://gravatar.com\">Gravatars</a>."
+
+#: ../functions.php:199
+msgid "Show Gravatars"
+msgstr "Mostrar Gravatars"
+
+#: ../functions.php:200
+msgid "Show gravatars on comments (replaces comment number)."
+msgstr "Mostrar el Gravatar en el comentario (reemplazara al No. de comentario)"
+
+#: ../functions.php:203
+msgid "Default Gravatar URL"
+msgstr "URL de Gravatar por defecto"
+
+#: ../functions.php:204
+msgid "Provide a URL to the default image used when a user doesn't have a gravatar."
+msgstr "Indique el URL a una imagen por defecto a ser usada en caso de que el usuario no indique un Gravatar"
+
+#: ../functions.php:207
+msgid "Gravatar Rating"
+msgstr "Censura de Gravatar"
+
+#: ../functions.php:208
+msgid "Is your site PG rated?  Check out the Gravatar site for more information."
+msgstr "¿Su titio web tiene contenido infantil? Revise el sitio de Gravatar para obtener más informacion"
+
+#: ../functions.php:216
+msgid "Feedburner Options"
+msgstr "Opcions de Feedburner"
+
+#: ../functions.php:217
+msgid "Make reading your RSS feeds easier for your audience by signing up with <a href=\"http://www.feedburner.com\">FeedBurner</a>."
+msgstr "Haga más fácil a su audiencia la lectura del contenido RSS registrandose con <a href=\"http://www.feedburner.com\">FeedBurner</a>."
+
+#: ../functions.php:220
+msgid "E-mail Subscription (Feed ID)"
+msgstr "Correo de la subscripción (Feed ID)"
+
+#: ../functions.php:221
+msgid "If you have enabled e-mail subscriptions, type the numeric ID for your feed.  You can find this by going to \"My Feeds\" and then clicking on the feed for this blog.  The URL will end with \"?id=XXXXXXX\" - that number is the Feed ID."
+msgstr "Si Ud. a habilitado las suscripciones por e-mail, entonces introduzca su identificador numerico (ID) Puede encontrar este ID dirigiendose a \"My Feeds\" y luego haciendo click en el \"Feed\" de este blog. La URL debe terminar con \"?id=XXXXXXX\" - el numero sería el \"Feed ID\""
+
+#: ../functions.php:224
+msgid "Feedburner Link"
+msgstr "Enlace de Feedburner"
+
+#: ../functions.php:225
+msgid "The URL that people go to for this feed."
+msgstr "El URL que los usuarios utilizaran para ir a este \"Feed\""
+
+#: ../functions.php:228
+msgid "Show Feedflare"
+msgstr "Mostrar Feedflare"
+
+#: ../functions.php:229
+msgid "Show FeedFlare on my posts."
+msgstr "Mostrar Feedflare en mis artículos"
+
+#: ../header.php:87
+#: ../search.php:95
+msgid "Find this"
+msgstr "Buscar esto"
+
+#: ../header.php:94
+msgid "Home"
+msgstr "Inicio"
+
+#: ../home.php:52
+#: ../search.php:50
+#: ../single.php:27
+msgid "Posted by"
+msgstr "Escrito por"
+
+#: ../home.php:57
+#: ../single.php:47
+#, fuzzy
+msgid "No Responses"
+msgstr "Respuestas"
+
+#: ../home.php:57
+#: ../single.php:47
+#, fuzzy
+msgid "One Response"
+msgstr "Respuestas"
+
+#: ../home.php:57
+#: ../single.php:47
+msgid "Responses"
+msgstr "Respuestas"
+
+#: ../home.php:68
+msgid "Leave a comment..."
+msgstr "Agregar un comentario..."
+
+#: ../home.php:68
+msgid " or "
+msgstr " o "
+
+#: ../home.php:68
+msgid "Read comments..."
+msgstr "Leer comentarios..."
+
+#: ../home.php:85
+msgid "Oops - There's Nothing Here"
+msgstr "Lo sentimos - No hay nada aquí"
+
+#: ../home.php:86
+msgid "It looks like the blog owner hasn't written anything yet!"
+msgstr "Al parecer el dueño de este Blog no ha escrito nada todavía"
+
+#: ../search.php:28
+msgid "Author Archives for"
+msgstr "Archivos del Autor para"
+
+#: ../search.php:30
+msgid "Search Results for"
+msgstr "Resultados de la busqueda de"
+
+#: ../search.php:32
+msgid "Site Archives"
+msgstr "Archivos de este Sitio"
+
+#: ../search.php:39
+#: ../search.php:67
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: ../search.php:40
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: ../search.php:68
+msgid "&laquo; Previous Entries"
+msgstr ""
+
+#: ../search.php:75
+msgid "No posts were found.  Try searching again."
+msgstr "No se encontro ningun otro artículo. Intente nuevamente su busqueda."
+
+#: ../search.php:86
+msgid "Visit Author's Website"
+msgstr "Visite el Sitio Web del Autor"
+
+#: ../search.php:87
+msgid "Author's Feed"
+msgstr "\"Feed\" del Autor"
+
+#: ../search.php:92
+msgid "Find It Quickly"
+msgstr "Busqueda rapida"
+
+#: ../search.php:93
+msgid "Find what you're looking for quickly by using our keyword search.  Can't find it?  Try our links below."
+msgstr "Encuentre rápidamente los que está buscando usando nuestra búsqueda por palabras clave. Si no puede encontrarlo intente alguno de los enlaces que le presentamos abajo."
+
+#: ../search.php:105
+msgid "Authors"
+msgstr "Autores"
+
+#: ../search.php:106
+msgid "Select an author for posts and author information."
+msgstr "Seleccione a un autor para mostrar su información sus Artículos "
+
+#: ../search.php:113
+msgid "Monthly Archives"
+msgstr "Archivos por mes"
+
+#: ../search.php:114
+msgid "Find posts by the month they were written"
+msgstr "Encuentre Artículos basado en el mes en que fueron escritos"
+
+#: ../search.php:125
+#: ../single.php:60
+msgid "Categories"
+msgstr "Categorías"
+
+#: ../search.php:126
+msgid "Find posts using the \"tags\" provided below."
+msgstr "Encuentre articulos basado en las \"claves\" que le mostramos abajo"
+
+#: ../single.php:41
+msgid "Information and Links"
+msgstr "Información y Enlaces"
+
+#: ../single.php:42
+msgid "Join the fray by commenting, tracking what others have to say, or linking to it from your blog."
+msgstr "Integrese haciendo comentarios, revisando lo que otros tienen que decir o agregando enlaces desde su propio blog a nuestros Artículos"
+
+#: ../single.php:45
+msgid "Information"
+msgstr "Información"
+
+#: ../single.php:51
+msgid "Feeds and Links"
+msgstr "\"Feeds\" y Enlaces"
+
+#: ../single.php:52
+#, fuzzy
+msgid "Comment Feed"
+msgstr "Comentario Numero:"
+
+#: ../single.php:53
+msgid "From This Author"
+msgstr "De este Autor"
+
+#: ../single.php:67
+msgid "Other Posts"
+msgstr "Otros Artículos"
+
+#: ../single.php:92
+msgid "Sorry, no posts matched your criteria."
+msgstr "Lo sentimos, no hay Artículos que cumplan ese criterio de busqueda"
+
