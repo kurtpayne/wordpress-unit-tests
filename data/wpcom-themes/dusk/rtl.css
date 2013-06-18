@@ -1,0 +1,78 @@
+/*  
+Theme Name: Dusk
+RTL:  Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+/* Basics and Typography */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+ol, ul {
+	margin: 1.2em 2em 1.2em 0;
+}
+blockquote {
+	border-right: 4px solid #888685;
+	border-left: 0;
+}
+
+/* Layout */
+
+#wrapper {
+	background: #EEEAE8 url(images/wrapper-rtl.gif) right top repeat-y;
+	text-align: right;
+}
+#header {
+	background: url(images/header-rtl.gif)right top no-repeat;
+}
+
+	/* Header Styles */
+	
+	#title {
+		float: right;
+		margin: 38px 9px 0 0;
+	}
+
+#content {
+	float: right;
+	padding: 0 35px 0 20px;
+	background: url(images/content-rtl.gif)right no-repeat;
+} 
+#sidebar {
+	float: right;
+	padding: 80px 15px 0 25px;
+	background: url(images/sidebar-rtl.gif) no-repeat top left;
+} 
+
+#sidebar ul ul, #sidebar ol {
+	margin: 1.2em 1.3em 1.2em 0;
+}
+
+#footer {
+	clear: both;
+	padding: 1.2em 35px 1.2em 230px;
+}
+	
+
+/* Blog Styles */
+
+.postmeta, .postfeedback {
+	text-align: left;
+	}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
+
+
+div.avatar {
+	float: left;
+}
