@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-10 21:28+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "RSS 2.0 - all posts"
+msgstr "RSS2.0 (모든 글)"
+
+#: 404.php:9
+msgid "RSS 2.0 - all comments"
+msgstr "RSS2.0 (모든 댓글)"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "말하는이"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "404 에러 페이지입니다!"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "맞춤 에러 페이지입니다. 존재하지 않은 링크를 클릭하셨습니다. 저희의 실수 때문일 것입니다. 하지만 별 도움이 안 되는 '404 에러' 기본 페이지 대신 현재의 에러 페이지를 보여드리고 무엇이 문제인지를 알고자 합니다. "
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "브라우저 창에서 '뒤로 가기' 버튼을 눌러 이 사이트의 다른 곳으로 이동해 보십시오. 아니면 홈페이지로 가는 아래 링크를 클릭하세요. "
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "홈페이지로 돌아가기  &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "검색 결과"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "열쇠말: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "글모음"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "&#8216;%1$s&#8217; 범주에 대한 글모음"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "&#8216;%1$s&#8217; 꼬리말(tag)이 달린 글들"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr " %1$s 에 대한 글모음"
+
+#: archive.php:25
+#: archive.php:48
+#: archives.php:14
+#: comments.php:91
+#: functions.php:503
+#: index.php:23
+#: links.php:22
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "F jS, Y"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "F, Y"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "글쓴이의 글모음"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "블로그 글모음"
+
+#: archive.php:50
+#: archives.php:15
+#: comments.php:95
+#: functions.php:511
+#: index.php:25
+#: links.php:23
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "편집"
+
+#: archive.php:51
+#: index.php:26
+msgid "No comments"
+msgstr "댓글이 없습니다."
+
+#: archive.php:51
+#: index.php:26
+msgid "1 comment"
+msgstr "한 개의 댓글"
+
+#: archive.php:51
+#: index.php:26
+#, php-format
+msgid "% comments"
+msgstr "% 개의 댓글"
+
+#: archive.php:51
+#: index.php:26
+msgid "Comments off"
+msgstr ""
+
+#: archive.php:55
+#: index.php:30
+msgid "Read more..."
+msgstr "더 보기..."
+
+#: archive.php:59
+#: index.php:34
+#: single.php:29
+msgid "Categories: "
+msgstr ""
+
+#: archive.php:60
+#: index.php:35
+#: single.php:30
+msgid "Tags: "
+msgstr ""
+
+#: archive.php:67
+#: archives.php:39
+#: index.php:42
+#: links.php:46
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "죄송합니다, 찾으시는 것에 맞는 글이 없습니다."
+
+#: archive.php:75
+#: index.php:50
+msgid "Newer Entries"
+msgstr "최근 것들"
+
+#: archive.php:76
+#: index.php:51
+msgid "Older Entries"
+msgstr "지난 것들"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:25
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "댓글 남기기"
+
+#: archives.php:18
+#: links.php:26
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "댓글로 바로가기"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "댓글 보기 위해 비밀번호 입력"
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:347
+msgid "Comments"
+msgstr "댓글"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "엮인글들(trackbacks)"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "글엮기(trackback)"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "아직 댓글이 없습니다."
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "댓글 페이지들"
+
+#: comments.php:91
+#: functions.php:503
+#, php-format
+msgid "%1$s at %2$s"
+msgstr " %2$s에 %1$s"
+
+#: comments.php:91
+#: functions.php:503
+msgid "H:i"
+msgstr "H:i"
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "엮인글들이 아직 없습니다."
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "댓글쓰기가 닫혔습니다."
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "댓글을 남기시려면 <a href=\"%s\">로그인</a> 먼저 해주세요."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "로그인하신 아이디: "
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "이 계정 로그아웃하기"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "&raquo; 로그아웃"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "<strong>%s</strong> 님! 안녕하세요!"
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "&raquo; 변경하기"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr " &raquo; 닫기"
+
+#: comments.php:166
+msgid "Name"
+msgstr "이름"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(필수사항)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "이메일주소(표시안됨)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "웹사이트"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "이후 댓글을 RSS로 받기"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "댓글 올리기"
+
+#: functions.php:160
+#: functions.php:169
+msgid "Current Theme Options"
+msgstr "사용중인 테마 설정"
+
+#: functions.php:174
+msgid "Search"
+msgstr "검색"
+
+#: functions.php:178
+msgid "Using google custom search engine."
+msgstr "구글의 맞춤 검색엔진 사용하기"
+
+#: functions.php:181
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:184
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"http://www.google.com/coop/cse/\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "<a href=\"http://www.google.com/coop/cse/\">구글 맞춤 검색엔진</a>의 <strong>검색창 코드</strong>에서 <code>name=\"cx\"</code> 찾기, 그리고 여기에 <code>값</code>을 입력하기.<br/>예: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:193
+msgid "Menubar"
+msgstr "메뉴막대"
+
+#: functions.php:197
+msgid "Show pages as menu."
+msgstr "페이지를 메뉴로 보이기"
+
+#: functions.php:201
+msgid "Show categories as menu."
+msgstr "범주를 메뉴로 보이기"
+
+#: functions.php:211
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:215
+msgid "Remove sidebar from all pages."
+msgstr ""
+
+#: functions.php:226
+msgid "Notice"
+msgstr "알림"
+
+#: functions.php:228
+#: functions.php:252
+#: functions.php:287
+msgid "HTML enabled"
+msgstr "HTML 가능"
+
+#: functions.php:234
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "홈페이지의 글 상단에 표시될 알림막대"
+
+#: functions.php:250
+msgid "Banner"
+msgstr ""
+
+#: functions.php:256
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr ""
+
+#: functions.php:258
+#: functions.php:293
+msgid "Who can see?"
+msgstr "누가 볼 수 있나?"
+
+#: functions.php:261
+#: functions.php:296
+msgid "Registered Users"
+msgstr "등록한 사용자"
+
+#: functions.php:265
+#: functions.php:300
+msgid "Commentator"
+msgstr "댓글 쓴 이"
+
+#: functions.php:269
+#: functions.php:304
+msgid "Visitors"
+msgstr "방문자"
+
+#: functions.php:285
+#: sidebar.php:54
+msgid "Showcase"
+msgstr "보여줄 것(showcase)"
+
+#: functions.php:291
+msgid "This showcase will display at the top of sidebar."
+msgstr "측면(sidebar)의 상단에 표시될 보여줄 것(showcase)"
+
+#: functions.php:309
+msgid "Title:"
+msgstr "제목:"
+
+#: functions.php:325
+msgid "Posts"
+msgstr "글들(posts)"
+
+#: functions.php:329
+msgid "Show author on posts."
+msgstr "각 글에 글쓴이 보이기"
+
+#: functions.php:333
+msgid "Show categories on posts."
+msgstr "각 글에 범주 보이기"
+
+#: functions.php:337
+msgid "Show tags on posts."
+msgstr "각 글에 꼬리말(tags) 보이기"
+
+#: functions.php:351
+msgid "Submit comments with Ctrl+Enter."
+msgstr ""
+
+#: functions.php:361
+msgid "Feed"
+msgstr "rss피드"
+
+#: functions.php:365
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr ""
+
+#: functions.php:370
+msgid "Custom feed."
+msgstr "맞춤 피드"
+
+#: functions.php:372
+#: functions.php:378
+msgid "URL:"
+msgstr "주소(url):"
+
+#: functions.php:376
+msgid "Email feed."
+msgstr "이메일 피드"
+
+#: functions.php:385
+msgid "Save Changes"
+msgstr "고친 것 저장하기"
+
+#: functions.php:507
+msgid "Reply"
+msgstr "답글"
+
+#: functions.php:508
+msgid "Quote"
+msgstr "인용"
+
+#: functions.php:513
+msgid "Advanced edit"
+msgstr "상세하게 편집하기"
+
+#: functions.php:519
+msgid "Your comment is awaiting moderation."
+msgstr "올려주신 댓글을 승인 요청하였습니다. "
+
+#: links.php:15
+msgid "Add link"
+msgstr ""
+
+#: links.php:16
+msgid "Edit links"
+msgstr "편집 링크"
+
+#: links.php:31
+msgid "Blogroll"
+msgstr ""
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "이 사이트의 최신 내용을 RSS로 받아보기"
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed"
+msgstr "<abbr title=\"진짜 쉬운 자동 내용받기\">알에쓰에쓰(rss)</abbr> 피드"
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "으로 받아보기"
+
+#: sidebar.php:28
+msgid "Google"
+msgstr "Google"
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr "Youdao"
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr "Xian Guo"
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr "자오 시앙(Zhua Xia)"
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr "나의 야후!"
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr "뉴스게이터"
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr "블로그라인"
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr "아이네짜(iNezha)"
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "이 사이트의 최신 내용을 이메일로 받아보기"
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "이메일 피드"
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "홈페이지로 가기"
+
+#: single.php:7
+msgid "Home"
+msgstr "홈페이지"
+
+#: templates/end.php:3
+msgid "Top"
+msgstr "맨 위로"
+
+#: templates/end.php:13
+msgid "Copyright &copy; "
+msgstr "저작권 &copy;"
+
+#: templates/end.php:25
+msgid "Theme by <a href=\"http://www.neoease.com/\">NeoEase</a>. Valid <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a> and <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>."
+msgstr "<a href=\"http://www.neoease.com/\">NeoEase</a>가 제작한 외모(theme) 사용 중. 웹표준 <a href=\"http://validator.w3.org/check?uri=referer\">XHTML 1.1</a>과 <a href=\"http://jigsaw.w3.org/css-validator/check/referer?profile=css3\">CSS 3</a>.0 준수함."
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr ""
+
