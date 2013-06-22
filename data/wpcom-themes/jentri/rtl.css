@@ -1,0 +1,58 @@
+/*  
+Theme: Jentri
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+/*************************************
+ +Containers
+ *************************************/
+
+body{
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+#header{
+	margin-right:40px;
+	margin-left:0;
+}
+
+#sidebar{
+	float:right;
+	margin-right:-40px;
+	margin-left:0;
+}
+#wrap{
+	float:right;
+	background:#FEFCFA url(./images/bodybg-rtl.png) repeat-y ;
+}
+* html body #wrap{
+	background:#FEFCFA url(./images/bodybg-rtl.gif) repeat-y 100%;
+}
+
+/*************************************
+ +Hn
+ *************************************/
+h2{
+	padding-left:5px;
+	padding-right:0;
+}
+.sticky .entrytitle {
+padding-right: 5px;
+padding-left: 0;
+}
+
+/*************************************
+ +Comments
+ *************************************/
+.commentlist li .avatar { 
+	float: left; 
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
