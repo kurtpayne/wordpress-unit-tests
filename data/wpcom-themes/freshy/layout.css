@@ -1,0 +1,60 @@
+#page {
+	text-align:center;
+	background:url(images/page_bg.gif) center #7F7F7F repeat-y;
+	border-right:1px solid #7F7F7F;
+}
+
+#frame {
+	width:780px;
+	margin-right:auto;
+	margin-left:auto !important; /* stupid ie... */
+	margin-left:1px;
+	margin-top:0px;
+	padding:0px;
+	text-align:left;
+}
+
+#content {
+	width:510px !important;
+	width:550px;
+	padding:0 20px 0 20px;
+	float:left;
+	background:#FFFFFF;
+	overflow:hidden;
+}
+
+.widecolumn {
+	margin: 20px 0;
+}
+
+#sidebar {
+	width:230px;
+	padding:0px;
+	float:right;
+	background-color:#F3F3F3;
+}
+
+#sidebar div,
+#sidebar ul {
+	padding:0 9px 9px 9px;
+}
+
+#sidebar div div {
+	padding:0 0 0 0;
+}
+
+#header {
+	width:800px;
+	margin-right:auto;
+	margin-left:auto !important; /* stupid ie... */
+	margin-left:1px;
+	margin-top:0px;
+	padding:0px;
+}
+	
+#footer {
+	background:url(images/page_bottom.gif) bottom center transparent no-repeat;
+	padding-bottom:10px;
+	margin-bottom:30px;
+}
+
