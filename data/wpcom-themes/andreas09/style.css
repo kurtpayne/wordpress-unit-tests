@@ -1,0 +1,639 @@
+/* 
+Theme Name: Andreas09
+Theme URI: http://webgazette.co.uk/wordpress-themes/wp-andreas09/
+Description: A three-column theme with customizable colors and sidebars on the left and right.
+Version: 2.1-wpcom
+Author: Andreas Viklund and Ainslie Johnson
+Author URI: http://webgazette.co.uk/wordpress-themes/wp-andreas09/
+Tags: three-columns, white, light, custom-colors, flexible-width, rtl-language-support, sticky-post, left-sidebar, right-sidebar, widgets
+
+andreas09 v1.0 (Dec 10th 2005) - An open source template by Andreas Viklund - http://andreasviklund.com. Free to use for any purpose as long as the proper credits are given to the original author.
+
+Ported to WordPress by Ainslie Johnson - Last updated 25/04/06
+Edit by Noel Jackson on 15/7/08
+*/
+
+
+/* General Element Styling */
+
+body {
+	background:#8b8b8b;
+	color:#303030;
+	font:76% Verdana,Tahoma,Arial,sans-serif;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+a {
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#808080;
+	text-decoration:underline;
+}
+
+p {
+	line-height:1.5em;
+	margin:0 0 15px;
+	padding: 0px;
+}
+
+code {
+	font-size: 1.1em;
+}
+
+/*** Main container ***/
+
+
+
+#container {
+	color:#303030;
+	margin:0;
+	min-width:770px;
+	padding:0;
+	text-align:left;
+	width:100%;
+}
+
+/*** Header section ***/
+
+#sitename {
+	color:#ffffff;
+	height:90px;
+	margin:0 20px 10px;
+	text-align:left;
+}
+
+#sitename h1,#sitename h2 {
+	font-weight:400;
+	margin:0;
+	padding:0;
+}
+
+#sitename h1 {
+	font-size:2.4em;
+	padding-top:20px;
+}
+
+#sitename h1 a {
+	color: #ffffff;
+	text-decoration: none;
+	letter-spacing: 5px;
+}
+
+#sitename h2 {
+	font-size:1.6em;
+}
+
+/*** Content wrap ***/
+
+#wrap {
+	clear:both;
+	font-size:0.9em;
+	padding:0;
+	margin-top: 5px;
+}
+
+/* Horizontal menu */
+
+#mainmenu {
+	clear: both;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#mainmenu ul.level1 {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+#mainmenu ul {
+	background: #b0b0b0 url(images/menubg.jpg) center left repeat-x;
+	padding: 0 0 0 5px;
+	margin: 0px;
+	border-bottom: 1px solid #fff;
+}
+
+#mainmenu li {
+	display: inline;
+	line-height: 25px;
+	margin-left: -4px;
+	padding: 0px;
+	font-size: 0.9em;
+	list-style: none;
+	text-transform: uppercase;
+}
+
+#mainmenu a {
+	padding: 6px 9px 6px 9px;
+	text-decoration: none;
+	border-right: 1px solid #B0B0B0;
+}
+
+#mainmenu li.current a, #mainmenu li.current_page_item a {
+	color: #000;
+}
+
+/*** Sidebars ***/
+
+#leftside,#rightside {
+	margin:0;
+	padding:0 10px 10px;
+	width:165px;
+}
+
+#leftside {
+	float:left;
+	margin-right:10px;
+}
+
+#rightside {
+	float:right;
+	margin-left:10px;
+}
+
+#rightside img {
+	border: 0px;
+}
+
+/*** Sidebar menu ***/
+
+#leftside h2, #rightside h2 {
+	font-size: 1.4em;
+	margin-top: 10px;
+	padding: 5px 5px 5px 0;
+	border-bottom: 1px solid #BEBFC3;
+}
+
+#leftside ul, #rightside ul {
+	padding-left: 0px;
+	margin: 0px;
+}
+
+#leftside li, #rightside li {
+	list-style: none;
+}
+
+
+li#archives h2, li.pagenav h2 {
+	width: 165px;
+}
+li#archives , li.pagenav {
+	width: 145px;
+}
+li#archives li a, li.pagenav li a {
+	background:#e8e9ea;
+	border:1px solid #b0b0b0;
+	display:block;
+	margin-top:4px;
+	padding:5px 4px 4px 10px;
+	position:relative;
+	text-transform: capitalize;
+	width: 100%;
+
+}
+li#archives li a:hover, li.pagenav li a:hover {
+	background:#f8f9fa;
+	border:1px solid #909090;
+	color:#303030;
+	text-decoration:none;
+}
+
+li#archives ul.children li a, li.pagenav ul.children li a {
+	font-size: 1em;
+	float: left;
+	margin:3px 0px 2px 0px;
+	padding:5px 4px 4px 10px;
+}
+ul.children li {
+margin-left: 10px;
+}
+li#categories ul.children li li, li#archives ul.children li li, li.pagenav ul.children li li, li.widget_pages ul li li {
+	padding-left: 10px;
+}
+
+li#categories ul.children li li a, li#archives ul.children li li a, li.pagenav ul.children li li a {
+	width: 115px;
+}
+
+li.feed {
+	background: url(images/rss.gif) no-repeat left top;
+	padding: 2px 0 8px 20px;
+}
+
+li#recent-comments ul li {
+	padding-bottom: 5px;
+}
+
+li#recent-posts ul li, li#top-posts ul li {
+	padding-bottom: 5px;
+}
+
+/*** Content ***/
+
+#content,#contentalt {
+	background-color:#fafcff;
+	border:1px solid #909090;
+	color:#2a2a2a;
+	padding:15px 20px 5px;
+}
+
+#content {	
+	margin:0 200px;
+}
+
+#contentalt {	
+	margin:0 200px 0 20px;
+}
+
+#content h1,#contentalt h1,#contentalt h2 {
+	background-color:inherit;
+	color:#606060;
+	font-size:1.8em;
+	font-weight:bold;
+	letter-spacing:-1px;
+	margin:0 0 15px;
+	padding:0;
+}
+
+#content h1,#contentalt h1 {
+	border-bottom: 1px solid #b0b0b0;
+}
+
+#content h2 {
+	font-size:1.6em;
+	color:#606060;
+}
+
+.sticky {
+border: 2px solid #666;
+padding: 10px;
+margin-bottom: 20px !important;
+}
+
+/* Archives/Links Page List styles */
+
+.archives li, .linkspage li {
+	list-style: none;
+}
+
+.archives ul.children {
+	padding-left: 10px;
+	margin-left: 10px;
+}
+
+/*** Footer ***/
+
+#footer {
+	background:#8b8b8b url(images/footerbg.jpg) top left repeat-x;
+	clear:both;
+	color:#000;
+	font-size:0.9em;
+	font-weight:bold;
+	margin:0;
+	padding:20px 0;
+	text-align:center;
+	width:100%;
+}
+
+#footer a {
+	color: #d0d0d0;
+	font-weight:bold;
+}
+
+/*** contact Form ***/
+
+form.contact-form {
+	width: 99% !important;
+}
+
+/*** comments Form ***/
+
+#comment {
+	width: 100%;
+	border:1px solid #b0b0b0;
+}
+
+#commentform {
+	width: 97%;
+}
+
+#author {
+	border:1px solid #b0b0b0;
+}
+
+#email {
+	border:1px solid #b0b0b0;
+}
+
+#url {
+	border:1px solid #b0b0b0;
+}
+
+#submit {
+	background:#f0f0f0;
+	border:1px solid #b0b0b0;
+}
+
+#submit:hover {
+	background: #e8e9ea;
+	border: 1px solid #848484;
+	cursor: pointer;
+}
+
+/* Image Display */
+
+.entry img, .entrytext img {
+	border: 1px solid #b0b0b0;
+	margin: 5px;
+	padding: 5px;
+}
+
+.entry a:hover img, .entrytext a:hover img {
+	border: 1px solid #505050;
+	padding: 5px;
+}
+
+img.wp-smiley {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.thumbnail {
+	background:#fafbfc;
+	border:1px solid #b0b0b0;
+	margin:0 0 10px 10px;
+	padding:5px;
+}
+
+.left {
+	background:#fafbfc;
+	border:1px solid #b0b0b0;
+	float:left;
+	margin: 5px 15px 6px 0px;
+	padding:5px;
+}
+
+.right {
+	background:#fafbfc;
+	border:1px solid #b0b0b0;
+	float:right;
+	margin: 5px 0px 6px 15px;
+	padding:5px;
+}
+
+.noalign {
+	background:#fafbfc;
+	border:1px solid #b0b0b0;
+	margin: 5px 5px 5px 5px;
+	padding:5px;
+}
+
+/* Search Form */
+
+#searchform {
+	margin-top: 10px;
+}
+
+#searchbox {
+	background:#f0f0f0;
+	border:1px solid #b0b0b0;
+	margin:0 4px 0 0;
+	width:160px;
+}
+
+#searchbutton {
+	background:#f0f0f0;
+	border:1px solid #b0b0b0;
+}
+
+#searchbutton:hover {
+	background: #e8e9ea;
+	border: 1px solid #848484;
+	cursor: pointer;
+}
+
+/*** Comments Display ***/
+
+.postmetadata {
+	background:#e8e9ea;
+	font-size: 0.9em;
+	border: 1px solid #b0b0b0;
+	padding: 10px;
+	margin: 0px;
+}
+
+.attachment .postmetadata {
+	clear: both;
+}
+
+ol.commentlist li {
+	border: 1px solid #b0b0b0;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+ol.commentlist li cite {
+	text-transform: capitalize;
+}
+
+ol.commentlist li p {
+	padding-top: 10px;
+}
+
+ol.commentlist .children {
+	list-style-type: none;
+}
+
+/* Comment Avatar */
+
+ol.commentlist li .avatar { 
+	border: 1px solid #b0b0b0;
+	padding: 2px;
+	margin: 0;
+ 	float: right;
+}
+
+.alt {
+	background:#e8e9ea;
+}
+
+/*** Text format ***/
+
+.intro {
+	font-size:1.1em;
+	font-weight:bold;
+	letter-spacing:-1px;
+}
+
+blockquote {
+	border: 1px dashed #b0b0b0;
+	padding: 10px 10px 0 10px;
+	margin: 30px;
+}
+
+blockquote p {
+	padding: 0px;
+	margin: 0 0 10px 0;
+}
+
+.small {
+	font-size:0.8em;
+}
+
+.large {
+	font-size:1.4em;
+}
+
+.center {
+	text-align:center;
+}
+
+.category {
+	border-bottom: 1px solid #b0b0b0;
+}
+
+.date {
+	margin-top: -10px;
+	padding-top: 0px;
+	border-bottom: 1px solid #b0b0b0;
+}
+
+#page {
+	border-bottom: 1px solid #b0b0b0;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+/* Previous/Next Page Navigation */
+
+.navigation {
+	margin: 0 0 20px 0;
+	padding: 0 0 20px 0;
+	border-bottom: 1px dashed #b0b0b0;
+}
+
+.attachment .navigation {
+	border-bottom: none;
+}
+
+.bottomnavigation {
+	margin: 30px 0 0 0;
+	padding: 5px 0 30px 0;
+	border-top: 1px dashed #b0b0b0;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+.post {
+	padding-top: 0px;
+	padding-bottom: 10px;
+	margin: 0px;
+}
+
+/* Fix by Andy Skelton */
+
+.entry, .entrytext {
+	overflow: hidden;
+}
+
+* html.entry, * html.entrytext {
+	overflow: visible;
+	height: 1px;
+}
+
+* html.entry p, * html.entrytext p {
+	width: 99%;
+	overflow: hidden;
+}
+
+.entrytext {
+	padding-top: 0px;
+}
+
+/*** Various classes ***/
+
+.clearingdiv {
+	clear:both;
+	height:30px;
+	width:1px;
+}
+
+.hide {
+	display:none;
+}
+
+
+/* Widgets */
+.rsswidget {
+	border:0px;
+	vertical-align: bottom;
+}
+
+.widget_twitter li {
+	margin-bottom: 8px;
+}
+
+/* Images */
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 5px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 5px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/*** End of file ***/
