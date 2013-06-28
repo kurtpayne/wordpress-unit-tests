@@ -1,0 +1,694 @@
+/*  
+Theme Name: Fauna
+Theme URI: http://www.noscope.com
+Description: A beautiful two-column theme with a gigantic flower header.
+Version: Beta 1-wpcom
+Author: Joen Asmussen
+Author URI: http://www.noscope.com/
+Tags: fixed-width, green, two-columns, white, light, left-sidebar, sticky-post, widgets. rtl-language-support
+
+	Welcome to the Fauna CSS. This is the main stylesheet that
+	contains all layout, margins and positioning. 
+	All colors and images are separated out into "fauna-default.css". 
+	
+	If you need help, please check out the Fauna website:
+	http://www.noscope.com/fauna/
+	
+	Note:
+	To show various CSS properties specifically to Windows IE, the "star html" hack is used:
+		.cssclass { ... } // Moz, Saf, Opera
+		* html .cssclass { ... } // Win IE
+
+*/
+
+/* Basics
+------------------------------------------*/
+html { /* This forces the vertical scrollbar, preventing a page "jog" */
+	/* IE */
+	overflow-y: scroll; 
+	/* Moz */
+	height: 100%;
+	margin-bottom: 0.0001em;
+}
+
+/* Reset Margins & Paddings for all */
+* {	margin: 0; padding: 0; }
+
+/* Widths
+------------------------------------------*/
+#wrapper {
+	width: 780px; /* Entire blog width */
+}
+#body {
+	width: 750px; /* Body content, beneath header image */
+}
+#sidebar {
+	width: 226px; /* Sidebar width */
+	float: left;
+}
+#main {
+	width: 516px; /* Main column width */
+	float: right;
+	overflow: hidden;
+}
+
+/* Positioning
+------------------------------------------*/
+body {
+	text-align: center;	/* Centers in IE 5 */
+	padding-bottom: 40px; /* Add some extra scroll space */
+}
+#wrapper {
+	margin: 0 auto;
+}
+#body {
+	text-align: left;
+	margin: 8px auto 0 auto;
+}
+#sidebar ul, #sidebar li {
+	list-style: none;
+}
+#main {
+	width: 516px;
+	margin: 0 0 8px 0;
+}
+#footer {
+	clear: both;
+	text-align: center;
+	margin-left: 120px;
+}
+
+/* Content box used everywhere */
+.box { 
+	text-align: left;
+	padding: 8px;
+	margin-bottom: 8px;
+}
+
+/* Header
+------------------------------------------*/
+/* Logo */
+h1 {
+	font: bold 240%/100% "Trebuchet MS", Helvetica, Arial, sans-serif; 
+	text-align: left;
+	margin: 20px 0px 0px 50px;
+}
+h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
+	text-decoration: none;
+}
+#menu {
+	margin: 10px 0 8px 20px;
+	float: left;
+} * html #menu { margin: 10px 0 8px 5px; } /* IE only */
+#searchbox {
+	vertical-align: top;
+	margin: 10px 15px 0 0;
+	float: right;
+	text-align: right;
+	padding: 2px 6px 2px 20px;
+	top: -2px;
+	position: relative;
+} * html #searchbox { margin: 10px 8px 0 0; width: 30%; } /* IE only */
+#header {
+	width: 780px;
+	height: 200px;
+	clear: both;
+}
+#menu, #searchbox {
+	text-transform: lowercase;
+}
+#menu {
+	max-width: 530px;
+}
+#menu ul, #menu ul li {
+	list-style: none;
+	display:inline;
+}
+#menu a {
+	float: left;
+	display: block;
+	text-decoration: none;
+	padding: 0 7px;
+}
+#searchbox fieldset {
+	border: 0;
+	background: none;
+	padding: 0;
+}
+#searchbox legend {
+	display: none;
+}
+#searchbox form, #searchbox input {
+	display: inline;
+}
+
+/* Text, Headings & Formatting
+------------------------------------------*/
+body {
+	font: 70%/190% Verdana, Arial, Helvetica, sans-serif;
+}
+cite, input, textarea, select {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+}
+h2 {
+	font: normal 140% helvetica, arial, sans-serif;
+	margin: 0;
+}
+h2 a:link, h2 a:active, h2 a:visited {
+	display: block;
+	text-decoration: none;
+	padding: 0.4em 0;
+	margin-right: 160px;
+}
+.attachment h2 a:link, .attachment h2 a:active, .attachment h2 a:visited {
+	display: inline;
+	margin-right: 0;
+}
+h2 a:hover, h2 a:focus {
+	text-decoration: underline;
+}
+h3, h4 {
+	margin: 0 0 0.6em 0;
+	font-weight: bold;
+	font-size: 100%;
+}
+.entry h3 {
+	font: normal 135% helvetica, arial, sans-serif;
+	margin: 1.6em 0 0.8em 0;
+}
+.noteworthy {
+	font: normal 140% Helvetica, Arial, sans-serif;
+	display: block;
+	float: right;
+	margin: .4em;
+}
+.noteworthy a {
+	color:#FF3333 !important;
+	padding: .4em;
+	text-decoration: none !important;
+}
+.noteworthy a:hover {
+	color:#FF9595!important;
+}
+.clear {
+	clear: both;
+}
+
+/* Various
+------------------------------------------*/
+img {
+	border: 0;
+}
+.entry p a img {
+	padding-bottom: 2px;
+}
+.entry p a img:hover {
+	padding-bottom: 2px;
+}
+hr { /* Shown only to CSS disabled browsers, making it slightly tidier */
+	display: none;
+}
+acronym, abbr {
+	font-size: 100%;
+}
+acronym, abbr, span.caps {
+	cursor: help;
+}
+small {
+	font-size: 85%;
+	line-height: 200%;
+}
+cite {
+	font-size: 90%;
+	font-style: normal;
+}
+strike, del {
+	text-decoration: line-through;
+}
+ins {
+	text-decoration: none;
+}
+label {
+	cursor: pointer;
+}
+ul {
+	margin: 0.8em;
+}
+code, pre, kbd {
+	font-family: 'Courier New', Courier, mono, Fixed;
+	font-size: 105%;
+}
+p, code, pre, kbd, blockquote, .notice {
+	margin: 1.6em 0;
+}
+pre, blockquote {
+	padding: 0 1.6em;
+	margin-left: 3%;
+}
+pre {
+	line-height: 180%;
+	overflow: auto;
+} * html pre { padding-bottom: 16px; width: 80%; overflow-y: hidden; } /* IE only */
+blockquote[cite]:after {
+	content: "\00BB \0020 Source: " attr(cite);
+	display: block;
+	margin-top: 0.8em;
+	font-size: 90%;
+}
+fieldset {
+	padding: 0px 8px 4px 8px;
+}
+legend {
+	font-weight: bold;
+	padding: 0px 4px;
+}
+
+/* Alignments (Use in Posts)
+------------------------------------------*/
+.align-left {
+	padding-right: 8px;
+	float: left;
+}
+.align-right {
+	padding-left: 8px;
+	float: right;
+}
+.align-center {
+	margin: 0 auto;
+	display: block;
+}
+.column-left {
+	float: left;
+	width: 50%;
+}
+.column-right {
+	float: right;
+	width: 50%;
+}
+ul.column-right, ul.column-left {
+	margin: 0;
+	padding: 0;
+}
+
+/* List Items
+------------------------------------------*/
+html>body .entry ul {
+	list-style: none;
+	text-indent: -10px;
+} 
+.entry ul {
+	margin-left: 0px;
+	padding-left: 10px;
+} * html .entry ul { list-style: square; } /* IE only */
+.entry ul li {
+	margin-left: 10px;
+	margin-bottom: 16px;
+}
+.entry ul li:before {	/* Show right angle quotes to cool browsers */
+	content: "\00BB \0020";
+}
+#commentlist ul li:before {
+	content: '';
+}
+ol {
+	margin: 0 0 8px 10px;
+	padding-left: 20px;
+
+}
+.entry ol li {
+	margin-bottom: 16px;
+}
+
+/* Forms
+------------------------------------------*/
+input, select, textarea {
+	font-size: 100%;
+	line-height: 100%;
+}
+.inputbox, #commentform textarea, .searchbox {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	padding: 1px 2px;
+}
+.inputbox:focus, #commentform textarea:focus, .searchbox:focus { /* Show yellow input backgrounds to cool browsers */
+	color: #424240;
+	background-color:#FFFFF4;
+}
+#commentform textarea {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	padding: 2px;
+	
+	-moz-box-sizing:border-box; /* Mozilla: Change Box Model Behaviour */
+	width: 100%; /* Moz Only */
+} * html #commentform textarea { width: 97%; } /* IE only */
+.inputbox {
+	width: 130px;
+}
+.pushbutton, .pushbutton-wide {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	cursor: pointer;
+}
+.pushbutton {
+	width: 50px;
+}
+.pushbutton-wide {
+	padding: 3px 5px;
+	width: 70px;
+}
+.checkbox {
+	cursor: pointer;
+}
+
+/* Search Page */
+.searchbox {
+	width: 350px;
+}
+.search-results p {
+	display: inline;
+}
+.highlight {
+	text-decoration: none;
+	color: #989D3C;
+}
+
+/* Main Entries
+------------------------------------------*/
+
+.sticky {
+border: 2px solid #666;
+}
+.entry-meta {
+	clear: both;
+}
+.entry-date {
+	width: 120px;
+	float: right;
+	margin: 0;
+	border-left: 1px dotted #C2C76D;
+	padding-left: 8px;
+}
+.entry-date p {
+	font: normal 140% Helvetica, Arial, sans-serif;
+	margin: 0 0 0 0;
+}
+.entry-date p span {
+	display: block;
+	padding: 0.4em 0;
+}
+.entry-date p a:link, .entry-date p a:active, .entry-date p a:visited {
+	border-bottom: 0;
+	display: block;
+	text-decoration: none;
+	padding: 0.4em 0;
+}
+.entry-date p a:hover, .entry-date p a:focus {
+	text-decoration: underline;
+}
+
+
+/* Sidenotes
+------------------------------------------*/
+.sidenotes .sidenote {
+	padding: 0;
+	margin: .5em 0 2.4em .5em !important;
+}
+.sidenotes h2 {
+	margin: 0 0 0.6em 0;
+	font: normal 100% Verdana, Arial, Helvetica, sans-serif;
+}
+.sidenotes h2 a {
+	display: inline !important;
+	margin-right: 1em;
+}
+.sidenotes p, .sidenotes code {
+	padding: 0 1.6em;
+}
+.sidenotes p, .sidenotes code, .sidenotes pre, .sidenotes blockquote {
+	margin-top: 0;
+	margin-bottom: .8em;
+}
+.sidenotes pre, .sidenotes kbd, .sidenotes blockquote {
+	margin: 1.6em 7%;
+}
+.sidenotes h3 {
+	font: normal 100% Verdana, Arial, Helvetica, sans-serif;
+	margin: 1.6em 0 0.8em 0;
+}
+.sidenotes ul {
+	margin: .8em 1.3em;
+}
+.sidenotes ol {
+	margin: .8em 2em;
+}
+
+a.sidenote-permalink:link, a.sidenote-permalink:visited {
+	text-decoration: none !important;
+}
+a.sidenote-permalink:hover, a.sidenote-permalink:active {
+	text-decoration: underline !important;
+}
+
+
+/* Comments
+------------------------------------------*/
+
+#comments-resize {
+	margin-top: 2em;
+}
+#comments-resize h3 {
+	margin: 0;
+}
+#comments-resize small {
+	float: right;
+}
+.commentbox {
+	width: 280px;
+	padding-right:30px;
+	float:left;
+	text-align:left;
+}
+.comments-resize {
+	padding-top: 22px;
+	float: right;
+}
+.comment-header {
+	margin-bottom: 8px;
+}
+.comment-header em {
+	font-style: normal;
+	display: block;
+	float: left;
+	margin-right: 12px;
+	font-weight: bold;
+}
+.notice, #tags-allowed, .comment-header small { /* Moderation Message */
+	font-size: 100%;
+	padding: 8px 12px;
+}
+.notice p, .notice h4, #tags-allowed p, #tags-allowed h4 {
+	margin: 0.6em 0;
+}
+#tags-allowed li {
+	margin: 0.6em;
+}
+#tags-allowed blockquote {
+	display: inline;
+}
+#tags-allowed .column-left, #tags-allowed .column-right {
+	width: 45%;
+}
+#tags-allowed .close {
+	float: right;
+}
+#commentlist {
+	margin: 0px;
+	padding: 0px;
+}
+#commentlist ul {
+}
+#commentlist li.comment-even, #commentlist li.comment-odd, #commentlist li.comment-author  {
+	display: block;
+	list-style: none;
+	margin: 8px 0;
+	padding: 0px;
+} * html #commentlist li { height: 1%; } /* IE only */
+#commentlist li .avatar { 
+	border: 1px solid #ccc;
+	padding: 2px;
+	margin-top: 3px;
+	float: right; 
+}
+#commentlist ul.children li {
+border-left: 1px solid #ccc;
+padding-left: 20px !important;
+margin-left: 30px !important;
+}
+
+.comment-body {
+	padding: 8px 12px;
+}
+.comment-preview {
+	padding: 8px 12px;
+}
+.comment-body small, .comment-preview small {
+	margin-top: 8px;
+	display: block;
+	color: #999999;
+}
+
+/* Trackbacks */
+#trackbacklist {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+#trackbacklist li {
+	margin-left: 0px;
+	padding: 0px;
+	margin-top: 8px;
+	list-style: none;
+}
+#trackbacklist li a {
+	padding: 4px;
+	display: block;
+	text-decoration: none;
+}
+
+/* WordPress Calendar
+------------------------------------------*/
+#wp-calendar {
+	empty-cells: show;
+	width: 100%;
+}
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+}
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+}
+#wp-calendar a {
+	display: block;
+	font-weight: bold;
+}
+#wp-calendar a:hover {
+	text-decoration: none !important;
+}
+#wp-calendar caption {
+	text-align: left;
+	width: 100%;
+}
+#wp-calendar td {
+	padding: 3px 0;
+	text-align: center;
+}
+
+/* For Plugins
+------------------------------------------*/
+/* Recent Activity */
+ul#recent-activity {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul#recent-activity li {
+	font-size: 100%;
+}
+ul#recent-activity small {
+	font-size: 85%;
+	padding-left: 8px;
+}
+
+/* Comment/Trackback Favatars */
+.comment-avatar {
+	-moz-opacity:0.5;
+	opacity: 0.5;
+	
+	background: center center;
+	float: right;
+	margin: 2px 0 0 0; 
+	width: 16px;
+	height: 16px;
+}
+.comment-avatar:hover {
+	-moz-opacity:1;
+	opacity: 1;
+}
+.trackback-avatar {
+	background: center center;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin: 2px 6px 0 2px;
+	cursor: pointer;
+}
+
+/* Textile */
+.caps {	
+	font-family: "Lucida Sans Unicode", Arial, Verdana, Helvetica, sans-serif;
+}
+
+/* Google Hilite */
+.hilite {
+	background-color: #DEEBF3;
+	color: #000;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.navigation {
+	margin-bottom: 10px;
+}
