@@ -1,0 +1,94 @@
+#pp_wrap {
+	overflow-x: hidden;
+}
+#pp_gallery {
+	width: 100%;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+#pp_meta {
+	text-align: center;
+	padding: 10px;
+}
+#pp_page_links {
+	text-align: center;
+}
+.pp_centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+}
+/*
+.pp_empty {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+}
+*/
+
+.pp_border {
+	border: 1px solid #999;
+}
+
+.alignleft {
+	float:left;
+	clear:none;
+	margin-right:6px;
+	border:0px none;
+}
+
+img.pp_left_side {
+	float:left;
+	border: 1px solid #999;
+	padding: 1px;
+}
+img.pp_centered {
+	border: 1px solid #999;
+	padding: 1px;
+}
+.pp_cell {
+
+	text-align: center;
+	vertical-align: top;
+	padding: 5px;
+	font-size: 0.9em;
+}
+/*
+.pp_cell a {
+	float:left;
+}
+.pp_cell span {
+	float:left;
+	display:none;
+}
+.pp_cell img {
+	float:left;
+}*/
+.pp_prev, .pp_next {
+	margin: 10px;
+	display: block;
+	padding: 5px;
+}
+a.pp_prev, a.pp_next {
+	background: #acf;
+	border: solid 1px #9ac;
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+a.pp_prev:hover, a.pp_next:hover {
+	background: #369;
+	border: solid 1px #036;
+	color: #fff;
+	text-decoration: none;
+}
+.pp_prev {
+	float: left;
+}
+.pp_next {
+	float: right;
+}
