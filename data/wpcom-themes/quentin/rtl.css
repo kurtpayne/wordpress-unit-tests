@@ -1,0 +1,95 @@
+/*
+Theme: Quentin
+RTL: Yoav Farhi
+*/
+
+body {
+direction:rtl;
+unicode-bidi:embed;
+font-family:Georgia,"Times New Roman",Times,serif;
+}
+
+img.pmark {
+	margin: 0 190px 50px 0;
+	}
+
+/* typography --------------------------------- */
+
+
+blockquote {
+	border-left: 0;
+	border-right: 1px solid #ccc;
+	margin-left: 0;
+	margin-right: 1.5em;
+	padding-left: 0;
+	padding-right: 5px;
+}
+
+/* Layout --------------------------------- */
+
+#rap {
+	background: #F2E2C1 url(images/quentin-bg-rtl.jpg) repeat-y center top;
+	}
+
+#content  {
+	background: url(images/quentin-bg2-rtl.gif) repeat-y left top;
+	text-align: right;
+	float: right;
+}
+
+
+#menu {
+	text-align: right;
+}
+
+
+/* classes used by the_meta() --------------------------------- */
+
+.feedback {
+	text-align: left;
+}
+
+/* Right Column Lists --------------------------------- */
+
+
+#menu ul ul {
+	text-align: right;
+}
+
+#menu ul ul li {
+	padding: 0 13px 0 0;
+}
+
+#menu ul ul.children  {
+	padding-left: 0;
+	padding-right: 4px;
+}
+
+
+/* Make the Calendar Perty --------------------------------- */
+
+#calendar {
+	background:  url(images/calendar-rtl.gif) no-repeat center top;
+}
+
+#wp-calendar #next a {
+	padding-right: 0;
+	padding-left: 10px;
+	text-align: left;
+}
+
+#wp-calendar #prev a {
+	padding-left: 0;
+	padding-right: 10px;
+	text-align: right;
+}
+
+
+
+
+/* Make the comments Perty --------------------------------- */
+
+
+#commentlist li .avatar {
+	float: left;
+	}
