@@ -1,0 +1,120 @@
+.wrap {
+	min-width: 800px;
+}
+
+.sbm-block {
+	background: #f0f8ff;
+	border: 1px solid #aaa;
+	margin: 10px 330px 10px 10px;
+	padding: 10px;
+}
+
+.sbm-block ul {
+	list-style: none;
+	padding: 0;
+}
+
+.sbm-block .module-list {
+	border-right: 1px solid #ccc;
+	float: left;
+	margin-right: 10px;
+	padding-right: 10px;
+	width: 150px;
+}
+
+.sbm-block h4 {
+	text-align: center;
+}
+
+.sbm-block ul {
+	margin-left: 0;
+	min-height: 300px;
+}
+
+.sbm-block ul li {
+	background: #eee;
+	border: 1px solid #ccc;
+	cursor: move;
+	margin: 10px;
+	padding: 5px;
+}
+
+.tab-box {
+	background: #f0f8ff;
+	border: 1px solid #aaa;
+	margin: 0 10px 10px;
+	padding: 0;
+	width: 300px;
+}
+
+.tab-box ul.tab-bar {
+	background: #0d324f;
+	margin: 0;
+	padding: 5px 20px 0;
+}
+
+.tab-box ul.tab-bar li {
+	display: inline;
+	line-height: 200%;
+	margin: 0 10px 0 0;
+}
+
+.tab-box ul.tab-bar li a {
+	border: none;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.tab-box ul.tab-bar li.selected a {
+	background: #f0f8ff;
+	color: #000;
+}
+
+.tab-box ul.tab-bar li a:hover {
+	background: #fff;
+	color: #000;
+}
+
+.tab-box .tab {
+	display: none;
+	padding: 10px;
+}
+
+.tab-box .tab fieldset {
+	border: 1px groove;
+}
+
+.tab-box .tab .checkbox-list {
+	list-style: none;
+	margin: 0;
+	max-height: 100px;
+	_height: 100px; /* IE hack, yuk */
+	overflow: auto;
+	padding-left: 0;
+}
+
+.tab-box .tab .error {
+	display: none;
+	margin: 0;
+	padding: 3px;
+}
+
+.tab-box .tab .success {
+	background: #afa;
+	border: 1px solid #080;
+	display: none;
+	padding: 3px;
+}
+
+.tab-box .tab .toggle-item {
+	background: #fff;
+	border: 1px solid #000;
+	display: none;
+	margin: 10px;
+	padding: 3px;
+}
+
+.right {
+	float: right;
+}
