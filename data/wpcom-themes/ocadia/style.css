@@ -1,0 +1,382 @@
+/*  
+Theme Name: Ocadia
+Theme URI: http://beccary.com/goodies/wordpress-themes/
+Description: A clean yet stylish two column blue-grey theme with lots of rounded edges.
+Version: 1.1-wpcom
+Author: Becca Wei
+Author URI: http://beccary.com
+Tags: two-columns, fixed-width, right-sidebar, widgets, white, light, sticky-post, rtl-language-support
+*/
+
+
+
+/* Basics */
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #E6EEEE url(images/bg.gif) repeat-x;
+	color: #333;
+	font-size: 78%;
+	font-family: "Lucida Sans Unicode", Tahoma, Geneva, sans-serif;
+	text-align: center;
+}
+
+p img {
+	margin: 0 5px;
+}
+
+.wp-smiley {
+	width: 15px;
+	height: 15px;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 1.2em 0;
+}
+ol, ul {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 1.2em 0 1.2em 2em;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 1.2em 0;
+	font-family: Georgia, serif; 
+	color: #534B48; 
+}
+h1, h2 {
+	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.3em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1.1em;
+}
+h6 {
+	font-size: 1em;
+}
+a:link {
+	color: #59708C;
+}
+a:visited {
+	color: #5C6C7D;
+}
+a:hover, a:active {
+	color: #8CA0B4;
+	text-decoration: none;
+}
+blockquote {
+	margin: 0 20px;
+	padding: 0.05em 20px;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	background: url(images/commentalt.gif) repeat-y;
+	font-size: 0.9em;
+}
+code {
+	color: #666;
+}
+input, textarea, select {
+	background-color: #FFF; 
+	color: #333;
+	font-size: 1em;
+	font-family: "Lucida Sans Unicode", Tahoma, Geneva, sans-serif;
+}
+form, img {
+	border: 0; 
+	margin: 0; 
+	padding: 0;
+}
+
+
+
+/* Layout */ 
+
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 760px;
+	background: #FFF url(images/wrapper.gif) repeat-y;
+	text-align: left;
+}
+#header {
+	width: 760px;
+	height: 132px;
+	background: url(images/header.gif) no-repeat;
+}
+
+	/* Header styles */
+	#header h1 {
+		margin: 0;
+		padding: 35px 0 0 40px;
+		font-size: 2em;
+		line-height: 40px;
+	}
+	#header h1 a {
+		text-decoration: none;
+	}
+	#header p {
+		margin: 0;
+		padding: 5px 0 0 40px;
+	}
+	
+#content {
+	float: left;
+	margin-top: -12px;
+	padding: 0 10px 0 40px;
+	width: 520px;
+	min-height: 268px;
+	background: url(images/content.gif) no-repeat;
+	overflow: visible;
+	voice-family: "\"}\""; 
+	voice-family: inherit;
+	width: 470px;
+} 
+html>body #content {
+	width: 470px;
+}
+* html #content {
+	overflow: hidden;
+	/* For IE - don't want big images breaking the page */
+}
+#sidebar {
+	float: left;
+	width: 240px;
+	background: url(images/sidebar.gif) no-repeat top right;
+	font-size: 0.9em;
+}
+
+	/* Sidebar styles */
+	#sidebar ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		background: url(images/sidebar2.gif) repeat-y;
+	}
+	#sidebar ul li {
+		margin: 0;
+		padding: 0 0 1.5em 30px;
+		background: url(images/sidebar-bottom.gif) no-repeat bottom left;
+		overflow: visible;
+	}
+	#sidebar div {
+		padding: 10px 40px 10px 0px;
+	}
+	#sidebar h2 {
+		margin: 0 0 0 -30px;
+		padding: 1.2em 40px 10px 30px;
+		font-size: 1.1em;
+		background: url(images/sidebar-top.gif) no-repeat;
+	}
+	/* Fix our list and paragraph styles */
+	#sidebar p, #sidebar ul ul, #sidebar ul ol {
+		margin: 1em 0 0 0;
+		padding: 0 40px 0 20px;
+	}
+	#sidebar ul ol {
+		margin: 1em 0 0 20px;
+	}
+	#sidebar ul ol li {
+		padding: 0;
+		background: url(images/bullet.gif) no-repeat 2000px 0;
+		/* IE goes buggy with background: none; */
+	}
+	#sidebar ul ul {
+		background: none;
+	}
+	#sidebar ul ul ul {
+		margin: 0;
+		padding: 0 0 0 0.8em;
+		background: none;
+	}
+	#sidebar ul ul li {
+		padding: 0 0 0 1.5em;
+		background: url(images/bullet.gif) no-repeat 0 0.2em;
+	}
+	
+#footer {
+	clear: both;
+	margin: 0 20px;
+	padding: 25px 4px 0 4px;
+	background: url(images/footer.gif) no-repeat;
+}
+
+	/* Footer styles */
+	#footer p {
+		margin: 0;
+		padding: 0.5em 20px;
+		background-color: #999;
+		font-size: 0.9em;
+	}
+	#footer a:hover, #footer a:active {
+		color: #5C6C7D;
+		text-decoration: none;
+	}
+
+	
+	
+/* Blog */
+
+.pagetitle {
+	margin: 1.2em 0 0 0;
+}
+.post {
+	padding: 1.2em 0 0 0;
+	overflow: hidden;
+}
+.storydate {
+	float: left;
+	margin: 0 0.5em 0 0;
+	padding: 0 0.5em 0 0;
+	border-right: 1px solid #CCC;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Geneva, sans-serif;
+	font-weight: normal;
+	color: #999;
+}
+.storytitle {
+	float: left;
+	margin: 0;
+}
+
+.sticky .storytitle, .sticky .storydate {
+background: transparent url(images/commentalt.gif) repeat-y scroll 0 0;
+border: 0;
+margin-right: 0;
+padding: 10px;
+}
+.meta {
+	margin: 0;
+	padding: 0.5em 0 0 3em;
+} 
+.feedback {
+	padding: 0 0 0 3em;
+}
+.meta, .feedback {
+	clear: both;
+	font-size: 0.9em;
+	color: #999;
+	background: url(images/deco.gif) no-repeat bottom left;	
+}
+.permalink {
+	margin: 0 1.5em 0 0;
+	padding: 0 0 0 1.2em;
+	background: url(images/perma.gif) no-repeat center left;
+}
+.commentslink {
+	padding: 0 0 0 1.5em;
+	background: url(images/comments.gif) no-repeat center left;
+}
+.storytitle a, .meta a, .feedback a, .commentauthor a, .commentmeta a, #comments a {
+	text-decoration: none;
+}
+
+/* Comments */
+
+#commentlist {
+	margin: 1.2em 0;
+	padding: 0;
+	list-style-type: none;
+}
+#commentlist li {
+	margin: 1em 0;
+	padding: 0 20px;
+	background: url(images/comment.gif) repeat-y;
+	list-style-type: none;
+}
+#commentlist .children li {
+	padding-right:0;
+}
+#commentlist li>div {
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+
+#commentlist li .avatar {
+	float: right;
+	margin-top: 15px;
+	padding: 2px;
+	border: 1px solid #ccc;
+}
+#commentlist li.thread-alt, #commentlist li.thread-alt li {
+	background: url(images/commentalt.gif) repeat-y !important;
+}
+.commentauthor {
+	margin: 1em 0 0 0;
+}
+.commentauthor a {
+	font-weight: bold;
+}
+.commentmeta {
+	margin-top: 0;
+	font-size: 0.9em;
+}
+#comment {
+	width: 98%;
+}
+#wp-calendar {
+	margin-left: 13px;
+}
+
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
