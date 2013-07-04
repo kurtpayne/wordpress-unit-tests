@@ -1,0 +1,158 @@
+/*
+	Theme: Light
+	RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {
+background-image:url(images/wrap-rtl.gif);
+text-align:right;
+direction:ltr;
+unicode-bidi:embed;
+}
+
+#blogname {
+padding-right:22px;
+padding-left:0;
+text-align:right;
+}
+
+.description {
+padding-left:20px;
+padding-right:0;
+text-align:left;
+}
+
+#content {
+float:right;
+text-align:right;
+margin:15px 20px 0 0;
+}
+
+#sidebar {
+float:left;
+margin:5px 0 20px 20px;
+}
+
+ol#commentlist .children {
+margin-right: 2em;
+margin-left: 0;
+}
+
+#commentlist li .avatar {
+	float: left;
+}
+
+.commenttext {
+background:#E9FFCE url(images/comm-rtl.png) no-repeat right top;
+}
+
+.commentp {
+padding:20px 10px 10px 12px;
+}
+
+#commentblock {
+margin-right:4px;
+margin-left:0;
+}
+
+.gravatar {
+float:right;
+margin:20px 10px 0 0;
+}
+
+.entry {
+padding-right:2px;
+padding-left:0;
+}
+
+.entrybody {
+background-image:url(images/postbg-rtl.jpg);
+background-position:top right;
+padding:5px 10px 10px 5px;
+}
+
+.entrybody p {
+text-align:right;
+}
+
+#sidebar ul#feed li a {
+background-position: right 50% !important;
+padding-right:25px;
+padding-left:0;
+}
+
+.entrybody ul,.entrybody ol {
+margin-right:30px;
+margin-left:0;
+}
+
+.adwrap-lu {
+float:left;
+margin:0 1em 1em 0;
+}
+
+.navigation a:link,.navigation a:visited {
+background-position: right bottom !important;
+margin-left:2px;
+margin-right:0;
+padding-right:12px;
+padding-left:0;
+}
+
+.navigation a:link,.navigation a:link span,.navigation a:visited,.navigation a:visited span {
+float:right;
+}
+
+.navigation li {
+float:right;
+}
+
+.navigation a:hover {
+background-position: right bottom !important;
+padding-right:12px;
+padding-left:0;
+}
+
+.current_page_item a:link,.current_page_item a:visited {
+background-position: right bottom !important;
+margin-left:2px;
+padding-right:15px;
+margin-right:0;
+padding-left:0;
+}
+
+.current_page_item a:hover {
+background-position: right bottom !important;
+margin-left:2px;
+padding-right:15px;
+margin-right:0;
+padding-left:0;
+}
+
+blockquote {
+border-right:2px solid #CADAE7;
+padding-right:8px;
+border-left:0;
+padding-left:0;
+}
+
+.navigation a:link span,.navigation a:visited span,.navigation a:hover span {
+background:url(images/active2-rtl.gif) left bottom no-repeat;
+padding-left:12px;
+padding-right:0;
+}
+
+.current_page_item a:link span,.current_page_item a:visited span,.current_page_item a:hover span {
+background:url(images/current2-rtl.gif) left bottom no-repeat;
+padding-left:15px;
+padding-right:0;
+
+}
+
+.alignright {
+	float: left;
+}
+
+.alignleft {
+	float: right;
+}
