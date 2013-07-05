@@ -1,0 +1,214 @@
+/*  
+RTL for Spring Loaded: Yoav Farhi
+*/
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul li { float: right; }
+/* End */
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+	background: url(images/bg-bottom.gif) repeat right top;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#wrapper, #header .sleeve {
+	text-align: right;
+}
+
+/* @group Header */
+
+#header {
+background: url(images/bg-top.gif) repeat-x right top;
+}
+
+
+#header .search-bar {
+	background: url(images/search-box-rtl.gif) no-repeat right top;
+	left: 0;
+	right:auto;
+}
+
+.search-bar p {
+	padding: 7px 20px 4px 10px;
+}
+
+
+.search-bar p button {
+	margin-right: 10px;
+	margin-left: 0;
+}
+
+/* @end(header) */
+
+
+
+
+/* @group Content */
+
+#main {
+	float: right;
+}
+
+
+/* @group Navigation */
+
+#navigation {
+	background: url(images/nav-bg-rtl.gif) repeat-y right top;
+}
+
+#navigation li {
+	float: right;
+	background: url(images/nav-divider-rtl.gif) no-repeat left top;
+}
+
+#navigation li a {
+	float: right;
+}
+
+#navigation li a:hover {
+	background: url(images/nav-bg-hover.gif) repeat-x right top;
+}
+
+#navigation li.current_page_item a {
+	background: url(images/nav-bg-hover.gif) repeat-x right top;
+}
+
+#navigation li.current_page_item:first-child a {
+	background: url(images/nav-bg-hover-left-rtl.png) repeat-y right top;
+}
+
+#navigation li:first-child a:hover {
+	background: url(images/nav-bg-hover-left-rtl.png) no-repeat right top;
+}
+
+/* @end(navigation) */
+
+
+
+#content {
+	background: #dee0bf url(images/content-bg-rtl.gif) no-repeat right bottom;
+}
+
+#single-content {
+	background: #dee0bf url(images/single-content-bg-rtl.gif) no-repeat right bottom;
+}
+
+/* @group Post */
+
+.post-date {
+	left: auto;
+	right: -44px;
+	background: url(images/date-tab-rtl.png) no-repeat right top;
+}
+
+/* @end(post) */
+
+.navigation .alignright {
+text-align: left;
+}
+
+/* @group page-navigation */
+
+
+.prev-next .alignright {
+	float: left;
+	text-align: left;
+}
+
+.prev-next .alignleft {
+	float: right;
+}
+
+/* @end */
+
+/* @end(content) */
+
+/* @group Sidebar */
+
+#sidebar {
+	float: left;
+}
+
+#sidebar .side-widget {
+	background: url(images/side-bg-bottom-rtl.png) no-repeat right bottom;
+}
+
+#sidebar .side-rss {
+	background: none;
+}
+
+.side-widget h3 {
+	background: url(images/side-bg-top.png) no-repeat right top;
+}
+
+.side-widget p{
+	padding: 10px 20px 15px 15px;
+}
+
+.side-widget ul li li {
+margin-right: 8px;
+margin-left: 0;
+}
+
+/* @end(sidebar) */
+
+/* @group Footer */
+
+
+
+.copy-note {
+	float: right;
+}
+
+.design-note {
+	float: left;
+}
+
+
+/* @end(footer) */
+
+
+/* @group Comments */
+
+
+ol.commentlist li {
+	background: url(images/comment-bg-rtl.gif) no-repeat right top;
+}
+ol.commentlist ul {
+margin-right: 40px;
+margin-left: 0;
+}
+ol.commentlist li .comment-gravatar {
+	float: right;
+}
+
+ol.commentlist .comment-body {
+	padding-left: 10px;
+	padding-right: 50px;
+}
+
+
+/* @end(comments) */
+
+/* wpcom */
+.entry blockquote, .comment-text blockquote {
+	margin-right: 1em;
+	margin-left: 0;
+}
+#wp-calendar {
+	padding-left: 1em;
+	padding-right: 0;
+}
+#wp-calendar td, #wp-calendar th {
+	text-align: left;
+}
+td#prev {
+	text-align:right;
+	padding-right: 1em;
+	padding-left: 0;
+}
+td#next {
+	text-align:left;
+}
