@@ -1,0 +1,78 @@
+/*
+Tarski print stylesheet, v1.0
+http://ionfish.co.uk/tarski/
+*/
+#header-image, #navigation, #secondary, #footer {
+	display: none;
+	}
+
+#primary {
+	width: auto;
+	float: none;
+	}
+
+body {
+	margin: 0 1em 1em 1em; border: none; padding: 0;
+	text-align: left;
+	font-size: 12pt; line-height: normal;
+	font-family: 'Times New Roman', Times, serif; color: #000;
+	background: #fff;
+	}
+
+#blog-title {
+	font-size: 18pt; font-weight: bold;
+	margin: 1em 0 2em 0;
+	}
+	#blog-title a:link, #blog-title a:visited, #blog-title a:hover, #blog-title a:active {
+		color: #000; text-decoration: none;
+		}
+
+	h1 {
+		font-size: 24pt; font-weight: normal;
+		margin: 1em 0;
+		}
+	h2 {
+		font-size: 18pt; font-weight: normal;
+		margin: 0.5em 0;
+		}
+	h3 {
+		font-size: 10pt; font-weight: normal;
+		text-transform: uppercase;
+		margin: 0 0 1em 0;
+		}
+
+	ul {
+		list-style: circle;
+		margin: 0 0 1em 0;
+		}
+	
+	p {
+		margin: 0 0 1em 0;
+		}
+	
+	strong {
+		font-weight: bold;
+		}
+	em {
+		font-style: italic;
+		}
+	cite {
+		font-style: italic;
+		}
+
+a img {
+	border: none;
+	}
+
+a:link, a:visited, a:hover, a:active {
+	color: #005580; text-decoration: underline;
+	}
+
+#header-image, #navigation, #secondary, #footer {
+	display: none;
+	}
+
+#primary {
+	width: auto;
+	float: none;
+	}
