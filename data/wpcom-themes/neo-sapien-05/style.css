@@ -1,0 +1,448 @@
+/*  
+Theme Name: Neo-Sapien
+Theme URI: http://www.wpdesigner.com/
+Description: A black and red theme with prominent photo header.
+Version: 0.5-wpcom
+Author: Small Potato
+Author URI: http://www.wpdesigner.com/
+Tags: custom-header, four-columns, black, red, fixed-width, dark, left-sidebar, right-sidebar, widgets, sticky-post, rtl-language-support
+
+	Released under WPdesigner.com, this is my third public theme - Small Potato.
+	http://www.wpdesigner.com
+
+	Thanks to me, myself, and I.
+*/
+
+body, h1, h2, h3, h4, h5, h6, form, ol, p {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-size: 12px;
+}
+
+body{
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	text-align: left;
+	vertical-align: top;
+	color: #ccc;
+	background: #2b2b2b url(images/bg_body.gif) repeat-x;
+}
+
+table{
+	font-family: Arial, Verdana;
+	font-size: 11px;
+}
+
+form, input, textarea{
+	font-family: Arial, Verdana;
+	font-size: 11px;
+}
+
+input, textarea{
+	margin: 0 0 1px 0;
+	border: 1px solid #262626;
+	color: #ccc;
+	background: #111;
+}
+
+a{
+	text-decoration: underline;
+	color: #fff;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+img{
+	border: 0px;
+}
+
+#sidebar{
+	float: left;
+	margin: 288px 0 0 0;
+	width: 140px;
+	font-family: Arial, Verdana;
+	font-size: 11px;
+	line-height: 18px;
+	text-align: left;
+	vertical-align: top;
+	color: #ccc;
+	background: #000;
+}
+
+#sidebar ul{
+	padding: 10px;
+	text-align: left;
+	vertical-align: top;
+	list-style: none;
+	margin-left: 0;
+}
+
+#sidebar ul li{
+	margin: 0 0 5px 0;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-weight: bold;
+	color: #c30000;
+}
+
+#sidebar ul li a{
+	text-decoration: none;
+	color: #c30000;
+}
+
+#sidebar ul li a:hover{
+	text-decoration: underline;
+}
+
+#sidebar ul li h2{
+	margin: 0 0 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #262626;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #c30000;
+}
+
+#sidebar ul ul{
+	padding: 0;
+}
+
+#sidebar ul ul li{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Verdana;
+	font-weight: normal;
+	color: #ccc;
+}
+
+#sidebar ul ul li a{
+	text-decoration: underline;
+	color: #fff;
+}
+
+#sidebar ul ul li a:hover{
+	text-decoration: none;
+}
+
+.narrowcolumn{
+	float: left;
+	width: 500px;
+	margin: 22px 0 0 0; /* Pull up sidebar when it wraps for narrow browsers */
+/*	padding: 0 0 1000px 0;  Causing trouble */
+	padding: 0 0 70px 0;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	text-align: left;
+	vertical-align: top;
+	color: #ccc;
+	background: #000;
+	overflow: hidden;
+}
+
+#menu{
+	padding: 0 0 0 10px;
+	text-align: left;
+	vertical-align: top;
+	color: #ccc;
+	background: #000;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#menu ul li{
+	float: left;
+	border-top: 2px solid #c00;
+	margin: 0 5px 0 0;
+	padding: 6px 15px 7px; 
+	font-family: Arial, "Trebuchet MS";
+	font-size: 10px;
+	font-weight: bold;
+	background: #444 url(images/bg_menu_item.gif) repeat-x;
+	list-style: none;
+}
+
+#menu ul li a{
+	text-decoration: none;
+}
+
+#menu ul li a:hover{
+	text-decoration: underline;
+}
+
+#header{
+	clear: both;
+	width: 500px;
+	padding: 10px 0;
+	background: #fff;
+	text-align: center;
+	vertical-align: middle;
+	color: #333;
+}
+
+.post h2{
+	border-top: 2px solid #c00;
+	padding: 18px 20px 17px;
+	font-family: "Times New Roman", Arial;
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+	vertical-align: top;
+	line-height: 24px;
+	color: #fff;
+	background: #444 url(images/bg_post_title.gif) repeat-x;
+}
+
+.post h2 a{
+	text-decoration: none;
+}
+
+.post h2 a:hover{
+	text-decoration: underline;
+}
+
+.entry{
+	border-top: 1px solid #fff;
+	padding: 10px 20px 20px 20px;
+	text-align: left;
+	vertical-align: top;
+	line-height: 18px;
+	color: #000;
+	background: #eee;
+}
+
+.sticky h2 {
+background: #D60000;
+}
+
+.entry p{
+	padding: 10px 0 0 0;
+}
+
+.entry a{
+	color: #c00;
+}
+
+p.postmetadata, post-date, cite{
+	font-family: Arial, "Trebuchet MS";
+	font-size: 11px;
+	font-style: normal;
+}
+
+.postmetadata {
+	clear: both;
+}
+
+.navigation{
+	padding: 20px;
+	text-align: left;
+	vertical-align: top;
+	line-height: 18px;
+	color: #ccc;
+	background: #000;
+}
+
+.image-navigation {
+	margin-top: 20px;
+}
+
+.commentlist ol, .commentlist ol li{
+	list-style-type: none;
+}
+
+.commentlist ol{
+	margin: 0 0 10px 0;
+}
+
+.commentlist ol li{
+	margin-bottom: 5px;
+	border: 1px solid #e6e6e6;
+	padding: 10px;
+	font-size: 11px;
+	background: #fff;
+	color: #333;
+}
+
+blockquote{
+	margin: 5px 0 5px 5px;
+	border: 1px solid #e6e6e6;
+	padding: 5px 10px;
+	font-family: Arial;
+	font-size: 11px;
+	line-height: 18px;
+	text-align: left;
+	vertical-align: top;
+	background: #fff;
+	color: #333;
+}
+
+#obar{
+	float: left;
+	margin: 288px 0 0 0;
+	width: 360px;
+	text-align: left;
+	vertical-align: top;
+	background: #000;
+}
+
+.sub-obar{
+	float: left;
+	margin: 0;
+	width: 170px;
+	font-family: Arial, Verdana;
+	font-size: 11px;
+	line-height: 18px;
+	text-align: left;
+	vertical-align: top;
+	color: #ccc;
+	background: #000;
+}
+
+.sub-obar ul{
+	padding: 10px 0 10px 10px;
+	text-align: left;
+	vertical-align: top;
+	list-style: none;
+	margin-left: 0;
+}
+
+.sub-obar ul li{
+	margin: 0 0 5px 0;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-weight: bold;
+	color: #c30000;
+}
+
+.sub-obar ul li a{
+	text-decoration: none;
+	color: #c30000;
+}
+
+.sub-obar ul li a:hover{
+	text-decoration: underline;
+}
+
+.sub-obar ul li h2{
+	margin: 0 0 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #262626;
+	font-family: "Trebuchet MS", Arial, Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #c30000;
+}
+
+.sub-obar ul ul{
+	padding: 0;
+}
+
+.sub-obar ul ul li{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Verdana;
+	font-weight: normal;
+	color: #ccc;
+}
+
+.sub-obar ul ul li a{
+	text-decoration: underline;
+	color: #fff;
+}
+
+.sub-obar ul ul li a:hover{
+	text-decoration: none;
+}
+
+#wp-calendar{
+	margin: 5px 0 0;
+}
+
+#wp-calendar caption{
+	font-size: 10px;
+	font-weight: bold;
+	padding: 0 0 0 10px;
+	text-align: left;
+	color: #c00;
+	background: #000;
+}
+
+#wp-calendar th, #wp-calendar td{
+	padding: 3px;
+	color: #ccc;
+	background: #000;
+}
+
+#comment {
+	width: 95%;
+	margin-bottom: .5em;
+	padding: .4em;
+}
+
+.avatar {
+	float: right;
+	border: 1px solid #E8E7D0;
+	padding: 2px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
