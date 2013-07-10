@@ -1,0 +1,309 @@
+/*
+Theme: K2-lite
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+
+
+/*- Page Structure */
+
+
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+	}
+
+#page {
+	text-align: right;
+	}
+
+
+#primary {
+	float: right;
+	margin: 0 30px 0 10px;
+	}
+
+.secondary {
+	margin: 0 71% 20px 0;
+	}
+
+.comments {
+	text-align: right;
+	}
+
+/*- Main Menu in Header */
+
+.admintab {
+	right: auto;
+	left: 0px;
+	}
+
+/*- Sidebar Subpages & Categories Menu */
+
+.sb-pagemenu ul, .widget_pages, .widget_categories { 
+	margin-right: 10px;
+	margin-left: 0;
+	}
+
+.sb-pagemenu ul ul .page_item, .widget_pages ul ul .page_item, .widget_categories ul ul li {
+	margin-right: 10px;
+	margin-left: 0;
+	}
+
+#primary .hentry .entry-head .metalink {
+	margin-right: 15px;
+	margin-left: 0;
+	}
+
+.comment-meta {
+	margin: 0  0  0 15px;
+	}
+
+.feedlink img { /* On the sidebar */
+	left: 0;
+	right: auto;
+	}
+
+.secondary .k2-asides .metalink {
+	padding-left: auto;
+	padding-right: 0px;
+	}
+
+.secondary span a {
+	margin-left: 0;
+	margin-right: 10px;
+	}
+
+body.page .entry-edit {
+	right: auto;
+	left: 0;
+	}
+
+.entry-edit a {
+	padding-right: 23px;
+	padding-left: 0;
+	margin-right: 10px;
+	margin-left: 0;
+	background: url('images/pencil-rtl.png') right center no-repeat;
+	}
+
+.comment-edit a {
+	padding-left: 2px;
+	padding-right: 23px;
+	margin-left: 0;
+	margin-right: 10px;
+	background: url('images/comment_edit-rtl.png') right center no-repeat;
+	}
+
+.chronodata {
+	padding: 2px 20px 2px 0 ;
+	background-position: right center;
+	}
+
+.commentslink {
+	padding: 2px 20px 2px 0;
+	background: url('images/comment-rtl.png') right center no-repeat;
+	margin-right: 10px;
+	margin-left: 0;
+	}
+
+.quoter_comment {
+	padding: 2px 20px 2px 0;
+	background: url('images/comment-rtl.png') right center no-repeat;
+	margin-right: 5px;
+	margin-left: 0;
+	}
+
+.entry-tags {
+	padding: 2px 20px 2px 0;
+	background: url('images/tag_blue-rtl.png') right center no-repeat;
+	}
+
+/*- Primary Contents */
+
+
+.commentsrsslink {
+	background-position: right top;
+	padding: 2px 20px 2px 0;
+	margin-right: 0;
+	margin-left: 10px;
+	}
+
+.trackbacklink {
+	background-position: right top;
+	padding: 2px 20px 2px 0;
+	}
+
+#commentlist li {
+	padding: 10px 10px 5px 0;
+	}
+
+
+#commentlist li .comment-meta {
+	padding: 2px 20px 2px 0;
+	background-position: right center;
+	}
+
+#commentlist li img.avatar {
+	float: left;
+	}
+
+li.bypostauthor blockquote {
+	background: #eee url('images/quote-rtl.png') no-repeat 95% 0;              
+	}
+	 
+
+#pinglist li {
+	margin-right: 40px;
+	margin-left: 0;
+	}
+
+
+#pinglist li span.favatar img {
+	margin-left: -0;
+	margin-right: -25px;
+	float: right;
+	}
+	
+
+.comments #commentload {
+	float: left;
+}
+
+.comments form input[type=text] {
+	margin: 5px 0 1px 5px;
+	}
+
+.comments form #submit {
+	float: left;
+	}
+
+/*- Various Tags and Classes */
+
+.alignright {
+	float: left;
+	}
+	
+.alignleft {
+	float: right
+	}
+
+blockquote {
+	padding: 0 50px 0 20px;
+	background: #fff url('images/quote-rtl.png') no-repeat 95% 0;
+	}
+
+.navigation .left {
+	float: right;
+	text-align: right;
+	}
+
+.navigation .right {
+	float: left;
+	text-align: left;
+	}
+
+img.wp-smiley {
+	padding: 0 5px 0 0 !important;
+	}
+
+/*- Begin Lists */
+.entry-content ol, .entry-content ul {
+	padding: 0 35px 0 0;
+	}
+
+.secondary li.widget {
+	margin-right: 0;
+	margin-left: auto;
+	padding-right: 0;
+	padding-left: auto;
+	}
+
+.secondary ul, .secondary ol, .secondary div div {
+	padding-right: 0;
+	padding-left: auto;
+	}
+
+.secondary ol {
+	margin-left: 0;
+	margin-right: 15px;
+	}
+
+/*- Search Form and Livesearch */
+
+#searchreset {
+	right: auto;
+	left: 3px;
+	}
+
+#searchload {
+	position: absolute;
+	left: 0;
+	right: auto;
+	}
+
+/* CSS Beyond this point is for various supported plugins and not the 'core' K2 template */
+
+.sb-comments-blc li > a[title="Go to the comments of this entry"] {
+	right:auto;
+	left:0;
+}
+
+/*
+	Contact Form
+*/
+
+.contactleft {
+	text-align: left;
+	float: right; 
+	}
+
+.contactright {
+	text-align: right;
+	float: left; 
+	}
+	
+/* Noteworthy */
+.category-noteworthy h3.entry-title {
+	background-position: left center;
+	padding-left: 25px;
+	padding-right: 0;
+}
+
+.noteworthyLink { margin-left: 0; margin-right: 5px;   }
+
+/* RTL for /css/sbm.css */
+
+.sbm-block {
+	margin: 10px 10px 10px 330px;
+}
+
+
+.sbm-block .module-list {
+	border-left: 1px solid #ccc;
+	border-right: 0;
+	float: left;
+	margin-right: 0;
+	margin-left: 10px;
+	padding-right: 0;
+	padding-left: 10px;
+}
+
+.sbm-block ul {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.tab-box ul.tab-bar li {
+	margin: 0 0 0 10px;
+}
+
+.tab-box .tab .checkbox-list {
+	padding-left: auto;
+	padding-right: 0;
+}
+
+.right {
+	float: left;
+}
+
