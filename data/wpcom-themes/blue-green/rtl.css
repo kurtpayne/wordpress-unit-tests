@@ -1,0 +1,70 @@
+/*
+RTL: Yoav Farhi
+*/
+body {
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+
+blockquote {
+	border-left:0;
+	border-right: 1px solid #CEA353;
+	margin-left: 0;
+	margin-right: 3em;
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+
+.feedback {
+	text-align: left;
+}
+
+#content {
+	margin: 30px 3em 0 13em;
+	padding-right: 0;
+	padding-left: 70px;
+}
+
+
+#menu {
+	right: auto;
+	left: 30px;
+}
+
+#menu form {
+	margin: 0 13px 0 0;
+}
+
+#menu ul {
+	padding-left: 0;
+	padding-right: 3px;
+}
+
+
+#menu ul ul {
+	text-align: right;
+}
+
+#menu ul ul li {
+	padding-right: 10px;
+	padding-left: 0;
+}
+
+#wp-calendar #next a {
+	padding-left: 10px;
+	padding-right: 0;
+	text-align: left;
+}
+
+#wp-calendar #prev a {
+	padding-right: 10px;
+	padding-left: 0;
+	text-align: right;
+}
+
+#wp-calendar caption {
+	text-align: right;
+}
+
