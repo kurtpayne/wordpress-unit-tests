@@ -1,0 +1,409 @@
+/*  
+Theme Name: Sunburn
+Theme URI: http://fightingfriends.com/sunburn/
+Description: A dark black and orange theme. Sidebar only on home page.
+Version: 1.1-wpcom
+Author: Jim Whimpey
+Author URI: http://jimwhimpey.com/
+Tags: two-columns, fixed-width, dark, black, orange, widgets, right-sidebar, sticky-post, rtl-language-support
+*/
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		BODY, WRAPPINGS, ANCHORS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+	
+	body {
+		margin: 0;
+		padding: 0;
+		text-align: center; /* IE */
+		font-family: Tahoma, Geneva, Verdana, Arial, Helvetica, sans-serif;
+		color: #fff;
+		background: #000;
+		}
+	
+		#bg_maker {	background: #191919 url("./images/bg_x_2.png") repeat-x; }
+	
+			#wrapper {
+				margin: 0 auto;
+				padding: 0 auto;
+				width: 900px;
+				text-align: left; /* IE */
+				}
+			
+				a { color: #de7C00; text-decoration: none; }
+					a:hover, .post div.comment_link a:hover, .post h2 a:hover, .post .entry a:hover, .post .entrytext a:hover { color: #cc3300; text-decoration: none; }
+				
+				
+				
+				
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		HEADER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+		
+	#header_sun {
+		width: 900px;
+		height: 50px;
+		background: url("./images/header_2.png");
+		}
+
+		#header_text { 
+			width: 705px;
+			margin: 0 auto;
+			text-align: left;
+			padding: 0 15px 0 30px;
+			}
+
+			h1 {
+				height: 65px;
+				font-size: 2.2em;
+				font-weight: normal;
+				text-transform: uppercase;
+				margin: 0;
+				padding: 0;
+				}
+			
+					h1 a { color: #cc3300; }
+					
+						h1 a:hover { color: #fff; }
+			
+				span.description {
+					font-size: 0.4em;
+					font-weight: normal;
+					text-transform: none;
+					}
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		CONTENT
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#content {
+		width: 490px;
+		float: left;
+		clear: both;
+		margin: 0 0 0 75px;
+		padding: 40px 0 40px 30px;
+		display: inline; /* IE */
+		background: #0A0A0A;
+		}
+
+		.alignleft { margin: 10px 0 0 0; float: left; }
+		.alignright { margin: 10px 40px 0 0; float: right; text-align: right; display: inline; }
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		POST
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	.post {
+		margin: 0 0 55px 0;
+		width: 450px;
+		overflow: hidden;
+		clear: both;
+		}
+	
+		.post .date {
+			width: 43px;
+			height: 46px;
+			background: url("./images/date.gif");
+			float: left;
+			margin: 6px 10px 0 0;
+			display: inline; /* IE */
+			}
+		
+			.post .date_month {
+				font-size: 0.6em;
+				text-transform: uppercase;
+				text-align: center;
+				margin: 2px 0 0 0;
+				}
+			
+			.post .date_day {
+				font-size: 1.5em;
+				text-align: center;
+				margin: 2px 0 0 0;
+				}
+		
+		.post div.title_box {
+			float: left;
+			margin: 0 0 22px 0;
+			display: inline; /* IE */
+			}
+		
+			.post h2 {
+				margin: 0;
+				padding: 0;
+				font-weight: normal;
+				font-size: 1.8em;
+				width: 380px;
+				float: left;
+				}
+			
+				.post div.comment_link { 
+					font-size: 0.9em; 
+					clear: left;
+					}
+		
+			.post h2 a, .post div.comment_link a { color: #ccc; }
+		
+			.post .entry, .post .entrytext {
+				font-size: 0.8em;
+				width: 450px;
+				clear: both;
+				color: #CCC;
+				margin: 0 0 18px 0;
+				}
+			
+				.post .entry a, .post .entrytext a { color: #666; }
+				
+					.post .entry blockquote, .post .entrytext blockquote  {
+						border-left: 6px solid #000;
+						padding-left: 8px;
+						color: #555;
+						font-style: italic;
+						}
+					
+						.post blockquote, .post ul, .post ol { margin-left: 20px; padding-left: 20px; }
+		
+			.post .postmetadata, .attachment .postmetadata {
+				color: #ccc;
+				width: 434px;
+				font-size: 0.8em;
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				padding: 8px;
+				text-align: center;
+				background: #1F1D1D;
+				margin: 0;
+				clear: both;
+				}
+
+	.sticky {
+		border:1px solid #222;
+		padding: 10px;
+	}
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		SIDEBAR
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#sidebar {
+		width: 200px;
+		padding: 40px 0 40px 15px;
+		float: left;
+		display: inline; /* IE */
+		color: #666;
+		margin: 0;
+		}
+	
+		#sidebar li, #sidebar li ul, #sidebar li ul li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			}
+
+		#sidebar li h2 {
+			font-size: 0.9em;
+			font-weight: normal;
+			margin: 15px 0 8px 0;
+			color: #ccc;
+			padding: 0;
+			}
+		
+			#sidebar li>h2 { margin-left: 15px; } /* Non IE */
+		
+		
+			#sidebar li ul {
+				font-size: 0.8em;
+				margin: 0 0 20px 25px;
+				}
+			
+				#searchform input {
+					width: 120px;
+					margin: 0 0 0 25px;
+					border: 1px solid #3F3F3F;
+					color: #3F3F3F;
+					padding: 2px;
+					background: #191919;
+					}
+				
+				
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		SINGLE POSTS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	.widecolumn h2, .page h2 { 
+		font-size: 2.3em;
+		margin-bottom: 15px;
+		color: #ccc;
+		}
+
+		#content h3 { 
+			font-size: 1.5em;
+			font-weight: normal;
+			color: #EBAF00;
+			margin: 20px 0 10px 0;
+			}
+	
+		.widecolumn .post { margin-bottom: 20px; }	
+
+	
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		COMMENTS
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#commentform { margin: 0 0 20px 20px; } 	
+
+		#commentform input, #commentform textarea {
+			border: 1px solid #000;
+			padding: 3px;
+			}
+	
+			#commentform textarea {
+				font-size: 0.8em;
+				font-family: Tahoma, Geneva, Verdana, Arial, Helvetica, sans-serif;
+				}
+			
+				#commentform textarea, #commentform #author, #commentform #url, #commentform #email, #commentform #submit { background: #7F7F7F; }
+					#commentform textarea:focus, #commentform #author:focus, #commentform #url:focus, #commentform #email:focus { background: #fff;}
+
+			#commentform textarea, #commentform #author, #commentform #url, #commentform #email, #commentform #submit { margin: 0 0 2px 0; }
+		
+			#commentform #submit { width: 300px; }
+		
+	ol.commentlist {
+		font-size: 0.8em;
+		list-style: none;
+		margin: 0 0 0 30px;
+		padding: 0;
+		width: 385px;
+		}
+	
+		ol.commentlist li {
+			border-top: 1px solid #2F2C2C;
+			margin: 0;
+			padding: 10px 0 0 0;
+			list-style:none;
+			}
+		
+			#content>ol.commentlist li { padding: 0; } /* FF Specific */
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		PAGE
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	.page h2 { margin: 0 0 15px 0; }
+
+
+
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		SEARCH and ARCHIVES
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	.sanda h2 {
+		font-size: 2.3em;
+		font-weight: normal;
+		margin: 0 0 15px 0;
+		}
+
+
+	
+/* 	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		FOOTER
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	#bar {
+		clear: both;
+		width: 100%;
+		height: 10px;
+		background: #000;
+		padding: 0;
+		}
+	
+		#footer_bg {
+			clear: both;
+			width: 100%;
+			height: 46px;
+			background: url("./images/footer_bg_x.png") repeat-x;
+			}
+		
+			#footer {
+				width: 910px;
+				height: 46px;
+				margin: 0 auto;
+				background: url("./images/footer_bg.png");
+				}
+			
+				#footer p {
+					margin: 0;
+					padding: 12px 0 0 0;
+					font-size: 0.8em;
+					text-align: center;
+					color: #000;
+					}
+				
+					#footer p a { color: #000; text-decoration: underline; }
+						#footer p a:hover {text-decoration: none; }
+.comment .avatar {
+	float: right;
+	margin-left: .5em;
+	margin-top: .2em;
+	border: 1px solid #333;
+	padding: 2px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	color: #000;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
