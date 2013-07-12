@@ -1,0 +1,89 @@
+/*
+Theme: Benevolence
+RTL: Yoav Farhi, yoav@automattic.com
+*/
+
+body {
+	text-align:right;
+	direction:rtl;
+	unicode-bidi:embed;
+}
+
+
+#insideWrapper {
+	text-align: right;
+}
+
+.post, .page {
+	left: auto;
+	right:0px;
+	text-align: right;
+}
+
+#content {
+	margin-right: 250px;
+	margin-left: 0;
+	text-align: right;
+}
+
+#sidebar {
+	float: right;
+	left: auto;
+	right: 40px;
+	text-align: right;
+} 
+
+.left {
+	float: right;
+}
+
+.right {
+	float: left;
+}
+
+.sep {
+	left: auto;
+	right: 132px;
+}
+
+
+.commentBox {
+	text-align: right; 
+}
+
+.commentBox .avatar { 
+	float: left; 
+}
+
+
+code {
+	text-align:right;
+}
+
+
+h2 {
+	text-align: right;
+}
+
+
+#sidebar ul {
+	margin-right: 0px;
+	padding-right: 0px;
+}
+
+#sidebar li {
+	margin-right: 0px;
+}
+
+#sidebar .widget_categories li ul li {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+
+#blogTitle {
+	left: auto;
+	right: 20px;
+	text-align: right;
+}
+
