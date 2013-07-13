@@ -1,0 +1,379 @@
+/*
+	Theme Name: Andreas04
+	Description: A three-column silver and blue theme with two sidebars on the right.
+	Version: 1.0-wpcom
+	Author: Andreas Viklund
+	Author URI: http://tara.elmadera.com/wordpress
+	Tags: light, three-columns, flexible-width, sticky-post, widgets, right-sidebar, rtl-language-support
+*/
+
+
+body{
+margin:0;
+padding:0;
+font:76% tahoma,verdana,sans-serif;
+background:#e6e6e6 url(images/bodybg.png) repeat-x;
+color:#333;
+text-align:center;
+}
+
+a{
+text-decoration:none;
+color:#269;
+font-weight:bold;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+p{
+margin:0 0 15px 0;
+line-height:1.5em;
+}
+
+h1,h2,h3,h4{
+margin:0;
+padding:0;
+font-weight:normal;
+}
+
+h1{
+font-size:3.2em;
+letter-spacing:-3px;
+color:#567;
+margin:12px 0 5px 20px;
+}
+
+h1 a:hover{
+text-decoration:none;
+}
+
+h2{
+font-size:1.8em;
+letter-spacing:-1px;
+margin:-10px 0 0 50px;
+color:#888;
+}
+
+h3{
+color: #555;
+font-size:1.4em;
+margin:1em 0 0.5em 0.5em;
+}
+
+h4{
+font-size:1.2em;
+font-weight:bold;
+}
+
+#container{
+width:92%;
+min-width:760px;
+padding:0 20px;
+margin:0 auto;
+background:#f0f0f0 url(images/contentbg.png) repeat-x;
+color:#333;
+text-align:left;
+border-left:1px solid #eef;
+border-right:1px solid #eef;
+}
+
+#sitetitle{
+float:left;
+height:100px;
+width: 42%;
+color: #333;
+}
+
+#sitetitle a{
+color:#567;
+font-weight:normal;
+}
+
+#sitetitle a:hover{
+color:#269;
+}
+
+#menu{
+height:71px;
+padding-top:35px;
+text-align: right;
+}
+
+#menu ul, #menu li {
+padding:0;
+margin:0;
+list-style-type:none;
+display:inline;
+}
+
+#menu a{
+margin:0;
+height:100px;
+padding:34px 6px 40px 6px;
+font-size:1.6em;
+font-weight:normal;
+letter-spacing:-1px;
+color: #888;
+}
+
+#menu a:hover{
+color:#269;
+text-decoration:none;
+background: #fff url(images/menuhover.png) repeat-x;
+padding:34px 5px 40px 5px;
+border-left: 1px solid #eee;
+border-right: 1px solid #eee;
+}
+
+#content{
+margin-top:30px;
+width:100%;
+clear:both;
+background:url(images/xglobebottom.gif) bottom left no-repeat;
+}
+
+#content h2{
+margin:0 0 10px 0;
+color:#555;
+border-bottom:2px solid #abb;
+}
+
+#content h2 a{
+color:#555;
+font-weight:normal;
+}
+
+#content h2 a:hover{
+color:#269;
+text-decoration:none;
+background:none;
+}
+
+#content p{
+margin:0.5em 1em 0.8em 1em;
+}
+
+#left{
+width:62%;
+float:left;
+}
+
+#right{
+margin-left:64%;
+margin-top:-15px;
+}
+
+#right h2{
+margin:15px 0 5px 0;
+width:98%;
+font-size:1.6em;
+}
+
+#footer{
+clear:both;
+padding:10px 0 12px 24px;
+text-align:left;
+color:#888;
+}
+
+#footer a{
+color:#888;
+font-weight:normal;
+}
+
+#footer span{
+color:#aaa;
+font-size:2em;
+letter-spacing:-2px;
+}
+
+.entry{
+position:relative;
+margin:0 0 20px 0;
+border:2px solid #fff;
+background:#eee url(images/entrybg.png) repeat-x;
+color:#333;
+padding:10px 10px 0 10px;
+}
+
+.entry a:hover, .intro a:hover{
+text-decoration:none;
+padding-bottom:2px;
+background:url(images/flash2.gif) bottom left repeat-x; /* Delete this line to remove the flashing underline for regular links */
+}
+
+.entry img{
+border: 1px solid #333;
+}
+
+.entry img.wp-smiley{
+border: 0;
+}
+
+.sticky {
+border-color: #222;
+}
+
+.link{
+color:#269;
+background:url(images/linkarrow.gif) left no-repeat;
+display:block;
+margin:4px 0 0 0;
+padding:2px 1em;
+}
+
+.link:hover{
+color:#48b;
+background:url(images/blinkarrow.gif) left no-repeat; /* Delete this line to remove the blinking arrows by the links */
+text-decoration:none;
+}
+
+.thumbs img{
+position:relative;
+padding:3px;
+margin:0 2px 2px 0;
+border:1px solid #fff;
+background-color:#ddd;
+color: #555;
+}
+
+.thumbs img:hover{
+background: url(images/flash.gif); /* Delete this line to remove the blinkingblue frame around the thumbnails */
+}
+
+.entryphoto{
+margin:5px 10px 10px 0;
+float:left;
+padding:3px;
+border:1px solid #fff;
+background-color:#ddd;
+color:#333;
+}
+
+.meta{
+clear:both;
+border-top: 2px solid #ccc;
+padding: 5px 1px 0 0;
+margin:10px 0 0 0;
+text-align:left;
+font-size:0.9em;
+color: #567;
+}
+
+.date{
+font-weight:bold;
+}
+
+.postedby {
+}
+
+.pagenav{
+color: #888;
+text-align:center;
+}
+
+.entry img{
+position:relative;
+}
+
+.subcontainer {
+width:98%;
+}
+
+.subcontainer ul, .subcontainer li {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.sidebar-about{
+overflow:hidden;
+}
+
+.rightsub{
+float:left;
+width:48%;
+}
+
+.rightsub2{
+float:right;
+width: 48%;
+}
+
+.right{
+text-align:right;
+}
+
+.center{
+text-align:center;
+}
+
+.clear{
+clear:both;
+}
+
+.hide{
+display:none;
+}
+
+.widget a img {
+border: none;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
