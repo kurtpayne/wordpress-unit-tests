@@ -1,0 +1,247 @@
+/*
+Theme Name: Toni
+Theme URI: http://aphotolog.com/
+Description: A simple and light fluid two-column look with a few color options.
+Version: 1.0-wpcom
+Author: Chris M.
+Tags: two-columns, fixed-width, custom-colors, right-sidebar, blue, white, widgets, sticky-post, rtl-language-support
+*/
+
+body { 
+	margin:0px; 
+	background-color: #efefef; 
+	background-image: url(bg.gif); 
+	background-repeat: repeat-x; 
+	font-family: Verdana, Arial, sans-serif; 
+	font-size: 11px; 
+	line-height: 17px; 
+	text-align: left;
+	color: #333;
+	}
+
+a:link { 
+	color: rgb(82,117,154); 
+	text-decoration:none;
+	}
+
+a:visited {
+	color: rgb(82,117,154); 
+	text-decoration:none;
+	}
+
+a:hover { 
+	color: #fff; 
+	text-decoration:none; 
+	background-color: rgb(112,147,184); 
+	}
+
+#content h2 { 
+	float: left;
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	font-weight: normal;
+	font-size: 18px;
+	margin: 0 10px 10px 0;
+	padding: 5px;
+	border-right: solid 1px rgb(192,211,226);
+	}
+	
+h3 { 
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	font-weight: normal;
+	margin: 10px 0px 0px 0px;
+	padding-bottom: 2px;
+	}
+	
+form {
+	margin: 0;
+	padding: 0;
+	}
+	
+input, textarea {
+	background-color: rgb(192,211,226);
+	border: 1px solid rgb(112,147,184);
+	font-size:11px; 
+	}
+
+li {
+	margin: 0;
+	padding: 0;
+	}
+
+#rap {
+	padding: 0;
+	}
+
+#header { 
+	margin: 50px 0 0 0;
+	padding: 20px;
+	background-color: rgb(112,147,184); 
+	font-size: 22px;  
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	}
+	
+#header a {
+	color: #fff;
+	text-decoration:none;
+	}
+	
+#content {
+	float: left;
+	width: 500px;
+	margin: 0;
+	padding: 20px;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	}
+	
+.storytitle {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: Georgia, "Times New Roman", Times, serif; 
+	font-weight: normal;
+	}
+
+.meta ul {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	}
+
+.meta li {
+	display: inline;
+	}
+
+.feedback { 
+	text-align: right;
+	margin-bottom: 30px;
+	padding: 0;
+	border-bottom: solid 1px rgb(192,211,226);
+	clear: both;
+	}
+
+#menu {
+	width: 180px;
+	margin: 0 auto 0 540px;
+	padding: 10px;
+	text-align: left;
+	background-color: rgb(192,211,226);
+	}
+	
+#menu ul {
+	margin: 0;
+	padding: 0 10px;
+	list-style-type: none;
+	}
+
+#menu h2 {
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	font-size: 11px;
+}
+	
+#menu ul ul {
+	margin: 0;
+	padding: 0 0 20px 0;
+	list-style-type: none;
+	border-top: 1px solid #efefef;
+	}
+	
+#menu li {
+	margin: 0;
+	padding: 0;
+	}
+	
+.credit {
+	clear: both;
+	}
+	
+p.credit {
+	margin: 0;
+	padding: 10px 0 0 0;
+	text-align: center;
+	}
+
+#commentlist {
+	clear: both;
+}
+
+#commentlist li .avatar {
+	float: right;
+	margin-right: 25px;
+	padding: 2px;
+	border: 1px solid #efefef; 
+}
+
+#comment {
+	width: 95%;
+	padding: 5px;
+}
+
+img.centered, img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+.aligncenter, div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+
+.sticky {
+border: 1px solid rgb(112,147,184);
+padding: 10px 10px;
+margin-bottom: 10px;
+
+}
+.sticky h2 {
+border-right: 0;
+}
