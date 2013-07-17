@@ -1,0 +1,79 @@
+/*
+RTL for Theme: : Green Marinee
+Editors: Navid Kashani
+Persian WordPress Project : wp-persian.com
+*/
+body {
+	font-family:tahoma, arial;
+}
+h1, h2 ,h3 {
+	font-family:arial, tahoma;
+}
+blockquote {
+	border-left:0 none;
+	border-right:4px solid #3F3F3F;
+}
+#container {
+	text-align:right;
+	direction:rtl;
+}
+#content {
+	float:left;
+	margin:10px;
+}
+.main li {
+	padding:2px 10px 0pt 0;
+	background-position:right center;
+}
+.main ul {
+	padding:0pt 10px 20px 0;
+}
+p.comment_meta {
+	margin:0pt 10px 10px 0;
+}
+.reply {
+	margin:10px 10px 0pt 0;
+}
+.warning p {
+	background-position:right center;
+	margin:0 10px 0 0;
+	padding:20px 90px 0 0;
+}
+.postinput {
+	margin-right:10px;
+	margin-left:0;
+}
+#links li {
+	padding:2px 20px 2px 0;
+	background-position:right center;
+}
+p.searchinfo {
+	margin:2px 2px -8px 0;
+}
+#footer p {
+	float:right;
+	padding:30px 70px 0pt 0;
+}
+.extras {
+	float:left;
+	padding:33px 0 0pt 18px;
+}
+textarea {
+	font-family:tahoma, arial;
+}
+.commentlist li .avatar  {
+	float:left;
+}
+.submit {
+	text-indent:0px;
+}
+.main img {
+	margin: 0 4px;
+}
+code {
+	text-align:left;
+	direction:ltr;
+}
+#email, #url {
+	direction:ltr;
+}
