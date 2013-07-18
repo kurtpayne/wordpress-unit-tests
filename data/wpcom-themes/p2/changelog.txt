@@ -1,0 +1,30 @@
+P2 Theme - Change Log
+---------------------------
+1.0.1 - 11 Mar 2009
+- Prevent scheduled posts from appearing
+1.0.2 - 13 April 2009
+- Lots of bug fixes.
+- Released to themes directory.
+1.0.3 - 15 April 2009
+- Fixed JSON class loading twice
+- Japanese Translations (props OKAMOTO Wataru)
+1.0.4 - 7 May 2009
+- Danish translations (props Adamsen)
+- Italian translations (props webmaster@giuda.it)
+- Update for short tags problem.
+- Update for navigation issues on single.php
+- Fixed keyboard shortcuts menu layout
+- Added ability for any title that is not auto-generated, to appear as a large title. This is an option which you can turn on and off.
+- Made trackbacks only visible from archive pages.
+- Fix Older/Newer link text.
+- Move logout link.
+- Comment permalink fix.
+- Fixed title count for frontpage showing up on single posts.
+- Fixed bug if posting to an empty blog.
+1.0.5 - 12 May 2009
+- Proper 304 response for ajax updates
+- ajax updates for each template page
+- Fixed posts may create blank titles still
+- added hover affect for postbox
+- added postbox to every page.
+- es translations thanks to Luxiano http://www.luxiano.com.ar
