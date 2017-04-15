@@ -149,7 +149,7 @@ class Tests_Theme_ThemeDir extends WP_UnitTestCase {
 	function test_broken_themes() {
 		$themes = get_themes();
 		$expected = array('broken-theme' => array('Name' => 'broken-theme', 'Title' => 'broken-theme', 'Description' => __('Stylesheet is missing.')));
-
+		var_dump(get_broken_themes());
 		$this->assertEquals($expected, get_broken_themes() );
 	}
 
